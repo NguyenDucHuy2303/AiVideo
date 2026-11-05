@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "title": "Tại sao con người cần ngủ đủ giấc?",
+  "fps": 30,
+  "profiles": ["9x16", "16x9"],
+  "scenes": [
+    {
+      "id": "hook",
+      "durationFrames": 150,
+      "audio": { "src": "audio/marker_01.wav" },
+      "background": { "type": "image", "src": "assets/night.jpg", "motion": "ken_burns", "focus": { "x": 0.5, "y": 0.45 }, "dim": 0.35 },
+      "texts": [
+        { "role": "kicker", "text": "GIẤC NGỦ", "animation": "fade" },
+        { "role": "title", "text": "Điều gì xảy ra khi bạn thiếu ngủ?", "animation": "slide_up", "startFrame": 6 }
+      ],
+      "caption": "Bạn có biết điều gì xảy ra với cơ thể khi chúng ta thiếu ngủ không?",
+      "transitionOut": { "type": "fade", "frames": 12 }
+    },
+    {
+      "id": "brain",
+      "durationFrames": 180,
+      "audio": { "src": "audio/marker_02.wav" },
+      "background": { "type": "gradient", "from": "#1E3A8A", "to": "#0F172A", "direction": "diagonal" },
+      "texts": [
+        { "role": "title", "text": "Não bộ cần giấc ngủ để lưu trữ thông tin", "animation": "typewriter" }
+      ],
+      "caption": "Trong lúc ngủ, não bộ sắp xếp lại ký ức của cả ngày, loại bỏ chất thải và chuẩn bị cho ngày mai.",
+      "transitionOut": { "type": "slide_left", "frames": 15 }
+    },
+    {
+      "id": "effects",
+      "durationFrames": 165,
+      "audio": { "src": "audio/marker_03.wav" },
+      "background": { "type": "image", "src": "assets/abstract.jpg", "motion": "pan_right", "dim": 0.45 },
+      "texts": [
+        { "role": "kicker", "text": "HẬU QUẢ", "animation": "fade" },
+        { "role": "title", "text": "Giảm trí nhớ và khả năng tập trung", "animation": "slide_up" },
+        { "role": "body", "text": "Chỉ một đêm ngủ dưới 6 tiếng cũng đủ làm bạn phản xạ chậm hơn.", "animation": "fade", "startFrame": 20 }
+      ],
+      "caption": "Thiếu ngủ kéo dài ảnh hưởng đến trí nhớ, sự tập trung và cả tâm trạng của bạn."
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "openverse:63de2ecd-b9d8-43f0-9c51-b3ae74783b8c|child sleeping peacefully bedroom": {
+    "ok": false,
+    "shows": "A dog is sleeping on a couch.",
+    "note": "fit 3/10, photo, has text"
+  },
+  "openverse:0deaf6de-d502-4e1c-9a41-fce971f093c2|child sleeping peacefully bedroom": {
+    "ok": false,
+    "shows": "A young boy sleeps peacefully in bed.",
+    "note": "fit 9/10, photo, has text"
+  },
+  "openverse:1a7420fb-d6fb-4852-adbf-aa936c41bd62|child sleeping peacefully bedroom": {
+    "ok": false,
+    "shows": "A young woman is sleeping on the grass.",
+    "note": "fit 3/10, photo"
+  },
+  "openverse:ad923aae-1ab6-402e-a413-4589b80e266e|child sleeping peacefully bedroom": {
+    "ok": false,
+    "shows": "A young boy is sleeping on a train.",
+    "note": "fit 3/10, photo"
+  },
+  "openverse:5dd11640-76ce-4d45-abcb-c0966914ed77|cells repairing body science": {
+    "ok": false,
+    "shows": "This image illustrates the stages of embryonic cell development and differentiation.",
+    "note": "fit 8/10, diagram, has text"
+  },
+  "openverse:43251420-f35b-466d-bbd2-deefe10448c2|cells repairing body science": {
+    "ok": false,
+    "shows": "This image depicts a disassembled model car.",
+    "note": "fit 1/10, photo, has text"
+  },
+  "openverse:8b4b4d86-f8bf-457c-9f63-f9eea562b309|cells repairing body science": {
+    "ok": false,
+    "shows": "This image illustrates cellular mechanisms involving reactive oxygen species and their role in inflammation and cell signaling.",
+    "note": "fit 9/10, diagram, has text"
+  },
+  "openverse:b6dfdda3-fb82-42a7-b40c-e92aee15e001|brain synapses working memory": {
+    "ok": false,
+    "shows": "Illustration of brain synapses forming connections.",
+    "note": "fit 8/10, illustration, has text"
+  },
+  "openverse:6e3113f5-ba5f-47f6-b3ee-8ef5e4257585|brain synapses working memory": {
+    "ok": false,
+    "shows": "Brain synapses forming connections for working memory.",
+    "note": "fit 9/10, illustration, has text"
+  },
+  "openverse:f2cbbb8d-f983-4034-8200-01e1ec10eb78|brain synapses working memory": {
+    "ok": false,
+    "shows": "Visualizing Synaptic Maps onto Neocortical Neurons",
+    "note": "fit 9/10, screenshot, has text"
+  },
+  "openverse:42e1b98c-228c-418b-a2e4-119c446bfad1|brain synapses working memory": {
+    "ok": false,
+    "shows": "first visualization of activity in 10% of the neurons",
+    "note": "fit 9/10, screenshot, has text"
+  },
+  "openverse:6a07ca42-00b0-4e16-a85b-562db1c1260e|tired man desk night laptop": {
+    "ok": false,
+    "shows": "A tired man sits at a desk working on a laptop.",
+    "note": "fit 9/10, photo, has text"
+  },
+  "openverse:65c45c20-2e1d-429a-97aa-aa312deffce8|tired man desk night laptop": {
+    "ok": false,
+    "shows": "A man is slumped over a desk at night.",
+    "note": "fit 9/10, photo, has text"
+  },
+  "openverse:ca5847ed-9aa5-410a-abf1-449c5bf6404d|tired man desk night laptop": {
+    "ok": false,
+    "shows": "A man is working late at his desk.",
+    "note": "fit 9/10, photo, has text"
+  },
+  "openverse:16418aca-a79a-45a1-a3ab-ee710e4e95b2|tired man desk night laptop": {
+    "ok": false,
+    "shows": "A man is slumped over his desk with a laptop.",
+    "note": "fit 9/10, photo, has text"
+  },
+  "openverse:77225dab-6fa9-45c0-bd63-45f8b28a19cf|person sleeping peacefully bed": {
+    "ok": true,
+    "shows": "A man sleeps peacefully on the beach.",
+    "note": "fit 9/10, photo"
+  },
+  "openverse:5dd11640-76ce-4d45-abcb-c0966914ed77|cells repairing body science|v2": {
+    "ok": false,
+    "shows": "This image illustrates the stages of embryonic cell differentiation and repair.",
+    "note": "fit 9/10, diagram"
+  },
+  "openverse:43251420-f35b-466d-bbd2-deefe10448c2|cells repairing body science|v2": {
+    "ok": false,
+    "shows": "This image depicts a disassembled model car.",
+    "note": "fit 3/10, photo"
+  },
+  "openverse:8b4b4d86-f8bf-457c-9f63-f9eea562b309|cells repairing body science|v2": {
+    "ok": false,
+    "shows": "This image illustrates cellular mechanisms of oxidative stress and repair.",
+    "note": "fit 9/10, diagram"
+  },
+  "openverse:b6dfdda3-fb82-42a7-b40c-e92aee15e001|brain synapses working memory|v2": {
+    "ok": false,
+    "shows": "Brain synapses firing during memory recall.",
+    "note": "fit 8/10, diagram"
+  },
+  "openverse:6e3113f5-ba5f-47f6-b3ee-8ef5e4257585|brain synapses working memory|v2": {
+    "ok": true,
+    "shows": "Brain synapses illustrating working memory.",
+    "note": "fit 9/10, illustration"
+  },
+  "openverse:6a07ca42-00b0-4e16-a85b-562db1c1260e|tired man desk night laptop|v2": {
+    "ok": true,
+    "shows": "A tired man sits at a desk working on a laptop.",
+    "note": "fit 9/10, photo"
+  },
+  "openverse:7ed04359-0f0e-444f-9891-44862bc2bbc6|person sleeping peacefully bed|v2": {
+    "ok": true,
+    "shows": "A man sleeps peacefully on a beach.",
+    "note": "fit 8/10, photo"
+  },
+  "openverse:63de2ecd-b9d8-43f0-9c51-b3ae74783b8c|child sleeping peacefully bedroom|v2": {
+    "ok": false,
+    "shows": "A dog is sleeping on a couch.",
+    "note": "fit 3/10, photo"
+  },
+  "openverse:0deaf6de-d502-4e1c-9a41-fce971f093c2|child sleeping peacefully bedroom|v2": {
+    "ok": true,
+    "shows": "A young boy sleeps peacefully in bed.",
+    "note": "fit 10/10, photo"
+  },
+  "openverse:77225dab-6fa9-45c0-bd63-45f8b28a19cf|person sleeping peacefully bed|v2": {
+    "ok": true,
+    "shows": "A man sleeping peacefully on a beach.",
+    "note": "fit 9/10, photo"
+  }
+}

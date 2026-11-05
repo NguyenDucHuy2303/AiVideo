@@ -1,0 +1,33 @@
+{
+  "title": "Tại sao con người cần ngủ đủ giấc?",
+  "format": "short_video",
+  "scenes": [
+    {
+      "duration": 8,
+      "narration": "Bạn có biết điều gì xảy ra với cơ thể khi chúng ta thiếu ngủ không?",
+      "onScreen": { "kicker": "GIẤC NGỦ", "title": "Điều gì xảy ra khi bạn thiếu ngủ?" },
+      "visual": { "query": "tired person desk night", "description": "Một người mệt mỏi ngồi trước bàn làm việc lúc nửa đêm", "mood": "dark" },
+      "camera": "slow zoom in",
+      "transition": "fade"
+    },
+    {
+      "narration": "Trong lúc ngủ, não bộ sắp xếp lại ký ức của cả ngày. Nó còn loại bỏ chất thải tích tụ trong các tế bào thần kinh.",
+      "onScreen": { "title": "Não bộ cần giấc ngủ để lưu trữ thông tin" },
+      "visual": { "query": "brain neurons memory", "mood": "calm" },
+      "camera": "pan right",
+      "transition": "slide left"
+    },
+    {
+      "narration": "Người trưởng thành cần ngủ từ 7-9 tiếng mỗi đêm. Khoảng 30% người lớn ngủ ít hơn mức này.",
+      "onScreen": { "kicker": "CON SỐ", "title": "7-9 tiếng mỗi đêm", "body": "Khoảng 30% người trưởng thành ngủ không đủ." },
+      "visual": { "description": "Biểu đồ giờ ngủ", "mood": "vibrant neon" },
+      "camera": "spin around",
+      "transition": "fade"
+    },
+    {
+      "narration": "Hãy bắt đầu từ tối nay: tắt màn hình sớm hơn 30 phút và đi ngủ đúng giờ. 😴",
+      "onScreen": { "title": "Bắt đầu từ tối nay" },
+      "visual": { "query": "night bedroom calm", "mood": "calm" }
+    }
+  ]
+}

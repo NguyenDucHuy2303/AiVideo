@@ -1,0 +1,316 @@
+{
+  "title": "Thánh Gióng",
+  "kind": "story",
+  "scenes": [
+    {
+      "narration": "Truyện kể lại rằng, vào đời Vua Hùng thứ sáu, tại làng Gióng (Phù Đổng, Gia Lâm), có hai vợ chồng ông lão hiền lành nhưng không có con.",
+      "chapter": "Sự ra đời kỳ lạ",
+      "onScreen": {
+        "kicker": "PHẦN 1",
+        "title": "Sự ra đời kỳ lạ"
+      },
+      "visual": {
+        "description": "A vast, sun-drenched rice paddy field in ancient Vietnam. A cluster of thatched stilt houses with steeply pitched roofs are visible in the distance, surrounded by a dense bamboo grove. The sky is a brilliant blue with a , day",
+        "mood": "serious"
+      },
+      "camera": "pan_right",
+      "transition": "dissolve",
+      "actor": {
+        "id": "old_couple",
+        "silhouette": "an old ancient Vietnamese farmer couple walking side by side, the man in a headscarf and loose tunic with a walking stick, the woman in a conical hat and long skirt, bare feet, side view",
+        "action": "enter_left"
+      },
+      "effects": [
+        "light_rays"
+      ]
+    },
+    {
+      "narration": "Một hôm, bà vợ ra đồng ướm chân vào một vết chân lạ rất to, từ đó mang thai.",
+      "chapter": "Sự ra đời kỳ lạ",
+      "onScreen": {},
+      "visual": {
+        "description": "a muddy rice paddy at dawn with one enormous mysterious footprint pressed into the mud, soft morning mist, distant bamboo groves, dawn",
+        "mood": "energetic"
+      },
+      "camera": "ken_burns",
+      "transition": "dissolve",
+      "effects": [
+        "light_rays",
+        "mist"
+      ]
+    },
+    {
+      "narration": "Mười hai tháng sau, bà sinh ra một cậu bé, đặt tên là Gióng. Cậu bé lên ba tuổi vẫn không biết nói, không biết cười, chỉ nằm ngửa đòi ăn.",
+      "chapter": "Sự ra đời kỳ lạ",
+      "onScreen": {},
+      "visual": {
+        "description": "the rustic interior of a humble thatched hut, a simple straw mat on the floor, wooden pillars, warm light through a small window, day",
+        "mood": "calm"
+      },
+      "camera": "pan_up",
+      "transition": "fadeblack",
+      "actor": {
+        "id": "giong_child",
+        "silhouette": "a small ancient Vietnamese boy with a shaved head and a little topknot, wearing a loose short tunic, standing barefoot, side view",
+        "action": "appear"
+      },
+      "effects": [
+        "dust"
+      ]
+    },
+    {
+      "narration": "Giặc Ân từ phương Bắc kéo sang xâm lược nước ta, Vua Hùng vô cùng lo lắng, bèn sai sứ giả đi khắp nơi tìm người tài cứu nước.",
+      "chapter": "Tiếng nói đầu tiên đòi đi đánh giặc",
+      "onScreen": {
+        "kicker": "PHẦN 2",
+        "title": "Tiếng nói đầu tiên đòi đi đánh giặc"
+      },
+      "visual": {
+        "description": "Rice paddies stretch out under a hazy, late afternoon sun. A thatched-roofed village, nestled amongst bamboo groves, sits in the valley. The sky is a pale blue with wisps of cloud. The light is warm and golden, casting a, dusk",
+        "mood": "serious"
+      },
+      "camera": "pan_left",
+      "transition": "dissolve",
+      "actor": {
+        "id": "messenger_silhouette",
+        "silhouette": "an ancient Vietnamese royal messenger walking briskly, long tunic, bronze belt and short sword, holding a scroll, side view",
+        "action": "enter_right"
+      },
+      "effects": [
+        "dust"
+      ]
+    },
+    {
+      "narration": "Khi sứ giả đi qua làng Gióng, nghe tiếng rao, Gióng bỗng nhiên cất tiếng nói đầu tiên, dõng dạc bảo mẹ mời sứ giả vào.",
+      "chapter": "Tiếng nói đầu tiên đòi đi đánh giặc",
+      "onScreen": {},
+      "visual": {
+        "description": "A small, rustic village square. Stilt houses with thatched roofs surround a central area. Rice stalks sway gently in the breeze. The sky is overcast and grey, hinting at an approaching storm. Raindrops begin to fall., dusk",
+        "mood": "serious"
+      },
+      "camera": "zoom_out",
+      "transition": "dissolve",
+      "actor": {
+        "id": "giong_child",
+        "silhouette": "a small ancient Vietnamese boy with a shaved head and a little topknot, wearing a loose short tunic, standing barefoot, side view",
+        "action": "appear"
+      },
+      "effects": [
+        "light_rays"
+      ]
+    },
+    {
+      "narration": "Gióng yêu cầu Vua Hùng sắm cho mình một con ngựa sắt, một cái roi sắt và một bộ giáp sắt để đi đánh giặc.",
+      "chapter": "Tiếng nói đầu tiên đòi đi đánh giặc",
+      "onScreen": {},
+      "visual": {
+        "description": "A richly decorated, albeit simple, palace courtyard. Stone paving, a bronze-colored fountain, and intricate carvings adorn the walls. The sky is a brilliant blue with a few scattered clouds. The light is bright and clear, day",
+        "mood": "serious"
+      },
+      "camera": "pan_up",
+      "transition": "fadeblack",
+      "actor": {
+        "id": "horse_giong",
+        "silhouette": "a powerful iron horse standing proud, flowing mane, bronze saddle, side view",
+        "action": "appear"
+      },
+      "effects": [
+        "light_rays",
+        "flash"
+      ]
+    },
+    {
+      "narration": "Từ khi có tiếng nói đầu tiên, Gióng lớn nhanh như thổi. Cơm ăn mấy cũng không no, áo vừa mặc xong đã căng đứt chỉ.",
+      "chapter": "Sự lớn lên phi thường",
+      "onScreen": {
+        "kicker": "PHẦN 3",
+        "title": "Sự lớn lên phi thường"
+      },
+      "visual": {
+        "description": "A vast, sun-drenched rice paddy field in ancient Vietnam. Stilt houses with thatched roofs dot the landscape, partially obscured by a gentle morning mist. A clear blue sky with fluffy white clouds. The light is warm and , dawn",
+        "mood": "serious"
+      },
+      "camera": "zoom_out",
+      "transition": "dissolve",
+      "actor": {
+        "id": "giong_child",
+        "silhouette": "a small ancient Vietnamese boy with a shaved head and a little topknot, wearing a loose short tunic, standing barefoot, side view",
+        "action": "grow"
+      },
+      "effects": [
+        "light_rays",
+        "mist"
+      ]
+    },
+    {
+      "narration": "Cả làng Gióng và bà con láng giềng đã vui vẻ góp gạo, góp thức ăn để nuôi Gióng, mong Gióng lớn nhanh đánh giặc.",
+      "chapter": "Sự lớn lên phi thường",
+      "onScreen": {},
+      "visual": {
+        "description": "an ancient Vietnamese village square with thatched stilt houses, baskets of rice and food piled on the ground, bamboo groves behind, overcast day, day",
+        "mood": "energetic"
+      },
+      "camera": "ken_burns",
+      "transition": "dissolve",
+      "effects": [
+        "dust"
+      ]
+    },
+    {
+      "narration": "Sự lớn lên phi thường này thể hiện sức mạnh tiềm tàng, mãnh liệt của dân tộc khi đất nước lâm nguy.",
+      "chapter": "Sự lớn lên phi thường",
+      "onScreen": {},
+      "visual": {
+        "description": "A panoramic view of a mountain landscape – the peak of Soc Son mountain, shrouded in a swirling mist. The sky is a deep indigo, punctuated by a scattering of stars. The light is soft and ethereal. , night",
+        "mood": "serious"
+      },
+      "camera": "pan_up",
+      "transition": "fadeblack",
+      "effects": [
+        "light_rays",
+        "leaves"
+      ]
+    },
+    {
+      "narration": "Giặc Ân đến chân núi Trâu thì ngựa sắt, roi sắt, áo giáp sắt của nhà vua vừa kịp mang đến.",
+      "chapter": "Vươn vai thành tráng sĩ và đánh tan giặc Ân",
+      "onScreen": {
+        "kicker": "PHẦN 4",
+        "title": "Vươn vai thành tráng sĩ và đánh tan giặc Ân"
+      },
+      "visual": {
+        "description": "A vast, sweeping rice paddy field under a bruised, stormy sky. Dense bamboo groves line the horizon, partially obscured by thick mist. A thatched stilt house with a steeply pitched roof sits in the foreground, smoke wisr, dawn",
+        "mood": "energetic"
+      },
+      "camera": "pan_right",
+      "transition": "dissolve",
+      "actor": {
+        "id": "an_soldier_silhouette",
+        "silhouette": "a group of ancient invader soldiers marching in formation with spears and round shields, helmets, side view",
+        "action": "enter_left"
+      },
+      "effects": [
+        "mist",
+        "rain"
+      ]
+    },
+    {
+      "narration": "Cậu bé Gióng vươn vai một cái, bỗng chốc trở thành một tráng sĩ khổng lồ, oai phong lẫm liệt.",
+      "chapter": "Vươn vai thành tráng sĩ và đánh tan giặc Ân",
+      "onScreen": {},
+      "visual": {
+        "description": "the foot of Trau mountain at dusk, rice fields and bamboo groves, a dramatic stormy orange sky, dusk",
+        "mood": "dark"
+      },
+      "camera": "zoom_out",
+      "transition": "dissolve",
+      "actor": {
+        "id": "giong_warrior",
+        "silhouette": "a giant ancient Vietnamese warrior in bronze armor riding a galloping horse, holding a long iron whip, side view",
+        "action": "grow"
+      },
+      "effects": [
+        "flash",
+        "shake"
+      ]
+    },
+    {
+      "narration": "Tráng sĩ Thánh Gióng mặc giáp, nhảy lên ngựa, ngựa phun lửa, cùng Gióng xông thẳng vào quân giặc.",
+      "chapter": "Vươn vai thành tráng sĩ và đánh tan giặc Ân",
+      "onScreen": {},
+      "visual": {
+        "description": "a battlefield of flooded rice paddies at night, scorched bamboo groves, smoke and fire on the horizon, night",
+        "mood": "energetic"
+      },
+      "camera": "pan_right",
+      "transition": "dissolve",
+      "actor": {
+        "id": "giong_warrior",
+        "silhouette": "a giant ancient Vietnamese warrior in bronze armor riding a galloping horse, holding a long iron whip, side view",
+        "action": "charge"
+      },
+      "effects": [
+        "embers",
+        "dust"
+      ]
+    },
+    {
+      "narration": "Roi sắt gãy, Gióng bèn nhổ những bụi tre bên đường để làm vũ khí, đánh tan tác quân giặc.",
+      "chapter": "Vươn vai thành tráng sĩ và đánh tan giặc Ân",
+      "onScreen": {},
+      "visual": {
+        "description": "a road lined with tall bamboo groves at dawn, broken bamboo stalks on the ground, golden sunrise light, dawn",
+        "mood": "energetic"
+      },
+      "camera": "pan_right",
+      "transition": "fadeblack",
+      "actor": {
+        "id": "giong_warrior",
+        "silhouette": "a giant ancient Vietnamese warrior in bronze armor riding a galloping horse, holding a long iron whip, side view",
+        "action": "charge"
+      },
+      "effects": [
+        "dust",
+        "leaves"
+      ]
+    },
+    {
+      "narration": "Đánh tan giặc Ân, dẹp yên đất nước, tráng sĩ Gióng không hề quay về triều đình nhận công lao.",
+      "chapter": "Bay về trời",
+      "onScreen": {
+        "kicker": "PHẦN 5",
+        "title": "Bay về trời"
+      },
+      "visual": {
+        "description": "A vast, misty rice paddy field under a bruised purple and grey sky.  Dense bamboo groves line the horizon.  In the distance, a cluster of thatched stilt houses with steeply pitched roofs are visible. The light is soft, a, dawn",
+        "mood": "serious"
+      },
+      "camera": "pan_up",
+      "transition": "dissolve",
+      "actor": {
+        "id": "giong_warrior",
+        "silhouette": "a giant ancient Vietnamese warrior in bronze armor riding a galloping horse, holding a long iron whip, side view",
+        "action": "enter_right"
+      },
+      "effects": [
+        "mist",
+        "light_rays"
+      ]
+    },
+    {
+      "narration": "Gióng một mình một ngựa lên đỉnh núi Sóc Sơn, cởi bỏ áo giáp sắt để lại, rồi cả người lẫn ngựa từ từ bay thẳng lên trời.",
+      "chapter": "Bay về trời",
+      "onScreen": {},
+      "visual": {
+        "description": "The jagged, forested peak of Mount Soc Son at dusk. The sky is a fiery orange and red, reflecting off the snow-capped summit.  A swirling vortex of stars dominates the upper portion of the frame. The air shimmers with a, dusk",
+        "mood": "energetic"
+      },
+      "camera": "ken_burns",
+      "transition": "dissolve",
+      "effects": [
+        "light_rays",
+        "stars"
+      ],
+      "actor": {
+        "id": "giong_warrior",
+        "silhouette": "a giant ancient Vietnamese warrior in bronze armor riding a galloping horse, holding a long iron whip, side view",
+        "action": "fly_up"
+      }
+    },
+    {
+      "narration": "Gióng trở về cõi bất tử, thể hiện tinh thần không màng danh lợi, chỉ lo cứu nước.",
+      "chapter": "Bay về trời",
+      "onScreen": {},
+      "visual": {
+        "description": "A serene, cloud-filled sky above a distant, shimmering realm of light and color. Hints of celestial architecture faintly visible.  A gentle, ethereal glow permeates the scene.  The light is soft and diffused, like a, night",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "dissolve",
+      "effects": [
+        "stars",
+        "mist"
+      ]
+    }
+  ]
+}

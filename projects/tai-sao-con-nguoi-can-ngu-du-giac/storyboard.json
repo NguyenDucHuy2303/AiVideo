@@ -1,0 +1,120 @@
+{
+  "title": "Tại sao ta cần ngủ đủ giấc?",
+  "scenes": [
+    {
+      "narration": "Bạn có biết rằng, thiếu ngủ có thể gây hại cho sức khỏe của bạn?  Nhiều người không nhận ra tầm quan trọng của giấc ngủ.",
+      "onScreen": {
+        "kicker": "SỨC KHỎE VÀ GIẤC NGỦ",
+        "title": "Thiếu ngủ: nguy hiểm"
+      },
+      "visual": {
+        "query": "tired person looking at phone",
+        "description": "A person staring at a phone in a dimly lit room, looking fatigued.",
+        "mood": "serious"
+      },
+      "camera": "zoom_in",
+      "transition": "fade"
+    },
+    {
+      "narration": "Giấc ngủ rất quan trọng để cơ thể phục hồi và tái tạo năng lượng. Trong khi ngủ, cơ thể sửa chữa tế bào và tăng cường hệ miễn dịch.",
+      "onScreen": {
+        "kicker": "PHỤC HỒI CƠ THỂ",
+        "title": "Tái tạo năng lượng"
+      },
+      "visual": {
+        "query": "cells regenerating",
+        "description": "Abstract depiction of cells regenerating and repairing themselves.",
+        "mood": "calm"
+      },
+      "camera": "pan_up",
+      "transition": "slide_up",
+      "graphic": {
+        "type": "list",
+        "items": [
+          {
+            "icon": "heart",
+            "text": "Phục hồi"
+          },
+          {
+            "icon": "shield",
+            "text": "Hệ miễn dịch"
+          },
+          {
+            "icon": "battery-full",
+            "text": "Năng lượng"
+          }
+        ]
+      }
+    },
+    {
+      "narration": "Thời gian ngủ cần thiết khác nhau đối với mỗi người, nhưng trung bình người lớn cần khoảng 7-9 tiếng mỗi đêm.",
+      "onScreen": {
+        "kicker": "THỜI GIAN NGỦ",
+        "title": "7-9 tiếng mỗi đêm"
+      },
+      "visual": {
+        "query": "clock showing 9 pm",
+        "description": "A digital clock displaying 9:00 PM, with a soft, warm glow.",
+        "mood": "calm"
+      },
+      "camera": "zoom_out",
+      "transition": "fade",
+      "graphic": {
+        "type": "big_number",
+        "value": "7–9",
+        "unit": "tiếng",
+        "label": "mỗi đêm cho người lớn"
+      }
+    },
+    {
+      "narration": "Nếu không ngủ đủ giấc, bạn có thể gặp các vấn đề như khó tập trung, giảm trí nhớ và tăng nguy cơ mắc bệnh.",
+      "onScreen": {
+        "kicker": "HẬU QUẢ THIẾU NGỦ",
+        "title": "Tác động sức khỏe"
+      },
+      "visual": {
+        "query": "brain fog confused person",
+        "description": "A person with a blurred expression, appearing confused and overwhelmed.",
+        "mood": "serious"
+      },
+      "camera": "zoom_in",
+      "transition": "slide_left",
+      "graphic": {
+        "type": "compare",
+        "tone": "bad_good",
+        "left": {
+          "title": "Thiếu ngủ",
+          "icon": "x",
+          "points": [
+            "Khó tập trung",
+            "Giảm trí nhớ",
+            "Dễ mệt mỏi"
+          ]
+        },
+        "right": {
+          "title": "Ngủ đủ",
+          "icon": "check",
+          "points": [
+            "Tập trung tốt",
+            "Nhớ dễ dàng",
+            "Sảng khoái"
+          ]
+        }
+      }
+    },
+    {
+      "narration": "Hãy cố gắng ngủ đủ giấc để có một cuộc sống khỏe mạnh và tràn đầy năng lượng.  Ngủ đủ giấc là một thói quen tốt cho sức khỏe của bạn.",
+      "onScreen": {
+        "kicker": "LỜI KHUYÊN",
+        "title": "Ngủ đủ giấc"
+      },
+      "visual": {
+        "query": "person sleeping peacefully",
+        "description": "A person peacefully sleeping in a comfortable bed, bathed in soft light.",
+        "mood": "serious"
+      },
+      "camera": "pan_down",
+      "transition": "fade"
+    }
+  ]
+}

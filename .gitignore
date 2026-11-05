@@ -1,0 +1,12 @@
+node_modules/
+projects/*/build/
+projects/*/out/
+fixtures/*/build/
+fixtures/*/out/
+fixtures/demo/assets/
+fixtures/demo/audio/
+vendor/
+projects/*/gen/
+projects/*/timeline.json
+say-*.wav
+.env
