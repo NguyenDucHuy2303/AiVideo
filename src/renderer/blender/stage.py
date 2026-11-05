@@ -67,6 +67,7 @@ def depth_grid(nx, nz):
     v = np.linspace(0, 1, nz)[:, None].repeat(nx, 1)
     if spec.get("depth"):
         img = bpy.data.images.load(spec["depth"])
+        img.colorspace_settings.name = "Non-Color"  # data, not a picture: no sRGB curve
         w, h = img.size
         px = np.array(img.pixels[:], dtype=np.float32).reshape(h, w, 4)[::-1, :, 0]
         # Larger = nearer (relative disparity). Sample, then turn into distance.
