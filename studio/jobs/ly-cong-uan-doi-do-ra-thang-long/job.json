@@ -1,15 +1,20 @@
 {
   "slug": "ly-cong-uan-doi-do-ra-thang-long",
   "topic": "Lý Công Uẩn dời đô ra Thăng Long",
-  "status": "writing",
+  "status": "review",
   "notes": [],
   "history": [
     {
       "at": "2026-11-09T03:44:54.662Z",
       "status": "writing"
+    },
+    {
+      "at": "2026-11-09T04:15:54.919Z",
+      "status": "review"
     }
   ],
   "kind": "lịch sử",
   "era": "ly",
-  "summary": "Vua Lý Công Uẩn quyết định dời đô từ Hoa Lư ra thành Đại La; truyền thuyết rồng vàng bay lên, đặt tên là Thăng Long."
+  "summary": "Vua Lý Công Uẩn quyết định dời đô từ Hoa Lư ra thành Đại La; truyền thuyết rồng vàng bay lên, đặt tên là Thăng Long.",
+  "by": "claude-opus"
 }

@@ -1,0 +1,874 @@
+[
+  {
+    "id": "bo_linh_nho",
+    "name": "Đinh Bộ Lĩnh (chăn trâu)",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "color": "#6b4a2b",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#7a5230",
+          "trim": "#4a3220",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#5a4028",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#3a2a1a",
+          "ends": true
+        }
+      },
+      "bareChest": false,
+      "hair": {
+        "style": "traidao",
+        "color": "#1a1a1a"
+      },
+      "prop": {
+        "type": "flag"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "button",
+        "brows": "thick",
+        "eyeScale": 1.15
+      }
+    },
+    "scale": 0.82,
+    "group": false,
+    "speaks": [
+      "Đinh Bộ Lĩnh"
+    ],
+    "role": "Cậu bé chăn trâu: tóc để chỏm, áo cổ chéo ngắn nâu đất, quần ngắn, chân đất, cầm bông lau làm cờ; mắt sáng, lông mày đậm.",
+    "designed": true
+  },
+  {
+    "id": "bo_linh_lon",
+    "name": "Đinh Bộ Lĩnh (Vạn Thắng Vương)",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "armor",
+        "color": "#4a4a52",
+        "trim": "#b8862b"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "helmet",
+      "cape": true,
+      "beard": "#1a1a1a",
+      "props": [
+        {
+          "type": "sword"
+        }
+      ],
+      "face": {
+        "shape": "square",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thin"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "formOf": "bo_linh_nho",
+    "speaks": [
+      "Đinh Bộ Lĩnh"
+    ],
+    "role": "Chàng trai lớn: tóc búi, giáp sắt, nón sắt, áo choàng đỏ sẫm, đeo gươm; dáng khỏe, ánh mắt kiên định.",
+    "designed": true
+  },
+  {
+    "id": "dinh_tien_hoang",
+    "name": "Đinh Tiên Hoàng",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#7a1f1f",
+          "trim": "#c9a227",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "dragon"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#4a1010",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#c9a227",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "crown",
+      "beard": "#1a1a1a",
+      "face": {
+        "shape": "square",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thick"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "formOf": "bo_linh_lon",
+    "speaks": [
+      "Đinh Bộ Lĩnh"
+    ],
+    "role": "Hoàng đế: áo cổ chéo dài tới mắt cá, tay thụng, hoa văn rồng, mũ chung, đai thắt lưng, gương mặt trang nghiêm.",
+    "designed": true
+  },
+  {
+    "id": "me",
+    "name": "Mẹ",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "build": "average",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#2e3f6b",
+          "trim": "#1f2a4a",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#222c4a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#7a6a4a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "bracelets": true,
+      "prop": {
+        "type": "bowl"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "droopy",
+        "nose": "button",
+        "brows": "thin"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Mẹ"
+    ],
+    "role": "Bà họ Đàm: áo cổ chéo ngắn và váy dài kín đáo màu chàm, tóc búi, vẻ hiền hậu.",
+    "designed": true
+  },
+  {
+    "id": "chu_du",
+    "name": "Chú Dự",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "heavy",
+      "skin": "#c99663",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#3a2f33",
+          "trim": "#2a2024",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#2a2a2e",
+          "length": "shin"
+        },
+        "belt": {
+          "color": "#5a2a1a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "long",
+        "brows": "bushy",
+        "mustache": "droopy"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Chú Dự"
+    ],
+    "role": "Đinh Thúc Dự: tóc búi, áo cổ chéo ngắn màu sẫm, quần, thắt lưng, cầm gậy, mặt cau có (không dao).",
+    "designed": true
+  },
+  {
+    "id": "dinh_dien",
+    "name": "Đinh Điền",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "color": "#6b4a2b",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#4f6b3e",
+          "trim": "#34482a",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#3a3328",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#4a3e2a",
+          "ends": true
+        }
+      },
+      "bareChest": true,
+      "hair": {
+        "style": "traidao",
+        "color": "#1a1a1a"
+      },
+      "prop": {
+        "type": "flag"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thick",
+        "eyeScale": 1.2
+      }
+    },
+    "scale": 0.8,
+    "group": false,
+    "speaks": [
+      "Đinh Điền"
+    ],
+    "role": "Bạn chăn trâu: chỏm tóc, áo cổ chéo ngắn xanh lá, quần ngắn, mặt tròn, cầm cờ lau.",
+    "designed": true
+  },
+  {
+    "id": "nguyen_bac",
+    "name": "Nguyễn Bặc",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "build": "heavy",
+      "skin": "#c99663",
+      "outfit": {
+        "type": "loincloth",
+        "color": "#8a3a2a"
+      },
+      "bareChest": true,
+      "hair": {
+        "style": "traidao",
+        "color": "#1a1a1a"
+      },
+      "prop": {
+        "type": "flag"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "bushy",
+        "eyeScale": 1.1
+      }
+    },
+    "scale": 0.84,
+    "group": false,
+    "speaks": [
+      "Nguyễn Bặc"
+    ],
+    "role": "Bạn chăn trâu: dáng vạm vỡ, ở trần đóng khố đỏ gạch, chỏm tóc, mặt vuông, mày rậm, cầm cờ lau.",
+    "designed": true
+  },
+  {
+    "id": "luu_co",
+    "name": "Lưu Cơ",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "build": "slim",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "parts",
+        "color": "#6b4a2b",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#4a5f7a",
+          "trim": "#2e3e52",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#3a3a40",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#2e3e52",
+          "ends": true
+        }
+      },
+      "bareChest": true,
+      "hair": {
+        "style": "traidao",
+        "color": "#2a2a2a"
+      },
+      "prop": {
+        "type": "flag"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "narrow",
+        "nose": "long",
+        "brows": "thin",
+        "eyeScale": 1
+      }
+    },
+    "scale": 0.78,
+    "group": false,
+    "speaks": [
+      "Lưu Cơ"
+    ],
+    "role": "Bạn chăn trâu: gầy nhanh nhẹn, áo cổ chéo ngắn xanh chàm nhạt, mắt hẹp, cầm cờ lau.",
+    "designed": true
+  },
+  {
+    "id": "trinh_tu",
+    "name": "Trịnh Tú",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "build": "slim",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "parts",
+        "color": "#6b4a2b",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#a8843a",
+          "trim": "#6b5522",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#5a4a30",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#6b5522",
+          "ends": true
+        }
+      },
+      "bareChest": true,
+      "hair": {
+        "style": "traidao",
+        "color": "#3a2a1a"
+      },
+      "prop": {
+        "type": "flag"
+      },
+      "face": {
+        "shape": "jowl",
+        "eyes": "droopy",
+        "nose": "button",
+        "brows": "thin",
+        "eyeScale": 1.2
+      }
+    },
+    "scale": 0.76,
+    "group": false,
+    "speaks": [
+      "Trịnh Tú"
+    ],
+    "role": "Bạn chăn trâu nhỏ nhất: áo cổ chéo ngắn nâu vàng, mặt phính, mắt hiền, cầm cờ lau.",
+    "designed": true
+  },
+  {
+    "id": "tre_thon_ben",
+    "name": "Trẻ thôn bên",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "color": "#6b4a2b",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#8a8478",
+          "trim": "#5a5448",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#4a4438",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#5a5448",
+          "ends": true
+        }
+      },
+      "bareChest": true,
+      "hair": {
+        "style": "traidao",
+        "color": "#1a1a1a"
+      },
+      "prop": {
+        "type": "flag"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "round",
+        "brows": "thick",
+        "eyeScale": 1.1
+      }
+    },
+    "scale": 0.8,
+    "group": true,
+    "speaks": [
+      "Trẻ thôn bên"
+    ],
+    "role": "Nhóm trẻ thôn khác: chỏm tóc, áo cổ chéo ngắn xám nâu, quần ngắn, cầm cờ lau.",
+    "designed": true
+  },
+  {
+    "id": "tran_minh_cong",
+    "name": "Trần Minh Công",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#4a5a52",
+          "trim": "#c9b37e",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#2e3a34",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#6b4a2b",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#e0e0e0"
+      },
+      "beard": "#e8e8e8",
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "jowl",
+        "eyes": "round",
+        "nose": "round",
+        "brows": "bushy",
+        "wrinkles": true,
+        "mustache": "thick"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Trần Minh Công"
+    ],
+    "role": "Sứ quân phúc hậu: tóc bạc búi, râu bạc, áo cổ chéo dài tay thụng màu xanh rêu trầm.",
+    "designed": true
+  },
+  {
+    "id": "cu_gia",
+    "name": "Cụ già",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "slim",
+      "skin": "#c99663",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#7a5a38",
+          "trim": "#4a3820",
+          "length": "ankle",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#4a4438",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#4a3820",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#e8e8e8"
+      },
+      "beard": "#f0f0f0",
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "droopy",
+        "nose": "long",
+        "brows": "bushy",
+        "wrinkles": true,
+        "mustache": "droopy"
+      }
+    },
+    "scale": 0.95,
+    "group": true,
+    "speaks": [
+      "Cụ già"
+    ],
+    "role": "Các phụ lão: râu tóc bạc, búi tóc, áo cổ chéo dài màu nâu, chống gậy.",
+    "designed": true
+  },
+  {
+    "id": "nha_su",
+    "name": "Nhà sư",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "slim",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#7a5230",
+          "trim": "#5a3a20",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#5a3a20",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#5a3a20",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bald",
+        "color": "#1a1a1a"
+      },
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "narrow",
+        "nose": "button",
+        "brows": "thin",
+        "wrinkles": true
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Nhà sư"
+    ],
+    "role": "Sư trong chùa: đầu cạo, áo nâu dài tay rộng, hiền hậu điềm tĩnh.",
+    "designed": true
+  },
+  {
+    "id": "bac_nong_dan",
+    "name": "Bác nông dân",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#c08850",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#8a7050",
+          "trim": "#5a4a30",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#4a3a28",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#5a4a30",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#2a2a2a"
+      },
+      "prop": {
+        "type": "bamboo"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "round",
+        "nose": "round",
+        "brows": "thick",
+        "wrinkles": true
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Bác nông dân"
+    ],
+    "role": "Nông dân: tóc búi, áo cổ chéo ngắn nâu, quần ngắn, da sạm nắng, vác cày dắt trâu.",
+    "designed": true
+  },
+  {
+    "id": "linh",
+    "name": "Lính",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#7a3b1e",
+          "trim": "#3a2a1a",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#3a2a1a",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#2a1a10",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "props": [
+        {
+          "type": "spear"
+        },
+        {
+          "type": "shield"
+        },
+        {
+          "type": "flag"
+        }
+      ],
+      "face": {
+        "shape": "round",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thick"
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Lính"
+    ],
+    "role": "Quân sĩ dưới cờ Bộ Lĩnh: áo cổ chéo ngắn nâu đất, quần, thắt lưng, tóc búi, giáo, khiên, cờ vải.",
+    "designed": true
+  },
+  {
+    "id": "linh_su_quan",
+    "name": "Lính sứ quân",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#c99663",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#2e4a6b",
+          "trim": "#1a2a3e",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#22262e",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#1a1a22",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "props": [
+        {
+          "type": "spear"
+        },
+        {
+          "type": "shield"
+        },
+        {
+          "type": "horn"
+        }
+      ],
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "bushy"
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Lính sứ quân"
+    ],
+    "role": "Quân Nguyễn Siêu: áo cổ chéo ngắn xanh đậm để phân biệt phe, quần, tóc búi, giáo, khiên, tù và.",
+    "designed": true
+  },
+  {
+    "id": "quan",
+    "name": "Quan",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#4a4a5e",
+          "trim": "#c9b37e",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#2e2e3e",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#6b4a2b",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#2a2a2a"
+      },
+      "beard": "#2a2a2a",
+      "prop": {
+        "type": "scroll"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "narrow",
+        "nose": "long",
+        "brows": "thin",
+        "mustache": "thin"
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Quan"
+    ],
+    "role": "Quan triều Hoa Lư: áo cổ chéo dài tay thụng màu trầm, không hoa văn rồng, tóc búi, cầm cuộn văn thư, cúi đầu chắp tay.",
+    "designed": true
+  }
+]

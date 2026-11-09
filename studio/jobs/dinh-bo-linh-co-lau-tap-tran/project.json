@@ -1,0 +1,67 @@
+{
+  "engine": "vieneu",
+  "voice": "Minh Đức",
+  "speed": 1.1,
+  "imageGen": "off",
+  "onlineImages": false,
+  "era": "ngo_dinh_le",
+  "profiles": [
+    "16x9"
+  ],
+  "voices": {
+    "Đinh Bộ Lĩnh": "Thiện Minh",
+    "Mẹ": "Ngọc Huyền",
+    "Chú Dự": {
+      "voice": "Hải Đăng",
+      "pitch": -1
+    },
+    "Đinh Điền": {
+      "voice": "Mai Anh",
+      "pitch": 4
+    },
+    "Nguyễn Bặc": {
+      "voice": "Ngọc Linh",
+      "pitch": 4
+    },
+    "Lưu Cơ": {
+      "voice": "Mai Anh",
+      "pitch": 2
+    },
+    "Trịnh Tú": {
+      "voice": "Ngọc Linh",
+      "pitch": 2
+    },
+    "Trần Minh Công": {
+      "voice": "Quốc Tuấn",
+      "pitch": -1
+    },
+    "Cụ già": {
+      "voice": "Thanh Bình",
+      "pitch": -1
+    },
+    "Nhà sư": {
+      "voice": "Quốc Tuấn",
+      "pitch": -3
+    },
+    "Bác nông dân": {
+      "voice": "Thanh Bình",
+      "pitch": -2
+    },
+    "Trẻ thôn bên": {
+      "voice": "Mai Anh",
+      "pitch": 6
+    },
+    "Lính": {
+      "voice": "Thiện Minh",
+      "pitch": -2
+    },
+    "Quan": {
+      "voice": "Hải Đăng",
+      "pitch": -2
+    },
+    "Lính sứ quân": {
+      "voice": "Hải Đăng",
+      "pitch": 1
+    }
+  }
+}

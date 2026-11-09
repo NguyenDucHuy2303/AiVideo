@@ -12,7 +12,7 @@ import path from "node:path";
 import os from "node:os";
 import { ROOT } from "../config.ts";
 import { exists } from "../utils/fs.ts";
-import { run } from "../utils/process.ts";
+import { run, wasInterrupted } from "../utils/process.ts";
 import { ollama, type LlmProvider } from "../script/providers.ts";
 
 export const STUDIO_DIR = path.join(ROOT, "studio");
@@ -160,7 +160,8 @@ export async function think<T = unknown>(a: Ask & { schema: object }, log: (s: s
     log(`  ${a.step}: Claude ${a.model ?? "sonnet"}, ${weigh(r.usage).toLocaleString("vi")} tokens`);
     return { data: r.data as T, by: `claude-${a.model ?? "sonnet"}` };
   } catch (err) {
-    if (err instanceof BrainPaused) throw err;
+    // Paused, or the studio is shutting down: stop here (the job is picked up again later).
+    if (err instanceof BrainPaused || wasInterrupted()) throw err;
     const cfg = await brainSettings();
     log(`  ${a.step}: ${(err as Error).message} → local ${cfg.fallbackModel}`);
     const local = await localModel(cfg.fallbackModel);

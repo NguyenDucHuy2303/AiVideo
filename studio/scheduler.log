@@ -28,3 +28,21 @@
 2026-11-09 11:07:02 [ngo-quyen-va-tran-bach-dang] design-cast: Claude sonnet, 19.597 tokens
 2026-11-09 11:07:10 → write dinh-bo-linh-co-lau-tap-tran (giờ hành chính)
 2026-11-09 11:07:13 [dinh-bo-linh-co-lau-tap-tran] research: Đinh Tiên Hoàng, Quần thể di tích thờ Vua Đinh ở Ninh Bình
+2026-11-09 11:09:26 [dinh-bo-linh-co-lau-tap-tran] write-script: Claude opus, 38.015 tokens
+2026-11-09 11:09:26 [dinh-bo-linh-co-lau-tap-tran] cast and costume sheet
+2026-11-09 11:10:17 [dinh-bo-linh-co-lau-tap-tran] design-cast: Claude sonnet, 22.601 tokens
+2026-11-09 11:10:30 → write ly-cong-uan-doi-do-ra-thang-long (giờ hành chính)
+2026-11-09 11:10:34 [ly-cong-uan-doi-do-ra-thang-long] research: Lý Thái Tổ, Chiếu dời đô, Thăng Long
+2026-11-09 11:12:49 [ly-cong-uan-doi-do-ra-thang-long] write-script: Claude opus, 31.798 tokens
+2026-11-09 11:12:49 [ly-cong-uan-doi-do-ra-thang-long] new era: ly
+2026-11-09 11:12:56 [ly-cong-uan-doi-do-ra-thang-long] era research: Nhà Lý, Khủng hoảng cuối thời nhà Lý, Lịch sử Việt Nam
+2026-11-09 11:14:24 [ly-cong-uan-doi-do-ra-thang-long] build-era-ly: Claude opus, 32.112 tokens
+2026-11-09 11:14:24 [ly-cong-uan-doi-do-ra-thang-long] era ly written to library/eras.json (15 archetypes)
+2026-11-09 11:14:24 [ly-cong-uan-doi-do-ra-thang-long] cast and costume sheet
+2026-11-09 11:15:08 [ly-cong-uan-doi-do-ra-thang-long] design-cast: Claude sonnet, 20.822 tokens
+2026-11-09 11:15:54 → write su-tich-ho-guom (giờ hành chính)
+2026-11-09 11:15:57 [su-tich-ho-guom] research: Hồ Hoàn Kiếm, Lê Thái Tổ, Thuận Thiên Kiếm
+2026-11-09 11:15:57 [su-tich-ho-guom] write-script: Claude Code failed on write-script: interrupted → local gemma3:12b
+2026-11-09 11:53:45 scheduler started (pid 246031)
+2026-11-09 11:53:45 → write su-tich-ho-guom (giờ hành chính)
+2026-11-09 11:53:45 [su-tich-ho-guom] research: Hồ Hoàn Kiếm, Lê Thái Tổ, Thuận Thiên Kiếm
