@@ -1,40 +1,50 @@
 [
   {
     "id": "tam",
-    "name": "Tấm",
+    "name": "Tấm (làm lụng)",
     "kind": "human",
     "look": {
       "body": "woman",
       "build": "slim",
-      "skin": "#e0aa74",
+      "skin": "#e8b27c",
       "outfit": {
-        "type": "dress",
-        "color": "#7a5230",
-        "skirt": "#1a1a1a",
-        "trim": "#a07a4a"
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#7a5a3a",
+          "trim": "#5a3a20",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "inner": {
+          "color": "#e57373"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#1a1a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#e8b923",
+          "ends": true
+        }
       },
       "hair": {
-        "style": "turban",
-        "color": "#111111"
+        "style": "long",
+        "color": "#1a1a1a"
+      },
+      "headwear": "khan_mo_qua",
+      "earrings": false,
+      "face": {
+        "shape": "oval",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin",
+        "eyeScale": 1.15
       },
       "prop": {
         "type": "basket"
-      },
-      "props": [
-        {
-          "type": "basket"
-        },
-        {
-          "type": "bowl"
-        }
-      ],
-      "face": {
-        "shape": "oval",
-        "eyes": "almond",
-        "nose": "button",
-        "brows": "thin",
-        "iris": "#2a1a10",
-        "eyeScale": 1.15
       }
     },
     "scale": 1,
@@ -42,39 +52,52 @@
     "speaks": [
       "Tấm"
     ],
-    "role": "Tấm thuở mồ côi: tóc đen vấn khăn mỏ quạ, áo cánh nâu vá, váy đen dài, chân đất, mặt hiền.",
+    "role": "Cô gái mồ côi hiền lành: khăn mỏ quạ, áo cánh nâu, váy đen dài, mắt tròn to, tay xách giỏ.",
     "designed": true
   },
   {
     "id": "tam_hoi",
-    "name": "Tấm đi hội",
+    "name": "Tấm (đi hội)",
     "kind": "human",
     "look": {
       "body": "woman",
       "build": "slim",
       "skin": "#e8b27c",
       "outfit": {
-        "type": "dress",
-        "color": "#cfe8d8",
-        "skirt": "#111111",
-        "trim": "#d62828"
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#cfe8e0",
+          "trim": "#e8b923",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "none"
+        },
+        "inner": {
+          "color": "#d62828"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#1a1a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#e8b923",
+          "ends": true
+        }
       },
       "hair": {
-        "style": "turban",
-        "color": "#111111"
+        "style": "long",
+        "color": "#1a1a1a"
       },
+      "headwear": "khan_mo_qua",
       "earrings": true,
-      "bracelets": true,
-      "prop": {
-        "type": "scroll"
-      },
       "face": {
         "shape": "oval",
-        "eyes": "almond",
+        "eyes": "round",
         "nose": "button",
         "brows": "thin",
-        "iris": "#2a1a10",
-        "eyeScale": 1.2
+        "eyeScale": 1.15
       }
     },
     "scale": 1,
@@ -83,46 +106,109 @@
     "speaks": [
       "Tấm"
     ],
-    "role": "Tấm đi hội: áo mớ ba nhiều lớp màu nhẹ, yếm lụa điều đỏ bên trong, xống lụa đen dài, khăn nhiễu, hài thêu hoa.",
+    "role": "Tấm trẩy hội: áo mớ ba màu xanh nhạt nhiều lớp, yếm điều đỏ kín đáo, xống lụa đen, khăn nhiễu.",
     "designed": true
   },
   {
-    "id": "tam_hau",
-    "name": "Hoàng hậu Tấm",
+    "id": "tam_hoanghau",
+    "name": "Tấm (hoàng hậu)",
     "kind": "human",
     "look": {
       "body": "woman",
       "build": "slim",
       "skin": "#e8b27c",
       "outfit": {
-        "type": "dress",
-        "color": "#f3e3a0",
-        "skirt": "#f3e3a0",
-        "trim": "#d4a017"
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#f3e3a0",
+          "trim": "#c9a227",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "flowers"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#a33a2a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#c9a227",
+          "ends": true
+        }
       },
       "hair": {
         "style": "bun",
-        "color": "#111111"
+        "color": "#1a1a1a"
       },
+      "headwear": "khan_van",
       "earrings": true,
       "bracelets": true,
       "face": {
         "shape": "oval",
-        "eyes": "almond",
+        "eyes": "round",
         "nose": "button",
         "brows": "thin",
-        "iris": "#2a1a10",
-        "eyeScale": 1.2
+        "eyeScale": 1.15
       }
     },
     "scale": 1,
     "group": false,
     "formOf": "tam_hoi",
     "speaks": [
-      "Tấm",
-      "Vàng anh"
+      "Tấm"
     ],
-    "role": "Tấm làm hoàng hậu: áo giao lĩnh lụa vàng nhạt, váy dài, tóc búi cài trâm; cũng là giọng chim vàng anh.",
+    "role": "Tấm làm hoàng hậu: áo giao lĩnh lụa vàng nhạt, váy dài đỏ thẫm, tóc búi, khăn vấn, hoa tai.",
+    "designed": true
+  },
+  {
+    "id": "vua",
+    "name": "Vua",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "vien_linh",
+          "color": "#e8b923",
+          "trim": "#b22222",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "dragon"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#f3e9d2",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#b22222",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "binh_thien",
+      "beard": "#1a1a1a",
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "long",
+        "brows": "thick",
+        "mustache": "thin"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Vua"
+    ],
+    "role": "Nhà vua trẻ: long bào vàng thêu rồng, mũ bình thiên, đai đỏ, quần trắng, không râu.",
     "designed": true
   },
   {
@@ -134,22 +220,39 @@
       "build": "average",
       "skin": "#e0aa74",
       "outfit": {
-        "type": "dress",
-        "color": "#ff7eb6",
-        "skirt": "#5a1e3c",
-        "trim": "#e0245e"
+        "type": "parts",
+        "top": {
+          "cut": "tu_than",
+          "color": "#f07fa6",
+          "trim": "#c2185b",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "flowers"
+        },
+        "inner": {
+          "color": "#d81b60"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#3a1a2a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#ffd166",
+          "ends": true
+        }
       },
       "hair": {
-        "style": "turban",
+        "style": "short",
         "color": "#1a1a1a"
       },
+      "headwear": "khan_mo_qua",
       "earrings": true,
       "face": {
         "shape": "round",
-        "eyes": "droopy",
+        "eyes": "narrow",
         "nose": "round",
         "brows": "thick",
-        "iris": "#3a2418",
         "eyeScale": 0.95
       }
     },
@@ -158,7 +261,7 @@
     "speaks": [
       "Cám"
     ],
-    "role": "Cám: áo tứ thân hồng sặc sỡ, yếm thắm, khăn mỏ quạ, mặt tròn hay bĩu môi.",
+    "role": "Em cùng cha khác mẹ: áo tứ thân hồng sặc sỡ, yếm thắm, khăn mỏ quạ, mặt tròn hay bĩu môi.",
     "designed": true
   },
   {
@@ -170,23 +273,42 @@
       "build": "heavy",
       "skin": "#d0a070",
       "outfit": {
-        "type": "dress",
-        "color": "#4a2c1a",
-        "skirt": "#2a1a12",
-        "trim": "#8a6a3a"
+        "type": "parts",
+        "top": {
+          "cut": "tu_than",
+          "color": "#4a2f22",
+          "trim": "#2b1b17",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "inner": {
+          "color": "#8d6e63"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#1a1a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#7a1f1f",
+          "ends": true
+        }
       },
       "hair": {
-        "style": "turban",
-        "color": "#222222"
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "khan_van",
+      "prop": {
+        "type": "stick"
       },
       "face": {
-        "shape": "square",
+        "shape": "jowl",
         "eyes": "narrow",
         "nose": "long",
         "brows": "bushy",
-        "wrinkles": true,
-        "iris": "#2a1a10",
-        "eyeScale": 0.9
+        "eyeScale": 0.95
       }
     },
     "scale": 1,
@@ -194,7 +316,7 @@
     "speaks": [
       "Dì ghẻ"
     ],
-    "role": "Dì ghẻ: áo tứ thân nâu sẫm, khăn vấn, thắt lưng, thân hình đậm, mặt cau có nhưng không quá dữ.",
+    "role": "Mẹ của Cám: áo tứ thân nâu sẫm, khăn vấn, thắt lưng đỏ sẫm, thân hình đầy đặn, mặt cau có.",
     "designed": true
   },
   {
@@ -203,40 +325,52 @@
     "kind": "human",
     "look": {
       "body": "elder",
-      "build": "slim",
+      "build": "average",
       "skin": "#e8b27c",
       "outfit": {
-        "type": "robe",
-        "color": "#ffffff",
-        "skirt": "#f5f5f5",
-        "trim": "#dfe8f0"
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#f5f5f0",
+          "trim": "#c9a227",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#f5f5f0",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#c9a227",
+          "ends": true
+        }
       },
       "hair": {
         "style": "long",
-        "color": "#f5f5f5"
+        "color": "#ffffff"
       },
-      "beard": "#f5f5f5",
-      "cape": true,
+      "beard": "#ffffff",
       "prop": {
-        "type": "bamboo"
+        "type": "stick"
       },
       "face": {
-        "shape": "oval",
+        "shape": "round",
         "eyes": "droopy",
         "nose": "round",
         "brows": "bushy",
         "wrinkles": true,
-        "mustache": "droopy",
-        "iris": "#5a6a7a",
-        "eyeScale": 1
-      }
+        "mustache": "droopy"
+      },
+      "cape": true
     },
     "scale": 1,
     "group": false,
     "speaks": [
       "Bụt"
     ],
-    "role": "Ông Bụt: râu tóc bạc trắng dài, áo choàng trắng rộng, gậy trúc, hiền từ, hiện trên mây trắng.",
+    "role": "Ông Bụt hiền từ: râu tóc bạc trắng dài, áo choàng trắng rộng viền vàng, tay chống gậy trúc.",
     "designed": true
   },
   {
@@ -248,31 +382,42 @@
       "build": "slim",
       "skin": "#d0a070",
       "outfit": {
-        "type": "dress",
-        "color": "#6b4a2b",
-        "skirt": "#2a2018",
-        "trim": "#8a6a3a"
+        "type": "parts",
+        "top": {
+          "cut": "tu_than",
+          "color": "#6d4c3a",
+          "trim": "#3e2723",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "inner": {
+          "color": "#a1887f"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#1a1a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#5d4037",
+          "ends": true
+        }
       },
       "hair": {
-        "style": "turban",
+        "style": "bun",
         "color": "#cfcfcf"
       },
-      "props": [
-        {
-          "type": "basket"
-        },
-        {
-          "type": "bowl"
-        }
-      ],
+      "headwear": "khan_mo_qua",
+      "prop": {
+        "type": "stick"
+      },
       "face": {
-        "shape": "jowl",
+        "shape": "round",
         "eyes": "droopy",
         "nose": "round",
         "brows": "thin",
-        "wrinkles": true,
-        "iris": "#3a2418",
-        "eyeScale": 1
+        "wrinkles": true
       }
     },
     "scale": 1,
@@ -280,60 +425,23 @@
     "speaks": [
       "Bà lão"
     ],
-    "role": "Bà lão: áo nâu, khăn mỏ quạ tóc bạc, lưng còng, cầm bị và bát nước chè.",
+    "role": "Bà lão bán nước, mẹ nuôi của Tấm: áo nâu, khăn mỏ quạ, tóc bạc, lưng còng, chống gậy.",
     "designed": true
   },
   {
-    "id": "vua",
-    "name": "Vua",
-    "kind": "human",
-    "look": {
-      "body": "man",
-      "build": "average",
-      "skin": "#e8b27c",
-      "outfit": {
-        "type": "robe",
-        "color": "#f2c230",
-        "skirt": "#d4a017",
-        "trim": "#c1121f"
-      },
-      "hair": {
-        "style": "short",
-        "color": "#111111"
-      },
-      "headwear": "crown",
-      "face": {
-        "shape": "square",
-        "eyes": "almond",
-        "nose": "long",
-        "brows": "thick",
-        "mustache": "thin",
-        "iris": "#2a1a10",
-        "eyeScale": 1
-      }
-    },
-    "scale": 1,
-    "group": false,
-    "speaks": [
-      "Vua"
-    ],
-    "role": "Vua: áo long bào vàng thêu rồng, mũ miện vàng, đai ngọc, trẻ tuổi, ria mỏng.",
-    "designed": true
-  },
-  {
-    "id": "ngua_tam",
+    "id": "ngua",
     "name": "Ngựa của Tấm",
     "kind": "horse",
     "look": {
       "kind": "plain",
-      "color": "#8a5a3a",
-      "mane": "#2a1a10",
-      "saddle": "#c0392b"
+      "color": "#8b5a2b",
+      "mane": "#2b1b17",
+      "saddle": true
     },
     "scale": 1,
     "group": false,
     "speaks": [],
-    "role": "Ngựa nhỏ hóa thật từ lọ xương bống, yên cương đỏ xinh xắn.",
+    "role": "Ngựa nâu từ lọ xương bống, có yên cương xinh xắn.",
     "designed": true
   },
   {
@@ -345,31 +453,95 @@
       "build": "average",
       "skin": "#d9a06c",
       "outfit": {
-        "type": "tunic",
-        "color": "#c1121f",
-        "skirt": "#c1121f",
-        "trim": "#f2c230"
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#c0392b",
+          "trim": "#f3e9d2",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#2b2b2b",
+          "length": "shin"
+        },
+        "belt": {
+          "color": "#e8b923",
+          "ends": true
+        }
       },
       "hair": {
-        "style": "turban",
-        "color": "#111111"
+        "style": "bun",
+        "color": "#1a1a1a"
       },
+      "headwear": "non_chop",
       "prop": {
         "type": "spear"
       },
       "face": {
-        "shape": "square",
+        "shape": "oval",
         "eyes": "round",
-        "nose": "round",
-        "brows": "thick",
-        "iris": "#2a1a10",
-        "eyeScale": 1
+        "nose": "button",
+        "brows": "thick"
       }
     },
     "scale": 1,
     "group": true,
     "speaks": [],
-    "role": "Đoàn lính hầu: áo nẹp đỏ viền vàng, khăn vấn, cầm giáo, đi hộ giá vua.",
+    "role": "Đoàn lính hầu của vua: áo nẹp đỏ, quần đen, nón chóp, cầm giáo.",
+    "designed": true
+  },
+  {
+    "id": "co_gai",
+    "name": "Các cô gái dự hội",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "build": "slim",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "tu_than",
+          "color": "#7fb3d5",
+          "trim": "#2e6e99",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "inner": {
+          "color": "#e57373"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#1a1a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#e8b923",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "non_quai_thao",
+      "earrings": true,
+      "face": {
+        "shape": "oval",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin",
+        "eyeScale": 1.1
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Các cô gái thử hài: áo tứ thân màu nhẹ, yếm đỏ, nón quai thao.",
     "designed": true
   },
   {
@@ -381,28 +553,38 @@
       "build": "average",
       "skin": "#d0a070",
       "outfit": {
-        "type": "tunic",
-        "color": "#8a6a45",
-        "skirt": "#3a2a1a",
-        "trim": "#b08a55"
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#7a5230",
+          "trim": "#5a3a20",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#5a3a20",
+          "length": "shin"
+        }
       },
       "hair": {
-        "style": "turban",
-        "color": "#222222"
+        "style": "bun",
+        "color": "#1a1a1a"
       },
+      "headwear": "khan_chit",
+      "props": [],
       "face": {
-        "shape": "round",
+        "shape": "square",
         "eyes": "round",
-        "nose": "button",
-        "brows": "thin",
-        "iris": "#2a1a10",
-        "eyeScale": 1
+        "nose": "round",
+        "brows": "thick"
       }
     },
     "scale": 1,
     "group": true,
     "speaks": [],
-    "role": "Dân làng đi hội: áo nâu giản dị, khăn vấn, đông vui.",
+    "role": "Dân làng đi hội: áo nâu, quần nâu, khăn chít đầu, dáng hiền lành.",
     "designed": true
   }
 ]

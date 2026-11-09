@@ -7,6 +7,7 @@
  * One painting per set × time of day × era, kept in assets/library/generated/backdrops and
  * reused by every story.
  */
+import { readFileSync } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -35,11 +36,21 @@ const TIMES: Record<string, string> = {
 const ERAS: Record<string, string> = {
   van_lang: "ancient Vietnam, the Red River delta in the Bronze Age",
 };
+/** An era's landscape: the words above, else what the era builder wrote (library/eras.json). */
+function eraWords(era?: string): string {
+  if (!era) return "Vietnam";
+  if (ERAS[era]) return ERAS[era];
+  try {
+    const e = JSON.parse(readFileSync(new URL("./library/eras.json", import.meta.url), "utf8"))[era];
+    if (e?.backdrop) return `Vietnam, ${e.backdrop}`;
+  } catch {}
+  return "Vietnam";
+}
 
 export function backdropPrompt(set: string, time: string, era?: string): string {
   // The sky realm is above any country: no land words in its prompt.
   if (set === "sky") return [SETS.sky, TIMES[time] ?? TIMES.day].join(", ");
-  return [ERAS[era ?? ""] ?? "Vietnam", SETS[set] ?? SETS.village, TIMES[time] ?? TIMES.day].join(", ");
+  return [eraWords(era), SETS[set] ?? SETS.village, TIMES[time] ?? TIMES.day].join(", ");
 }
 
 let generator: Promise<ImageGen | undefined> | undefined;

@@ -1,0 +1,72 @@
+{
+  "title": "Sơn Tinh – Thủy Tinh",
+  "kind": "story",
+  "scenes": [
+    {
+      "narration": "Các bạn nhỏ ơi, vì sao cứ đến mùa mưa, nước sông lại dâng lên cuồn cuộn? Và vì sao ông bà ta phải đắp những con đê thật dài, thật cao? Hôm nay, Huy Kể Chuyện sẽ kể cho các bạn nghe truyền thuyết Sơn Tinh, Thủy Tinh nhé!",
+      "chapter": "Sơn Tinh – Thủy Tinh",
+      "onScreen": {},
+      "visual": {
+        "description": "ancient Vietnam",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Ngày xửa ngày xưa, ở nước Văn Lang, vua Hùng thứ mười tám có một người con gái tên là Mị Nương. Nàng xinh đẹp như hoa, tính nết hiền dịu. Vua cha yêu thương nàng hết mực. Vua Hùng (vui vẻ): \"Con gái ta đã lớn rồi. Ta phải tìm cho con một người chồng thật xứng đáng.\" Mị Nương (vui vẻ): \"Thưa cha, con xin nghe theo cha ạ.\"",
+      "chapter": "Sơn Tinh – Thủy Tinh",
+      "onScreen": {},
+      "visual": {
+        "description": "ancient Vietnam",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Vua sai sứ giả đi khắp các làng, thổi tù và rao tin kén rể. Sứ giả (hô to): \"Hỡi bà con Văn Lang! Vua Hùng kén rể cho công chúa Mị Nương! Ai tài giỏi, hãy về kinh đô!\" Dân làng (ngạc nhiên): \"Ồ! Không biết chàng trai nào sẽ được làm rể vua nhỉ?\"",
+      "chapter": "Sơn Tinh – Thủy Tinh",
+      "onScreen": {},
+      "visual": {
+        "description": "ancient Vietnam",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Ít lâu sau, có hai chàng trai đến kinh đô cầu hôn. Một chàng từ phía núi đi xuống, một chàng từ phía biển đi lên. Dân làng (sửng sốt): \"Kìa! Hai chàng trai khôi ngô quá! Trông họ chẳng giống người thường chút nào!\"",
+      "chapter": "Sơn Tinh – Thủy Tinh",
+      "onScreen": {},
+      "visual": {
+        "description": "ancient Vietnam",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Chàng thứ nhất là Sơn Tinh, chúa vùng non cao núi Tản Viên. Chàng vẫy tay về phía đông, phía đông nổi cồn bãi. Chàng vẫy tay về phía tây, phía tây mọc lên từng dãy núi đồi. Sơn Tinh (dõng dạc): \"Thưa đức vua, con là Sơn Tinh ở núi Tản Viên. Con xin được cầu hôn công chúa Mị Nương.\"",
+      "chapter": "Sơn Tinh – Thủy Tinh",
+      "onScreen": {},
+      "visual": {
+        "description": "ancient Vietnam",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Chàng thứ hai là Thủy Tinh, chúa vùng nước thẳm biển cả. Chàng gọi gió, gió đến. Chàng hô mưa, mưa về. Thủy Tinh (tự hào): \"Thưa đức vua, Thủy Tinh này là chúa biển cả. Chỉ có ta mới xứng với công chúa!\"",
+      "chapter": "Sơn Tinh – Thủy Tinh",
+      "onScreen": {},
+      "visual": {
+        "description": "ancient Vietnam",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    }
+  ]
+}

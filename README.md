@@ -6,14 +6,28 @@ Kịch bản AI → giọng đọc → MP4 9:16 + 16:9, chạy hoàn toàn local
 chủ đề  →  script: LLM local (Ollama) viết  →  storyboard.json  →  build: TTS từng câu, chọn ảnh, dựng timeline  →  timeline.json  →  render (FFmpeg)  →  MP4
 ```
 
-## Studio tự động (đang xây)
+## Studio tự động
 
-Chỉ cần duyệt: phần mềm tự đề xuất chủ đề, tìm tư liệu (Wikipedia tiếng Việt), viết kịch bản 5–8 phút có lời thoại, rồi làm video. "Bộ não" là Claude (qua Claude Code, gói của bạn) cho việc cần suy nghĩ, có sổ token và trần ngân sách; quá trần thì tự chuyển sang mô hình local (Ollama). Dữ liệu ở `studio/` (`jobs/<tên>/`: kịch bản, nguồn, giọng; `ledger.jsonl`: token; `settings.json`: trần).
+Bạn chỉ cần duyệt. Phần mềm tự đề xuất chủ đề, tìm tư liệu (Wikipedia tiếng Việt), viết kịch bản 5–8 phút có lời thoại, thiết kế nhân vật và vẽ **bảng trang phục**, dựng thời đại còn thiếu trong thư viện, rồi làm video.
 
 ```bash
-npm run wata -- topics --count 5          # đề xuất chủ đề → studio/jobs/
-npm run wata -- write son-tinh-thuy-tinh  # tìm tư liệu + viết kịch bản → chờ duyệt
-npm run wata -- tokens                    # đã dùng bao nhiêu token
+npm run wata -- studio                     # trang web http://127.0.0.1:5175 + bộ lập lịch
+bash scripts/install-studio-service.sh     # chạy nền thường trực (tự bật cùng máy)
+```
+
+- **Trang web**: Chờ bạn duyệt (kịch bản + bảng trang phục + giọng nghe thử, rồi video) với nút Duyệt / Yêu cầu sửa / Bỏ; Đang làm; Xong; Token (sổ token, trần ngày / kịch bản / video, nút **Tạm dừng Claude** khi bạn cần token cho việc khác và **Tiếp tục tự động**).
+- **Lịch**: giờ hành chính (T2–T6, 8:00–18:00) chỉ làm việc nhẹ, ưu tiên thấp; ngoài giờ và cuối tuần render. Luôn giữ sẵn 6 kịch bản chờ duyệt. Sửa trong `studio/settings.json`.
+- **Bộ não**: Claude (qua Claude Code, gói của bạn) cho việc cần suy nghĩ; mỗi lần gọi ghi vào `studio/ledger.jsonl`; quá trần thì chuyển sang Ollama (`gemma3:12b` nếu đã tải); tạm dừng thì việc cần Claude đứng chờ.
+- **Quy trình một video**: viết → (thời đại mới nếu cần) → nhân vật, bảng trang phục → **bạn duyệt** → giọng, chỉ đạo cảnh, tranh nền (ban ngày) → render (ban đêm) → **bạn duyệt video** (ghi chú sửa thì làm lại cảnh đó) → xong.
+
+Lệnh lẻ (thử từng bước):
+
+```bash
+npm run wata -- topics --count 5                     # đề xuất chủ đề
+npm run wata -- write son-tinh-thuy-tinh             # tìm tư liệu, viết kịch bản, nhân vật, bảng trang phục
+npm run wata -- era ly_tran --title "Nhà Trần"       # dựng một thời đại vào thư viện
+npm run wata -- produce son-tinh-thuy-tinh --test 6  # chạy thử sản xuất trên 6 cảnh đầu
+npm run wata -- tokens                               # token đã dùng
 ```
 
 AI chỉ viết lời và gợi ý. Thời lượng cảnh lấy từ độ dài giọng đọc thật, phụ đề theo thời điểm của từng câu, mọi thứ renderer cần đều do code quyết định.

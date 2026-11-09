@@ -37,11 +37,13 @@
     const outfit = look.outfit || { type: "tunic", color: "#8a5a2a" };
     const P = { root: g(parent), B, look, S };
     const far = (hex) => shade(hex, -0.25);
-    const legHex = outfit.type === "armor" ? "#55606f" : outfit.type === "enemy" ? "#3a2a2a" : look.legs || skin;
+    // Clothes made of parts (every era after Văn Lang): garments.js decides colours and lengths.
+    const G = outfit.type === "parts" ? WA.garments.resolve(outfit, look, B, skin) : null;
+    const legHex = G ? look.legs || G.legHex : outfit.type === "armor" ? "#55606f" : outfit.type === "enemy" ? "#3a2a2a" : look.legs || skin;
     const bareLegs = outfit.type === "loincloth" || outfit.type === "dongson" || outfit.type === "plume";
-    const pantsHex = look.pants || (outfit.type === "armor" ? "#3a4350" : bareLegs ? skin : "#5c3b22");
-    const feetHex = outfit.type === "armor" || outfit.type === "enemy" ? "#2b3139" : shade(skin, -0.1);
-    const sleeveHex = outfit.type === "armor" ? "#5d6a79" : outfit.type === "loincloth" || outfit.type === "dongson" || outfit.type === "plume" ? skin : outfit.type === "enemy" ? "#4a2626" : outfit.color;
+    const pantsHex = look.pants || (G ? G.pantsHex : outfit.type === "armor" ? "#3a4350" : bareLegs ? skin : "#5c3b22");
+    const feetHex = G ? G.feetHex : outfit.type === "armor" || outfit.type === "enemy" ? "#2b3139" : shade(skin, -0.1);
+    const sleeveHex = G ? G.sleeveHex : outfit.type === "armor" ? "#5d6a79" : outfit.type === "loincloth" || outfit.type === "dongson" || outfit.type === "plume" ? skin : outfit.type === "enemy" ? "#4a2626" : outfit.color;
 
     if (look.cape) P.cape = el("path", { fill: look.cape === true ? "url(#cape)" : look.cape, ...OUT }, P.root);
     const leg = (front) => {
@@ -57,9 +59,9 @@
     P.legF = leg(true);
     // Long clothes hang over both legs from the hips.
     const female = look.body === "woman";
-    const skirtLen = outfit.type === "robe" ? B.thigh + B.shin * 0.55 : outfit.type === "dress" ? B.thigh + B.shin * 0.85
+    const skirtLen = G ? (G.skirt ? G.skirt.len : 0) : outfit.type === "robe" ? B.thigh + B.shin * 0.55 : outfit.type === "dress" ? B.thigh + B.shin * 0.85
       : outfit.type === "dongson" && female ? B.thigh + B.shin * 0.8 : outfit.type === "plume" ? B.thigh + B.shin * 0.7 : 0;
-    const skirtHex = outfit.type === "dress" || outfit.type === "dongson" ? outfit.skirt || "#2e2420" : outfit.type === "plume" ? outfit.skirt || "#8a5a2a" : outfit.color;
+    const skirtHex = G ? (G.skirt ? G.skirt.color : skin) : outfit.type === "dress" || outfit.type === "dongson" ? outfit.skirt || "#2e2420" : outfit.type === "plume" ? outfit.skirt || "#8a5a2a" : outfit.color;
     if (skirtLen) {
       P.skirt = el("path", { fill: S.mat(skirtHex, true), ...OUT }, P.root);
       P.skirtFolds = el("path", { stroke: shade(skirtHex, -0.35), "stroke-width": 2.5, fill: "none", opacity: 0.6, "stroke-linecap": "round" }, P.root);
@@ -67,13 +69,22 @@
     // Đông Sơn skirts end in a patterned hem; the king's in a fringe of feathers.
     if (skirtLen && (outfit.type === "dongson" || outfit.type === "plume")) P.hem = el("path", { fill: "none", stroke: outfit.type === "plume" ? "#f2e6c8" : outfit.trim || "#c9902a", "stroke-width": outfit.type === "plume" ? 9 : 6, "stroke-dasharray": outfit.type === "plume" ? "4 7" : "10 6", "stroke-linecap": "round" }, P.root);
     P.skirtLen = skirtLen;
+    // A long top hangs over the legs (and the skirt) as a coat tail, drawn like a skirt.
+    if (G && G.coat) {
+      P.coat = el("path", { fill: S.mat(G.coat.color, true), ...OUT }, P.root);
+      P.coatFolds = el("path", { stroke: shade(G.coat.color, -0.35), "stroke-width": 2.5, fill: "none", opacity: 0.6, "stroke-linecap": "round" }, P.root);
+      if (G.coat.trim) P.coatHem = el("path", { fill: "none", stroke: G.coat.trim, "stroke-width": 6, "stroke-linecap": "round" }, P.root);
+      P.coatLen = G.coat.len;
+    }
 
     P.torso = g(P.root);
     const arm = (front) => {
       const sh = g(P.torso);
       WA.human.limb(S, sh, B.upper, B.armW, front ? sleeveHex : far(sleeveHex));
       const elbow = g(sh);
-      WA.human.limb(S, elbow, B.fore, B.armW * 0.88, front ? (outfit.type === "armor" || outfit.type === "enemy" ? skin : outfit.type === "robe" || outfit.type === "dress" ? outfit.color : skin) : far(skin));
+      const foreHex = G ? G.foreHex : outfit.type === "armor" || outfit.type === "enemy" ? skin : outfit.type === "robe" || outfit.type === "dress" ? outfit.color : skin;
+      WA.human.limb(S, elbow, B.fore, B.armW * 0.88, front ? foreHex : far(foreHex));
+      if (G && G.wide) WA.garments.sleeve(S, elbow, B, outfit.top.color || "#6a4a2a", front);
       if (look.tattoo && (outfit.type === "loincloth" || outfit.type === "dongson")) {
         for (let i = 0; i < 3; i++) el("path", { d: `M ${f2(-B.armW * 0.4)} ${f2(B.fore * (0.25 + i * 0.18))} l ${f2(B.armW * 0.4)} -6 l ${f2(B.armW * 0.4)} 6`, stroke: "#3a3a5a", "stroke-width": 2.5, fill: "none", opacity: 0.55 }, elbow);
       }
@@ -99,7 +110,7 @@
       P.props[pr.type] = WA.human.prop(S, hand, pr.type);
     }
     P.activeProp = look.prop?.type ?? null;
-    P.root.insertBefore(P.legF.hip, P.skirt || P.torso);
+    P.root.insertBefore(P.legF.hip, P.skirt || P.coat || P.torso);
     P.legLen = B.thigh + B.shin + B.legW * 0.5;
     P.height = P.legLen + B.torsoH + B.headR * (B.round ? 2 : 2.35);
     return P;
@@ -131,6 +142,9 @@
       el("path", { d: `M ${f2(-w * 0.3)} ${f2(-T * 0.62)} q ${f2(w * 0.1)} ${f2(T * 0.12)} ${f2(w * 0.04)} ${f2(T * 0.3)} M ${f2(w * 0.18)} ${f2(-T * 0.35)} q ${f2(w * 0.08)} ${f2(T * 0.1)} ${f2(w * 0.02)} ${f2(T * 0.25)}`, stroke: shade(color, -0.3), "stroke-width": 2.5, fill: "none", opacity: 0.6, "stroke-linecap": "round" }, t);
     };
     switch (outfit.type) {
+      case "parts":
+        WA.garments.torso(S, t, B, outfit, skin, look);
+        break;
       case "dongson": {
         const female = look.body === "woman", color = outfit.color || "#8a5a2a";
         if (!(!female && look.bareChest)) folds(color);
@@ -230,6 +244,7 @@
   }
 
   function drawHeadwear(S, h, type, cx, cy, R) {
+    if (WA.garments && WA.garments.headwear(S, h, type, cx, cy, R)) return;
     switch (type) {
       case "nonla":
         el("path", { d: `M ${f2(cx - R * 1.9)} ${f2(cy - R * 0.35)} L ${f2(cx + R * 0.1)} ${f2(cy - R * 1.75)} L ${f2(cx + R * 2.0)} ${f2(cy - R * 0.35)} Q ${f2(cx)} ${f2(cy - R * 0.15)} ${f2(cx - R * 1.9)} ${f2(cy - R * 0.35)} Z`, fill: S.mat("#e9cf8f", true), ...OUT }, h);
@@ -393,6 +408,12 @@
       P.skirtFolds?.setAttribute("d", `M ${f2(-w * 0.15)} 4 Q ${f2(-w * 0.2 + sw * 0.5)} ${f2(L * 0.5)} ${f2(-w * 0.28 + sw)} ${f2(L - 6)} M ${f2(w * 0.2)} 4 Q ${f2(w * 0.26 + a * 0.4 + sw * 0.5)} ${f2(L * 0.5)} ${f2(w * 0.32 + a * 0.6 + sw)} ${f2(L - 6)}`);
       if (P.hem) P.hem.setAttribute("d", `M ${f2(-w * 0.62 - Math.abs(a) * 0.3 + sw)} ${f2(L - 8)} Q 0 ${f2(L + 6)} ${f2(w * 0.6 + a + sw)} ${f2(L - 8)}`);
     }
+    if (P.coat) {
+      const L = P.coatLen, w = B.torsoW, a = ((p.legF?.[0] || 0) - (p.legB?.[0] || 0)) * 0.55, sw = Math.sin(t * 3 + 1) * 2.5;
+      P.coat.setAttribute("d", `M ${f2(-w / 2)} -14 L ${f2(w / 2 + 3)} -14 L ${f2(w * 0.52 + a + sw)} ${f2(L)} Q 0 ${f2(L + 10)} ${f2(-w * 0.58 - Math.abs(a) * 0.3 + sw)} ${f2(L)} Z`);
+      P.coatFolds?.setAttribute("d", `M ${f2(-w * 0.1)} 4 Q ${f2(-w * 0.16 + sw * 0.5)} ${f2(L * 0.5)} ${f2(-w * 0.24 + sw)} ${f2(L - 6)} M ${f2(w * 0.22)} 4 Q ${f2(w * 0.28 + a * 0.4)} ${f2(L * 0.5)} ${f2(w * 0.3 + a * 0.6 + sw)} ${f2(L - 6)}`);
+      P.coatHem?.setAttribute("d", `M ${f2(-w * 0.58 - Math.abs(a) * 0.3 + sw)} ${f2(L - 4)} Q 0 ${f2(L + 8)} ${f2(w * 0.52 + a + sw)} ${f2(L - 4)}`);
+    }
     if (P.cape) {
       const w = p.capeWave || 0, fl = Math.sin(t * 13) * w, fl2 = Math.sin(t * 9 + 1) * w;
       P.cape.setAttribute("d", `M -14 ${-T + 12} C ${f2(-70 - w * 30)} ${f2(-T * 0.5 + fl * 10)} ${f2(-120 - w * 60)} ${f2(-30 + w * 10 + fl2 * 12)} ${f2(-170 - w * 110)} ${f2(40 - w * 25 + fl * 22)} Q ${f2(-120 - w * 80)} ${f2(70 - w * 10 + fl2 * 14)} ${f2(-60 - w * 50)} ${f2(58 - w * 4)} C -36 10 -30 ${f2(-T * 0.5)} 14 ${-T + 22} Z`);
@@ -408,7 +429,8 @@
   function points(P, p) {
     const s = p.scale ?? 1, f = p.facing ?? 1, B = P.B, T = B.torsoH;
     const hipY = p.seated ? p.y : p.y - (P.legLen - (p.dy || 0)) * s;
-    const top = hipY - (T + B.headR * (B.round ? 2 : 2.35)) * s - (P.look.headwear === "helmet" || P.look.headwear === "feather" ? B.headR * 1.3 * s : 0);
+    const tall = P.look.headwear === "helmet" || P.look.headwear === "feather" ? 1.3 : (WA.garments && WA.garments.TALL[P.look.headwear]) || 0;
+    const top = hipY - (T + B.headR * (B.round ? 2 : 2.35)) * s - B.headR * tall * s;
     // The front arm (and what it holds) by forward kinematics: angles are forward-positive.
     const lean = ((p.lean || 0) + (B.stoop || 0)) * (Math.PI / 180);
     const dir = (deg) => [Math.sin(deg), Math.cos(deg)];
@@ -429,5 +451,5 @@
     return { feet: [p.x, p.y], hips: [p.x, hipY], head, headR: B.headR * s, hand: [p.x + tip[0] * s * f, hipY + tip[1] * s], top, height: P.height * s, box };
   }
 
-  WA.human = { build, apply, points, limb, prop, BODIES };
+  WA.human = { build, apply, points, limb, prop, dongsonBand, BODIES };
 })();

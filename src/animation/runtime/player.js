@@ -31,6 +31,7 @@
     const S = WA.stage.createStage(container, W, H, scene.time || "day");
     // The era decides what may be drawn (Văn Lang: boat-roofed stilt houses…), see library/eras.json.
     S.era = scene.era;
+    S.architecture = scene.architecture;
     // Set objects can appear at a time ("from") and go away ("until").
     const objects = WA.scenery.build(S, scene.set?.name || "village", { ...(scene.set || {}), painted: !!scene.backdrop }) || [];
     // A painted backdrop (backdrops.ts): the capture waits until it is loaded.

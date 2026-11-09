@@ -77,8 +77,72 @@
   }
 
   /** Stilt house with a thatched roof; a warm lamp inside at dusk and night. */
+  /** Nhà tranh vách đất (northern village house): low earth walls under a deep thatched roof. */
+  function thatchHouse(S, parent, x, s, dark) {
+    const c = g(parent, { transform: `translate(${x},0) scale(${s})` });
+    const wall = dark ? "#a88a5e" : "#d2b07a", wood = dark ? "#5b3b26" : "#7a4f30", thatch = dark ? "#9a7a3e" : "#c9a050";
+    el("rect", { x: -230, y: -14, width: 460, height: 14, fill: S.mat("#9a8462", true), ...OUT }, c); // beaten-earth plinth
+    el("rect", { x: -200, y: -170, width: 400, height: 158, fill: S.mat(wall, true), ...OUT }, c);
+    for (let i = 0; i < 5; i++) el("path", { d: `M -200 ${-150 + i * 30} q 100 6 200 0 t 200 0`, stroke: shade(wall, -0.14), "stroke-width": 3, fill: "none", opacity: 0.6 }, c);
+    for (const dx of [-120, 0, 120]) {
+      el("rect", { x: dx - 34, y: -140, width: 68, height: 128, fill: "#3e2616", ...OUT }, c);
+      for (let i = 0; i < 4; i++) el("line", { x1: dx - 34 + i * 22, y1: -140, x2: dx - 34 + i * 22, y2: -12, stroke: wood, "stroke-width": 5 }, c); // bamboo lattice
+    }
+    if (S.time === "dusk" || S.time === "night") el("rect", { x: -28, y: -130, width: 56, height: 60, fill: "#ffcf7a", opacity: 0.55 }, c);
+    // The thatch: thick, low eaves, a hip roof with a straight ridge.
+    el("path", { d: "M -290 -150 Q -240 -175 -210 -300 L 210 -300 Q 240 -175 290 -150 Q 0 -128 -290 -150 Z", fill: S.mat(thatch, true), ...OUT }, c);
+    for (let i = -10; i <= 10; i++) el("line", { x1: i * 27, y1: -146 - Math.abs(i) * 0.5, x2: i * 19, y2: -296, stroke: shade(thatch, -0.25), "stroke-width": 3, opacity: 0.6 }, c);
+    el("path", { d: "M -290 -150 Q 0 -128 290 -150", stroke: shade(thatch, -0.4), "stroke-width": 9, fill: "none" }, c);
+    el("rect", { x: -222, y: -312, width: 444, height: 18, rx: 8, fill: S.mat(shade(thatch, -0.2), true), ...OUT }, c); // ridge
+    return c;
+  }
+
+  /** Nhà ngói: wooden columns, brick walls, a tiled roof whose corners curl up (đầu đao). */
+  function tileHouse(S, parent, x, s, dark) {
+    const c = g(parent, { transform: `translate(${x},0) scale(${s})` });
+    const wall = dark ? "#a8805c" : "#d9b07c", wood = dark ? "#5a2e1c" : "#7a3f22", tile = dark ? "#6a3222" : "#8e4430";
+    el("rect", { x: -240, y: -20, width: 480, height: 20, fill: S.mat("#9a8a70", true), ...OUT }, c);
+    el("rect", { x: -200, y: -190, width: 400, height: 172, fill: S.mat(wall, true), ...OUT }, c);
+    for (const dx of [-200, -100, 0, 100, 200]) el("rect", { x: dx - 9, y: -200, width: 18, height: 182, fill: S.mat(wood), ...OUT }, c);
+    for (const dx of [-150, 50]) el("rect", { x: dx, y: -160, width: 100, height: 140, fill: "#4a2414", ...OUT }, c);
+    if (S.time === "dusk" || S.time === "night") el("rect", { x: 60, y: -150, width: 80, height: 50, fill: "#ffcf7a", opacity: 0.55 }, c);
+    el("path", { d: "M -300 -190 Q -250 -205 -230 -320 L 230 -320 Q 250 -205 300 -190 Q 0 -176 -300 -190 Z", fill: S.mat(tile, true), ...OUT }, c);
+    for (let i = 0; i < 6; i++) el("path", { d: `M ${-282 + i * 10} ${-196 - i * 21} Q 0 ${-182 - i * 21} ${282 - i * 10} ${-196 - i * 21}`, stroke: shade(tile, -0.3), "stroke-width": 3, fill: "none" }, c);
+    el("rect", { x: -240, y: -334, width: 480, height: 18, rx: 6, fill: S.mat(shade(tile, -0.25), true), ...OUT }, c);
+    for (const sx of [-1, 1]) el("path", { d: `M ${sx * 300} -190 q ${sx * 34} -14 ${sx * 40} -54 q ${-sx * 12} 22 ${-sx * 44} 44 Z`, fill: S.mat(tile, true), ...OUT }, c); // curled corners
+    for (const sx of [-1, 1]) el("path", { d: `M ${sx * 240} -334 q ${sx * 20} -10 ${sx * 26} -40 q ${-sx * 10} 18 ${-sx * 30} 30 Z`, fill: S.mat(shade(tile, -0.25), true), ...OUT }, c);
+    return c;
+  }
+
+  /** A palace or đình of tiled roofs: two tiers with curled corners, red columns, stone steps. */
+  function tilePalace(S, parent, x, s) {
+    const c = g(parent, { transform: `translate(${x},0) scale(${s})` });
+    const red = "#9c2f1c", wall = "#e0b86a", tile = "#8a3a26", gold = "url(#gold)";
+    el("rect", { x: -360, y: -40, width: 720, height: 40, fill: S.mat("#a89a80", true), ...OUT }, c);
+    for (let i = 0; i < 3; i++) el("rect", { x: -70 + i * 6, y: -40 + i * 13, width: 140 - i * 12, height: 13, fill: "#bcae94", ...OUT, "stroke-width": 2 }, c);
+    el("rect", { x: -290, y: -250, width: 580, height: 210, fill: S.mat(wall, true), ...OUT }, c);
+    for (let i = -4; i <= 4; i++) el("rect", { x: i * 70 - 11, y: -262, width: 22, height: 222, fill: S.mat(red), ...OUT }, c);
+    for (const dx of [-140, 0, 140]) el("rect", { x: dx - 40, y: -220, width: 80, height: 180, fill: "#4a2414", ...OUT }, c);
+    const tier = (y, half, h) => {
+      el("path", { d: `M ${-half - 70} ${y} Q ${-half - 20} ${y - 14} ${-half} ${y - h} L ${half} ${y - h} Q ${half + 20} ${y - 14} ${half + 70} ${y} Q 0 ${y + 14} ${-half - 70} ${y} Z`, fill: S.mat(tile, true), ...OUT }, c);
+      for (let i = 0; i < 5; i++) el("path", { d: `M ${-half - 55 + i * 12} ${y - 4 - i * h / 5} Q 0 ${y + 8 - i * h / 5} ${half + 55 - i * 12} ${y - 4 - i * h / 5}`, stroke: shade(tile, -0.3), "stroke-width": 3, fill: "none" }, c);
+      for (const sx of [-1, 1]) el("path", { d: `M ${sx * (half + 70)} ${y} q ${sx * 40} -16 ${sx * 46} -66 q ${-sx * 14} 26 ${-sx * 52} 54 Z`, fill: S.mat(tile, true), ...OUT }, c);
+    };
+    tier(-250, 300, 90);
+    el("rect", { x: -200, y: -400, width: 400, height: 64, fill: S.mat(wall, true), ...OUT }, c);
+    tier(-390, 210, 100);
+    el("rect", { x: -230, y: -504, width: 460, height: 18, rx: 6, fill: S.mat(shade(tile, -0.25), true), ...OUT }, c);
+    // Two dragons facing a pearl on the ridge, as on palaces and communal houses.
+    for (const sx of [-1, 1]) el("path", { d: `M ${sx * 220} -504 q ${-sx * 40} -40 ${-sx * 110} -26 q ${sx * 30} -4 ${sx * 50} -24 q ${sx * 30} 20 ${sx * 60} 50 Z`, fill: S.mat("#5d7a5a", true), ...OUT, "stroke-width": 2.5 }, c);
+    el("circle", { cx: 0, cy: -540, r: 18, fill: gold, ...OUT }, c);
+    return c;
+  }
+
   function house(S, parent, x, s, dark) {
-    if (S.era === "van_lang") return boatHouse(S, parent, x, s, dark);
+    const style = (S.architecture && S.architecture.house) || (S.era === "van_lang" ? "boat" : "stilt");
+    if (style === "boat") return boatHouse(S, parent, x, s, dark);
+    if (style === "thatch") return thatchHouse(S, parent, x, s, dark);
+    if (style === "tile") return tileHouse(S, parent, x, s, dark);
     const c = g(parent, { transform: `translate(${x},0) scale(${s})` });
     const wood = dark ? "#5b3b26" : "#7a4f30", wall = dark ? "#a37a4c" : "#cfa266", thatch = dark ? "#93653a" : "#bf8746";
     for (const sx of [-110, -40, 40, 110]) el("rect", { x: sx - 8, y: -122, width: 16, height: 122, fill: S.mat(wood), ...OUT }, c);
@@ -96,6 +160,7 @@
 
   /** Văn Lang palace: a big stilt hall with a boat-shaped saddle roof and bird finials. */
   function palace(S, parent, x, s) {
+    if (S.architecture && S.architecture.palace === "tile") return tilePalace(S, parent, x, s);
     const c = g(parent, { transform: `translate(${x},0) scale(${s})` });
     const wood = "#7a3f22", red = "#9c2f1c", wall = "#d9a85c", thatch = "#b07a3c";
     el("rect", { x: -330, y: -24, width: 660, height: 24, fill: S.mat("#9a8a70", true), ...OUT }, c); // stone base
@@ -324,5 +389,5 @@
     return objects;
   }
 
-  WA.scenery = { build, object, house, boatHouse, palace, bamboo, palm, mountain };
+  WA.scenery = { build, object, house, boatHouse, thatchHouse, tileHouse, tilePalace, palace, bamboo, palm, mountain };
 })();

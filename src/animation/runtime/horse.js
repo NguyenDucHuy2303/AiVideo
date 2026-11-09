@@ -42,7 +42,10 @@
     el("path", { d: "M -40 34 C -32 -36 -6 -104 30 -140 C 58 -152 84 -134 80 -104 C 70 -60 58 -20 46 34 Z", fill: bodyFill, ...OUT }, Hh.neck);
     if (iron) for (let i = 0; i < 4; i++) el("path", { d: `M ${-26 + i * 14} ${10 - i * 34} q 32 4 56 -10`, stroke: "#a7b3c3", "stroke-width": 4, fill: "none", opacity: 0.7 }, Hh.neck);
     Hh.mane = g(Hh.neck);
-    for (let i = 0; i < 7; i++) el("path", { d: "M 0 0 C -32 -8 -58 -40 -70 -80 C -42 -58 -18 -44 8 -36 Z", fill: iron ? "url(#flame)" : look.mane || "#3a2418", transform: `translate(${-22 + i * 7},${-120 + i * 20})`, ...(iron ? {} : OUT) }, Hh.mane);
+    // The iron horse's mane is long flames; an ordinary horse's is short hair lying on the neck
+    // (long locks read as wings).
+    if (iron) for (let i = 0; i < 7; i++) el("path", { d: "M 0 0 C -32 -8 -58 -40 -70 -80 C -42 -58 -18 -44 8 -36 Z", fill: "url(#flame)", transform: `translate(${-22 + i * 7},${-120 + i * 20})` }, Hh.mane);
+    else for (let i = 0; i < 9; i++) el("path", { d: "M 0 0 C -12 2 -24 -6 -30 -24 C -16 -18 -6 -16 8 -14 Z", fill: look.mane || "#3a2418", transform: `translate(${-14 + i * 5},${-126 + i * 15}) rotate(${-10 + i * 2})`, ...OUT, "stroke-width": 2.5 }, Hh.mane);
     Hh.head = g(Hh.neck);
     el("path", { d: "M -24 -12 C -4 -40 44 -36 96 2 C 118 18 116 42 94 48 C 64 52 22 34 -14 22 Z", fill: bodyFill, ...OUT }, Hh.head);
     el("path", { d: "M 20 30 Q 60 46 94 48", stroke: INK, "stroke-width": 3.5, fill: "none" }, Hh.head);

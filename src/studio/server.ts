@@ -11,7 +11,7 @@ import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { ROOT } from "../config.ts";
-import { brainSettings, ledger, spent, weigh } from "../brain/claude.ts";
+import { brainSettings, ledger, saveBrainSettings, spent, weigh } from "../brain/claude.ts";
 import { jobDir, listJobs, loadJob, saveJob, setStatus, type JobStatus } from "./jobs.ts";
 import { schedulerState } from "./schedule.ts";
 
@@ -93,6 +93,15 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
         await saveJob(job);
       }
       return json(res, { job: await setStatus(job, to, note?.trim() ? `bạn: ${note.trim().slice(0, 200)}` : `bạn: ${parts[3]}`) });
+    }
+    if (req.method === "POST" && parts[1] === "settings") {
+      const b = await body(req) as Record<string, unknown>, change: Record<string, unknown> = {};
+      for (const k of ["perDayTokens", "perJobTokens", "perProduceTokens"]) {
+        const n = Number(b[k]);
+        if (b[k] !== undefined) { if (!Number.isFinite(n) || n < 0 || n > 50_000_000) return json(res, { error: `${k} không hợp lệ` }, 400); change[k] = Math.round(n); }
+      }
+      if (b.paused !== undefined) change.paused = !!b.paused;
+      return json(res, { settings: await saveBrainSettings(change) });
     }
     if (req.method === "GET" && parts[1] === "tokens") {
       const cfg = await brainSettings(), all = await ledger();

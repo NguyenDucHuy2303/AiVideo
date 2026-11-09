@@ -13,19 +13,22 @@ import path from "node:path";
 import { ROOT } from "../config.ts";
 import { exists } from "../utils/fs.ts";
 import { run } from "../utils/process.ts";
-import { claudeProvider } from "../brain/claude.ts";
+import { BrainPaused, claudeProvider } from "../brain/claude.ts";
 import { animate } from "../animation/compile/animate.ts";
 import { withBackdrop } from "../animation/backdrops.ts";
 import { loadScene } from "../animation/render.ts";
 import { renderStory } from "../animation/story.ts";
 import { costumeSheet, designCast, type Designed } from "./design.ts";
-import { jobDir, loadJob, saveJob, setStatus, type Job } from "./jobs.ts";
+import { jobDir, loadJob, saveJob, setStatus, type Job, type JobStatus } from "./jobs.ts";
 import { writeScript, type Plan } from "./write.ts";
+import { buildEra, loadEras } from "./era.ts";
 
 export const projectOf = (slug: string) => path.join(ROOT, "projects", slug);
 
-async function fail(slug: string, err: unknown): Promise<Job> {
+async function fail(slug: string, err: unknown, back?: JobStatus): Promise<Job> {
   const job = await loadJob(slug);
+  // Paused by the user: the job waits where it was, it has not failed.
+  if (err instanceof BrainPaused) return back && job.status !== back ? setStatus(job, back, "chờ: Claude tạm dừng") : job;
   job.error = (err as Error).message;
   return setStatus(job, "failed", job.error.slice(0, 300));
 }
@@ -38,6 +41,13 @@ export async function writeJob(slug: string, log: (s: string) => void = console.
     // A script already written (an interrupted run) is not written again.
     const resume = job.status === "writing" && (await exists(path.join(dir, "plan.json")));
     const problems = resume ? [] : await writeScript(slug, log);
+    // An era the library lacks is researched and built before the cast is designed in it.
+    if (job.era && !(await loadEras())[job.era]) {
+      const topicFile = path.join(dir, "topic.json");
+      const topic = (await exists(topicFile)) ? JSON.parse(await fs.readFile(topicFile, "utf8")) : {};
+      log(`  new era: ${job.era}`);
+      await buildEra(job.era, { eraName: topic.eraName, topic: job.topic, job: `era-${job.era}` }, log); // its own budget, once per era
+    }
     log(`  cast and costume sheet`);
     await designCast(slug, log);
     await costumeSheet(slug);
@@ -48,51 +58,70 @@ export async function writeJob(slug: string, log: (s: string) => void = console.
   }
 }
 
+/**
+ * Everything but the film, into a project folder: the cartoon tools' project (script lines
+ * as scenes, voices, speakers), the voice build, scene direction by the brain with the
+ * approved cast, and the backdrops. `scenes` keeps only the first n (a test run).
+ */
+async function buildProject(job: Job, proj: string, opts: { scenes?: number; notes?: string[]; redirect?: boolean; revoice?: boolean }, log: (s: string) => void): Promise<void> {
+  const dir = jobDir(job.slug), anim = path.join(proj, "anim");
+  const plan: Plan = JSON.parse(await fs.readFile(path.join(dir, "plan.json"), "utf8"));
+  const cast: Designed[] = JSON.parse(await fs.readFile(path.join(dir, "cast.json"), "utf8"));
+  await fs.mkdir(anim, { recursive: true });
+  const script = await fs.readFile(path.join(dir, "script.txt"), "utf8");
+  const lines = script.trim().split("\n").slice(1, opts.scenes ? opts.scenes + 1 : undefined);
+  await fs.writeFile(path.join(proj, "script.txt"), [plan.title, ...lines].join("\n") + "\n");
+  await fs.writeFile(path.join(proj, "storyboard.json"), JSON.stringify({
+    title: plan.title, kind: "story",
+    scenes: lines.map((narration) => ({ narration, chapter: plan.title, onScreen: {}, visual: { description: "ancient Vietnam", mood: "calm" }, camera: "ken_burns", transition: "cut" })),
+  }, null, 2));
+  const speakers: Record<string, string[]> = {};
+  for (const c of cast) for (const name of c.speaks) (speakers[name] ??= []).push(c.id);
+  const project = JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8"));
+  const subtitle = { "lịch sử": "Lịch sử Việt Nam", "truyền thuyết": "Truyền thuyết Việt Nam", "ngụ ngôn": "Truyện ngụ ngôn Việt Nam" }[job.kind ?? ""] ?? "Truyện cổ tích Việt Nam";
+  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers, thumbnail: { title: plan.title.replace(/\s*[–-]\s*/g, " "), subtitle } }, null, 2));
+  // Voices (the timing of everything else).
+  if (opts.revoice !== false || !(await exists(path.join(proj, "timeline.json")))) {
+    log("  voices");
+    await run(process.execPath, [path.join(ROOT, "src", "cli.ts"), "build", path.join(proj, "storyboard.json"), "--voice-only"], { cwd: ROOT, timeoutMs: 60 * 60_000 });
+  }
+  // Scene direction by the brain, with the approved cast; a video note goes to the director.
+  await fs.writeFile(path.join(anim, "cast.auto.json"), JSON.stringify(cast.map(({ speaks: _s, role: _r, ...c }) => c), null, 2));
+  if (opts.redirect) for (const f of await fs.readdir(anim)) if (/^s\d.*\.json$|^plans\.auto\.json$/.test(f)) await fs.rm(path.join(anim, f));
+  log("  scene direction");
+  await animate(proj, { provider: claudeProvider(job.slug, "produce", "sonnet", log, opts.notes ?? []), log: (l) => log(`  ${l.trim()}`) });
+  // Backdrops painted now (light hours: few threads), so the night only renders.
+  log("  backdrops");
+  for (const f of (await fs.readdir(anim)).filter((f) => /^s\d.*\.json$/.test(f)).sort()) await withBackdrop(await loadScene(path.join(anim, f)));
+}
+
 /** Approved (or sent back with a note on the video): everything but the film itself. */
 export async function prepare(slug: string, log: (s: string) => void = console.log): Promise<Job> {
+  let from: JobStatus | undefined;
   try {
     let job = await loadJob(slug);
-    const dir = jobDir(slug), proj = projectOf(slug), anim = path.join(proj, "anim");
     const fixing = job.status === "fix";
+    from = job.status;
     job = await setStatus(job, "producing", fixing ? "sửa theo góp ý" : "chuẩn bị");
-    const plan: Plan = JSON.parse(await fs.readFile(path.join(dir, "plan.json"), "utf8"));
-    const cast: Designed[] = JSON.parse(await fs.readFile(path.join(dir, "cast.json"), "utf8"));
-    await fs.mkdir(anim, { recursive: true });
-    // The project the cartoon tools read: the script's lines are the scenes.
-    const script = await fs.readFile(path.join(dir, "script.txt"), "utf8");
-    await fs.writeFile(path.join(proj, "script.txt"), script);
-    const lines = script.trim().split("\n").slice(1);
-    await fs.writeFile(path.join(proj, "storyboard.json"), JSON.stringify({
-      title: plan.title, kind: "story",
-      scenes: lines.map((narration) => ({ narration, chapter: plan.title, onScreen: {}, visual: { description: "ancient Vietnam", mood: "calm" }, camera: "ken_burns", transition: "cut" })),
-    }, null, 2));
-    const speakers: Record<string, string[]> = {};
-    for (const c of cast) for (const name of c.speaks) (speakers[name] ??= []).push(c.id);
-    const project = JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8"));
-    const subtitle = { "lịch sử": "Lịch sử Việt Nam", "truyền thuyết": "Truyền thuyết Việt Nam", "ngụ ngôn": "Truyện ngụ ngôn Việt Nam" }[job.kind ?? ""] ?? "Truyện cổ tích Việt Nam";
-    await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers, thumbnail: { title: plan.title.replace(/\s*[–-]\s*/g, " "), subtitle } }, null, 2));
-
-    // Voices (the timing of everything else).
-    if (!(await exists(path.join(proj, "timeline.json"))) || !fixing) {
-      log("  voices");
-      await run(process.execPath, [path.join(ROOT, "src", "cli.ts"), "build", path.join(proj, "storyboard.json"), "--voice-only"], { cwd: ROOT, timeoutMs: 60 * 60_000 });
-    }
-    // Scene direction by the brain, with the approved cast; a video note goes to the director.
-    const notes = job.notes.filter((n) => n.on === "video").map((n) => n.text);
-    await fs.writeFile(path.join(anim, "cast.auto.json"), JSON.stringify(cast.map(({ speaks: _s, role: _r, ...c }) => c), null, 2));
-    if (fixing) for (const f of await fs.readdir(anim)) if (/^s\d.*\.json$|^plans\.auto\.json$/.test(f)) await fs.rm(path.join(anim, f));
-    log("  scene direction");
-    await animate(proj, { provider: claudeProvider(slug, "produce", "sonnet", log, notes), log: () => {} });
-    // Backdrops painted now (light hours: few threads), so the night only renders.
-    log("  backdrops");
-    for (const f of (await fs.readdir(anim)).filter((f) => /^s\d.*\.json$/.test(f)).sort()) await withBackdrop(await loadScene(path.join(anim, f)));
+    await buildProject(job, projectOf(slug), { notes: job.notes.filter((n) => n.on === "video").map((n) => n.text), redirect: fixing, revoice: !fixing }, log);
     job = await loadJob(slug);
     job.stage = "ready";
     await saveJob(job);
     return setStatus(job, "producing", "sẵn sàng render");
   } catch (err) {
-    return fail(slug, err);
+    return fail(slug, err, from);
   }
+}
+
+/**
+ * A test of the whole production on the first scenes of a job, in projects/<slug>-thu: the
+ * job's own status is not touched (it can still be waiting for review). Returns the film.
+ */
+export async function testRun(slug: string, scenes: number, log: (s: string) => void = console.log): Promise<string> {
+  const proj = path.join(ROOT, "projects", `${slug}-thu`);
+  await buildProject(await loadJob(slug), proj, { scenes }, log);
+  log("  render");
+  return renderStory(proj, { onLog: log });
 }
 
 /** The film (heavy: nights and weekends). */

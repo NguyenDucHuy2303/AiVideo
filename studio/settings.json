@@ -1,5 +1,19 @@
 {
   "perJobTokens": 80000,
-  "perDayTokens": 300000,
-  "fallbackModel": "gemma3:12b"
+  "perDayTokens": 1000000,
+  "fallbackModel": "gemma3:12b",
+  "paused": false,
+  "office": {
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "08:00",
+    "end": "18:00"
+  },
+  "scriptsAhead": 6,
+  "officeThreads": 2
 }

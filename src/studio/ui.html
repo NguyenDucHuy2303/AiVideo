@@ -92,7 +92,8 @@ async function load() {
   jobs = r.jobs; sched = r.scheduler;
   const t = await fetch("/api/tokens").then((r) => r.json());
   const pct = Math.min(100, (t.today / t.settings.perDayTokens) * 100);
-  $("#tok").innerHTML = `Token hôm nay: ${fmt(t.today)} / ${fmt(t.settings.perDayTokens)} <span class="bar"><i style="width:${pct}%"></i></span>`;
+  $("#tok").innerHTML = t.settings.paused ? `⏸ Claude đang tạm dừng · <a href="#" style="color:#ffd27a" onclick="setPaused(false);return false">Tiếp tục tự động</a>`
+    : `Token hôm nay: ${fmt(t.today)} / ${fmt(t.settings.perDayTokens)} <span class="bar"><i style="width:${pct}%"></i></span>`;
   $("#sched").textContent = !sched ? "Bộ lập lịch chưa chạy" : sched.lastError && !sched.task ? `⚠ ${sched.lastError}` :
     `${sched.window === "office" ? "Giờ hành chính: việc nhẹ" : "Ngoài giờ: được render"} · ${sched.task ? `đang ${TASK[sched.task.what] || sched.task.what}${sched.task.slug ? `: ${sched.task.slug}` : ""}` : "đang chờ việc"}`;
   drawTabs(); drawList();
@@ -175,7 +176,18 @@ async function showTokens() {
   const t = await fetch("/api/tokens").then((r) => r.json());
   const byJob = {};
   for (const e of t.entries) { const k = e.job; (byJob[k] ||= { n: 0, w: 0, out: 0 }); byJob[k].n++; byJob[k].w += e.weighted; byJob[k].out += e.output; }
+  const st = t.settings;
   $("#detail").innerHTML = `<h2>Token đã dùng</h2>
+    <section><h3>Điều khiển</h3>
+      <p>${st.paused ? "⏸ <b>Claude đang tạm dừng</b>: việc cần Claude (viết kịch bản, chỉ đạo cảnh, dựng thời đại) đang chờ; render vẫn chạy." : "▶ <b>Đang tự động</b>: Claude làm việc trong giới hạn bên dưới."}</p>
+      <p><button class="${st.paused ? "ok" : "no"}" style="font-size:16px;padding:10px 18px;border-radius:10px;border:2px solid;cursor:pointer" onclick="setPaused(${!st.paused})">${st.paused ? "▶ Tiếp tục tự động" : "⏸ Tạm dừng Claude (tôi cần token)"}</button></p>
+      <table>
+        <tr><td>Trần mỗi ngày</td><td><input id="capDay" type="number" step="10000" value="${st.perDayTokens}"></td></tr>
+        <tr><td>Trần mỗi kịch bản (viết + trang phục + thời đại mới)</td><td><input id="capJob" type="number" step="10000" value="${st.perJobTokens}"></td></tr>
+        <tr><td>Trần mỗi lần làm video (chỉ đạo cảnh, sửa)</td><td><input id="capProd" type="number" step="10000" value="${st.perProduceTokens}"></td></tr>
+      </table>
+      <p><button class="fixb" style="font-size:15px;padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="saveCaps()">Lưu giới hạn</button></p>
+    </section>
     <div class="meta">Hôm nay ${fmt(t.today)} / trần ${fmt(t.settings.perDayTokens)} · trần mỗi kịch bản ${fmt(t.settings.perJobTokens)} · trần mỗi lần làm video ${fmt(t.settings.perProduceTokens)}. Token "quy đổi": token đọc lại từ bộ nhớ đệm tính 1/10.</div>
     <section><h3>Theo chủ đề</h3><table><tr><th>Chủ đề</th><th>Lần gọi</th><th>Token quy đổi</th><th>Token Claude viết ra</th></tr>
     ${Object.entries(byJob).map(([k, v]) => `<tr><td>${esc(k)}</td><td>${v.n}</td><td>${fmt(v.w)}</td><td>${fmt(v.out)}</td></tr>`).join("")}</table></section>
@@ -185,6 +197,15 @@ async function showTokens() {
 
 window.renderFrame = () => {};
 window.ready = new Promise((r) => setTimeout(r, 2500)); // for screenshots
+async function setPaused(paused) {
+  await fetch("/api/settings", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ paused }) });
+  await load(); if (tab === "tokens") showTokens();
+}
+async function saveCaps() {
+  const r = await fetch("/api/settings", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ perDayTokens: $("#capDay").value, perJobTokens: $("#capJob").value, perProduceTokens: $("#capProd").value }) }).then((r) => r.json());
+  if (r.error) return alert(r.error);
+  await load(); showTokens();
+}
 load().then(() => { const slug = decodeURIComponent(location.hash.slice(1)); if (slug && jobs.some((j) => j.slug === slug)) { const j = jobs.find((x) => x.slug === slug); tab = (TABS.find((t) => t[2].includes(j.status)) || TABS[0])[0]; drawTabs(); show(slug); } });
 setInterval(() => { load(); }, 15000);
 </script>

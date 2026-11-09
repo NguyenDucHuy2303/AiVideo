@@ -12,6 +12,10 @@ Nguyên tắc nội dung (truyện lịch sử, cổ tích Việt Nam):
 | era | Thời kỳ | Truyện |
 |---|---|---|
 | `van_lang` | Hùng Vương, văn hóa Đông Sơn (khoảng TK VII–III TCN) | Thánh Gióng, Sơn Tinh Thủy Tinh, Bánh chưng bánh giầy, Chử Đồng Tử, Mai An Tiêm |
+| `co_tich_lang_que` | Làng quê Bắc Bộ thời phong kiến (trang phục TK XVII–XIX) | Tấm Cám, Sọ Dừa, Cây khế… |
+| `ly_tran` | Nhà Trần (1225–1400), chống Mông – Nguyên | Trần Quốc Toản, Hưng Đạo Vương… |
+
+Thời đại còn thiếu được **thợ xây thời đại** (`studio/era.ts`, `npm run wata -- era <key> --title "…"`) tự dựng: đọc tư liệu Wikipedia về trang phục, kiến trúc, phong tục, rồi viết vào `eras.json` gồm `draw`, `avoid`, `customs`, `sources`, `architecture` (nhà dân, cung điện), `backdrop` (cảnh quan cho máy vẽ nền) và 10–16 mẫu nhân vật bằng **mảnh trang phục**. Khi studio gặp một kịch bản thuộc thời đại chưa có, nó tự dựng trước khi thiết kế nhân vật.
 
 Mẫu nhân vật (archetypes) thời Văn Lang: `boy` `baby` `mother` `elder` `king` `lord` (Lạc tướng, sứ giả) `soldier` `villager_man` `villager_woman` `hero` (tráng sĩ giáp sắt) `hero_free` `enemy`. Bộ tự động tự chọn mẫu theo tên nhân vật ("vua" → king, "sứ giả" → lord, "bà/mẹ/vợ" → mother…).
 
@@ -28,7 +32,11 @@ Thời đại mới thì thêm một khối vào `eras.json`, gồm mô tả, nh
 - Tóc: `traidao` `bun` `long` `short` `turban` `bald`
 - Mũ: `feather` (mũ lông chim vua Hùng) `feather_band` (dải lông chim Lạc tướng/lính) `helmet` (nón sắt tráng sĩ) `enemy_helmet` `crown` `nonla` (chỉ dùng cho thời có tư liệu)
 - Đạo cụ (`prop`, `props` để đổi giữa cảnh bằng `set.prop`): `iron_whip` `broken_whip` `bamboo` `spear` `bronze_axe` `shield` `horn` (tù và) `sword` `stick` `basket` `bowl` `scroll` (không dùng cho thời Văn Lang) `flag`
-- Ngựa: `kind: iron` (ngựa sắt bờm lửa) | `plain`
+- **Mảnh trang phục** (`runtime/garments.js`, mọi thời đại sau Văn Lang): `outfit: { type: "parts", top, inner, lower, belt }`
+  - `top.cut`: `chui` · `canh` (áo cánh) · `tu_than` (áo tứ thân, mặc ngoài yếm) · `giao_linh` (cổ chéo) · `vien_linh` (cổ tròn, quan, vua) · `ngu_than` (thời Nguyễn) · `yem`; `length` waist…ankle (dài thì có vạt áo phủ chân, đung đưa theo bước); `sleeves` none/short/long/wide (tay thụng); `pattern` dongson/dragon/flowers/dots
+  - `inner.color` (yếm), `lower` skirt/pants/loincloth (váy, quần, khố), `belt` (thắt lưng bao, hai đầu buông)
+  - Mũ, khăn: `khan_van` `khan_mo_qua` `khan_chit` `khan_xep` `non_quai_thao` `non_chop` `mu_canh_chuon` `binh_thien`
+- Ngựa: `kind: iron` (ngựa sắt bờm lửa) | `plain` (bờm lông ngắn dọc cổ)
 - Dáng người (`build`): `slim` `average` `heavy` (bụng phệ). Trong đám đông, mỗi người tự khác nhau một chút. Tay chân thuôn dần, bàn tay có ngón cái, cổ ngắn chắc, áo và váy có nếp gấp.
 - **Khuôn mặt hướng 3/4** (`runtime/face.js`, `look.face`): `shape` round/oval/square/jowl · `eyes` round/almond/narrow/droopy · `nose` button/round/long · `brows` thin/thick/bushy · `wrinkles` · `mustache` thin/thick/droopy · `iris` · `eyeScale`. Mẫu nhân vật thời Văn Lang đã có sẵn gương mặt riêng.
 - 15 nét mặt: `neutral happy joy laugh sad worried scared angry determined surprised shout yawn sleepy proud crying`. `happy` cười tươi, má đẩy mi dưới lên thành mắt cười, có nếp cười ở khóe miệng. `joy` là mừng rỡ, mắt nhắm híp cong, miệng cười rộng ("mừng rỡ / hớn hở / sung sướng" trong lời thoại tự ra `joy`). Mí trên, mí dưới, đồng tử co giãn, mắt nhắm cười, miệng có răng và lưỡi, ký hiệu mồ hôi, nước mắt, má đỏ, gân giận. Mắt tự chớp. `talk` để nhép môi, `viseme` (a/o/u/i/e/m) khi có lời thoại. `lookAt: <id>` để ánh mắt nhìn về một nhân vật.
@@ -45,6 +53,7 @@ Thời đại mới thì thêm một khối vào `eras.json`, gồm mô tả, nh
 - Bối cảnh: `village` `field` `bamboo` `palace` (nhà sàn lớn mái thuyền) `mountain` (Sóc Sơn) `sky` (cõi tiên, trên mây)
 - Giờ: `dawn` `day` `dusk` `night` (bầu trời, nắng/trăng, sương, màu)
 - `bamboo` (rừng tre): tre luôn do thư viện vector vẽ, cao vượt đầu người cưỡi ngựa; tranh nền chỉ vẽ đồng và núi phía sau (model vẽ tre thành cây cọ).
+- Nhà theo `architecture` của thời đại (tự lấy từ `eras.json`): `boat` (nhà sàn mái thuyền Văn Lang) · `thatch` (nhà tranh vách đất Bắc Bộ) · `tile` (nhà ngói đầu đao); cung điện `tile` hai tầng mái cong, lưỡng long chầu nguyệt.
 - `era: van_lang` thì nhà sàn có mái cong hình thuyền và chim trang trí.
 - Vật thể (`set.objects`, có thể kèm `from`/`until` để hiện ra hoặc biến mất): `footprint` `mat` `rice` `nong` (nong tre đựng cơm/cà: `count`, `food: rice | ca`, `empty: true` thì xếp chồng nong đã ăn hết; dùng cho "bảy nong cơm, ba nong cà") `bowls` `armor` `banner` `stumps` `stone` `fire_pit`
 

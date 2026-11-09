@@ -13,26 +13,11 @@ import { still } from "../animation/capture.ts";
 import type { CastMember } from "../animation/compile/scene.ts";
 import { jobDir, loadJob } from "./jobs.ts";
 import { eras } from "./topics.ts";
+import { cleanLook, VOCABULARY } from "./vocabulary.ts";
 import type { Plan } from "./write.ts";
 
 const PLAYER = path.join(ROOT, "src", "animation", "player.html");
 const SHEET = path.join(ROOT, "src", "studio", "sheet.html");
-
-/** What a look may say: the library's own words (runtime/human.js, runtime/horse.js). */
-const VOCABULARY = `Người (kind "human"), look là object:
-- body: child | man | strong (tráng sĩ, lực sĩ) | woman | elder (dáng còng)
-- build: slim | average | heavy
-- skin: mã màu hex (da người Việt: #e8b27c, #e0aa74, #d9a06c, #d0a070…)
-- outfit: { type, color, skirt, trim } với type:
-  dongson (áo chui đầu có dải hoa văn trống đồng; nữ váy, nam khố) · plume (lễ phục vua Hùng: áo đính đồng, váy lông chim)
-  armor (giáp sắt tráng sĩ) · enemy (quân giặc phương Bắc) · loincloth (khố) · tunic (áo nông dân thời sau) · robe (áo dài tay thụng, quan lại thời sau) · dress (váy áo nữ thời sau)
-- pants, legs: mã màu (tùy chọn)
-- hair: { style, color } style: traidao (trẻ con, chỏm tóc) | bun (búi) | long | short | turban | bald
-- headwear: feather (mũ lông chim vua Hùng) | feather_band (dải lông chim Lạc tướng, lính) | helmet (nón sắt tráng sĩ) | enemy_helmet | crown | nonla (nón lá; không dùng cho thời Văn Lang)
-- beard: mã màu râu; cape: true; bareChest: true; tattoo: true (xăm hoa văn); bracelets: true; earrings: true (đồ đồng)
-- prop: { type } và props: [{ type }, …] (đổi đạo cụ giữa cảnh), type: iron_whip broken_whip bamboo spear bronze_axe shield horn (tù và) sword stick basket bowl scroll flag
-- face: { shape: round|oval|square|jowl, eyes: round|almond|narrow|droopy, nose: button|round|long, brows: thin|thick|bushy, wrinkles: true, mustache: thin|thick|droopy, iris: mã màu, eyeScale: 0.9–1.2 }
-Ngựa (kind "horse"), look: { kind: iron (ngựa sắt bờm lửa) | plain, color, mane, saddle }`;
 
 const SCHEMA = {
   type: "object",
@@ -100,7 +85,10 @@ export async function designCast(slug: string, log: (s: string) => void = consol
   const cast: Designed[] = data.characters.map((c) => {
     const base = c.archetype !== "none" ? era?.archetypes?.[c.archetype] : undefined;
     const { archetype: _, ...rest } = c;
-    return { ...rest, look: base ? merge(JSON.parse(JSON.stringify(base)), c.look) : c.look, formOf: c.formOf !== "none" ? c.formOf : undefined, designed: true };
+    const merged = base ? merge(JSON.parse(JSON.stringify(base)), c.look) : c.look;
+    const { look, dropped } = c.kind === "human" ? cleanLook(merged as Record<string, unknown>) : { look: merged, dropped: [] };
+    if (dropped.length) log(`  ${c.id}: left out ${dropped.join(", ")} (not in the library)`);
+    return { ...rest, look, formOf: c.formOf !== "none" ? c.formOf : undefined, designed: true };
   });
   await fs.writeFile(path.join(dir, "cast.json"), JSON.stringify(cast, null, 2));
   return cast;
@@ -118,7 +106,7 @@ export async function costumeSheet(slug: string): Promise<string> {
   for (const c of cast) {
     const out = path.join(tiles, `${c.id}.png`);
     const scene = {
-      duration: 2, time: "day", era: job.era, backdrop: false, set: { name: "sky" },
+      duration: 2, time: "day", era: job.era, backdrop: false, set: { name: c.kind === "horse" ? "field" : "sky" },
       cast: [{ id: c.id, type: c.kind, look: c.look, x: 0, scale: 1 }],
       actions: [{ actor: c.id, at: 0, do: c.kind === "horse" ? "stand" : "idle", ...(c.kind === "human" ? { face: "happy" } : {}) }],
       shots: [{ at: 0, type: "full", on: c.id }],

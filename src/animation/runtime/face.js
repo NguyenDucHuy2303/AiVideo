@@ -37,7 +37,7 @@
     square: { rx: 0.95, ry: 1.05, jaw: 0.95, chin: 0.32 },
     jowl: { rx: 1.0, ry: 1.0, jaw: 1.12, chin: 0.28 },
   };
-  const EYE_SHAPES = { round: [1, 1.15], almond: [1.15, 0.85], narrow: [1.15, 0.55], droopy: [1.05, 0.9] };
+  const EYE_SHAPES = { round: [1, 1.15], almond: [1.15, 0.85], narrow: [1.15, 0.66], droopy: [1.05, 0.9] };
 
   /** The head outline, three-quarter view facing right: the chin is towards the face side. */
   function headPath(cx, cy, R, s) {
@@ -182,7 +182,7 @@
       tr(eye.pupil, look[0] * rx * 0.35, look[1] * ry * 0.35, 0, x.pupil ?? 1);
       // Brows: lift up/down; tilt 1 = angry (inner end down), -1 = sad (inner end up).
       // Cartoon brows move a lot: that is most of the acting.
-      const by = eye.y - ry * 1.55 - (x.lift || 0) * ry * 1.15, a = (x.tilt || 0) * ry * 0.95;
+      const by = eye.y - Math.max(ry, rx * 0.8) * 1.55 - (x.lift || 0) * ry * 1.15, a = (x.tilt || 0) * ry * 0.95;
       const bx0 = eye.x - rx * 1.15, bx1 = eye.x + rx * 1.15;
       F.brows[i].setAttribute("d", `M ${f2(bx0)} ${f2(by - a)} Q ${f2(eye.x)} ${f2(by - ry * 0.4 - Math.max(0, x.lift || 0) * ry * 0.25)} ${f2(bx1)} ${f2(by + a)}`);
     });

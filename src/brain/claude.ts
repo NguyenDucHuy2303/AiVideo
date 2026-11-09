@@ -29,8 +29,10 @@ export interface BrainSettings {
   perDayTokens: number;
   /** The local model used past the budget. */
   fallbackModel: string;
+  /** The user needs the plan's tokens for other work: no Claude calls (and no fallback). */
+  paused: boolean;
 }
-const DEFAULTS: BrainSettings = { perJobTokens: 80_000, perProduceTokens: 150_000, perDayTokens: 2_000_000, fallbackModel: "gemma3:12b" };
+const DEFAULTS: BrainSettings = { perJobTokens: 80_000, perProduceTokens: 150_000, perDayTokens: 2_000_000, fallbackModel: "gemma3:12b", paused: false };
 
 export async function brainSettings(): Promise<BrainSettings> {
   if (!(await exists(SETTINGS))) {
@@ -62,6 +64,18 @@ export async function spent(filter: { job?: string; phase?: Phase; today?: boole
 }
 
 export class BudgetExceeded extends Error {}
+/** Claude is paused by the user: work that needs it waits (it does not fall back). */
+export class BrainPaused extends Error {}
+
+/** Change the brain's settings (from the studio page): caps, pause. */
+export async function saveBrainSettings(change: Partial<BrainSettings>): Promise<BrainSettings> {
+  const raw = (await exists(SETTINGS)) ? JSON.parse(await fs.readFile(SETTINGS, "utf8")) : {};
+  const next = { ...raw, ...change };
+  await fs.mkdir(STUDIO_DIR, { recursive: true });
+  await fs.writeFile(`${SETTINGS}.tmp`, JSON.stringify(next, null, 2));
+  await fs.rename(`${SETTINGS}.tmp`, SETTINGS);
+  return brainSettings();
+}
 
 /** The Claude Code binary: $CLAUDE_BIN, `claude` on the PATH, or the newest VS Code extension's. */
 export async function findClaude(): Promise<string | undefined> {
@@ -97,6 +111,7 @@ export interface Ask {
 /** One Claude call, budget-checked and written to the ledger. */
 export async function askClaude(a: Ask): Promise<{ text: string; data?: unknown; usage: Usage }> {
   const cfg = await brainSettings();
+  if (cfg.paused) throw new BrainPaused("Claude đang tạm dừng (bạn cần token cho việc khác)");
   const phase = a.phase ?? "write", cap = phase === "produce" ? cfg.perProduceTokens : cfg.perJobTokens;
   const [job, day] = [await spent({ job: a.job, phase }), await spent({ today: true })];
   if (job >= cap) throw new BudgetExceeded(`job "${a.job}" has spent ${job} of its ${cap} ${phase} tokens`);
@@ -112,13 +127,16 @@ export async function askClaude(a: Ask): Promise<{ text: string; data?: unknown;
     "--tools", "", "--strict-mcp-config", "--disable-slash-commands", "--no-session-persistence",
     "--setting-sources", "", "--system-prompt", a.system,
     ...(a.effort ? ["--effort", a.effort] : []),
-    ...(a.schema ? ["--json-schema", JSON.stringify(a.schema)] : []),
+    // The CLI's validator does not know the 2020-12 meta-schema that zod names: leave it out.
+    ...(a.schema ? ["--json-schema", JSON.stringify(a.schema, (k, v) => (k === "$schema" ? undefined : v))] : []),
   ];
   const t0 = Date.now();
   let out: { result?: string; structured_output?: unknown; is_error?: boolean; usage?: Record<string, number>; total_cost_usd?: number };
   let ok = false, usage: Usage = { input: 0, cacheWrite: 0, cacheRead: 0, output: 0, usd: 0 };
   try {
-    const { stdout } = await run(bin, args, { cwd, input: a.prompt, timeoutMs: a.timeoutMs ?? 15 * 60_000 });
+    const { stdout } = await run(bin, args, { cwd, input: a.prompt, timeoutMs: a.timeoutMs ?? 15 * 60_000 }).catch((err) => {
+      throw new Error(`Claude Code failed on ${a.step}: ${((err as { stderrTail?: string }).stderrTail || (err as Error).message).trim().slice(-400)}`);
+    });
     out = JSON.parse(stdout);
     const u = out.usage ?? {};
     usage = { input: u.input_tokens ?? 0, cacheWrite: u.cache_creation_input_tokens ?? 0, cacheRead: u.cache_read_input_tokens ?? 0, output: u.output_tokens ?? 0, usd: out.total_cost_usd ?? 0 };
@@ -142,6 +160,7 @@ export async function think<T = unknown>(a: Ask & { schema: object }, log: (s: s
     log(`  ${a.step}: Claude ${a.model ?? "sonnet"}, ${weigh(r.usage).toLocaleString("vi")} tokens`);
     return { data: r.data as T, by: `claude-${a.model ?? "sonnet"}` };
   } catch (err) {
+    if (err instanceof BrainPaused) throw err;
     const cfg = await brainSettings();
     log(`  ${a.step}: ${(err as Error).message} → local ${cfg.fallbackModel}`);
     const local = await localModel(cfg.fallbackModel);

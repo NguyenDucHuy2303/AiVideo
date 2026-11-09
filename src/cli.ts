@@ -45,6 +45,8 @@ Usage:
   npm run wata -- studio [--port 5175] [--no-scheduler]
                                              the studio: web page at http://127.0.0.1:5175 (review scripts, costume sheets,
                                              videos; tokens) + the scheduler (light work in office hours, renders at night)
+  npm run wata -- produce <job> --test 6   test the whole production on the first 6 scenes (projects/<job>-thu)
+  npm run wata -- era <key> --title "<thời đại>"   research and build a missing era into the library (eras.json)
   npm run wata -- tokens                     what the brain (Claude) has spent: today, per job, per step
   npm run wata -- validate <timeline.json>   check a timeline without rendering
   npm run wata -- render <timeline.json> [--profile 9x16|16x9] [--encoder x264|qsv] [--force]
@@ -126,6 +128,7 @@ async function main(): Promise<number> {
       "no-brand": { type: "boolean", default: false },
       "no-scheduler": { type: "boolean", default: false },
       port: { type: "string" },
+      test: { type: "string" },
       out: { type: "string" },
       help: { type: "boolean", short: "h", default: false },
     },
@@ -259,6 +262,23 @@ async function main(): Promise<number> {
         return await new Promise<number>(() => {});
       }
       return await runScheduler();
+    }
+
+    case "produce": {
+      if (!file) throw new TimelineError("produce needs a job, e.g. produce son-tinh-thuy-tinh --test 6");
+      const { testRun } = await import("./studio/produce.ts");
+      const t0 = Date.now();
+      const out = await testRun(file, Number(values.test ?? 6), console.log);
+      console.log(`✔ ${out} (${((Date.now() - t0) / 60000).toFixed(1)} min)`);
+      return 0;
+    }
+
+    case "era": {
+      if (!file) throw new TimelineError('era needs a key, e.g. era co_tich_lang_que --title "Làng quê Bắc Bộ thời phong kiến"');
+      const { buildEra } = await import("./studio/era.ts");
+      const era = await buildEra(file, { eraName: values.title, job: `era-${file}` }, console.log);
+      console.log(`✔ ${file}: ${era.name} · ${Object.keys(era.archetypes).join(", ")}`);
+      return 0;
     }
 
     case "tokens": {

@@ -94,6 +94,12 @@ export async function loadScene(sceneFile: string): Promise<Scene> {
       }
     }
   }
+  // The era's houses and palaces (library/eras.json), unless the scene says otherwise.
+  const era = (scene as { era?: string }).era, sc = scene as { architecture?: unknown };
+  if (era && sc.architecture === undefined) {
+    const eras = JSON.parse(await fs.readFile(new URL("./library/eras.json", import.meta.url), "utf8"));
+    if (eras[era]?.architecture) sc.architecture = eras[era].architecture;
+  }
   return scene;
 }
 

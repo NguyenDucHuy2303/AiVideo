@@ -11,7 +11,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { exists } from "../utils/fs.ts";
-import { STUDIO_DIR } from "../brain/claude.ts";
+import { STUDIO_DIR, brainSettings } from "../brain/claude.ts";
 import { listJobs, newJob, jobDir, type Job } from "./jobs.ts";
 import { prepare, render, writeJob } from "./produce.ts";
 import { proposeTopics, eras } from "./topics.ts";
@@ -70,6 +70,8 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   const say = (slug: string) => (l: string) => void log(`[${slug}] ${l.trim()}`);
   const ready = first((j) => j.status === "producing" && j.stage === "ready");
   if (!office && ready) return { what: "render", slug: ready.slug, run: () => render(ready.slug, say(ready.slug)) };
+  // Paused by the user: only work that needs no Claude (renders) goes on.
+  if ((await brainSettings()).paused) return undefined;
   // Producing a job whose era the library lacks waits for the era builder.
   const toPrepare = first((j) => (j.status === "approved" || j.status === "fix") && (!j.era || !!known[j.era]));
   if (toPrepare) return { what: "prepare", slug: toPrepare.slug, run: () => prepare(toPrepare.slug, say(toPrepare.slug)) };
