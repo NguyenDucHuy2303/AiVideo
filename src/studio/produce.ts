@@ -12,7 +12,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { ROOT } from "../config.ts";
 import { exists } from "../utils/fs.ts";
-import { run } from "../utils/process.ts";
+import { run, wasInterrupted } from "../utils/process.ts";
 import { BrainPaused, BrainUnavailable, claudeProvider } from "../brain/claude.ts";
 import { animate } from "../animation/compile/animate.ts";
 import { withBackdrop } from "../animation/backdrops.ts";
@@ -28,6 +28,8 @@ export const projectOf = (slug: string) => path.join(ROOT, "projects", slug);
 
 async function fail(slug: string, err: unknown, back?: JobStatus): Promise<Job> {
   const job = await loadJob(slug);
+  // The studio is stopping: leave the job as it was; the next start picks it up again.
+  if (wasInterrupted()) return back && job.status !== back ? setStatus(job, back, "dừng giữa chừng, sẽ làm tiếp") : job;
   // Paused by the user: the job waits where it was, it has not failed.
   if (err instanceof BrainPaused) return back && job.status !== back ? setStatus(job, back, "chờ: Claude tạm dừng") : job;
   // Claude unavailable for now: wait half an hour, then the scheduler tries again.

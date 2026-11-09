@@ -96,3 +96,57 @@ export async function sdTurbo(): Promise<ImageGen | undefined> {
     },
   };
 }
+
+/**
+ * FLUX.2 [klein] 4B (scripts/setup-imagegen-next.sh, Apache-2.0: commercial use, no
+ * registration): far better pictures and prompt following than SD-Turbo (real bamboo, folk-art
+ * styles), about 3–4 minutes a 768×448 painting on 6 CPU threads and under 5 GB of memory.
+ * No negative prompt (it is guidance-free): what to leave out is said in the style.
+ */
+const KLEIN_DIR = path.join(SD_DIR, "models", "flux2-klein");
+export const KLEIN_ID = "flux.2-klein-4b (q4_k_m)";
+export const KLEIN_LICENSE = "AI-generated with FLUX.2 [klein] 4B (Apache-2.0)";
+const KLEIN_TIMEOUT_MS = 40 * 60_000; // two threads in office hours make it slow
+
+export async function flux2Klein(): Promise<ImageGen | undefined> {
+  const cli = await findCli();
+  const files = { model: path.join(KLEIN_DIR, "flux-2-klein-4b-Q4_K_M.gguf"), vae: path.join(KLEIN_DIR, "vae.safetensors"), llm: path.join(KLEIN_DIR, "Qwen3-4B-Q4_K_M.gguf") };
+  if (!cli || !(await exists(files.model)) || !(await exists(files.vae)) || !(await exists(files.llm))) return undefined;
+  return {
+    id: KLEIN_ID,
+    async generate(prompt, outDir, opts = {}) {
+      const full = `${prompt.trim().replace(/\s+/g, " ")}, ${opts.style ?? STYLE}, full-bleed picture, no border, no frame`;
+      const [width, height] = SIZES[opts.shape ?? "square"];
+      const key = sha256(`${KLEIN_ID}|${width}x${height}|${full}`);
+      const file = path.join(outDir, `${key.slice(0, 12)}.png`);
+      if (await exists(file)) return { file, cached: true };
+      await fs.mkdir(outDir, { recursive: true });
+      const tmp = tmpPathFor(file);
+      try {
+        await run(cli, [
+          "--diffusion-model", files.model, "--vae", files.vae, "--llm", files.llm,
+          "-p", full, "--cfg-scale", "1.0", "--steps", "4",
+          "-W", String(width), "-H", String(height),
+          "-s", String(parseInt(key.slice(0, 8), 16) % 2_147_483_647),
+          "-t", String(Math.max(1, Number(process.env.WATA_SD_THREADS) || os.availableParallelism())),
+          "--vae-tiling", "--mmap", "-o", tmp,
+        ], { timeoutMs: KLEIN_TIMEOUT_MS, env: { ...process.env, LD_LIBRARY_PATH: [path.dirname(cli), process.env.LD_LIBRARY_PATH].filter(Boolean).join(":") } });
+        const v = (await probe(tmp).catch(() => undefined))?.streams.find((s) => s.codec_type === "video");
+        if (v?.width !== width || v.height !== height) throw new Error(`sd-cli did not write a ${width}×${height} image`);
+        await fs.rename(tmp, file);
+        return { file, cached: false };
+      } finally {
+        await fs.rm(tmp, { force: true });
+      }
+    },
+  };
+}
+
+/** The best painter installed: FLUX.2 klein, else SD-Turbo (WATA_IMAGE_MODEL=sd-turbo forces it). */
+export async function bestImageGen(): Promise<ImageGen | undefined> {
+  if (process.env.WATA_IMAGE_MODEL !== "sd-turbo") {
+    const k = await flux2Klein();
+    if (k) return k;
+  }
+  return sdTurbo();
+}

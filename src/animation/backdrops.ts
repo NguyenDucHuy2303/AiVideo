@@ -11,7 +11,7 @@ import { readFileSync } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { sdTurbo, SIZES, type ImageGen } from "../imagegen/sd.ts";
+import { bestImageGen, SIZES, type ImageGen } from "../imagegen/sd.ts";
 import { LIBRARY_DIR } from "../storyboard/assets.ts";
 
 const DIR = path.join(LIBRARY_DIR, "generated", "backdrops");
@@ -57,7 +57,7 @@ let generator: Promise<ImageGen | undefined> | undefined;
 
 /** The painting for a scene, or undefined when the image model is not installed. */
 export async function backdropFor(scene: { set?: { name?: string }; time?: string; era?: string }): Promise<string | undefined> {
-  generator ??= sdTurbo();
+  generator ??= bestImageGen();
   const gen = await generator;
   if (!gen) return undefined;
   await fs.mkdir(DIR, { recursive: true });
