@@ -1,4 +1,7 @@
+import { spawn, type ChildProcess } from "node:child_process";
+import fs from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { FFMPEG, ROOT } from "../config.ts";
 import { exists, hashFile } from "../utils/fs.ts";
 import { run } from "../utils/process.ts";
@@ -29,6 +32,24 @@ export interface SynthOptions {
   voice: string;
   /** 1 = normal; 1.1 = 10% faster. */
   speed: number;
+  /** Semitones up (a child from a woman's voice: +3…+4) or down. */
+  pitch?: number;
+}
+
+/** ffmpeg filters for a speed and a pitch change (pitch by resampling, tempo restored). */
+export function voiceFilters(speed: number, pitch = 0): string[] {
+  const f: string[] = [];
+  let tempo = speed;
+  if (pitch) {
+    const k = Math.pow(2, pitch / 12);
+    f.push(`asetrate=48000*${k.toFixed(5)}`, "aresample=48000");
+    tempo /= k;
+  }
+  // atempo accepts 0.5–2 per stage.
+  while (tempo < 0.5) { f.push("atempo=0.5"); tempo /= 0.5; }
+  while (tempo > 2) { f.push("atempo=2"); tempo /= 2; }
+  if (Math.abs(tempo - 1) > 1e-3) f.push(`atempo=${tempo.toFixed(5)}`);
+  return f;
 }
 
 export interface TtsEngine {
@@ -92,4 +113,76 @@ export const dummy: TtsEngine = {
   },
 };
 
-export const ENGINES: Record<string, TtsEngine> = { piper, dummy };
+/**
+ * VieNeu-TTS v3 Turbo (scripts/setup-vieneu.sh): natural, expressive Vietnamese on the CPU.
+ * One Python worker keeps the model loaded for the whole build; sentences go to it one by
+ * one. Preset voices (e.g. "Ngọc Huyền", "Minh Đức") are cleared for commercial use.
+ */
+export const VIENEU_DIR = process.env.VIENEU_DIR ?? path.join(ROOT, "vendor", "vieneu");
+export const VIENEU_DEFAULT_VOICE = "Ngọc Huyền";
+const VIENEU_PYTHON = path.join(VIENEU_DIR, "venv", "bin", "python");
+const VIENEU_WORKER = path.join(path.dirname(fileURLToPath(import.meta.url)), "vieneu_worker.py");
+/** The model loads in the first request: allow for it. */
+const VIENEU_FIRST_MS = 10 * 60_000;
+
+let worker: { proc: ChildProcess; queue: ((reply: { ok?: boolean; error?: string; ready?: boolean }) => void)[]; ready: Promise<void> } | undefined;
+
+function vieneuWorker(): NonNullable<typeof worker> {
+  if (worker && worker.proc.exitCode === null) return worker;
+  const proc = spawn(VIENEU_PYTHON, [VIENEU_WORKER], { stdio: ["pipe", "pipe", "pipe"] });
+  const queue: NonNullable<typeof worker>["queue"] = [];
+  let buffer = "", stderr = "";
+  proc.stdout!.setEncoding("utf8").on("data", (d: string) => {
+    buffer += d;
+    let nl: number;
+    while ((nl = buffer.indexOf("\n")) >= 0) {
+      const line = buffer.slice(0, nl).trim();
+      buffer = buffer.slice(nl + 1);
+      if (!line.startsWith("{")) continue; // library chatter
+      queue.shift()?.(JSON.parse(line));
+    }
+  });
+  proc.stderr!.setEncoding("utf8").on("data", (d: string) => (stderr = (stderr + d).slice(-2000)));
+  proc.on("exit", (code) => { for (const q of queue.splice(0)) q({ error: `VieNeu worker exited (${code}): ${stderr.trim().split("\n").slice(-3).join(" ")}` }); });
+  // Don't keep Node alive for it (its pipes neither), and don't leave it behind.
+  proc.unref();
+  for (const s of [proc.stdin, proc.stdout, proc.stderr]) (s as unknown as { unref?: () => void })?.unref?.();
+  process.once("exit", () => proc.kill());
+  const ready = new Promise<void>((resolve, reject) => queue.push((r) => (r.ready ? resolve() : reject(new Error(r.error ?? "VieNeu worker did not start")))));
+  worker = { proc, queue, ready };
+  return worker;
+}
+
+function vieneuRequest(text: string, voice: string, out: string): Promise<void> {
+  const w = vieneuWorker();
+  // The timer also keeps Node waiting while the model loads (the worker itself is unref'd).
+  return new Promise<void>((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error("VieNeu took too long")), VIENEU_FIRST_MS);
+    w.ready.then(() => {
+      w.queue.push((r) => { clearTimeout(timer); r.ok ? resolve() : reject(new Error(r.error ?? "VieNeu failed")); });
+      w.proc.stdin!.write(`${JSON.stringify({ text, voice, out })}\n`);
+    }, (err: Error) => { clearTimeout(timer); reject(err); });
+  });
+}
+
+export const vieneu: TtsEngine = {
+  id: "vieneu",
+  async fingerprint(opts) {
+    if (!(await exists(VIENEU_PYTHON))) throw new Error(`VieNeu-TTS is not installed (${VIENEU_DIR}). Run: bash scripts/setup-vieneu.sh`);
+    const version = (await fs.readFile(path.join(VIENEU_DIR, "VERSION"), "utf8").catch(() => "?")).trim();
+    return `vieneu:${version}:${opts.voice}:${opts.speed}${opts.pitch ? `:p${opts.pitch}` : ""}`;
+  },
+  async synthesize(text, outWav, opts) {
+    const raw = `${outWav}.raw.wav`;
+    try {
+      await vieneuRequest(text, opts.voice, raw);
+      // 48 kHz from the model; speed changes keep the pitch (atempo).
+      const af = voiceFilters(opts.speed, opts.pitch);
+      await run(FFMPEG, ["-hide_banner", "-nostdin", "-y", "-v", "error", "-i", raw, ...(af.length ? ["-af", af.join(",")] : []), "-ac", "1", outWav], { timeoutMs: TIMEOUT_MS });
+    } finally {
+      await fs.rm(raw, { force: true });
+    }
+  },
+};
+
+export const ENGINES: Record<string, TtsEngine> = { piper, dummy, vieneu };

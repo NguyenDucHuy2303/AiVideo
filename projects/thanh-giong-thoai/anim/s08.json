@@ -1,0 +1,171 @@
+{
+  "castFile": "cast.json",
+  "duration": 4.3,
+  "time": "dusk",
+  "set": {
+    "name": "mountain",
+    "mountainX": 300,
+    "mountainScale": 1.5,
+    "objects": [
+      {
+        "type": "armor",
+        "x": -520,
+        "scale": 1.6,
+        "from": 1.85
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "horse",
+      "type": "horse",
+      "look": "iron_horse",
+      "x": -1320,
+      "scale": 2.4
+    },
+    {
+      "id": "hero",
+      "type": "human",
+      "look": "hero",
+      "x": -1320,
+      "scale": 2.4
+    },
+    {
+      "id": "free",
+      "type": "human",
+      "look": "hero_free",
+      "x": 0,
+      "scale": 2.4,
+      "opacity": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "horse",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": 0,
+        "ease": "out"
+      },
+      "dur": 1.4
+    },
+    {
+      "actor": "horse",
+      "at": 1.4,
+      "do": "stand"
+    },
+    {
+      "actor": "hero",
+      "at": -0.1,
+      "do": "leap",
+      "onto": "horse",
+      "dur": 0.01,
+      "arc": 0
+    },
+    {
+      "actor": "hero",
+      "at": 0.02,
+      "do": "ride",
+      "face": "proud"
+    },
+    {
+      "actor": "free",
+      "at": 1.6,
+      "do": "leap",
+      "onto": "horse",
+      "dur": 0.01,
+      "arc": 0
+    },
+    {
+      "actor": "free",
+      "at": 1.62,
+      "do": "ride",
+      "face": "joy"
+    },
+    {
+      "actor": "hero",
+      "at": 1.6,
+      "dur": 0.3,
+      "set": {
+        "opacity": 0
+      }
+    },
+    {
+      "actor": "free",
+      "at": 1.6,
+      "dur": 0.3,
+      "set": {
+        "opacity": 1
+      }
+    },
+    {
+      "actor": "horse",
+      "at": 2.2,
+      "do": "fly",
+      "move": {
+        "toY": -1900,
+        "ease": "in"
+      },
+      "dur": 2.1
+    }
+  ],
+  "fx": [
+    {
+      "fx": "flash",
+      "at": 1.65,
+      "power": 0.6
+    },
+    {
+      "fx": "sparkle",
+      "on": "free",
+      "at": 1.65,
+      "dur": 2.6
+    },
+    {
+      "fx": "glow",
+      "on": "free",
+      "at": 2.0,
+      "dur": 2.3
+    },
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 1.9,
+      "dur": 2.4,
+      "scale": 3
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": [
+        "horse",
+        "hero"
+      ],
+      "share": 0.42
+    },
+    {
+      "at": 1.4,
+      "type": "full",
+      "on": [
+        "horse",
+        "hero"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 2.2,
+      "type": "wide",
+      "on": [
+        "horse",
+        "free"
+      ],
+      "follow": true,
+      "followY": 0.55
+    }
+  ],
+  "mood": "majestic",
+  "era": "van_lang"
+}

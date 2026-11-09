@@ -1,0 +1,254 @@
+{
+  "title": "Thánh Gióng — vươn vai thành tráng sĩ, cưỡi ngựa sắt",
+  "duration": 11.0,
+  "time": "dusk",
+  "set": {
+    "name": "village",
+    "houseX": -640
+  },
+  "cast": [
+    {
+      "id": "horse",
+      "type": "horse",
+      "look": "iron_horse",
+      "x": 4600,
+      "scale": 2.88,
+      "facing": -1
+    },
+    {
+      "id": "boy",
+      "type": "human",
+      "x": 0,
+      "look": "boy",
+      "scale": 1.5
+    },
+    {
+      "id": "hero",
+      "type": "human",
+      "x": 0,
+      "scale": 2.88,
+      "opacity": 0,
+      "look": "hero"
+    }
+  ],
+  "actions": [
+    {
+      "actor": "boy",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "boy",
+      "at": 1.05,
+      "do": "stretch"
+    },
+    {
+      "actor": "boy",
+      "at": 2.05,
+      "dur": 1.3,
+      "set": {
+        "scale": 3.6
+      },
+      "ease": "backOut"
+    },
+    {
+      "actor": "boy",
+      "at": 2.15,
+      "do": "still",
+      "face": "surprised",
+      "blend": 0.3
+    },
+    {
+      "actor": "boy",
+      "at": 2.6,
+      "dur": 0.4,
+      "set": {
+        "opacity": 0
+      }
+    },
+    {
+      "actor": "hero",
+      "at": 2.6,
+      "dur": 0.4,
+      "set": {
+        "opacity": 1
+      }
+    },
+    {
+      "actor": "hero",
+      "at": 2.6,
+      "do": "heroic"
+    },
+    {
+      "actor": "hero",
+      "at": 6.0,
+      "do": "crouch"
+    },
+    {
+      "actor": "hero",
+      "at": 6.25,
+      "dur": 0.7,
+      "do": "leap",
+      "onto": "horse",
+      "arc": 420
+    },
+    {
+      "actor": "hero",
+      "at": 6.95,
+      "do": "land"
+    },
+    {
+      "actor": "hero",
+      "at": 7.25,
+      "do": "ride",
+      "shout": true
+    },
+    {
+      "actor": "horse",
+      "at": 3.9,
+      "dur": 1.45,
+      "do": "gallop",
+      "move": {
+        "to": 1350,
+        "ease": "out"
+      }
+    },
+    {
+      "actor": "horse",
+      "at": 5.3,
+      "dur": 0.75,
+      "do": "rear"
+    },
+    {
+      "actor": "horse",
+      "at": 6.05,
+      "do": "stand"
+    },
+    {
+      "actor": "horse",
+      "at": 6.88,
+      "set": {
+        "facing": 1
+      }
+    },
+    {
+      "actor": "horse",
+      "at": 6.9,
+      "do": "gallop",
+      "move": {
+        "speed": 2100,
+        "accel": 2600
+      }
+    }
+  ],
+  "fx": [
+    {
+      "fx": "transform",
+      "on": "boy",
+      "at": 2.05,
+      "dur": 1.3
+    },
+    {
+      "fx": "fire",
+      "from": "horse",
+      "at": 5.72,
+      "dur": 0.5,
+      "power": 1.25,
+      "up": 0.95
+    },
+    {
+      "fx": "impact",
+      "on": "horse",
+      "at": 6.95,
+      "power": 0.4
+    },
+    {
+      "fx": "fire",
+      "from": "horse",
+      "at": 7.45,
+      "dur": 0.35
+    },
+    {
+      "fx": "fire",
+      "from": "horse",
+      "at": 8.7,
+      "dur": 0.35
+    },
+    {
+      "fx": "speedlines",
+      "at": 7.3,
+      "dur": 2.7
+    }
+  ],
+  "grade": {
+    "from": 0.06,
+    "to": 0.16,
+    "at": 7,
+    "dur": 1
+  },
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": "boy",
+      "share": 0.42,
+      "push": 0.12,
+      "gy": 0.8
+    },
+    {
+      "at": 3.6,
+      "type": "wide",
+      "on": "hero",
+      "push": 0.05
+    },
+    {
+      "at": 4.75,
+      "type": "wide",
+      "on": [
+        "hero",
+        "horse"
+      ],
+      "ease": 0.6
+    },
+    {
+      "at": 5.7,
+      "type": "close",
+      "on": "horse",
+      "part": "mouth",
+      "dx": 0,
+      "dy": -0.14
+    },
+    {
+      "at": 6.25,
+      "type": "wide",
+      "on": [
+        "hero",
+        "horse"
+      ],
+      "lead": 0
+    },
+    {
+      "at": 7.0,
+      "type": "track",
+      "on": [
+        "horse",
+        "hero"
+      ],
+      "ease": 0.7
+    }
+  ],
+  "timeScale": 0.9090909090909091,
+  "moods": [
+    {
+      "at": 0,
+      "mood": "majestic"
+    },
+    {
+      "at": 5.6,
+      "mood": "battle"
+    }
+  ],
+  "era": "van_lang",
+  "castFile": "cast.json"
+}

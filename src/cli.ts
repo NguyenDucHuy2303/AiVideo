@@ -33,8 +33,16 @@ Usage:
                                              local LLM (Ollama) writes projects/NAME/storyboard.json
   npm run wata -- story <script.txt> [--name NAME] [--title "…"] [--model gemma3:4b] [--force] [--render]
                                              your story script, word for word → animated story video (AI designs the pictures)
-  npm run wata -- build <storyboard.json> [--voice ID] [--speed 1.0] [--engine piper|dummy] [--offline] [--render]
+  npm run wata -- build <storyboard.json> [--voice ID] [--speed 1.0] [--engine piper|vieneu|dummy] [--offline] [--voice-only] [--render]
                                              storyboard → TTS → photos (library, else Pexels/Openverse) → timeline.json (→ MP4)
+  npm run wata -- animate <projects/NAME> [--force] [--model gemma3:4b] [--out anim]
+                                             storyboard → cartoon scene scripts (projects/NAME/anim/sNN.json), designed by the local LLM
+  npm run wata -- cartoon <projects/NAME> [--vertical] [--after 18:00] [--out anim] [--chapters] [--tag NAME] [--no-brand]
+                                             scene scripts → the whole story as a cartoon MP4 (--after: wait until that time to start;
+                                             with assets/brand/brand.json: channel intro, logo, outro, thumbnail)
+  npm run wata -- topics [--count 5]         the brain proposes new topics and starts a job for each (studio/jobs/)
+  npm run wata -- write <job|"topic"> [--era KEY]   research + write the job's script (5–8 min, dialogue) for review
+  npm run wata -- tokens                     what the brain (Claude) has spent: today, per job, per step
   npm run wata -- validate <timeline.json>   check a timeline without rendering
   npm run wata -- render <timeline.json> [--profile 9x16|16x9] [--encoder x264|qsv] [--force]
   npm run wata -- library add <images|folders…> --to NAME [--license "…"] [--source "…"] [--tags "a,b"] [--model gemma3:4b] [--retag]
@@ -46,14 +54,25 @@ Usage:
   npm run wata -- fixtures [--force]         generate demo assets for fixtures/demo
 `;
 
+/** Wait until a time of day ("18:00"), for long renders outside office hours. */
+async function waitUntil(hhmm: string): Promise<void> {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(hhmm);
+  if (!m) throw new TimelineError(`--after needs a time like 18:00, not "${hhmm}"`);
+  const now = new Date(), at = new Date(now);
+  at.setHours(Number(m[1]), Number(m[2]), 0, 0);
+  if (at <= now) return;
+  console.log(`waiting until ${hhmm} to start (${Math.round((at.getTime() - now.getTime()) / 60000)} min)…`);
+  await new Promise((r) => setTimeout(r, at.getTime() - now.getTime()));
+}
+
 function parseEncoder(value: string | undefined): Encoder {
   if (value !== "x264" && value !== "qsv") throw new TimelineError(`unknown encoder "${value}" (use x264 or qsv)`);
   return value;
 }
 
-function parseEngine(value: string | undefined): "piper" | "dummy" | undefined {
-  if (value === undefined || value === "piper" || value === "dummy") return value;
-  throw new TimelineError(`unknown TTS engine "${value}" (use piper or dummy)`);
+function parseEngine(value: string | undefined): "piper" | "vieneu" | "dummy" | undefined {
+  if (value === undefined || value === "piper" || value === "vieneu" || value === "dummy") return value;
+  throw new TimelineError(`unknown TTS engine "${value}" (use piper, vieneu or dummy)`);
 }
 
 function parseIntIn(value: string, flag: string, min: number, max: number): number {
@@ -87,6 +106,8 @@ async function main(): Promise<number> {
       duration: { type: "string", default: "60" },
       scenes: { type: "string" },
       notes: { type: "string" },
+      count: { type: "string" },
+      era: { type: "string" },
       model: { type: "string" },
       to: { type: "string" },
       tags: { type: "string" },
@@ -94,6 +115,13 @@ async function main(): Promise<number> {
       license: { type: "string" },
       retag: { type: "boolean", default: false },
       offline: { type: "boolean", default: false },
+      vertical: { type: "boolean", default: false },
+      after: { type: "string" },
+      chapters: { type: "boolean", default: false },
+      tag: { type: "string" },
+      "voice-only": { type: "boolean", default: false },
+      "no-brand": { type: "boolean", default: false },
+      out: { type: "string" },
       help: { type: "boolean", short: "h", default: false },
     },
   });
@@ -177,7 +205,7 @@ async function main(): Promise<number> {
           return 0;
         }
       }
-      const result = await buildProject(storyboard, { voice: values.voice, speed: parseSpeed(values.speed), engine: parseEngine(values.engine), offline: values.offline });
+      const result = await buildProject(storyboard, { voice: values.voice, speed: parseSpeed(values.speed), engine: parseEngine(values.engine), offline: values.offline, voiceOnly: values["voice-only"] });
       console.log(`\nTimeline: ${result.timelineFile} (${result.durationSec.toFixed(1)}s)`);
       if (!values.render) {
         console.log(`Next: npm run wata -- render ${result.timelineFile}`);
@@ -186,6 +214,61 @@ async function main(): Promise<number> {
       const report = await renderTimeline(result.timelineFile, { encoder: parseEncoder(values.encoder) });
       console.log("\nOutputs:");
       for (const o of report.outputs) console.log(`  ${o.profile.padEnd(5)} ${o.file}${o.cached ? " (unchanged)" : ""}`);
+      return 0;
+    }
+
+    case "topics": {
+      const { proposeTopics } = await import("./studio/topics.ts");
+      const { newJob } = await import("./studio/jobs.ts");
+      const fsp = await import("node:fs/promises");
+      const pathm = await import("node:path");
+      const topics = await proposeTopics(Number(values.count ?? 5), console.log);
+      for (const t of topics) {
+        const job = await newJob(t.title, { kind: t.kind, era: t.era, summary: t.summary });
+        await fsp.writeFile(pathm.join("studio", "jobs", job.slug, "topic.json"), JSON.stringify(t, null, 2));
+        console.log(`  + ${job.slug}  [${t.era}${t.newEra ? " — thời đại mới" : ""}]  ${t.summary}`);
+      }
+      return 0;
+    }
+
+    case "write": {
+      if (!file) throw new TimelineError('write needs a job or a topic, e.g. write "Sơn Tinh Thủy Tinh"');
+      const { listJobs, newJob } = await import("./studio/jobs.ts");
+      const { writeScript } = await import("./studio/write.ts");
+      const job = (await listJobs()).find((j) => j.slug === file || j.topic === file) ?? (await newJob(file, { era: values.era }));
+      const done = await writeScript(job.slug);
+      console.log(done.status === "review" ? `✔ studio/jobs/${done.slug}/script.txt — waiting for review${done.history.at(-1)?.info ? ` (${done.history.at(-1)!.info})` : ""}` : `✘ ${done.error}`);
+      return done.status === "review" ? 0 : 1;
+    }
+
+    case "tokens": {
+      const { ledger, weigh, brainSettings, spent } = await import("./brain/claude.ts");
+      const cfg = await brainSettings(), all = await ledger();
+      const fmt = (n: number) => n.toLocaleString("vi");
+      console.log(`Today: ${fmt(await spent({ today: true }))} / ${fmt(cfg.perDayTokens)} tokens (weighted: cache reads count 1/10)`);
+      const by = new Map<string, { n: number; t: number; out: number; s: number }>();
+      for (const e of all) {
+        const k = `${e.job} · ${e.step} · ${e.model}`, v = by.get(k) ?? { n: 0, t: 0, out: 0, s: 0 };
+        by.set(k, { n: v.n + 1, t: v.t + weigh(e), out: v.out + e.output, s: v.s + e.seconds });
+      }
+      for (const [k, v] of by) console.log(`  ${k}: ${v.n} call(s), ${fmt(v.t)} tokens (${fmt(v.out)} written), ${v.s} s`);
+      return 0;
+    }
+
+    case "animate": {
+      if (!file) throw new TimelineError("animate needs a project folder, e.g. animate projects/thanh-giong");
+      const { animate } = await import("./animation/compile/animate.ts");
+      const files = await animate(file, { force: values.force, model: values.model, out: values.out });
+      console.log(`✔ ${files.length} scene scripts. Next: npm run wata -- cartoon ${file}`);
+      return 0;
+    }
+
+    case "cartoon": {
+      if (!file) throw new TimelineError("cartoon needs a project folder, e.g. cartoon projects/thanh-giong");
+      if (values.after) await waitUntil(values.after);
+      const { renderStory } = await import("./animation/story.ts");
+      const out = await renderStory(file, { vertical: values.vertical, anim: values.out, chapters: values.chapters, tag: values.tag, brand: !values["no-brand"] });
+      console.log(`✔ ${out}`);
       return 0;
     }
 

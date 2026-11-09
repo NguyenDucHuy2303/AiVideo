@@ -10,3 +10,7 @@ projects/*/gen/
 projects/*/timeline.json
 say-*.wav
 .env
+studio/brain-cwd/
+studio/research/
+studio/**/*.wav
+studio/**/*.mp4

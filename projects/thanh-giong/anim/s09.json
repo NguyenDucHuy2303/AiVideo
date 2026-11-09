@@ -1,0 +1,92 @@
+{
+  "castFile": "cast.json",
+  "duration": 5.7,
+  "time": "dusk",
+  "set": {
+    "name": "field"
+  },
+  "cast": [
+    {
+      "id": "boy",
+      "type": "human",
+      "look": "boy",
+      "x": 0,
+      "scale": 1.6
+    },
+    {
+      "id": "v1",
+      "type": "human",
+      "look": "villager_man",
+      "x": -520
+    },
+    {
+      "id": "v2",
+      "type": "human",
+      "look": "villager_woman",
+      "x": 420,
+      "facing": -1
+    },
+    {
+      "id": "v3",
+      "type": "human",
+      "look": "villager_man",
+      "x": 700,
+      "facing": -1,
+      "scale": 0.95
+    }
+  ],
+  "actions": [
+    {
+      "actor": "boy",
+      "at": 0,
+      "do": "heroic",
+      "face": "determined"
+    },
+    {
+      "actor": "v1",
+      "at": 0.4,
+      "do": "cheer"
+    },
+    {
+      "actor": "v2",
+      "at": 0.6000000000000001,
+      "do": "cheer"
+    },
+    {
+      "actor": "v3",
+      "at": 0.8,
+      "do": "cheer"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 5.7,
+      "scale": 2.4
+    },
+    {
+      "fx": "glow",
+      "on": "boy",
+      "at": 0.5,
+      "dur": 5,
+      "power": 0.5
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "v1",
+        "boy",
+        "v3"
+      ],
+      "gy": 0.9,
+      "push": 0.14
+    }
+  ],
+  "mood": "majestic",
+  "era": "van_lang"
+}

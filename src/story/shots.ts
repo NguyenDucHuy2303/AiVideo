@@ -49,7 +49,7 @@ function story(parsed: ParsedStory): string {
 }
 
 /** Ask for JSON until `check` finds no problems; problems are sent back to the model. */
-async function ask<T>(
+export async function ask<T>(
   provider: LlmProvider,
   messages: ChatMessage[],
   schema: z.ZodType<T>,

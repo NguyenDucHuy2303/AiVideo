@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Brand"; src: url("../../../assets/fonts/NotoSans-ExtraBold.ttf"); font-weight: 800; }
+  @font-face { font-family: "Brand"; src: url("../../../assets/fonts/NotoSans-Bold.ttf"); font-weight: 700; }
+  html, body { margin: 0; overflow: hidden; background: transparent; }
+  svg { display: block; }
+  text { font-family: "Brand", "Noto Sans", sans-serif; }
+</style>
+</head>
+<body>
+<script src="../runtime/core.js"></script>
+<script>
+/*
+ * Channel identity, drawn in code: a Đông Sơn bronze-drum face (the star, rings of
+ * zigzags and circles, Lạc birds flying round) with the channel name on a ribbon.
+ * Modes (window.params.mode): logo (still, transparent), intro (~3 s), outro (~5 s),
+ * thumb (a frame of the film with the title). renderFrame(t) like the cartoon player.
+ */
+const P = window.params || {};
+const W = P.width || 1920, H = P.height || 1080, B = P.brand || { name: "Huy Kể Chuyện", tagline: "Truyện cổ tích & lịch sử Việt Nam" };
+const { el, g, f2, tr, clamp, lerp, seg, EASE, bump, rand } = WA.core;
+const svg = el("svg", { width: W, height: H, viewBox: `0 0 ${W} ${H}` }, document.body);
+const defs = el("defs", {}, svg);
+defs.innerHTML = `
+  <radialGradient id="drum" cx="0.42" cy="0.38" r="0.7"><stop offset="0" stop-color="#ffe9a8"/><stop offset="0.45" stop-color="#e2a943"/><stop offset="0.85" stop-color="#a8691e"/><stop offset="1" stop-color="#7a4612"/></radialGradient>
+  <radialGradient id="glow"><stop offset="0" stop-color="#fff3c4" stop-opacity="0.9"/><stop offset="0.5" stop-color="#ffc85a" stop-opacity="0.35"/><stop offset="1" stop-color="#ff9a2a" stop-opacity="0"/></radialGradient>
+  <linearGradient id="ribbon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0453a"/><stop offset="1" stop-color="#8e1a12"/></linearGradient>
+  <radialGradient id="bgRed" cx="0.5" cy="0.45" r="0.8"><stop offset="0" stop-color="#7a2418"/><stop offset="1" stop-color="#2a0c08"/></radialGradient>
+  <linearGradient id="btn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff4a3a"/><stop offset="1" stop-color="#c01e14"/></linearGradient>
+  <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0.45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#1a0804" stop-opacity="0.85"/></linearGradient>
+  <linearGradient id="shadeL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1a0804" stop-opacity="0.75"/><stop offset="0.6" stop-color="#000" stop-opacity="0"/></linearGradient>
+`;
+const INK = "#2a160a", LINE = { stroke: INK, "stroke-linejoin": "round", "stroke-linecap": "round" };
+
+/** A Lạc bird of the drums: long beak, crest, spread wings, flying (pointing along +x). */
+function bird(parent, s) {
+  const b = g(parent, { transform: `scale(${s})` });
+  el("path", { d: "M -40 0 C -20 -10 10 -12 30 -4 L 62 -2 L 30 4 C 10 10 -20 8 -40 0 Z", fill: "#6a3a12", ...LINE, "stroke-width": 2 }, b);
+  el("path", { d: "M -10 -6 C -20 -34 -40 -40 -58 -36 C -40 -26 -30 -16 -22 -6 Z", fill: "#7a4618", ...LINE, "stroke-width": 2 }, b);
+  el("path", { d: "M 10 -8 C 6 -22 14 -30 22 -34 C 20 -24 20 -16 18 -8 Z", fill: "#7a4618", ...LINE, "stroke-width": 2 }, b);
+  el("path", { d: "M -40 0 L -62 -8 L -58 4 Z", fill: "#6a3a12", ...LINE, "stroke-width": 2 }, b);
+  el("circle", { cx: 22, cy: -3, r: 2.5, fill: "#ffe9a8" }, b);
+  return b;
+}
+
+/** The drum-face logo, radius R, centred at 0,0. Returns rotating parts. */
+function logo(parent, R, withName = true) {
+  const L = g(parent);
+  el("circle", { r: R * 1.18, fill: "url(#glow)" }, L);
+  el("circle", { r: R, fill: "url(#drum)", ...LINE, "stroke-width": R * 0.03 }, L);
+  const rings = g(L), birds = g(L), star = g(L);
+  // Rings: zigzag, small circles, plain lines — the bands of a bronze drum.
+  for (const [r, w] of [[0.97, 0.012], [0.9, 0.008], [0.62, 0.008], [0.56, 0.01], [0.36, 0.008]]) el("circle", { r: R * r, fill: "none", stroke: "#6a3a12", "stroke-width": R * w }, rings);
+  let zig = "";
+  for (let i = 0; i <= 72; i++) { const a = (i / 72) * Math.PI * 2, rr = R * (i % 2 ? 0.92 : 0.95); zig += `${i ? "L" : "M"} ${f2(Math.cos(a) * rr)} ${f2(Math.sin(a) * rr)} `; }
+  el("path", { d: zig, fill: "none", stroke: "#6a3a12", "stroke-width": R * 0.008 }, rings);
+  for (let i = 0; i < 36; i++) { const a = (i / 36) * Math.PI * 2; el("circle", { cx: f2(Math.cos(a) * R * 0.59), cy: f2(Math.sin(a) * R * 0.59), r: f2(R * 0.018), fill: "none", stroke: "#6a3a12", "stroke-width": R * 0.006 }, rings); }
+  for (let i = 0; i < 24; i++) { const a = (i / 24) * Math.PI * 2; el("line", { x1: f2(Math.cos(a) * R * 0.37), y1: f2(Math.sin(a) * R * 0.37), x2: f2(Math.cos(a) * R * 0.55), y2: f2(Math.sin(a) * R * 0.55), stroke: "#8a5420", "stroke-width": R * 0.006, opacity: 0.6 }, rings); }
+  // Lạc birds flying round between the rings, as on the Ngọc Lũ drum.
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * 360, holder = g(birds, { transform: `rotate(${a}) translate(${f2(R * 0.76)},0) rotate(90)` });
+    bird(holder, R * 0.0028);
+  }
+  // The star at the centre: fourteen rays.
+  let st = "";
+  for (let i = 0; i < 28; i++) { const a = (i / 28) * Math.PI * 2 - Math.PI / 2, rr = R * (i % 2 ? 0.12 : 0.33); st += `${i ? "L" : "M"} ${f2(Math.cos(a) * rr)} ${f2(Math.sin(a) * rr)} `; }
+  el("path", { d: st + "Z", fill: "#fff1b8", ...LINE, "stroke-width": R * 0.012 }, star);
+  el("circle", { r: R * 0.1, fill: "#e2a943", ...LINE, "stroke-width": R * 0.01 }, star);
+  let name = null;
+  if (withName) {
+    name = g(L);
+    el("path", { d: `M ${f2(-R * 1.25)} ${f2(R * 0.55)} L ${f2(R * 1.25)} ${f2(R * 0.55)} L ${f2(R * 1.15)} ${f2(R * 0.78)} L ${f2(R * 1.25)} ${f2(R * 1.0)} L ${f2(-R * 1.25)} ${f2(R * 1.0)} L ${f2(-R * 1.15)} ${f2(R * 0.78)} Z`, fill: "url(#ribbon)", ...LINE, "stroke-width": R * 0.025 }, name);
+    const t = el("text", { x: 0, y: f2(R * 0.88), "text-anchor": "middle", "font-size": f2(R * 0.3), "font-weight": 800, fill: "#fff6dc", stroke: INK, "stroke-width": R * 0.02, "paint-order": "stroke" }, name);
+    t.textContent = B.name;
+  }
+  return { L, rings, birds, star, name };
+}
+
+function spin(parts, t, k = 1) {
+  tr(parts.rings, 0, 0, t * 12 * k);
+  tr(parts.birds, 0, 0, -t * 24 * k);
+  tr(parts.star, 0, 0, t * 30 * k, 1 + 0.04 * Math.sin(t * 6));
+}
+
+const mode = P.mode || "logo";
+let render = () => {};
+
+if (mode === "logo") {
+  const holder = g(svg, { transform: `translate(${W / 2},${H * 0.42})` });
+  const parts = logo(holder, Math.min(W, H) * 0.36, P.withName !== false);
+  render = (t) => spin(parts, 0.6);
+}
+
+if (mode === "intro") {
+  el("rect", { width: W, height: H, fill: "url(#bgRed)" }, svg);
+  const rays = g(svg, { transform: `translate(${W / 2},${H * 0.45})`, style: "mix-blend-mode: screen" });
+  for (let i = 0; i < 16; i++) el("path", { d: `M -20 0 L 20 0 L 140 ${H} L -140 ${H} Z`, fill: "#ffcf7a", opacity: 0.12, transform: `rotate(${i * 22.5})` }, rays);
+  const holder = g(svg);
+  const parts = logo(holder, H * 0.3, true);
+  const sparks = g(svg);
+  const tag = el("text", { x: W / 2, y: H * 0.93, "text-anchor": "middle", "font-size": f2(H * 0.045), "font-weight": 700, fill: "#ffe9a8", opacity: 0 }, svg);
+  tag.textContent = B.tagline;
+  const flash = el("rect", { width: W, height: H, fill: "#fff6d8", opacity: 0 }, svg);
+  render = (t) => {
+    // The drum flies in spinning, lands with a beat; the name and tagline follow.
+    const k = EASE.backOut(seg(t, 0, 0.8)), s = lerp(0.05, 1, k);
+    tr(holder, W / 2, H * 0.45, (1 - k) * -200, s);
+    spin(parts, t, 1 + (1 - seg(t, 0, 1.2)) * 6);
+    tr(rays, W / 2, H * 0.45, t * 18, 0.6 + seg(t, 0.6, 1.4));
+    rays.setAttribute("opacity", f2(seg(t, 0.6, 1.0)));
+    if (parts.name) { const n = EASE.backOut(seg(t, 0.9, 1.4)); parts.name.setAttribute("transform", `translate(0,${f2((1 - n) * H * 0.15)}) scale(${f2(Math.max(0.01, n))})`); parts.name.setAttribute("opacity", f2(seg(t, 0.9, 1.1))); }
+    tag.setAttribute("opacity", f2(seg(t, 1.4, 1.9)));
+    let html = "";
+    for (let i = 0; i < 40; i++) {
+      const r = rand(10 + i), born = 0.75 + r() * 0.6, age = t - born, life = 1.2;
+      if (age < 0 || age > life) continue;
+      const a = r() * Math.PI * 2, d = 120 + (age / life) * (400 + r() * 500), sz = 8 * (1 - age / life) + 2;
+      html += `<circle cx="${f2(W / 2 + Math.cos(a) * d)}" cy="${f2(H * 0.45 + Math.sin(a) * d * 0.8)}" r="${f2(sz)}" fill="#fff1b0" opacity="${f2(1 - age / life)}"/>`;
+    }
+    sparks.innerHTML = html;
+    flash.setAttribute("opacity", f2(0.7 * bump(t, 0.75, 1.05) + 0.9 * seg(t, (P.duration || 3) - 0.35, P.duration || 3)));
+  };
+}
+
+if (mode === "outro") {
+  el("rect", { width: W, height: H, fill: "url(#bgRed)" }, svg);
+  const vertical = H > W;
+  const holder = g(svg);
+  const parts = logo(holder, (vertical ? W : H) * 0.22, true);
+  const thanks = el("text", { x: W / 2, y: H * (vertical ? 0.18 : 0.17), "text-anchor": "middle", "font-size": f2((vertical ? W : H) * 0.075), "font-weight": 800, fill: "#fff6dc", stroke: INK, "stroke-width": 8, "paint-order": "stroke" }, svg);
+  thanks.textContent = "Cảm ơn các bạn đã xem!";
+  const btn = g(svg);
+  const bw = (vertical ? W : H) * 0.62, bh = (vertical ? W : H) * 0.14;
+  const btnRect = el("rect", { x: -bw / 2, y: -bh / 2, width: bw, height: bh, rx: bh / 2, fill: "url(#btn)", stroke: INK, "stroke-width": 6 }, btn);
+  const btnText = el("text", { x: 0, y: bh * 0.17, "text-anchor": "middle", "font-size": f2(bh * 0.46), "font-weight": 800, fill: "#fff" }, btn);
+  btnText.textContent = "ĐĂNG KÝ";
+  const bell = g(btn, { transform: `translate(${f2(bw / 2 + bh * 0.7)},0)` });
+  el("path", { d: `M 0 ${f2(-bh * 0.38)} C ${f2(bh * 0.28)} ${f2(-bh * 0.38)} ${f2(bh * 0.3)} ${f2(-bh * 0.05)} ${f2(bh * 0.32)} ${f2(bh * 0.2)} L ${f2(bh * 0.4)} ${f2(bh * 0.3)} L ${f2(-bh * 0.4)} ${f2(bh * 0.3)} L ${f2(-bh * 0.32)} ${f2(bh * 0.2)} C ${f2(-bh * 0.3)} ${f2(-bh * 0.05)} ${f2(-bh * 0.28)} ${f2(-bh * 0.38)} 0 ${f2(-bh * 0.38)} Z`, fill: "#ffd25a", stroke: INK, "stroke-width": 5 }, bell);
+  el("circle", { cy: f2(bh * 0.4), r: f2(bh * 0.09), fill: "#ffd25a", stroke: INK, "stroke-width": 4 }, bell);
+  const hand = g(svg);
+  el("path", { d: "M 0 0 L 0 -70 Q 0 -84 12 -84 Q 24 -84 24 -70 L 24 -36 L 54 -30 Q 70 -26 68 -6 L 62 40 Q 58 60 36 60 L 8 60 Q -10 60 -22 40 L -40 6 Q -46 -8 -32 -12 Q -20 -14 -10 0 Z", fill: "#fff", stroke: INK, "stroke-width": 6 }, hand);
+  const tagline = el("text", { x: W / 2, y: H * (vertical ? 0.9 : 0.93), "text-anchor": "middle", "font-size": f2((vertical ? W : H) * 0.042), "font-weight": 700, fill: "#ffe9a8" }, svg);
+  tagline.textContent = `${B.name} · ${B.tagline}`;
+  render = (t) => {
+    const lx = vertical ? W / 2 : W * 0.3, ly = vertical ? H * 0.42 : H * 0.53;
+    tr(holder, lx, ly, 0, EASE.backOut(seg(t, 0, 0.6)) || 0.01);
+    spin(parts, t);
+    thanks.setAttribute("opacity", f2(seg(t, 0.2, 0.6)));
+    const bx = vertical ? W / 2 : W * 0.68, by = vertical ? H * 0.72 : H * 0.53;
+    // The button pulses, a hand comes and clicks it: it turns into "ĐÃ ĐĂNG KÝ" and the bell rings.
+    const clicked = t > 2.6, pulse = clicked ? 1 : 1 + 0.06 * Math.sin(t * 7);
+    tr(btn, bx, by, 0, EASE.backOut(seg(t, 0.4, 0.9)) * pulse * (1 - 0.08 * bump(t, 2.5, 2.75)) || 0.01);
+    btnRect.setAttribute("fill", clicked ? "#8a8a8a" : "url(#btn)");
+    btnText.textContent = clicked ? "ĐÃ ĐĂNG KÝ" : "ĐĂNG KÝ";
+    tr(bell, bw / 2 + bh * 0.7, 0, clicked ? 18 * Math.sin((t - 2.6) * 18) * Math.exp(-(t - 2.6) * 2) : 0);
+    const hk = EASE.inOut(seg(t, 1.6, 2.5));
+    tr(hand, lerp(W * 1.1, bx + bw * 0.1, hk), lerp(H * 1.2, by + bh * 0.35, hk) + 12 * bump(t, 2.5, 2.75), -20, (vertical ? W : H) / 900);
+    hand.setAttribute("opacity", f2(1 - seg(t, 3.4, 3.8)));
+    tagline.setAttribute("opacity", f2(seg(t, 0.8, 1.2)));
+  };
+}
+
+if (mode === "thumb") {
+  // A frame of the film, darkened at the bottom and the left, the title big (wrapped and
+  // shrunk to fit, measured once the fonts are in), the subtitle ribbon above it, the logo.
+  el("image", { href: P.frame, width: W, height: H, preserveAspectRatio: "xMidYMid slice" }, svg);
+  el("rect", { width: W, height: H, fill: "url(#shade)" }, svg);
+  el("rect", { width: W, height: H, fill: "url(#shadeL)" }, svg);
+  const badge = g(svg, { transform: `translate(${W - H * 0.15},${H * 0.15})` });
+  spin(logo(badge, H * 0.1, false), 0.6);
+  const words = (P.title || "").toUpperCase().split(/\s+/).filter(Boolean);
+  let drawn = false;
+  render = () => {
+    if (drawn) return;
+    drawn = true;
+    const maxW = W * 0.9, x = W * 0.05;
+    const probe = el("text", { "font-size": 100, "font-weight": 800 }, svg);
+    const width = (s, size) => { probe.textContent = s; return probe.getComputedTextLength() * size / 100; };
+    // The biggest size at which the words fit in at most two lines.
+    let size = H * 0.21, lines = [words.join(" ")];
+    for (; size > H * 0.08; size *= 0.95) {
+      if (width(words.join(" "), size) <= maxW) { lines = [words.join(" ")]; break; }
+      let best;
+      for (let k = 1; k < words.length; k++) {
+        const two = [words.slice(0, k).join(" "), words.slice(k).join(" ")];
+        const w = Math.max(width(two[0], size), width(two[1], size));
+        if (w <= maxW && (!best || w < best.w)) best = { w, two };
+      }
+      if (best) { lines = best.two; break; }
+    }
+    probe.remove();
+    const lh = size * 1.02, base = H * 0.93 - (lines.length - 1) * lh;
+    lines.forEach((line, i) => {
+      const tt = el("text", { x, y: base + i * lh, "font-size": f2(size), "font-weight": 800, fill: "#ffe14a", stroke: "#5a0c06", "stroke-width": f2(size * 0.14), "stroke-linejoin": "round", "paint-order": "stroke" }, svg);
+      tt.textContent = line;
+    });
+    if (P.subtitle) {
+      const sz = H * 0.06, top = base - size * 0.95 - sz * 0.6;
+      const sub = g(svg, { transform: `translate(${x},${top})` });
+      const box = el("rect", { x: 0, y: -sz * 1.05, height: sz * 1.45, rx: 10, fill: "url(#ribbon)", stroke: INK, "stroke-width": 5 }, sub);
+      const st = el("text", { x: sz * 0.5, y: 0, "font-size": f2(sz), "font-weight": 800, fill: "#fff" }, sub);
+      st.textContent = P.subtitle;
+      box.setAttribute("width", f2(st.getComputedTextLength() + sz));
+    }
+  };
+}
+
+window.renderFrame = (t) => render(t);
+window.ready = document.fonts.ready.then(() => (P.frame ? new Promise((r) => { const i = new Image(); i.onload = r; i.onerror = r; i.src = P.frame; }) : null));
+window.renderFrame(0);
+</script>
+</body>
+</html>

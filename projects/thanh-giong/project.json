@@ -1,6 +1,12 @@
 {
-  "engine": "piper",
+  "engine": "vieneu",
   "speed": 1,
   "imageGen": "prefer",
-  "onlineImages": false
+  "onlineImages": false,
+  "era": "van_lang",
+  "voice": "Minh Đức",
+  "thumbnail": {
+    "title": "Thánh Gióng",
+    "subtitle": "Truyện cổ tích Việt Nam"
+  }
 }

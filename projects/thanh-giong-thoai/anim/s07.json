@@ -1,0 +1,239 @@
+{
+  "castFile": "cast.json",
+  "duration": 5.8,
+  "time": "dusk",
+  "set": {
+    "name": "bamboo",
+    "objects": [
+      {
+        "type": "stumps",
+        "x": 2000,
+        "from": 2.5
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "horse",
+      "type": "horse",
+      "look": "iron_horse",
+      "x": -1200,
+      "scale": 2.4
+    },
+    {
+      "id": "hero",
+      "type": "human",
+      "look": "hero",
+      "x": -1200,
+      "scale": 2.4
+    },
+    {
+      "id": "e0",
+      "type": "human",
+      "look": "enemy",
+      "x": 600,
+      "facing": -1,
+      "scale": 1.0
+    },
+    {
+      "id": "e1",
+      "type": "human",
+      "look": "enemy",
+      "x": 1500,
+      "facing": -1,
+      "scale": 1.06
+    },
+    {
+      "id": "e2",
+      "type": "human",
+      "look": "enemy",
+      "x": 2100,
+      "facing": -1,
+      "scale": 1.0
+    },
+    {
+      "id": "e3",
+      "type": "human",
+      "look": "enemy",
+      "x": 2700,
+      "facing": -1,
+      "scale": 1.06
+    },
+    {
+      "id": "e4",
+      "type": "human",
+      "look": "enemy",
+      "x": 3300,
+      "facing": -1,
+      "scale": 1.0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "horse",
+      "at": 0,
+      "do": "gallop",
+      "move": {
+        "speed": 900
+      }
+    },
+    {
+      "actor": "hero",
+      "at": -0.1,
+      "do": "leap",
+      "onto": "horse",
+      "dur": 0.01,
+      "arc": 0
+    },
+    {
+      "actor": "hero",
+      "at": 0.02,
+      "do": "ride_swing",
+      "period": 0.65
+    },
+    {
+      "actor": "hero",
+      "at": 2.25,
+      "set": {
+        "prop": "broken_whip"
+      }
+    },
+    {
+      "actor": "hero",
+      "at": 2.3,
+      "do": "ride",
+      "face": "surprised"
+    },
+    {
+      "actor": "hero",
+      "at": 2.6,
+      "set": {
+        "prop": "bamboo"
+      }
+    },
+    {
+      "actor": "hero",
+      "at": 2.62,
+      "do": "ride_swing",
+      "period": 0.6
+    },
+    {
+      "actor": "e0",
+      "at": 0,
+      "do": "march",
+      "face": "angry"
+    },
+    {
+      "actor": "e0",
+      "at": 1.22,
+      "do": "fall"
+    },
+    {
+      "actor": "e1",
+      "at": 0,
+      "do": "march",
+      "face": "angry"
+    },
+    {
+      "actor": "e1",
+      "at": 2.2,
+      "do": "fall"
+    },
+    {
+      "actor": "e2",
+      "at": 0,
+      "do": "charge",
+      "face": "angry"
+    },
+    {
+      "actor": "e2",
+      "at": 2.9,
+      "do": "fall"
+    },
+    {
+      "actor": "e3",
+      "at": 0,
+      "do": "charge",
+      "face": "angry"
+    },
+    {
+      "actor": "e3",
+      "at": 3.55,
+      "do": "fall"
+    },
+    {
+      "actor": "e4",
+      "at": 0,
+      "do": "charge",
+      "face": "angry"
+    },
+    {
+      "actor": "e4",
+      "at": 4.2,
+      "do": "fall"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "smoke",
+      "x": 2600,
+      "at": -2,
+      "dur": 8
+    },
+    {
+      "fx": "embers",
+      "x": 1800,
+      "at": 0,
+      "dur": 5.8,
+      "width": 3000
+    },
+    {
+      "fx": "pop",
+      "on": "hero",
+      "at": 2.25
+    },
+    {
+      "fx": "impact",
+      "on": "e0",
+      "at": 1.5699999999999998,
+      "power": 0.35
+    },
+    {
+      "fx": "impact",
+      "on": "e1",
+      "at": 2.5500000000000003,
+      "power": 0.35
+    },
+    {
+      "fx": "impact",
+      "on": "e2",
+      "at": 3.25,
+      "power": 0.35
+    },
+    {
+      "fx": "impact",
+      "on": "e3",
+      "at": 3.9,
+      "power": 0.35
+    },
+    {
+      "fx": "impact",
+      "on": "e4",
+      "at": 4.55,
+      "power": 0.35
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": [
+        "horse",
+        "hero"
+      ],
+      "share": 0.46
+    }
+  ],
+  "mood": "battle",
+  "era": "van_lang"
+}

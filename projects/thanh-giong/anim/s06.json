@@ -1,0 +1,113 @@
+{
+  "castFile": "cast.json",
+  "duration": 6.13,
+  "time": "day",
+  "set": {
+    "name": "village",
+    "houseX": -760
+  },
+  "cast": [
+    {
+      "id": "mother",
+      "type": "human",
+      "look": "mother",
+      "x": -330
+    },
+    {
+      "id": "boy",
+      "type": "human",
+      "look": "boy",
+      "x": 0,
+      "scale": 0.8
+    },
+    {
+      "id": "messenger",
+      "type": "human",
+      "look": "messenger",
+      "x": 360,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "boy",
+      "at": 0,
+      "do": "talk",
+      "face": "determined"
+    },
+    {
+      "actor": "messenger",
+      "at": 0,
+      "do": "kneel",
+      "face": "surprised"
+    },
+    {
+      "actor": "mother",
+      "at": 0,
+      "do": "still",
+      "face": "surprised"
+    },
+    {
+      "actor": "boy",
+      "at": 2.2,
+      "do": "point",
+      "face": "determined",
+      "talk": 1
+    },
+    {
+      "actor": "boy",
+      "at": 4.2,
+      "do": "raise",
+      "face": "determined",
+      "talk": 0.6
+    },
+    {
+      "actor": "messenger",
+      "at": 4.0,
+      "do": "bow",
+      "face": "happy",
+      "lookAt": "boy"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "glow",
+      "on": "boy",
+      "at": 4.1,
+      "dur": 2.0,
+      "power": 0.6
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": "boy",
+      "gy": 0.9,
+      "push": 0.1
+    },
+    {
+      "at": 2.6,
+      "type": "wide",
+      "on": [
+        "mother",
+        "boy",
+        "messenger"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 3.6,
+      "type": "close",
+      "on": "boy",
+      "push": 0.05
+    },
+    {
+      "at": 4.6,
+      "type": "close",
+      "on": "messenger"
+    }
+  ],
+  "mood": "majestic",
+  "era": "van_lang"
+}

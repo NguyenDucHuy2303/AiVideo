@@ -6,6 +6,16 @@ Kịch bản AI → giọng đọc → MP4 9:16 + 16:9, chạy hoàn toàn local
 chủ đề  →  script: LLM local (Ollama) viết  →  storyboard.json  →  build: TTS từng câu, chọn ảnh, dựng timeline  →  timeline.json  →  render (FFmpeg)  →  MP4
 ```
 
+## Studio tự động (đang xây)
+
+Chỉ cần duyệt: phần mềm tự đề xuất chủ đề, tìm tư liệu (Wikipedia tiếng Việt), viết kịch bản 5–8 phút có lời thoại, rồi làm video. "Bộ não" là Claude (qua Claude Code, gói của bạn) cho việc cần suy nghĩ, có sổ token và trần ngân sách; quá trần thì tự chuyển sang mô hình local (Ollama). Dữ liệu ở `studio/` (`jobs/<tên>/`: kịch bản, nguồn, giọng; `ledger.jsonl`: token; `settings.json`: trần).
+
+```bash
+npm run wata -- topics --count 5          # đề xuất chủ đề → studio/jobs/
+npm run wata -- write son-tinh-thuy-tinh  # tìm tư liệu + viết kịch bản → chờ duyệt
+npm run wata -- tokens                    # đã dùng bao nhiêu token
+```
+
 AI chỉ viết lời và gợi ý. Thời lượng cảnh lấy từ độ dài giọng đọc thật, phụ đề theo thời điểm của từng câu, mọi thứ renderer cần đều do code quyết định.
 
 ## Quy trình làm một video
@@ -36,6 +46,32 @@ npm run wata -- build projects/thanh-giong/storyboard.json --render
 - Cần trình tạo ảnh (`bash scripts/setup-imagegen.sh`). Chưa cài thì vẫn ra video nhưng nền là màu và không có nhân vật.
 - Sửa `storyboard.json` (mô tả nền, hành động, hiệu ứng) rồi `build` lại: chỉ cảnh thay đổi được vẽ/render lại.
 
+## Hoạt hình vector (đang dùng)
+
+Nhân vật có khớp, cử động thật, vẽ bằng SVG trong Chrome headless, quay từng khung bằng FFmpeg. Miễn phí, chạy local.
+
+Một cảnh là một file JSON, không cần viết code. Ví dụ đầy đủ: `projects/thanh-giong/anim/` (phim liền mạch) và `projects/thanh-giong-thoai/anim/` (có lời thoại). Thử riêng một cảnh:
+
+```bash
+node src/animation/render.ts projects/thanh-giong/anim/s11-12.json            # 16:9, kèm ….preview.html để xem chạy lặp
+```
+
+Danh mục thư viện (thời đại, nhân vật, khuôn mặt, động tác, bối cảnh, hiệu ứng, camera, lời thoại, thương hiệu kênh): **`src/animation/LIBRARY.md`**. Mã nguồn: `src/animation/runtime/`, `capture.ts`, `render.ts`, `story.ts`.
+
+### Cả truyện thành phim hoạt hình
+
+```bash
+npm run wata -- story projects/thanh-giong/script.txt --name thanh-giong   # kịch bản → storyboard (nếu chưa có)
+npm run wata -- build projects/thanh-giong/storyboard.json                 # giọng đọc + timeline.json
+npm run wata -- animate projects/thanh-giong                               # AI local thiết kế các cảnh → anim/sNN.json
+npm run wata -- cartoon projects/thanh-giong                               # → out/<tên>-hoat-hinh_16x9.mp4
+npm run wata -- cartoon projects/thanh-giong --vertical --after 18:00      # bản 9:16, đợi tới 18h mới chạy
+```
+
+- `animate`: AI chỉ chọn trong menu của thư viện (bối cảnh, giờ, nhạc, ai đứng đâu, làm gì, nét mặt, hiệu ứng, góc máy); luật cố định đối chiếu với lời kể tiếng Việt ("bay … trời" → bay lên, "nằm ngửa" → nằm, "cất tiếng" → ngồi dậy nói, "tan tác" → giặc ngã, "phun lửa", "nhảy lên ngựa"…); cảnh biến hình ("trở thành…") tự có vươn vai → lớn lên → hình dạng mới, và từ đó nhân vật giữ hình dạng mới. File `anim/sNN.json` đã có (có thể bạn đã sửa) được giữ nguyên trừ khi `--force`.
+- Tên file cảnh cho biết nó thuộc câu kể nào: `s05` = cảnh 5, `s04a` + `s04b` = hai shot của cảnh 4, `s11-12` = một shot cho cảnh 11 và 12. Tổng thời lượng phải bằng lời đọc (có cảnh báo nếu lệch).
+- `cartoon`: render từng cảnh (có cache: sửa cảnh nào chỉ render lại cảnh đó), nối thành **một phim liền mạch** (chỉ mờ vào đầu phim, mờ ra cuối phim), giọng đọc đúng chỗ, nhạc theo `mood`, tiếng động tự lấy từ hành động/hiệu ứng, phụ đề. `--chapters` để chia chương (thẻ tên chương, mờ qua màn đen, tiếng chuông). Khoảng 1 phút máy cho mỗi 8 giây phim.
+
 ## Cài đặt
 
 ```bash
@@ -62,6 +98,17 @@ npm run wata -- build projects/tai-sao-con-nguoi-can-ngu-du-giac/storyboard.json
 - `storyboard.json` đã có sẽ không bị ghi đè (có thể bạn đã sửa tay) — dùng `--force` hoặc `--name`.
 - Nên đọc lại storyboard trước khi build: model nhỏ có thể viết sai sự thật.
 - Đổi model: `--model qwen2.5:7b` (cần nhiều RAM hơn). Đổi máy chủ: biến môi trường `OLLAMA_HOST`.
+
+## Giọng đọc truyền cảm (VieNeu-TTS, offline) — khuyên dùng cho video kể chuyện
+
+```bash
+bash scripts/setup-vieneu.sh        # cài vào vendor/vieneu, tải model, đọc thử 10 giọng vào vendor/vieneu/samples/
+```
+
+- VieNeu-TTS v3 Turbo: giọng tiếng Việt tự nhiên, có ngữ điệu, chạy CPU. Model Apache-2.0; **các giọng có sẵn được phép dùng cho nội dung thương mại/kiếm tiền** (theo model card).
+- Dùng: trong `project.json` đặt `"engine": "vieneu", "voice": "<tên giọng>"` (ví dụ `"Ngọc Huyền"`, `"Minh Đức"`), rồi `npm run wata -- build projects/<tên>/storyboard.json --voice-only` (chỉ làm giọng + timeline, không vẽ ảnh) và `npm run wata -- cartoon projects/<tên>`. Các cảnh hoạt hình tự co giãn theo độ dài giọng mới.
+- Thử một câu: `npm run wata -- say "Ngày xửa ngày xưa…" --engine vieneu --voice "Ngọc Huyền"`.
+- Không dùng tính năng nhân bản giọng của người khác khi chưa được phép.
 
 ## Giọng đọc (Piper, offline)
 
@@ -262,4 +309,3 @@ npm run wata -- render fixtures/demo/timeline.json      # → fixtures/demo/out/
 - `transitionOut.type`: cut, fade, fadeblack, dissolve, slide_left, slide_up, wipe_left, circle_open
 
 Layout của từng tỷ lệ (vùng an toàn, cỡ chữ, vị trí) nằm ở `src/layouts/index.ts`.
-# AiVideo

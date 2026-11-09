@@ -1,0 +1,85 @@
+{
+  "castFile": "cast.json",
+  "duration": 4.23,
+  "time": "day",
+  "set": {
+    "name": "palace",
+    "palaceX": 0
+  },
+  "cast": [
+    {
+      "id": "king",
+      "type": "human",
+      "look": "king",
+      "x": -180
+    },
+    {
+      "id": "messenger",
+      "type": "human",
+      "look": "messenger",
+      "x": 260,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "king",
+      "at": 0,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "messenger",
+      "at": 0,
+      "do": "kneel"
+    },
+    {
+      "actor": "king",
+      "at": 1.5,
+      "do": "point",
+      "face": "determined",
+      "talk": 0.6
+    },
+    {
+      "actor": "messenger",
+      "at": 2.3,
+      "do": "bow"
+    },
+    {
+      "actor": "messenger",
+      "at": 2.9,
+      "set": {
+        "facing": 1
+      }
+    },
+    {
+      "actor": "messenger",
+      "at": 2.95,
+      "do": "run",
+      "move": {
+        "by": 1500,
+        "ease": "in"
+      },
+      "dur": 1.3,
+      "face": "determined"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "medium",
+      "on": "king",
+      "push": 0.06
+    },
+    {
+      "at": 1.5,
+      "type": "full",
+      "on": [
+        "king",
+        "messenger"
+      ]
+    }
+  ],
+  "mood": "tense",
+  "era": "van_lang"
+}

@@ -28,6 +28,8 @@ export const DEFAULT_OLLAMA_MODEL = "gemma3:4b";
 
 /** Abort if the model produces nothing for this long (stuck or out of memory). */
 const STALL_MS = 120_000;
+/** Before the first token the model reads the whole prompt: long prompts take minutes on a CPU. */
+const FIRST_TOKEN_MS = 300_000;
 const TOTAL_MS = 20 * 60_000;
 
 export function ollama(model = DEFAULT_OLLAMA_MODEL, host = OLLAMA_HOST): LlmProvider {
@@ -64,7 +66,7 @@ export function ollama(model = DEFAULT_OLLAMA_MODEL, host = OLLAMA_HOST): LlmPro
     async chat(req) {
       const controller = new AbortController();
       const total = setTimeout(() => controller.abort(new Error("LLM took too long")), TOTAL_MS);
-      let stall = setTimeout(() => controller.abort(new Error("LLM stopped responding")), STALL_MS);
+      let stall = setTimeout(() => controller.abort(new Error("LLM stopped responding (no first token)")), FIRST_TOKEN_MS);
       try {
         const res = await fetch(`${host}/api/chat`, {
           method: "POST",

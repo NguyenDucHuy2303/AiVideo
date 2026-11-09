@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  svg { display: block; }
+  .glow { mix-blend-mode: screen; }
+</style>
+</head>
+<body>
+<script src="runtime/core.js"></script>
+<script src="runtime/stage.js"></script>
+<script src="runtime/scenery.js"></script>
+<script src="runtime/face.js"></script>
+<script src="runtime/human.js"></script>
+<script src="runtime/horse.js"></script>
+<script src="runtime/motions.js"></script>
+<script src="runtime/fx.js"></script>
+<script src="runtime/camera.js"></script>
+<script src="runtime/player.js"></script>
+<script>
+  // The scene comes from capture.ts (window.params.scene) or a preview page (window.SCENE).
+  const P = window.params || {};
+  const scene = P.scene || window.SCENE;
+  const player = WA.player.create(document.body, scene, P.width || 1920, P.height || 1080);
+  window.renderFrame = player.renderFrame;
+  window.ready = player.ready;
+  player.renderFrame(P.startAt || 0);
+  if (!P.scene) {
+    // Preview in a normal browser: play in a loop.
+    const t0 = performance.now();
+    const tick = () => { player.renderFrame(((performance.now() - t0) / 1000) % scene.duration); requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }
+</script>
+</body>
+</html>

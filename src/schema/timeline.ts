@@ -173,7 +173,7 @@ export const Scene = z.object({
   caption: z.string().min(1).max(1000).optional(),
   /** Timed subtitles (one per spoken sentence, from TTS). Each is split into chunks within its window. */
   captionCues: z
-    .array(z.object({ text: z.string().min(1).max(500), startFrame: z.int().min(0), endFrame: z.int().min(1) }))
+    .array(z.object({ text: z.string().min(1).max(500), startFrame: z.int().min(0), endFrame: z.int().min(1), who: z.string().optional(), mood: z.string().optional() }))
     .max(60)
     .optional(),
   transitionOut: z

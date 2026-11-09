@@ -9,7 +9,7 @@ import { silhouette } from "../story/actor.ts";
 import { actorPlacement, BACKGROUND_NEGATIVE, BACKGROUND_STYLE, effectsFor, musicSections, SHAPE_FOR, sfxEvents, type StorySceneInfo } from "../story/visuals.ts";
 import { acquireLock, exists, removeTmpFiles, sha256, writeFileAtomic } from "../utils/fs.ts";
 import { Logger } from "../utils/log.ts";
-import { DEFAULT_VOICE, ENGINES, VOICES } from "../tts/engines.ts";
+import { DEFAULT_VOICE, ENGINES, VIENEU_DEFAULT_VOICE, VOICES } from "../tts/engines.ts";
 import { narrateScene, type Narration } from "../tts/narrate.ts";
 import { appendToIndex, findOnline, imageSources, type Judge } from "../library/online.ts";
 import { acceptable, judgeFit } from "../library/tag.ts";
@@ -20,7 +20,9 @@ import { fallbackGradient, importImage, LIBRARY_DIR, loadLibrary, matchImage, to
 import { ProjectSettings, Storyboard, type StoryboardScene } from "./schema.ts";
 
 export interface BuildOptions {
-  engine?: "piper" | "dummy";
+  engine?: "piper" | "vieneu" | "dummy";
+  /** Only the voice and the timeline: no photos, paintings or silhouettes (cartoon stories). */
+  voiceOnly?: boolean;
   voice?: string;
   speed?: number;
   /** Use only the local library, never search online. */
@@ -94,14 +96,14 @@ export async function buildProject(storyboardFile: string, options: BuildOptions
   const storyboard = await loadStoryboard(abs);
   const settings = await loadSettings(projectDir, options);
   const engine = ENGINES[settings.engine]!;
-  const voice = settings.voice ?? DEFAULT_VOICE;
+  const voice = settings.voice ?? (settings.engine === "vieneu" ? VIENEU_DEFAULT_VOICE : DEFAULT_VOICE);
   const warnings: string[] = [];
 
   if (settings.engine === "piper") {
     const info = VOICES.find((v) => v.id === voice);
     if (!info) warnings.push(`voice "${voice}" is not in the known list; check its license yourself`);
     else if (info.commercial !== true) warnings.push(`voice "${voice}": ${info.license} — ${info.note}`);
-  } else {
+  } else if (settings.engine === "dummy") {
     warnings.push(`engine "${settings.engine}" is a placeholder tone, not speech`);
   }
 
@@ -110,12 +112,12 @@ export async function buildProject(storyboardFile: string, options: BuildOptions
   const log = new Logger(path.join(projectDir, "build", "logs"), "build");
   try {
     await removeTmpFiles(genDir);
-    log.info(`"${storyboard.title}": ${storyboard.scenes.length} scenes, TTS ${settings.engine}${settings.engine === "piper" ? ` (${voice}, speed ${settings.speed})` : ""}`);
+    log.info(`"${storyboard.title}": ${storyboard.scenes.length} scenes, TTS ${settings.engine}${settings.engine !== "dummy" ? ` (${voice}, speed ${settings.speed})` : ""}`);
     const library = await loadLibrary(warnings);
     const usedImages = new Set<string>();
     // Ids and page URLs of online photos already in this video, so a search never repeats one.
     const usedOnline = new Set<string>();
-    const sources = settings.onlineImages && !options.offline ? imageSources() : [];
+    const sources = settings.onlineImages && !options.offline && !options.voiceOnly ? imageSources() : [];
     const orientation = settings.profiles.includes("16x9") ? "landscape" : "portrait";
     if (sources.length && !sources.some((s) => s.trusted)) {
       log.info("images: no PIXABAY_API_KEY or PEXELS_API_KEY, searching Openverse only (see README to add a free key for better photos)");
@@ -144,8 +146,8 @@ export async function buildProject(storyboardFile: string, options: BuildOptions
         }
       : undefined;
 
-    let generator: ImageGen | undefined = settings.imageGen === "off" ? undefined : await sdTurbo();
-    if (settings.imageGen === "prefer" && !generator) warnings.push(`imageGen is "prefer" but the image generator is not installed (bash scripts/setup-imagegen.sh)`);
+    let generator: ImageGen | undefined = settings.imageGen === "off" || options.voiceOnly ? undefined : await sdTurbo();
+    if (settings.imageGen === "prefer" && !generator && !options.voiceOnly) warnings.push(`imageGen is "prefer" but the image generator is not installed (bash scripts/setup-imagegen.sh)`);
 
     const online = async (query: string, id: string): Promise<LibraryImage | undefined> => {
       if (!sources.length) return undefined;
@@ -208,6 +210,7 @@ export async function buildProject(storyboardFile: string, options: BuildOptions
       const n = await narrateScene(id, narration, {
         engine,
         synth: { voice, speed: settings.speed },
+        speakers: Object.fromEntries(Object.entries(settings.voices).map(([who, v]) => [who, typeof v === "string" ? { voice: v, speed: settings.speed } : { voice: v.voice, speed: v.speed ?? settings.speed, pitch: v.pitch }])),
         fps: settings.fps,
         ttsDir: path.join(genDir, "tts"),
         audioDir: path.join(genDir, "audio"),

@@ -1,0 +1,141 @@
+{
+  "castFile": "cast.json",
+  "duration": 7.1,
+  "time": "day",
+  "set": {
+    "name": "village",
+    "houseX": -700,
+    "objects": [
+      {
+        "type": "mat",
+        "x": -330,
+        "scale": 0.9
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "mother",
+      "type": "human",
+      "look": "mother",
+      "x": -620
+    },
+    {
+      "id": "boy",
+      "type": "human",
+      "look": "baby",
+      "x": -330,
+      "scale": 0.75
+    },
+    {
+      "id": "messenger",
+      "type": "human",
+      "look": "messenger",
+      "x": 1700,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "mother",
+      "at": 0,
+      "do": "sit",
+      "face": "sad"
+    },
+    {
+      "actor": "boy",
+      "at": 0,
+      "do": "lie"
+    },
+    {
+      "actor": "messenger",
+      "at": 0,
+      "do": "call",
+      "move": {
+        "to": 450,
+        "ease": "linear"
+      },
+      "dur": 3.2
+    },
+    {
+      "actor": "messenger",
+      "at": 3.2,
+      "do": "still",
+      "face": "neutral"
+    },
+    {
+      "actor": "boy",
+      "at": 3.3,
+      "do": "sit_up",
+      "face": "determined"
+    },
+    {
+      "actor": "boy",
+      "at": 4.1,
+      "do": "sit",
+      "face": "determined",
+      "talk": 1
+    },
+    {
+      "actor": "mother",
+      "at": 3.5,
+      "do": "sit",
+      "face": "surprised",
+      "lookAt": "boy"
+    },
+    {
+      "actor": "mother",
+      "at": 5.3,
+      "do": "point",
+      "face": "happy",
+      "talk": 0.6
+    }
+  ],
+  "fx": [
+    {
+      "fx": "sparkle",
+      "on": "boy",
+      "at": 3.3,
+      "dur": 1.2
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": "messenger",
+      "share": 0.4
+    },
+    {
+      "at": 3.2,
+      "type": "full",
+      "on": [
+        "mother",
+        "boy"
+      ],
+      "push": 0.1
+    },
+    {
+      "at": 4.2,
+      "type": "close",
+      "on": "boy",
+      "push": 0.06
+    },
+    {
+      "at": 5.0,
+      "type": "close",
+      "on": "mother"
+    },
+    {
+      "at": 5.3,
+      "type": "wide",
+      "on": [
+        "mother",
+        "boy",
+        "messenger"
+      ]
+    }
+  ],
+  "mood": "calm",
+  "era": "van_lang"
+}

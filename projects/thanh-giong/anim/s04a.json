@@ -1,0 +1,161 @@
+{
+  "castFile": "cast.json",
+  "duration": 3.2,
+  "time": "dusk",
+  "set": {
+    "name": "field",
+    "objects": [
+      {
+        "type": "banner",
+        "x": 1500,
+        "color": "#3a1a1a"
+      },
+      {
+        "type": "banner",
+        "x": 2400,
+        "color": "#3a1a1a"
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "e0",
+      "type": "human",
+      "look": "enemy",
+      "x": 700,
+      "facing": -1,
+      "scale": 0.95
+    },
+    {
+      "id": "e1",
+      "type": "human",
+      "look": "enemy",
+      "x": 1030,
+      "facing": -1,
+      "scale": 1.03
+    },
+    {
+      "id": "e2",
+      "type": "human",
+      "look": "enemy",
+      "x": 1360,
+      "facing": -1,
+      "scale": 0.95
+    },
+    {
+      "id": "e3",
+      "type": "human",
+      "look": "enemy",
+      "x": 1690,
+      "facing": -1,
+      "scale": 1.03
+    },
+    {
+      "id": "e4",
+      "type": "human",
+      "look": "enemy",
+      "x": 2020,
+      "facing": -1,
+      "scale": 0.95
+    },
+    {
+      "id": "e5",
+      "type": "human",
+      "look": "enemy",
+      "x": 2350,
+      "facing": -1,
+      "scale": 1.03
+    }
+  ],
+  "actions": [
+    {
+      "actor": "e0",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -520,
+        "ease": "linear"
+      },
+      "dur": 3.2
+    },
+    {
+      "actor": "e1",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -520,
+        "ease": "linear"
+      },
+      "dur": 3.2
+    },
+    {
+      "actor": "e2",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -520,
+        "ease": "linear"
+      },
+      "dur": 3.2
+    },
+    {
+      "actor": "e3",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -520,
+        "ease": "linear"
+      },
+      "dur": 3.2
+    },
+    {
+      "actor": "e4",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -520,
+        "ease": "linear"
+      },
+      "dur": 3.2
+    },
+    {
+      "actor": "e5",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -520,
+        "ease": "linear"
+      },
+      "dur": 3.2
+    }
+  ],
+  "fx": [
+    {
+      "fx": "smoke",
+      "x": 2300,
+      "at": -1.5,
+      "dur": 5
+    },
+    {
+      "fx": "embers",
+      "x": 1500,
+      "at": 0,
+      "dur": 3.2,
+      "width": 2600
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "e0",
+        "e5"
+      ],
+      "push": 0.08,
+      "follow": true
+    }
+  ],
+  "mood": "tense",
+  "era": "van_lang"
+}

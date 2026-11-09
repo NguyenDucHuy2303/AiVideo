@@ -1,0 +1,99 @@
+{
+  "castFile": "cast.json",
+  "duration": 5.83,
+  "time": "day",
+  "set": {
+    "name": "palace",
+    "palaceX": -300
+  },
+  "cast": [
+    {
+      "id": "king",
+      "type": "human",
+      "look": "king",
+      "x": -300
+    },
+    {
+      "id": "horse",
+      "type": "horse",
+      "look": "iron_horse",
+      "x": -4300,
+      "scale": 2.4
+    },
+    {
+      "id": "hero",
+      "type": "human",
+      "look": "hero",
+      "x": -4300,
+      "scale": 2.4
+    }
+  ],
+  "actions": [
+    {
+      "actor": "king",
+      "at": 0,
+      "do": "wave",
+      "face": "happy",
+      "talk": 0.6
+    },
+    {
+      "actor": "king",
+      "at": 3.2,
+      "do": "still",
+      "face": "surprised"
+    },
+    {
+      "actor": "horse",
+      "at": 0,
+      "do": "gallop",
+      "move": {
+        "speed": 1150
+      }
+    },
+    {
+      "actor": "hero",
+      "at": -0.1,
+      "do": "leap",
+      "onto": "horse",
+      "dur": 0.01,
+      "arc": 0
+    },
+    {
+      "actor": "hero",
+      "at": 0.02,
+      "do": "ride",
+      "face": "proud"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": "king",
+      "push": 0.06
+    },
+    {
+      "at": 1.6,
+      "type": "track",
+      "on": [
+        "horse",
+        "hero"
+      ],
+      "share": 0.42
+    },
+    {
+      "at": 4.2,
+      "type": "wide",
+      "on": "king",
+      "push": 0.05
+    },
+    {
+      "at": 4.6,
+      "type": "close",
+      "on": "king",
+      "push": 0.05
+    }
+  ],
+  "mood": "majestic",
+  "era": "van_lang"
+}

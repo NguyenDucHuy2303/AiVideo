@@ -1,0 +1,207 @@
+{
+  "castFile": "cast.json",
+  "duration": 5.67,
+  "time": "dusk",
+  "set": {
+    "name": "mountain",
+    "mountainX": 2600,
+    "objects": [
+      {
+        "type": "banner",
+        "x": 3400,
+        "color": "#3a1a1a"
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "horse",
+      "type": "horse",
+      "look": "iron_horse",
+      "x": -1700,
+      "scale": 1.4
+    },
+    {
+      "id": "messenger",
+      "type": "human",
+      "look": "messenger",
+      "x": -1300
+    },
+    {
+      "id": "soldier",
+      "type": "human",
+      "look": "soldier",
+      "x": -2100
+    },
+    {
+      "id": "boy",
+      "type": "human",
+      "look": "boy",
+      "x": 500,
+      "scale": 1.6,
+      "facing": -1
+    },
+    {
+      "id": "e0",
+      "type": "human",
+      "look": "enemy",
+      "x": 2700,
+      "facing": -1,
+      "scale": 0.9
+    },
+    {
+      "id": "e1",
+      "type": "human",
+      "look": "enemy",
+      "x": 3000,
+      "facing": -1,
+      "scale": 0.9
+    },
+    {
+      "id": "e2",
+      "type": "human",
+      "look": "enemy",
+      "x": 3300,
+      "facing": -1,
+      "scale": 0.9
+    },
+    {
+      "id": "e3",
+      "type": "human",
+      "look": "enemy",
+      "x": 3600,
+      "facing": -1,
+      "scale": 0.9
+    }
+  ],
+  "actions": [
+    {
+      "actor": "horse",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": -150,
+        "ease": "out"
+      },
+      "dur": 3.6
+    },
+    {
+      "actor": "horse",
+      "at": 3.6,
+      "do": "stand"
+    },
+    {
+      "actor": "messenger",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": 220,
+        "ease": "out"
+      },
+      "dur": 3.6
+    },
+    {
+      "actor": "messenger",
+      "at": 3.6,
+      "do": "bow"
+    },
+    {
+      "actor": "soldier",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": -560,
+        "ease": "out"
+      },
+      "dur": 3.6
+    },
+    {
+      "actor": "soldier",
+      "at": 3.6,
+      "do": "still",
+      "face": "happy"
+    },
+    {
+      "actor": "boy",
+      "at": 0,
+      "do": "still",
+      "face": "determined"
+    },
+    {
+      "actor": "boy",
+      "at": 3.7,
+      "do": "point",
+      "face": "determined"
+    },
+    {
+      "actor": "e0",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -380,
+        "ease": "linear"
+      },
+      "dur": 5.67
+    },
+    {
+      "actor": "e1",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -380,
+        "ease": "linear"
+      },
+      "dur": 5.67
+    },
+    {
+      "actor": "e2",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -380,
+        "ease": "linear"
+      },
+      "dur": 5.67
+    },
+    {
+      "actor": "e3",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -380,
+        "ease": "linear"
+      },
+      "dur": 5.67
+    }
+  ],
+  "fx": [
+    {
+      "fx": "smoke",
+      "x": 3300,
+      "at": -2,
+      "dur": 8
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": [
+        "horse",
+        "messenger"
+      ],
+      "share": 0.42
+    },
+    {
+      "at": 3.3,
+      "type": "wide",
+      "on": [
+        "horse",
+        "boy"
+      ],
+      "ease": 0.8
+    }
+  ],
+  "mood": "tense",
+  "era": "van_lang"
+}

@@ -1,0 +1,113 @@
+{
+  "castFile": "cast.json",
+  "duration": 7.93,
+  "time": "day",
+  "set": {
+    "name": "village",
+    "houseX": 700
+  },
+  "cast": [
+    {
+      "id": "man",
+      "type": "human",
+      "look": "old_man",
+      "x": -1300
+    },
+    {
+      "id": "woman",
+      "type": "human",
+      "look": "mother",
+      "x": -1520
+    }
+  ],
+  "actions": [
+    {
+      "actor": "man",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": 160,
+        "ease": "linear"
+      },
+      "dur": 4.3,
+      "speed": 0.8
+    },
+    {
+      "actor": "woman",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": -90,
+        "ease": "linear"
+      },
+      "dur": 4.3,
+      "speed": 0.8
+    },
+    {
+      "actor": "man",
+      "at": 4.3,
+      "do": "still",
+      "face": "sad"
+    },
+    {
+      "actor": "man",
+      "at": 4.7,
+      "set": {
+        "facing": -1
+      }
+    },
+    {
+      "actor": "man",
+      "at": 4.9,
+      "do": "still",
+      "face": "sad",
+      "talk": 0.5
+    },
+    {
+      "actor": "woman",
+      "at": 4.3,
+      "do": "still",
+      "face": "sad"
+    },
+    {
+      "actor": "woman",
+      "at": 5.4,
+      "do": "worry",
+      "face": "sad"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": [
+        "man",
+        "woman"
+      ],
+      "share": 0.32
+    },
+    {
+      "at": 4.3,
+      "type": "full",
+      "on": [
+        "man",
+        "woman"
+      ],
+      "ease": 0.9,
+      "push": 0.08
+    },
+    {
+      "at": 5.6,
+      "type": "close",
+      "on": "woman",
+      "push": 0.05
+    },
+    {
+      "at": 6.8,
+      "type": "close",
+      "on": "man"
+    }
+  ],
+  "mood": "calm",
+  "era": "van_lang"
+}

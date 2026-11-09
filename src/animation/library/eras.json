@@ -1,0 +1,306 @@
+{
+  "van_lang": {
+    "name": "Văn Lang — thời Hùng Vương, văn hóa Đông Sơn (khoảng thế kỷ VII–III TCN)",
+    "stories": [
+      "Thánh Gióng",
+      "Sơn Tinh Thủy Tinh",
+      "Bánh chưng bánh giầy",
+      "Chử Đồng Tử",
+      "Mai An Tiêm"
+    ],
+    "draw": [
+      "Đàn ông: đóng khố, ở trần hoặc áo ngắn chui đầu, tóc búi hoặc cắt ngắn, xăm mình hoa văn, vòng đồng",
+      "Phụ nữ: áo ngắn chui đầu và váy, tóc búi hoặc để dài, khuyên tai và vòng tay bằng đồng",
+      "Thủ lĩnh, vua Hùng: mũ lông chim (tới năm lông), váy lông chim trong lễ hội, áo đính đồng",
+      "Lạc tướng, quân lính: dải lông chim trên đầu, giáo đồng, rìu đồng, khiên đồng, cung nỏ",
+      "Nhà sàn mái cong hai đầu hình thuyền, có chim trang trí; trống đồng, thạp đồng; rao bằng tù và",
+      "Đồ nghề Thánh Gióng theo truyền thuyết: ngựa sắt, roi sắt, áo giáp sắt, nón sắt"
+    ],
+    "avoid": [
+      "Áo tứ thân, áo dài, khăn xếp, khăn mỏ quạ (các thời kỳ muộn hơn nhiều)",
+      "Nón lá (không có tư liệu chắc chắn cho thời này: không dùng)",
+      "Giấy, chữ viết, cuộn chiếu chỉ (sứ giả rao bằng tù và, không đọc chiếu)",
+      "Mái ngói, kiến trúc cung điện Trung Hoa, áo giáp kiểu Tây"
+    ],
+    "customs": [
+      "Vua Hùng là Quốc Tổ: vẽ trang nghiêm, đáng kính, không đùa cợt",
+      "Phụ nữ mặc kín đáo (áo và váy), không hở hang",
+      "Đánh trận hợp với trẻ em: giặc ngã, chạy tan tác; không máu, không chết chóc chi tiết"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/%C4%90%C3%B4ng_S%C6%A1n_culture",
+      "https://tatinta.com/blogs/net-dep-dong-son/171",
+      "https://www.vietnammonpaysnatal.fr/bronze-drums-part-3va/",
+      "https://luatminhkhue.vn/trinh-bay-doi-song-vat-chat-cua-nguoi-viet-co.aspx",
+      "https://tuoitre.vn/bo-giap-cua-vua-hung-co-gi-dac-biet-2026020713190702.htm"
+    ],
+    "archetypes": {
+      "boy": {
+        "body": "child",
+        "outfit": {
+          "type": "dongson",
+          "color": "#c9a46a",
+          "trim": "#8a3a22",
+          "skirt": "#7a4a2a"
+        },
+        "hair": {
+          "style": "traidao"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "bowl"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "baby": {
+        "body": "child",
+        "outfit": {
+          "type": "dongson",
+          "color": "#e3c890",
+          "trim": "#c9902a",
+          "skirt": "#a87a4a"
+        },
+        "hair": {
+          "style": "traidao"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "eyeScale": 1.1
+        }
+      },
+      "mother": {
+        "body": "woman",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#7a4a2a",
+          "skirt": "#3a2a22",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#3a2a22"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "elder": {
+        "body": "elder",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#8a6a42",
+          "skirt": "#5a4a32",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#9a948a"
+        },
+        "beard": "#ece8e0",
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "droopy",
+          "nose": "long",
+          "brows": "bushy",
+          "wrinkles": true
+        }
+      },
+      "king": {
+        "body": "man",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "plume",
+          "color": "#8a3a22",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "headwear": "feather",
+        "beard": "#2a1a12",
+        "bracelets": true,
+        "earrings": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick",
+          "mustache": "thick"
+        }
+      },
+      "lord": {
+        "body": "man",
+        "outfit": {
+          "type": "dongson",
+          "color": "#2f5a4a",
+          "skirt": "#4a3a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "headwear": "feather_band",
+        "bracelets": true,
+        "prop": {
+          "type": "horn"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "long",
+          "brows": "thick",
+          "mustache": "thin"
+        }
+      },
+      "soldier": {
+        "body": "man",
+        "skin": "#d8a070",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "headwear": "feather_band",
+        "bracelets": true,
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "round",
+          "brows": "thick"
+        }
+      },
+      "villager_man": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "villager_woman": {
+        "body": "woman",
+        "outfit": {
+          "type": "dongson",
+          "color": "#6a5a3a",
+          "skirt": "#3a2a22",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "earrings": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "hero": {
+        "body": "strong",
+        "outfit": {
+          "type": "armor"
+        },
+        "headwear": "helmet",
+        "cape": true,
+        "prop": {
+          "type": "iron_whip"
+        },
+        "props": [
+          {
+            "type": "broken_whip"
+          },
+          {
+            "type": "bamboo"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "long",
+          "brows": "thick"
+        }
+      },
+      "hero_free": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#efe4cc",
+          "skirt": "#c9a46a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": true,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "long",
+          "brows": "thick"
+        }
+      },
+      "enemy": {
+        "body": "man",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "enemy"
+        },
+        "headwear": "enemy_helmet",
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "round",
+          "brows": "bushy",
+          "mustache": "droopy"
+        }
+      }
+    }
+  }
+}

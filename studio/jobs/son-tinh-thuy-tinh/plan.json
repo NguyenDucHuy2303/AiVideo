@@ -1,0 +1,660 @@
+{
+  "title": "Sơn Tinh – Thủy Tinh",
+  "scenes": [
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, vì sao cứ đến mùa mưa, nước sông lại dâng lên cuồn cuộn? Và vì sao ông bà ta phải đắp những con đê thật dài, thật cao?"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Hôm nay, Huy Kể Chuyện sẽ kể cho các bạn nghe truyền thuyết Sơn Tinh, Thủy Tinh nhé!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngày xửa ngày xưa, ở nước Văn Lang, vua Hùng thứ mười tám có một người con gái tên là Mị Nương."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Nàng xinh đẹp như hoa, tính nết hiền dịu. Vua cha yêu thương nàng hết mực."
+        },
+        {
+          "who": "Vua Hùng",
+          "how": "vui vẻ",
+          "text": "Con gái ta đã lớn rồi. Ta phải tìm cho con một người chồng thật xứng đáng."
+        },
+        {
+          "who": "Mị Nương",
+          "how": "vui vẻ",
+          "text": "Thưa cha, con xin nghe theo cha ạ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Vua sai sứ giả đi khắp các làng, thổi tù và rao tin kén rể."
+        },
+        {
+          "who": "Sứ giả",
+          "how": "hô to",
+          "text": "Hỡi bà con Văn Lang! Vua Hùng kén rể cho công chúa Mị Nương! Ai tài giỏi, hãy về kinh đô!"
+        },
+        {
+          "who": "Dân làng",
+          "how": "ngạc nhiên",
+          "text": "Ồ! Không biết chàng trai nào sẽ được làm rể vua nhỉ?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ít lâu sau, có hai chàng trai đến kinh đô cầu hôn. Một chàng từ phía núi đi xuống, một chàng từ phía biển đi lên."
+        },
+        {
+          "who": "Dân làng",
+          "how": "sửng sốt",
+          "text": "Kìa! Hai chàng trai khôi ngô quá! Trông họ chẳng giống người thường chút nào!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Chàng thứ nhất là Sơn Tinh, chúa vùng non cao núi Tản Viên. Chàng vẫy tay về phía đông, phía đông nổi cồn bãi. Chàng vẫy tay về phía tây, phía tây mọc lên từng dãy núi đồi."
+        },
+        {
+          "who": "Sơn Tinh",
+          "how": "dõng dạc",
+          "text": "Thưa đức vua, con là Sơn Tinh ở núi Tản Viên. Con xin được cầu hôn công chúa Mị Nương."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Chàng thứ hai là Thủy Tinh, chúa vùng nước thẳm biển cả. Chàng gọi gió, gió đến. Chàng hô mưa, mưa về."
+        },
+        {
+          "who": "Thủy Tinh",
+          "how": "tự hào",
+          "text": "Thưa đức vua, Thủy Tinh này là chúa biển cả. Chỉ có ta mới xứng với công chúa!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Cả hai chàng đều tài giỏi, đều có phép lạ. Vua Hùng ngồi trong nhà sàn lớn, suy nghĩ mãi."
+        },
+        {
+          "who": "Vua Hùng",
+          "how": "lo lắng",
+          "text": "Hai chàng đều xứng đáng cả. Ta biết chọn người nào đây?"
+        },
+        {
+          "who": "Lạc hầu",
+          "how": "dõng dạc",
+          "text": "Thưa đức vua, xin vua hãy ra một điều kiện. Ai làm được trước thì người ấy được chọn."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Vua Hùng",
+          "how": "dõng dạc",
+          "text": "Ngày mai, ai đem sính lễ đến trước thì được rước Mị Nương về làm vợ!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Sính lễ gồm một trăm ván cơm nếp, một trăm nệp bánh chưng, voi chín ngà, gà chín cựa, ngựa chín hồng mao, mỗi thứ một đôi."
+        },
+        {
+          "who": "Thủy Tinh",
+          "how": "ngạc nhiên",
+          "text": "Voi chín ngà? Gà chín cựa? Thật là khó tìm!"
+        },
+        {
+          "who": "Sơn Tinh",
+          "how": "quyết tâm",
+          "text": "Khó đến mấy, ta cũng tìm cho đủ!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đêm ấy, Sơn Tinh trở về núi rừng. Núi rừng có sẵn muông thú quý, lúa nếp thơm. Chàng gom đủ lễ vật ngay trong đêm."
+        },
+        {
+          "who": "Sơn Tinh",
+          "how": "mừng rỡ",
+          "text": "Voi chín ngà đây rồi! Gà chín cựa, ngựa chín hồng mao cũng đủ cả!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Còn Thủy Tinh thì lặn khắp biển sâu, mà những con vật ấy lại sống trên rừng núi."
+        },
+        {
+          "who": "Thủy Tinh",
+          "how": "lo lắng",
+          "text": "Voi chín ngà ở đâu? Gà chín cựa ở đâu? Biển rộng thế này, biết tìm chỗ nào đây?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Sáng sớm hôm sau, trời còn mờ sương, Sơn Tinh đã dẫn đoàn lễ vật đến trước nhà vua. Trống đồng vang lên tùng tùng."
+        },
+        {
+          "who": "Vua Hùng",
+          "how": "hớn hở",
+          "text": "Sơn Tinh đến trước, sính lễ lại đầy đủ. Ta giữ lời, gả Mị Nương cho chàng."
+        },
+        {
+          "who": "Sơn Tinh",
+          "how": "mừng rỡ",
+          "text": "Con xin cảm tạ đức vua!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Theo phong tục người Lạc Việt, mọi người cùng ăn cơm nếp mừng đôi vợ chồng mới. Rồi Mị Nương lạy chào vua cha."
+        },
+        {
+          "who": "Mị Nương",
+          "how": "buồn rầu",
+          "text": "Thưa cha, con xin theo chồng về núi. Cha ở nhà giữ gìn sức khỏe nhé."
+        },
+        {
+          "who": "Vua Hùng",
+          "how": "vui vẻ",
+          "text": "Con đi bình an. Hãy cùng chồng sống thật hạnh phúc."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Sơn Tinh rước Mị Nương về núi Tản Viên."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Mặt trời lên cao, Thủy Tinh mới đem lễ vật đến. Nhưng Mị Nương đã theo Sơn Tinh về núi mất rồi."
+        },
+        {
+          "who": "Thủy Tinh",
+          "how": "sửng sốt",
+          "text": "Cái gì? Sơn Tinh đã rước Mị Nương đi rồi sao?"
+        },
+        {
+          "who": "Lạc hầu",
+          "how": "dõng dạc",
+          "text": "Chàng đến muộn rồi. Lời vua đã nói thì không thể đổi được."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Thủy Tinh",
+          "how": "tức giận",
+          "text": "Ta không chịu! Ta sẽ đuổi theo, cướp Mị Nương về!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Thủy Tinh đùng đùng nổi giận, quay về biển cả, quyết đánh Sơn Tinh."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thủy Tinh hô mưa, gọi gió. Trời tối sầm lại. Sấm chớp ầm ầm, mưa trút xuống như thác đổ."
+        },
+        {
+          "who": "Thủy Tinh",
+          "how": "quát",
+          "text": "Gió ơi, thổi đi! Mưa ơi, đổ xuống! Nước ơi, dâng lên!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thủy Tinh dẫn theo đoàn quân thủy tộc. Cá, tôm, cua, rùa, thuồng luồng rầm rập theo sóng nước kéo đi."
+        },
+        {
+          "who": "Quân thủy tộc",
+          "how": "hô to",
+          "text": "Tiến lên! Đánh núi Tản Viên!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Nước dâng lên ngập ruộng đồng, ngập đến sàn nhà. Dân làng dắt trâu, bế con, chạy lên đồi cao."
+        },
+        {
+          "who": "Dân làng",
+          "how": "hoảng hốt",
+          "text": "Nước lên rồi! Chạy lên núi mau!"
+        },
+        {
+          "who": "Cậu bé",
+          "how": "sợ hãi",
+          "text": "Ông ơi, cháu sợ quá!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Nước cuồn cuộn dâng lên tận chân núi Tản Viên, như muốn nuốt cả ngọn núi."
+        },
+        {
+          "who": "Mị Nương",
+          "how": "lo lắng",
+          "text": "Chàng ơi, nước dâng cao quá! Phải làm sao bây giờ?"
+        },
+        {
+          "who": "Sơn Tinh",
+          "how": "quyết tâm",
+          "text": "Nàng đừng sợ. Ta sẽ bảo vệ nàng và bà con!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Sơn Tinh dùng phép lạ, bốc từng quả đồi, dời từng dãy núi, dựng thành lũy vững chắc chặn dòng nước lũ."
+        },
+        {
+          "who": "Sơn Tinh",
+          "how": "hô to",
+          "text": "Đồi núi ơi, mọc lên! Chặn nước lại!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lạ thay, nước dâng lên bao nhiêu, đồi núi lại cao lên bấy nhiêu."
+        },
+        {
+          "who": "Thủy Tinh",
+          "how": "tức giận",
+          "text": "Hừ! Ta sẽ dâng nước cao hơn nữa!"
+        },
+        {
+          "who": "Sơn Tinh",
+          "how": "cười",
+          "text": "Nước lên cao đến đâu, núi của ta cao đến đó!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Voi rừng, muông thú và dân ở núi cũng ra giúp Sơn Tinh. Các chiến binh đội dải lông chim, cầm giáo đồng, khiên đồng, giương cung nỏ."
+        },
+        {
+          "who": "Lạc tướng",
+          "how": "hô to",
+          "text": "Anh em ơi, giương nỏ lên! Giữ lấy núi rừng!"
+        },
+        {
+          "who": "Dân làng",
+          "how": "quyết tâm",
+          "text": "Chúng ta cùng giúp Sơn Tinh nào!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Tên nỏ bay vun vút. Quân thủy tộc ngã rạp, tan tác bỏ chạy."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Hai bên đánh nhau ròng rã mấy tháng trời. Cuối cùng, Thủy Tinh sức cùng lực kiệt."
+        },
+        {
+          "who": "Thủy Tinh",
+          "how": "mệt",
+          "text": "Ta không đánh nổi nữa rồi!"
+        },
+        {
+          "who": "Quân thủy tộc",
+          "how": "hoảng hốt",
+          "text": "Rút lui! Rút về biển thôi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thủy Tinh đành rút quân về biển. Nước lũ rút dần, ruộng đồng lại hiện ra."
+        },
+        {
+          "who": "Thủy Tinh",
+          "how": "tức giận",
+          "text": "Sơn Tinh, ngươi hãy đợi đấy! Năm sau ta sẽ quay lại!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Dân làng vui mừng đánh trống đồng, nhảy múa reo hò trước sân nhà sàn."
+        },
+        {
+          "who": "Dân làng",
+          "how": "hớn hở",
+          "text": "Sơn Tinh thắng rồi! Núi Tản Viên vững vàng rồi!"
+        },
+        {
+          "who": "Mị Nương",
+          "how": "vui vẻ",
+          "text": "Cảm ơn chàng đã che chở cho mọi người."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Nhưng Thủy Tinh không quên mối hận. Năm nào cũng vậy, cứ đến mùa mưa, Thủy Tinh lại dâng nước đánh Sơn Tinh."
+        },
+        {
+          "who": "Cậu bé",
+          "how": "ngạc nhiên",
+          "text": "Ông ơi, sao năm nào cũng mưa to, nước lớn thế ạ?"
+        },
+        {
+          "who": "Ông lão",
+          "how": "thở dài",
+          "text": "Đấy là Thủy Tinh lại đến đánh Sơn Tinh đấy cháu ạ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Nhưng lần nào Thủy Tinh cũng thua, lại phải rút quân về biển."
+        },
+        {
+          "who": "Thủy Tinh",
+          "how": "tức giận",
+          "text": "Lại thua nữa rồi! Núi của Sơn Tinh vững quá!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Học theo Sơn Tinh, dân Văn Lang rủ nhau đắp đê dọc bờ sông. Người gánh đất bằng sọt tre, người đầm đất cho chắc."
+        },
+        {
+          "who": "Ông lão",
+          "how": "dõng dạc",
+          "text": "Bà con ơi, cùng nhau đắp đê thật cao, thật chắc nào!"
+        },
+        {
+          "who": "Dân làng",
+          "how": "quyết tâm",
+          "text": "Đồng lòng thì lũ lớn mấy cũng chặn được!"
+        },
+        {
+          "who": "Cậu bé",
+          "how": "hớn hở",
+          "text": "Cháu cũng gánh đất giúp mọi người!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ông cha ta kể chuyện Sơn Tinh, Thủy Tinh để giải thích vì sao hằng năm có mùa mưa lũ. Câu chuyện cũng ca ngợi người Việt xưa đồng lòng chống lũ, giữ gìn ruộng đồng, làng xóm."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngày nay, núi Tản Viên được gọi là núi Ba Vì, ở Hà Nội. Ngọn núi vẫn xanh biếc, mây trắng bay quanh đỉnh núi quanh năm."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Nhân dân lập nhiều đền thờ Sơn Tinh, gọi ông là Đức Thánh Tản. Ông đứng đầu trong bốn vị thánh bất tử của người Việt."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Đền Lăng Sương ở Phú Thọ được xem là nơi đầu tiên thờ thánh Tản Viên."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ở Sơn Tây, Hà Nội, có đền Và. Cứ đến rằm tháng Giêng, các làng quanh vùng lại rộn ràng về mở hội, tưởng nhớ vị thần núi đã che chở cho dân."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, hãy biết giữ lời hứa như vua Hùng, chớ nóng giận như Thủy Tinh, và biết đoàn kết như dân làng đắp đê. Cùng nhau góp sức thì khó khăn nào cũng vượt qua."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Nếu các bạn thích câu chuyện này, hãy đăng ký kênh Huy Kể Chuyện để nghe thêm thật nhiều truyện hay nhé. Hẹn gặp lại các bạn!"
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "name": "Sơn Tinh",
+      "gender": "male",
+      "age": "young",
+      "role": "Thần núi Tản Viên, cầu hôn và rước Mị Nương, đánh thắng Thủy Tinh",
+      "villain": false
+    },
+    {
+      "name": "Thủy Tinh",
+      "gender": "male",
+      "age": "young",
+      "role": "Thần biển cả, đến muộn, nổi giận dâng nước đánh Sơn Tinh",
+      "villain": true
+    },
+    {
+      "name": "Vua Hùng",
+      "gender": "male",
+      "age": "elder",
+      "role": "Vua Hùng thứ mười tám, kén rể cho Mị Nương",
+      "villain": false
+    },
+    {
+      "name": "Mị Nương",
+      "gender": "female",
+      "age": "young",
+      "role": "Công chúa, con gái vua Hùng, vợ Sơn Tinh",
+      "villain": false
+    },
+    {
+      "name": "Lạc hầu",
+      "gender": "male",
+      "age": "adult",
+      "role": "Quan văn giúp vua, gợi ý ra điều kiện",
+      "villain": false
+    },
+    {
+      "name": "Sứ giả",
+      "gender": "male",
+      "age": "adult",
+      "role": "Thổi tù và rao tin kén rể",
+      "villain": false
+    },
+    {
+      "name": "Lạc tướng",
+      "gender": "male",
+      "age": "adult",
+      "role": "Tướng chỉ huy chiến binh giúp Sơn Tinh",
+      "villain": false
+    },
+    {
+      "name": "Dân làng",
+      "gender": "male",
+      "age": "adult",
+      "role": "Người dân Văn Lang chạy lũ, giúp Sơn Tinh, đắp đê",
+      "villain": false
+    },
+    {
+      "name": "Ông lão",
+      "gender": "male",
+      "age": "elder",
+      "role": "Cụ già trong làng, giải thích chuyện lũ, hô hào đắp đê",
+      "villain": false
+    },
+    {
+      "name": "Cậu bé",
+      "gender": "male",
+      "age": "child",
+      "role": "Cháu của ông lão, sợ lũ rồi cùng gánh đất đắp đê",
+      "villain": false
+    },
+    {
+      "name": "Quân thủy tộc",
+      "gender": "male",
+      "age": "adult",
+      "role": "Đoàn quân cá tôm cua thuồng luồng của Thủy Tinh",
+      "villain": true
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Truyện kể cuộc chiến giữa Sơn Tinh và Thủy Tinh để giành nàng Mỵ Nương, con gái vua Hùng thứ 18 (Hùng Duệ Vương).",
+      "source": "Sơn Tinh – Thủy Tinh"
+    },
+    {
+      "claim": "Thủy Tinh đem sính lễ đến muộn, Sơn Tinh rước Mỵ Nương đi trước, nên Thủy Tinh nổi giận gây chiến.",
+      "source": "Sơn Tinh – Thủy Tinh"
+    },
+    {
+      "claim": "Sơn Tinh ngự trên núi Tản Viên, nay gọi là núi Ba Vì, nên còn được gọi là Tản Viên Sơn Thánh.",
+      "source": "Sơn Tinh – Thủy Tinh"
+    },
+    {
+      "claim": "Thủy Tinh dâng nước, đem loài thủy tộc như cá rồng đánh nhau với voi rừng; dân ở núi đắp đê ngăn nước mới tránh được hại; mưa lụt thường đến lúc mùa hạ sang mùa thu.",
+      "source": "Sơn Tinh"
+    },
+    {
+      "claim": "Sơn Tinh được xếp hàng đệ nhất trong Tứ bất tử, bốn vị thánh bất tử của tín ngưỡng dân gian người Việt.",
+      "source": "Sơn Tinh"
+    },
+    {
+      "claim": "Đền Lăng Sương (Thanh Thủy, Phú Thọ) là nơi đầu tiên thờ thánh Tản Viên; hội đền Và (Sơn Tây, Hà Nội) tổ chức vào rằm tháng Giêng.",
+      "source": "Sơn Tinh"
+    },
+    {
+      "claim": "Thời Hùng Vương, con gái vua được gọi là Mị Nương; quan văn là Lạc hầu, quan võ là Lạc tướng.",
+      "source": "Hùng Vương"
+    },
+    {
+      "claim": "Người Văn Lang trồng nhiều lúa nếp, làm nhà sàn để tránh thú dữ; khi cưới hỏi có ăn cơm nếp cùng nhau.",
+      "source": "Hùng Vương"
+    },
+    {
+      "claim": "Văn Lang chưa có chữ viết, dùng lối thắt nút dây để ghi nhớ, nên sứ giả rao tin bằng tù và chứ không đọc chiếu.",
+      "source": "Hùng Vương"
+    },
+    {
+      "claim": "Tư liệu cho biết bản phổ biến trong Sách giáo khoa Ngữ văn 6 có một số chi tiết khác bản cổ. Các chi tiết quen thuộc như sính lễ voi chín ngà, gà chín cựa, ngựa chín hồng mao, phép vẫy tay mọc núi và hô mưa gọi gió được lấy theo bản phổ biến này; tư liệu không liệt kê cụ thể các chi tiết đó.",
+      "source": "Sơn Tinh – Thủy Tinh"
+    }
+  ],
+  "look": "Bối cảnh Văn Lang, văn hóa Đông Sơn. VUA HÙNG: dáng trang nghiêm, phúc hậu, râu đen dài vừa phải; đội mũ lông chim năm lông, mặc áo ngắn chui đầu màu nâu đỏ đính các miếng đồng tròn, váy lông chim dài quá gối, vòng đồng ở cổ tay; luôn ngồi hoặc đứng uy nghi, không vẽ đùa cợt. MỊ NƯƠNG: thiếu nữ hiền dịu, tóc đen dài búi một phần sau gáy; mặc áo ngắn chui đầu màu kem kín vai, váy dài quá bắp chân màu chàm có hoa văn chữ S, khuyên tai và vòng tay bằng đồng; luôn kín đáo. SƠN TINH: chàng trai khỏe mạnh, da nâu, tóc búi cao cài lông chim; áo ngắn chui đầu màu xanh lá rừng, khố có dải vải buông, xăm hoa văn núi và chim Lạc ở cánh tay, vòng đồng ở bắp tay; khi làm phép có ánh sáng xanh lục, đất đá nhô lên. THỦY TINH: chàng trai cao, tóc dài rối như sóng cài vỏ ốc; áo ngắn chui đầu màu xanh biển sẫm, khố, xăm hoa văn sóng nước và cá sấu, vòng đồng hình vỏ sò; khi làm phép có mây đen, sóng xoáy; mặt giận dữ nhưng không đáng sợ quá với trẻ em. LẠC HẦU: người trung niên, tóc búi, áo ngắn chui đầu nâu, khố, dải lông chim ngắn trên đầu. SỨ GIẢ: áo ngắn chui đầu, khố, cầm tù và bằng sừng trâu. LẠC TƯỚNG và CHIẾN BINH: ở trần hoặc áo ngắn, khố, dải lông chim trên đầu, giáo đồng, rìu đồng, khiên đồng hình chữ nhật có hoa văn, cung nỏ. DÂN LÀNG: đàn ông khố, ở trần hoặc áo ngắn chui đầu, tóc cắt ngắn hoặc búi, có hình xăm; phụ nữ áo ngắn chui đầu và váy, tóc búi. ÔNG LÃO: tóc bạc búi, râu bạc, áo ngắn chui đầu màu nâu, chống gậy tre. CẬU BÉ: tóc cắt ngắn để chỏm, khố nhỏ, vòng đồng ở cổ chân. QUÂN THỦY TỘC: cá, tôm, cua, rùa, thuồng luồng vẽ kiểu hoạt hình tròn trịa, cầm vũ khí bằng vỏ sò, càng cua; khi thua thì ngã lăn, chạy tan tác về sóng, không vẽ máu. NHÀ CỬA: nhà sàn gỗ tre, mái cong vút hai đầu hình thuyền, chim trang trí trên nóc, mái lợp lá hoặc rơm (không ngói); nhà vua là nhà sàn lớn có sân rộng đặt trống đồng và thạp đồng. ĐỒ VẬT: trống đồng mặt có ngôi sao và chim Lạc, thạp đồng, tù và sừng, nỏ, sọt tre gánh đất, ống tre thổi cơm nếp, bánh chưng gói lá dong. CẢNH: ruộng lúa nước, sông Hồng phù sa đỏ, núi Tản Viên ba đỉnh tròn như chiếc lọng; cảnh hiện nay ở cuối phim vẽ núi Ba Vì xanh mây trắng, đền cổ và hội làng nhẹ nhàng. TRÁNH: nón lá, áo tứ thân, áo dài, khăn xếp, giấy, chữ viết, chiếu chỉ, mái ngói, cung điện kiểu Trung Hoa, áo giáp kiểu Tây."
+}

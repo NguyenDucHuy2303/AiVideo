@@ -15,6 +15,41 @@ export interface CaptionCue {
   text: string;
   startFrame: number;
   endFrame: number;
+  /** Who says it: a character's name from the script; absent for the narrator. */
+  who?: string;
+  /** How they say it, from `Tên (mừng rỡ): "…"`: a face expression name (see face.js). */
+  mood?: string;
+}
+
+/** Vietnamese words for how a line is said → the face that goes with it. */
+const MOODS: [RegExp, string][] = [
+  [/cười|khúc khích/i, "laugh"], [/mừng rỡ|hớn hở|sung sướng|rạng rỡ|reo/i, "joy"], [/mừng|vui|phấn khởi/i, "happy"], [/khóc|nức nở|mếu/i, "crying"], [/buồn|rầu|thở dài/i, "sad"],
+  [/lo|băn khoăn|sốt ruột/i, "worried"], [/sợ|hoảng|run/i, "scared"], [/giận|tức|quát/i, "angry"], [/ngạc nhiên|sửng sốt|kinh ngạc|bất ngờ/i, "surprised"],
+  [/hét|hô|thét|gầm/i, "shout"], [/quyết|dõng dạc|cương quyết|nghiêm/i, "determined"], [/tự hào|kiêu hãnh/i, "proud"], [/ngái ngủ|mệt/i, "sleepy"],
+];
+export function moodOf(words: string): string | undefined {
+  return MOODS.find(([re]) => re.test(words))?.[1];
+}
+
+/**
+ * A scene's text split into the narrator's words and lines spoken by characters, written
+ * as `Tên: "…"` (straight or curly quotes): «Mẹ: "Con ơi!" Gióng bỗng cất tiếng.» →
+ * [{ who: "Mẹ", text: "Con ơi!" }, { text: "Gióng bỗng cất tiếng." }].
+ */
+export function splitSpeakers(text: string): { who?: string; mood?: string; text: string }[] {
+  const out: { who?: string; mood?: string; text: string }[] = [];
+  const re = /(\p{Lu}[\p{L}\p{M} ]{0,30}?)\s*(?:\(([^)]{1,30})\))?\s*:\s*["“]([^"”]+)["”]/gu;
+  let last = 0;
+  for (const m of text.matchAll(re)) {
+    const before = text.slice(last, m.index).trim();
+    if (before) out.push({ text: before });
+    const mood = m[2] ? moodOf(m[2]) : undefined;
+    out.push({ who: m[1]!.trim(), ...(mood ? { mood } : {}), text: m[3]!.trim() });
+    last = m.index! + m[0].length;
+  }
+  const rest = text.slice(last).trim();
+  if (rest) out.push({ text: rest });
+  return out;
 }
 
 export interface Narration {
@@ -27,6 +62,8 @@ export interface Narration {
 export interface NarrateContext {
   engine: TtsEngine;
   synth: SynthOptions;
+  /** Voices of the characters, by the name used in the script (project.json "voices"). */
+  speakers?: Record<string, SynthOptions>;
   fps: number;
   /** Per-sentence TTS cache, shared by all scenes of the project. */
   ttsDir: string;
@@ -73,11 +110,18 @@ export async function narrateScene(sceneId: string, narration: string, ctx: Narr
   await fs.mkdir(ctx.audioDir, { recursive: true });
   const fingerprint = await ctx.engine.fingerprint(ctx.synth);
 
-  const parts: { caption: string; file: string; seconds: number }[] = [];
-  for (const sentence of splitSentences(narration)) {
-    const spoken = normalizeForSpeech(sentence);
-    if (!/[\p{L}\d]/u.test(spoken)) continue;
-    parts.push({ caption: sentence, ...(await sentenceAudio(spoken, ctx, fingerprint)) });
+  // The narrator reads the story; a character speaks its own lines in its own voice.
+  const parts: { caption: string; file: string; seconds: number; who?: string; mood?: string }[] = [];
+  for (const seg of splitSpeakers(narration)) {
+    const synth = seg.who ? ctx.speakers?.[seg.who] : undefined;
+    if (seg.who && !synth) ctx.log.warn(`no voice for "${seg.who}" in project.json "voices": the narrator reads it`);
+    const segCtx = synth ? { ...ctx, synth } : ctx;
+    const fp = synth ? await ctx.engine.fingerprint(synth) : fingerprint;
+    for (const sentence of seg.who ? [seg.text] : splitSentences(seg.text)) {
+      const spoken = normalizeForSpeech(sentence);
+      if (!/[\p{L}\d]/u.test(spoken)) continue;
+      parts.push({ caption: sentence, who: seg.who, mood: seg.mood, ...(await sentenceAudio(spoken, segCtx, fp)) });
+    }
   }
   if (!parts.length) throw new Error(`${sceneId}: narration has nothing to say`);
 
@@ -98,10 +142,11 @@ export async function narrateScene(sceneId: string, narration: string, ctx: Narr
     // Keep each caption up until the next sentence starts, so text doesn't blink off during pauses.
     const next = starts[i + 1];
     const endFrame = next !== undefined ? Math.floor(next * ctx.fps) : Math.min(durationFrames, Math.ceil((speechEnd + PACING.tail * 0.6) * ctx.fps));
-    cues.push({ text: p.caption, startFrame, endFrame: Math.max(endFrame, startFrame + 1) });
+    cues.push({ text: p.caption, startFrame, endFrame: Math.max(endFrame, startFrame + 1), ...(p.who ? { who: p.who } : {}), ...(p.mood ? { mood: p.mood } : {}) });
   });
 
   const key = sha256(JSON.stringify({ fingerprint, parts: parts.map((p) => p.file), PACING, fps: ctx.fps })).slice(0, 12);
+  // (Each part's file name already encodes its voice, so the key covers every speaker.)
   const audioFile = path.join(ctx.audioDir, `${sceneId}-${key}.wav`);
   if (!(await exists(audioFile))) {
     const inputs: string[] = [];

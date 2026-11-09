@@ -1,0 +1,116 @@
+{
+  "castFile": "cast.json",
+  "duration": 8.63,
+  "time": "day",
+  "set": {
+    "name": "village",
+    "houseX": -150,
+    "objects": [
+      {
+        "type": "mat",
+        "x": 120,
+        "scale": 0.9
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "father",
+      "type": "human",
+      "look": "old_man",
+      "x": -560
+    },
+    {
+      "id": "mother",
+      "type": "human",
+      "look": "mother",
+      "x": -250
+    },
+    {
+      "id": "baby",
+      "type": "human",
+      "look": "baby",
+      "x": 120,
+      "scale": 0.72
+    }
+  ],
+  "actions": [
+    {
+      "actor": "mother",
+      "at": 0,
+      "do": "sit",
+      "face": "happy"
+    },
+    {
+      "actor": "father",
+      "at": 0,
+      "do": "still",
+      "face": "happy"
+    },
+    {
+      "actor": "baby",
+      "at": 0,
+      "do": "lie"
+    },
+    {
+      "actor": "mother",
+      "at": 4.3,
+      "do": "sit",
+      "face": "worried",
+      "blend": 0.4
+    },
+    {
+      "actor": "father",
+      "at": 4.3,
+      "do": "worry",
+      "face": "sad"
+    },
+    {
+      "actor": "baby",
+      "at": 6.4,
+      "do": "lie",
+      "face": {
+        "smile": -0.4,
+        "mouthOpen": 0.55
+      },
+      "talk": 0.7
+    }
+  ],
+  "fx": [
+    {
+      "fx": "sparkle",
+      "on": "baby",
+      "at": 0.3,
+      "dur": 1.6
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "father",
+        "mother",
+        "baby"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 3.6,
+      "type": "full",
+      "on": [
+        "mother",
+        "baby"
+      ],
+      "push": 0.12
+    },
+    {
+      "at": 5.0,
+      "type": "close",
+      "on": "mother",
+      "push": 0.06
+    }
+  ],
+  "mood": "calm",
+  "era": "van_lang"
+}

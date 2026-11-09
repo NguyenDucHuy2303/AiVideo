@@ -22,14 +22,14 @@ const words = (s: string) => s.split(/\s+/).filter(Boolean).length;
 /** Letters only, lowercase, for comparing Vietnamese words ("Gióng," ~ "gióng"). */
 const tokens = (s: string) => s.normalize("NFC").toLowerCase().match(/\p{L}+/gu) ?? [];
 
-function hasWords(text: string, phrase: string): boolean {
+export function hasWords(text: string, phrase: string): boolean {
   const have = new Set(tokens(text));
   const want = tokens(phrase);
   return want.length > 0 && want.every((w) => have.has(w));
 }
 
 /** Vietnamese phrase as whole words, so "bay" does not match inside another word. */
-function says(text: string, pattern: string): boolean {
+export function says(text: string, pattern: string): boolean {
   return new RegExp(`(^|[^\\p{L}])(${pattern})(?=$|[^\\p{L}])`, "iu").test(text.normalize("NFC"));
 }
 

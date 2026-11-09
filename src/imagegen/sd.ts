@@ -27,6 +27,9 @@ export interface GenerateOptions {
   style?: string;
   negative?: string;
   shape?: ImageShape;
+  /** Guidance. SD-Turbo is made for 1, where the negative prompt does nothing; 1.5–2 lets it
+   * steer away from things (at some cost in crispness). */
+  cfg?: number;
 }
 
 /** Model load + 4 steps takes well under a minute on a 6-core CPU; this only catches hangs. */
@@ -59,7 +62,8 @@ export async function sdTurbo(): Promise<ImageGen | undefined> {
       const negative = opts.negative ?? NEGATIVE;
       const [width, height] = SIZES[opts.shape ?? "square"];
       // Same prompt → same seed → same picture, so rebuilds are reproducible and cacheable.
-      const key = sha256(`${MODEL}|${width}x${height}|${STEPS}|${full}|${negative}`);
+      const cfg = opts.cfg ?? 1;
+      const key = sha256(`${MODEL}|${width}x${height}|${STEPS}|${full}|${negative}${cfg !== 1 ? `|cfg${cfg}` : ""}`);
       const file = path.join(outDir, `${key.slice(0, 12)}.png`);
       if (await exists(file)) return { file, cached: true };
       await fs.mkdir(outDir, { recursive: true });
@@ -71,7 +75,7 @@ export async function sdTurbo(): Promise<ImageGen | undefined> {
             "-m", model,
             "-p", full,
             "-n", negative,
-            "--cfg-scale", "1",
+            "--cfg-scale", String(cfg),
             "--steps", String(STEPS),
             "--sampling-method", "euler_a",
             "-W", String(width),

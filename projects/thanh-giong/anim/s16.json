@@ -1,0 +1,105 @@
+{
+  "castFile": "cast.json",
+  "duration": 5.27,
+  "time": "dawn",
+  "set": {
+    "name": "sky"
+  },
+  "cast": [
+    {
+      "id": "horse",
+      "type": "horse",
+      "look": "iron_horse",
+      "x": -300,
+      "scale": 2.0,
+      "y": -200
+    },
+    {
+      "id": "free",
+      "type": "human",
+      "look": "hero_free",
+      "x": -300,
+      "scale": 2.0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "horse",
+      "at": 0,
+      "do": "fly",
+      "move": {
+        "by": 900,
+        "byY": -300,
+        "ease": "inOut"
+      },
+      "dur": 5.27
+    },
+    {
+      "actor": "free",
+      "at": -0.1,
+      "do": "leap",
+      "onto": "horse",
+      "dur": 0.01,
+      "arc": 0
+    },
+    {
+      "actor": "free",
+      "at": 0.02,
+      "do": "ride",
+      "face": "proud"
+    },
+    {
+      "actor": "free",
+      "at": 3.6,
+      "dur": 1.5,
+      "set": {
+        "opacity": 0.0
+      }
+    },
+    {
+      "actor": "horse",
+      "at": 3.6,
+      "dur": 1.5,
+      "set": {
+        "opacity": 0.0
+      }
+    }
+  ],
+  "fx": [
+    {
+      "fx": "glow",
+      "on": "free",
+      "at": 0,
+      "dur": 5.3,
+      "power": 0.7
+    },
+    {
+      "fx": "sparkle",
+      "on": "free",
+      "at": 0,
+      "dur": 5
+    },
+    {
+      "fx": "rays",
+      "x": 300,
+      "at": 0,
+      "dur": 5.3,
+      "scale": 3
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "horse",
+        "free"
+      ],
+      "follow": true,
+      "share": 0.4,
+      "push": 0.08
+    }
+  ],
+  "mood": "calm",
+  "era": "van_lang"
+}

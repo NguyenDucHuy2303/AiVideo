@@ -1,0 +1,168 @@
+{
+  "castFile": "cast.json",
+  "duration": 6.57,
+  "time": "day",
+  "set": {
+    "name": "village",
+    "houseX": -760,
+    "objects": [
+      {
+        "type": "rice",
+        "x": 180,
+        "from": 3.6
+      },
+      {
+        "type": "bowls",
+        "x": -330
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "boy",
+      "type": "human",
+      "look": "boy",
+      "x": -80,
+      "scale": 1.45
+    },
+    {
+      "id": "v1",
+      "type": "human",
+      "look": "villager_man",
+      "x": 1500,
+      "facing": -1
+    },
+    {
+      "id": "v2",
+      "type": "human",
+      "look": "villager_woman",
+      "x": 1850,
+      "facing": -1
+    },
+    {
+      "id": "v3",
+      "type": "human",
+      "look": "villager_man",
+      "x": 2250,
+      "facing": -1,
+      "scale": 0.95
+    }
+  ],
+  "actions": [
+    {
+      "actor": "boy",
+      "at": 0,
+      "do": "eat",
+      "face": "happy"
+    },
+    {
+      "actor": "boy",
+      "at": 0,
+      "set": {
+        "prop": "bowl"
+      }
+    },
+    {
+      "actor": "v1",
+      "at": 0,
+      "set": {
+        "prop": "basket"
+      }
+    },
+    {
+      "actor": "v1",
+      "at": 0,
+      "do": "carry",
+      "move": {
+        "to": 330,
+        "ease": "out"
+      },
+      "dur": 3.0
+    },
+    {
+      "actor": "v1",
+      "at": 3.1,
+      "do": "give"
+    },
+    {
+      "actor": "v1",
+      "at": 4.4,
+      "do": "cheer"
+    },
+    {
+      "actor": "v2",
+      "at": 0,
+      "set": {
+        "prop": "basket"
+      }
+    },
+    {
+      "actor": "v2",
+      "at": 0,
+      "do": "carry",
+      "move": {
+        "to": 560,
+        "ease": "out"
+      },
+      "dur": 3.3
+    },
+    {
+      "actor": "v2",
+      "at": 3.4,
+      "do": "give"
+    },
+    {
+      "actor": "v2",
+      "at": 4.6000000000000005,
+      "do": "cheer"
+    },
+    {
+      "actor": "v3",
+      "at": 0,
+      "set": {
+        "prop": "basket"
+      }
+    },
+    {
+      "actor": "v3",
+      "at": 0,
+      "do": "carry",
+      "move": {
+        "to": 790,
+        "ease": "out"
+      },
+      "dur": 3.6
+    },
+    {
+      "actor": "v3",
+      "at": 3.7,
+      "do": "give"
+    },
+    {
+      "actor": "v3",
+      "at": 4.800000000000001,
+      "do": "cheer"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": "v1",
+      "share": 0.4
+    },
+    {
+      "at": 3.2,
+      "type": "wide",
+      "on": [
+        "boy",
+        "v1",
+        "v3"
+      ],
+      "ease": 0.8,
+      "push": 0.05
+    }
+  ],
+  "mood": "calm",
+  "era": "van_lang"
+}

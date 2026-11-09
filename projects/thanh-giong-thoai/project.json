@@ -1,0 +1,49 @@
+{
+  "engine": "vieneu",
+  "voice": "Minh Đức",
+  "speed": 1.1,
+  "imageGen": "off",
+  "onlineImages": false,
+  "era": "van_lang",
+  "profiles": [
+    "16x9"
+  ],
+  "voices": {
+    "Mẹ": "Ngọc Huyền",
+    "Vua Hùng": "Quốc Tuấn",
+    "Sứ giả": "Thanh Bình",
+    "Gióng": {
+      "voice": "Mai Anh",
+      "pitch": 4
+    },
+    "Tráng sĩ": "Thiện Minh",
+    "Giặc": "Hải Đăng"
+  },
+  "speakers": {
+    "Mẹ": [
+      "mother"
+    ],
+    "Vua Hùng": [
+      "king"
+    ],
+    "Sứ giả": [
+      "messenger"
+    ],
+    "Gióng": [
+      "boy"
+    ],
+    "Tráng sĩ": [
+      "hero"
+    ],
+    "Giặc": [
+      "e1",
+      "e2",
+      "e3"
+    ]
+  },
+  "thumbnail": {
+    "at": 36,
+    "title": "Thánh Gióng",
+    "subtitle": "Truyện cổ tích Việt Nam"
+  }
+}

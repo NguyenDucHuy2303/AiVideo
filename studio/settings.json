@@ -1,0 +1,5 @@
+{
+  "perJobTokens": 80000,
+  "perDayTokens": 300000,
+  "fallbackModel": "gemma3:12b"
+}
