@@ -21,6 +21,7 @@ import { renderStory } from "../animation/story.ts";
 import { costumeSheet, designCast, type Designed } from "./design.ts";
 import { jobDir, loadJob, saveJob, setStatus, type Job, type JobStatus } from "./jobs.ts";
 import { writeScript, type Plan } from "./write.ts";
+import { linkShorts, makeShorts } from "./shorts.ts";
 import { buildEra, loadEras } from "./era.ts";
 
 export const projectOf = (slug: string) => path.join(ROOT, "projects", slug);
@@ -124,6 +125,23 @@ export async function testRun(slug: string, scenes: number, log: (s: string) => 
   return renderStory(proj, { onLog: log });
 }
 
+/** Shorts from the finished film (heavy: nights and weekends); the job's status stays. */
+export async function shorts(slug: string, log: (s: string) => void = console.log): Promise<Job> {
+  try {
+    const files = await makeShorts(projectOf(slug), 3, log);
+    const job = await loadJob(slug);
+    job.shorts = await linkShorts(files, jobDir(slug));
+    await saveJob(job);
+    return setStatus(job, job.status, `${files.length} shorts`);
+  } catch (err) {
+    // A failed short must not fail the film: note it and move on.
+    const job = await loadJob(slug);
+    job.shorts = [];
+    await saveJob(job);
+    return setStatus(job, job.status, `shorts lỗi: ${(err as Error).message.slice(0, 200)}`);
+  }
+}
+
 /** The film (heavy: nights and weekends). */
 export async function render(slug: string, log: (s: string) => void = console.log): Promise<Job> {
   try {
@@ -138,6 +156,7 @@ export async function render(slug: string, log: (s: string) => void = console.lo
     }
     job = await loadJob(slug);
     delete job.stage;
+    delete job.shorts; // the film changed: its shorts are cut again
     await saveJob(job);
     return setStatus(job, "video");
   } catch (err) {

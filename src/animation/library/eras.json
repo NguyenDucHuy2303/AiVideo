@@ -1609,5 +1609,1864 @@
         }
       }
     }
+  },
+  "au_lac": {
+    "name": "Âu Lạc thời An Dương Vương (khoảng thế kỷ III–II TCN; sử cũ chép 257–208 TCN, nhiều sử gia hiện đại cho là khoảng 208–179 TCN), kinh đô Cổ Loa, nỏ thần",
+    "stories": [
+      "An Dương Vương xây thành Cổ Loa (thành nhiều lần bị yêu quái phá đổ, rùa thần Kim Quy giúp diệt yêu quái và chỉ cách xây)",
+      "Rùa thần Kim Quy trao móng làm lẫy nỏ thần",
+      "Cao Lỗ chế nỏ liên châu và giúp xây thành",
+      "Thục Phán lãnh đạo người Âu Việt, Lạc Việt kháng chiến chống quân Tần (tướng Tần Đồ Thư tử trận)",
+      "Thục Phán lập nước Âu Lạc, thống nhất Âu Việt và Lạc Việt",
+      "Mỵ Châu – Trọng Thủy, lẫy nỏ thần bị đánh tráo (truyền thuyết, bài học về cảnh giác)",
+      "Triệu Đà (nước Nam Việt) đánh Âu Lạc, trận thành Cổ Loa"
+    ],
+    "draw": [
+      "Văn hóa Đông Sơn vẫn tiếp tục: trang phục giống thời Văn Lang nhưng dùng outfit ghép mảnh: áo chui đầu (cut chui) có dải hoa văn trống đồng, nữ mặc váy, nam đóng khố",
+      "Dân thường nam: đóng khố, ở trần hoặc áo chui ngắn tay ngắn, tóc búi hoặc cắt ngắn, có thể xăm mình, đeo vòng đồng; màu nâu đất, chàm, vàng đất",
+      "Dân thường nữ: áo chui đầu ngắn và váy dài, tóc búi hoặc để dài, khuyên tai và vòng tay bằng đồng",
+      "Vua An Dương Vương: áo chui đầu dài có hoa văn trống đồng, khoác áo choàng, vòng đồng, mũ lông chim (theo nếp Đông Sơn nối tiếp Văn Lang) để phân biệt với quan và lính; vẻ uy nghiêm, đáng kính",
+      "Lạc hầu, Lạc tướng, Bồ chính (Âu Lạc giữ các chức của Văn Lang): áo chui dài hơn dân thường, hoa văn trống đồng, vòng đồng; tướng có dải lông chim trên đầu",
+      "Quân Âu Lạc: dải lông chim trên đầu, giáo đồng, rìu đồng, khiên, cung nỏ; nỏ và mũi tên đồng là vũ khí chủ lực (khảo cổ tìm được rất nhiều mũi tên đồng ở Cổ Loa)",
+      "Thành Cổ Loa: thành lũy đắp bằng đất nhiều vòng, có hào nước bao quanh, dân cư đông đúc bên trong; cảnh dân gánh đất, đắp lũy bằng sọt, gánh",
+      "Nhà sàn mái cong hình thuyền, trống đồng, thạp đồng, khuôn đúc đồng, lò đúc mũi tên đồng; thuyền độc mộc, thuyền chiến trên sông",
+      "Rùa thần Kim Quy lớn màu vàng nổi từ dưới nước (yếu tố truyền thuyết, vẽ hiền từ, linh thiêng)",
+      "Quân phương Bắc (Tần, sau là Nam Việt của Triệu Đà): mũ giáp, áo giáp kiểu phương Bắc, giáo, cờ, dễ phân biệt hẳn với quân Âu Lạc"
+    ],
+    "avoid": [
+      "Áo tứ thân, áo dài, áo ngũ thân, yếm, khăn xếp, khăn mỏ quạ, khăn vấn: của các thời kỳ muộn hơn rất nhiều",
+      "Nón lá, nón quai thao, nón chóp: không có tư liệu chắc chắn cho thời này",
+      "Mũ bình thiên, mũ cánh chuồn, vương miện, long bào, áo cổ tròn hay cổ chéo kiểu quan lại Trung Hoa cho vua quan Âu Lạc: là trang phục phong kiến đời sau, dễ làm người xem lầm vua Âu Lạc thành vua phương Bắc",
+      "Hoa văn rồng cho vua: biểu tượng rồng của các triều đại phong kiến sau này",
+      "Tường thành xây gạch hay đá, cổng thành có lầu mái ngói: Cổ Loa là thành đắp bằng đất, có hào nước",
+      "Mái ngói, cung điện kiểu Trung Hoa: không chắc chắn có ở thời này, dùng nhà sàn mái thuyền",
+      "Giấy, chữ viết, cuộn chiếu chỉ, nhà nho, thầy đồ: dân Âu Lạc chưa dùng chữ, truyền lệnh bằng tù và hay trống",
+      "Nhà sư, chùa, tượng Phật: Phật giáo đến thế kỷ 2 sau Công nguyên mới du nhập",
+      "Ngựa sắt, roi sắt, áo giáp sắt, nón sắt của Thánh Gióng: là đồ của truyền thuyết thời Văn Lang, không đem sang Âu Lạc",
+      "Kỵ binh, ngựa chiến cho quân Âu Lạc: tư liệu không nhắc tới, không dùng",
+      "Áo giáp kiểu Tây, kiếm cong kiểu Nhật hay kiểu Ả Rập",
+      "Cảnh An Dương Vương chém Mỵ Châu, máu me hay cảnh chết chóc: không hợp trẻ em; nếu cần thì kể nhẹ nhàng, không vẽ"
+    ],
+    "customs": [
+      "An Dương Vương là vị vua dựng nước Âu Lạc, được thờ ở đền Cổ Loa và đền Cuông: vẽ trang nghiêm, đáng kính, không biến thành vai hề",
+      "Rùa thần Kim Quy là linh vật được tôn kính: vẽ hiền hậu, uy nghi, không đùa cợt",
+      "Tôn ti: vua đứng hoặc ngồi ở trung tâm và chỗ cao hơn; quan, tướng, dân đứng thấp hơn, cúi người, chắp tay khi gặp vua",
+      "Cảnh đắp thành là sức mạnh cộng đồng: già trẻ trai gái cùng gánh đất, vui vẻ, đoàn kết, không vẽ cảnh bị bắt làm khổ sai",
+      "Phụ nữ mặc kín đáo (áo chui đầu và váy), không hở hang",
+      "Yêu quái phá thành: vẽ ngộ nghĩnh, hơi đáng sợ nhưng không ghê rợn, bị đuổi đi chứ không bị giết chết chi tiết",
+      "Đánh trận hợp với trẻ em: giặc ngã, chạy tan tác, tên bay trúng khiên; không máu, không chết chóc chi tiết",
+      "Chuyện Mỵ Châu – Trọng Thủy: nhấn mạnh bài học cảnh giác giữ nước, không bêu riếu hay chế giễu nhân vật"
+    ],
+    "sources": [
+      "An Dương Vương",
+      "Lịch sử Việt Nam",
+      "Lịch sử quân sự Văn Lang – Âu Lạc"
+    ],
+    "architecture": {
+      "house": "boat",
+      "palace": "boat"
+    },
+    "backdrop": "A lush Red River delta plain in the 3rd century BC: wide flat green rice paddies and marshy ponds, a winding reddish-brown river with reed banks, clumps of bamboo and tall tropical trees, low forested hills far on the horizon under a soft humid monsoon sky with drifting white clouds.",
+    "archetypes": {
+      "king": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b2e1f",
+            "trim": "#d4a537",
+            "length": "knee",
+            "sleeves": "short",
+            "pattern": "dongson"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a3a1e",
+            "length": "knee"
+          },
+          "belt": {
+            "color": "#d4a537",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather",
+        "beard": "#1a1a1a",
+        "cape": true,
+        "bracelets": true,
+        "prop": {
+          "type": "bronze_axe"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "long",
+          "brows": "thick",
+          "mustache": "thin",
+          "iris": "#3b2414",
+          "eyeScale": 1
+        }
+      },
+      "queen": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#9c4a2a",
+            "trim": "#d4a537",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "dongson"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#4a2c1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#d4a537",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#3b2414",
+          "eyeScale": 1.05
+        }
+      },
+      "girl": {
+        "body": "woman",
+        "build": "slim",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#c8553d",
+            "trim": "#e8c15a",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "dongson"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#6b3a24",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#e8c15a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a1a"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#3b2414",
+          "eyeScale": 1.15
+        }
+      },
+      "general": {
+        "body": "strong",
+        "build": "heavy",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#6b4a2b",
+            "trim": "#b08a3e",
+            "length": "hip",
+            "sleeves": "none",
+            "pattern": "dongson"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#3e2a18",
+            "length": "knee"
+          },
+          "belt": {
+            "color": "#b08a3e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "beard": "#1a1a1a",
+        "tattoo": true,
+        "bracelets": true,
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "round",
+          "brows": "bushy",
+          "mustache": "thick",
+          "iris": "#2e1c10",
+          "eyeScale": 1
+        }
+      },
+      "official": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#3f4e6b",
+            "trim": "#c9a04a",
+            "length": "knee",
+            "sleeves": "short",
+            "pattern": "dongson"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#2e3550",
+            "length": "knee"
+          },
+          "belt": {
+            "color": "#c9a04a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a2a2a"
+        },
+        "beard": "#2a2a2a",
+        "bracelets": true,
+        "prop": {
+          "type": "horn"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "long",
+          "brows": "thin",
+          "mustache": "droopy",
+          "iris": "#3b2414",
+          "eyeScale": 1
+        }
+      },
+      "soldier": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8a6a3a",
+            "trim": "#5a3e1e",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "dongson"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#4a3320",
+            "length": "knee"
+          },
+          "belt": {
+            "color": "#5a3e1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "tattoo": true,
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick",
+          "iris": "#2e1c10",
+          "eyeScale": 1
+        }
+      },
+      "enemy": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#e3b585",
+        "outfit": {
+          "type": "enemy",
+          "color": "#3a3a3a",
+          "trim": "#7a1f1f"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "beard": "#1a1a1a",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "flag"
+          }
+        ],
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "mustache": "droopy",
+          "iris": "#2a1a10",
+          "eyeScale": 0.95
+        }
+      },
+      "villager_man": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#a57a48",
+            "trim": "#6b4a2b",
+            "length": "waist",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a3e26",
+            "length": "knee"
+          },
+          "belt": {
+            "color": "#6b4a2b",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "props": [
+          {
+            "type": "basket"
+          },
+          {
+            "type": "stick"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick",
+          "iris": "#3b2414",
+          "eyeScale": 1
+        }
+      },
+      "villager_woman": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#b5894f",
+            "trim": "#7a5530",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#4e3a28",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#7a5530",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#3b2414",
+          "eyeScale": 1.05
+        }
+      },
+      "mother": {
+        "body": "woman",
+        "build": "heavy",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#3e5a4a",
+            "trim": "#a8823f",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "dots"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#2f3a30",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#a8823f",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "bracelets": true,
+        "prop": {
+          "type": "bowl"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "droopy",
+          "nose": "round",
+          "brows": "thin",
+          "iris": "#3b2414",
+          "eyeScale": 1
+        }
+      },
+      "boy": {
+        "body": "child",
+        "build": "slim",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#c49a5a",
+            "trim": "#7a5530",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#6b4a2b",
+            "length": "knee"
+          }
+        },
+        "hair": {
+          "style": "traidao",
+          "color": "#1a1a1a"
+        },
+        "bracelets": true,
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#3b2414",
+          "eyeScale": 1.2
+        }
+      },
+      "elder_man": {
+        "body": "elder",
+        "build": "slim",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8c7a5e",
+            "trim": "#5a4a36",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#4a3e30",
+            "length": "knee"
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#d8d8d8"
+        },
+        "beard": "#e0e0e0",
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "droopy",
+          "nose": "long",
+          "brows": "bushy",
+          "wrinkles": true,
+          "mustache": "droopy",
+          "iris": "#3b2414",
+          "eyeScale": 0.95
+        }
+      },
+      "elder_woman": {
+        "body": "elder",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#6e5a44",
+            "trim": "#4a3a2a",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#3a2e24",
+            "length": "ankle"
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#cfcfcf"
+        },
+        "earrings": true,
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "droopy",
+          "nose": "button",
+          "brows": "thin",
+          "wrinkles": true,
+          "iris": "#3b2414",
+          "eyeScale": 0.95
+        }
+      },
+      "fairy": {
+        "body": "elder",
+        "build": "slim",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#f2ede0",
+            "trim": "#d4b25a",
+            "length": "ankle",
+            "sleeves": "wide",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#e8e2d0",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#d4b25a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#ffffff"
+        },
+        "beard": "#ffffff",
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "droopy",
+          "nose": "long",
+          "brows": "bushy",
+          "wrinkles": true,
+          "mustache": "droopy",
+          "iris": "#4a3020",
+          "eyeScale": 1
+        }
+      }
+    }
+  },
+  "bac_thuoc": {
+    "name": "Thời Bắc thuộc lần thứ nhất – Khởi nghĩa Hai Bà Trưng (năm 40–43)",
+    "stories": [
+      "Hai Bà Trưng khởi nghĩa (tháng 2 năm 40)",
+      "Hội thề Hát Môn ở cửa sông Hát (năm 39), lời thề 'Một xin rửa sạch nước thù, Hai xin dựng lại nghiệp xưa họ Hùng'",
+      "Bà Man Thiện, mẹ Hai Bà, dạy con trồng dâu nuôi tằm và học võ",
+      "Thi Sách, con Lạc tướng Chu Diên, chồng bà Trưng Trắc",
+      "Trưng Trắc trang điểm đẹp khi ra quân để quân mình thêm khí thế",
+      "Đánh hạ trị sở Luy Lâu, Thái thú Tô Định cạo tóc cạo râu, bỏ ấn tín chạy trốn",
+      "Trưng Trắc lên ngôi vua (Trưng Nữ Vương), Trưng Nhị làm Phó Vương, đóng đô ở Mê Linh",
+      "Các nữ tướng thời Hai Bà: Lê Chân, Thánh Thiên, Bát Nàn, Phương Dung, Thiện Hoa…",
+      "Phục Ba tướng quân Mã Viện sang đánh; trận Lãng Bạc; Hai Bà lui về Cấm Khê (năm 42–43)",
+      "Tướng Đô Dương đánh tiếp ở Cửu Chân"
+    ],
+    "draw": [
+      "Người Việt (Lạc Việt) vẫn theo lối sống thời Đông Sơn, nhưng vẽ bằng outfit ghép mảnh: áo chui đầu (cut chui) ngắn hoặc dài tới hông, có thể có dải hoa văn dongson; nữ mặc váy, nam đóng khố hoặc mặc quần ngắn",
+      "Đàn ông Việt: tóc cắt ngắn (theo truyền thuyết, thời này người Việt hay cạo tóc, nên Tô Định cạo tóc để trà trộn chạy trốn), cũng có thể búi tóc; nông dân có thể ở trần",
+      "Phụ nữ Việt: áo chui đầu và váy, tóc búi hoặc để dài, khuyên tai và vòng tay; phụ nữ giữ vai trò rất lớn trong gia đình và xã hội",
+      "Hai Bà Trưng và các Lạc tướng (dòng dõi Lạc tướng thời Hùng Vương): áo chui đầu màu đỏ hoặc nâu đỏ có dải hoa văn trống đồng, thắt lưng, vòng tay, khuyên tai, dải lông chim trên đầu; khi ra quân thì trang điểm, ăn mặc đẹp (theo dã sử)",
+      "Nữ tướng và nghĩa quân: rất nhiều tướng là phụ nữ; cầm giáo, kiếm, rìu, khiên; thổi tù và để tập hợp quân",
+      "Quân Đông Hán (giặc phương Bắc): mặc bộ enemy, đội enemy_helmet, cầm giáo, kiếm, khiên; tướng Mã Viện mặc giáp, khoác áo choàng",
+      "Quan cai trị nhà Hán (Thái thú Tô Định): áo cổ chéo dài, tay thụng, búi tóc, để râu; trông tham lam, nhát gan (để trẻ em hiểu là phe xấu, không quá đáng sợ)",
+      "Làng quê: nhà sàn, ruộng lúa, nương dâu, nong tằm, khung cửi; trống đồng, thạp đồng ở nhà Lạc tướng; thuyền độc mộc trên sông Hát, sông Đáy, sông Hồng",
+      "Hội thề Hát Môn: bãi đá ven sông, các tướng đứng quanh Hai Bà giơ tay thề, có trống đồng và cờ"
+    ],
+    "avoid": [
+      "Áo tứ thân, áo dài, áo ngũ thân, khăn mỏ quạ, khăn xếp, nón quai thao: là trang phục các thời muộn hơn rất nhiều",
+      "Nón lá, nón chóp: tư liệu không chắc chắn có ở thời này nên không dùng",
+      "Mũ cánh chuồn, mũ bình thiên, hoa văn rồng của vua: là triều phục của các triều đại phong kiến về sau, không dùng cho Hai Bà",
+      "Mũ lông chim năm lông và lễ phục vua Hùng (plume): không có tư liệu cho thấy Hai Bà dùng lễ phục này, nên chỉ dùng dải lông chim",
+      "Sư sãi, chùa chiền: tư liệu không nhắc tới Phật giáo trong cuộc khởi nghĩa nên không vẽ",
+      "Cảnh Hai Bà mất (nhảy sông tự vẫn theo truyền thuyết, hoặc bị chém đầu theo Hậu Hán thư), cảnh Thi Sách bị giết: không hợp với trẻ em, chỉ nói gián tiếp",
+      "Cung điện mái ngói, mái cong kiểu Trung Hoa cho phía Hai Bà: không có tư liệu về cung điện ở Mê Linh",
+      "Họ tên kiểu về sau (Trần Thị Đoan…), chữ viết trên cờ, cuộn chiếu chỉ ở phía người Việt: sử gia cho rằng đầu Công nguyên người Việt chưa có họ, tên này do thần phả đời sau đặt",
+      "Trang phục, quân đội thời Minh thuộc (Bắc thuộc lần thứ tư, 1407–1427): khác thời đại, đừng nhầm hai thời 'Giao Chỉ'",
+      "Áo giáp sắt và ngựa sắt kiểu Thánh Gióng: là đồ của truyền thuyết khác",
+      "Voi chiến: dân gian hay kể Hai Bà cưỡi voi nhưng tư liệu ở đây không nhắc tới, và thư viện cũng chưa vẽ được voi"
+    ],
+    "customs": [
+      "Hai Bà Trưng là anh hùng dân tộc, được thờ ở đền Hát Môn và nhiều nơi khác: luôn vẽ trang nghiêm, oai phong, không đùa cợt",
+      "Tôn vinh vai trò người phụ nữ: nữ tướng đứng ngang hàng, thậm chí đứng trước tướng nam; người mẹ (bà Man Thiện) được kính trọng",
+      "Tôn ti: Trưng Trắc (vua) đứng giữa và cao nhất, Trưng Nhị (Phó Vương) đứng bên cạnh, các tướng đứng thành hàng phía sau hoặc hai bên, cúi đầu tỏ lòng kính trọng",
+      "Hội thề là việc thiêng liêng: cảnh nghiêm túc, mọi người cùng hướng về Hai Bà và lá cờ, không vẽ hài hước",
+      "Phụ nữ mặc kín đáo (áo và váy), không hở hang",
+      "Đánh trận hợp với trẻ em: quân Hán ngã, bỏ chạy tán loạn, Tô Định cạo đầu chạy trốn (có thể vẽ hơi buồn cười); không có máu, không vẽ chết chóc",
+      "Có thể vẽ phần kết bằng cảnh Hai Bà được nhân dân đời đời tưởng nhớ (đền thờ, lễ hội) thay cho cảnh thất bại"
+    ],
+    "sources": [
+      "Hai Bà Trưng",
+      "Khởi nghĩa Hai Bà Trưng"
+    ],
+    "architecture": {
+      "house": "boat",
+      "palace": "boat"
+    },
+    "backdrop": "Lush Red River delta in the early first century: emerald rice paddies and mulberry fields along the winding Day River, bamboo groves and reed banks, a rocky riverside flat, and the misty peaks of Ba Vi mountain under a soft tropical sky.",
+    "archetypes": {
+      "king": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#b22222",
+            "trim": "#d4a017",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "dongson"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#7a1f1f",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#d4a017",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "earrings": true,
+        "bracelets": true,
+        "cape": true,
+        "prop": {
+          "type": "sword"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thick",
+          "eyeScale": 1.05
+        }
+      },
+      "queen": {
+        "body": "woman",
+        "build": "slim",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#c8641e",
+            "trim": "#d4a017",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "dongson"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#8b3a1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#d4a017",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "earrings": true,
+        "bracelets": true,
+        "cape": true,
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "eyeScale": 1.1
+        }
+      },
+      "mother": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#6b4226",
+            "trim": "#c9a227",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "dongson"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#3e2a1e",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#8b5a2b",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#5a5a5a"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thin",
+          "wrinkles": true
+        }
+      },
+      "general": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b2d2d",
+            "trim": "#c9a227",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "dongson"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#4a2a1a",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#c9a227",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "bracelets": true,
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "lac_tuong": {
+        "body": "strong",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#7a4a1e",
+            "trim": "#c9a227",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "dongson"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#4a2e18"
+          },
+          "belt": {
+            "color": "#c9a227",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "bracelets": true,
+        "prop": {
+          "type": "bronze_axe"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        }
+      },
+      "soldier": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b5a2b",
+            "trim": "#5a3a1a",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a3a1a"
+          },
+          "belt": {
+            "color": "#3e2a1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "enemy": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#e8c098",
+        "outfit": {
+          "type": "enemy",
+          "color": "#3a3a4a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "mustache": "thin"
+        }
+      },
+      "enemy_general": {
+        "body": "strong",
+        "build": "heavy",
+        "skin": "#e8c098",
+        "outfit": {
+          "type": "enemy",
+          "color": "#2a2a3a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#8a8a8a"
+        },
+        "headwear": "enemy_helmet",
+        "beard": "#8a8a8a",
+        "cape": true,
+        "prop": {
+          "type": "sword"
+        },
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "wrinkles": true,
+          "mustache": "droopy"
+        }
+      },
+      "official": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#ecc8a0",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#2b2b45",
+            "trim": "#7a1f1f",
+            "length": "ankle",
+            "sleeves": "wide",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#1e1e2e",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#7a1f1f",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "beard": "#1a1a1a",
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "thin",
+          "mustache": "droopy"
+        }
+      },
+      "villager_man": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "bareChest": true,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b6b4a",
+            "trim": "#5a4030",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#6b4a2e"
+          },
+          "belt": {
+            "color": "#4a3020",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick"
+        }
+      },
+      "villager_woman": {
+        "body": "woman",
+        "build": "slim",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#a0784a",
+            "trim": "#6b4a2e",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "dots"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#4a3424",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#6b4a2e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "girl": {
+        "body": "woman",
+        "build": "slim",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#c08a3e",
+            "trim": "#8b3a1a",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "flowers"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#6b3a1e",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#8b3a1a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a1a"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "eyeScale": 1.15
+        }
+      },
+      "boy": {
+        "body": "child",
+        "build": "slim",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#9a7a50",
+            "trim": "#5a4030",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a4030"
+          },
+          "belt": {
+            "color": "#4a3020",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "traidao",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "horn"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "eyeScale": 1.2
+        }
+      },
+      "elder_man": {
+        "body": "elder",
+        "build": "slim",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#6b5a48",
+            "trim": "#4a3a2a",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#4a3a2a"
+          },
+          "belt": {
+            "color": "#3a2a1a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#d8d8d8"
+        },
+        "beard": "#d8d8d8",
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "droopy",
+          "nose": "round",
+          "brows": "bushy",
+          "wrinkles": true,
+          "mustache": "thin"
+        }
+      },
+      "elder_woman": {
+        "body": "elder",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#5a4a3a",
+            "trim": "#3a2a1a",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#2e2420",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#3a2a1a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#e0e0e0"
+        },
+        "bracelets": true,
+        "prop": {
+          "type": "bowl"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "droopy",
+          "nose": "round",
+          "brows": "thin",
+          "wrinkles": true
+        }
+      }
+    }
+  },
+  "ngo_dinh_le": {
+    "name": "Thế kỷ X: Ngô Quyền, Đinh Bộ Lĩnh, Tiền Lê (938–1009)",
+    "stories": [
+      "Ngô Quyền và trận Bạch Đằng (938): cắm cọc gỗ dưới lòng sông, nhử thuyền giặc Nam Hán vào lúc nước triều lên, đánh khi nước rút",
+      "Ngô Quyền xưng vương (939), mở đầu thời độc lập tự chủ",
+      "Dương Tam Kha cướp ngôi, Hậu Ngô Vương (Ngô Xương Ngập, Ngô Xương Văn)",
+      "Loạn 12 sứ quân (Trần Lãm, Phạm Bạch Hổ…)",
+      "Đinh Bộ Lĩnh: tuổi thơ ở Hoa Lư, dẹp loạn 12 sứ quân, được tôn là Vạn Thắng vương",
+      "Đinh Tiên Hoàng lên ngôi Hoàng đế (968), đặt quốc hiệu Đại Cồ Việt, đóng đô ở Hoa Lư",
+      "Đinh Liễn đi sứ nhà Tống",
+      "Thái hậu Dương Vân Nga trao áo long cổn cho Lê Hoàn (980)",
+      "Lê Hoàn (Lê Đại Hành) đánh thắng quân Tống (981)",
+      "Lê Đại Hành mở đầu lễ cày tịch điền",
+      "Thiền sư Khuông Việt (Ngô Chân Lưu), sư Vạn Hạnh",
+      "Lê Long Đĩnh xin kinh Đại Tạng và Cửu kinh từ nhà Tống",
+      "Lý Công Uẩn, Thân vệ của nhà Tiền Lê (dẫn sang thời Lý)"
+    ],
+    "draw": [
+      "Vua (Ngô Vương, Đinh Tiên Hoàng, Lê Đại Hành): áo cổ chéo dài tới mắt cá, tay thụng, hoa văn rồng (sử có ghi 'áo long cổn' khi tôn Lê Hoàn lên ngôi), đội mũ kiểu chung (crown), đai thắt lưng",
+      "Hoàng hậu, Thái hậu: áo cổ chéo dài tay thụng, váy dài, tóc búi cao, khuyên tai, vòng tay; màu đậm và sang để khác dân thường",
+      "Quan văn võ (năm 975 vua Đinh có định áo mũ, nhưng kiểu dáng không rõ): áo cổ chéo dài, tay thụng, tóc búi, cầm cuộn văn thư; màu trầm, không có hoa văn rồng",
+      "Tướng (Ngô Quyền, Lê Hoàn Thập đạo tướng quân): giáp, nón sắt, áo choàng, gươm, giáo; đứng chỉ huy trên thuyền chiến",
+      "Lính: áo cổ chéo ngắn, quần, thắt lưng, tóc búi, giáo, khiên, gươm, cờ, tù và; quân Ngô đánh trên thuyền nhỏ ở sông Bạch Đằng",
+      "Giặc: quân Nam Hán (938), quân Tống (981), mặc giáp phương Bắc, đội mũ giặc, đi thuyền lớn",
+      "Nông dân nam: ở trần hoặc áo cổ chéo ngắn, quần ngắn hoặc khố, tóc búi; cày ruộng, chèo thuyền, đánh cá",
+      "Phụ nữ: áo cổ chéo ngắn và váy, tóc búi hoặc tóc dài; giã gạo, cấy lúa, gánh hàng",
+      "Trẻ em: tóc để chỏm, đóng khố hoặc áo ngắn; trẻ chăn trâu, tập trận cờ lau (truyền thuyết Đinh Bộ Lĩnh)",
+      "Sư: đầu cạo, áo nâu dài tay rộng, cầm tràng hạt hoặc cuộn kinh; có tham gia việc triều chính (Khuông Việt đại sư)",
+      "Bạch Đằng: bãi cọc gỗ nhọn cắm dưới lòng sông (lúc nước rút thì lộ ra), thuyền chiến nhỏ của quân ta, thuyền lớn của giặc, cửa sông có triều lên xuống",
+      "Kinh đô Hoa Lư: núi đá vôi bao quanh, tường thành đắp đất và gạch, cung điện mái ngói; làng quê nhà tranh vách đất, ruộng lúa nước",
+      "Lễ tịch điền: vua cầm cày trên ruộng, có trâu, dân đứng xem"
+    ],
+    "avoid": [
+      "Áo chui đầu hoa văn trống đồng, khố kiểu Đông Sơn, mũ lông chim, dải lông chim, nhà sàn mái thuyền: là của thời Văn Lang, đã quá xa",
+      "Áo tứ thân, áo dài ngũ thân, khăn xếp, khăn mỏ quạ, nón quai thao, khăn vấn: là trang phục các thời muộn hơn nhiều (Lê – Nguyễn)",
+      "Áo cánh cài khuy: kiểu áo muộn, không có tư liệu cho thế kỷ X",
+      "Nón lá, nón chóp: không có tư liệu chắc chắn cho thời này, không dùng",
+      "Mũ cánh chuồn, mũ bình thiên: không rõ đã dùng ở Việt Nam thế kỷ X hay chưa, dùng mũ chung (crown) cho vua, quan thì để tóc búi",
+      "Áo cổ tròn kiểu quan triều sau: không có tư liệu cho thời này",
+      "Thành Thăng Long, chùa Một Cột, Văn Miếu: thuộc thời Lý về sau (1010 trở đi)",
+      "Súng, thuốc súng, đại bác; giáp kiểu châu Âu: sai thời",
+      "Cờ đỏ sao vàng và các biểu tượng hiện đại: sai thời",
+      "Vạc dầu, cũi hổ, cảnh giết hại trong cung, chuyện tranh ngôi đổ máu, cảnh tra tấn của Lê Long Đĩnh: không hợp với trẻ em",
+      "Cảnh lính chết đuối hay bị cọc đâm xuyên ở Bạch Đằng: chỉ vẽ thuyền giặc mắc cọc, nghiêng đổ, lính giặc nhảy xuống nước bơi chạy",
+      "Áo vàng dành riêng cho vua: không có tư liệu chắc chắn cho thế kỷ X, không nhấn mạnh"
+    ],
+    "customs": [
+      "Ngô Quyền, Đinh Tiên Hoàng, Lê Đại Hành là anh hùng dân tộc: vẽ trang nghiêm, đáng kính, không đùa cợt",
+      "Tôn ti trong triều: vua ngồi trên cao, quan đứng chầu hai bên, cúi đầu chắp tay khi tâu",
+      "Chào hỏi: chắp tay cúi đầu; con cháu vái người già; lính chào tướng bằng cách chắp tay",
+      "Thiền sư được kính trọng: vẽ hiền hậu, điềm tĩnh; dân và vua chắp tay trước nhà sư",
+      "Phụ nữ mặc kín đáo (áo và váy), không hở hang",
+      "Lễ tịch điền: vua cày ruộng để khuyên dân làm nông, nên vẽ không khí trọng thể và vui tươi",
+      "Đánh trận hợp với trẻ em: nhấn vào mưu trí (cọc gỗ, con nước triều), thuyền giặc mắc cọc, giặc bỏ chạy; không máu, không chết chóc chi tiết",
+      "Tôn trọng tín ngưỡng thờ cúng tổ tiên và các vị anh hùng: đền thờ vua Đinh, vua Lê ở Hoa Lư phải vẽ trang trọng"
+    ],
+    "sources": [
+      "Nhà Tiền Lê",
+      "Nhà Đinh",
+      "Lịch sử Việt Nam"
+    ],
+    "architecture": {
+      "house": "thatch",
+      "palace": "tile"
+    },
+    "backdrop": "A wide tidal river estuary in northern Vietnam with muddy banks, mangrove and reed thickets, sandbars at low tide, misty green hills and distant limestone karst peaks under a soft dawn sky.",
+    "archetypes": {
+      "king": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#8b1e1e",
+            "trim": "#d4a017",
+            "length": "ankle",
+            "sleeves": "wide",
+            "pattern": "dragon"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#5a1010",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#d4a017",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "crown",
+        "beard": "#1a1a1a",
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "long",
+          "brows": "thick",
+          "mustache": "thick"
+        }
+      },
+      "queen": {
+        "body": "woman",
+        "build": "slim",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#6b2a5e",
+            "trim": "#d4a017",
+            "length": "ankle",
+            "sleeves": "wide",
+            "pattern": "flowers"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#3d1a3a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#d4a017",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "official": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#1f3a5f",
+            "trim": "#c9b37e",
+            "length": "ankle",
+            "sleeves": "wide",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#14243a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b4a2b",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a2a2a"
+        },
+        "beard": "#2a2a2a",
+        "prop": {
+          "type": "scroll"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "thin",
+          "mustache": "thin"
+        }
+      },
+      "general": {
+        "body": "strong",
+        "build": "heavy",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "armor",
+          "color": "#4a4a52",
+          "trim": "#b8862b"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "helmet",
+        "cape": true,
+        "beard": "#1a1a1a",
+        "props": [
+          {
+            "type": "sword"
+          },
+          {
+            "type": "flag"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "bushy",
+          "mustache": "thick"
+        }
+      },
+      "soldier": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#7a3b1e",
+            "trim": "#3a2a1a",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#3a2a1a",
+            "length": "knee"
+          },
+          "belt": {
+            "color": "#2a1a10",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        }
+      },
+      "enemy": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#e0b890",
+        "outfit": {
+          "type": "enemy",
+          "color": "#3b3f2a",
+          "trim": "#8a7a4a"
+        },
+        "headwear": "enemy_helmet",
+        "beard": "#3a2a1a",
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "mustache": "droopy"
+        }
+      },
+      "villager_man": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#6b5a3e",
+            "trim": "#4a3e2a",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#3a3328",
+            "length": "knee"
+          },
+          "belt": {
+            "color": "#4a3e2a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "bamboo"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick"
+        }
+      },
+      "villager_woman": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#7a5c3a",
+            "trim": "#4a3a24",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#2e2a24",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#8a6a3a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "mother": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#5e6b3e",
+            "trim": "#3e4a2a",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#2a2a22",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#a07a3a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a1a"
+        },
+        "bracelets": true,
+        "prop": {
+          "type": "bowl"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "droopy",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "girl": {
+        "body": "woman",
+        "build": "slim",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#a0522d",
+            "trim": "#e0c080",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "dots"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#4a2e1e",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#d08040",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a1a"
+        },
+        "earrings": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "eyeScale": 1.1
+        }
+      },
+      "boy": {
+        "body": "child",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "loincloth",
+          "color": "#6b4a2b"
+        },
+        "bareChest": true,
+        "hair": {
+          "style": "traidao",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "eyeScale": 1.2
+        }
+      },
+      "elder_man": {
+        "body": "elder",
+        "build": "slim",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#8a7e66",
+            "trim": "#5a5040",
+            "length": "knee",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#4a4438",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#5a5040",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#d8d8d8"
+        },
+        "beard": "#e0e0e0",
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "droopy",
+          "nose": "long",
+          "brows": "bushy",
+          "wrinkles": true,
+          "mustache": "droopy"
+        }
+      },
+      "elder_woman": {
+        "body": "elder",
+        "build": "slim",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#5a4a3a",
+            "trim": "#3a3028",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#2a2420",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#3a3028",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#c8c8c8"
+        },
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "droopy",
+          "nose": "button",
+          "brows": "thin",
+          "wrinkles": true
+        }
+      },
+      "monk": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#7a5230",
+            "trim": "#5a3a20",
+            "length": "ankle",
+            "sleeves": "wide",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#5a3a20",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#5a3a20",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bald",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "scroll"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "thin",
+          "wrinkles": true
+        }
+      }
+    }
   }
 }

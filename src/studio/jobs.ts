@@ -32,6 +32,8 @@ export interface Job {
   by?: string;
   /** While producing: "ready" once only the render is left. */
   stage?: string;
+  /** Shorts cut from the film (job folder paths), made at night after the film. */
+  shorts?: string[];
   error?: string;
 }
 

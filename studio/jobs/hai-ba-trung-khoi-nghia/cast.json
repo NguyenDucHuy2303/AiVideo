@@ -1,0 +1,643 @@
+[
+  {
+    "id": "trung_trac",
+    "name": "Trưng Trắc",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "build": "average",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#a8452a",
+          "trim": "#d4a017",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#1f2f55",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#e8a020",
+          "ends": true
+        },
+        "inner": {
+          "color": "#e0b040"
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "khan_van",
+      "earrings": true,
+      "bracelets": true,
+      "cape": false,
+      "prop": {
+        "type": "spear"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "button",
+        "brows": "thick",
+        "eyeScale": 1.05
+      },
+      "props": [
+        {
+          "type": "spear"
+        },
+        {
+          "type": "sword"
+        }
+      ]
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Trưng Trắc"
+    ],
+    "role": "Thủ lĩnh khởi nghĩa, sau là Trưng Vương: áo cánh nâu đỏ, yếm vàng, váy chàm dài, khăn vấn, cầm giáo và kiếm đồng",
+    "designed": true
+  },
+  {
+    "id": "trung_nhi",
+    "name": "Trưng Nhị",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "build": "slim",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#3f7a3f",
+          "trim": "#7a5a30",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#6b4a2a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#8b5a2b",
+          "ends": true
+        },
+        "inner": {
+          "color": "#c8a060"
+        }
+      },
+      "hair": {
+        "style": "long",
+        "color": "#1a1a1a"
+      },
+      "earrings": true,
+      "bracelets": true,
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin",
+        "eyeScale": 1.12
+      },
+      "prop": {
+        "type": "spear"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Trưng Nhị"
+    ],
+    "role": "Em gái, nữ tướng trẻ: áo xanh lá, váy nâu, tóc dài buông, cầm giáo",
+    "designed": true
+  },
+  {
+    "id": "man_thien",
+    "name": "Bà Man Thiện",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#4a3020",
+          "trim": "#6b4a2e",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#161616",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#6b4a2e",
+          "ends": true
+        },
+        "inner": {
+          "color": "#8b6b4a"
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#8a8a8a"
+      },
+      "earrings": false,
+      "bracelets": true,
+      "prop": {
+        "type": "basket"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thin",
+        "wrinkles": true
+      },
+      "headwear": "khan_van"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Bà Man Thiện"
+    ],
+    "role": "Mẹ Hai Bà: áo cánh nâu sẫm, váy đen dài, khăn vấn, tóc điểm bạc, bên nong tằm",
+    "designed": true
+  },
+  {
+    "id": "thi_sach",
+    "name": "Thi Sách",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d0a070",
+      "bareChest": false,
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#7a5030",
+          "trim": "#5a3a1a",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#5a4030",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#3e2a1e",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "prop": {
+        "type": "bronze_axe"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thick"
+      },
+      "bracelets": true
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Thi Sách"
+    ],
+    "role": "Chồng Trưng Trắc: áo cánh nâu, quần vải dài, tóc búi tó, rìu đồng bên hông",
+    "designed": true
+  },
+  {
+    "id": "le_chan",
+    "name": "Lê Chân",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "build": "slim",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#2a6f7a",
+          "trim": "#c9a227",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#3a2a1a",
+          "length": "shin"
+        },
+        "belt": {
+          "color": "#c9a227",
+          "ends": true
+        },
+        "inner": {
+          "color": "#d9c080"
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "khan_van",
+      "bracelets": true,
+      "props": [
+        {
+          "type": "spear"
+        }
+      ],
+      "face": {
+        "shape": "oval",
+        "eyes": "narrow",
+        "nose": "button",
+        "brows": "thick",
+        "eyeScale": 1
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Lê Chân"
+    ],
+    "role": "Nữ tướng theo Hai Bà: áo cánh xanh ngọc, váy nâu, khăn quấn đầu, cầm giáo",
+    "designed": true
+  },
+  {
+    "id": "to_dinh",
+    "name": "Tô Định",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "heavy",
+      "skin": "#ecc8a0",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#6a1a22",
+          "trim": "#2b2b2b",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#1e1e2e",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#1a1a1a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "beard": "#1a1a1a",
+      "face": {
+        "shape": "jowl",
+        "eyes": "narrow",
+        "nose": "long",
+        "brows": "thin",
+        "mustache": "droopy"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Tô Định"
+    ],
+    "role": "Thái thú nhà Hán: áo giao lĩnh đỏ sẫm tay rộng, thắt đai, râu dài",
+    "designed": true
+  },
+  {
+    "id": "to_dinh_tron",
+    "name": "Tô Định chạy trốn",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#ecc8a0",
+      "outfit": {
+        "type": "parts",
+        "color": "#3a3a4a",
+        "top": {
+          "cut": "canh",
+          "color": "#4a4a3a",
+          "trim": "#3a3a2a",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#3a3a30",
+          "length": "shin"
+        },
+        "belt": {
+          "color": "#2a2a20",
+          "ends": false
+        }
+      },
+      "hair": {
+        "style": "bald",
+        "color": "#1a1a1a"
+      },
+      "headwear": "enemy_helmet",
+      "props": [],
+      "face": {
+        "shape": "jowl",
+        "eyes": "round",
+        "nose": "long",
+        "brows": "thin",
+        "mustache": "thin",
+        "eyeScale": 1.15
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "formOf": "to_dinh",
+    "speaks": [],
+    "role": "Tô Định sau khi bỏ trốn: đầu cạo trọc, mặt nhẵn râu, mặc áo lính lấm lem",
+    "designed": true
+  },
+  {
+    "id": "linh_han",
+    "name": "Lính Hán",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "heavy",
+      "skin": "#e8c098",
+      "outfit": {
+        "type": "enemy",
+        "color": "#2f2f3f"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "enemy_helmet",
+      "props": [
+        {
+          "type": "spear"
+        },
+        {
+          "type": "shield"
+        }
+      ],
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "long",
+        "brows": "bushy",
+        "mustache": "thin"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Lính Hán"
+    ],
+    "role": "Lính của Tô Định: giáp vảy sẫm, mũ trụ, cầm kích và khiên",
+    "designed": true
+  },
+  {
+    "id": "ong_lao",
+    "name": "Ông lão",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "slim",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "chui",
+          "color": "#7a6a58",
+          "trim": "#4a3a2a",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "loincloth",
+          "color": "#4a3a2a"
+        },
+        "belt": {
+          "color": "#3a2a1a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "short",
+        "color": "#d8d8d8"
+      },
+      "beard": "#d8d8d8",
+      "prop": {
+        "type": "bronze_axe"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "droopy",
+        "nose": "round",
+        "brows": "bushy",
+        "wrinkles": true,
+        "mustache": "thin"
+      },
+      "headwear": "khan_chit"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Ông lão"
+    ],
+    "role": "Nông dân, thợ rèn trong làng: áo nâu bạc màu, khăn chít, râu bạc",
+    "designed": true
+  },
+  {
+    "id": "ba_cu",
+    "name": "Bà cụ",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "slim",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#6a5a48",
+          "trim": "#3a2a1a",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#2e2420",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#3a2a1a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#e0e0e0"
+      },
+      "bracelets": true,
+      "prop": {
+        "type": "bowl"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "droopy",
+        "nose": "round",
+        "brows": "thin",
+        "wrinkles": true
+      },
+      "headwear": "khan_van"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Bà cụ"
+    ],
+    "role": "Dân làng cao tuổi: áo nâu bạc màu, váy sẫm, khăn vấn, tóc bạc",
+    "designed": true
+  },
+  {
+    "id": "nghia_quan",
+    "name": "Nghĩa quân",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "chui",
+          "color": "#8b5a2b",
+          "trim": "#5a3a1a",
+          "length": "waist",
+          "sleeves": "none",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "loincloth",
+          "color": "#5a3a1a"
+        },
+        "belt": {
+          "color": "#3e2a1e",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "short",
+        "color": "#1a1a1a"
+      },
+      "headwear": "feather_band",
+      "props": [
+        {
+          "type": "spear"
+        },
+        {
+          "type": "shield"
+        }
+      ],
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thick"
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Nghĩa quân"
+    ],
+    "role": "Đoàn quân Hai Bà: áo cánh nâu, khố dài, dải lông chim như trên trống đồng, giáo đồng và khiên",
+    "designed": true
+  },
+  {
+    "id": "dan_lang",
+    "name": "Dân làng",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "slim",
+      "skin": "#d0a070",
+      "bareChest": false,
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#8b6b4a",
+          "trim": "#5a4030",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#6b4a2e",
+          "length": "shin"
+        },
+        "belt": {
+          "color": "#4a3020",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "short",
+        "color": "#1a1a1a"
+      },
+      "prop": {
+        "type": "basket"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "round",
+        "nose": "round",
+        "brows": "thick"
+      },
+      "headwear": "khan_chit"
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Đám đông dân làng: áo cánh nâu, khố/quần vải dài, chân đất, rèn giáo, vót tên",
+    "designed": true
+  }
+]

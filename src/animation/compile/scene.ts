@@ -46,7 +46,7 @@ export interface ScenePlan {
 export interface CastMember {
   id: string;
   name: string;
-  kind: "human" | "horse";
+  kind: "human" | "horse" | "animal";
   /** World scale: 1 for people, about 2.4 for a giant and his horse. */
   scale: number;
   /** The character this one grows out of (a boy → the giant warrior). */

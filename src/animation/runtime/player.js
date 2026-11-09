@@ -40,10 +40,12 @@
     const shadowLayer = S.layer("shadows"), actorLayer = S.layer("actors");
     for (const c of scene.cast || []) {
       const seed = WA.core.hash(c.id);
-      const rig = c.type === "horse" ? WA.horse.build(S, actorLayer, c.look || {}) : WA.human.build(S, actorLayer, c.look || {}, seed);
+      // Horses and the other animals share the four-legged gaits; people have their own.
+      const kind = c.type === "horse" || c.type === "animal" ? c.type : "human";
+      const rig = kind === "horse" ? WA.horse.build(S, actorLayer, c.look || {}) : kind === "animal" ? WA.animal.build(S, actorLayer, c.look || {}) : WA.human.build(S, actorLayer, c.look || {}, seed);
       const shadow = WA.core.el("ellipse", { fill: "url(#shadow)", rx: 0, ry: 0 }, shadowLayer);
       const acts = (scene.actions || []).filter((a) => a.actor === c.id).sort((a, b) => a.at - b.at);
-      actors[c.id] = { c, rig, shadow, acts, horse: c.type === "horse" };
+      actors[c.id] = { c, rig, shadow, acts, horse: kind !== "human", kind, R: kind === "animal" ? WA.animal : kind === "horse" ? WA.horse : WA.human };
     }
     // Running and galloping kick up dust by themselves.
     const fx = [...(scene.fx || [])];
@@ -115,6 +117,7 @@
 
     const memo = new Map();
     /** The complete pose of an actor at time t (no DOM work; memoised per frame). */
+    const BEAST = { run: "gallop", charge: "gallop", leap: "gallop", march: "walk", fly: "fly" };
     function poseAt(id, t) {
       const key = `${id}|${t.toFixed(4)}`;
       if (memo.has(key)) return memo.get(key);
@@ -128,7 +131,8 @@
       const ctx = (a) => ({ B: A.rig.B, dur: a.dur, params: a, face: a.face, stride: riding ? strideOf(mount.onto, t) : undefined });
       // In the saddle, only riding motions apply; anything else means "keep riding".
       const run = (a) => {
-        const name = riding && !RIDING.has(a.do) ? "ride" : a.do;
+        // Four-legged actors understand the people's words: run is a gallop, the rest a stand.
+        const name = riding && !RIDING.has(a.do) ? "ride" : A.horse ? BEAST[a.do] || a.do : a.do;
         const fn = lib[name] || lib[A.horse ? "stand" : "idle"];
         return fn(t - Math.max(a.at, riding && name === "ride" ? mountEnd : -Infinity), ctx(a));
       };
@@ -177,7 +181,7 @@
     }
     function pointsAt(id, t) {
       const A = actors[id], p = poseAt(id, t);
-      const pts = A.horse ? WA.horse.points(A.rig, p) : WA.human.points(A.rig, p);
+      const pts = A.R.points(A.rig, p);
       pts.facing = p.facing;
       return pts;
     }
@@ -191,10 +195,9 @@
       const cam = WA.camera.at(shots, t, ctx, S);
       for (const id in actors) {
         const A = actors[id], p = poseAt(id, t);
-        if (A.horse) WA.horse.apply(A.rig, p, t);
-        else WA.human.apply(A.rig, p, t);
+        A.R.apply(A.rig, p, t);
         const pts = pointsAt(id, t), air = clamp(-(A.horse ? p.y || 0 : pts.feet[1]) / 900);
-        const w = (A.horse ? 200 : 60) * p.scale * (A.rig.B?.round ? 1 : 1.15);
+        const w = (A.kind === "animal" ? A.rig.sp.body[0] * 0.6 : A.horse ? 200 : 60) * p.scale * (A.rig.B?.round ? 1 : 1.15);
         const hidden = !A.horse && p.seated;
         A.shadow.setAttribute("cx", f2(pts.feet[0] + (A.horse ? 10 * p.scale * p.facing : 0)));
         A.shadow.setAttribute("cy", "6");

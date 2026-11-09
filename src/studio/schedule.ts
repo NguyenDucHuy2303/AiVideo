@@ -13,7 +13,7 @@ import path from "node:path";
 import { exists } from "../utils/fs.ts";
 import { STUDIO_DIR, brainSettings } from "../brain/claude.ts";
 import { listJobs, newJob, jobDir, type Job } from "./jobs.ts";
-import { prepare, render, writeJob } from "./produce.ts";
+import { prepare, render, shorts, writeJob } from "./produce.ts";
 import { proposeTopics, eras } from "./topics.ts";
 
 const STATE = path.join(STUDIO_DIR, "scheduler.json");
@@ -70,6 +70,8 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   const say = (slug: string) => (l: string) => void log(`[${slug}] ${l.trim()}`);
   const ready = first((j) => j.status === "producing" && j.stage === "ready");
   if (!office && ready) return { what: "render", slug: ready.slug, run: () => render(ready.slug, say(ready.slug)) };
+  const cut = first((j) => (j.status === "video" || j.status === "done") && !j.shorts);
+  if (!office && cut) return { what: "shorts", slug: cut.slug, run: () => shorts(cut.slug, say(cut.slug)) };
   // Paused by the user: only work that needs no Claude (renders) goes on.
   if ((await brainSettings()).paused) return undefined;
   // Producing a job whose era the library lacks waits for the era builder.

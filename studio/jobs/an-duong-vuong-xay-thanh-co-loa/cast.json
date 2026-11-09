@@ -1,0 +1,710 @@
+[
+  {
+    "id": "an_duong_vuong",
+    "name": "An Dương Vương",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "chui",
+          "color": "#8b3a22",
+          "trim": "#d4a537",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "dongson"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#5a3a1e",
+          "length": "shin"
+        },
+        "belt": {
+          "color": "#d4a537",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "feather",
+      "beard": "#1a1a1a",
+      "cape": true,
+      "bracelets": true,
+      "prop": {
+        "type": "sword"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "almond",
+        "nose": "long",
+        "brows": "thick",
+        "mustache": "thin",
+        "iris": "#3b2414",
+        "eyeScale": 1
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "An Dương Vương"
+    ],
+    "role": "Vua Âu Lạc, búi tóc cao, mũ lông chim hoa văn trống đồng, áo nâu đỏ dài tay viền hoa văn Đông Sơn, váy quấn, thắt lưng bản to, vòng tay đồng, đeo kiếm đồng",
+    "designed": true
+  },
+  {
+    "id": "cao_lo",
+    "name": "Cao Lỗ",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "chui",
+          "color": "#2f3f6b",
+          "trim": "#b08a3e",
+          "length": "hip",
+          "sleeves": "short",
+          "pattern": "dongson"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#3e2a18",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#b08a3e",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "khan_chit",
+      "beard": "#1a1a1a",
+      "tattoo": true,
+      "bracelets": true,
+      "props": [
+        {
+          "type": "spear"
+        }
+      ],
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "bushy",
+        "mustache": "thick",
+        "iris": "#2e1c10",
+        "eyeScale": 1
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Cao Lỗ"
+    ],
+    "role": "Tướng giỏi, búi tóc quấn khăn quanh đầu, áo chàm ngắn tay, váy quấn đến gối, cầm giáo đồng, vạm vỡ",
+    "designed": true
+  },
+  {
+    "id": "my_chau",
+    "name": "Mỵ Châu",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "build": "slim",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "chui",
+          "color": "#ecd98f",
+          "trim": "#c8553d",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "dongson"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#7a4a2a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#e8c15a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "long",
+        "color": "#1a1a1a"
+      },
+      "earrings": true,
+      "bracelets": true,
+      "face": {
+        "shape": "oval",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin",
+        "iris": "#3b2414",
+        "eyeScale": 1.15
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Mỵ Châu"
+    ],
+    "role": "Công chúa hiền lành, tóc dài, áo vàng nhạt dài tay kín đáo viền hoa văn, váy dài chấm gót, khuyên tai và vòng tay đồng",
+    "designed": true
+  },
+  {
+    "id": "trong_thuy",
+    "name": "Trọng Thủy",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "slim",
+      "skin": "#e3b585",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#1e1e24",
+          "trim": "#9a2a2a",
+          "length": "shin",
+          "sleeves": "wide",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#14141a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#9a2a2a",
+          "ends": false
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "long",
+        "brows": "thin",
+        "mustache": "thin",
+        "iris": "#2a1a10",
+        "eyeScale": 1
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Trọng Thủy"
+    ],
+    "role": "Con trai Triệu Đà, trẻ, búi tóc, áo cổ chéo tay rộng màu đen kiểu phương Bắc, thắt đai đỏ sẫm, mặt thanh mảnh",
+    "designed": true
+  },
+  {
+    "id": "trieu_da",
+    "name": "Triệu Đà",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "heavy",
+      "skin": "#e3b585",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#6b1a1f",
+          "trim": "#2a2a2a",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#2a1416",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#2a2a2a",
+          "ends": false
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#2a2a2a"
+      },
+      "beard": "#2a2a2a",
+      "face": {
+        "shape": "jowl",
+        "eyes": "narrow",
+        "nose": "long",
+        "brows": "bushy",
+        "mustache": "droopy",
+        "iris": "#2a1a10",
+        "eyeScale": 0.95
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Triệu Đà"
+    ],
+    "role": "Vua Nam Việt, béo, râu rậm, áo cổ chéo tay rộng đỏ sẫm dài đến gót kiểu phương Bắc, thắt đai đen",
+    "designed": true
+  },
+  {
+    "id": "rua_vang",
+    "name": "Rùa Vàng",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "slim",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "chui",
+          "color": "#e0b432",
+          "trim": "#fff0a8",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "dots"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#c99a20",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#fff0a8",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#f0e6b8"
+      },
+      "beard": "#f0e6b8",
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "droopy",
+        "nose": "long",
+        "brows": "bushy",
+        "wrinkles": true,
+        "mustache": "droopy",
+        "iris": "#4a3020",
+        "eyeScale": 1
+      },
+      "bracelets": true
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Rùa Vàng"
+    ],
+    "role": "Sứ giả thần Thanh Giang (rùa thần Kim Quy), dáng cụ già hiền từ, áo choàng vàng óng, mắt hiền, vòng tay sáng",
+    "designed": true
+  },
+  {
+    "id": "cu_gia",
+    "name": "Cụ già",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "slim",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "chui",
+          "color": "#f2ede0",
+          "trim": "#d4b25a",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#e8e2d0",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#d4b25a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#ffffff"
+      },
+      "beard": "#ffffff",
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "droopy",
+        "nose": "long",
+        "brows": "bushy",
+        "wrinkles": true,
+        "mustache": "droopy",
+        "iris": "#4a3020",
+        "eyeScale": 1
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Cụ già"
+    ],
+    "role": "Vị thần hiện trong khói hương, râu tóc bạc trắng, áo choàng vải trắng dài, chống gậy gỗ",
+    "designed": true
+  },
+  {
+    "id": "bach_ke_tinh",
+    "name": "Bạch Kê Tinh",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "slim",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "chui",
+          "color": "#fafafa",
+          "trim": "#d42a2a",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "dots"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#eeeeee",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#d42a2a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#ffffff"
+      },
+      "beard": "#ffffff",
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "jowl",
+        "eyes": "round",
+        "nose": "long",
+        "brows": "bushy",
+        "wrinkles": true,
+        "mustache": "thick",
+        "iris": "#d42a2a",
+        "eyeScale": 1.2
+      },
+      "headwear": "feather_band"
+    },
+    "scale": 2.4,
+    "group": false,
+    "speaks": [
+      "Bạch Kê Tinh"
+    ],
+    "role": "Yêu quái gà trắng khổng lồ, đồ trắng, mắt đỏ, dải lông chim như mào, nét hài hước không đáng sợ",
+    "designed": true
+  },
+  {
+    "id": "dan_lang",
+    "name": "Dân làng",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#8a5e34",
+          "trim": "#6b4a2b",
+          "length": "waist",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "loincloth",
+          "color": "#5a3e26",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#6b4a2b",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "short",
+        "color": "#1a1a1a"
+      },
+      "bareChest": false,
+      "tattoo": true,
+      "props": [
+        {
+          "type": "basket"
+        },
+        {
+          "type": "stick"
+        }
+      ],
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "round",
+        "brows": "thick",
+        "iris": "#3b2414",
+        "eyeScale": 1
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Dân làng"
+    ],
+    "role": "Đám đông người Âu Việt, Lạc Việt đắp thành, búi tóc, áo cánh gai nâu, khố dài kín gối, mang sọt tre",
+    "designed": true
+  },
+  {
+    "id": "dan_lang_nu",
+    "name": "Dân làng nữ",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "chui",
+          "color": "#b5894f",
+          "trim": "#7a5530",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#4e3a28",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#7a5530",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "earrings": true,
+      "bracelets": true,
+      "prop": {
+        "type": "basket"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "almond",
+        "nose": "button",
+        "brows": "thin",
+        "iris": "#3b2414",
+        "eyeScale": 1.05
+      },
+      "headwear": "khan_chit"
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Đám phụ nữ làng, áo dài tay nâu, váy dài, quấn khăn tóc, mang sọt tre",
+    "designed": true
+  },
+  {
+    "id": "quan_au_lac",
+    "name": "Quân Âu Lạc",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "slim",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "chui",
+          "color": "#8a6a3a",
+          "trim": "#5a3e1e",
+          "length": "waist",
+          "sleeves": "none",
+          "pattern": "dongson"
+        },
+        "lower": {
+          "type": "loincloth",
+          "color": "#4a3320",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#5a3e1e",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "short",
+        "color": "#1a1a1a"
+      },
+      "headwear": "feather_band",
+      "tattoo": true,
+      "props": [
+        {
+          "type": "spear"
+        },
+        {
+          "type": "shield"
+        }
+      ],
+      "face": {
+        "shape": "round",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thick",
+        "iris": "#2e1c10",
+        "eyeScale": 1
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Đoàn quân Âu Lạc, xăm mình, dải lông chim, áo gai không tay, cầm giáo và khiên",
+    "designed": true
+  },
+  {
+    "id": "giac_tan",
+    "name": "Giặc Tần",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "heavy",
+      "skin": "#e3b585",
+      "outfit": {
+        "type": "enemy",
+        "color": "#3a3a3a",
+        "trim": "#7a1f1f"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "enemy_helmet",
+      "beard": "#1a1a1a",
+      "props": [
+        {
+          "type": "spear"
+        },
+        {
+          "type": "flag"
+        }
+      ],
+      "face": {
+        "shape": "jowl",
+        "eyes": "narrow",
+        "nose": "long",
+        "brows": "bushy",
+        "mustache": "droopy",
+        "iris": "#2a1a10",
+        "eyeScale": 0.95
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Giặc Tần"
+    ],
+    "role": "Lính nhà Tần, giáp da tối màu, nón giặc, cầm giáo và cờ",
+    "designed": true
+  },
+  {
+    "id": "quan_nam_viet",
+    "name": "Quân Nam Việt",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "heavy",
+      "skin": "#e3b585",
+      "outfit": {
+        "type": "enemy",
+        "color": "#2a2a30",
+        "trim": "#6b1a1f"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "enemy_helmet",
+      "beard": "#1a1a1a",
+      "props": [
+        {
+          "type": "spear"
+        },
+        {
+          "type": "shield"
+        }
+      ],
+      "face": {
+        "shape": "jowl",
+        "eyes": "narrow",
+        "nose": "long",
+        "brows": "bushy",
+        "mustache": "droopy",
+        "iris": "#2a1a10",
+        "eyeScale": 0.95
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Lính Nam Việt, giáp da tối màu viền đỏ sẫm, cầm giáo và khiên",
+    "designed": true
+  },
+  {
+    "id": "ngua_chay",
+    "name": "Ngựa chạy về phương Nam",
+    "kind": "horse",
+    "look": {
+      "kind": "plain",
+      "color": "#8a5a3a",
+      "mane": "#2a1a10",
+      "saddle": "#6b4a2b"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [],
+    "role": "Ngựa thường vẽ đơn giản, chở hai cha con chạy về phương Nam",
+    "designed": true
+  }
+]

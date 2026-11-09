@@ -1,3 +1,30 @@
 2026-11-09 10:53:15 scheduler started (pid 168635)
 2026-11-09 10:53:15 → write an-duong-vuong-xay-thanh-co-loa (giờ hành chính)
 2026-11-09 10:53:18 [an-duong-vuong-xay-thanh-co-loa] research: An Dương Vương, Thành Cổ Loa, Rùa thần Kim Quy
+2026-11-09 10:55:30 [an-duong-vuong-xay-thanh-co-loa] write-script: Claude opus, 29.527 tokens
+2026-11-09 10:55:30 [an-duong-vuong-xay-thanh-co-loa] new era: au_lac
+2026-11-09 10:55:34 [an-duong-vuong-xay-thanh-co-loa] era research: An Dương Vương, Lịch sử Việt Nam, Lịch sử quân sự Văn Lang – Âu Lạc
+2026-11-09 10:57:01 [an-duong-vuong-xay-thanh-co-loa] build-era-au_lac: Claude opus, 31.459 tokens
+2026-11-09 10:57:01 [an-duong-vuong-xay-thanh-co-loa] era au_lac written to library/eras.json (14 archetypes)
+2026-11-09 10:57:01 [an-duong-vuong-xay-thanh-co-loa] cast and costume sheet
+2026-11-09 10:57:41 [an-duong-vuong-xay-thanh-co-loa] design-cast: Claude sonnet, 20.016 tokens
+2026-11-09 10:57:52 → write hai-ba-trung-khoi-nghia (giờ hành chính)
+2026-11-09 10:57:54 [hai-ba-trung-khoi-nghia] research: Hai Bà Trưng, Khởi nghĩa Hai Bà Trưng
+2026-11-09 11:00:12 [hai-ba-trung-khoi-nghia] write-script: Claude opus, 32.431 tokens
+2026-11-09 11:00:12 [hai-ba-trung-khoi-nghia] new era: bac_thuoc
+2026-11-09 11:00:16 [hai-ba-trung-khoi-nghia] era research: Hai Bà Trưng, Khởi nghĩa Hai Bà Trưng, Thời kỳ Bắc thuộc lần thứ tư
+2026-11-09 11:01:43 [hai-ba-trung-khoi-nghia] build-era-bac_thuoc: Claude opus, 32.539 tokens
+2026-11-09 11:01:43 [hai-ba-trung-khoi-nghia] era bac_thuoc written to library/eras.json (15 archetypes)
+2026-11-09 11:01:43 [hai-ba-trung-khoi-nghia] cast and costume sheet
+2026-11-09 11:02:17 [hai-ba-trung-khoi-nghia] design-cast: Claude sonnet, 19.420 tokens
+2026-11-09 11:02:25 → write ngo-quyen-va-tran-bach-dang (giờ hành chính)
+2026-11-09 11:02:27 [ngo-quyen-va-tran-bach-dang] research: Ngô Quyền, Trận Bạch Đằng (938), Trận Bạch Đằng (1288)
+2026-11-09 11:04:57 [ngo-quyen-va-tran-bach-dang] write-script: Claude opus, 34.964 tokens
+2026-11-09 11:04:57 [ngo-quyen-va-tran-bach-dang] new era: ngo_dinh_le
+2026-11-09 11:05:02 [ngo-quyen-va-tran-bach-dang] era research: Nhà Tiền Lê, Nhà Đinh, Lịch sử Việt Nam
+2026-11-09 11:06:21 [ngo-quyen-va-tran-bach-dang] build-era-ngo_dinh_le: Claude opus, 31.466 tokens
+2026-11-09 11:06:21 [ngo-quyen-va-tran-bach-dang] era ngo_dinh_le written to library/eras.json (14 archetypes)
+2026-11-09 11:06:21 [ngo-quyen-va-tran-bach-dang] cast and costume sheet
+2026-11-09 11:07:02 [ngo-quyen-va-tran-bach-dang] design-cast: Claude sonnet, 19.597 tokens
+2026-11-09 11:07:10 → write dinh-bo-linh-co-lau-tap-tran (giờ hành chính)
+2026-11-09 11:07:13 [dinh-bo-linh-co-lau-tap-tran] research: Đinh Tiên Hoàng, Quần thể di tích thờ Vua Đinh ở Ninh Bình

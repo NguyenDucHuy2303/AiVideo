@@ -1,15 +1,20 @@
 {
   "slug": "ngo-quyen-va-tran-bach-dang",
   "topic": "Ngô Quyền và trận Bạch Đằng",
-  "status": "writing",
+  "status": "review",
   "notes": [],
   "history": [
     {
       "at": "2026-11-09T03:44:54.660Z",
       "status": "writing"
+    },
+    {
+      "at": "2026-11-09T04:07:10.861Z",
+      "status": "review"
     }
   ],
   "kind": "lịch sử",
   "era": "ngo_dinh_le",
-  "summary": "Ngô Quyền cho cắm cọc gỗ đầu bịt sắt dưới lòng sông Bạch Đằng, nhử thuyền giặc Nam Hán vào lúc nước lên, đợi nước rút thì đánh tan, mở ra thời độc lập."
+  "summary": "Ngô Quyền cho cắm cọc gỗ đầu bịt sắt dưới lòng sông Bạch Đằng, nhử thuyền giặc Nam Hán vào lúc nước lên, đợi nước rút thì đánh tan, mở ra thời độc lập.",
+  "by": "claude-opus"
 }

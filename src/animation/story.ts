@@ -145,6 +145,10 @@ export interface StoryOptions {
   chapters?: boolean;
   /** Added to the file name, so a new version never overwrites an earlier one. */
   tag?: string;
+  /** Only storyboard scenes a..b (0-based, inclusive): a short cut from the story. */
+  range?: [number, number];
+  /** A short (Reels, Shorts, TikTok): no intro, a 2.5 s end card instead of the outro, no thumbnail. */
+  short?: boolean;
   /** Intro, logo, outro and thumbnail of the channel (default: on when assets/brand/brand.json exists). */
   brand?: boolean;
   onLog?: (s: string) => void;
@@ -155,6 +159,11 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
   const dir = path.resolve(projectDir);
   const storyboard = JSON.parse(await fs.readFile(path.join(dir, "storyboard.json"), "utf8"));
   const timeline = JSON.parse(await fs.readFile(path.join(dir, "timeline.json"), "utf8"));
+  const [from, to] = opts.range ?? [0, storyboard.scenes.length - 1];
+  if (opts.range) {
+    storyboard.scenes = storyboard.scenes.slice(from, to + 1);
+    timeline.scenes = timeline.scenes.slice(from, to + 1);
+  }
   const [W, H] = opts.vertical ? [1080, 1920] : [1920, 1080];
   const shape = opts.vertical ? "9x16" : "16x9";
   const durations: number[] = timeline.scenes.map((s: { durationFrames: number }) => s.durationFrames / timeline.fps);
@@ -165,8 +174,8 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
   const scripts: Script[] = [];
   for (const f of (await fs.readdir(animDir)).sort()) {
     const name = path.basename(f, ".json"), cov = f.endsWith(".json") ? covers(name) : undefined;
-    if (!cov) continue;
-    scripts.push({ name, file: path.join(animDir, f), covers: cov, scene: (await withBackdrop(await loadScene(path.join(animDir, f)))) as Script["scene"] });
+    if (!cov || cov.some((i) => i < from || i > to)) continue;
+    scripts.push({ name, file: path.join(animDir, f), covers: cov.map((i) => i - from), scene: (await withBackdrop(await loadScene(path.join(animDir, f)))) as Script["scene"] });
   }
   const missing = durations.map((_, i) => i).filter((i) => !scripts.some((s) => s.covers.includes(i)));
   if (missing.length) throw new Error(`no scene script covers storyboard scene(s) ${missing.map((i) => i + 1).join(", ")}`);
@@ -192,7 +201,7 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
     if (last && (end >= durations.length || chapterStart(end))) s.scene.fadeOut = end >= durations.length ? 1.0 : CHAPTER_FADE;
   });
 
-  const variant = (opts.anim && opts.anim !== "anim" ? `-${opts.anim}` : "") + (opts.tag ? `-${slugify(opts.tag)}` : "");
+  const variant = (opts.anim && opts.anim !== "anim" ? `-${opts.anim}` : "") + (opts.tag ? `-${slugify(opts.tag)}` : "") + (opts.range ? `-short-${from + 1}-${to + 1}` : "");
   const work = path.join(dir, "build", "anim", `${shape}${variant}-work`);
   await fs.mkdir(work, { recursive: true });
   // Narration first (the voice decides lip-sync and close-ups): each scene's voice at its start.
@@ -318,27 +327,28 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
   if (brand) {
     // Intro, the film with the logo faint in the top corner, outro: one encode.
     const { watermark } = await brandStills(brand);
-    const [intro, outro] = [await brandClip(brand, "intro", !!opts.vertical), await brandClip(brand, "outro", !!opts.vertical)];
+    // A short starts on the story at once (no intro) and ends on a short card.
+    const intro = opts.short ? undefined : await brandClip(brand, "intro", !!opts.vertical);
+    const outro = await brandClip(brand, opts.short ? "end" : "outro", !!opts.vertical);
     const mark = Math.round(Math.min(W, H) * 0.11), pad = Math.round(Math.min(W, H) * 0.035);
     const norm = `aresample=${AUDIO_SAMPLE_RATE},aformat=sample_fmts=fltp:channel_layouts=stereo`;
-    inputs = ["-loop", "1", "-i", watermark, "-i", intro, "-i", outro];
+    inputs = ["-loop", "1", "-i", watermark, "-i", outro, ...(intro ? ["-i", intro] : [])];
     graph = [
       `${caption}[cap]`,
       `[3:v]scale=${mark}:${mark},format=rgba,colorchannelmixer=aa=0.6[mark]`,
       `[cap][mark]overlay=W-w-${pad}:${pad}:shortest=1,setsar=1,fps=${FPS}[film]`,
       ...mix.slice(0, 3), `${mix[3]},${norm}[filma]`,
-      `[4:v]scale=${W}:${H},setsar=1,fps=${FPS}[iv]`, `[4:a]${norm}[ia]`,
-      `[5:v]scale=${W}:${H},setsar=1,fps=${FPS}[ov]`, `[5:a]${norm}[oa]`,
-      "[iv][ia][film][filma][ov][oa]concat=n=3:v=1:a=1[v][a]",
+      `[4:v]scale=${W}:${H},setsar=1,fps=${FPS}[ov]`, `[4:a]${norm}[oa]`,
+      ...(intro ? [`[5:v]scale=${W}:${H},setsar=1,fps=${FPS}[iv]`, `[5:a]${norm}[ia]`, "[iv][ia][film][filma][ov][oa]concat=n=3:v=1:a=1[v][a]"] : ["[film][filma][ov][oa]concat=n=2:v=1:a=1[v][a]"]),
     ];
-    length = total + 3 + 5;
+    length = total + (intro ? 3 : 0) + (opts.short ? 2.5 : 5);
   } else graph = [`${caption}[v]`, ...mix.slice(0, 3), `${mix[3]}[a]`];
   await run(FFMPEG, [
     "-hide_banner", "-nostdin", "-y", "-v", "error", "-i", picture, "-i", voice, "-i", bed, ...inputs,
     "-filter_complex", graph.join(";"),
     "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-crf", "19", "-preset", "medium", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-t", length.toFixed(3), "-movflags", "+faststart", out,
   ], { timeoutMs: 20 * 60_000 });
-  if (brand) {
+  if (brand && !opts.short) {
     // project.json "thumbnail": { "at": seconds into the story, "title", "subtitle" }.
     const th = project.thumbnail ?? {};
     // Default: the close-up on the longest strong line (a big, telling face), else 60 % in.

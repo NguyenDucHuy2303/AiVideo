@@ -42,6 +42,13 @@ Thời đại mới thì thêm một khối vào `eras.json`, gồm mô tả, nh
 - 15 nét mặt: `neutral happy joy laugh sad worried scared angry determined surprised shout yawn sleepy proud crying`. `happy` cười tươi, má đẩy mi dưới lên thành mắt cười, có nếp cười ở khóe miệng. `joy` là mừng rỡ, mắt nhắm híp cong, miệng cười rộng ("mừng rỡ / hớn hở / sung sướng" trong lời thoại tự ra `joy`). Mí trên, mí dưới, đồng tử co giãn, mắt nhắm cười, miệng có răng và lưỡi, ký hiệu mồ hôi, nước mắt, má đỏ, gân giận. Mắt tự chớp. `talk` để nhép môi, `viseme` (a/o/u/i/e/m) khi có lời thoại. `lookAt: <id>` để ánh mắt nhìn về một nhân vật.
 - Tay giơ quá vai tự vẽ phía sau đầu, không che mặt trong cảnh cận.
 
+## Thú vật (`runtime/animals.js`)
+
+`{ "type": "animal", "look": { "species": "buffalo", "color": "…" } }`, species: `buffalo` (trâu, sừng cong) · `tiger` (hổ vằn) · `elephant` (voi, vòi đung đưa, tai phe phẩy) · `dog` · `cat` · `rabbit` · `fox` (đuôi bông) · `turtle` (rùa mai) · `deer` (hươu sao) · `goat` (dê râu).
+- Dùng chung dáng đi của ngựa: `stand` `walk` `gallop`; tên động tác của người được hiểu tương ứng (`run`/`charge` → phi, còn lại → đứng).
+- Biết nói (truyện ngụ ngôn): đặt `speakers` trong `project.json` như với người, miệng mở theo giọng thật; mắt tự chớp.
+- Trâu, voi có chỗ ngồi (`onto` để cưỡi: cậu bé chăn trâu, voi chiến).
+
 ## Động tác (`runtime/motions.js`)
 
 - Người: `idle still walk run stretch heroic raise point talk wave cheer bow kneel sit crouch leap ride swing ride_swing fall lie sit_up fly eat give worry land call march charge carry undress hold_bowl`
@@ -96,6 +103,10 @@ Kênh **Huy Kể Chuyện** (Nguyễn Đức Huy). Tên, khẩu hiệu và màu 
 - Mỗi khổ hình chỉ vẽ một lần. Sửa `brand.json` hoặc `brand.html` thì xóa các file trong `assets/brand/` (giữ `brand.json`) để vẽ lại.
 - `cartoon` tự ghép: intro → phim (logo mờ góc phải trên) → outro, và xuất `out/<tên>_thumbnail.jpg` (1280×720). Thêm `--no-brand` để tắt.
 - Thumbnail: tiêu đề vàng viền đỏ, tự xuống tối đa 2 dòng và tự co cho vừa khung, dải khẩu hiệu phía trên, logo góc phải. Khung hình mặc định là cảnh cận câu thoại mạnh nhất. Muốn chọn tay thì ghi trong `project.json`: `"thumbnail": { "at": 36, "title": "Thánh Gióng", "subtitle": "Truyện cổ tích Việt Nam" }` (`at` = giây trong phim, không tính intro).
+
+## Shorts (`studio/shorts.ts`)
+
+Mỗi phim dài tự cắt 3 clip dọc 30–57 giây (Reels, TikTok, YouTube Shorts): chọn đoạn liền mạch nhiều lời thoại, nhạc kịch tính, hiệu ứng (biến hình, lửa, hào quang), bỏ cảnh chào đầu và cảnh kết. **Render lại khổ 9:16** (camera tự canh khung dọc), không intro, cuối có thẻ 2,5 giây "Xem trọn truyện trên kênh". Bộ lập lịch làm ban đêm sau khi render phim; xem trên trang studio dưới video chính. `renderStory(dir, { vertical: true, range: [a, b], short: true })` để cắt tay một đoạn.
 
 ## Quy trình
 

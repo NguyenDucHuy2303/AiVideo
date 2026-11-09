@@ -111,8 +111,11 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
   }
 
   // Job files (video, thumbnail, costume sheet, script) and voice samples.
-  if (req.method === "GET" && parts[0] === "files" && SLUG.test(parts[1] ?? "") && parts[2] && !parts[2].includes("..") && parts.length === 3) {
-    return sendFile(req, res, path.join(jobDir(parts[1]!), parts[2]));
+  // Job files (and its shorts/ folder): plain names only, no way out of the folder.
+  const NAME = /^[\w.-]+$/;
+  if (req.method === "GET" && parts[0] === "files" && SLUG.test(parts[1] ?? "") && parts.slice(2).every((x) => NAME.test(x) && x !== ".." && x !== ".")
+    && (parts.length === 3 || (parts.length === 4 && parts[2] === "shorts"))) {
+    return sendFile(req, res, path.join(jobDir(parts[1]!), ...parts.slice(2)));
   }
   if (req.method === "GET" && parts[0] === "voice" && parts[1] && !parts[1].includes("/") && !parts[1].includes("..")) {
     return sendFile(req, res, path.join(SAMPLES, `${parts[1]}.wav`));

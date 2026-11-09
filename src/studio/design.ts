@@ -29,7 +29,7 @@ const SCHEMA = {
         properties: {
           id: { type: "string", pattern: "^[a-z][a-z0-9_]{1,23}$" },
           name: { type: "string" },
-          kind: { enum: ["human", "horse"] },
+          kind: { enum: ["human", "horse", "animal"] },
           archetype: { type: "string" },
           look: { type: "object", additionalProperties: true },
           scale: { type: "number" },
@@ -106,7 +106,7 @@ export async function costumeSheet(slug: string): Promise<string> {
   for (const c of cast) {
     const out = path.join(tiles, `${c.id}.png`);
     const scene = {
-      duration: 2, time: "day", era: job.era, backdrop: false, set: { name: c.kind === "horse" ? "field" : "sky" },
+      duration: 2, time: "day", era: job.era, backdrop: false, set: { name: c.kind !== "human" ? "field" : "sky" },
       cast: [{ id: c.id, type: c.kind, look: c.look, x: 0, scale: 1 }],
       actions: [{ actor: c.id, at: 0, do: c.kind === "horse" ? "stand" : "idle", ...(c.kind === "human" ? { face: "happy" } : {}) }],
       shots: [{ at: 0, type: "full", on: c.id }],

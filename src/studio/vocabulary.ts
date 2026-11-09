@@ -34,7 +34,8 @@ export const VOCABULARY = `Người (kind "human"), look là object:
 - beard: mã màu râu; cape: true; bareChest: true; tattoo: true (xăm mình); bracelets: true; earrings: true
 - prop: { type } và props: [{ type }, …], type: iron_whip broken_whip bamboo spear bronze_axe shield horn (tù và) sword stick basket bowl scroll flag
 - face: { shape: round|oval|square|jowl, eyes: round|almond|narrow|droopy, nose: button|round|long, brows: thin|thick|bushy, wrinkles: true, mustache: thin|thick|droopy, iris: mã màu, eyeScale: 0.9–1.2 }
-Ngựa (kind "horse"), look: { kind: iron (ngựa sắt bờm lửa) | plain, color, mane, saddle }`;
+Ngựa (kind "horse"), look: { kind: iron (ngựa sắt bờm lửa) | plain, color, mane, saddle }
+Thú vật (kind "animal"), look: { species, color }: species buffalo (trâu) | tiger (hổ) | elephant (voi) | dog (chó) | cat (mèo) | rabbit (thỏ) | fox (cáo) | turtle (rùa) | deer (hươu) | goat (dê). Thú biết nói trong truyện ngụ ngôn: miệng mở theo lời thoại.`;
 
 const has = <T extends string>(list: readonly T[], v: unknown): v is T => typeof v === "string" && (list as readonly string[]).includes(v);
 
