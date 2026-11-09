@@ -90,7 +90,7 @@ async function buildProject(job: Job, proj: string, opts: { scenes?: number; not
   const project = JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8"));
   const subtitle = { "lịch sử": "Lịch sử Việt Nam", "truyền thuyết": "Truyền thuyết Việt Nam", "ngụ ngôn": "Truyện ngụ ngôn Việt Nam" }[job.kind ?? ""] ?? "Truyện cổ tích Việt Nam";
   const art = artOf(job);
-  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers, thumbnail: { title: plan.title.replace(/\s*[–-]\s*/g, " "), subtitle }, style: art.style, brand: { intro: art.intro, outro: art.outro } }, null, 2));
+  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers, thumbnail: { title: plan.title.replace(/\s*[–-]\s*/g, " "), subtitle }, style: art.style, characters: art.characters, brand: { intro: art.intro, outro: art.outro } }, null, 2));
   // Voices (the timing of everything else).
   if (opts.revoice !== false || !(await exists(path.join(proj, "timeline.json")))) {
     log("  voices");

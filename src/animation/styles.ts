@@ -5,7 +5,7 @@
  */
 import { readFileSync } from "node:fs";
 
-export interface Style { name: string; for: string; backdrop: string; look: Record<string, unknown>; sky?: Record<string, string> }
+export interface Style { name: string; for: string; backdrop: string; look: Record<string, unknown>; sky?: Record<string, string>; character?: string }
 
 export const DEFAULT_STYLE = "hien_dai";
 

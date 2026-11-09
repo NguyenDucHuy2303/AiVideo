@@ -36,16 +36,19 @@
     const objects = WA.scenery.build(S, scene.set?.name || "village", { ...(scene.set || {}), painted: !!scene.backdrop }) || [];
     // A painted backdrop (backdrops.ts): the capture waits until it is loaded.
     const ready = scene.backdrop ? S.setBackdrop(scene.backdrop.src, scene.backdrop.size) : Promise.resolve();
-    const actors = {};
+    const actors = {}, puppetLoads = [];
     const shadowLayer = S.layer("shadows"), actorLayer = S.layer("actors");
     for (const c of scene.cast || []) {
       const seed = WA.core.hash(c.id);
       // Horses and the other animals share the four-legged gaits; people have their own.
       const kind = c.type === "horse" || c.type === "animal" ? c.type : "human";
-      const rig = kind === "horse" ? WA.horse.build(S, actorLayer, c.look || {}) : kind === "animal" ? WA.animal.build(S, actorLayer, c.look || {}) : WA.human.build(S, actorLayer, c.look || {}, seed);
+      // A person with a painted puppet (puppet.js) moves by the same poses as a vector one.
+      const puppet = kind === "human" && c.look?.puppet;
+      const rig = kind === "horse" ? WA.horse.build(S, actorLayer, c.look || {}) : kind === "animal" ? WA.animal.build(S, actorLayer, c.look || {}) : puppet ? WA.puppet.build(S, actorLayer, c.look, seed) : WA.human.build(S, actorLayer, c.look || {}, seed);
+      if (rig.ready) puppetLoads.push(rig.ready);
       const shadow = WA.core.el("ellipse", { fill: "url(#shadow)", rx: 0, ry: 0 }, shadowLayer);
       const acts = (scene.actions || []).filter((a) => a.actor === c.id).sort((a, b) => a.at - b.at);
-      actors[c.id] = { c, rig, shadow, acts, horse: kind !== "human", kind, R: kind === "animal" ? WA.animal : kind === "horse" ? WA.horse : WA.human };
+      actors[c.id] = { c, rig, shadow, acts, horse: kind !== "human", kind, R: kind === "animal" ? WA.animal : kind === "horse" ? WA.horse : puppet ? WA.puppet : WA.human };
     }
     // Running and galloping kick up dust by themselves.
     const fx = [...(scene.fx || [])];
@@ -221,7 +224,7 @@
       const g = scene.grade;
       if (g) S.grade.setAttribute("opacity", f2(lerp(g.from ?? 0.06, g.to ?? 0.06, seg(t, g.at ?? 0, (g.at ?? 0) + (g.dur ?? 1)))));
     }
-    return { S, renderFrame, poseAt, pointsAt, duration: scene.duration, ready };
+    return { S, renderFrame, poseAt, pointsAt, duration: scene.duration, ready: Promise.all([ready, ...puppetLoads]) };
   }
 
   WA.player = { create };

@@ -13,7 +13,9 @@ import { renderSoundtrack, type MusicSection, type SfxEvent } from "../audio/sou
 import { AUDIO_SAMPLE_RATE, FFMPEG, FONTS_DIR, ROOT } from "../config.ts";
 import { run } from "../utils/process.ts";
 import { withBackdrop } from "./backdrops.ts";
-import { styleOf } from "./styles.ts";
+import { DEFAULT_STYLE, styleOf } from "./styles.ts";
+import { loadPuppet, puppetKey, PUPPETS_DIR } from "./puppet/paint.ts";
+import { exists } from "../utils/fs.ts";
 import { capture } from "./capture.ts";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -79,6 +81,8 @@ export interface RenderOptions {
   audio?: boolean;
   /** A drawing style for this render only (library/styles.json), instead of the project's. */
   style?: string;
+  /** "puppet": people as painted paper puppets (from the library), "vector": drawn in code. */
+  characters?: "vector" | "puppet";
   onProgress?: (frame: number, total: number) => void;
 }
 
@@ -103,18 +107,33 @@ export async function loadScene(sceneFile: string): Promise<Scene> {
     const eras = JSON.parse(await fs.readFile(new URL("./library/eras.json", import.meta.url), "utf8"));
     if (eras[era]?.architecture) sc.architecture = eras[era].architecture;
   }
-  // The film's drawing style (project.json "style", one folder up from anim/).
-  const st = scene as { style?: string; styleLook?: unknown };
-  if (st.style === undefined) {
-    try { st.style = JSON.parse(await fs.readFile(path.resolve(path.dirname(sceneFile), "..", "project.json"), "utf8")).style; } catch {}
-  }
+  // The film's drawing style and characters (project.json, one folder up from anim/).
+  const st = scene as { style?: string; styleLook?: unknown; characters?: string; era?: string };
+  let project: { style?: string; characters?: string } = {};
+  try { project = JSON.parse(await fs.readFile(path.resolve(path.dirname(sceneFile), "..", "project.json"), "utf8")); } catch {}
+  st.style ??= project.style;
   if (st.style && st.styleLook === undefined) st.styleLook = styleOf(st.style).look;
+  st.characters ??= project.characters;
+  if (st.characters === "puppet") await withPuppets(scene as never, st.era, st.style ?? DEFAULT_STYLE);
   return scene;
+}
+
+/** People get their painted puppets from the library (painted beforehand: puppet/paint.ts). */
+export async function withPuppets(scene: { cast?: { type?: string; look?: unknown }[] }, era: string | undefined, style: string): Promise<string[]> {
+  const missing: string[] = [];
+  for (const c of scene.cast ?? []) {
+    if ((c.type ?? "human") !== "human" || !c.look || typeof c.look !== "object" || (c.look as { puppet?: unknown }).puppet) continue;
+    const dir = path.join(PUPPETS_DIR, puppetKey(c.look as Record<string, unknown>, era, style));
+    if (await exists(path.join(dir, "parts", "rig.json"))) c.look = { ...(c.look as object), puppet: await loadPuppet(dir) };
+    else missing.push((c as { id?: string }).id ?? "?");
+  }
+  return missing;
 }
 
 export async function renderScene(sceneFile: string, opts: RenderOptions = {}): Promise<string> {
   const loaded = await loadScene(sceneFile) as Scene & { style?: string; styleLook?: unknown };
   if (opts.style) { loaded.style = opts.style; loaded.styleLook = styleOf(opts.style).look; }
+  if (opts.characters === "puppet") await withPuppets(loaded as never, (loaded as { era?: string }).era, loaded.style ?? DEFAULT_STYLE);
   const scene = await withBackdrop(loaded);
   const [W, H] = opts.vertical ? [1080, 1920] : [1920, 1080];
   const name = path.basename(sceneFile, ".json") + (opts.style ? `-${opts.style}` : "") + (opts.vertical ? "_9x16" : "_16x9");
@@ -166,14 +185,15 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
   const args = process.argv.slice(2);
   const file = args.find((a) => !a.startsWith("--"));
   if (!file) {
-    console.error("usage: node src/animation/render.ts <scene.json> [--vertical] [--out file.mp4] [--no-audio] [--style dong_ho]");
+    console.error("usage: node src/animation/render.ts <scene.json> [--vertical] [--out file.mp4] [--no-audio] [--style dong_ho] [--characters puppet]");
     process.exit(2);
   }
-  const outIdx = args.indexOf("--out"), styleIdx = args.indexOf("--style");
+  const outIdx = args.indexOf("--out"), styleIdx = args.indexOf("--style"), chIdx = args.indexOf("--characters");
   const t0 = Date.now();
   const out = await renderScene(file, {
     vertical: args.includes("--vertical"), audio: !args.includes("--no-audio"), out: outIdx >= 0 ? args[outIdx + 1] : undefined,
     style: styleIdx >= 0 ? args[styleIdx + 1] : undefined,
+    characters: chIdx >= 0 ? (args[chIdx + 1] as "vector" | "puppet") : undefined,
     onProgress: (f, n) => f % 60 === 0 && process.stdout.write(`\r  frame ${f}/${n}`),
   });
   console.log(`\n✔ ${out} (${((Date.now() - t0) / 1000).toFixed(0)}s)`);

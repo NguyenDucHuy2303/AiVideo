@@ -30,6 +30,14 @@ export interface GenerateOptions {
   /** Guidance. SD-Turbo is made for 1, where the negative prompt does nothing; 1.5–2 lets it
    * steer away from things (at some cost in crispness). */
   cfg?: number;
+  /** An exact size [width, height] (multiples of 16), instead of a shape. */
+  size?: [number, number];
+  /** Reference pictures (FLUX.2 klein): the prompt then edits or follows them. */
+  refs?: string[];
+  /** A fixed seed (default: from the prompt). */
+  seed?: number;
+  /** Words written as is (the style and the "no border" words are not added). */
+  raw?: boolean;
 }
 
 /** Model load + 4 steps takes well under a minute on a 6-core CPU; this only catches hangs. */
@@ -115,9 +123,12 @@ export async function flux2Klein(): Promise<ImageGen | undefined> {
   return {
     id: KLEIN_ID,
     async generate(prompt, outDir, opts = {}) {
-      const full = `${prompt.trim().replace(/\s+/g, " ")}, ${opts.style ?? STYLE}, full-bleed picture, no border, no frame`;
-      const [width, height] = SIZES[opts.shape ?? "square"];
-      const key = sha256(`${KLEIN_ID}|${width}x${height}|${full}`);
+      const full = opts.raw ? prompt.trim().replace(/\s+/g, " ") : `${prompt.trim().replace(/\s+/g, " ")}, ${opts.style ?? STYLE}, full-bleed picture, no border, no frame`;
+      const [width, height] = opts.size ?? SIZES[opts.shape ?? "square"];
+      const refs = opts.refs ?? [];
+      // A reference changes the picture: its bytes are part of the cache key.
+      const refHash = refs.length ? sha256((await Promise.all(refs.map((r) => fs.readFile(r)))).map((b) => sha256(b.toString("base64"))).join("|")) : "";
+      const key = sha256(`${KLEIN_ID}|${width}x${height}|${full}${refHash ? `|refs:${refHash}` : ""}${opts.seed !== undefined ? `|seed:${opts.seed}` : ""}`);
       const file = path.join(outDir, `${key.slice(0, 12)}.png`);
       if (await exists(file)) return { file, cached: true };
       await fs.mkdir(outDir, { recursive: true });
@@ -127,7 +138,8 @@ export async function flux2Klein(): Promise<ImageGen | undefined> {
           "--diffusion-model", files.model, "--vae", files.vae, "--llm", files.llm,
           "-p", full, "--cfg-scale", "1.0", "--steps", "4",
           "-W", String(width), "-H", String(height),
-          "-s", String(parseInt(key.slice(0, 8), 16) % 2_147_483_647),
+          ...refs.flatMap((r) => ["-r", r]),
+          "-s", String(opts.seed ?? parseInt(key.slice(0, 8), 16) % 2_147_483_647),
           "-t", String(Math.max(1, Number(process.env.WATA_SD_THREADS) || os.availableParallelism())),
           "--vae-tiling", "--mmap", "-o", tmp,
         ], { timeoutMs: KLEIN_TIMEOUT_MS, env: { ...process.env, LD_LIBRARY_PATH: [path.dirname(cli), process.env.LD_LIBRARY_PATH].filter(Boolean).join(":") } });

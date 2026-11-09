@@ -39,6 +39,8 @@ export interface Job {
   english?: "ready" | "done" | `failed: ${string}`;
   /** Drawing style, intro and outro (art.ts): suggested with the cast, changeable on the review page. */
   art?: Art;
+  /** Hand-painted puppets of the cast (when art.characters is "puppet"): how many are painted. */
+  puppets?: { done: number; total: number };
   /** Claude was unavailable: the job is not tried again before this time. */
   retryAt?: string;
   error?: string;

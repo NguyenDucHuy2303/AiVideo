@@ -3,7 +3,8 @@
     "name": "Hoạt hình hiện đại",
     "for": "mặc định; bài học, giáo dục, truyện vui, truyện hiện đại",
     "backdrop": "2D animation background art, cartoon background painting, soft painterly shading, clean shapes, vibrant colors",
-    "look": {}
+    "look": {},
+    "character": "2D cartoon character art for a children's animation, clean dark outlines, flat bright colors, soft cel shading"
   },
   "dong_ho": {
     "name": "Tranh Đông Hồ",
@@ -21,7 +22,8 @@
       "textureAmt": 0.75,
       "flecks": 0.3,
       "vignette": 0.35
-    }
+    },
+    "character": "Vietnamese Dong Ho folk woodblock print style, flat earthy natural colors, bold black carved outlines, simple stylized shapes, handmade paper texture"
   },
   "son_mai": {
     "name": "Sơn mài",
@@ -47,7 +49,8 @@
       "day": "the sky in black and cinnabar red lacquer with gold leaf clouds and a gold sun",
       "dusk": "the sky in black and deep red lacquer with gold leaf clouds and a setting gold sun",
       "night": "the sky in deep black lacquer with silver leaf clouds and a silver moon"
-    }
+    },
+    "character": "Vietnamese lacquer painting style, rich cinnabar red, black and gold colors, gold leaf highlights, crisp dark outlines, decorative stylized shapes"
   },
   "lua": {
     "name": "Tranh lụa",
@@ -68,7 +71,8 @@
     },
     "sky": {
       "day": "a pale misty sky, soft light"
-    }
+    },
+    "character": "Vietnamese silk painting style, soft muted pastel colors, delicate fine brush outlines, gentle translucent washes"
   },
   "mau_nuoc": {
     "name": "Màu nước",
@@ -88,7 +92,8 @@
       "textureAmt": 0.75,
       "vignette": 0.12,
       "vignetteColor": "#5a5060"
-    }
+    },
+    "character": "children's picture book watercolor illustration, soft watercolor washes, loose ink outlines, fresh light colors"
   },
   "sap_mau": {
     "name": "Sáp màu",
@@ -106,7 +111,8 @@
       },
       "texture": "crayon",
       "textureAmt": 0.32
-    }
+    },
+    "character": "children's wax crayon drawing, crayon texture, bright cheerful colors, naive hand-drawn outlines"
   },
   "cat_giay": {
     "name": "Cắt giấy",
@@ -126,6 +132,7 @@
       "texture": "cutpaper",
       "textureAmt": 0.6,
       "vignette": 0.28
-    }
+    },
+    "character": "cut paper collage character, flat colored paper shapes with clean edges, subtle paper texture, simple stylized shapes"
   }
 }

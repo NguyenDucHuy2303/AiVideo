@@ -16,6 +16,7 @@ import { jobDir, listJobs, loadJob, saveJob, setStatus, type JobStatus } from ".
 import { schedulerState } from "./schedule.ts";
 import { artOf, validStyle, validTheme } from "./art.ts";
 import { costumeSheet } from "./design.ts";
+import { castPuppets, wantsPuppets } from "./puppets.ts";
 import { BRAND_DIR, BRAND_THEMES } from "../animation/brand/brand.ts";
 import { styles } from "../animation/styles.ts";
 
@@ -82,7 +83,7 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
       const files = await fsp.readdir(dir).catch(() => [] as string[]);
       const job = await loadJob(slug);
       return json(res, {
-        job, art: artOf(job), redrawing: redrawing.has(slug),
+        job, art: artOf(job), redrawing: redrawing.has(slug), puppets: wantsPuppets(job) ? await castPuppets(job).then((c) => ({ total: c.people.length, missing: c.missing.map((m) => m.name) })) : null,
         plan: await readJson(path.join(dir, "plan.json")),
         project: await readJson(path.join(dir, "project.json")),
         sources: await readJson(path.join(dir, "sources.json")),
@@ -105,10 +106,11 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
       if (job.status === "writing" || job.status === "rejected") return json(res, { error: `không đổi được khi đang "${job.status}"` }, 400);
       const art = artOf(job), before = art.style;
       if (b.style !== undefined) { if (!validStyle(b.style)) return json(res, { error: "phong cách không có" }, 400); art.style = b.style; }
+      if (b.characters !== undefined) { if (b.characters !== "vector" && b.characters !== "puppet") return json(res, { error: "characters: vector | puppet" }, 400); art.characters = b.characters; }
       for (const k of ["intro", "outro"] as const) if (b[k] !== undefined) { if (!validTheme(b[k])) return json(res, { error: `${k} không có` }, 400); art[k] = b[k] as string; }
       job.art = art;
       await saveJob(job);
-      if (art.style !== before && (await fsp.stat(path.join(jobDir(slug), "cast.json")).catch(() => null)) && !redrawing.has(slug)) {
+      if ((art.style !== before || b.characters !== undefined) && (await fsp.stat(path.join(jobDir(slug), "cast.json")).catch(() => null)) && !redrawing.has(slug)) {
         redrawing.add(slug);
         costumeSheet(slug).catch((e) => console.error(`sheet ${slug}: ${(e as Error).message}`)).finally(() => redrawing.delete(slug));
       }

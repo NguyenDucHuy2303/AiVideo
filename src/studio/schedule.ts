@@ -8,6 +8,7 @@
  * The writer keeps `scriptsAhead` scripts waiting for review, proposing new topics when short,
  * so the user can approve several at once and the nights never run dry.
  */
+import { castPuppets, paintNextPuppet, wantsPuppets } from "./puppets.ts";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { exists } from "../utils/fs.ts";
@@ -71,13 +72,19 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   // Jobs waiting for Claude to come back are left alone until their time.
   const first = (f: (j: Job) => boolean) => jobs.find((j) => (!j.retryAt || new Date(j.retryAt) <= new Date()) && f(j));
   const say = (slug: string) => (l: string) => void log(`[${slug}] ${l.trim()}`);
-  const ready = first((j) => j.status === "producing" && j.stage === "ready");
+  // Hand-painted puppets (painting is allowed in office hours): an approved film's first, so
+  // its render never waits; a film is only rendered once all its puppets are painted.
+  const needs = new Map<string, number>();
+  for (const j of jobs) if (wantsPuppets(j) && ["review", "approved", "producing", "fix", "video", "done"].includes(j.status)) needs.set(j.slug, (await castPuppets(j)).missing.length);
+  const ready = first((j) => j.status === "producing" && j.stage === "ready" && !needs.get(j.slug));
   if (!office && ready) return { what: "render", slug: ready.slug, run: () => render(ready.slug, say(ready.slug)) };
   const cut = first((j) => (j.status === "video" || j.status === "done") && !j.shorts);
   if (!office && cut) return { what: "shorts", slug: cut.slug, run: () => shorts(cut.slug, say(cut.slug)) };
   // The English version of an approved film: voices by day, the film at night.
   const enFilm = first((j) => j.status === "done" && j.english === "ready");
   if (!office && enFilm) return { what: "english-render", slug: enFilm.slug, run: () => english(enFilm.slug, "render", say(enFilm.slug)) };
+  const paint = first((j) => !!needs.get(j.slug) && j.status !== "review") ?? first((j) => !!needs.get(j.slug));
+  if (paint) return { what: "puppets", slug: paint.slug, run: () => paintNextPuppet(paint.slug, say(paint.slug)) };
   // Paused by the user: only work that needs no Claude (renders) goes on.
   if ((await brainSettings()).paused) return undefined;
   // Producing a job whose era the library lacks waits for the era builder.

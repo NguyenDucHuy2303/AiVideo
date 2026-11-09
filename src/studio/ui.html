@@ -157,7 +157,7 @@ async function show(slug) {
   }
   if (job.error) h += `<div class="warn">Lỗi: ${esc(job.error)}</div>`;
   else if (last?.info && /vấn đề/.test(last.info)) h += `<div class="warn">${esc(last.info)}</div>`;
-  h += await artSection(job, d.art, d.redrawing);
+  h += await artSection(job, d.art, d.redrawing, d.puppets);
   if (has("video.mp4")) h += `<section><h3>Video</h3><video controls preload="metadata" src="/files/${slug}/video.mp4" ${has("thumbnail.jpg") ? `poster="/files/${slug}/thumbnail.jpg"` : ""}></video>
     ${has("thumbnail.jpg") ? `<p><b>Thumbnail</b></p><img style="width:50%;border-radius:10px" src="/files/${slug}/thumbnail.jpg">` : ""}</section>`;
   if (has("video.en.mp4")) h += `<section><h3>English version</h3><video controls preload="metadata" src="/files/${slug}/video.en.mp4" ${has("thumbnail.en.jpg") ? `poster="/files/${slug}/thumbnail.en.jpg"` : ""}></video></section>`;
@@ -180,7 +180,7 @@ async function show(slug) {
 }
 
 /** Style, intro and outro: what the brain suggests (★) and what is chosen (✔); a click changes it. */
-async function artSection(job, art, redrawing) {
+async function artSection(job, art, redrawing, puppets) {
   if (!art || job.status === "writing" || job.status === "rejected") return "";
   ART ||= await fetch("/api/art").then((r) => r.json());
   const sg = art.suggest || {};
@@ -194,6 +194,12 @@ async function artSection(job, art, redrawing) {
   };
   return `<section><h3>Phong cách vẽ, intro và outro</h3>
     <div class="meta">★ Gợi ý ${sg.by === "brain" ? "của bộ não" : "theo chủ đề"}: <b>${esc(styleName(sg.style))}</b> · intro ${esc(themeName(sg.intro))} · outro ${esc(themeName(sg.outro))}${sg.why ? `: <i>${esc(sg.why)}</i>` : ""}</div>
+    <p style="margin:12px 0 4px"><b>Nhân vật</b></p>
+    <div class="styles">${[["vector", "Vector", "vẽ bằng code: nhẹ, nhanh, làm được mọi thứ (ngựa, thú vật)"], ["puppet", "Vẽ tay (rối giấy)", "máy vẽ từng nhân vật theo phong cách rồi cắt thành rối: đẹp như tranh; mỗi nhân vật mới vẽ khoảng 30 phút, rồi lưu thư viện"]].map(([k, name, desc]) => `<div class="sty ${art.characters === k ? "on" : ""}" onclick="setArt({ characters: '${k}' })">
+      <img src="/art/style/characters-${k}.jpg" onerror="this.outerHTML='<div class=ph>chưa có ảnh mẫu</div>'">
+      ${art.characters === k ? `<span class="chosen">✔ đang chọn</span>` : ""}<b>${name}</b><small>${desc}</small></div>`).join("")}</div>
+    ${puppets ? `<div class="${puppets.missing.length ? "warn" : "meta"}">${puppets.missing.length ? `Đang chờ vẽ rối: ${puppets.total - puppets.missing.length}/${puppets.total} nhân vật xong (còn: ${puppets.missing.map(esc).join(", ")}). Bảng trang phục tự cập nhật khi vẽ xong; video chỉ render khi đủ rối.` : `Đủ rối cho ${puppets.total} nhân vật.`}</div>` : ""}
+    <p style="margin:12px 0 4px"><b>Phong cách vẽ</b></p>
     <div class="styles">${ART.styles.map((s) => `<div class="sty ${s.key === art.style ? "on" : ""}" onclick="setArt({ style: '${s.key}' })" title="${esc(s.for)}">
       ${s.sample ? `<img src="${s.sample}">` : `<div class="ph">chưa có ảnh mẫu</div>`}
       ${s.key === sg.style ? `<span class="star">★ gợi ý</span>` : ""}${s.key === art.style ? `<span class="chosen">✔ đang chọn</span>` : ""}
