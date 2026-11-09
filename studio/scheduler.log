@@ -65,3 +65,13 @@
 2026-11-09 14:48:51 → write quang-trung-dai-pha-quan-thanh (giờ hành chính)
 2026-11-09 14:48:51 [quang-trung-dai-pha-quan-thanh] research: Quang Trung, Trận Ngọc Hồi – Đống Đa
 2026-11-09 14:48:51 scheduler started (pid 408688)
+2026-11-09 16:08:00 → write quang-trung-dai-pha-quan-thanh (giờ hành chính)
+2026-11-09 16:08:00 [quang-trung-dai-pha-quan-thanh] research: Quang Trung, Trận Ngọc Hồi – Đống Đa
+2026-11-09 16:11:04 [quang-trung-dai-pha-quan-thanh] write-script: Claude opus, 39.069 tokens
+2026-11-09 16:11:04 [quang-trung-dai-pha-quan-thanh] new era: tay_son
+2026-11-09 16:11:11 [quang-trung-dai-pha-quan-thanh] era research: Quang Trung, Nhà Tây Sơn, Chiến tranh Tây Sơn – Chúa Nguyễn (1787–1802)
+2026-11-09 16:13:06 [quang-trung-dai-pha-quan-thanh] build-era-tay_son: Claude opus, 35.839 tokens
+2026-11-09 16:13:06 [quang-trung-dai-pha-quan-thanh] era tay_son written to library/eras.json (16 archetypes)
+2026-11-09 16:13:06 [quang-trung-dai-pha-quan-thanh] cast and costume sheet
+2026-11-09 16:13:56 [quang-trung-dai-pha-quan-thanh] design-cast: Claude sonnet, 23.654 tokens
+2026-11-09 17:12:31 scheduler started (pid 578663)

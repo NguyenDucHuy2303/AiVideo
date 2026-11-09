@@ -1,7 +1,7 @@
 {
   "slug": "quang-trung-dai-pha-quan-thanh",
   "topic": "Quang Trung đại phá quân Thanh",
-  "status": "failed",
+  "status": "review",
   "notes": [],
   "history": [
     {
@@ -27,10 +27,31 @@
       "at": "2026-11-09T07:48:51.217Z",
       "status": "failed",
       "info": "Claude Code failed on write-script: interrupted"
+    },
+    {
+      "at": "2026-11-09T09:07:47.303Z",
+      "status": "writing",
+      "info": "bạn: retry"
+    },
+    {
+      "at": "2026-11-09T09:14:14.617Z",
+      "status": "review"
     }
   ],
   "kind": "lịch sử",
   "era": "tay_son",
   "summary": "Nguyễn Huệ lên ngôi Quang Trung, hành quân thần tốc ra Bắc, cho quân ăn Tết sớm, mùng 5 Tết Kỷ Dậu đại phá quân Thanh ở Ngọc Hồi, Đống Đa; dùng mộc bọc rơm ướt. Kể theo hướng anh hùng, không bạo lực chi tiết.",
-  "error": "Claude Code failed on write-script: interrupted"
+  "by": "claude-opus",
+  "art": {
+    "style": "son_mai",
+    "intro": "cuon_thu",
+    "outro": "cuon_thu",
+    "suggest": {
+      "style": "son_mai",
+      "intro": "cuon_thu",
+      "outro": "cuon_thu",
+      "why": "lịch sử triều đại: sơn mài trang nghiêm, ánh vàng cung đình",
+      "by": "rules"
+    }
+  }
 }

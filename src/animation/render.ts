@@ -13,6 +13,7 @@ import { renderSoundtrack, type MusicSection, type SfxEvent } from "../audio/sou
 import { AUDIO_SAMPLE_RATE, FFMPEG, FONTS_DIR, ROOT } from "../config.ts";
 import { run } from "../utils/process.ts";
 import { withBackdrop } from "./backdrops.ts";
+import { styleOf } from "./styles.ts";
 import { capture } from "./capture.ts";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -76,6 +77,8 @@ export interface RenderOptions {
   out?: string;
   vertical?: boolean;
   audio?: boolean;
+  /** A drawing style for this render only (library/styles.json), instead of the project's. */
+  style?: string;
   onProgress?: (frame: number, total: number) => void;
 }
 
@@ -100,13 +103,21 @@ export async function loadScene(sceneFile: string): Promise<Scene> {
     const eras = JSON.parse(await fs.readFile(new URL("./library/eras.json", import.meta.url), "utf8"));
     if (eras[era]?.architecture) sc.architecture = eras[era].architecture;
   }
+  // The film's drawing style (project.json "style", one folder up from anim/).
+  const st = scene as { style?: string; styleLook?: unknown };
+  if (st.style === undefined) {
+    try { st.style = JSON.parse(await fs.readFile(path.resolve(path.dirname(sceneFile), "..", "project.json"), "utf8")).style; } catch {}
+  }
+  if (st.style && st.styleLook === undefined) st.styleLook = styleOf(st.style).look;
   return scene;
 }
 
 export async function renderScene(sceneFile: string, opts: RenderOptions = {}): Promise<string> {
-  const scene = await withBackdrop(await loadScene(sceneFile));
+  const loaded = await loadScene(sceneFile) as Scene & { style?: string; styleLook?: unknown };
+  if (opts.style) { loaded.style = opts.style; loaded.styleLook = styleOf(opts.style).look; }
+  const scene = await withBackdrop(loaded);
   const [W, H] = opts.vertical ? [1080, 1920] : [1920, 1080];
-  const name = path.basename(sceneFile, ".json") + (opts.vertical ? "_9x16" : "_16x9");
+  const name = path.basename(sceneFile, ".json") + (opts.style ? `-${opts.style}` : "") + (opts.vertical ? "_9x16" : "_16x9");
   const out = path.resolve(opts.out ?? path.join(ROOT, "out", "animation", `${name}.mp4`));
   const work = path.join(path.dirname(out), `.${name}`);
   await fs.mkdir(work, { recursive: true });
@@ -155,13 +166,14 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
   const args = process.argv.slice(2);
   const file = args.find((a) => !a.startsWith("--"));
   if (!file) {
-    console.error("usage: node src/animation/render.ts <scene.json> [--vertical] [--out file.mp4] [--no-audio]");
+    console.error("usage: node src/animation/render.ts <scene.json> [--vertical] [--out file.mp4] [--no-audio] [--style dong_ho]");
     process.exit(2);
   }
-  const outIdx = args.indexOf("--out");
+  const outIdx = args.indexOf("--out"), styleIdx = args.indexOf("--style");
   const t0 = Date.now();
   const out = await renderScene(file, {
     vertical: args.includes("--vertical"), audio: !args.includes("--no-audio"), out: outIdx >= 0 ? args[outIdx + 1] : undefined,
+    style: styleIdx >= 0 ? args[styleIdx + 1] : undefined,
     onProgress: (f, n) => f % 60 === 0 && process.stdout.write(`\r  frame ${f}/${n}`),
   });
   console.log(`\n✔ ${out} (${((Date.now() - t0) / 1000).toFixed(0)}s)`);

@@ -11,13 +11,19 @@ import { ROOT } from "../config.ts";
 import { think } from "../brain/claude.ts";
 import { still } from "../animation/capture.ts";
 import type { CastMember } from "../animation/compile/scene.ts";
-import { jobDir, loadJob } from "./jobs.ts";
+import { jobDir, loadJob, saveJob } from "./jobs.ts";
 import { eras } from "./topics.ts";
 import { cleanLook, VOCABULARY } from "./vocabulary.ts";
+import { BRAND_THEMES } from "../animation/brand/brand.ts";
+import { styleKeys, styleMenu, styleOf } from "../animation/styles.ts";
+import { artOf } from "./art.ts";
 import type { Plan } from "./write.ts";
 
 const PLAYER = path.join(ROOT, "src", "animation", "player.html");
 const SHEET = path.join(ROOT, "src", "studio", "sheet.html");
+
+const STYLE_KEYS = styleKeys(), THEME_KEYS = Object.keys(BRAND_THEMES);
+const themeMenu = () => Object.entries(BRAND_THEMES).map(([k, t]) => `- ${k}: ${t.name} (${t.for})`).join("\n");
 
 const SCHEMA = {
   type: "object",
@@ -41,8 +47,18 @@ const SCHEMA = {
         required: ["id", "name", "kind", "archetype", "look", "scale", "group", "formOf", "speaks", "role"],
       },
     },
+    art: {
+      type: "object",
+      properties: {
+        style: { enum: STYLE_KEYS },
+        intro: { enum: THEME_KEYS },
+        outro: { enum: THEME_KEYS },
+        why: { type: "string" },
+      },
+      required: ["style", "intro", "outro", "why"],
+    },
   },
-  required: ["characters"],
+  required: ["characters", "art"],
 };
 
 export interface Designed extends CastMember { speaks: string[]; role: string }
@@ -78,10 +94,14 @@ export async function designCast(slug: string, log: (s: string) => void = consol
     "- scale: 1 người thường; trẻ nhỏ 0.75–0.85; khổng lồ khoảng 2.4.",
     "- Mỗi nhân vật chính phải dễ phân biệt: màu áo, kiểu tóc, mũ, khuôn mặt khác nhau.",
     "- role: một dòng mô tả cho bảng trang phục (tiếng Việt).",
+    "- art: phong cách vẽ hợp nhất với truyện này (style), intro và outro của kênh (thường cùng một bộ, có thể khác), why: một câu tiếng Việt giải thích vì sao.",
+    "",
+    "Phong cách vẽ:", styleMenu(),
+    "Intro/outro:", themeMenu(),
     "",
     "Truyện:", story,
   ].filter((l) => l !== "").join("\n");
-  const { data } = await think<{ characters: (Omit<Designed, "formOf"> & { archetype: string; formOf: string })[] }>({ job: slug, step: "design-cast", model: "sonnet", system, prompt, schema: SCHEMA }, log);
+  const { data } = await think<{ characters: (Omit<Designed, "formOf"> & { archetype: string; formOf: string })[]; art: { style: string; intro: string; outro: string; why: string } }>({ job: slug, step: "design-cast", model: "sonnet", system, prompt, schema: SCHEMA }, log);
   const cast: Designed[] = data.characters.map((c) => {
     const base = c.archetype !== "none" ? era?.archetypes?.[c.archetype] : undefined;
     const { archetype: _, ...rest } = c;
@@ -91,6 +111,12 @@ export async function designCast(slug: string, log: (s: string) => void = consol
     return { ...rest, look, formOf: c.formOf !== "none" ? c.formOf : undefined, designed: true };
   });
   await fs.writeFile(path.join(dir, "cast.json"), JSON.stringify(cast, null, 2));
+  // The look the brain suggests; a choice the user already made is kept.
+  const a = data.art, fresh = await loadJob(slug);
+  const suggest = { style: a.style, intro: a.intro, outro: a.outro, why: a.why, by: "brain" as const };
+  fresh.art = fresh.art && (fresh.art.style !== fresh.art.suggest.style || fresh.art.intro !== fresh.art.suggest.intro || fresh.art.outro !== fresh.art.suggest.outro)
+    ? { ...fresh.art, suggest } : { style: a.style, intro: a.intro, outro: a.outro, suggest };
+  await saveJob(fresh);
   return cast;
 }
 
@@ -100,13 +126,14 @@ export async function costumeSheet(slug: string): Promise<string> {
   const cast: Designed[] = JSON.parse(await fs.readFile(path.join(dir, "cast.json"), "utf8"));
   const plan: Plan = JSON.parse(await fs.readFile(path.join(dir, "plan.json"), "utf8"));
   const all = await eras() as Record<string, { name: string }>;
+  const style = artOf(job).style, styleLook = styleOf(style).look;
   const tiles = path.join(dir, "sheet");
   await fs.mkdir(tiles, { recursive: true });
   const items: { src: string; name: string; role: string }[] = [];
   for (const c of cast) {
     const out = path.join(tiles, `${c.id}.png`);
     const scene = {
-      duration: 2, time: "day", era: job.era, backdrop: false, set: { name: c.kind !== "human" ? "field" : "sky" },
+      duration: 2, time: "day", era: job.era, backdrop: false, style, styleLook, set: { name: c.kind !== "human" ? "field" : "sky" },
       cast: [{ id: c.id, type: c.kind, look: c.look, x: 0, scale: 1 }],
       actions: [{ actor: c.id, at: 0, do: c.kind === "horse" ? "stand" : "idle", ...(c.kind === "human" ? { face: "happy" } : {}) }],
       shots: [{ at: 0, type: "full", on: c.id }],
@@ -116,7 +143,7 @@ export async function costumeSheet(slug: string): Promise<string> {
   }
   const rows = Math.ceil(items.length / 4), height = 120 + rows * 735 + 40;
   const file = path.join(dir, "costumes.png");
-  await still({ page: SHEET, width: 1920, height, output: file, params: { title: `${plan.title}: bảng trang phục`, era: all[job.era ?? ""]?.name ?? job.era ?? "", items } });
+  await still({ page: SHEET, width: 1920, height, output: file, params: { title: `${plan.title}: bảng trang phục`, era: `${all[job.era ?? ""]?.name ?? job.era ?? ""} · phong cách ${styleOf(style).name}`, items } });
   await fs.rm(tiles, { recursive: true, force: true });
   return file;
 }

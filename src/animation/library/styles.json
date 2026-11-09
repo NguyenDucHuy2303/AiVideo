@@ -1,0 +1,131 @@
+{
+  "hien_dai": {
+    "name": "Hoạt hình hiện đại",
+    "for": "mặc định; bài học, giáo dục, truyện vui, truyện hiện đại",
+    "backdrop": "2D animation background art, cartoon background painting, soft painterly shading, clean shapes, vibrant colors",
+    "look": {}
+  },
+  "dong_ho": {
+    "name": "Tranh Đông Hồ",
+    "for": "truyện cổ tích, truyền thuyết thời Hùng Vương, đời sống làng quê, Tết và lễ hội",
+    "backdrop": "Vietnamese Dong Ho folk woodblock print, flat areas of earthy natural colors (vermilion red, ochre yellow, indigo blue, leaf green, charcoal black) on handmade do paper coated with shimmering seashell powder, bold black carved outlines, simple stylized shapes, decorative pattern",
+    "look": {
+      "ink": "#120c08",
+      "line": 1.45,
+      "posterize": 5,
+      "saturate": 0.82,
+      "contrast": 1.06,
+      "tint": "#efd6a2",
+      "tintAmt": 0.32,
+      "texture": "paper",
+      "textureAmt": 0.75,
+      "flecks": 0.3,
+      "vignette": 0.35
+    }
+  },
+  "son_mai": {
+    "name": "Sơn mài",
+    "for": "lịch sử các triều đại, cung đình, vua chúa, chiến công lớn, truyện trang nghiêm",
+    "backdrop": "Vietnamese lacquer painting (son mai), deep glossy black and dark cinnabar red lacquer, shimmering gold leaf and silver leaf highlights, crushed eggshell inlay, rich warm luminous colors, decorative stylized shapes, dark rich background",
+    "look": {
+      "ink": "#1c0b04",
+      "line": 1.15,
+      "saturate": 1.12,
+      "contrast": 1.16,
+      "brightness": 0.9,
+      "tint": "#7a3412",
+      "tintAmt": 0.28,
+      "tintMode": "soft-light",
+      "texture": "lacquer",
+      "textureAmt": 0.55,
+      "sheen": 0.65,
+      "vignette": 0.72,
+      "vignetteColor": "#0c0402"
+    },
+    "sky": {
+      "dawn": "the sky in black and cinnabar red lacquer with gold leaf clouds and a rising gold sun",
+      "day": "the sky in black and cinnabar red lacquer with gold leaf clouds and a gold sun",
+      "dusk": "the sky in black and deep red lacquer with gold leaf clouds and a setting gold sun",
+      "night": "the sky in deep black lacquer with silver leaf clouds and a silver moon"
+    }
+  },
+  "lua": {
+    "name": "Tranh lụa",
+    "for": "truyện buồn, tình cảm, thơ mộng, truyện về người hiền và thiên nhiên êm đềm",
+    "backdrop": "Vietnamese silk painting (tranh lua), soft translucent pale washes of color on beige silk, delicate fine brush lines, gentle muted pastel tones, misty and poetic, airy empty space",
+    "look": {
+      "ink": "#5c4630",
+      "line": 0.62,
+      "saturate": 0.62,
+      "brightness": 1.06,
+      "contrast": 0.86,
+      "tint": "#e9d9b8",
+      "tintAmt": 0.35,
+      "texture": "silk",
+      "textureAmt": 0.7,
+      "vignette": 0.22,
+      "vignetteColor": "#6a4a2a"
+    },
+    "sky": {
+      "day": "a pale misty sky, soft light"
+    }
+  },
+  "mau_nuoc": {
+    "name": "Màu nước",
+    "for": "truyện thú vật, thiên nhiên, ngụ ngôn nhẹ nhàng, truyện cho bé nhỏ",
+    "backdrop": "children's picture book watercolor illustration, loose wet-on-wet watercolor washes, soft bleeding edges, white paper showing through, fresh light colors, visible paper grain",
+    "look": {
+      "ink": "#3b3550",
+      "line": 0.72,
+      "saturate": 1.04,
+      "brightness": 1.05,
+      "contrast": 0.92,
+      "wobble": {
+        "scale": 3.5,
+        "freq": 0.025
+      },
+      "texture": "watercolor",
+      "textureAmt": 0.75,
+      "vignette": 0.12,
+      "vignetteColor": "#5a5060"
+    }
+  },
+  "sap_mau": {
+    "name": "Sáp màu",
+    "for": "bài học cho bé, đếm số, chữ cái, truyện vui ngắn, nội dung mẫu giáo",
+    "backdrop": "children's wax crayon drawing, crayon strokes with visible paper texture, bright cheerful colors, naive childlike shapes, hand-drawn",
+    "look": {
+      "ink": "#2a2840",
+      "line": 1.25,
+      "saturate": 1.18,
+      "brightness": 1.03,
+      "wobble": {
+        "scale": 5,
+        "freq": 0.045,
+        "boil": 4
+      },
+      "texture": "crayon",
+      "textureAmt": 0.32
+    }
+  },
+  "cat_giay": {
+    "name": "Cắt giấy",
+    "for": "ngụ ngôn, truyện thế giới, truyện có nhiều con vật, truyện vui",
+    "backdrop": "layered cut paper collage illustration, flat colored paper shapes stacked in layers with soft drop shadows between layers, papercraft diorama, clean simple shapes, warm colors",
+    "look": {
+      "ink": "#3a2a20",
+      "line": 0.4,
+      "posterize": 6,
+      "saturate": 1.08,
+      "shadow": {
+        "dx": 5,
+        "dy": 7,
+        "blur": 4,
+        "opacity": 0.38
+      },
+      "texture": "cutpaper",
+      "textureAmt": 0.6,
+      "vignette": 0.28
+    }
+  }
+}

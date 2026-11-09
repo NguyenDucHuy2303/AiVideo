@@ -23,6 +23,7 @@ import { jobDir, loadJob, saveJob, setStatus, type Job, type JobStatus } from ".
 import { writeScript, type Plan } from "./write.ts";
 import { linkShorts, makeShorts } from "./shorts.ts";
 import { buildEra, loadEras } from "./era.ts";
+import { artOf, syncArt } from "./art.ts";
 
 export const projectOf = (slug: string) => path.join(ROOT, "projects", slug);
 
@@ -88,7 +89,8 @@ async function buildProject(job: Job, proj: string, opts: { scenes?: number; not
   for (const c of cast) for (const name of c.speaks) (speakers[name] ??= []).push(c.id);
   const project = JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8"));
   const subtitle = { "lịch sử": "Lịch sử Việt Nam", "truyền thuyết": "Truyền thuyết Việt Nam", "ngụ ngôn": "Truyện ngụ ngôn Việt Nam" }[job.kind ?? ""] ?? "Truyện cổ tích Việt Nam";
-  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers, thumbnail: { title: plan.title.replace(/\s*[–-]\s*/g, " "), subtitle } }, null, 2));
+  const art = artOf(job);
+  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers, thumbnail: { title: plan.title.replace(/\s*[–-]\s*/g, " "), subtitle }, style: art.style, brand: { intro: art.intro, outro: art.outro } }, null, 2));
   // Voices (the timing of everything else).
   if (opts.revoice !== false || !(await exists(path.join(proj, "timeline.json")))) {
     log("  voices");
@@ -155,6 +157,7 @@ export async function render(slug: string, log: (s: string) => void = console.lo
   try {
     let job = await loadJob(slug);
     job = await setStatus(job, "producing", "đang render");
+    await syncArt(job, projectOf(slug)); // a style or intro changed on the review page since
     const out = await renderStory(projectOf(slug), { onLog: log });
     const dir = jobDir(slug);
     for (const [from, to] of [[out, "video.mp4"], [out.replace(/\.mp4$/, "_thumbnail.jpg"), "thumbnail.jpg"]] as const) {

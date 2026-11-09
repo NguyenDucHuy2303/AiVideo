@@ -38,3 +38,6 @@
 {"at":"2026-11-09T07:12:50.433Z","job":"son-tinh-thuy-tinh","phase":"produce","step":"translate-en","model":"sonnet","seconds":35,"ok":true,"input":2,"cacheWrite":8266,"cacheRead":0,"output":5925,"usd":0.092318}
 {"at":"2026-11-09T07:15:27.797Z","job":"quang-trung-dai-pha-quan-thanh","phase":"write","step":"write-script","model":"opus","seconds":0,"ok":false,"input":0,"cacheWrite":0,"cacheRead":0,"output":0,"usd":0}
 {"at":"2026-11-09T07:48:51.213Z","job":"quang-trung-dai-pha-quan-thanh","phase":"write","step":"write-script","model":"opus","seconds":0,"ok":false,"input":0,"cacheWrite":0,"cacheRead":0,"output":0,"usd":0}
+{"at":"2026-11-09T09:11:04.115Z","job":"quang-trung-dai-pha-quan-thanh","phase":"write","step":"write-script","model":"opus","seconds":183,"ok":true,"input":2,"cacheWrite":18913,"cacheRead":0,"output":20154,"usd":0.554392}
+{"at":"2026-11-09T09:13:06.791Z","job":"era-tay_son","phase":"write","step":"build-era-tay_son","model":"opus","seconds":116,"ok":true,"input":2,"cacheWrite":24049,"cacheRead":0,"output":11788,"usd":0.42816}
+{"at":"2026-11-09T09:13:56.899Z","job":"quang-trung-dai-pha-quan-thanh","phase":"write","step":"design-cast","model":"sonnet","seconds":50,"ok":true,"input":2,"cacheWrite":15624,"cacheRead":0,"output":8028,"usd":0.14278000000000002}

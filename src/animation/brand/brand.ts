@@ -1,7 +1,7 @@
 /**
  * The channel's identity (assets/brand/brand.json): logo, watermark, intro, outro and
  * thumbnails, all drawn by brand.html (a Đông Sơn drum face with the channel name).
- * Rendered once per shape and kept in assets/brand/; delete a file to draw it again.
+ * Rendered once per shape and theme and kept in assets/brand/clips/; delete a file to draw it again.
  */
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -34,25 +34,50 @@ export async function brandStills(brand: Brand): Promise<{ logo: string; waterma
   return { logo, watermark };
 }
 
-/** The intro or outro clip for a shape, with its sound. */
-export async function brandClip(brand: Brand, kind: "intro" | "outro" | "end", vertical: boolean): Promise<string> {
+/** The looks of intro, outro and end card (brand.html "trong_dong", the others in themes.js). */
+export const BRAND_THEMES: Record<string, { name: string; for: string }> = {
+  trong_dong: { name: "Trống đồng", for: "mặt trống đồng Đông Sơn bay vào trên nền đỏ; hợp truyền thuyết, lịch sử" },
+  sach_truyen: { name: "Sách truyện", for: "cuốn sách mở ra, tên kênh bật lên từ trang sách; hợp cổ tích, ngụ ngôn" },
+  den_long: { name: "Đêm hội đèn lồng", for: "đèn lồng, đèn ông sao bay lên, trống đồng là mặt trăng; hợp truyện đêm, Trung thu, truyện buồn" },
+  mua_roi: { name: "Múa rối nước", for: "thủy đình lúc hoàng hôn, chú Tễu chào khán giả; hợp truyện vui, làng quê" },
+  dong_que: { name: "Cánh diều đồng quê", for: "diều sáo bay trên đồng lúa; hợp thú vật, thiên nhiên, bài học" },
+  cuon_thu: { name: "Cuộn thư", for: "cuộn thư mở trên nền sơn mài, đóng dấu son; hợp lịch sử triều đại" },
+};
+export const DEFAULT_THEME = "trong_dong";
+const themeOf = (t?: string) => (t && BRAND_THEMES[t] ? t : DEFAULT_THEME);
+
+type Sfx = { type: "boom" | "whoosh" | "drums" | "wind" | "shimmer" | "chime"; at: number }[];
+/** Each intro's sounds, on its own beats. */
+const INTRO_SFX: Record<string, Sfx> = {
+  trong_dong: [{ type: "drums", at: 0 }, { type: "boom", at: 0.75 }, { type: "shimmer", at: 0.9 }, { type: "chime", at: 1.3 }],
+  sach_truyen: [{ type: "whoosh", at: 0.1 }, { type: "whoosh", at: 0.75 }, { type: "chime", at: 1.4 }, { type: "shimmer", at: 1.5 }],
+  den_long: [{ type: "shimmer", at: 0.2 }, { type: "chime", at: 1.15 }, { type: "shimmer", at: 1.3 }, { type: "chime", at: 1.9 }],
+  mua_roi: [{ type: "drums", at: 0 }, { type: "whoosh", at: 0.6 }, { type: "boom", at: 0.75 }, { type: "chime", at: 1.3 }],
+  dong_que: [{ type: "wind", at: 0 }, { type: "whoosh", at: 0.2 }, { type: "chime", at: 1.35 }, { type: "shimmer", at: 1.45 }],
+  cuon_thu: [{ type: "whoosh", at: 0.3 }, { type: "boom", at: 1.75 }, { type: "shimmer", at: 1.8 }, { type: "chime", at: 2.0 }],
+};
+
+/** The intro, outro or a short's end card for a shape and a theme, with its sound, and its length. */
+export async function brandClip(brand: Brand, kind: "intro" | "outro" | "end", vertical: boolean, theme?: string): Promise<{ file: string; seconds: number }> {
+  const th = themeOf(theme);
   const [W, H] = vertical ? [1080, 1920] : [1920, 1080];
-  const file = path.join(BRAND_DIR, `${kind}${brand.lang ? `_${brand.lang}` : ""}_${vertical ? "9x16" : "16x9"}.mp4`);
-  if (await exists(file)) return file;
-  const seconds = kind === "intro" ? INTRO_S : kind === "end" ? END_S : OUTRO_S;
+  const seconds = kind === "intro" ? (th === "trong_dong" ? INTRO_S : 3.5) : kind === "end" ? END_S : OUTRO_S;
+  const file = path.join(BRAND_DIR, "clips", `${kind}_${th}${brand.lang ? `_${brand.lang}` : ""}_${vertical ? "9x16" : "16x9"}.mp4`);
+  if (await exists(file)) return { file, seconds };
+  await fs.mkdir(path.dirname(file), { recursive: true });
   const picture = `${file}.picture.mp4`, sound = `${file}.wav`;
-  await capture({ page: PAGE, width: W, height: H, fps: 30, seconds, output: picture, params: { mode: kind, brand, width: W, height: H, duration: seconds } });
+  await capture({ page: PAGE, width: W, height: H, fps: 30, seconds, output: picture, params: { mode: kind, theme: th, brand, width: W, height: H, duration: seconds } });
   await renderSoundtrack(
-    [{ start: 0, duration: seconds, mood: kind === "intro" ? "majestic" : "calm" }],
+    [{ start: 0, duration: seconds, mood: kind === "intro" ? (th === "den_long" || th === "dong_que" ? "calm" : "majestic") : "calm" }],
     kind === "end" ? [{ type: "boom", at: 0.15 }, { type: "shimmer", at: 0.25 }, { type: "chime", at: 0.6 }] : kind === "intro"
-      ? [{ type: "drums", at: 0 }, { type: "boom", at: 0.75 }, { type: "shimmer", at: 0.9 }, { type: "chime", at: 1.3 }]
+      ? INTRO_SFX[th]!
       : [{ type: "chime", at: 0.2 }, { type: "whoosh", at: 1.8 }, { type: "boom", at: 2.6 }, { type: "shimmer", at: 2.7 }],
     seconds, sound,
   );
   await run(FFMPEG, ["-hide_banner", "-nostdin", "-y", "-v", "error", "-i", picture, "-i", sound, "-map", "0:v", "-map", "1:a", "-af", "loudnorm=I=-15:TP=-1.5:LRA=11,aresample=48000", "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-ar", "48000", "-shortest", file], { timeoutMs: 120_000 });
   await fs.rm(picture, { force: true });
   await fs.rm(sound, { force: true });
-  return file;
+  return { file, seconds };
 }
 
 /** A thumbnail (1280×720 JPEG) from a moment of the film, with the title and the logo. */

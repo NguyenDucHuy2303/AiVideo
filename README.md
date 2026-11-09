@@ -18,6 +18,7 @@ bash scripts/install-studio-service.sh     # chạy nền thường trực (tự
 - **Trang web**: Chờ bạn duyệt (kịch bản + bảng trang phục + giọng nghe thử, rồi video) với nút Duyệt / Yêu cầu sửa / Bỏ; Đang làm; Xong; Token (sổ token, trần ngày / kịch bản / video, nút **Tạm dừng Claude** khi bạn cần token cho việc khác và **Tiếp tục tự động**).
 - **Lịch**: giờ hành chính (T2–T6, 8:00–18:00) chỉ làm việc nhẹ, ưu tiên thấp; ngoài giờ và cuối tuần render. Luôn giữ sẵn 6 kịch bản chờ duyệt. Sửa trong `studio/settings.json`.
 - **Bộ não**: Claude (qua Claude Code, gói của bạn) cho việc cần suy nghĩ; mỗi lần gọi ghi vào `studio/ledger.jsonl`; quá trần thì chuyển sang Ollama (`gemma3:12b` nếu đã tải); tạm dừng thì việc cần Claude đứng chờ.
+- **Phong cách, intro, outro**: khi thiết kế nhân vật, bộ não gợi ý phong cách vẽ (7 kiểu: hiện đại, Đông Hồ, sơn mài, lụa, màu nước, sáp màu, cắt giấy) và bộ intro/outro (6 kiểu), kèm lý do. Trên trang duyệt, mỗi phong cách có ảnh mẫu, mỗi intro/outro có video xem trước; ★ là gợi ý, bấm để đổi. Đổi phong cách thì bảng trang phục tự vẽ lại; video đã xong thì có nút **Render lại** (chạy buổi tối, không tốn token).
 - **Quy trình một video**: viết → (thời đại mới nếu cần) → nhân vật, bảng trang phục → **bạn duyệt** → giọng, chỉ đạo cảnh, tranh nền (ban ngày) → render (ban đêm) → **bạn duyệt video** (ghi chú sửa thì làm lại cảnh đó) → xong.
 
 Lệnh lẻ (thử từng bước):
@@ -27,6 +28,7 @@ npm run wata -- topics --count 5                     # đề xuất chủ đề
 npm run wata -- write son-tinh-thuy-tinh             # tìm tư liệu, viết kịch bản, nhân vật, bảng trang phục
 npm run wata -- era ly_tran --title "Nhà Trần"       # dựng một thời đại vào thư viện
 npm run wata -- produce son-tinh-thuy-tinh --test 6  # chạy thử sản xuất trên 6 cảnh đầu
+npm run wata -- brand                                # vẽ sẵn mọi bộ intro/outro (xem trước trên trang duyệt)
 npm run wata -- tokens                               # token đã dùng
 ```
 

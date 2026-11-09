@@ -1,10 +1,10 @@
 /**
  * Painted backdrops for the cartoon: the sky, the distant land and the fields, painted by the
- * local image model (SD-Turbo) as 2D animation background art. The architecture of the era
+ * local image model (FLUX.2 klein) in the film's drawing style (library/styles.json). The architecture of the era
  * (boat-roofed stilt houses, the Văn Lang palace) and everything near the camera stay vector,
  * so the paintings never show buildings of the wrong period: they are pure landscape.
  *
- * One painting per set × time of day × era, kept in assets/library/generated/backdrops and
+ * One painting per set × time of day × era × style, kept in assets/library/generated/backdrops and
  * reused by every story.
  */
 import { readFileSync } from "node:fs";
@@ -13,9 +13,12 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { bestImageGen, SIZES, type ImageGen } from "../imagegen/sd.ts";
 import { LIBRARY_DIR } from "../storyboard/assets.ts";
+import { styleOf } from "./styles.ts";
 
 const DIR = path.join(LIBRARY_DIR, "generated", "backdrops");
-const STYLE = "2D animation background art, cartoon background painting, soft painterly shading, clean shapes, vibrant colors, wide landscape, horizon in the lower third, empty foreground, no buildings, no people, no animals, no text";
+/** What every backdrop is, whatever the style (library/styles.json gives the painting's look). */
+const FRAME = "wide landscape, horizon in the lower third, empty foreground, no buildings, no people, no animals, no text";
+const paintStyle = (style?: string) => `${styleOf(style).backdrop}, ${FRAME}`;
 const NEGATIVE = "house, building, hut, roof, temple, pagoda, tower, boat, ship, bridge, island, people, person, figure, animal, text, letters, watermark, signature, frame, border, photo, realistic, 3d render, blurry, deformed, modern, car, road sign";
 
 const SETS: Record<string, string> = {
@@ -47,27 +50,29 @@ function eraWords(era?: string): string {
   return "Vietnam";
 }
 
-export function backdropPrompt(set: string, time: string, era?: string): string {
+export function backdropPrompt(set: string, time: string, era?: string, style?: string): string {
+  // A style may paint its own sky (lacquer, silk…); else the light of the time of day.
+  const sky = styleOf(style).sky?.[time] ?? TIMES[time] ?? TIMES.day;
   // The sky realm is above any country: no land words in its prompt.
-  if (set === "sky") return [SETS.sky, TIMES[time] ?? TIMES.day].join(", ");
-  return [eraWords(era), SETS[set] ?? SETS.village, TIMES[time] ?? TIMES.day].join(", ");
+  if (set === "sky") return [SETS.sky, sky].join(", ");
+  return [eraWords(era), SETS[set] ?? SETS.village, sky].join(", ");
 }
 
 let generator: Promise<ImageGen | undefined> | undefined;
 
 /** The painting for a scene, or undefined when the image model is not installed. */
-export async function backdropFor(scene: { set?: { name?: string }; time?: string; era?: string }): Promise<string | undefined> {
+export async function backdropFor(scene: { set?: { name?: string }; time?: string; era?: string; style?: string }): Promise<string | undefined> {
   generator ??= bestImageGen();
   const gen = await generator;
   if (!gen) return undefined;
   await fs.mkdir(DIR, { recursive: true });
-  const { file } = await gen.generate(backdropPrompt(scene.set?.name ?? "village", scene.time ?? "day", scene.era), DIR, { style: STYLE, negative: NEGATIVE, shape: "landscape" });
+  const { file } = await gen.generate(backdropPrompt(scene.set?.name ?? "village", scene.time ?? "day", scene.era, scene.style), DIR, { style: paintStyle(scene.style), negative: NEGATIVE, shape: "landscape" });
   return file;
 }
 
 /** Give a scene its painted backdrop (unless it has one, or says "backdrop": false). */
 export async function withBackdrop<T extends object>(scene: T): Promise<T> {
-  const s = scene as { set?: { name?: string }; time?: string; era?: string; backdrop?: unknown };
+  const s = scene as { set?: { name?: string }; time?: string; era?: string; style?: string; backdrop?: unknown };
   if (s.backdrop !== undefined) return scene;
   const file = await backdropFor(s);
   return file ? { ...scene, backdrop: { src: pathToFileURL(file).href, size: SIZES.landscape } } : scene;

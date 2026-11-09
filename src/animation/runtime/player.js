@@ -56,6 +56,8 @@
         fx.push({ fx: "dust", on: a.actor, at: a.at, dur: Math.max(0.2, end - a.at), rate: a.do === "gallop" ? 30 : 12 });
       }
     }
+    // The drawing style of the film (library/styles.json), once everything is built.
+    WA.style.apply(S, scene.styleLook);
     const shots = (scene.shots || [{ at: 0, type: "wide", on: Object.keys(actors).slice(0, 1) }]).slice().sort((a, b) => a.at - b.at);
     shots.forEach((s, i) => (s.end = shots[i + 1]?.at ?? scene.duration));
 
@@ -210,6 +212,7 @@
         node.setAttribute("opacity", f2(show));
       }
       const shake = WA.fx.render(S, fx, t, ctx);
+      S.styleTick(t);
       S.setCamera(cam, t, shake);
       // Fades through black (chapter changes): fadeIn / fadeOut in seconds of the clip.
       const dur = scene.duration, fi = scene.fadeIn || 0, fo = scene.fadeOut || 0;

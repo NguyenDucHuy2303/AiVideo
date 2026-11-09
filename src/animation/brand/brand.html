@@ -17,7 +17,8 @@
  * Channel identity, drawn in code: a Đông Sơn bronze-drum face (the star, rings of
  * zigzags and circles, Lạc birds flying round) with the channel name on a ribbon.
  * Modes (window.params.mode): logo (still, transparent), intro (~3 s), outro (~5 s),
- * thumb (a frame of the film with the title). renderFrame(t) like the cartoon player.
+ * end (a short's last card), thumb (a frame of the film with the title). window.params.theme
+ * picks the look of intro, outro and end: "trong_dong" here, the others in themes.js. renderFrame(t) like the cartoon player.
  */
 const P = window.params || {};
 const W = P.width || 1920, H = P.height || 1080, B = P.brand || { name: "Huy Kể Chuyện", tagline: "Truyện cổ tích & lịch sử Việt Nam" };
@@ -88,6 +89,8 @@ function spin(parts, t, k = 1) {
 // Words on the cards, in the brand's language (brand.json "texts"; Vietnamese by default).
 const T = { thanks: "Cảm ơn các bạn đã xem!", subscribe: "ĐĂNG KÝ", subscribed: "ĐÃ ĐĂNG KÝ", watchFull: "Xem trọn truyện trên kênh", follow: "Nhớ bấm theo dõi nhé!", ...(B.texts || {}) };
 const mode = P.mode || "logo";
+// The look of the intro, outro and end card (themes.js); the drum face is the first one.
+const THEME = P.theme || "trong_dong";
 let render = () => {};
 
 if (mode === "logo") {
@@ -96,7 +99,7 @@ if (mode === "logo") {
   render = (t) => spin(parts, 0.6);
 }
 
-if (mode === "intro") {
+if (mode === "intro" && THEME === "trong_dong") {
   el("rect", { width: W, height: H, fill: "url(#bgRed)" }, svg);
   const rays = g(svg, { transform: `translate(${W / 2},${H * 0.45})`, style: "mix-blend-mode: screen" });
   for (let i = 0; i < 16; i++) el("path", { d: `M -20 0 L 20 0 L 140 ${H} L -140 ${H} Z`, fill: "#ffcf7a", opacity: 0.12, transform: `rotate(${i * 22.5})` }, rays);
@@ -127,7 +130,7 @@ if (mode === "intro") {
   };
 }
 
-if (mode === "outro") {
+if (mode === "outro" && THEME === "trong_dong") {
   el("rect", { width: W, height: H, fill: "url(#bgRed)" }, svg);
   const vertical = H > W;
   const holder = g(svg);
@@ -165,7 +168,7 @@ if (mode === "outro") {
   };
 }
 
-if (mode === "end") {
+if (mode === "end" && THEME === "trong_dong") {
   // The end card of a short (2.5 s): the drum pops in, "watch the whole story on the channel".
   el("rect", { width: W, height: H, fill: "url(#bgRed)" }, svg);
   const vertical = H > W, R = Math.min(W, H) * (vertical ? 0.3 : 0.24);
@@ -229,6 +232,9 @@ if (mode === "thumb") {
   };
 }
 
+</script>
+<script src="themes.js"></script>
+<script>
 window.renderFrame = (t) => render(t);
 window.ready = document.fonts.ready.then(() => (P.frame ? new Promise((r) => { const i = new Image(); i.onload = r; i.onerror = r; i.src = P.frame; }) : null));
 window.renderFrame(0);

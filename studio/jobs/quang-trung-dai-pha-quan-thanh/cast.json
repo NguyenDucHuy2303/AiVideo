@@ -1,0 +1,993 @@
+[
+  {
+    "id": "quang_trung",
+    "name": "Quang Trung (ra trận)",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "vien_linh",
+          "color": "#8b1a2a",
+          "trim": "#c9a227",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#3a2a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#1a1a1a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "turban",
+        "color": "#b22222"
+      },
+      "headwear": "crown",
+      "beard": "#1a1a1a",
+      "cape": true,
+      "prop": {
+        "type": "sword"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "almond",
+        "nose": "long",
+        "brows": "thick",
+        "mustache": "thin",
+        "iris": "#2b1a0e",
+        "eyeScale": 1.15
+      }
+    },
+    "scale": 1.05,
+    "group": false,
+    "speaks": [
+      "Quang Trung"
+    ],
+    "role": "Vua Quang Trung ra trận: áo bào cổ tròn đỏ thẫm tay rộng, khăn vấn đỏ, đai đen, áo choàng, kiếm; mắt sáng",
+    "designed": true
+  },
+  {
+    "id": "quang_trung_king",
+    "name": "Quang Trung (lên ngôi)",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "vien_linh",
+          "color": "#d4a017",
+          "trim": "#8b1a1a",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "dragon"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#5a3a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#8b1a1a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "mu_canh_chuon",
+      "beard": "#1a1a1a",
+      "cape": false,
+      "prop": {
+        "type": "scroll"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "almond",
+        "nose": "long",
+        "brows": "thick",
+        "mustache": "thin",
+        "iris": "#2b1a0e",
+        "eyeScale": 1.15
+      }
+    },
+    "scale": 1.05,
+    "group": false,
+    "formOf": "quang_trung",
+    "speaks": [
+      "Quang Trung"
+    ],
+    "role": "Quang Trung lễ lên ngôi núi Bân: hoàng bào vàng thêu rồng, mũ cánh chuồn, tóc búi",
+    "designed": true
+  },
+  {
+    "id": "nguyen_hue_tre",
+    "name": "Nguyễn Huệ (thuở trẻ)",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "slim",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#7a5a3a",
+          "trim": "#5a4028",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#3a2e22",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#8b1a1a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "beard": "#1a1a1a",
+      "prop": {
+        "type": "bamboo"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "long",
+        "brows": "thick",
+        "mustache": "thin",
+        "iris": "#2b1a0e",
+        "eyeScale": 1.2
+      }
+    },
+    "scale": 0.95,
+    "group": false,
+    "formOf": "quang_trung",
+    "speaks": [
+      "Quang Trung"
+    ],
+    "role": "Nguyễn Huệ thời trẻ ở ấp Tây Sơn: áo nâu giản dị, tóc búi, mắt sáng như chớp",
+    "designed": true
+  },
+  {
+    "id": "ngo_van_so",
+    "name": "Ngô Văn Sở",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "build": "heavy",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "vien_linh",
+          "color": "#a02020",
+          "trim": "#c9a227",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#3a2a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#c9a227",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "turban",
+        "color": "#8b1a1a"
+      },
+      "headwear": "helmet",
+      "beard": "#2a2a2a",
+      "cape": false,
+      "props": [
+        {
+          "type": "sword"
+        }
+      ],
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "bushy",
+        "mustache": "thick",
+        "iris": "#2b1a0e",
+        "eyeScale": 1
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Ngô Văn Sở"
+    ],
+    "role": "Tướng giữ Thăng Long: áo chiến cổ tròn đỏ, khăn vấn đỏ sẫm, râu rậm, kiếm",
+    "designed": true
+  },
+  {
+    "id": "ngo_thi_nham",
+    "name": "Ngô Thì Nhậm",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "slim",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#2f5f9f",
+          "trim": "#f0e6d2",
+          "length": "ankle",
+          "sleeves": "wide",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#f0e6d2",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#1a1a1a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "beard": "#2a2a2a",
+      "prop": {
+        "type": "scroll"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "long",
+        "brows": "thin",
+        "mustache": "thin",
+        "iris": "#2b1a0e",
+        "eyeScale": 1
+      },
+      "headwear": "khan_chit"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Ngô Thì Nhậm"
+    ],
+    "role": "Quân sư văn quan: áo giao lĩnh xanh lam dài, khăn chít đen, râu mỏng, cầm cuộn giấy",
+    "designed": true
+  },
+  {
+    "id": "do_doc_tuyet",
+    "name": "Đô đốc Tuyết",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "build": "slim",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "vien_linh",
+          "color": "#2a3f7a",
+          "trim": "#c9a227",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#2e2a24",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#c9a227",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "turban",
+        "color": "#2a3f7a"
+      },
+      "headwear": "helmet",
+      "beard": "#1a1a1a",
+      "cape": false,
+      "props": [
+        {
+          "type": "sword"
+        }
+      ],
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thin",
+        "iris": "#2b1a0e",
+        "eyeScale": 1.05
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Đô đốc Tuyết"
+    ],
+    "role": "Tướng phi ngựa báo tin: áo chiến cổ tròn màu chàm, khăn vấn chàm, dáng gọn, không râu",
+    "designed": true
+  },
+  {
+    "id": "ngua_tuyet",
+    "name": "Ngựa của Đô đốc Tuyết",
+    "kind": "horse",
+    "look": {
+      "kind": "plain",
+      "color": "#6b4a2e",
+      "mane": "#1a1a1a",
+      "saddle": "#8b1a1a"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [],
+    "role": "Ngựa thường màu nâu, phi nước đại vào Phú Xuân",
+    "designed": true
+  },
+  {
+    "id": "do_doc_long",
+    "name": "Đô đốc Long",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "build": "heavy",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "vien_linh",
+          "color": "#7a1a1a",
+          "trim": "#c9a227",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#3a2a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#1a1a1a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "turban",
+        "color": "#c0392b"
+      },
+      "headwear": "helmet",
+      "beard": "#1a1a1a",
+      "cape": false,
+      "props": [
+        {
+          "type": "sword"
+        }
+      ],
+      "face": {
+        "shape": "jowl",
+        "eyes": "round",
+        "nose": "long",
+        "brows": "bushy",
+        "mustache": "droopy",
+        "iris": "#2b1a0e",
+        "eyeScale": 1
+      }
+    },
+    "scale": 1.05,
+    "group": false,
+    "speaks": [
+      "Đô đốc Long"
+    ],
+    "role": "Tướng đánh đồn Khương Thượng: áo chiến đỏ sẫm, khăn đỏ tươi, mặt bạnh, ria rủ",
+    "designed": true
+  },
+  {
+    "id": "thay_hien",
+    "name": "Thầy giáo Hiến",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "slim",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#6b4a2e",
+          "trim": "#3a2e22",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#e8e0d0",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#3a2e22",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#e0e0e0"
+      },
+      "headwear": "khan_chit",
+      "beard": "#f0f0f0",
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "droopy",
+        "nose": "long",
+        "brows": "bushy",
+        "wrinkles": true,
+        "mustache": "droopy",
+        "iris": "#2b1a0e",
+        "eyeScale": 0.95
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Thầy giáo Hiến"
+    ],
+    "role": "Ông đồ râu bạc: áo nâu, khăn chít, chống gậy, dạy văn võ ở nhà tranh",
+    "designed": true
+  },
+  {
+    "id": "linh_tay_son",
+    "name": "Lính Tây Sơn",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#b03a2a",
+          "trim": "#5a4028",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#3a2e22",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#5a4028",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "turban",
+        "color": "#c0392b"
+      },
+      "headwear": "non_chop",
+      "props": [
+        {
+          "type": "spear"
+        },
+        {
+          "type": "shield"
+        }
+      ],
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thick",
+        "iris": "#2b1a0e",
+        "eyeScale": 1.1
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Lính Tây Sơn"
+    ],
+    "role": "Lính trẻ vui tính: áo chẽn ngắn đỏ, khăn đỏ quấn đầu, quần xắn gối, giáo và khiên",
+    "designed": true
+  },
+  {
+    "id": "quan_tay_son",
+    "name": "Đoàn quân Tây Sơn",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#8a5a3a",
+          "trim": "#5a4028",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#3a2e22",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#5a4028",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "turban",
+        "color": "#c0392b"
+      },
+      "headwear": "non_chop",
+      "props": [
+        {
+          "type": "flag"
+        }
+      ],
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thick",
+        "iris": "#2b1a0e",
+        "eyeScale": 1
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Đoàn quân đông: áo đỏ hoặc nâu, khăn đỏ, khiêng võng, khiêng tấm mộc, cầm cờ đỏ",
+    "designed": true
+  },
+  {
+    "id": "chang_trai",
+    "name": "Chàng trai Nghệ An",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#8a6a4a",
+          "trim": "#5a4028",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#3a2e22",
+          "length": "knee"
+        },
+        "belt": {
+          "color": "#5a4028",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "khan_chit",
+      "prop": {
+        "type": "spear"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thick",
+        "iris": "#2b1a0e",
+        "eyeScale": 1.1
+      }
+    },
+    "scale": 0.95,
+    "group": false,
+    "speaks": [
+      "Chàng trai"
+    ],
+    "role": "Trai tráng Nghệ An xin tòng quân: áo nâu, quần xắn gối, khăn chít, cầm giáo",
+    "designed": true
+  },
+  {
+    "id": "cac_tuong",
+    "name": "Các tướng Tây Sơn",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "build": "heavy",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "vien_linh",
+          "color": "#a02020",
+          "trim": "#c9a227",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#3a2a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#c9a227",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "turban",
+        "color": "#8b1a1a"
+      },
+      "headwear": "helmet",
+      "beard": "#1a1a1a",
+      "cape": false,
+      "props": [
+        {
+          "type": "sword"
+        }
+      ],
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "bushy",
+        "mustache": "thick",
+        "iris": "#2b1a0e",
+        "eyeScale": 1
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Các tướng"
+    ],
+    "role": "Nhóm tướng áo chiến đỏ, khăn vấn đỏ, đeo kiếm, tung hô lễ lên ngôi",
+    "designed": true
+  },
+  {
+    "id": "voi_chien",
+    "name": "Voi chiến của Quang Trung",
+    "kind": "animal",
+    "look": {
+      "species": "elephant",
+      "color": "#8a8580"
+    },
+    "scale": 2,
+    "group": false,
+    "speaks": [],
+    "role": "Voi chiến có bành gỗ phủ vải đỏ, Quang Trung cưỡi đi đầu",
+    "designed": true
+  },
+  {
+    "id": "ba_cu",
+    "name": "Bà cụ",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "slim",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "tu_than",
+          "color": "#6b4a2e",
+          "trim": "#2e241c",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "inner": {
+          "color": "#8b5a2b"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#1a1a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#6b4a2e",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#d8d8d8"
+      },
+      "headwear": "khan_mo_qua",
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "droopy",
+        "nose": "round",
+        "brows": "thin",
+        "wrinkles": true,
+        "iris": "#2b1a0e",
+        "eyeScale": 0.95
+      }
+    },
+    "scale": 0.95,
+    "group": false,
+    "speaks": [
+      "Bà cụ"
+    ],
+    "role": "Bà cụ dân Thăng Long: áo tứ thân nâu, khăn mỏ quạ, tóc vấn, chống gậy",
+    "designed": true
+  },
+  {
+    "id": "em_be",
+    "name": "Em bé",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "build": "slim",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "giao_linh",
+          "color": "#8a6a4a",
+          "trim": "#5a4028",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "inner": {
+          "color": "#e57373"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#1a1a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#5a4028",
+          "ends": false
+        }
+      },
+      "hair": {
+        "style": "traidao",
+        "color": "#1a1a1a"
+      },
+      "headwear": "non_quai_thao",
+      "earrings": false,
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin",
+        "iris": "#2b1a0e",
+        "eyeScale": 1.2
+      }
+    },
+    "scale": 0.8,
+    "group": false,
+    "speaks": [
+      "Em bé"
+    ],
+    "role": "Cháu gái bà cụ: áo nâu kín cổ, quần đen, tóc để chỏm",
+    "designed": true
+  },
+  {
+    "id": "dan_thang_long",
+    "name": "Dân Thăng Long",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "tu_than",
+          "color": "#6b4a2e",
+          "trim": "#4a3220",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "inner": {
+          "color": "#d2691e"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#1a1a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#4f7a3a",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "khan_mo_qua",
+      "prop": {
+        "type": "basket"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "almond",
+        "nose": "button",
+        "brows": "thin",
+        "iris": "#2b1a0e",
+        "eyeScale": 1
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Đám đông dân phố Thăng Long đón vua, áo nâu giản dị, khăn chít, khăn mỏ quạ",
+    "designed": true
+  },
+  {
+    "id": "ton_si_nghi",
+    "name": "Tôn Sĩ Nghị",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "heavy",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "enemy",
+        "color": "#1f2f5f",
+        "trim": "#c0392b"
+      },
+      "headwear": "enemy_helmet",
+      "cape": true,
+      "beard": "#2a2a2a",
+      "prop": {
+        "type": "sword"
+      },
+      "face": {
+        "shape": "jowl",
+        "eyes": "droopy",
+        "nose": "long",
+        "brows": "bushy",
+        "mustache": "droopy",
+        "iris": "#2b1a0e",
+        "eyeScale": 0.95
+      }
+    },
+    "scale": 1.05,
+    "group": false,
+    "speaks": [
+      "Tôn Sĩ Nghị"
+    ],
+    "role": "Tổng đốc quân Thanh: áo bào xanh thẫm, mũ tròn, râu dài, mặt bạnh kiêu căng",
+    "designed": true
+  },
+  {
+    "id": "ngua_si_nghi",
+    "name": "Ngựa của Tôn Sĩ Nghị",
+    "kind": "horse",
+    "look": {
+      "kind": "plain",
+      "color": "#3a2a1a",
+      "mane": "#1a1a1a",
+      "saddle": "#5a2a6a"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [],
+    "role": "Ngựa màu nâu sẫm chưa kịp đóng yên",
+    "designed": true
+  },
+  {
+    "id": "linh_thanh",
+    "name": "Lính Thanh",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "enemy",
+        "color": "#2f4f7f",
+        "trim": "#c0392b"
+      },
+      "headwear": "enemy_helmet",
+      "prop": {
+        "type": "spear"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thin",
+        "iris": "#2b1a0e",
+        "eyeScale": 0.95
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Lính Thanh"
+    ],
+    "role": "Lính Thanh: áo chẽn xanh có vòng tròn trước ngực, mũ tròn chóp đỏ, kiêu căng rồi hoảng sợ",
+    "designed": true
+  },
+  {
+    "id": "quan_thanh",
+    "name": "Đoàn quân Thanh",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "enemy",
+        "color": "#2f4f7f",
+        "trim": "#c0392b"
+      },
+      "headwear": "enemy_helmet",
+      "prop": {
+        "type": "spear"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thin",
+        "iris": "#2b1a0e",
+        "eyeScale": 0.95
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Đoàn quân Thanh đông đảo, cờ tam giác xanh lá, tan tác bỏ chạy",
+    "designed": true
+  }
+]

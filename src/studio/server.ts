@@ -14,10 +14,17 @@ import { ROOT } from "../config.ts";
 import { brainSettings, ledger, saveBrainSettings, spent, weigh } from "../brain/claude.ts";
 import { jobDir, listJobs, loadJob, saveJob, setStatus, type JobStatus } from "./jobs.ts";
 import { schedulerState } from "./schedule.ts";
+import { artOf, validStyle, validTheme } from "./art.ts";
+import { costumeSheet } from "./design.ts";
+import { BRAND_DIR, BRAND_THEMES } from "../animation/brand/brand.ts";
+import { styles } from "../animation/styles.ts";
 
 const UI = path.join(path.dirname(fileURLToPath(import.meta.url)), "ui.html");
 const SAMPLES = path.join(ROOT, "vendor", "vieneu", "samples");
 const SLUG = /^[a-z0-9-]+$/;
+const STYLE_SAMPLES = path.join(ROOT, "assets", "styles");
+/** Costume sheets being drawn again in a new style (by slug). */
+const redrawing = new Set<string>();
 const TYPES: Record<string, string> = { ".html": "text/html; charset=utf-8", ".mp4": "video/mp4", ".jpg": "image/jpeg", ".png": "image/png", ".wav": "audio/wav", ".txt": "text/plain; charset=utf-8", ".json": "application/json; charset=utf-8" };
 
 /** What each button does, by the job's status. */
@@ -73,8 +80,9 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
     if (req.method === "GET" && parts[1] === "job" && SLUG.test(parts[2] ?? "")) {
       const slug = parts[2]!, dir = jobDir(slug);
       const files = await fsp.readdir(dir).catch(() => [] as string[]);
+      const job = await loadJob(slug);
       return json(res, {
-        job: await loadJob(slug),
+        job, art: artOf(job), redrawing: redrawing.has(slug),
         plan: await readJson(path.join(dir, "plan.json")),
         project: await readJson(path.join(dir, "project.json")),
         sources: await readJson(path.join(dir, "sources.json")),
@@ -82,6 +90,37 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
         files,
         tokens: (await ledger()).filter((e) => e.job === slug),
       });
+    }
+    if (req.method === "GET" && parts[1] === "art") {
+      // The styles and intro/outro themes to choose from, with their samples when drawn.
+      const have = new Set([...(await fsp.readdir(STYLE_SAMPLES).catch(() => [])), ...(await fsp.readdir(path.join(BRAND_DIR, "clips")).catch(() => []))]);
+      return json(res, {
+        styles: Object.entries(styles()).map(([key, s]) => ({ key, name: s.name, for: s.for, sample: have.has(`${key}.jpg`) ? `/art/style/${key}.jpg` : null })),
+        themes: Object.entries(BRAND_THEMES).map(([key, t]) => ({ key, name: t.name, for: t.for, intro: have.has(`intro_${key}_16x9.mp4`) ? `/art/clip/intro_${key}_16x9.mp4` : null, outro: have.has(`outro_${key}_16x9.mp4`) ? `/art/clip/outro_${key}_16x9.mp4` : null })),
+      });
+    }
+    if (req.method === "POST" && parts[1] === "job" && SLUG.test(parts[2] ?? "") && parts[3] === "art") {
+      // The user's choice of style, intro and outro; a new style redraws the costume sheet.
+      const slug = parts[2]!, job = await loadJob(slug), b = await body(req) as Record<string, unknown>;
+      if (job.status === "writing" || job.status === "rejected") return json(res, { error: `không đổi được khi đang "${job.status}"` }, 400);
+      const art = artOf(job), before = art.style;
+      if (b.style !== undefined) { if (!validStyle(b.style)) return json(res, { error: "phong cách không có" }, 400); art.style = b.style; }
+      for (const k of ["intro", "outro"] as const) if (b[k] !== undefined) { if (!validTheme(b[k])) return json(res, { error: `${k} không có` }, 400); art[k] = b[k] as string; }
+      job.art = art;
+      await saveJob(job);
+      if (art.style !== before && (await fsp.stat(path.join(jobDir(slug), "cast.json")).catch(() => null)) && !redrawing.has(slug)) {
+        redrawing.add(slug);
+        costumeSheet(slug).catch((e) => console.error(`sheet ${slug}: ${(e as Error).message}`)).finally(() => redrawing.delete(slug));
+      }
+      return json(res, { job, art, redrawing: redrawing.has(slug) });
+    }
+    if (req.method === "POST" && parts[1] === "job" && SLUG.test(parts[2] ?? "") && parts[3] === "rerender") {
+      // The finished film again with the new look: no brain, only the render (tonight).
+      const job = await loadJob(parts[2]!);
+      if (job.status !== "video" && job.status !== "done") return json(res, { error: "chỉ render lại được video đã xong" }, 400);
+      job.stage = "ready";
+      await saveJob(job);
+      return json(res, { job: await setStatus(job, "producing", "bạn: render lại với phong cách / intro / outro mới") });
     }
     if (req.method === "POST" && parts[1] === "job" && SLUG.test(parts[2] ?? "") && parts[3]) {
       const job = await loadJob(parts[2]!), to = ACTIONS[parts[3]]?.[job.status];
@@ -116,6 +155,11 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
   if (req.method === "GET" && parts[0] === "files" && SLUG.test(parts[1] ?? "") && parts.slice(2).every((x) => NAME.test(x) && x !== ".." && x !== ".")
     && (parts.length === 3 || (parts.length === 4 && parts[2] === "shorts"))) {
     return sendFile(req, res, path.join(jobDir(parts[1]!), ...parts.slice(2)));
+  }
+  // Style samples and intro/outro previews.
+  if (req.method === "GET" && parts[0] === "art" && parts.length === 3 && NAME.test(parts[2]!) && !parts[2]!.startsWith(".")) {
+    if (parts[1] === "style") return sendFile(req, res, path.join(STYLE_SAMPLES, parts[2]!));
+    if (parts[1] === "clip") return sendFile(req, res, path.join(BRAND_DIR, "clips", parts[2]!));
   }
   if (req.method === "GET" && parts[0] === "voice" && parts[1] && !parts[1].includes("/") && !parts[1].includes("..")) {
     return sendFile(req, res, path.join(SAMPLES, `${parts[1]}.wav`));

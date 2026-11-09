@@ -49,6 +49,7 @@ Usage:
                                              videos; tokens) + the scheduler (light work in office hours, renders at night)
   npm run wata -- produce <job> --test 6   test the whole production on the first 6 scenes (projects/<job>-thu)
   npm run wata -- era <key> --title "<thời đại>"   research and build a missing era into the library (eras.json)
+  npm run wata -- brand [theme,…] [--lang en]   render the intro/outro themes (previews for the review page)
   npm run wata -- tokens                     what the brain (Claude) has spent: today, per job, per step
   npm run wata -- validate <timeline.json>   check a timeline without rendering
   npm run wata -- render <timeline.json> [--profile 9x16|16x9] [--encoder x264|qsv] [--force]
@@ -115,6 +116,7 @@ async function main(): Promise<number> {
       notes: { type: "string" },
       count: { type: "string" },
       era: { type: "string" },
+      lang: { type: "string" },
       model: { type: "string" },
       to: { type: "string" },
       tags: { type: "string" },
@@ -280,6 +282,17 @@ async function main(): Promise<number> {
       const { buildEra } = await import("./studio/era.ts");
       const era = await buildEra(file, { eraName: values.title, job: `era-${file}` }, console.log);
       console.log(`✔ ${file}: ${era.name} · ${Object.keys(era.archetypes).join(", ")}`);
+      return 0;
+    }
+
+    case "brand": {
+      // Every intro and outro theme, for the review page's previews (cached in assets/brand/clips).
+      const { BRAND_THEMES, brandClip, loadBrand } = await import("./animation/brand/brand.ts");
+      const brand = await loadBrand(values.lang);
+      if (!brand) throw new TimelineError("no assets/brand/brand.json");
+      for (const theme of file ? file.split(",") : Object.keys(BRAND_THEMES)) {
+        for (const kind of ["intro", "outro"] as const) console.log(`✔ ${(await brandClip(brand, kind, false, theme)).file}`);
+      }
       return 0;
     }
 

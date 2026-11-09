@@ -4,6 +4,7 @@
  * only stretched to the English voice), names translated once and kept, the way each line is
  * said chosen from words the face library understands. Writes plan.en.json and script.en.txt.
  */
+import { syncArt } from "./art.ts";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { think } from "../brain/claude.ts";
@@ -38,7 +39,7 @@ export async function translateJob(slug: string, log: (s: string) => void = cons
     `- Exactly the same number of scenes, and in each scene the same parts in the same order (the pictures are already made for them).`,
     `- Narration parts: who = "" and how = "". Dialogue parts: who = the speaker's English name (the same everywhere, from "names"), how = one of: ${HOW}.`,
     `- No quotation marks and no colons in the text.`,
-    `- The first scene greets the viewers as "Huy's Story Time"; the last asks them to subscribe to Huy's Story Time.`,
+    `- The first scene greets the viewers as "Huy Tells Tales"; the last asks them to subscribe to Huy Tells Tales.`,
     `- names: every speaker's Vietnamese name and the English one used.`,
     "",
     JSON.stringify({ title: plan.title, scenes: plan.scenes }),
@@ -91,6 +92,7 @@ export async function prepareEnglish(slug: string, log: (s: string) => void = co
 
 /** The English film (heavy), linked into the job folder as video.en.mp4 and thumbnail.en.jpg. */
 export async function renderEnglish(slug: string, log: (s: string) => void = console.log, project?: string): Promise<string> {
+  if (!project) await syncArt(await loadJob(slug), englishProject(slug));
   const out = await renderStory(project ?? englishProject(slug), { lang: "en", onLog: log });
   if (project) return out;
   for (const [from, to] of [[out, "video.en.mp4"], [out.replace(/\.mp4$/, "_thumbnail.jpg"), "thumbnail.en.jpg"]] as const) {

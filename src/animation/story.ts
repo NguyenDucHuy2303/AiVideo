@@ -330,11 +330,12 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
     // Intro, the film with the logo faint in the top corner, outro: one encode.
     const { watermark } = await brandStills(brand);
     // A short starts on the story at once (no intro) and ends on a short card.
-    const intro = opts.short ? undefined : await brandClip(brand, "intro", !!opts.vertical);
-    const outro = await brandClip(brand, opts.short ? "end" : "outro", !!opts.vertical);
+    // The intro and outro the user picked (project.json "brand": { "intro", "outro" }).
+    const intro = opts.short ? undefined : await brandClip(brand, "intro", !!opts.vertical, project.brand?.intro);
+    const outro = await brandClip(brand, opts.short ? "end" : "outro", !!opts.vertical, project.brand?.outro);
     const mark = Math.round(Math.min(W, H) * 0.11), pad = Math.round(Math.min(W, H) * 0.035);
     const norm = `aresample=${AUDIO_SAMPLE_RATE},aformat=sample_fmts=fltp:channel_layouts=stereo`;
-    inputs = ["-loop", "1", "-i", watermark, "-i", outro, ...(intro ? ["-i", intro] : [])];
+    inputs = ["-loop", "1", "-i", watermark, "-i", outro.file, ...(intro ? ["-i", intro.file] : [])];
     graph = [
       `${caption}[cap]`,
       `[3:v]scale=${mark}:${mark},format=rgba,colorchannelmixer=aa=0.6[mark]`,
@@ -343,7 +344,7 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
       `[4:v]scale=${W}:${H},setsar=1,fps=${FPS}[ov]`, `[4:a]${norm}[oa]`,
       ...(intro ? [`[5:v]scale=${W}:${H},setsar=1,fps=${FPS}[iv]`, `[5:a]${norm}[ia]`, "[iv][ia][film][filma][ov][oa]concat=n=3:v=1:a=1[v][a]"] : ["[film][filma][ov][oa]concat=n=2:v=1:a=1[v][a]"]),
     ];
-    length = total + (intro ? 3 : 0) + (opts.short ? 2.5 : 5);
+    length = total + (intro?.seconds ?? 0) + outro.seconds;
   } else graph = [`${caption}[v]`, ...mix.slice(0, 3), `${mix[3]}[a]`];
   await run(FFMPEG, [
     "-hide_banner", "-nostdin", "-y", "-v", "error", "-i", picture, "-i", voice, "-i", bed, ...inputs,

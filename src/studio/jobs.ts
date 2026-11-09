@@ -12,6 +12,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { exists, slugify } from "../utils/fs.ts";
 import { STUDIO_DIR } from "../brain/claude.ts";
+import type { Art } from "./art.ts";
 
 export const JOBS_DIR = path.join(STUDIO_DIR, "jobs");
 
@@ -36,6 +37,8 @@ export interface Job {
   shorts?: string[];
   /** The English version: voices ready ("ready"), film made ("done"), or what went wrong. */
   english?: "ready" | "done" | `failed: ${string}`;
+  /** Drawing style, intro and outro (art.ts): suggested with the cast, changeable on the review page. */
+  art?: Art;
   /** Claude was unavailable: the job is not tried again before this time. */
   retryAt?: string;
   error?: string;

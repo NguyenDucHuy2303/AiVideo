@@ -66,11 +66,39 @@ Thời đại mới thì thêm một khối vào `eras.json`, gồm mô tả, nh
 
 ### Tranh nền vẽ (`backdrops.ts`)
 
-Khi đã cài model vẽ (SD-Turbo), mỗi cảnh tự nhận một **tranh nền phong cách hoạt hình 2D** gồm trời, núi xa và đồng ruộng. Mỗi tổ hợp `set` × `time` × `era` chỉ vẽ một lần, lưu ở `assets/library/generated/backdrops/` để mọi truyện dùng lại.
+Khi đã cài model vẽ (FLUX.2 klein, `scripts/setup-imagegen-next.sh`; không có thì SD-Turbo), mỗi cảnh tự nhận một **tranh nền theo phong cách vẽ của phim** gồm trời, núi xa và đồng ruộng. Mỗi tổ hợp `set` × `time` × `era` × phong cách chỉ vẽ một lần, lưu ở `assets/library/generated/backdrops/` để mọi truyện dùng lại.
 - Tranh **chỉ có cảnh quan, không có nhà cửa**. Kiến trúc đúng thời đại (nhà sàn mái thuyền, cung vua Văn Lang) vẫn do thư viện vector vẽ, để không lọt kiến trúc sai thời.
 - Khi có tranh nền, các lớp vector xa (đồi, tre, cau, ruộng) tự ẩn, chỉ giữ đường đất, nhà và cỏ tiền cảnh. Tranh trôi chậm theo camera (thị sai), lặp kiểu soi gương khi lia xa, và mờ nhẹ ở cảnh cận.
 - Tắt cho một cảnh bằng `"backdrop": false`.
 - Lưu ý: SD-Turbo chạy `cfg 1` thì bỏ qua danh sách cấm (negative). Muốn nó tránh hẳn một thứ thì truyền `cfg: 1.5–2` (`GenerateOptions.cfg`), đổi lại tranh kém sắc nét hơn. Cách chắc ăn hơn: không nhắc thứ đó trong prompt, và để thư viện vector vẽ.
+
+## Phong cách vẽ (`library/styles.json`, `runtime/style.js`)
+
+Cùng một phim hoạt hình vector, khoác 7 phong cách. Phong cách của phim là `project.json` `"style"` (studio ghi từ lựa chọn trên trang duyệt); mọi cảnh tự nhận, cảnh nào ghi `"style"` riêng thì theo cảnh đó.
+
+| Khóa | Tên | Hợp với |
+|---|---|---|
+| `hien_dai` | Hoạt hình hiện đại | mặc định, bài học, truyện vui |
+| `dong_ho` | Tranh Đông Hồ | cổ tích, truyền thuyết Hùng Vương, làng quê, Tết |
+| `son_mai` | Sơn mài | lịch sử triều đại, cung đình, chiến công |
+| `lua` | Tranh lụa | truyện buồn, tình cảm, thơ mộng |
+| `mau_nuoc` | Màu nước | thú vật, thiên nhiên, bé nhỏ |
+| `sap_mau` | Sáp màu | bài học mẫu giáo, truyện vui ngắn |
+| `cat_giay` | Cắt giấy | ngụ ngôn, truyện thế giới, nhiều con vật |
+
+Mỗi phong cách gồm:
+- `backdrop`: lời tả lối vẽ cho máy vẽ tranh nền. `sky` (tùy chọn) thay lời tả bầu trời theo giờ, ví dụ trời sơn đen dát vàng cho sơn mài.
+- `look`: cách khoác cho phần vector, do `runtime/style.js` vẽ bằng code, không cần tải gì:
+  - `ink`, `line`: màu nét viền và hệ số độ dày nét.
+  - `saturate`, `brightness`, `contrast`, `sepia`: chỉnh màu cả khung.
+  - `posterize`: số mức màu, làm màu phẳng như tranh khắc gỗ.
+  - `wobble` `{scale, freq, boil}`: nét rung tay. `boil` là số lần mỗi giây nét "sôi" như vẽ lại từng hình.
+  - `shadow`: bóng đổ kiểu lớp giấy.
+  - `tint` (`tintAmt`, `tintMode`): lớp màu ám phủ lên khung.
+  - `texture`: vân chất liệu, một trong `paper` (giấy dó), `silk`, `lacquer`, `watercolor`, `crayon`, `cutpaper`; `textureAmt` là độ đậm.
+  - `flecks` (điệp lấp lánh), `sheen` (bóng sơn mài và mảnh vỏ trứng), `vignette`.
+
+Dáng và chuyển động nhân vật giữ nguyên; phong cách chỉ đổi nét, màu và chất liệu. Ảnh mẫu từng phong cách nằm ở `assets/styles/<khóa>.jpg` (trang duyệt hiện ra).
 
 ## Hiệu ứng (`runtime/fx.js`)
 
@@ -98,9 +126,15 @@ Giặc Ân kéo sang xâm lược nước ta. Vua Hùng (lo lắng): "Mau đi kh
 
 Kênh **Huy Kể Chuyện** (Nguyễn Đức Huy). Tên, khẩu hiệu và màu nằm trong `assets/brand/brand.json`. Logo là mặt trống đồng Đông Sơn (ngôi sao 14 cánh, vòng hoa văn, 6 chim Lạc bay quanh) với dải đỏ ghi tên kênh.
 - `logo.png` (1024², nền trong suốt), `watermark.png` (256², chỉ mặt trống).
-- `intro_16x9.mp4` (3 s): trống bay xoay vào, hào quang, tên kênh bật ra, tiếng trống, chuông.
-- `outro_16x9.mp4` (5 s): "Cảm ơn các bạn đã xem!", nút ĐĂNG KÝ được bấm thành ĐÃ ĐĂNG KÝ, chuông rung.
-- Mỗi khổ hình chỉ vẽ một lần. Sửa `brand.json` hoặc `brand.html` thì xóa các file trong `assets/brand/` (giữ `brand.json`) để vẽ lại.
+- Intro (3–3,5 s), outro (5 s: "Cảm ơn các bạn đã xem!", nút ĐĂNG KÝ được bấm thành ĐÃ ĐĂNG KÝ, chuông rung) và thẻ cuối Shorts (2,5 s) có **6 bộ**, chọn riêng intro và outro cho từng phim (`project.json` `"brand": { "intro": "den_long", "outro": "sach_truyen" }`, studio ghi từ trang duyệt):
+  - `trong_dong` (Trống đồng): mặt trống bay xoay vào trên nền đỏ (`brand.html`).
+  - `sach_truyen` (Sách truyện): cuốn sách đỏ mở trên bàn đèn, trống và tên kênh bật lên từ trang sách.
+  - `den_long` (Đêm hội đèn lồng): đèn lồng, đèn ông sao bay lên, mặt trống là mặt trăng.
+  - `mua_roi` (Múa rối nước): thủy đình lúc hoàng hôn, chú Tễu từ sau mành tre trồi lên vẫy chào, tên kênh hiện trên hoành phi.
+  - `dong_que` (Cánh diều đồng quê): diều sáo có mặt trống bay trên đồng lúa, dải tên kênh treo dưới diều.
+  - `cuon_thu` (Cuộn thư): cuộn thư mở trên nền sơn mài, tên kênh hiện như mực, đóng dấu son.
+  - Các bộ mới nằm trong `brand/themes.js`. Mỗi bộ có tiếng riêng (`INTRO_SFX` trong `brand.ts`).
+- Mỗi bộ × khổ hình × ngôn ngữ chỉ vẽ một lần, lưu ở `assets/brand/clips/`. Sửa `brand.json`, `brand.html` hay `themes.js` thì xóa file trong `clips/` để vẽ lại. `npm run wata -- brand` vẽ sẵn mọi bộ (video xem trước cho trang duyệt).
 - `cartoon` tự ghép: intro → phim (logo mờ góc phải trên) → outro, và xuất `out/<tên>_thumbnail.jpg` (1280×720). Thêm `--no-brand` để tắt.
 - Thumbnail: tiêu đề vàng viền đỏ, tự xuống tối đa 2 dòng và tự co cho vừa khung, dải khẩu hiệu phía trên, logo góc phải. Khung hình mặc định là cảnh cận câu thoại mạnh nhất. Muốn chọn tay thì ghi trong `project.json`: `"thumbnail": { "at": 36, "title": "Thánh Gióng", "subtitle": "Truyện cổ tích Việt Nam" }` (`at` = giây trong phim, không tính intro).
 
