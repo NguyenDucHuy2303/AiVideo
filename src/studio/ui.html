@@ -80,7 +80,7 @@ const TABS = [
   ["tokens", "Token", []],
 ];
 const STATUS = { writing: "đang viết", review: "chờ duyệt kịch bản", rewrite: "đang viết lại", approved: "đã duyệt, chờ làm", producing: "đang làm video", video: "chờ duyệt video", fix: "chờ sửa video", done: "xong", rejected: "đã bỏ", failed: "lỗi" };
-const TASK = { write: "viết kịch bản", prepare: "chuẩn bị video", render: "render video", shorts: "cắt Shorts", topics: "đề xuất chủ đề" };
+const TASK = { write: "viết kịch bản", prepare: "chuẩn bị video", render: "render video", shorts: "cắt Shorts", english: "chuẩn bị bản tiếng Anh", "english-render": "render bản tiếng Anh", topics: "đề xuất chủ đề" };
 let tab = "wait", jobs = [], current = null, sched = null;
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -146,6 +146,8 @@ async function show(slug) {
   else if (last?.info && /vấn đề/.test(last.info)) h += `<div class="warn">${esc(last.info)}</div>`;
   if (has("video.mp4")) h += `<section><h3>Video</h3><video controls preload="metadata" src="/files/${slug}/video.mp4" ${has("thumbnail.jpg") ? `poster="/files/${slug}/thumbnail.jpg"` : ""}></video>
     ${has("thumbnail.jpg") ? `<p><b>Thumbnail</b></p><img style="width:50%;border-radius:10px" src="/files/${slug}/thumbnail.jpg">` : ""}</section>`;
+  if (has("video.en.mp4")) h += `<section><h3>English version</h3><video controls preload="metadata" src="/files/${slug}/video.en.mp4" ${has("thumbnail.en.jpg") ? `poster="/files/${slug}/thumbnail.en.jpg"` : ""}></video></section>`;
+  else if (job.english) h += `<section><h3>English version</h3><div class="meta">${job.english === "ready" ? "Giọng tiếng Anh xong, render tối nay" : esc(job.english)}</div></section>`;
   if (job.shorts?.length) h += `<section><h3>Shorts (Reels, TikTok) · ${job.shorts.length} clip</h3><div style="display:flex;gap:14px;flex-wrap:wrap">${job.shorts.map((f) => `<video controls preload="metadata" style="width:240px;border-radius:12px" src="/files/${slug}/${f}"></video>`).join("")}</div></section>`;
   if (has("costumes.png")) h += `<section class="sheet"><h3>Bảng trang phục</h3><img src="/files/${slug}/costumes.png?${Date.now()}" onclick="zoom(this.src)"></section>`;
   else if (plan) h += `<section><h3>Bảng trang phục</h3><div class="meta">Đang vẽ…</div><p>${esc(plan.look)}</p></section>`;

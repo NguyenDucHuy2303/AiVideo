@@ -26,3 +26,24 @@ export function castVoices(cast: CastMember[], narrator: string): Record<string,
   }
   return out;
 }
+
+/** Kokoro voices for the English version (American and British), by the same rules. */
+const EN = {
+  male: { young: ["am_liam", "am_eric", "bm_lewis", "am_adam"], adult: ["am_michael", "bm_george", "am_adam", "bm_daniel"], elder: ["bm_george", "am_onyx", "bm_daniel"], villain: ["am_onyx", "am_fenrir", "bm_lewis"] },
+  female: { young: ["af_bella", "af_sarah", "bf_lily", "af_nicole"], adult: ["af_heart", "bf_emma", "af_sarah", "bf_isabella"], elder: ["bf_alice", "af_heart", "bf_emma"], villain: ["af_nicole", "bf_isabella", "af_kore"] },
+  child: { male: ["af_sky", "af_nova"], female: ["af_nova", "af_sky"] },
+};
+
+export function castVoicesEn(cast: CastMember[], narrator: string): Record<string, Voice> {
+  const used = new Map<string, number>([[narrator, 1]]);
+  const out: Record<string, Voice> = {};
+  for (const c of cast) {
+    const pool = c.age === "child" ? EN.child[c.gender] : EN[c.gender][c.villain ? "villain" : c.age === "elder" ? "elder" : c.age === "young" ? "young" : "adult"];
+    const voice = pool.find((v) => !used.has(v)) ?? pool.reduce((a, b) => ((used.get(a) ?? 0) <= (used.get(b) ?? 0) ? a : b));
+    const n = used.get(voice) ?? 0;
+    used.set(voice, n + 1);
+    const pitch = (c.age === "child" ? 3 : 0) + (n ? (n % 2 ? -2 : 2) : 0);
+    out[c.name] = pitch ? { voice, pitch } : voice;
+  }
+  return out;
+}

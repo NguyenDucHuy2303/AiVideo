@@ -1,15 +1,20 @@
 {
   "slug": "su-tich-ho-guom",
   "topic": "Sự tích Hồ Gươm",
-  "status": "writing",
+  "status": "review",
   "notes": [],
   "history": [
     {
       "at": "2026-11-09T03:44:54.662Z",
       "status": "writing"
+    },
+    {
+      "at": "2026-11-09T05:23:37.067Z",
+      "status": "review"
     }
   ],
   "kind": "truyền thuyết",
   "era": "le_so",
-  "summary": "Lê Thận kéo lưới được lưỡi gươm, Lê Lợi bắt được chuôi gươm, gươm thần giúp nghĩa quân Lam Sơn đánh thắng giặc Minh; Rùa Vàng đòi gươm ở hồ Tả Vọng, hồ đổi tên là Hồ Hoàn Kiếm."
+  "summary": "Lê Thận kéo lưới được lưỡi gươm, Lê Lợi bắt được chuôi gươm, gươm thần giúp nghĩa quân Lam Sơn đánh thắng giặc Minh; Rùa Vàng đòi gươm ở hồ Tả Vọng, hồ đổi tên là Hồ Hoàn Kiếm.",
+  "by": "claude-opus"
 }

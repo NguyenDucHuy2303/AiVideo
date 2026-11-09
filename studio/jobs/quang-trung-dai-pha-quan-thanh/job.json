@@ -1,15 +1,31 @@
 {
   "slug": "quang-trung-dai-pha-quan-thanh",
   "topic": "Quang Trung đại phá quân Thanh",
-  "status": "writing",
+  "status": "failed",
   "notes": [],
   "history": [
     {
       "at": "2026-11-09T03:44:54.663Z",
       "status": "writing"
+    },
+    {
+      "at": "2026-11-09T05:28:41.587Z",
+      "status": "failed",
+      "info": "Expected property name or '}' in JSON at position 1164 (line 22 column 6)"
+    },
+    {
+      "at": "2026-11-09T07:20:00Z",
+      "status": "writing",
+      "info": "thử lại bằng Claude (lần trước Claude lỗi nhất thời)"
+    },
+    {
+      "at": "2026-11-09T07:15:27.798Z",
+      "status": "failed",
+      "info": "Claude Code failed on write-script: interrupted"
     }
   ],
   "kind": "lịch sử",
   "era": "tay_son",
-  "summary": "Nguyễn Huệ lên ngôi Quang Trung, hành quân thần tốc ra Bắc, cho quân ăn Tết sớm, mùng 5 Tết Kỷ Dậu đại phá quân Thanh ở Ngọc Hồi, Đống Đa; dùng mộc bọc rơm ướt. Kể theo hướng anh hùng, không bạo lực chi tiết."
+  "summary": "Nguyễn Huệ lên ngôi Quang Trung, hành quân thần tốc ra Bắc, cho quân ăn Tết sớm, mùng 5 Tết Kỷ Dậu đại phá quân Thanh ở Ngọc Hồi, Đống Đa; dùng mộc bọc rơm ướt. Kể theo hướng anh hùng, không bạo lực chi tiết.",
+  "error": "Claude Code failed on write-script: interrupted"
 }

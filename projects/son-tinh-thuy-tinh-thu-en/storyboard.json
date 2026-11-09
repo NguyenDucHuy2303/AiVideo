@@ -1,0 +1,72 @@
+{
+  "title": "Son Tinh and Thuy Tinh",
+  "kind": "story",
+  "scenes": [
+    {
+      "narration": "Hello, my little friends! Why is it that every rainy season, the river water rises and rushes along? And why did our grandparents build such long, tall dikes? Today, Huy's Story Time will tell you the legend of Son Tinh and Thuy Tinh!",
+      "chapter": "Son Tinh and Thuy Tinh",
+      "onScreen": {},
+      "visual": {
+        "description": "ancient Vietnam",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Once upon a time, in the land of Van Lang, the eighteenth King Hung had a daughter named Mi Nuong. She was as pretty as a flower and gentle in her heart. Her father loved her very much. King Hung (happily): \"My daughter has grown up. I must find her a truly worthy husband.\" Mi Nuong (happily): \"Father, I will do as you wish.\"",
+      "chapter": "Son Tinh and Thuy Tinh",
+      "onScreen": {},
+      "visual": {
+        "description": "ancient Vietnam",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "The king sent messengers to every village. They blew horns to announce that he was looking for a husband for his daughter. The Messenger (shouting): \"Hear me, people of Van Lang! King Hung is looking for a husband for Princess Mi Nuong! Whoever is talented, come to the capital!\" The Villagers (surprised): \"Oh! Which young man will become the king's son-in-law?\"",
+      "chapter": "Son Tinh and Thuy Tinh",
+      "onScreen": {},
+      "visual": {
+        "description": "ancient Vietnam",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Soon after, two young men came to the capital to ask for the princess's hand. One came down from the mountains, and one came up from the sea. The Villagers (surprised): \"Look! Two such handsome young men! They do not look like ordinary people at all!\"",
+      "chapter": "Son Tinh and Thuy Tinh",
+      "onScreen": {},
+      "visual": {
+        "description": "ancient Vietnam",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "The first was Son Tinh, lord of the high Tan Vien Mountain. When he waved his hand to the east, sandbanks rose up in the east. When he waved his hand to the west, rows of hills grew up in the west. Son Tinh (firmly): \"Your Majesty, I am Son Tinh of Tan Vien Mountain. I ask to marry Princess Mi Nuong.\"",
+      "chapter": "Son Tinh and Thuy Tinh",
+      "onScreen": {},
+      "visual": {
+        "description": "ancient Vietnam",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "The second was Thuy Tinh, lord of the deep waters of the sea. He called the wind, and the wind came. He called the rain, and the rain came. Thuy Tinh (proudly): \"Your Majesty, I am Thuy Tinh, lord of the great sea. Only I am worthy of the princess!\"",
+      "chapter": "Son Tinh and Thuy Tinh",
+      "onScreen": {},
+      "visual": {
+        "description": "ancient Vietnam",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    }
+  ]
+}

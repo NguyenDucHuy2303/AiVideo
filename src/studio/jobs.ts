@@ -34,6 +34,10 @@ export interface Job {
   stage?: string;
   /** Shorts cut from the film (job folder paths), made at night after the film. */
   shorts?: string[];
+  /** The English version: voices ready ("ready"), film made ("done"), or what went wrong. */
+  english?: "ready" | "done" | `failed: ${string}`;
+  /** Claude was unavailable: the job is not tried again before this time. */
+  retryAt?: string;
   error?: string;
 }
 

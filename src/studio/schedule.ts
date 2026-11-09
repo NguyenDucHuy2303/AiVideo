@@ -14,6 +14,8 @@ import { exists } from "../utils/fs.ts";
 import { STUDIO_DIR, brainSettings } from "../brain/claude.ts";
 import { listJobs, newJob, jobDir, type Job } from "./jobs.ts";
 import { prepare, render, shorts, writeJob } from "./produce.ts";
+import { prepareEnglish, renderEnglish } from "./english.ts";
+import { loadJob, saveJob, setStatus } from "./jobs.ts";
 import { proposeTopics, eras } from "./topics.ts";
 
 const STATE = path.join(STUDIO_DIR, "scheduler.json");
@@ -66,17 +68,23 @@ async function log(line: string): Promise<void> {
 /** The next thing to do, by the rules above. */
 async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<{ what: string; slug?: string; run: () => Promise<unknown> } | undefined> {
   const known = await eras();
-  const first = (f: (j: Job) => boolean) => jobs.find(f);
+  // Jobs waiting for Claude to come back are left alone until their time.
+  const first = (f: (j: Job) => boolean) => jobs.find((j) => (!j.retryAt || new Date(j.retryAt) <= new Date()) && f(j));
   const say = (slug: string) => (l: string) => void log(`[${slug}] ${l.trim()}`);
   const ready = first((j) => j.status === "producing" && j.stage === "ready");
   if (!office && ready) return { what: "render", slug: ready.slug, run: () => render(ready.slug, say(ready.slug)) };
   const cut = first((j) => (j.status === "video" || j.status === "done") && !j.shorts);
   if (!office && cut) return { what: "shorts", slug: cut.slug, run: () => shorts(cut.slug, say(cut.slug)) };
+  // The English version of an approved film: voices by day, the film at night.
+  const enFilm = first((j) => j.status === "done" && j.english === "ready");
+  if (!office && enFilm) return { what: "english-render", slug: enFilm.slug, run: () => english(enFilm.slug, "render", say(enFilm.slug)) };
   // Paused by the user: only work that needs no Claude (renders) goes on.
   if ((await brainSettings()).paused) return undefined;
   // Producing a job whose era the library lacks waits for the era builder.
   const toPrepare = first((j) => (j.status === "approved" || j.status === "fix") && (!j.era || !!known[j.era]));
   if (toPrepare) return { what: "prepare", slug: toPrepare.slug, run: () => prepare(toPrepare.slug, say(toPrepare.slug)) };
+  const enPrep = first((j) => j.status === "done" && !j.english);
+  if (enPrep && !(await brainSettings()).paused) return { what: "english", slug: enPrep.slug, run: () => english(enPrep.slug, "prepare", say(enPrep.slug)) };
   const toWrite = first((j) => j.status === "writing" || j.status === "rewrite");
   if (toWrite) return { what: "write", slug: toWrite.slug, run: () => writeJob(toWrite.slug, say(toWrite.slug)) };
   const waiting = jobs.filter((j) => ["writing", "rewrite", "review"].includes(j.status)).length;
@@ -128,5 +136,21 @@ export async function runScheduler(): Promise<never> {
       await log(`✘ ${state.lastError}`);
     }
     await new Promise((r) => setTimeout(r, 30_000));
+  }
+}
+
+/** One step of a job's English version; its result is kept on the job (never fails the film). */
+async function english(slug: string, step: "prepare" | "render", log: (s: string) => void): Promise<void> {
+  try {
+    if (step === "prepare") await prepareEnglish(slug, log);
+    else await renderEnglish(slug, log);
+    const job = await loadJob(slug);
+    job.english = step === "prepare" ? "ready" : "done";
+    await saveJob(job);
+    await setStatus(job, job.status, step === "prepare" ? "bản tiếng Anh: giọng xong" : "bản tiếng Anh: xong");
+  } catch (err) {
+    const job = await loadJob(slug);
+    job.english = `failed: ${(err as Error).message.slice(0, 200)}`;
+    await saveJob(job);
   }
 }

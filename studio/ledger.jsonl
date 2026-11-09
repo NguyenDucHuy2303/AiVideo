@@ -31,3 +31,9 @@
 {"at":"2026-11-09T04:14:24.197Z","job":"era-ly","phase":"write","step":"build-era-ly","model":"opus","seconds":88,"ok":true,"input":2,"cacheWrite":22739,"cacheRead":1273,"output":9244,"usd":0.3692772}
 {"at":"2026-11-09T04:15:08.683Z","job":"ly-cong-uan-doi-do-ra-thang-long","phase":"write","step":"design-cast","model":"sonnet","seconds":44,"ok":true,"input":2,"cacheWrite":13701,"cacheRead":795,"output":7039,"usd":0.12693320000000002}
 {"at":"2026-11-09T04:15:57.703Z","job":"su-tich-ho-guom","phase":"write","step":"write-script","model":"opus","seconds":0,"ok":false,"input":0,"cacheWrite":0,"cacheRead":0,"output":0,"usd":0}
+{"at":"2026-11-09T04:56:50.283Z","job":"su-tich-ho-guom","phase":"write","step":"write-script","model":"opus","seconds":185,"ok":true,"input":2,"cacheWrite":17673,"cacheRead":1312,"output":14580,"usd":0.4332544}
+{"at":"2026-11-09T04:57:04.200Z","job":"era-le_so","phase":"write","step":"build-era-le_so","model":"opus","seconds":4,"ok":false,"input":0,"cacheWrite":0,"cacheRead":0,"output":0,"usd":0}
+{"at":"2026-11-09T05:07:49.501Z","job":"su-tich-ho-guom","phase":"write","step":"design-cast","model":"sonnet","seconds":4,"ok":false,"input":0,"cacheWrite":0,"cacheRead":0,"output":0,"usd":0}
+{"at":"2026-11-09T05:23:43.921Z","job":"quang-trung-dai-pha-quan-thanh","phase":"write","step":"write-script","model":"opus","seconds":2,"ok":false,"input":0,"cacheWrite":0,"cacheRead":0,"output":0,"usd":0}
+{"at":"2026-11-09T07:12:50.433Z","job":"son-tinh-thuy-tinh","phase":"produce","step":"translate-en","model":"sonnet","seconds":35,"ok":true,"input":2,"cacheWrite":8266,"cacheRead":0,"output":5925,"usd":0.092318}
+{"at":"2026-11-09T07:15:27.797Z","job":"quang-trung-dai-pha-quan-thanh","phase":"write","step":"write-script","model":"opus","seconds":0,"ok":false,"input":0,"cacheWrite":0,"cacheRead":0,"output":0,"usd":0}

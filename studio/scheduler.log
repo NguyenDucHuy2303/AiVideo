@@ -46,3 +46,19 @@
 2026-11-09 11:53:45 scheduler started (pid 246031)
 2026-11-09 11:53:45 → write su-tich-ho-guom (giờ hành chính)
 2026-11-09 11:53:45 [su-tich-ho-guom] research: Hồ Hoàn Kiếm, Lê Thái Tổ, Thuận Thiên Kiếm
+2026-11-09 11:56:50 [su-tich-ho-guom] write-script: Claude opus, 32.386 tokens
+2026-11-09 11:56:52 [su-tich-ho-guom] new era: le_so
+2026-11-09 11:57:00 [su-tich-ho-guom] era research: Nhà Lê sơ, Khởi nghĩa Lam Sơn, Nguyễn Trãi
+2026-11-09 11:57:04 [su-tich-ho-guom] build-era-le_so: Claude Code failed on build-era-le_so: /home/huynguyen/.vscode/extensions/anthropic.claude-code-2.1.319-linux-x64/resources/native-binary/claude exited with 1 → local gemma3:12b
+2026-11-09 12:07:45 [su-tich-ho-guom] era le_so written to library/eras.json (2 archetypes)
+2026-11-09 12:07:45 [su-tich-ho-guom] cast and costume sheet
+2026-11-09 12:07:49 [su-tich-ho-guom] design-cast: Claude Code failed on design-cast: /home/huynguyen/.vscode/extensions/anthropic.claude-code-2.1.319-linux-x64/resources/native-binary/claude exited with 1 → local gemma3:12b
+2026-11-09 12:23:30 [su-tich-ho-guom] le_loi: left out outfit gear (not in the library)
+2026-11-09 12:23:30 [su-tich-ho-guom] le_than: left out outfit gear (not in the library)
+2026-11-09 12:23:30 [su-tich-ho-guom] nghia_quan: left out outfit gear (not in the library)
+2026-11-09 12:23:37 → write quang-trung-dai-pha-quan-thanh (giờ hành chính)
+2026-11-09 12:23:41 [quang-trung-dai-pha-quan-thanh] research: Quang Trung, Trận Ngọc Hồi – Đống Đa
+2026-11-09 12:23:43 [quang-trung-dai-pha-quan-thanh] write-script: Claude Code failed on write-script: /home/huynguyen/.vscode/extensions/anthropic.claude-code-2.1.319-linux-x64/resources/native-binary/claude exited with 1 → local gemma3:12b
+2026-11-09 14:15:25 → write quang-trung-dai-pha-quan-thanh (giờ hành chính)
+2026-11-09 14:15:27 [quang-trung-dai-pha-quan-thanh] research: Quang Trung, Trận Ngọc Hồi – Đống Đa
+2026-11-09 14:16:48 scheduler started (pid 373950)

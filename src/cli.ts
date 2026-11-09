@@ -22,6 +22,8 @@ for (const signal of ["SIGINT", "SIGTERM"] as const) {
     if (wasInterrupted()) process.exit(130);
     console.error(`\n${signal}: stopping…`);
     killAllChildren();
+    // Long-running commands (the studio's web server) would never end by themselves.
+    setTimeout(() => process.exit(signal === "SIGTERM" ? 143 : 130), 3000);
   });
 }
 
@@ -33,7 +35,7 @@ Usage:
                                              local LLM (Ollama) writes projects/NAME/storyboard.json
   npm run wata -- story <script.txt> [--name NAME] [--title "…"] [--model gemma3:4b] [--force] [--render]
                                              your story script, word for word → animated story video (AI designs the pictures)
-  npm run wata -- build <storyboard.json> [--voice ID] [--speed 1.0] [--engine piper|vieneu|dummy] [--offline] [--voice-only] [--render]
+  npm run wata -- build <storyboard.json> [--voice ID] [--speed 1.0] [--engine piper|vieneu|kokoro|dummy] [--offline] [--voice-only] [--render]
                                              storyboard → TTS → photos (library, else Pexels/Openverse) → timeline.json (→ MP4)
   npm run wata -- animate <projects/NAME> [--force] [--model gemma3:4b] [--out anim]
                                              storyboard → cartoon scene scripts (projects/NAME/anim/sNN.json), designed by the local LLM
@@ -75,8 +77,8 @@ function parseEncoder(value: string | undefined): Encoder {
   return value;
 }
 
-function parseEngine(value: string | undefined): "piper" | "vieneu" | "dummy" | undefined {
-  if (value === undefined || value === "piper" || value === "vieneu" || value === "dummy") return value;
+function parseEngine(value: string | undefined): "piper" | "vieneu" | "kokoro" | "dummy" | undefined {
+  if (value === undefined || value === "piper" || value === "vieneu" || value === "kokoro" || value === "dummy") return value;
   throw new TimelineError(`unknown TTS engine "${value}" (use piper, vieneu or dummy)`);
 }
 

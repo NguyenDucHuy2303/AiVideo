@@ -9,7 +9,7 @@ import { silhouette } from "../story/actor.ts";
 import { actorPlacement, BACKGROUND_NEGATIVE, BACKGROUND_STYLE, effectsFor, musicSections, SHAPE_FOR, sfxEvents, type StorySceneInfo } from "../story/visuals.ts";
 import { acquireLock, exists, removeTmpFiles, sha256, writeFileAtomic } from "../utils/fs.ts";
 import { Logger } from "../utils/log.ts";
-import { DEFAULT_VOICE, ENGINES, VIENEU_DEFAULT_VOICE, VOICES } from "../tts/engines.ts";
+import { DEFAULT_VOICE, ENGINES, VIENEU_DEFAULT_VOICE, KOKORO_DEFAULT_VOICE, VOICES } from "../tts/engines.ts";
 import { narrateScene, type Narration } from "../tts/narrate.ts";
 import { appendToIndex, findOnline, imageSources, type Judge } from "../library/online.ts";
 import { acceptable, judgeFit } from "../library/tag.ts";
@@ -20,7 +20,7 @@ import { fallbackGradient, importImage, LIBRARY_DIR, loadLibrary, matchImage, to
 import { ProjectSettings, Storyboard, type StoryboardScene } from "./schema.ts";
 
 export interface BuildOptions {
-  engine?: "piper" | "vieneu" | "dummy";
+  engine?: "piper" | "vieneu" | "kokoro" | "dummy";
   /** Only the voice and the timeline: no photos, paintings or silhouettes (cartoon stories). */
   voiceOnly?: boolean;
   voice?: string;
@@ -96,7 +96,7 @@ export async function buildProject(storyboardFile: string, options: BuildOptions
   const storyboard = await loadStoryboard(abs);
   const settings = await loadSettings(projectDir, options);
   const engine = ENGINES[settings.engine]!;
-  const voice = settings.voice ?? (settings.engine === "vieneu" ? VIENEU_DEFAULT_VOICE : DEFAULT_VOICE);
+  const voice = settings.voice ?? (settings.engine === "vieneu" ? VIENEU_DEFAULT_VOICE : settings.engine === "kokoro" ? KOKORO_DEFAULT_VOICE : DEFAULT_VOICE);
   const warnings: string[] = [];
 
   if (settings.engine === "piper") {

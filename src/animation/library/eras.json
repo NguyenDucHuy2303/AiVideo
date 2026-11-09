@@ -4079,5 +4079,48 @@
         }
       }
     }
+  },
+  "le_so": {
+    "name": "Nhà Hậu Lê và sự khởi đầu của một đế chế",
+    "stories": [
+      "Nhà Hậu Lê lên ngôi hoàng đế, mở ra cơ nghiệp nhà Hậu Lê kéo dài gần 400 năm.",
+      "Bối cảnh: Nhà Minh xâm lược - những năm cuối thế kỷ 14, Đại Việt dưới sự cai trị của nhà Trần bước vào một cuộc khủng hoảng sâu sắc trên nhiều phương diện...",
+      "Nguyễn Trãi - Người khai quốc công thần: Từ sự nghiệp dưới nhà Hồ đến cuộc Khởi nghĩa Lam Sơn",
+      "Sự cai trị của nhà Minh - sự đồng hóa và những xung đột"
+    ],
+    "draw": [
+      "Bối cảnh: Nhà Minh xâm lược",
+      "Nguyễn Trãi"
+    ],
+    "avoid": [
+      "thân thế"
+    ],
+    "customs": [
+      "Sử dụng các từ ngữ, thuật ngữ lịch sử và văn hóa Việt Nam để diễn tả một cách chính xác và khách quan",
+      "Tập trung vào các sự kiện, nhân vật và mối quan hệ giữa họ",
+      "Sử dụng ngôn ngữ rõ ràng, mạch lạc và dễ hiểu",
+      "Đảm bảo tính chính xác về mặt lịch sử và văn hóa",
+      "Sử dụng các hình ảnh, biểu tượng và phép ẩn dụ để tăng tính biểu cảm và gợi cảm"
+    ],
+    "sources": [
+      "Đại Việt sử ký toàn thư",
+      "Lịch triều hiến chương loại chí",
+      "Ngữ văn 10 (NXB Giáo dục Việt Nam)"
+    ],
+    "architecture": {
+      "house": "thatch",
+      "palace": "thatch"
+    },
+    "backdrop": "1400s",
+    "archetypes": {
+      "hero": {
+        "name": "Nguyễn Trãi",
+        "description": "A brilliant strategist and writer who played a pivotal role in the Lam Son uprising, contributing significantly to the establishment of the Le Dynasty."
+      },
+      "villain": {
+        "name": "Minh Thành Tổ",
+        "description": "The founder of the Ming Dynasty, driven by imperial ambitions and a desire to expand China's influence."
+      }
+    }
   }
 }

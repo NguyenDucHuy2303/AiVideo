@@ -13,7 +13,7 @@ import path from "node:path";
 import { ROOT } from "../config.ts";
 import { exists } from "../utils/fs.ts";
 import { run } from "../utils/process.ts";
-import { BrainPaused, claudeProvider } from "../brain/claude.ts";
+import { BrainPaused, BrainUnavailable, claudeProvider } from "../brain/claude.ts";
 import { animate } from "../animation/compile/animate.ts";
 import { withBackdrop } from "../animation/backdrops.ts";
 import { loadScene } from "../animation/render.ts";
@@ -30,6 +30,12 @@ async function fail(slug: string, err: unknown, back?: JobStatus): Promise<Job> 
   const job = await loadJob(slug);
   // Paused by the user: the job waits where it was, it has not failed.
   if (err instanceof BrainPaused) return back && job.status !== back ? setStatus(job, back, "chờ: Claude tạm dừng") : job;
+  // Claude unavailable for now: wait half an hour, then the scheduler tries again.
+  if (err instanceof BrainUnavailable) {
+    job.retryAt = new Date(Date.now() + 30 * 60_000).toISOString();
+    await saveJob(job);
+    return setStatus(job, back ?? job.status, `chờ thử lại: ${(err as Error).message.slice(0, 160)}`);
+  }
   job.error = (err as Error).message;
   return setStatus(job, "failed", job.error.slice(0, 300));
 }

@@ -149,6 +149,8 @@ export interface StoryOptions {
   range?: [number, number];
   /** A short (Reels, Shorts, TikTok): no intro, a 2.5 s end card instead of the outro, no thumbnail. */
   short?: boolean;
+  /** The brand's language (brand.json "languages"): "en" for the English version. */
+  lang?: string;
   /** Intro, logo, outro and thumbnail of the channel (default: on when assets/brand/brand.json exists). */
   brand?: boolean;
   onLog?: (s: string) => void;
@@ -314,7 +316,7 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
 
   const out = path.join(dir, "out", `${slugify(storyboard.title || path.basename(dir))}-hoat-hinh${variant}_${shape}.mp4`);
   await fs.mkdir(path.dirname(out), { recursive: true });
-  const brand = opts.brand === false ? undefined : await loadBrand();
+  const brand = opts.brand === false ? undefined : await loadBrand(opts.lang);
   const esc = (p: string) => p.replace(/\\/g, "\\\\").replace(/:/g, "\\:").replace(/'/g, "\\'");
   const mix = [
     "[1:a]apad,asplit=2[voice][key]",

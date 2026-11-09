@@ -8,7 +8,13 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { think } from "../brain/claude.ts";
 import { splitSpeakers } from "../tts/narrate.ts";
-import { jobDir } from "./jobs.ts";
+import { jobDir, loadJob } from "./jobs.ts";
+import { ROOT } from "../config.ts";
+import { exists } from "../utils/fs.ts";
+import { run } from "../utils/process.ts";
+import { renderStory } from "../animation/story.ts";
+import { castVoicesEn } from "./cast.ts";
+import type { Designed } from "./design.ts";
 import { toScript, type Plan } from "./write.ts";
 
 const HOW = "happily, joyfully, laughing, sadly, crying, worried, scared, angrily, surprised, shouting, firmly, proudly, tired";
@@ -49,4 +55,48 @@ export async function translateJob(slug: string, log: (s: string) => void = cons
   await fs.writeFile(path.join(dir, "plan.en.json"), JSON.stringify(en, null, 2));
   await fs.writeFile(path.join(dir, "script.en.txt"), script);
   return en;
+}
+
+const EN_NARRATOR = "bm_fable";
+export const englishProject = (slug: string) => path.join(ROOT, "projects", `${slug}-en`);
+
+/**
+ * The English project next to the Vietnamese one: its scenes (the pictures) copied, the English
+ * script as the narration, Kokoro voices by character, then the English voice build.
+ */
+export async function prepareEnglish(slug: string, log: (s: string) => void = console.log, test?: { vi: string; en: string; scenes: number }): Promise<string> {
+  const dir = jobDir(slug), vi = test?.vi ?? path.join(ROOT, "projects", slug), en = test?.en ?? englishProject(slug);
+  if (!(await exists(path.join(vi, "anim")))) throw new Error("the Vietnamese version is not made yet");
+  const plan = (await exists(path.join(dir, "plan.en.json"))) ? JSON.parse(await fs.readFile(path.join(dir, "plan.en.json"), "utf8")) : await translateJob(slug, log);
+  await fs.mkdir(path.join(en, "anim"), { recursive: true });
+  for (const f of await fs.readdir(path.join(vi, "anim"))) if (/^s\d.*\.json$|^cast/.test(f)) await fs.copyFile(path.join(vi, "anim", f), path.join(en, "anim", f));
+  const script = await fs.readFile(path.join(dir, "script.en.txt"), "utf8");
+  await fs.writeFile(path.join(en, "script.txt"), script);
+  const lines = script.trim().split("\n").slice(1, test ? test.scenes + 1 : undefined);
+  await fs.writeFile(path.join(en, "storyboard.json"), JSON.stringify({ title: plan.title, kind: "story", scenes: lines.map((narration) => ({ narration, chapter: plan.title, onScreen: {}, visual: { description: "ancient Vietnam", mood: "calm" }, camera: "ken_burns", transition: "cut" })) }, null, 2));
+  // The same actors speak, under their English names.
+  const cast: Designed[] = JSON.parse(await fs.readFile(path.join(dir, "cast.json"), "utf8"));
+  const speakers: Record<string, string[]> = {};
+  for (const c of cast) for (const viName of c.speaks) {
+    const enName = (plan.names as { vi: string; en: string }[]).find((n) => n.vi === viName)?.en ?? viName;
+    (speakers[enName] ??= []).push(c.id);
+  }
+  const job = await loadJob(slug);
+  const vproj = JSON.parse(await fs.readFile(path.join(vi, "project.json"), "utf8"));
+  await fs.writeFile(path.join(en, "project.json"), JSON.stringify({ ...vproj, engine: "kokoro", voice: EN_NARRATOR, speed: 1.0, voices: castVoicesEn(plan.cast, EN_NARRATOR), speakers, thumbnail: { title: plan.title, subtitle: job.kind === "lịch sử" ? "Vietnamese History for Kids" : "Vietnamese Folk Tales" } }, null, 2));
+  log("  English voices");
+  await run(process.execPath, [path.join(ROOT, "src", "cli.ts"), "build", path.join(en, "storyboard.json"), "--voice-only"], { cwd: ROOT, timeoutMs: 60 * 60_000 });
+  return en;
+}
+
+/** The English film (heavy), linked into the job folder as video.en.mp4 and thumbnail.en.jpg. */
+export async function renderEnglish(slug: string, log: (s: string) => void = console.log, project?: string): Promise<string> {
+  const out = await renderStory(project ?? englishProject(slug), { lang: "en", onLog: log });
+  if (project) return out;
+  for (const [from, to] of [[out, "video.en.mp4"], [out.replace(/\.mp4$/, "_thumbnail.jpg"), "thumbnail.en.jpg"]] as const) {
+    const target = path.join(jobDir(slug), to);
+    await fs.rm(target, { force: true });
+    await fs.link(from, target).catch(() => fs.copyFile(from, target));
+  }
+  return out;
 }

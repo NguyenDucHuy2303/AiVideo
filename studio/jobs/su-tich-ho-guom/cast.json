@@ -1,0 +1,225 @@
+[
+  {
+    "id": "le_loi",
+    "name": "Nguyễn Trãi",
+    "kind": "human",
+    "look": {
+      "name": "Nguyễn Trãi",
+      "description": "A brilliant strategist and writer who played a pivotal role in the Lam Son uprising, contributing significantly to the establishment of the Le Dynasty.",
+      "build": "strong",
+      "skin": "#e8b27c",
+      "hair": {
+        "style": "bun",
+        "color": "brown"
+      },
+      "headwear": "feather_band",
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "button",
+        "brows": "thick",
+        "iris": "#e0aa74"
+      },
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "brown"
+        }
+      },
+      "prop": {
+        "type": "sword",
+        "props": [
+          {
+            "type": "iron_whip",
+            "broken_whip": true
+          },
+          {
+            "type": "bamboo spear",
+            "color": "green"
+          },
+          {
+            "type": "bronze_axe",
+            "color": "brown"
+          },
+          {
+            "type": "shield",
+            "color": "brown"
+          },
+          {
+            "type": "horn",
+            "color": "brown"
+          }
+        ],
+        "scale": 1
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Dân làng: 'Trời ơi, nhà tôi chẳng còn hạt thóc nào nữa rồi.'",
+      "Lê Lợi: 'Hỡi anh em! Chúng ta cùng đứng lên đuổi giặc, cứu dân cứu nước!'",
+      "Nghĩa quân: 'Xin theo chủ tướng!'",
+      "Lê Lợi: 'Anh em, tiến lên!'",
+      "Nghĩa quân: 'Giặc chạy rồi! Giặc chạy rồi!'",
+      "Lê Lợi: 'Đất nước thanh bình rồi. Nhìn mặt hồ yên ả, lòng ta thật vui.'",
+      "Lê Lợi: 'Gươm thần sao lại rung lên thế này?'",
+      "Lê Lợi: 'Đa tạ Long Quân đã giúp nước ta. Nay ta xin hoàn trả gươm thần.'",
+      "Lê Lợi: 'Hồ này sẽ nhắc con cháu đời đời nhớ ngày đánh đuổi giặc Minh.'"
+    ],
+    "role": "Chủ tướng nghĩa quân Lam Sơn",
+    "designed": true
+  },
+  {
+    "id": "le_than",
+    "name": "Lê Thận",
+    "kind": "human",
+    "look": {
+      "name": "Nguyễn Trãi",
+      "description": "A brilliant strategist and writer who played a pivotal role in the Lam Son uprising, contributing significantly to the establishment of the Le Dynasty.",
+      "build": "slim",
+      "skin": "#e0aa74",
+      "hair": {
+        "style": "bun",
+        "color": "brown"
+      },
+      "headwear": "khan_van",
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "button",
+        "brows": "thick",
+        "iris": "#d9a06c"
+      },
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "brown"
+        }
+      },
+      "prop": {
+        "type": "sword",
+        "props": [
+          {
+            "type": "iron_whip",
+            "broken_whip": true
+          },
+          {
+            "type": "bamboo spear",
+            "color": "green"
+          },
+          {
+            "type": "bronze_axe",
+            "color": "brown"
+          },
+          {
+            "type": "shield",
+            "color": "brown"
+          },
+          {
+            "type": "horn",
+            "color": "brown"
+          }
+        ],
+        "scale": 1
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Lê Thận: 'Ơ, cá đâu chẳng thấy, chỉ có thanh sắt cũ thôi à?'",
+      "Lê Thận: 'Trời ơi, một con rùa lớn quá!'",
+      "Lê Thận: 'Ha ha! Một lưỡi gươm!'",
+      "Lê Thận: 'Thưa, đó là thanh sắt tôi kéo lưới được đấy ạ.'",
+      "Lê Thận: 'Xin theo chủ tướng!'",
+      "Lê Thận: 'Đa tạ Long Quân đã giúp nước ta. Nay ta xin hoàn trả gươm thần.'"
+    ],
+    "role": "Người đánh cá kéo lưới được lưỡi gươm",
+    "designed": true
+  },
+  {
+    "id": "rua_vang",
+    "name": "Rùa Vàng",
+    "kind": "animal",
+    "look": {
+      "name": "Minh Thành Tổ",
+      "description": "The founder of the Ming Dynasty, driven by imperial ambitions and a desire to expand China's influence.",
+      "species": "turtle",
+      "color": "gold"
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Rùa Vàng: 'Xin bệ hạ hoàn gươm lại cho Long Quân!'"
+    ],
+    "role": "Sứ giả của Long Quân",
+    "designed": true
+  },
+  {
+    "id": "nghia_quan",
+    "name": "Nghĩa quân",
+    "kind": "human",
+    "look": {
+      "name": "Minh Thành Tổ",
+      "description": "The founder of the Ming Dynasty, driven by imperial ambitions and a desire to expand China's influence.",
+      "build": "average",
+      "skin": "#d0a070",
+      "hair": {
+        "style": "bun",
+        "color": "brown"
+      },
+      "headwear": "helmet",
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "button",
+        "brows": "thin",
+        "iris": "#d9a06c"
+      },
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "brown"
+        }
+      },
+      "prop": {
+        "type": "sword",
+        "props": [
+          {
+            "type": "iron_whip",
+            "broken_whip": true
+          },
+          {
+            "type": "bamboo spear",
+            "color": "green"
+          },
+          {
+            "type": "bronze_axe",
+            "color": "brown"
+          },
+          {
+            "type": "shield",
+            "color": "brown"
+          },
+          {
+            "type": "horn",
+            "color": "brown"
+          }
+        ],
+        "scale": 1
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Nghĩa quân: 'Thưa chủ tướng, tôi xin theo ngài đánh đuổi giặc!'",
+      "Nghĩa quân: 'Xin theo chủ tướng!'",
+      "Nghĩa quân: 'Giặc chạy rồi! Giặc chạy rồi!'",
+      "Nghĩa quân: 'Đa tạ Long Quân đã giúp nước ta. Nay ta xin hoàn trả gươm thần.'"
+    ],
+    "role": "Người lính nghĩa quân Lam Sơn",
+    "designed": true
+  }
+]

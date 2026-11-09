@@ -67,7 +67,7 @@ export type StoryboardScene = z.output<typeof StoryboardScene>;
 
 /** project.json — settings chosen by a person, never by the LLM. All optional; CLI flags override. */
 export const ProjectSettings = z.object({
-  engine: z.enum(["piper", "vieneu", "dummy"]).default("piper"),
+  engine: z.enum(["piper", "vieneu", "kokoro", "dummy"]).default("piper"),
   voice: z.string().optional(),
   /** Characters' voices, by the name used in `Tên: "…"` lines: a voice, or { voice, pitch, speed }. */
   voices: z.record(z.string(), z.union([z.string(), z.object({ voice: z.string(), pitch: z.number().min(-12).max(12).optional(), speed: z.number().min(0.5).max(2).optional() })])).default({}),

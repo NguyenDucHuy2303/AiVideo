@@ -66,6 +66,8 @@ export async function spent(filter: { job?: string; phase?: Phase; today?: boole
 export class BudgetExceeded extends Error {}
 /** Claude is paused by the user: work that needs it waits (it does not fall back). */
 export class BrainPaused extends Error {}
+/** Claude failed twice and no capable local model is installed: the work waits and retries. */
+export class BrainUnavailable extends Error {}
 
 /** Change the brain's settings (from the studio page): caps, pause. */
 export async function saveBrainSettings(change: Partial<BrainSettings>): Promise<BrainSettings> {
@@ -135,7 +137,11 @@ export async function askClaude(a: Ask): Promise<{ text: string; data?: unknown;
   let ok = false, usage: Usage = { input: 0, cacheWrite: 0, cacheRead: 0, output: 0, usd: 0 };
   try {
     const { stdout } = await run(bin, args, { cwd, input: a.prompt, timeoutMs: a.timeoutMs ?? 15 * 60_000 }).catch((err) => {
-      throw new Error(`Claude Code failed on ${a.step}: ${((err as { stderrTail?: string }).stderrTail || (err as Error).message).trim().slice(-400)}`);
+      // Claude Code reports most failures (limits, overload) as a JSON result on stdout.
+      const e = err as { stderrTail?: string; stdoutTail?: string; message: string };
+      let why = e.stderrTail?.trim() || "";
+      try { const j = JSON.parse((e.stdoutTail ?? "").trim().split("\n").at(-1) ?? ""); why = [j.result, j.api_error_status, j.subtype].filter(Boolean).join(" · ") || why; } catch {}
+      throw new Error(`Claude Code failed on ${a.step}: ${(why || e.message).slice(-400)}`);
     });
     out = JSON.parse(stdout);
     const u = out.usage ?? {};
@@ -156,26 +162,31 @@ export async function askClaude(a: Ask): Promise<{ text: string; data?: unknown;
  */
 export async function think<T = unknown>(a: Ask & { schema: object }, log: (s: string) => void = () => {}): Promise<{ data: T; by: string }> {
   try {
-    const r = await askClaude(a);
+    // A failed call is tried once more after a pause (overload, a short limit) before giving up.
+    const r = await askClaude(a).catch(async (err) => {
+      if (err instanceof BudgetExceeded || err instanceof BrainPaused || wasInterrupted()) throw err;
+      log(`  ${a.step}: ${(err as Error).message} — trying again in 60 s`);
+      await new Promise((res) => setTimeout(res, 60_000));
+      return askClaude(a);
+    });
     log(`  ${a.step}: Claude ${a.model ?? "sonnet"}, ${weigh(r.usage).toLocaleString("vi")} tokens`);
     return { data: r.data as T, by: `claude-${a.model ?? "sonnet"}` };
   } catch (err) {
     // Paused, or the studio is shutting down: stop here (the job is picked up again later).
     if (err instanceof BrainPaused || wasInterrupted()) throw err;
     const cfg = await brainSettings();
+    // Only a capable local model may stand in (the small one ruins long scripts): else wait.
+    const local = ollama(cfg.fallbackModel);
+    try { await local.check(); } catch {
+      throw new BrainUnavailable(`${(err as Error).message}; ${cfg.fallbackModel} is not installed, so the work waits and retries`);
+    }
     log(`  ${a.step}: ${(err as Error).message} → local ${cfg.fallbackModel}`);
-    const local = await localModel(cfg.fallbackModel);
     const text = await local.chat({ messages: [{ role: "system", content: a.system }, { role: "user", content: a.prompt }], schema: a.schema, temperature: 0.7 });
     await local.release();
     return { data: JSON.parse(text) as T, by: `ollama-${local.model}` };
   }
 }
 
-/** The wanted local model, or the small one when it is not pulled yet. */
-async function localModel(wanted: string): Promise<LlmProvider> {
-  const p = ollama(wanted);
-  try { await p.check(); return p; } catch { return ollama(); }
-}
 
 /**
  * The brain as an LlmProvider, for code written for the local model (scene planning): each

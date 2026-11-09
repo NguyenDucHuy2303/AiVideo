@@ -125,12 +125,15 @@ const VIENEU_WORKER = path.join(path.dirname(fileURLToPath(import.meta.url)), "v
 /** The model loads in the first request: allow for it. */
 const VIENEU_FIRST_MS = 10 * 60_000;
 
-let worker: { proc: ChildProcess; queue: ((reply: { ok?: boolean; error?: string; ready?: boolean }) => void)[]; ready: Promise<void> } | undefined;
+type Worker = { proc: ChildProcess; queue: ((reply: { ok?: boolean; error?: string; ready?: boolean }) => void)[]; ready: Promise<void> };
+const workers = new Map<string, Worker>();
 
-function vieneuWorker(): NonNullable<typeof worker> {
-  if (worker && worker.proc.exitCode === null) return worker;
-  const proc = spawn(VIENEU_PYTHON, [VIENEU_WORKER], { stdio: ["pipe", "pipe", "pipe"] });
-  const queue: NonNullable<typeof worker>["queue"] = [];
+/** A Python worker kept alive for the build (one per engine): JSON lines in, JSON lines out. */
+function pyWorker(name: string, python: string, script: string): Worker {
+  const running = workers.get(name);
+  if (running && running.proc.exitCode === null) return running;
+  const proc = spawn(python, [script], { stdio: ["pipe", "pipe", "pipe"] });
+  const queue: Worker["queue"] = [];
   let buffer = "", stderr = "";
   proc.stdout!.setEncoding("utf8").on("data", (d: string) => {
     buffer += d;
@@ -143,23 +146,23 @@ function vieneuWorker(): NonNullable<typeof worker> {
     }
   });
   proc.stderr!.setEncoding("utf8").on("data", (d: string) => (stderr = (stderr + d).slice(-2000)));
-  proc.on("exit", (code) => { for (const q of queue.splice(0)) q({ error: `VieNeu worker exited (${code}): ${stderr.trim().split("\n").slice(-3).join(" ")}` }); });
+  proc.on("exit", (code) => { for (const q of queue.splice(0)) q({ error: `${name} worker exited (${code}): ${stderr.trim().split("\n").slice(-3).join(" ")}` }); });
   // Don't keep Node alive for it (its pipes neither), and don't leave it behind.
   proc.unref();
   for (const s of [proc.stdin, proc.stdout, proc.stderr]) (s as unknown as { unref?: () => void })?.unref?.();
   process.once("exit", () => proc.kill());
-  const ready = new Promise<void>((resolve, reject) => queue.push((r) => (r.ready ? resolve() : reject(new Error(r.error ?? "VieNeu worker did not start")))));
-  worker = { proc, queue, ready };
-  return worker;
+  const ready = new Promise<void>((resolve, reject) => queue.push((r) => (r.ready ? resolve() : reject(new Error(r.error ?? `${name} worker did not start`)))));
+  const w = { proc, queue, ready };
+  workers.set(name, w);
+  return w;
 }
 
-function vieneuRequest(text: string, voice: string, out: string): Promise<void> {
-  const w = vieneuWorker();
+function workerRequest(w: Worker, name: string, text: string, voice: string, out: string): Promise<void> {
   // The timer also keeps Node waiting while the model loads (the worker itself is unref'd).
   return new Promise<void>((resolve, reject) => {
-    const timer = setTimeout(() => reject(new Error("VieNeu took too long")), VIENEU_FIRST_MS);
+    const timer = setTimeout(() => reject(new Error(`${name} took too long`)), VIENEU_FIRST_MS);
     w.ready.then(() => {
-      w.queue.push((r) => { clearTimeout(timer); r.ok ? resolve() : reject(new Error(r.error ?? "VieNeu failed")); });
+      w.queue.push((r) => { clearTimeout(timer); r.ok ? resolve() : reject(new Error(r.error ?? `${name} failed`)); });
       w.proc.stdin!.write(`${JSON.stringify({ text, voice, out })}\n`);
     }, (err: Error) => { clearTimeout(timer); reject(err); });
   });
@@ -175,7 +178,7 @@ export const vieneu: TtsEngine = {
   async synthesize(text, outWav, opts) {
     const raw = `${outWav}.raw.wav`;
     try {
-      await vieneuRequest(text, opts.voice, raw);
+      await workerRequest(pyWorker("VieNeu", VIENEU_PYTHON, VIENEU_WORKER), "VieNeu", text, opts.voice, raw);
       // 48 kHz from the model; speed changes keep the pitch (atempo).
       const af = voiceFilters(opts.speed, opts.pitch);
       await run(FFMPEG, ["-hide_banner", "-nostdin", "-y", "-v", "error", "-i", raw, ...(af.length ? ["-af", af.join(",")] : []), "-ac", "1", outWav], { timeoutMs: TIMEOUT_MS });
@@ -185,4 +188,31 @@ export const vieneu: TtsEngine = {
   },
 };
 
-export const ENGINES: Record<string, TtsEngine> = { piper, dummy, vieneu };
+/**
+ * Kokoro-82M (scripts/setup-kokoro.sh, Apache-2.0): English (American af_/am_, British bf_/bm_)
+ * and a few other languages, for the English versions of the videos.
+ */
+export const KOKORO_DIR = process.env.KOKORO_DIR ?? path.join(ROOT, "vendor", "kokoro");
+export const KOKORO_DEFAULT_VOICE = "af_heart";
+const KOKORO_PYTHON = path.join(KOKORO_DIR, "venv", "bin", "python");
+const KOKORO_WORKER = path.join(path.dirname(fileURLToPath(import.meta.url)), "kokoro_worker.py");
+
+export const kokoro: TtsEngine = {
+  id: "kokoro",
+  async fingerprint(opts) {
+    if (!(await exists(KOKORO_PYTHON))) throw new Error(`Kokoro is not installed (${KOKORO_DIR}). Run: bash scripts/setup-kokoro.sh`);
+    return `kokoro:v1.0:${opts.voice}:${opts.speed}${opts.pitch ? `:p${opts.pitch}` : ""}`;
+  },
+  async synthesize(text, outWav, opts) {
+    const raw = `${outWav}.raw.wav`;
+    try {
+      await workerRequest(pyWorker("Kokoro", KOKORO_PYTHON, KOKORO_WORKER), "Kokoro", text, opts.voice, raw);
+      const af = voiceFilters(opts.speed, opts.pitch);
+      await run(FFMPEG, ["-hide_banner", "-nostdin", "-y", "-v", "error", "-i", raw, ...(af.length ? ["-af", af.join(",")] : []), "-ar", "48000", "-ac", "1", outWav], { timeoutMs: TIMEOUT_MS });
+    } finally {
+      await fs.rm(raw, { force: true });
+    }
+  },
+};
+
+export const ENGINES: Record<string, TtsEngine> = { piper, dummy, vieneu, kokoro };

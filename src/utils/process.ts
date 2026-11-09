@@ -2,9 +2,12 @@ import { spawn, type ChildProcess } from "node:child_process";
 
 export class ProcessError extends Error {
   readonly stderrTail: string;
-  constructor(message: string, stderrTail: string) {
+  /** What the program printed before failing (some report their errors there). */
+  readonly stdoutTail: string;
+  constructor(message: string, stderrTail: string, stdoutTail = "") {
     super(message);
     this.stderrTail = stderrTail;
+    this.stdoutTail = stdoutTail;
   }
 }
 
@@ -93,7 +96,7 @@ export function run(cmd: string, args: string[], opts: RunOptions): Promise<RunR
       } else if (timedOut) {
         reject(new ProcessError(`${cmd} timed out after ${Math.round(opts.timeoutMs / 1000)}s`, tail));
       } else if (code !== 0) {
-        reject(new ProcessError(`${cmd} exited with ${code ?? signal}`, tail));
+        reject(new ProcessError(`${cmd} exited with ${code ?? signal}`, tail, stdout.slice(-TAIL_CHARS)));
       } else {
         resolve({ stdout, stderr });
       }

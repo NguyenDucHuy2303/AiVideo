@@ -1,0 +1,638 @@
+{
+  "title": "Sự tích Hồ Gươm",
+  "scenes": [
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, giữa lòng thủ đô Hà Nội có một hồ nước xanh biếc quanh năm."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Vì sao hồ ấy lại có tên là Hồ Gươm nhỉ? Thanh gươm nào đã nằm dưới đáy hồ?"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Hôm nay, Huy Kể Chuyện sẽ kể cho các bạn nghe Sự tích Hồ Gươm."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngày xưa, giặc Minh từ phương Bắc sang chiếm nước ta. Chúng bắt dân nộp thuế thật nặng, cấm cả muối mắm."
+        },
+        {
+          "who": "Lính giặc",
+          "how": "quát",
+          "text": "Nộp thóc ngay! Không nộp thì đừng hòng yên thân!"
+        },
+        {
+          "who": "Dân làng",
+          "how": "khóc",
+          "text": "Trời ơi, nhà tôi chẳng còn hạt thóc nào nữa rồi."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ở vùng núi Lam Sơn, xứ Thanh Hóa, có một người tên là Lê Lợi. Ông thương dân, quyết dựng cờ đánh giặc."
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "dõng dạc",
+          "text": "Hỡi anh em! Chúng ta cùng đứng lên đuổi giặc, cứu dân cứu nước!"
+        },
+        {
+          "who": "Nghĩa quân",
+          "how": "hô to",
+          "text": "Xin theo chủ tướng!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Nhưng buổi đầu, nghĩa quân còn ít người, vũ khí thô sơ, lương ăn thiếu thốn. Nhiều trận phải lui vào rừng sâu."
+        },
+        {
+          "who": "Nghĩa quân",
+          "how": "mệt",
+          "text": "Chủ tướng ơi, lương thực sắp hết rồi."
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "thở dài",
+          "text": "Giặc đông quá. Ước gì ta có thêm sức mạnh để giữ đất cho dân."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đức Long Quân ở dưới nước nghe thấu nỗi lòng ấy. Ngài quyết định cho nghĩa quân mượn một thanh gươm thần."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Nhưng gươm không đến thẳng tay Lê Lợi. Gươm được chia làm hai, một lưỡi gươm và một chuôi gươm."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ở Thanh Hóa có một người đánh cá tên là Lê Thận. Một đêm nọ, Thận chèo thuyền ra một bến vắng để thả lưới."
+        },
+        {
+          "who": "Lê Thận",
+          "how": "vui vẻ",
+          "text": "Trăng sáng thế này, chắc đêm nay được nhiều cá lắm đây."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Kéo lưới lên, Thận thấy nằng nặng. Anh mừng thầm, tưởng được cá to. Nhưng thò tay vào thì chỉ là một thanh sắt."
+        },
+        {
+          "who": "Lê Thận",
+          "how": "ngạc nhiên",
+          "text": "Ơ, cá đâu chẳng thấy, chỉ có thanh sắt cũ thôi à?"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Thận ném thanh sắt xuống nước, rồi chèo thuyền sang chỗ khác."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lần thứ hai cất lưới, lưới lại nặng trĩu. Thận nhìn kỹ, vẫn là thanh sắt ban nãy."
+        },
+        {
+          "who": "Lê Thận",
+          "how": "sửng sốt",
+          "text": "Lạ thật! Sao lại là mày nữa?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thận ném đi lần nữa. Đến lần thứ ba, thanh sắt vẫn mắc vào lưới. Thận ghé mồi lửa lại gần soi xem."
+        },
+        {
+          "who": "Lê Thận",
+          "how": "mừng rỡ",
+          "text": "Ha ha! Một lưỡi gươm!"
+        },
+        {
+          "who": "Lê Thận",
+          "how": "vui vẻ",
+          "text": "Thôi, ta mang về nhà cất đi đã."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Về sau, Lê Thận gia nhập nghĩa quân Lam Sơn. Anh đánh giặc rất dũng cảm."
+        },
+        {
+          "who": "Lê Thận",
+          "how": "quyết tâm",
+          "text": "Thưa chủ tướng, tôi xin theo ngài đánh đuổi giặc Minh!"
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "vui vẻ",
+          "text": "Tốt lắm! Có người gan dạ như anh, nghĩa quân càng thêm mạnh."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Một hôm, Lê Lợi cùng mấy người tùy tùng đến thăm nhà Thận. Căn nhà tranh tối om om. Bỗng trong xó nhà có ánh sáng rực lên."
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "ngạc nhiên",
+          "text": "Cái gì sáng thế kia?"
+        },
+        {
+          "who": "Lê Thận",
+          "how": "vui vẻ",
+          "text": "Thưa, đó là thanh sắt tôi kéo lưới được đấy ạ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lê Lợi cầm lên xem. Trên lưỡi sắt khắc sâu hai chữ Thuận Thiên, nghĩa là thuận theo ý trời. Nhưng lúc ấy, chưa ai biết đó là báu vật."
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "ngạc nhiên",
+          "text": "Thuận Thiên... Hai chữ này lạ lắm."
+        },
+        {
+          "who": "Lê Thận",
+          "how": "cười",
+          "text": "Tôi cũng chẳng biết nó là gì ạ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ít lâu sau, giặc Minh đuổi gắt. Lê Lợi và các tướng phải chia nhau, mỗi người chạy một ngả."
+        },
+        {
+          "who": "Lính giặc",
+          "how": "hét",
+          "text": "Đuổi theo! Đừng để Lê Lợi chạy thoát!"
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "lo lắng",
+          "text": "Anh em tạm tản ra! Ba ngày sau gặp lại nhau!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đi qua một khu rừng, Lê Lợi bỗng thấy ánh sáng lạ trên ngọn cây đa. Ông xuống ngựa, trèo lên xem."
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "sửng sốt",
+          "text": "Ồ! Một chuôi gươm nạm ngọc!"
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "ngạc nhiên",
+          "text": "Phải chăng đây là chuôi của lưỡi gươm nhà Lê Thận?"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Ông liền giắt chuôi gươm vào lưng, rồi tiếp tục lên đường."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ba ngày sau, mọi người gặp lại nhau. Lê Lợi đem lưỡi gươm tra vào chuôi. Kỳ lạ thay, vừa khít như in!"
+        },
+        {
+          "who": "Nghĩa quân",
+          "how": "sửng sốt",
+          "text": "Trời ơi! Lưỡi và chuôi khớp nhau như một!"
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "mừng rỡ",
+          "text": "Đúng là gươm trời cho!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lê Thận nâng thanh gươm lên, quỳ xuống trước Lê Lợi."
+        },
+        {
+          "who": "Lê Thận",
+          "how": "dõng dạc",
+          "text": "Đây là trời giao cho ngài làm việc lớn. Chúng tôi nguyện theo ngài, cùng thanh gươm thần này báo đền đất nước!"
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "quyết tâm",
+          "text": "Ta xin nhận. Ta nguyện cùng anh em đuổi sạch giặc, cho dân được yên vui."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Từ đó, nghĩa quân ngày càng hăng hái. Lê Lợi cầm gươm thần xông pha trận mạc. Lưỡi gươm lóe sáng như tia chớp."
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "hô to",
+          "text": "Anh em, tiến lên!"
+        },
+        {
+          "who": "Nghĩa quân",
+          "how": "hô to",
+          "text": "Xông lên! Đuổi giặc cứu nước!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đánh tới đâu, nghĩa quân thắng tới đó. Giặc ngã rạp, vứt cả giáo mác, tan tác bỏ chạy."
+        },
+        {
+          "who": "Lính giặc",
+          "how": "hoảng hốt",
+          "text": "Gươm gì mà sáng thế! Chạy mau, chạy mau!"
+        },
+        {
+          "who": "Nghĩa quân",
+          "how": "hớn hở",
+          "text": "Giặc chạy rồi! Giặc chạy rồi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Từ núi rừng Thanh Hóa, nghĩa quân tiến vào Nghệ An, rồi kéo ra Bắc. Dân làng khắp nơi mang cơm nước ra đón."
+        },
+        {
+          "who": "Dân làng",
+          "how": "hớn hở",
+          "text": "Nghĩa quân đến rồi! Mời các anh ăn bát cơm, uống bát nước cho lại sức!"
+        },
+        {
+          "who": "Nghĩa quân",
+          "how": "cười",
+          "text": "Cảm ơn bà con! Có bà con, chúng tôi càng thêm vững lòng."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Giặc Minh thua to, phải xin hòa. Lê Lợi thương dân, không muốn đánh nhau thêm nữa. Ông còn cho giặc thuyền bè để về nước."
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "dõng dạc",
+          "text": "Cho chúng về nước. Từ nay Nam Bắc thôi việc binh đao."
+        },
+        {
+          "who": "Lính giặc",
+          "how": "mệt",
+          "text": "Đa tạ... Chúng tôi xin về, không dám sang nữa."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đất nước sạch bóng quân thù. Lê Lợi lên ngôi vua, lấy niên hiệu là Thuận Thiên, đóng đô ở Đông Kinh, chính là Thăng Long."
+        },
+        {
+          "who": "Nghĩa quân",
+          "how": "hô to",
+          "text": "Vạn tuế! Vạn tuế!"
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "vui vẻ",
+          "text": "Từ nay, trăm họ được sống yên vui rồi."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đầu năm 1428, nhà vua cùng các quan bơi thuyền rồng dạo chơi trên hồ Tả Vọng, trước kinh thành. Mặt hồ xanh biếc, gió thổi hiu hiu."
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "vui vẻ",
+          "text": "Đất nước thanh bình rồi. Nhìn mặt hồ yên ả, lòng ta thật vui."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Bỗng mặt nước xao động. Một con Rùa Vàng rất lớn nhô đầu lên khỏi mặt hồ."
+        },
+        {
+          "who": "Vị quan",
+          "how": "ngạc nhiên",
+          "text": "Bệ hạ xem kìa! Một con rùa lớn quá!"
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "dõng dạc",
+          "text": "Cho thuyền đi chậm lại."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đứng ở mạn thuyền, nhà vua thấy thanh gươm đeo bên mình tự nhiên động đậy."
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "ngạc nhiên",
+          "text": "Gươm thần sao lại rung lên thế này?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Rùa Vàng bơi về phía thuyền vua, rồi cất tiếng nói."
+        },
+        {
+          "who": "Rùa Vàng",
+          "how": "dõng dạc",
+          "text": "Xin bệ hạ hoàn gươm lại cho Long Quân!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Nhà vua hiểu ra. Gươm thần là của Long Quân cho mượn để đánh giặc. Nay giặc đã tan, gươm phải được trả lại."
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "vui vẻ",
+          "text": "Đa tạ Long Quân đã giúp nước ta. Nay ta xin hoàn trả gươm thần."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Vua nâng gươm hướng về phía Rùa Vàng. Nhanh như cắt, Rùa há miệng đớp lấy thanh gươm, rồi lặn xuống nước."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Dưới đáy hồ, một vệt sáng xanh le lói rồi tắt dần."
+        },
+        {
+          "who": "Vị quan",
+          "how": "sửng sốt",
+          "text": "Gươm... gươm đã về với Long Quân rồi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Từ đó, hồ Tả Vọng mang tên mới là Hồ Gươm, hay hồ Hoàn Kiếm, nghĩa là hồ trả gươm."
+        },
+        {
+          "who": "Lê Lợi",
+          "how": "tự hào",
+          "text": "Hồ này sẽ nhắc con cháu đời đời nhớ ngày đánh đuổi giặc Minh."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngày nay, Hồ Gươm vẫn xanh biếc giữa lòng Hà Nội. Giữa hồ có Tháp Rùa nhỏ xinh đứng trên gò Rùa."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Phía bắc hồ có đền Ngọc Sơn và cây cầu Thê Húc đỏ thắm. Bên bờ có Tháp Bút như đang viết lên trời xanh."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ở bờ tây hồ có đền thờ vua Lê, với tượng nhà vua tay cầm thanh gươm hướng xuống mặt hồ."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Người Hà Nội vẫn kể cho con cháu nghe chuyện Rùa Vàng đòi gươm năm xưa."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, câu chuyện dạy chúng ta biết yêu quê hương, đoàn kết cùng nhau. Và khi mượn của ai, chúng ta nhớ trả lại và nói lời cảm ơn nhé."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Nếu các bạn thích truyện này, hãy đăng ký kênh Huy Kể Chuyện để nghe thêm thật nhiều truyện hay nữa nhé!"
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "name": "Lê Lợi",
+      "gender": "male",
+      "age": "adult",
+      "role": "Chủ tướng nghĩa quân Lam Sơn, sau lên ngôi vua Lê Thái Tổ",
+      "villain": false
+    },
+    {
+      "name": "Lê Thận",
+      "gender": "male",
+      "age": "adult",
+      "role": "Người đánh cá kéo lưới được lưỡi gươm, sau theo nghĩa quân",
+      "villain": false
+    },
+    {
+      "name": "Rùa Vàng",
+      "gender": "male",
+      "age": "elder",
+      "role": "Sứ giả của Long Quân, đòi lại gươm thần ở hồ Tả Vọng",
+      "villain": false
+    },
+    {
+      "name": "Nghĩa quân",
+      "gender": "male",
+      "age": "young",
+      "role": "Người lính nghĩa quân Lam Sơn",
+      "villain": false
+    },
+    {
+      "name": "Vị quan",
+      "gender": "male",
+      "age": "adult",
+      "role": "Vị quan theo vua dạo thuyền trên hồ",
+      "villain": false
+    },
+    {
+      "name": "Dân làng",
+      "gender": "female",
+      "age": "elder",
+      "role": "Bà cụ dân làng chịu khổ vì giặc, sau đón nghĩa quân",
+      "villain": false
+    },
+    {
+      "name": "Lính giặc",
+      "gender": "male",
+      "age": "adult",
+      "role": "Lính quân Minh xâm lược",
+      "villain": true
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Giặc Minh đô hộ nước ta, nâng sưu thuế, cấm muối mắm, khiến dân căm giận",
+      "source": "Lê Thái Tổ"
+    },
+    {
+      "claim": "Lê Lợi dựng cờ khởi nghĩa ở Lam Sơn, Thanh Hóa năm 1418; buổi đầu lực lượng yếu, nhiều lần thất bại",
+      "source": "Lê Thái Tổ"
+    },
+    {
+      "claim": "Long Quân cho nghĩa quân mượn gươm thần, chia làm lưỡi gươm và chuôi gươm",
+      "source": "Thuận Thiên Kiếm"
+    },
+    {
+      "claim": "Lê Thận đánh cá, ba lần kéo lưới đều được cùng một thanh sắt, soi lửa mới biết là lưỡi gươm",
+      "source": "Thuận Thiên Kiếm"
+    },
+    {
+      "claim": "Lê Lợi đến nhà Thận, lưỡi gươm sáng rực trong xó tối, trên lưỡi có hai chữ Thuận Thiên",
+      "source": "Thuận Thiên Kiếm"
+    },
+    {
+      "claim": "Bị giặc đuổi, Lê Lợi thấy chuôi gươm nạm ngọc phát sáng trên ngọn cây đa; ba ngày sau lắp lưỡi vào chuôi vừa khớp",
+      "source": "Thuận Thiên Kiếm"
+    },
+    {
+      "claim": "Lê Lợi dùng gươm thần đánh đâu thắng đó, đuổi quân Minh về nước và được tôn lên làm vua",
+      "source": "Hồ Hoàn Kiếm"
+    },
+    {
+      "claim": "Lê Lợi cho quân Minh rút về an toàn, cấp cả thuyền bè; năm 1428 lên ngôi, niên hiệu Thuận Thiên, đóng đô ở Đông Kinh",
+      "source": "Lê Thái Tổ"
+    },
+    {
+      "claim": "Đầu năm 1428 vua bơi thuyền trên hồ Tả Vọng, rùa nổi lên xin hoàn gươm cho Long Quân, đớp gươm rồi lặn mất; hồ đổi tên là Hồ Gươm hay hồ Hoàn Kiếm",
+      "source": "Hồ Hoàn Kiếm"
+    },
+    {
+      "claim": "Quanh hồ ngày nay có Tháp Rùa, đền Ngọc Sơn, cầu Thê Húc, Tháp Bút và đền thờ vua Lê có tượng vua cầm gươm",
+      "source": "Hồ Hoàn Kiếm"
+    }
+  ],
+  "look": "Thời Lê sơ, đầu thế kỷ 15, Đại Việt. LÊ LỢI lúc là chủ tướng mặc áo dài giao lĩnh (cổ chéo) bằng vải màu chàm hoặc nâu đậm, dài quá gối, thắt đai vải, quần ống rộng, đầu vấn khăn, chân đi dép cỏ hoặc đi chân đất trong rừng, cưỡi ngựa nâu; mặt sáng, mũi cao, mắt sáng. Khi làm vua mặc áo bào cổ tròn màu vàng thêu rồng, đội mũ cánh chuồn (mũ phốc đầu), thắt đai ngọc, kín đáo trang nghiêm. Gươm Thuận Thiên lưỡi thẳng, sáng xanh lấp lánh, khắc hai chữ Hán Thuận Thiên; chuôi nạm ngọc. LÊ THẬN lúc là người đánh cá mặc áo cánh nâu, quần nâu xắn gối, đội nón lá, chèo thuyền nan nhỏ, mang chài lưới và cầm mồi lửa hay bó đuốc; khi vào nghĩa quân mặc như nghĩa quân. NGHĨA QUÂN mặc áo vải nâu ngắn, quần ống rộng, khăn chít đầu, đi chân đất, cầm giáo tre, mác, khiên mây, cờ vải đỏ. VỊ QUAN mặc áo bào cổ tròn màu xanh hoặc đỏ sẫm, đội mũ cánh chuồn. DÂN LÀNG bà cụ mặc áo tứ thân nâu, yếm kín, váy đen, khăn mỏ quạ, quang gánh, nồi đất, bát sành. LÍNH GIẶC MINH vẽ dễ thương, hơi buồn cười: mũ sắt tròn có chóp, áo giáp vải màu đỏ sẫm, cầm giáo, không đáng sợ. RÙA VÀNG to lớn, mai vàng óng, mắt hiền, nói được. NHÀ CỬA vùng Lam Sơn: nhà sàn gỗ và nhà tranh vách đất, mái lợp cỏ tranh, trong nhà có bàn thờ tổ tiên, đèn đĩa dầu, chum vại; rừng núi Thanh Hóa có cây đa lớn, tre nứa, sông suối. Kinh thành Đông Kinh: hồ Tả Vọng rộng, bờ hồ cây xanh, liễu, xa xa thấp thoáng mái đình mái ngói cong; thuyền rồng gỗ sơn son, có lọng vàng, người chèo. Cảnh ngày nay (cảnh 29–30): Tháp Rùa, đền Ngọc Sơn, cầu Thê Húc màu đỏ, Tháp Bút, tượng vua Lê cầm gươm. TRÁNH trong các cảnh năm 1428 trở về trước: Tháp Rùa, cầu Thê Húc, Tháp Bút, nhà kiểu Pháp, súng, đèn điện, kính mắt, bàn ghế phương Tây, áo dài kiểu hiện đại, áo tấc thời Nguyễn, giày da, chữ Quốc ngữ trên cờ hay biển hiệu."
+}

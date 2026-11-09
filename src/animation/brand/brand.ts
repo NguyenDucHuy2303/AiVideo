@@ -16,11 +16,14 @@ const PAGE = path.join(path.dirname(fileURLToPath(import.meta.url)), "brand.html
 export const BRAND_DIR = path.join(ROOT, "assets", "brand");
 const INTRO_S = 3, OUTRO_S = 5, END_S = 2.5;
 
-export interface Brand { name: string; tagline: string; owner?: string }
+export interface Brand { name: string; tagline: string; owner?: string; lang?: string; texts?: Record<string, string>; languages?: Record<string, Partial<Brand>> }
 
-export async function loadBrand(): Promise<Brand | undefined> {
+/** The brand, in a language of brand.json "languages" (name, tagline, card texts) if asked. */
+export async function loadBrand(lang?: string): Promise<Brand | undefined> {
   const f = path.join(BRAND_DIR, "brand.json");
-  return (await exists(f)) ? JSON.parse(await fs.readFile(f, "utf8")) : undefined;
+  if (!(await exists(f))) return undefined;
+  const b: Brand = JSON.parse(await fs.readFile(f, "utf8"));
+  return lang && b.languages?.[lang] ? { ...b, ...b.languages[lang], lang } : b;
 }
 
 /** logo.png (1024², with the name) and watermark.png (256², the drum only), transparent. */
@@ -34,7 +37,7 @@ export async function brandStills(brand: Brand): Promise<{ logo: string; waterma
 /** The intro or outro clip for a shape, with its sound. */
 export async function brandClip(brand: Brand, kind: "intro" | "outro" | "end", vertical: boolean): Promise<string> {
   const [W, H] = vertical ? [1080, 1920] : [1920, 1080];
-  const file = path.join(BRAND_DIR, `${kind}_${vertical ? "9x16" : "16x9"}.mp4`);
+  const file = path.join(BRAND_DIR, `${kind}${brand.lang ? `_${brand.lang}` : ""}_${vertical ? "9x16" : "16x9"}.mp4`);
   if (await exists(file)) return file;
   const seconds = kind === "intro" ? INTRO_S : kind === "end" ? END_S : OUTRO_S;
   const picture = `${file}.picture.mp4`, sound = `${file}.wav`;

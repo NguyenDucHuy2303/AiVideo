@@ -1,0 +1,175 @@
+{
+  "narration": "Ngày xửa ngày xưa, ở nước Văn Lang, vua Hùng thứ mười tám có một người con gái tên là Mị Nương. Nàng xinh đẹp như hoa, tính nết hiền dịu. Vua cha yêu thương nàng hết mực. Vua Hùng (vui vẻ): \"Con gái ta đã lớn rồi. Ta phải tìm cho con một người chồng thật xứng đáng.\" Mị Nương (vui vẻ): \"Thưa cha, con xin nghe theo cha ạ.\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "vua_hung",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "proud"
+      },
+      {
+        "id": "mi_nuong",
+        "place": "right",
+        "enter": "none",
+        "act": "bow",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "rays"
+    ],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  "era": "van_lang",
+  "duration": 17.233333333333334,
+  "time": "day",
+  "mood": "majestic",
+  "set": {
+    "name": "field",
+    "objects": [
+      {
+        "type": "mat",
+        "x": 260
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "vua_hung",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "plume",
+          "color": "#8a3a22",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "headwear": "feather",
+        "beard": "#2a1a12",
+        "bracelets": true,
+        "earrings": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick",
+          "mustache": "thick"
+        }
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "mi_nuong",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f0e2c0",
+          "skirt": "#2a3f6a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1210"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 520,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "vua_hung",
+      "at": 0,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "vua_hung",
+      "at": 8.62,
+      "do": "idle",
+      "face": "proud"
+    },
+    {
+      "actor": "mi_nuong",
+      "at": 0,
+      "do": "bow",
+      "face": "happy"
+    },
+    {
+      "actor": "mi_nuong",
+      "at": 8.62,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    }
+  ],
+  "fx": [
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 17.233333333333334,
+      "scale": 2.4
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "vua_hung",
+        "mi_nuong"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 6.2,
+      "type": "close",
+      "on": [
+        "vua_hung"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 11.72,
+      "type": "close",
+      "on": [
+        "mi_nuong"
+      ],
+      "push": 0.05
+    }
+  ]
+}

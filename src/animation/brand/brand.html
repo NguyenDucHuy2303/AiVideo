@@ -85,6 +85,8 @@ function spin(parts, t, k = 1) {
   tr(parts.star, 0, 0, t * 30 * k, 1 + 0.04 * Math.sin(t * 6));
 }
 
+// Words on the cards, in the brand's language (brand.json "texts"; Vietnamese by default).
+const T = { thanks: "Cảm ơn các bạn đã xem!", subscribe: "ĐĂNG KÝ", subscribed: "ĐÃ ĐĂNG KÝ", watchFull: "Xem trọn truyện trên kênh", follow: "Nhớ bấm theo dõi nhé!", ...(B.texts || {}) };
 const mode = P.mode || "logo";
 let render = () => {};
 
@@ -131,12 +133,12 @@ if (mode === "outro") {
   const holder = g(svg);
   const parts = logo(holder, (vertical ? W : H) * 0.22, true);
   const thanks = el("text", { x: W / 2, y: H * (vertical ? 0.18 : 0.17), "text-anchor": "middle", "font-size": f2((vertical ? W : H) * 0.075), "font-weight": 800, fill: "#fff6dc", stroke: INK, "stroke-width": 8, "paint-order": "stroke" }, svg);
-  thanks.textContent = "Cảm ơn các bạn đã xem!";
+  thanks.textContent = T.thanks;
   const btn = g(svg);
   const bw = (vertical ? W : H) * 0.62, bh = (vertical ? W : H) * 0.14;
   const btnRect = el("rect", { x: -bw / 2, y: -bh / 2, width: bw, height: bh, rx: bh / 2, fill: "url(#btn)", stroke: INK, "stroke-width": 6 }, btn);
   const btnText = el("text", { x: 0, y: bh * 0.17, "text-anchor": "middle", "font-size": f2(bh * 0.46), "font-weight": 800, fill: "#fff" }, btn);
-  btnText.textContent = "ĐĂNG KÝ";
+  btnText.textContent = T.subscribe;
   const bell = g(btn, { transform: `translate(${f2(bw / 2 + bh * 0.7)},0)` });
   el("path", { d: `M 0 ${f2(-bh * 0.38)} C ${f2(bh * 0.28)} ${f2(-bh * 0.38)} ${f2(bh * 0.3)} ${f2(-bh * 0.05)} ${f2(bh * 0.32)} ${f2(bh * 0.2)} L ${f2(bh * 0.4)} ${f2(bh * 0.3)} L ${f2(-bh * 0.4)} ${f2(bh * 0.3)} L ${f2(-bh * 0.32)} ${f2(bh * 0.2)} C ${f2(-bh * 0.3)} ${f2(-bh * 0.05)} ${f2(-bh * 0.28)} ${f2(-bh * 0.38)} 0 ${f2(-bh * 0.38)} Z`, fill: "#ffd25a", stroke: INK, "stroke-width": 5 }, bell);
   el("circle", { cy: f2(bh * 0.4), r: f2(bh * 0.09), fill: "#ffd25a", stroke: INK, "stroke-width": 4 }, bell);
@@ -154,7 +156,7 @@ if (mode === "outro") {
     const clicked = t > 2.6, pulse = clicked ? 1 : 1 + 0.06 * Math.sin(t * 7);
     tr(btn, bx, by, 0, EASE.backOut(seg(t, 0.4, 0.9)) * pulse * (1 - 0.08 * bump(t, 2.5, 2.75)) || 0.01);
     btnRect.setAttribute("fill", clicked ? "#8a8a8a" : "url(#btn)");
-    btnText.textContent = clicked ? "ĐÃ ĐĂNG KÝ" : "ĐĂNG KÝ";
+    btnText.textContent = clicked ? T.subscribed : T.subscribe;
     tr(bell, bw / 2 + bh * 0.7, 0, clicked ? 18 * Math.sin((t - 2.6) * 18) * Math.exp(-(t - 2.6) * 2) : 0);
     const hk = EASE.inOut(seg(t, 1.6, 2.5));
     tr(hand, lerp(W * 1.1, bx + bw * 0.1, hk), lerp(H * 1.2, by + bh * 0.35, hk) + 12 * bump(t, 2.5, 2.75), -20, (vertical ? W : H) / 900);
@@ -170,9 +172,9 @@ if (mode === "end") {
   const holder = g(svg);
   const parts = logo(holder, R, true);
   const line1 = el("text", { x: W / 2, y: vertical ? H * 0.2 : H * 0.17, "text-anchor": "middle", "font-size": f2(Math.min(W, H) * 0.075), "font-weight": 800, fill: "#fff3d6", opacity: 0 }, svg);
-  line1.textContent = "Xem trọn truyện trên kênh";
+  line1.textContent = T.watchFull;
   const line2 = el("text", { x: W / 2, y: vertical ? H * 0.8 : H * 0.88, "text-anchor": "middle", "font-size": f2(Math.min(W, H) * 0.055), "font-weight": 700, fill: "#ffd27a", opacity: 0 }, svg);
-  line2.textContent = "Nhớ bấm theo dõi nhé!";
+  line2.textContent = T.follow;
   render = (t) => {
     const k = EASE.backOut(seg(t, 0, 0.5));
     tr(holder, W / 2, vertical ? H * 0.5 : H * 0.52, (1 - k) * -120, lerp(0.1, 1, k));
