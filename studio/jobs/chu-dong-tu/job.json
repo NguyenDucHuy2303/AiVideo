@@ -1,15 +1,20 @@
 {
   "slug": "chu-dong-tu",
   "topic": "Chử Đồng Tử",
-  "status": "writing",
+  "status": "review",
   "notes": [],
   "history": [
     {
       "at": "2026-11-09T02:42:28.596Z",
       "status": "writing"
+    },
+    {
+      "at": "2026-11-09T03:09:23.709Z",
+      "status": "review"
     }
   ],
   "kind": "truyền thuyết",
   "era": "van_lang",
-  "summary": "Chử Đồng Tử nghèo đến mức hai cha con chỉ có một chiếc khố. Khi cha mất, chàng nhường khố chôn cha, rồi ra sông kiếm sống. Một ngày, công chúa Tiên Dung đi thuyền du ngoạn qua đó, tình cờ gặp chàng và hai người nên duyên. Họ buôn bán, gặp tiên nhân Tử Vân Sơn truyền cho chiếc nón và cây gậy thần. Cả hai tu đạo, rồi bay lên trời giữa ánh sáng rực rỡ. Truyện ca ngợi lòng hiếu thảo và sự chân thật."
+  "summary": "Chử Đồng Tử nghèo đến mức hai cha con chỉ có một chiếc khố. Khi cha mất, chàng nhường khố chôn cha, rồi ra sông kiếm sống. Một ngày, công chúa Tiên Dung đi thuyền du ngoạn qua đó, tình cờ gặp chàng và hai người nên duyên. Họ buôn bán, gặp tiên nhân Tử Vân Sơn truyền cho chiếc nón và cây gậy thần. Cả hai tu đạo, rồi bay lên trời giữa ánh sáng rực rỡ. Truyện ca ngợi lòng hiếu thảo và sự chân thật.",
+  "by": "claude-opus"
 }

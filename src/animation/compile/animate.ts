@@ -12,7 +12,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { ollama } from "../../script/providers.ts";
+import { ollama, type LlmProvider } from "../../script/providers.ts";
 import type { ParsedStory } from "../../story/parse.ts";
 import { exists, writeFileAtomic } from "../../utils/fs.ts";
 import { completeCast, designCartoonCast, fixPlan, planChapter, transformationScenes } from "./plan.ts";
@@ -24,6 +24,8 @@ export interface AnimateOptions {
   out?: string;
   force?: boolean;
   model?: string;
+  /** The brain to ask (default: the local model). */
+  provider?: LlmProvider;
   log?: (s: string) => void;
 }
 
@@ -50,7 +52,7 @@ export async function animate(projectDir: string, opts: AnimateOptions = {}): Pr
 
   const outDir = path.join(dir, opts.out ?? "anim");
   await fs.mkdir(outDir, { recursive: true });
-  const provider = ollama(opts.model);
+  const provider = opts.provider ?? ollama(opts.model);
   await provider.check();
   let shown = 0;
   const progress = (step: string) => (n: number) => {

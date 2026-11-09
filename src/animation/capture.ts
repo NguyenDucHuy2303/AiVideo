@@ -110,7 +110,7 @@ export async function capture(opts: CaptureOptions): Promise<void> {
     await s("Page.enable");
     await s("Page.addScriptToEvaluateOnNewDocument", { source: `window.params = ${JSON.stringify(opts.params ?? {})};` });
     const loaded = cdp.once("Page.loadEventFired");
-    await s("Page.navigate", { url: pathToFileURL(path.resolve(opts.page)).href });
+    await s("Page.navigate", { url: /^https?:/.test(opts.page) ? opts.page : pathToFileURL(path.resolve(opts.page)).href });
     await loaded;
     const ready = await s("Runtime.evaluate", { expression: "Promise.resolve(window.ready).then(() => typeof window.renderFrame)", awaitPromise: true, returnByValue: true });
     if (ready.result?.value !== "function") throw new Error(`${opts.page} does not define window.renderFrame`);
@@ -156,7 +156,7 @@ export async function still(opts: { page: string; width: number; height: number;
     await s("Page.enable");
     await s("Page.addScriptToEvaluateOnNewDocument", { source: `window.params = ${JSON.stringify(opts.params ?? {})};` });
     const loaded = cdp.once("Page.loadEventFired");
-    await s("Page.navigate", { url: pathToFileURL(path.resolve(opts.page)).href });
+    await s("Page.navigate", { url: /^https?:/.test(opts.page) ? opts.page : pathToFileURL(path.resolve(opts.page)).href });
     await loaded;
     await s("Runtime.evaluate", { expression: "Promise.resolve(window.ready)", awaitPromise: true });
     await s("Runtime.evaluate", { expression: `window.renderFrame(${opts.at ?? 0})` });

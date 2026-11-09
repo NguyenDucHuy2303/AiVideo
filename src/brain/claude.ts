@@ -22,13 +22,15 @@ const SETTINGS = path.join(STUDIO_DIR, "settings.json");
 export type ClaudeModel = "opus" | "sonnet" | "haiku";
 
 export interface BrainSettings {
-  /** Weighted tokens (see `weigh`) one job may spend, and all jobs together in a day. */
+  /** Weighted tokens (see `weigh`) one job may spend writing (script, cast), producing (scene
+   * direction, fixes), and all jobs together in a day. */
   perJobTokens: number;
+  perProduceTokens: number;
   perDayTokens: number;
   /** The local model used past the budget. */
   fallbackModel: string;
 }
-const DEFAULTS: BrainSettings = { perJobTokens: 600_000, perDayTokens: 2_000_000, fallbackModel: "gemma3:12b" };
+const DEFAULTS: BrainSettings = { perJobTokens: 80_000, perProduceTokens: 150_000, perDayTokens: 2_000_000, fallbackModel: "gemma3:12b" };
 
 export async function brainSettings(): Promise<BrainSettings> {
   if (!(await exists(SETTINGS))) {
@@ -39,7 +41,7 @@ export async function brainSettings(): Promise<BrainSettings> {
 }
 
 export interface Usage { input: number; cacheWrite: number; cacheRead: number; output: number; usd: number }
-export interface LedgerEntry extends Usage { at: string; job: string; step: string; model: string; seconds: number; ok: boolean }
+export interface LedgerEntry extends Usage { at: string; job: string; phase?: Phase; step: string; model: string; seconds: number; ok: boolean }
 
 /** Cache reads are cheap for the plan's limits; count them at a tenth. */
 export const weigh = (u: Usage) => Math.round(u.input + u.cacheWrite + u.output + u.cacheRead * 0.1);
@@ -50,10 +52,12 @@ export async function ledger(): Promise<LedgerEntry[]> {
 }
 
 /** Weighted tokens spent: by one job, or today (local time) by all. */
-export async function spent(filter: { job?: string; today?: boolean }): Promise<number> {
+export type Phase = "write" | "produce";
+
+export async function spent(filter: { job?: string; phase?: Phase; today?: boolean }): Promise<number> {
   const day = new Date().toLocaleDateString("sv");
   return (await ledger())
-    .filter((e) => (!filter.job || e.job === filter.job) && (!filter.today || new Date(e.at).toLocaleDateString("sv") === day))
+    .filter((e) => (!filter.job || e.job === filter.job) && (!filter.phase || (e.phase ?? "write") === filter.phase) && (!filter.today || new Date(e.at).toLocaleDateString("sv") === day))
     .reduce((n, e) => n + weigh(e), 0);
 }
 
@@ -79,6 +83,8 @@ export async function findClaude(): Promise<string | undefined> {
 export interface Ask {
   job: string;
   step: string;
+  /** Which budget of the job pays (default write). */
+  phase?: Phase;
   system: string;
   prompt: string;
   model?: ClaudeModel;
@@ -91,8 +97,9 @@ export interface Ask {
 /** One Claude call, budget-checked and written to the ledger. */
 export async function askClaude(a: Ask): Promise<{ text: string; data?: unknown; usage: Usage }> {
   const cfg = await brainSettings();
-  const [job, day] = [await spent({ job: a.job }), await spent({ today: true })];
-  if (job >= cfg.perJobTokens) throw new BudgetExceeded(`job "${a.job}" has spent ${job} of ${cfg.perJobTokens} tokens`);
+  const phase = a.phase ?? "write", cap = phase === "produce" ? cfg.perProduceTokens : cfg.perJobTokens;
+  const [job, day] = [await spent({ job: a.job, phase }), await spent({ today: true })];
+  if (job >= cap) throw new BudgetExceeded(`job "${a.job}" has spent ${job} of its ${cap} ${phase} tokens`);
   if (day >= cfg.perDayTokens) throw new BudgetExceeded(`today's ${day} of ${cfg.perDayTokens} tokens are spent`);
   const bin = await findClaude();
   if (!bin) throw new Error("Claude Code is not installed (or set CLAUDE_BIN)");
@@ -117,7 +124,7 @@ export async function askClaude(a: Ask): Promise<{ text: string; data?: unknown;
     usage = { input: u.input_tokens ?? 0, cacheWrite: u.cache_creation_input_tokens ?? 0, cacheRead: u.cache_read_input_tokens ?? 0, output: u.output_tokens ?? 0, usd: out.total_cost_usd ?? 0 };
     ok = !out.is_error && (!a.schema || out.structured_output !== undefined);
   } finally {
-    const entry: LedgerEntry = { at: new Date().toISOString(), job: a.job, step: a.step, model, seconds: Math.round((Date.now() - t0) / 1000), ok, ...usage };
+    const entry: LedgerEntry = { at: new Date().toISOString(), job: a.job, phase, step: a.step, model, seconds: Math.round((Date.now() - t0) / 1000), ok, ...usage };
     await fs.mkdir(STUDIO_DIR, { recursive: true });
     await fs.appendFile(LEDGER, JSON.stringify(entry) + "\n");
   }
@@ -148,4 +155,26 @@ export async function think<T = unknown>(a: Ask & { schema: object }, log: (s: s
 async function localModel(wanted: string): Promise<LlmProvider> {
   const p = ollama(wanted);
   try { await p.check(); return p; } catch { return ollama(); }
+}
+
+/**
+ * The brain as an LlmProvider, for code written for the local model (scene planning): each
+ * chat is one Claude call on the job's budget; past it, the local model answers instead.
+ */
+export function claudeProvider(job: string, phase: Phase, model: ClaudeModel = "sonnet", log: (s: string) => void = () => {}, notes: string[] = []): LlmProvider {
+  let n = 0;
+  return {
+    id: "claude",
+    model,
+    async check() {
+      if (!(await findClaude())) throw new Error("Claude Code is not installed (or set CLAUDE_BIN)");
+    },
+    async chat(req) {
+      const system = [...req.messages.filter((m) => m.role === "system").map((m) => m.content), ...(notes.length ? [`The reviewer asked for these changes (follow them):\n${notes.map((x) => `- ${x}`).join("\n")}`] : [])].join("\n\n");
+      const prompt = req.messages.filter((m) => m.role !== "system").map((m) => (m.role === "assistant" ? `(your earlier answer)\n${m.content}` : m.content)).join("\n\n");
+      const { data } = await think({ job, phase, step: `${phase}-chat-${++n}`, model, system, prompt, schema: req.schema }, log);
+      return JSON.stringify(data);
+    },
+    async release() {},
+  };
 }

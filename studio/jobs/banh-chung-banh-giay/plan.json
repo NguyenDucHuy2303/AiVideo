@@ -1,0 +1,610 @@
+{
+  "title": "Bánh chưng, bánh giầy",
+  "scenes": [
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, Tết đến, nhà bạn có gói bánh chưng không? Bạn có biết vì sao bánh chưng lại vuông, còn bánh giầy lại tròn không?"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Hôm nay, Huy Kể Chuyện sẽ kể cho các bạn nghe truyền thuyết Bánh chưng, bánh giầy nhé!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngày xửa ngày xưa, ở nước Văn Lang, có vua Hùng thứ sáu. Vua đã đánh tan giặc Ân. Đất nước thái bình, đồng lúa xanh tươi bát ngát."
+        },
+        {
+          "who": "Vua Hùng",
+          "how": "thở dài",
+          "text": "Ta đã già rồi. Đến lúc phải chọn người hiền tài để nối ngôi."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Vua có hai mươi hai người con trai, gọi là các lang. Vua sai người thổi tù và vang khắp kinh đô Phong Châu."
+        },
+        {
+          "who": "Sứ giả",
+          "how": "hô to",
+          "text": "Các lang ơi! Vua cha truyền gọi! Mau về nhà sàn lớn!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Trong ngôi nhà sàn lớn mái cong hình thuyền, các lang đứng chật kín. Vua Hùng đội mũ lông chim, ngồi trang nghiêm bên trống đồng."
+        },
+        {
+          "who": "Vua Hùng",
+          "how": "dõng dạc",
+          "text": "Tết này, ai dâng lễ vật hợp ý ta để cúng Tiên Vương, cho tròn đạo hiếu, ta sẽ truyền ngôi cho người ấy!"
+        },
+        {
+          "who": "Lang Cả",
+          "how": "ngạc nhiên",
+          "text": "Truyền ngôi ư? Vậy phải tìm lễ vật thật quý mới được!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ra khỏi nhà sàn, các lang xôn xao bàn tán."
+        },
+        {
+          "who": "Lang Cả",
+          "how": "hớn hở",
+          "text": "Ta sẽ vào rừng sâu săn thú quý!"
+        },
+        {
+          "who": "Lang Hai",
+          "how": "cười",
+          "text": "Còn ta sẽ chèo thuyền ra biển lớn, chài lấy cá ngon!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thế là các lang tỏa đi khắp nơi. Người lên núi săn bắn, người xuống biển chài lưới, người đi đổi chác. Của ngon vật lạ nhiều không kể xiết."
+        },
+        {
+          "who": "Lang Cả",
+          "how": "tự hào",
+          "text": "Xem này! Thịt nai rừng, mật ong núi cao, quý lắm đấy!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Chỉ có Lang Liêu, người con thứ mười tám, là nghèo nhất. Mẹ chàng hiền lành, nghèo khó, đã mất từ lâu. Nhà chàng ít người, chàng chỉ quen cày ruộng, trồng lúa."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "buồn rầu",
+          "text": "Mẹ ơi, giá có mẹ ở đây, mẹ sẽ chỉ cho con phải làm gì."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lang Liêu đứng bên ruộng lúa trước căn nhà sàn nhỏ, nhìn mấy thúng thóc trong nhà."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "lo lắng",
+          "text": "Các anh có thú rừng, cá biển. Còn ta chỉ có lúa gạo. Lấy gì dâng vua cha đây?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lang Hai chèo thuyền đi ngang qua, thấy em đứng một mình."
+        },
+        {
+          "who": "Lang Hai",
+          "how": "cười",
+          "text": "Lang Liêu ơi, em định dâng vua cha mấy hạt gạo thôi à?"
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "thở dài",
+          "text": "Em cũng chưa biết nữa, anh ạ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngày đêm, Lang Liêu lo lắng, ăn không ngon, ngủ không yên. Đêm ấy, trăng sáng, chàng nằm mãi mà không chợp mắt được."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "mệt",
+          "text": "Trời khuya lắm rồi. Tết sắp đến gần mà ta vẫn chưa nghĩ ra."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "buồn rầu",
+          "text": "Thôi, ngủ một chút vậy."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Trong giấc mơ, một vị thần râu tóc bạc phơ hiện ra, tỏa ánh sáng dịu dàng."
+        },
+        {
+          "who": "Thần",
+          "how": "vui vẻ",
+          "text": "Lang Liêu, đừng buồn nữa. Ta đến giúp con đây."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "ngạc nhiên",
+          "text": "Ông là ai ạ? Ông giúp con thế nào ạ?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Thần",
+          "how": "dõng dạc",
+          "text": "Trong trời đất, không có gì quý bằng hạt gạo. Gạo nuôi sống con người, ăn mãi không chán."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Thần",
+          "how": "vui vẻ",
+          "text": "Con hãy lấy gạo nếp làm bánh hình tròn, tượng trưng cho Trời. Lấy lá gói bánh hình vuông, tượng trưng cho Đất. Ở giữa cho nhân thật ngon."
+        },
+        {
+          "who": "Thần",
+          "how": "dõng dạc",
+          "text": "Bánh ấy nói lên công ơn cha mẹ sinh thành, nuôi dạy. Vua cha ắt sẽ vui lòng."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lang Liêu giật mình tỉnh dậy. Ngoài trời, gà đã gáy sáng."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "mừng rỡ",
+          "text": "Gạo! Đúng rồi! Hạt gạo do chính tay ta trồng là quý nhất!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Sáng sớm, chàng mở thạp đồng, chọn từng hạt nếp trắng tinh, tròn mẩy, không sứt mẻ, đem vo thật sạch."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "vui vẻ",
+          "text": "Hạt nào hạt nấy trắng như ngọc. Thơm quá!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Chàng vào rừng hái lá dong to bản, xanh mướt. Rồi chẻ cây giang làm lạt buộc bánh."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "hớn hở",
+          "text": "Lá dong xanh thế này, gói bánh chắc đẹp lắm!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lang Liêu trải lá, rải gạo nếp, đặt đậu xanh và thịt lợn vào giữa. Chàng gói lại thật vuông vắn, buộc lạt thật chặt."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "quyết tâm",
+          "text": "Vuông như mặt đất. Gói thật chặt tay nào!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Bánh được xếp vào nồi đất lớn. Bếp củi đỏ rực suốt đêm dài. Chàng ngồi canh nồi bánh, chẳng dám ngủ."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "mệt",
+          "text": "Phải thêm củi, giữ lửa cho đều thì bánh mới chín ngon."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "cười",
+          "text": "Nghe nước sôi lục bục vui tai ghê!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Chàng lại đem nếp đồ thành xôi thơm phức, cho vào cối gỗ mà giã. Xôi dính và dẻo quánh, nhấc chày lên thật nặng."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "quyết tâm",
+          "text": "Một, hai! Một, hai! Giã cho thật nhuyễn!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Xôi đã mịn như bột. Chàng nặn thành những chiếc bánh tròn, trắng muốt như bầu trời."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "vui vẻ",
+          "text": "Tròn như bầu trời! Bánh giầy xong rồi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Trời sáng, chàng vớt bánh chưng ra. Mùi lá dong, mùi nếp thơm lừng cả căn nhà sàn."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "mừng rỡ",
+          "text": "Bánh chưng xanh, bánh giầy trắng. Vua cha ơi, con đã có lễ vật rồi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngày Tết đã đến. Tiếng trống đồng vang rộn rã. Các lang mang lễ vật về nhà sàn lớn, mâm nào cũng đầy sơn hào hải vị."
+        },
+        {
+          "who": "Sứ giả",
+          "how": "hô to",
+          "text": "Các lang dâng lễ vật lên vua cha!"
+        },
+        {
+          "who": "Vua Hùng",
+          "how": "dõng dạc",
+          "text": "Các con lần lượt dâng lên đi."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Lang Cả",
+          "how": "tự hào",
+          "text": "Thưa vua cha, đây là thịt nai rừng sâu và mật ong núi cao ạ."
+        },
+        {
+          "who": "Lang Hai",
+          "how": "tự hào",
+          "text": "Còn đây là cá biển quý, con chài suốt mấy ngày đêm ạ."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Vua Hùng gật đầu, nhưng vẫn lặng im suy nghĩ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đến lượt Lang Liêu. Chàng bưng lên một mâm bánh giản dị, gói trong lá xanh."
+        },
+        {
+          "who": "Lang Hai",
+          "how": "ngạc nhiên",
+          "text": "Bánh gì mà giản dị thế kia?"
+        },
+        {
+          "who": "Vua Hùng",
+          "how": "ngạc nhiên",
+          "text": "Lang Liêu, lễ vật của con là gì vậy?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lang Liêu cúi đầu kính cẩn, kể lại giấc mộng gặp thần."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "dõng dạc",
+          "text": "Thưa vua cha, bánh tròn này là bánh giầy, tượng trưng cho Trời. Bánh vuông này là bánh chưng, tượng trưng cho Đất."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "vui vẻ",
+          "text": "Lá bọc bên ngoài, nhân ngon bên trong, như cha mẹ đùm bọc, nuôi nấng các con ạ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Vua Hùng bóc bánh chưng, nếm thử, rồi nếm bánh giầy. Bánh dẻo thơm, bùi béo, vừa miệng vô cùng."
+        },
+        {
+          "who": "Vua Hùng",
+          "how": "vui vẻ",
+          "text": "Ngon lắm! Ăn mãi mà không chán."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Vua Hùng",
+          "how": "dõng dạc",
+          "text": "Bánh làm từ hạt gạo nuôi sống muôn dân, lại mang hình Trời Đất và công ơn cha mẹ. Không lễ vật nào quý hơn!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Vua khen ngợi hồi lâu. Các lang khác nhìn nhau, gật gù thán phục."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Vua Hùng đem bánh của Lang Liêu đặt lên bàn thờ, kính cẩn dâng cúng Tổ tiên. Khói hương bay nghi ngút bên trống đồng."
+        },
+        {
+          "who": "Vua Hùng",
+          "how": "dõng dạc",
+          "text": "Con cháu kính dâng Tiên Vương bánh Trời, bánh Đất, nhớ ơn nguồn cội."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Vua Hùng",
+          "how": "dõng dạc",
+          "text": "Từ nay, ta truyền ngôi cho Lang Liêu!"
+        },
+        {
+          "who": "Lang Cả",
+          "how": "vui vẻ",
+          "text": "Lang Liêu, em xứng đáng lắm!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Hai mươi mốt anh em còn lại được chia nhau đi giữ các vùng núi non, bảo vệ đất nước."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lang Liêu quỳ lạy vua cha, lòng đầy xúc động."
+        },
+        {
+          "who": "Lang Liêu",
+          "how": "quyết tâm",
+          "text": "Con xin hứa chăm lo cho dân, để ruộng lúa nào cũng xanh tốt."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Từ đó, mỗi dịp Tết, nhà nhà đều gói bánh chưng, làm bánh giầy để dâng cúng tổ tiên. Người xưa còn gọi Tết ấy là Tết Liệu, theo tên chàng Lang Liêu."
+        },
+        {
+          "who": "Bà cụ",
+          "how": "hớn hở",
+          "text": "Tết đến rồi, các cháu ơi! Cùng gói bánh chưng nào!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Cho đến bây giờ, ngày Tết, bánh chưng và bánh giầy vẫn được bày thành cặp trên bàn thờ. Ngày Giỗ Tổ Hùng Vương, mùng mười tháng ba âm lịch, con cháu cũng dâng bánh để nhớ ơn Quốc Tổ. Cả nhà quây quần canh nồi bánh bên bếp lửa hồng."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, Lang Liêu chăm chỉ, hiếu thảo và biết quý hạt gạo. Món quà quý nhất chính là món quà làm bằng đôi tay và tấm lòng yêu thương. Các bạn nhớ quý từng hạt cơm và biết ơn ông bà, cha mẹ nhé!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Nếu thích câu chuyện này, các bạn hãy đăng ký kênh Huy Kể Chuyện để nghe thêm thật nhiều truyện hay nhé. Hẹn gặp lại các bạn!"
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "name": "Lang Liêu",
+      "gender": "male",
+      "age": "young",
+      "role": "Hoàng tử thứ mười tám, nghèo, chăm chỉ, hiếu thảo, làm ra bánh chưng bánh giầy",
+      "villain": false
+    },
+    {
+      "name": "Vua Hùng",
+      "gender": "male",
+      "age": "elder",
+      "role": "Vua Hùng thứ sáu, Quốc Tổ, mở cuộc thi dâng lễ để chọn người nối ngôi",
+      "villain": false
+    },
+    {
+      "name": "Thần",
+      "gender": "male",
+      "age": "elder",
+      "role": "Thần nhân báo mộng, dạy Lang Liêu lấy gạo làm bánh",
+      "villain": false
+    },
+    {
+      "name": "Lang Cả",
+      "gender": "male",
+      "age": "adult",
+      "role": "Người anh cả, đi săn thú rừng làm lễ vật",
+      "villain": false
+    },
+    {
+      "name": "Lang Hai",
+      "gender": "male",
+      "age": "adult",
+      "role": "Người anh thứ hai, ra biển chài cá, hay trêu em",
+      "villain": false
+    },
+    {
+      "name": "Sứ giả",
+      "gender": "male",
+      "age": "adult",
+      "role": "Người thổi tù và truyền lệnh vua",
+      "villain": false
+    },
+    {
+      "name": "Bà cụ",
+      "gender": "female",
+      "age": "elder",
+      "role": "Bà cụ trong làng, gói bánh chưng ngày Tết",
+      "villain": false
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Vua Hùng phá xong giặc Ân, trong nước thái bình, họp hai mươi hai vị lang để chọn người nối ngôi bằng lễ vật dâng cúng Tiên Vương",
+      "source": "Bánh chưng"
+    },
+    {
+      "claim": "Các lang đua nhau săn bắn, chài lưới, đổi chác tìm của ngon vật lạ",
+      "source": "Bánh chưng"
+    },
+    {
+      "claim": "Lang Liêu là lang thứ mười tám, mẹ nghèo khó đã mất, nhà ít người, ngày đêm lo lắng",
+      "source": "Bánh chưng"
+    },
+    {
+      "claim": "Thần nhân báo mộng rằng không gì quý bằng gạo, dạy làm bánh tròn tượng trưng Trời, bánh vuông tượng trưng Đất, ngụ ý công ơn cha mẹ",
+      "source": "Bánh chưng"
+    },
+    {
+      "claim": "Lang Liêu chọn nếp trắng tinh không sứt mẻ, gói lá vuông có nhân ngon rồi luộc chín gọi là bánh chưng; nấu xôi quết nhuyễn nặn tròn gọi là bánh giầy",
+      "source": "Bánh chưng"
+    },
+    {
+      "claim": "Giã bánh giầy đòi hỏi sức vóc vì bột nếp chín rất dính và quánh",
+      "source": "Bánh giầy"
+    },
+    {
+      "claim": "Vua nếm bánh thấy ngon, ăn không chán, khen ngợi hồi lâu, lấy bánh cúng tổ tiên và truyền ngôi cho Lang Liêu; hai mươi mốt anh em kia chia nhau giữ các phiên trấn",
+      "source": "Bánh chưng"
+    },
+    {
+      "claim": "Dân chúng bắt chước tục làm bánh dịp Tết, gọi là Tết Liệu theo tên Lang Liêu",
+      "source": "Bánh chưng"
+    },
+    {
+      "claim": "Bánh chưng làm từ gạo nếp, đậu xanh, thịt lợn, lá dong, buộc lạt giang; làm vào dịp Tết và Giỗ Tổ Hùng Vương mùng 10 tháng 3 âm lịch",
+      "source": "Bánh chưng"
+    },
+    {
+      "claim": "Trên bàn thờ ngày Tết bánh chưng và bánh giầy được bày theo cặp",
+      "source": "Bánh chưng"
+    },
+    {
+      "claim": "Truyền thuyết gắn với đời vua Hùng thứ sáu nước Văn Lang, kinh đô Phong Châu",
+      "source": "Hùng Vương"
+    }
+  ],
+  "look": "Thời Văn Lang, văn hóa Đông Sơn. Vua Hùng: ông lão tóc bạc búi cao, râu dài, mũ lông chim năm lông, áo ngắn chui đầu đính đồng, váy lông chim trong ngày lễ Tết, vòng đồng ở tay, dáng ngồi trang nghiêm, đáng kính. Lang Liêu: chàng trai hiền lành, da rám nắng, tóc búi gọn, đóng khố nâu và áo ngắn chui đầu bằng vải thô giản dị, vòng đồng mộc mạc, hình xăm hoa văn nhỏ ở cánh tay. Lang Cả, Lang Hai: đóng khố, áo ngắn chui đầu nhiều hoa văn hơn, tóc búi có dải lông chim, vòng đồng sáng, xăm mình; Lang Cả mang cung nỏ và giáo đồng, Lang Hai mang lưới chài, chèo thuyền độc mộc. Sứ giả: dải lông chim trên đầu, đóng khố, cầm tù và bằng sừng. Thần: ông lão râu tóc bạc phơ, áo choàng vải trắng giản dị kiểu cổ, quanh người tỏa ánh sáng mờ ảo trong giấc mơ. Bà cụ: áo ngắn chui đầu và váy dài kín đáo, tóc bạc búi, khuyên tai và vòng tay bằng đồng. Bối cảnh: nhà sàn lớn của vua mái cong hai đầu hình thuyền, có chim trang trí trên nóc, sàn gỗ tre; trống đồng mặt có hình mặt trời và chim Lạc, thạp đồng đựng gạo; nhà sàn nhỏ của Lang Liêu bên ruộng lúa nước, có cối và chày gỗ giã xôi, nồi đất lớn trên bếp củi ba hòn đầu rau, lá dong xanh, lạt giang, gạo nếp, đậu xanh. Bàn thờ tổ tiên đơn sơ bằng gỗ, có trống đồng bên cạnh. Cảnh Tết ngày nay ở gần cuối vẽ theo phong cách thời xưa: dân làng mặc trang phục Đông Sơn quây quần canh nồi bánh. Không có nón lá, áo dài, áo tứ thân, khăn xếp, mái ngói, giấy hay chữ viết."
+}

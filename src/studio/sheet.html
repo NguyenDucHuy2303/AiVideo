@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Noto Sans"; font-weight: 800; src: url("../../assets/fonts/NotoSans-ExtraBold.ttf"); }
+  @font-face { font-family: "Noto Sans"; font-weight: 600; src: url("../../assets/fonts/NotoSans-SemiBold.ttf"); }
+  @font-face { font-family: "Noto Sans"; font-weight: 400; src: url("../../assets/fonts/NotoSans-Regular.ttf"); }
+  html, body { margin: 0; background: #f6ecd8; font-family: "Noto Sans", sans-serif; color: #2a160a; }
+  header { padding: 28px 40px 8px; display: flex; align-items: baseline; gap: 24px; border-bottom: 4px solid #c98a2a; }
+  h1 { margin: 0; font-size: 44px; font-weight: 800; color: #8a1c14; }
+  .era { font-size: 22px; font-weight: 600; color: #7a5a2a; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; padding: 28px 40px 40px; }
+  .card { background: #fffaf0; border: 3px solid #d8b878; border-radius: 18px; overflow: hidden; }
+  .card img { width: 100%; display: block; background: #e8dcc0; }
+  .name { font-size: 26px; font-weight: 800; padding: 10px 14px 0; }
+  .role { font-size: 17px; padding: 2px 14px 14px; color: #6a4a2a; line-height: 1.35; }
+</style>
+</head>
+<body>
+<header><h1 id="title"></h1><div class="era" id="era"></div></header>
+<div class="grid" id="grid"></div>
+<script>
+  const P = window.params || {};
+  document.getElementById("title").textContent = P.title || "";
+  document.getElementById("era").textContent = P.era || "";
+  const grid = document.getElementById("grid");
+  const loads = (P.items || []).map((it) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    const img = document.createElement("img");
+    card.append(img);
+    for (const [cls, text] of [["name", it.name], ["role", it.role]]) {
+      const d = document.createElement("div"); d.className = cls; d.textContent = text || ""; card.append(d);
+    }
+    grid.append(card);
+    return new Promise((r) => { img.onload = r; img.onerror = r; img.src = it.src; });
+  });
+  window.renderFrame = () => {};
+  window.ready = Promise.all([document.fonts.ready, ...loads]).then(() => {
+    // The page grows with the cast; the screenshot takes its height from here.
+    window.sheetHeight = Math.ceil(document.body.scrollHeight);
+  });
+</script>
+</body>
+</html>

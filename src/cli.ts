@@ -42,6 +42,9 @@ Usage:
                                              with assets/brand/brand.json: channel intro, logo, outro, thumbnail)
   npm run wata -- topics [--count 5]         the brain proposes new topics and starts a job for each (studio/jobs/)
   npm run wata -- write <job|"topic"> [--era KEY]   research + write the job's script (5–8 min, dialogue) for review
+  npm run wata -- studio [--port 5175] [--no-scheduler]
+                                             the studio: web page at http://127.0.0.1:5175 (review scripts, costume sheets,
+                                             videos; tokens) + the scheduler (light work in office hours, renders at night)
   npm run wata -- tokens                     what the brain (Claude) has spent: today, per job, per step
   npm run wata -- validate <timeline.json>   check a timeline without rendering
   npm run wata -- render <timeline.json> [--profile 9x16|16x9] [--encoder x264|qsv] [--force]
@@ -121,6 +124,8 @@ async function main(): Promise<number> {
       tag: { type: "string" },
       "voice-only": { type: "boolean", default: false },
       "no-brand": { type: "boolean", default: false },
+      "no-scheduler": { type: "boolean", default: false },
+      port: { type: "string" },
       out: { type: "string" },
       help: { type: "boolean", short: "h", default: false },
     },
@@ -234,11 +239,26 @@ async function main(): Promise<number> {
     case "write": {
       if (!file) throw new TimelineError('write needs a job or a topic, e.g. write "Sơn Tinh Thủy Tinh"');
       const { listJobs, newJob } = await import("./studio/jobs.ts");
-      const { writeScript } = await import("./studio/write.ts");
+      const { writeJob } = await import("./studio/produce.ts");
       const job = (await listJobs()).find((j) => j.slug === file || j.topic === file) ?? (await newJob(file, { era: values.era }));
-      const done = await writeScript(job.slug);
+      const done = await writeJob(job.slug);
       console.log(done.status === "review" ? `✔ studio/jobs/${done.slug}/script.txt — waiting for review${done.history.at(-1)?.info ? ` (${done.history.at(-1)!.info})` : ""}` : `✘ ${done.error}`);
       return done.status === "review" ? 0 : 1;
+    }
+
+    case "studio": {
+      const { startServer } = await import("./studio/server.ts");
+      const { runScheduler, schedulerState } = await import("./studio/schedule.ts");
+      const port = Number(values.port ?? 5175);
+      await startServer(port);
+      console.log(`Studio: http://127.0.0.1:${port}`);
+      const other = await schedulerState();
+      if (values["no-scheduler"]) return await new Promise<number>(() => {});
+      if (other && !other.lastError && other.pid !== process.pid) {
+        console.log(`(the scheduler already runs, pid ${other.pid}: this one only serves the page)`);
+        return await new Promise<number>(() => {});
+      }
+      return await runScheduler();
     }
 
     case "tokens": {

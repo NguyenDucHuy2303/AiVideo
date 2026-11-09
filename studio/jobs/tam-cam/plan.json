@@ -1,0 +1,703 @@
+{
+  "title": "Tấm Cám",
+  "scenes": [
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, một cô gái hiền lành bị bắt nạt mãi thì rồi sẽ ra sao nhỉ?"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Hôm nay, Huy Kể Chuyện sẽ kể cho các bạn nghe truyện cổ tích Tấm Cám."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngày xưa, ở một làng quê, có hai chị em cùng cha khác mẹ là Tấm và Cám."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Mẹ Tấm mất sớm, rồi cha Tấm cũng qua đời. Tấm phải ở với dì ghẻ, là mẹ của Cám."
+        },
+        {
+          "who": "Dì ghẻ",
+          "how": "quát",
+          "text": "Tấm đâu! Đi chăn trâu, gánh nước, tối về còn xay lúa giã gạo nữa đấy!"
+        },
+        {
+          "who": "Tấm",
+          "how": "mệt",
+          "text": "Vâng ạ, con đi ngay đây dì."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Một hôm, dì ghẻ đưa cho mỗi chị em một cái giỏ, bảo ra đồng bắt tôm bắt tép."
+        },
+        {
+          "who": "Dì ghẻ",
+          "how": "dõng dạc",
+          "text": "Đứa nào bắt được đầy giỏ, ta thưởng cho một cái yếm đỏ!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ra đồng, Tấm chăm chỉ mò cua bắt tép, chỉ một buổi đã đầy giỏ. Cám thì đủng đỉnh dạo chơi, giỏ vẫn trống không."
+        },
+        {
+          "who": "Cám",
+          "how": "vui vẻ",
+          "text": "Chị Tấm ơi, chị Tấm! Đầu chị lấm, chị hụp cho sâu, kẻo về mẹ mắng!"
+        },
+        {
+          "who": "Tấm",
+          "how": "vui vẻ",
+          "text": "Ừ, để chị xuống ao gội đầu cho sạch."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Tấm vừa lội xuống ao, Cám liền trút hết tép sang giỏ mình rồi chạy về trước."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Tấm lên bờ, chỉ thấy giỏ không. Cô ngồi bưng mặt khóc."
+        },
+        {
+          "who": "Tấm",
+          "how": "khóc",
+          "text": "Hu hu, giỏ tép của tôi đâu mất rồi?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Bỗng một làn mây trắng hiện ra. Ông Bụt râu tóc bạc phơ hiện lên."
+        },
+        {
+          "who": "Bụt",
+          "how": "vui vẻ",
+          "text": "Vì sao con khóc?"
+        },
+        {
+          "who": "Tấm",
+          "how": "buồn rầu",
+          "text": "Thưa Bụt, em Cám lấy hết tép của con rồi ạ."
+        },
+        {
+          "who": "Bụt",
+          "how": "cười",
+          "text": "Con nín đi. Nhìn vào giỏ xem, vẫn còn một con cá bống đấy. Con đem về thả xuống giếng mà nuôi nhé."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Bụt dặn Tấm mỗi bữa ăn ba bát thì ăn hai, còn một bát dành cho bống."
+        },
+        {
+          "who": "Bụt",
+          "how": "dõng dạc",
+          "text": "Khi cho ăn, con gọi thế này. Bống bống bang bang, lên ăn cơm vàng cơm bạc nhà ta, chớ ăn cơm hẩm cháo hoa nhà người."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Từ đó, sau mỗi bữa, Tấm lại mang cơm ra bờ giếng gọi bống. Bống ngày một lớn."
+        },
+        {
+          "who": "Tấm",
+          "how": "vui vẻ",
+          "text": "Bống bống bang bang, lên ăn cơm vàng cơm bạc nhà ta!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Dì ghẻ sinh nghi, sai Cám đi rình. Cám nấp bên giếng, nhẩm thuộc câu gọi bống."
+        },
+        {
+          "who": "Cám",
+          "how": "hớn hở",
+          "text": "Mẹ ơi, chị Tấm nuôi một con cá bống dưới giếng! Con thuộc câu gọi rồi!"
+        },
+        {
+          "who": "Dì ghẻ",
+          "how": "cười",
+          "text": "Hừ, để mẹ tính."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Hôm sau, dì ghẻ bảo Tấm chăn trâu ở đồng xa. Tấm vâng lời đi thật xa. Ở nhà, mẹ con Cám ra giếng gọi bống lên rồi bắt mất bống."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Chiều về, Tấm mang cơm ra giếng gọi mãi mà chẳng thấy bống đâu."
+        },
+        {
+          "who": "Tấm",
+          "how": "khóc",
+          "text": "Bống ơi, bống đâu rồi?"
+        },
+        {
+          "who": "Bụt",
+          "how": "thở dài",
+          "text": "Bống của con bị người ta bắt mất rồi. Con hãy tìm xương bống, bỏ vào bốn cái lọ, chôn dưới bốn chân giường con nằm."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Tấm tìm khắp nơi mà không thấy xương bống. Một chị gà mái lạch bạch chạy tới."
+        },
+        {
+          "who": "Gà",
+          "how": "vui vẻ",
+          "text": "Cục ta cục tác! Cho ta nắm thóc, ta bới xương cho!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Tấm cho gà một nắm thóc. Gà bới một lúc là thấy ngay. Tấm cẩn thận chôn bốn lọ dưới chân giường."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ít lâu sau, nhà vua mở hội. Mẹ con Cám áo quần xúng xính đi trước, dì ghẻ trộn một đấu thóc với một đấu gạo."
+        },
+        {
+          "who": "Tấm",
+          "how": "buồn rầu",
+          "text": "Dì ơi, cho con đi xem hội với."
+        },
+        {
+          "who": "Dì ghẻ",
+          "how": "quát",
+          "text": "Nhặt thóc ra thóc, gạo ra gạo cho xong rồi mới được đi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Mẹ con Cám đi rồi. Tấm ngồi nhặt mãi chưa được một nửa, lại khóc một mình. Bụt hiện lên."
+        },
+        {
+          "who": "Bụt",
+          "how": "vui vẻ",
+          "text": "Con làm sao lại khóc?"
+        },
+        {
+          "who": "Tấm",
+          "how": "khóc",
+          "text": "Lúc con nhặt xong thì hội đã tan mất rồi ạ."
+        },
+        {
+          "who": "Bụt",
+          "how": "cười",
+          "text": "Đừng khóc nữa. Con đặt thúng ra giữa sân, ta sẽ sai đàn chim sẻ xuống giúp con."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Một đàn chim sẻ ríu rít bay xuống sân. Chim lăng xăng nhặt thóc một bên, gạo một bên. Chỉ một lát đã xong."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Tấm",
+          "how": "buồn rầu",
+          "text": "Áo con rách quá, người ta không cho con vào hội đâu ạ."
+        },
+        {
+          "who": "Bụt",
+          "how": "cười",
+          "text": "Con hãy đào bốn cái lọ xương bống lên, sẽ có đủ mọi thứ cho con trẩy hội."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lọ thứ nhất có áo mớ ba, xống lụa, yếm lụa điều và khăn nhiễu. Lọ thứ hai có đôi hài thêu đi vừa như in."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Lọ thứ ba có một chú ngựa bé tí, vừa đặt xuống đất đã hí vang thành ngựa thật. Lọ cuối cùng là bộ yên cương xinh xắn."
+        },
+        {
+          "who": "Tấm",
+          "how": "mừng rỡ",
+          "text": "Ôi, đẹp quá! Con cảm ơn Bụt ạ!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Tấm cưỡi ngựa phóng về kinh. Khi qua một chỗ lội, cô đánh rơi một chiếc hài xuống nước."
+        },
+        {
+          "who": "Tấm",
+          "how": "hoảng hốt",
+          "text": "Ối, chiếc hài của mình!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngựa chạy nhanh quá, không kịp nhặt. Tấm lấy khăn gói chiếc hài còn lại rồi vào hội."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lát sau, đoàn xa giá của vua đến chỗ lội. Hai con voi dẫn đầu bỗng cắm ngà xuống đất, kêu rống lên không chịu đi."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Lính lội xuống nước, nhặt được chiếc hài thêu."
+        },
+        {
+          "who": "Vua",
+          "how": "ngạc nhiên",
+          "text": "Chà, chiếc hài thật xinh!"
+        },
+        {
+          "who": "Vua",
+          "how": "dõng dạc",
+          "text": "Truyền cho các cô gái đến thử hài. Ai đi vừa, ta sẽ lấy làm vợ!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các cô gái chen nhau vào ngôi lầu giữa bãi cỏ để thử, nhưng chẳng ai đi vừa."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Tấm đặt chân vào, chiếc hài vừa như in. Cô mở khăn lấy chiếc thứ hai, hai chiếc giống nhau như đúc."
+        },
+        {
+          "who": "Vua",
+          "how": "mừng rỡ",
+          "text": "Đúng là nàng rồi! Mau rước nàng vào cung!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Tấm bước lên kiệu trước đôi mắt tức tối của mẹ con Cám."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Làm hoàng hậu rồi, Tấm vẫn nhớ cha. Ngày giỗ cha, Tấm xin vua về thăm nhà."
+        },
+        {
+          "who": "Dì ghẻ",
+          "how": "vui vẻ",
+          "text": "Con quen trèo cau, trèo hái buồng cau cúng cha đi con."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Tấm vừa trèo lên, dì ghẻ đã cầm dao chặt gốc cau."
+        },
+        {
+          "who": "Tấm",
+          "how": "lo lắng",
+          "text": "Dì làm gì dưới gốc thế?"
+        },
+        {
+          "who": "Dì ghẻ",
+          "how": "cười",
+          "text": "Gốc cau lắm kiến, dì đuổi kiến cho con đấy mà."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Cây cau đổ, Tấm rơi xuống ao rồi biến mất. Mẹ con Cám lấy áo của Tấm cho Cám mặc, đưa vào cung và nói dối vua."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Vua buồn lắm, nhưng không nói gì."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Nhưng Tấm hóa thành một chú chim vàng anh, bay về vườn ngự, hót lên thật vui tai."
+        },
+        {
+          "who": "Vua",
+          "how": "ngạc nhiên",
+          "text": "Vàng anh vàng anh, có phải vợ anh, chui vào tay áo."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Chim vàng anh bay lại, rúc ngay vào tay áo vua."
+        },
+        {
+          "who": "Vua",
+          "how": "vui vẻ",
+          "text": "Ta sẽ làm cho chim một chiếc lồng bằng vàng!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Một hôm, Cám ngồi giặt áo cho vua bên giếng. Vàng anh đậu trên cành cây kêu lên."
+        },
+        {
+          "who": "Vàng anh",
+          "how": "tức giận",
+          "text": "Giặt áo chồng tao thì giặt cho sạch. Phơi áo chồng tao phơi lao phơi sào, chớ phơi bờ rào, rách áo chồng tao!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Cám về mách mẹ, rồi nhân lúc vua đi vắng, bắt chim vàng anh đi, vứt lông chim ra ngoài vườn."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Chỗ lông chim mọc lên hai cây xoan đào. Mỗi khi vua ra vườn, cành lá sà xuống che bóng mát như hai chiếc lọng."
+        },
+        {
+          "who": "Vua",
+          "how": "vui vẻ",
+          "text": "Nằm võng dưới hai cây này, lòng ta thấy thật dễ chịu."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Cám lại ghen tức, sai thợ chặt cây đóng khung cửi, rồi nói dối là cây đổ vì bão."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Cám ngồi vào dệt, khung cửi liền kêu lên cót ca cót két, lấy tranh chồng chị, có ngày biết tay."
+        },
+        {
+          "who": "Cám",
+          "how": "sợ hãi",
+          "text": "Mẹ ơi, khung cửi biết nói!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Mẹ con Cám đốt khung cửi, đem tro đổ thật xa bên lề đường."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Từ đống tro mọc lên một cây thị cao lớn. Cây chỉ đậu một quả, nhưng thơm ngát cả vùng."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Một bà lão bán hàng nước đi qua, ngẩng lên nhìn, giơ bị ra."
+        },
+        {
+          "who": "Bà lão",
+          "how": "vui vẻ",
+          "text": "Thị ơi thị rụng bị bà, bà để bà ngửi chứ bà không ăn."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Quả thị rụng ngay vào bị. Bà mang về cất trong buồng."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Mỗi lần bà đi chợ, Tấm bước ra từ quả thị, quét nhà, nấu cơm. Một hôm, bà quay về rình xem."
+        },
+        {
+          "who": "Bà lão",
+          "how": "ngạc nhiên",
+          "text": "Thì ra là cháu! Cháu ở lại làm con của bà nhé."
+        },
+        {
+          "who": "Tấm",
+          "how": "vui vẻ",
+          "text": "Vâng ạ, con sẽ ở với mẹ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Một hôm, vua đi ngang quán nước, được mời một miếng trầu têm cánh phượng."
+        },
+        {
+          "who": "Vua",
+          "how": "sửng sốt",
+          "text": "Trầu này ai têm? Giống hệt trầu vợ ta têm ngày trước!"
+        },
+        {
+          "who": "Bà lão",
+          "how": "vui vẻ",
+          "text": "Tâu bệ hạ, con gái già têm đấy ạ."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Tấm bước ra, xinh đẹp như ngày nào."
+        },
+        {
+          "who": "Vua",
+          "how": "mừng rỡ",
+          "text": "Tấm! Đúng là nàng rồi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Vua rước Tấm về cung trong tiếng trống, tiếng chiêng rộn ràng."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Còn mẹ con Cám, những việc ác bị lộ hết. Họ bị trừng phạt, phải rời kinh thành, xấu hổ chẳng dám gặp ai."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn có biết không, Tấm là hạt gạo vỡ nhỏ, còn cám là lớp vỏ mỏng quanh hạt gạo."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, Tấm hiền lành, chăm chỉ, hiếu thảo, nên dù gặp bao khó khăn vẫn được hạnh phúc. Ở hiền thì gặp lành các bạn nhé."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhớ đăng ký kênh Huy Kể Chuyện nhé. Hẹn gặp lại các bạn!"
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "name": "Tấm",
+      "gender": "female",
+      "age": "young",
+      "role": "Cô gái mồ côi hiền lành, chăm chỉ, sau làm hoàng hậu",
+      "villain": false
+    },
+    {
+      "name": "Vua",
+      "gender": "male",
+      "age": "young",
+      "role": "Nhà vua nhặt được chiếc hài, chồng của Tấm",
+      "villain": false
+    },
+    {
+      "name": "Cám",
+      "gender": "female",
+      "age": "young",
+      "role": "Em cùng cha khác mẹ, lười biếng, ghen ghét Tấm",
+      "villain": true
+    },
+    {
+      "name": "Dì ghẻ",
+      "gender": "female",
+      "age": "adult",
+      "role": "Mẹ của Cám, cay nghiệt với Tấm",
+      "villain": true
+    },
+    {
+      "name": "Bụt",
+      "gender": "male",
+      "age": "elder",
+      "role": "Ông Bụt hiền từ hiện lên giúp Tấm",
+      "villain": false
+    },
+    {
+      "name": "Bà lão",
+      "gender": "female",
+      "age": "elder",
+      "role": "Bà lão hàng nước, mẹ nuôi của Tấm",
+      "villain": false
+    },
+    {
+      "name": "Vàng anh",
+      "gender": "female",
+      "age": "young",
+      "role": "Chim vàng anh do Tấm hóa thân",
+      "villain": false
+    },
+    {
+      "name": "Gà",
+      "gender": "female",
+      "age": "adult",
+      "role": "Chị gà mái bới tìm xương bống giúp Tấm",
+      "villain": false
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Tấm mồ côi mẹ rồi mồ côi cha, ở với dì ghẻ cay nghiệt, phải chăn trâu, gánh nước, xay lúa giã gạo, còn Cám được nuông chiều",
+      "source": "Tấm Cám"
+    },
+    {
+      "claim": "Dì ghẻ hứa thưởng yếm đỏ cho ai bắt đầy giỏ tép; Cám lừa Tấm hụp xuống ao rồi trút hết tép",
+      "source": "Tấm Cám"
+    },
+    {
+      "claim": "Bụt cho Tấm nuôi cá bống dưới giếng với câu gọi Bống bống bang bang; mẹ con Cám rình học câu gọi rồi bắt bống",
+      "source": "Tấm Cám"
+    },
+    {
+      "claim": "Gà bới được xương bống; Tấm bỏ vào bốn lọ chôn dưới bốn chân giường",
+      "source": "Tấm Cám"
+    },
+    {
+      "claim": "Dì ghẻ trộn thóc với gạo bắt Tấm nhặt; Bụt sai đàn chim sẻ xuống nhặt giúp",
+      "source": "Tấm Cám"
+    },
+    {
+      "claim": "Bốn lọ cho áo mớ ba, xống lụa, yếm lụa điều, khăn nhiễu, đôi giày thêu, ngựa và yên cương",
+      "source": "Tấm Cám"
+    },
+    {
+      "claim": "Tấm đánh rơi một chiếc giày ở chỗ lội; voi ngự cắm ngà không chịu đi, vua nhặt được giày và cho các cô gái thử, Tấm đi vừa",
+      "source": "Tấm Cám"
+    },
+    {
+      "claim": "Ngày giỗ cha, dì ghẻ bảo Tấm trèo cau rồi chặt gốc, nói dối là đuổi kiến",
+      "source": "Tấm Cám"
+    },
+    {
+      "claim": "Tấm hóa thân lần lượt thành chim vàng anh, cây xoan đào, khung cửi rồi cây thị chỉ có một quả",
+      "source": "Tấm Cám"
+    },
+    {
+      "claim": "Bà lão hàng nước xin quả thị với câu Thị ơi thị rụng bị bà, bà để bà ngửi chứ bà không ăn",
+      "source": "Tấm Cám"
+    },
+    {
+      "claim": "Tên Tấm là hạt gạo vỡ nhỏ, tên Cám là lớp vỏ mỏng quanh hạt gạo",
+      "source": "Tấm Cám"
+    }
+  ],
+  "look": "Bối cảnh làng quê đồng bằng Bắc Bộ thời xưa trong cổ tích: lũy tre xanh, ruộng lúa, ao làng, giếng đất có thành gạch, nhà tranh vách đất, sân đất nện, bếp rơm, cối xay lúa, cối giã gạo, thúng mủng, giỏ tre, trâu, cây cau, cây thị đầu làng. Tấm: tóc đen dài vấn khăn vuông mỏ quạ, áo cánh nâu vá, váy đen dài, chân đất; khi đi hội mặc áo mớ ba nhiều lớp màu nhẹ, yếm lụa điều đỏ kín đáo bên trong, xống lụa đen dài, khăn nhiễu, hài thêu hoa; khi làm hoàng hậu mặc áo giao lĩnh lụa vàng nhạt, váy dài, tóc búi cài trâm. Cám: áo tứ thân màu hồng sặc sỡ, yếm thắm, khăn mỏ quạ, mặt hay bĩu môi. Dì ghẻ: áo tứ thân nâu sẫm, khăn vấn, thắt lưng, mặt cau có nhưng không dữ tợn quá. Bụt: ông già râu tóc bạc trắng dài, áo choàng trắng rộng, gậy trúc, hiện trên mây trắng và tòa sen. Vua: áo long bào vàng thêu rồng, mũ miện vàng, đai ngọc, đi xa giá có voi ngự phủ lọng vàng, lính hầu mặc áo nẹp đỏ, nón dấu. Bà lão: áo nâu, khăn mỏ quạ, lưng hơi còng, quán nước mái lá bên đường với chõng tre, ấm nước chè xanh, cơi trầu, miếng trầu têm cánh phượng. Cung vua: mái ngói cong, cột gỗ sơn son, vườn ngự có hai cây xoan đào hoa tím, võng đay, lồng chim vàng, khung cửi gỗ. Hội làng: cờ ngũ sắc, lầu gỗ giữa bãi cỏ, trống chiêng. Tránh: đồ nhựa, đồng hồ, quần âu, giày da kiểu Tây, váy ngắn, đèn điện, xe cộ hiện đại."
+}

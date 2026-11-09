@@ -1,0 +1,134 @@
+/**
+ * The cast of a story, designed by the brain from the library's look vocabulary and the era's
+ * archetypes (the plan's "look" notes say what each character wears), then drawn as a costume
+ * sheet for the user to approve with the script. Approved, the cast is used as is: the scene
+ * compiler never swaps a designed look for an archetype.
+ */
+import fs from "node:fs/promises";
+import path from "node:path";
+import { pathToFileURL } from "node:url";
+import { ROOT } from "../config.ts";
+import { think } from "../brain/claude.ts";
+import { still } from "../animation/capture.ts";
+import type { CastMember } from "../animation/compile/scene.ts";
+import { jobDir, loadJob } from "./jobs.ts";
+import { eras } from "./topics.ts";
+import type { Plan } from "./write.ts";
+
+const PLAYER = path.join(ROOT, "src", "animation", "player.html");
+const SHEET = path.join(ROOT, "src", "studio", "sheet.html");
+
+/** What a look may say: the library's own words (runtime/human.js, runtime/horse.js). */
+const VOCABULARY = `Người (kind "human"), look là object:
+- body: child | man | strong (tráng sĩ, lực sĩ) | woman | elder (dáng còng)
+- build: slim | average | heavy
+- skin: mã màu hex (da người Việt: #e8b27c, #e0aa74, #d9a06c, #d0a070…)
+- outfit: { type, color, skirt, trim } với type:
+  dongson (áo chui đầu có dải hoa văn trống đồng; nữ váy, nam khố) · plume (lễ phục vua Hùng: áo đính đồng, váy lông chim)
+  armor (giáp sắt tráng sĩ) · enemy (quân giặc phương Bắc) · loincloth (khố) · tunic (áo nông dân thời sau) · robe (áo dài tay thụng, quan lại thời sau) · dress (váy áo nữ thời sau)
+- pants, legs: mã màu (tùy chọn)
+- hair: { style, color } style: traidao (trẻ con, chỏm tóc) | bun (búi) | long | short | turban | bald
+- headwear: feather (mũ lông chim vua Hùng) | feather_band (dải lông chim Lạc tướng, lính) | helmet (nón sắt tráng sĩ) | enemy_helmet | crown | nonla (nón lá; không dùng cho thời Văn Lang)
+- beard: mã màu râu; cape: true; bareChest: true; tattoo: true (xăm hoa văn); bracelets: true; earrings: true (đồ đồng)
+- prop: { type } và props: [{ type }, …] (đổi đạo cụ giữa cảnh), type: iron_whip broken_whip bamboo spear bronze_axe shield horn (tù và) sword stick basket bowl scroll flag
+- face: { shape: round|oval|square|jowl, eyes: round|almond|narrow|droopy, nose: button|round|long, brows: thin|thick|bushy, wrinkles: true, mustache: thin|thick|droopy, iris: mã màu, eyeScale: 0.9–1.2 }
+Ngựa (kind "horse"), look: { kind: iron (ngựa sắt bờm lửa) | plain, color, mane, saddle }`;
+
+const SCHEMA = {
+  type: "object",
+  properties: {
+    characters: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          id: { type: "string", pattern: "^[a-z][a-z0-9_]{1,23}$" },
+          name: { type: "string" },
+          kind: { enum: ["human", "horse"] },
+          archetype: { type: "string" },
+          look: { type: "object", additionalProperties: true },
+          scale: { type: "number" },
+          group: { type: "boolean" },
+          formOf: { type: "string" },
+          speaks: { type: "array", items: { type: "string" } },
+          role: { type: "string" },
+        },
+        required: ["id", "name", "kind", "archetype", "look", "scale", "group", "formOf", "speaks", "role"],
+      },
+    },
+  },
+  required: ["characters"],
+};
+
+export interface Designed extends CastMember { speaks: string[]; role: string }
+
+const merge = (base: unknown, over: unknown): unknown => {
+  if (!base || typeof base !== "object" || Array.isArray(base) || !over || typeof over !== "object" || Array.isArray(over)) return over ?? base;
+  const out: Record<string, unknown> = { ...(base as object) };
+  for (const [k, v] of Object.entries(over as object)) out[k] = merge(out[k], v);
+  return out;
+};
+
+/** Design the cast of a job: studio/jobs/<slug>/cast.json (CastMember[] + who speaks). */
+export async function designCast(slug: string, log: (s: string) => void = console.log): Promise<Designed[]> {
+  const job = await loadJob(slug), dir = jobDir(slug);
+  const plan: Plan = JSON.parse(await fs.readFile(path.join(dir, "plan.json"), "utf8"));
+  const all = await eras() as Record<string, { name: string; avoid?: string[]; archetypes?: Record<string, unknown> }>;
+  const era = job.era ? all[job.era] : undefined;
+  const story = plan.scenes.map((s, i) => `${i + 1}. ${s.parts.map((p) => (p.who ? `${p.who}: "${p.text}"` : p.text)).join(" ")}`).join("\n");
+  const system = "Bạn là họa sĩ thiết kế nhân vật cho phim hoạt hình 2D thiếu nhi về truyện Việt Nam. Bạn chỉ dùng đúng các từ của thư viện hình, và vẽ trang phục đúng thời đại của truyện.";
+  const prompt = [
+    `Thiết kế nhân vật cho "${plan.title}". Thời đại: ${era?.name ?? job.era ?? "chưa rõ"}.`,
+    era?.avoid?.length ? `Tránh: ${era.avoid.join("; ")}` : "",
+    "",
+    "Thư viện hình:", VOCABULARY, "",
+    era?.archetypes ? `Mẫu nhân vật có sẵn của thời đại này (archetype; look của bạn được ghép đè lên mẫu, chỉ cần ghi chỗ khác):\n${JSON.stringify(era.archetypes)}` : "Thời đại chưa có mẫu: ghi đầy đủ look.",
+    "",
+    "Mô tả trang phục từ biên kịch:", plan.look, "",
+    "Nhân vật có lời thoại:", ...plan.cast.map((c) => `- ${c.name}: ${c.role} (${c.gender}, ${c.age}${c.villain ? ", phe ác" : ""})`), "",
+    "Yêu cầu:",
+    "- Mỗi nhân vật trên màn hình một mục: người có lời thoại, cộng nhân vật không nói nhưng xuất hiện (ngựa, voi, đoàn quân, dân làng…). Vật không có trong thư viện thì bỏ qua.",
+    "- speaks: các tên trong danh sách lời thoại mà nhân vật này nói (\"Dân làng\" là một đám đông: group true).",
+    "- archetype: khóa mẫu gần nhất, hoặc \"none\". formOf: id của dạng trước nếu nhân vật biến hình, không thì \"none\".",
+    "- scale: 1 người thường; trẻ nhỏ 0.75–0.85; khổng lồ khoảng 2.4.",
+    "- Mỗi nhân vật chính phải dễ phân biệt: màu áo, kiểu tóc, mũ, khuôn mặt khác nhau.",
+    "- role: một dòng mô tả cho bảng trang phục (tiếng Việt).",
+    "",
+    "Truyện:", story,
+  ].filter((l) => l !== "").join("\n");
+  const { data } = await think<{ characters: (Omit<Designed, "formOf"> & { archetype: string; formOf: string })[] }>({ job: slug, step: "design-cast", model: "sonnet", system, prompt, schema: SCHEMA }, log);
+  const cast: Designed[] = data.characters.map((c) => {
+    const base = c.archetype !== "none" ? era?.archetypes?.[c.archetype] : undefined;
+    const { archetype: _, ...rest } = c;
+    return { ...rest, look: base ? merge(JSON.parse(JSON.stringify(base)), c.look) : c.look, formOf: c.formOf !== "none" ? c.formOf : undefined, designed: true };
+  });
+  await fs.writeFile(path.join(dir, "cast.json"), JSON.stringify(cast, null, 2));
+  return cast;
+}
+
+/** The costume sheet: every character standing, with name and role (costumes.png). */
+export async function costumeSheet(slug: string): Promise<string> {
+  const job = await loadJob(slug), dir = jobDir(slug);
+  const cast: Designed[] = JSON.parse(await fs.readFile(path.join(dir, "cast.json"), "utf8"));
+  const plan: Plan = JSON.parse(await fs.readFile(path.join(dir, "plan.json"), "utf8"));
+  const all = await eras() as Record<string, { name: string }>;
+  const tiles = path.join(dir, "sheet");
+  await fs.mkdir(tiles, { recursive: true });
+  const items: { src: string; name: string; role: string }[] = [];
+  for (const c of cast) {
+    const out = path.join(tiles, `${c.id}.png`);
+    const scene = {
+      duration: 2, time: "day", era: job.era, backdrop: false, set: { name: "sky" },
+      cast: [{ id: c.id, type: c.kind, look: c.look, x: 0, scale: 1 }],
+      actions: [{ actor: c.id, at: 0, do: c.kind === "horse" ? "stand" : "idle", ...(c.kind === "human" ? { face: "happy" } : {}) }],
+      shots: [{ at: 0, type: "full", on: c.id }],
+    };
+    await still({ page: PLAYER, width: 480, height: 640, output: out, at: 1, params: { scene, width: 480, height: 640 } });
+    items.push({ src: pathToFileURL(out).href, name: c.name, role: c.role });
+  }
+  const rows = Math.ceil(items.length / 4), height = 120 + rows * 735 + 40;
+  const file = path.join(dir, "costumes.png");
+  await still({ page: SHEET, width: 1920, height, output: file, params: { title: `${plan.title}: bảng trang phục`, era: all[job.era ?? ""]?.name ?? job.era ?? "", items } });
+  await fs.rm(tiles, { recursive: true, force: true });
+  return file;
+}

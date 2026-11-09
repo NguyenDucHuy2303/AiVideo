@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Huy Kể Chuyện · Studio</title>
+<style>
+  :root { --red: #a3261c; --bronze: #c98a2a; --ink: #2a160a; --paper: #fbf5e9; --card: #fffdf8; --line: #e6d6b8; --muted: #7a6650; --green: #2f7a3a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Noto Sans", system-ui, sans-serif; background: var(--paper); color: var(--ink); }
+  header { display: flex; align-items: center; gap: 18px; padding: 12px 22px; background: var(--red); color: #fff8e6; position: sticky; top: 0; z-index: 5; }
+  header h1 { margin: 0; font-size: 20px; letter-spacing: .3px; }
+  header .pill { background: rgba(255,255,255,.15); border-radius: 999px; padding: 4px 12px; font-size: 13px; white-space: nowrap; }
+  header .grow { flex: 1; }
+  .bar { width: 160px; height: 8px; background: rgba(255,255,255,.25); border-radius: 4px; overflow: hidden; display: inline-block; vertical-align: middle; margin-left: 6px; }
+  .bar i { display: block; height: 100%; background: #ffd27a; }
+  nav { display: flex; gap: 4px; padding: 10px 22px 0; border-bottom: 2px solid var(--line); }
+  nav button { border: 0; background: none; padding: 9px 14px; font: inherit; font-size: 15px; color: var(--muted); cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; }
+  nav button.on { color: var(--red); border-color: var(--red); font-weight: 700; }
+  nav .n { background: var(--bronze); color: #fff; border-radius: 999px; font-size: 12px; padding: 1px 7px; margin-left: 5px; }
+  main { display: grid; grid-template-columns: 340px 1fr; gap: 0; height: calc(100vh - 100px); }
+  #list { border-right: 2px solid var(--line); overflow-y: auto; padding: 12px; }
+  .job { background: var(--card); border: 1.5px solid var(--line); border-radius: 12px; padding: 11px 13px; margin-bottom: 10px; cursor: pointer; }
+  .job:hover, .job.on { border-color: var(--bronze); box-shadow: 0 2px 8px rgba(120,80,20,.12); }
+  .job b { display: block; font-size: 16px; }
+  .job small { color: var(--muted); }
+  .st { display: inline-block; font-size: 12px; border-radius: 6px; padding: 1px 7px; margin-top: 5px; background: #eee3cc; }
+  .st.review, .st.video { background: #ffe1a8; } .st.failed { background: #f6c8c0; } .st.done { background: #cfe8cf; } .st.producing, .st.approved { background: #d8e4f4; }
+  #detail { overflow-y: auto; padding: 20px 28px 60px; }
+  #detail h2 { margin: 0 0 4px; font-size: 26px; color: var(--red); }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+  .actions { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; position: sticky; top: 0; background: var(--paper); padding: 10px 0; z-index: 2; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
+  .actions button { font: inherit; font-size: 15px; border-radius: 10px; padding: 9px 16px; cursor: pointer; border: 2px solid; }
+  .ok { background: var(--green); color: #fff; border-color: var(--green); }
+  .fixb { background: #fff; color: #9a5a00; border-color: #e0a84a; }
+  .no { background: #fff; color: var(--red); border-color: #e3a29a; }
+  textarea { width: 100%; min-height: 70px; font: inherit; font-size: 15px; padding: 8px 10px; border-radius: 10px; border: 1.5px solid var(--line); }
+  #note { display: none; flex-basis: 100%; }
+  section { background: var(--card); border: 1.5px solid var(--line); border-radius: 14px; padding: 14px 18px; margin-bottom: 16px; }
+  section h3 { margin: 0 0 10px; font-size: 17px; }
+  .sheet img { width: 100%; border-radius: 10px; cursor: zoom-in; }
+  .scene { display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  .scene:last-child { border: 0; }
+  .num { color: var(--bronze); font-weight: 700; }
+  .tell { margin: 2px 0; line-height: 1.55; }
+  .say { margin: 4px 0 4px 10px; padding: 4px 10px; border-left: 3px solid var(--bronze); background: #fff7e6; border-radius: 0 8px 8px 0; line-height: 1.5; }
+  .who { font-weight: 700; color: var(--red); }
+  .how { color: var(--muted); font-style: italic; font-size: 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .play { border: 0; background: var(--bronze); color: #fff; border-radius: 999px; width: 26px; height: 26px; cursor: pointer; font-size: 12px; }
+  video { width: 100%; border-radius: 12px; background: #000; }
+  .empty { color: var(--muted); padding: 40px; text-align: center; }
+  .notes li { margin-bottom: 6px; }
+  .zoom { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: none; z-index: 9; overflow: auto; cursor: zoom-out; }
+  .zoom img { width: 100%; }
+  .warn { background: #fff0d6; border: 1.5px solid #e8b25a; border-radius: 10px; padding: 8px 12px; margin-bottom: 12px; font-size: 14px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Huy Kể Chuyện · Studio</h1>
+  <span class="pill" id="sched">…</span>
+  <span class="grow"></span>
+  <span class="pill" id="tok">…</span>
+</header>
+<nav id="tabs"></nav>
+<main>
+  <div id="list"></div>
+  <div id="detail"><div class="empty">Chọn một mục bên trái.</div></div>
+</main>
+<div class="zoom" id="zoom" onclick="this.style.display='none'"><img id="zoomImg"></div>
+<audio id="audio"></audio>
+<script>
+const TABS = [
+  ["wait", "Chờ bạn duyệt", ["review", "video"]],
+  ["work", "Đang làm", ["writing", "rewrite", "approved", "producing", "fix"]],
+  ["done", "Xong", ["done"]],
+  ["off", "Bỏ / Lỗi", ["rejected", "failed"]],
+  ["tokens", "Token", []],
+];
+const STATUS = { writing: "đang viết", review: "chờ duyệt kịch bản", rewrite: "đang viết lại", approved: "đã duyệt, chờ làm", producing: "đang làm video", video: "chờ duyệt video", fix: "chờ sửa video", done: "xong", rejected: "đã bỏ", failed: "lỗi" };
+const TASK = { write: "viết kịch bản", prepare: "chuẩn bị video", render: "render video", topics: "đề xuất chủ đề" };
+let tab = "wait", jobs = [], current = null, sched = null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fmt = (n) => Number(n || 0).toLocaleString("vi");
+const ago = (t) => { const m = Math.round((Date.now() - new Date(t)) / 60000); return m < 1 ? "vừa xong" : m < 60 ? `${m} phút trước` : m < 1440 ? `${Math.round(m / 60)} giờ trước` : `${Math.round(m / 1440)} ngày trước`; };
+
+async function load() {
+  const r = await fetch("/api/jobs").then((r) => r.json());
+  jobs = r.jobs; sched = r.scheduler;
+  const t = await fetch("/api/tokens").then((r) => r.json());
+  const pct = Math.min(100, (t.today / t.settings.perDayTokens) * 100);
+  $("#tok").innerHTML = `Token hôm nay: ${fmt(t.today)} / ${fmt(t.settings.perDayTokens)} <span class="bar"><i style="width:${pct}%"></i></span>`;
+  $("#sched").textContent = !sched ? "Bộ lập lịch chưa chạy" : sched.lastError && !sched.task ? `⚠ ${sched.lastError}` :
+    `${sched.window === "office" ? "Giờ hành chính: việc nhẹ" : "Ngoài giờ: được render"} · ${sched.task ? `đang ${TASK[sched.task.what] || sched.task.what}${sched.task.slug ? `: ${sched.task.slug}` : ""}` : "đang chờ việc"}`;
+  drawTabs(); drawList();
+}
+
+function drawTabs() {
+  $("#tabs").innerHTML = TABS.map(([k, label, sts]) => {
+    const n = jobs.filter((j) => sts.includes(j.status)).length;
+    return `<button class="${k === tab ? "on" : ""}" onclick="tab='${k}';current=null;load();${k === "tokens" ? "showTokens()" : ""}">${label}${n ? `<span class="n">${n}</span>` : ""}</button>`;
+  }).join("");
+}
+
+function drawList() {
+  const sts = TABS.find((t) => t[0] === tab)[2];
+  if (tab === "tokens") { $("#list").innerHTML = ""; return; }
+  const list = jobs.filter((j) => sts.includes(j.status));
+  $("#list").innerHTML = list.length ? list.map((j) => `
+    <div class="job ${current === j.slug ? "on" : ""}" onclick="show('${j.slug}')">
+      <b>${esc(j.topic)}</b>
+      <small>${esc(j.kind || "")} · ${esc(j.era || "")} · ${fmt(j.tokens)} token</small><br>
+      <span class="st ${j.status}">${STATUS[j.status] || j.status}</span>
+      <small> ${ago(j.history.at(-1).at)}</small>
+    </div>`).join("") : `<div class="empty">Trống.</div>`;
+}
+
+async function show(slug) {
+  current = slug; drawList(); history.replaceState(null, "", `#${slug}`);
+  const d = await fetch(`/api/job/${slug}`).then((r) => r.json());
+  const { job, plan, project, sources, files } = d;
+  const has = (f) => files.includes(f);
+  const voices = project?.voices || {};
+  const voiceOf = (who) => { const v = voices[who]; return v ? (typeof v === "string" ? v : v.voice) : null; };
+  const used = d.tokens.reduce((n, e) => n + e.input + e.cacheWrite + e.output + Math.round(e.cacheRead * 0.1), 0);
+  const canReview = job.status === "review" || job.status === "video";
+  const last = job.history.at(-1);
+  let h = `<h2>${esc(plan?.title || job.topic)}</h2>
+    <div class="meta">${esc(job.kind || "")} · thời đại ${esc(job.era || "?")} · ${STATUS[job.status]} · viết bởi ${esc(job.by || "?")} · ${fmt(used)} token</div>`;
+  if (canReview || job.status === "failed" || job.status === "rejected") {
+    h += `<div class="actions">
+      ${canReview ? `<button class="ok" onclick="act('approve')">✔ Duyệt ${job.status === "video" ? "video" : "kịch bản và trang phục"}</button>
+      <button class="fixb" onclick="toggleNote()">✎ Yêu cầu sửa…</button>` : ""}
+      ${job.status === "failed" ? `<button class="ok" onclick="act('retry')">↻ Thử lại</button>` : ""}
+      ${job.status === "rejected" ? `<button class="fixb" onclick="act('retry')">↩ Lấy lại để duyệt</button>` : ""}
+      ${job.status !== "rejected" ? `<button class="no" onclick="if(confirm('Bỏ chủ đề này?'))act('reject')">✘ Bỏ</button>` : ""}
+      <div id="note"><textarea id="noteText" placeholder="${job.status === "video" ? "Ví dụ: cảnh 5 mẹ phải đang nấu cơm; Sơn Tinh nói to hơn…" : "Ví dụ: thêm cảnh mẹ ru con; bớt cảnh đánh nhau; áo Mị Nương màu hồng…"}"></textarea>
+        <button class="fixb" onclick="act('fix')">Gửi yêu cầu sửa</button></div>
+    </div>`;
+  }
+  if (job.error) h += `<div class="warn">Lỗi: ${esc(job.error)}</div>`;
+  else if (last?.info && /vấn đề/.test(last.info)) h += `<div class="warn">${esc(last.info)}</div>`;
+  if (has("video.mp4")) h += `<section><h3>Video</h3><video controls preload="metadata" src="/files/${slug}/video.mp4" ${has("thumbnail.jpg") ? `poster="/files/${slug}/thumbnail.jpg"` : ""}></video>
+    ${has("thumbnail.jpg") ? `<p><b>Thumbnail</b></p><img style="width:50%;border-radius:10px" src="/files/${slug}/thumbnail.jpg">` : ""}</section>`;
+  if (has("costumes.png")) h += `<section class="sheet"><h3>Bảng trang phục</h3><img src="/files/${slug}/costumes.png?${Date.now()}" onclick="zoom(this.src)"></section>`;
+  else if (plan) h += `<section><h3>Bảng trang phục</h3><div class="meta">Đang vẽ…</div><p>${esc(plan.look)}</p></section>`;
+  if (job.notes.length) h += `<section><h3>Góp ý của bạn</h3><ul class="notes">${job.notes.map((n) => `<li><small>${new Date(n.at).toLocaleString("vi")} · ${n.on === "video" ? "video" : "kịch bản"}</small><br>${esc(n.text)}</li>`).join("")}</ul></section>`;
+  if (plan) {
+    h += `<section><h3>Kịch bản · ${plan.scenes.length} cảnh · ${plan.scenes.flatMap((s) => s.parts).reduce((n, p) => n + p.text.split(/\s+/).length, 0)} chữ</h3>` +
+      plan.scenes.map((s, i) => `<div class="scene"><div class="num">${i + 1}</div><div>${s.parts.map((p) => p.who ? `<div class="say"><span class="who">${esc(p.who)}</span> <span class="how">(${esc(p.how)})</span>: “${esc(p.text)}”</div>` : `<p class="tell">${esc(p.text)}</p>`).join("")}</div></div>`).join("") + `</section>`;
+    h += `<section><h3>Nhân vật và giọng</h3><table><tr><th>Nhân vật</th><th>Vai</th><th>Giọng</th><th></th></tr>` +
+      plan.cast.map((c) => { const v = voices[c.name], name = voiceOf(c.name); return `<tr><td><b>${esc(c.name)}</b></td><td>${esc(c.role)}</td><td>${esc(name || "")}${v && v.pitch ? ` (cao độ ${v.pitch > 0 ? "+" : ""}${v.pitch})` : ""}</td><td>${name ? `<button class="play" title="Nghe giọng mẫu" onclick="play('${esc(name)}')">▶</button>` : ""}</td></tr>`; }).join("") +
+      `<tr><td><b>Người kể</b></td><td></td><td>${esc(project?.voice || "")}</td><td><button class="play" onclick="play('${esc(project?.voice || "")}')">▶</button></td></tr></table></section>`;
+    h += `<section><h3>Chi tiết chính và nguồn tư liệu</h3><ul>${plan.facts.map((f) => `<li>${esc(f.claim)} <small>(${esc(f.source)})</small></li>`).join("")}</ul>
+      <p>${(sources || []).map((s) => `<a href="${esc(s.url)}" target="_blank">${esc(s.title)}</a>`).join(" · ")}</p></section>`;
+  }
+  h += `<section><h3>Lịch sử</h3><table>${job.history.slice().reverse().map((x) => `<tr><td>${new Date(x.at).toLocaleString("vi")}</td><td>${STATUS[x.status] || x.status}</td><td>${esc(x.info || "")}</td></tr>`).join("")}</table></section>`;
+  $("#detail").innerHTML = h;
+}
+
+function toggleNote() { const n = $("#note"); n.style.display = n.style.display === "block" ? "none" : "block"; if (n.style.display === "block") $("#noteText").focus(); }
+async function act(action) {
+  const note = action === "fix" ? $("#noteText").value : undefined;
+  const r = await fetch(`/api/job/${current}/${action}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ note }) }).then((r) => r.json());
+  if (r.error) return alert(r.error);
+  await load(); show(current);
+}
+function play(name) { const a = $("#audio"); a.src = `/voice/${encodeURIComponent(name)}`; a.play(); }
+function zoom(src) { $("#zoomImg").src = src; $("#zoom").style.display = "block"; }
+
+async function showTokens() {
+  const t = await fetch("/api/tokens").then((r) => r.json());
+  const byJob = {};
+  for (const e of t.entries) { const k = e.job; (byJob[k] ||= { n: 0, w: 0, out: 0 }); byJob[k].n++; byJob[k].w += e.weighted; byJob[k].out += e.output; }
+  $("#detail").innerHTML = `<h2>Token đã dùng</h2>
+    <div class="meta">Hôm nay ${fmt(t.today)} / trần ${fmt(t.settings.perDayTokens)} · trần mỗi kịch bản ${fmt(t.settings.perJobTokens)} · trần mỗi lần làm video ${fmt(t.settings.perProduceTokens)}. Token "quy đổi": token đọc lại từ bộ nhớ đệm tính 1/10.</div>
+    <section><h3>Theo chủ đề</h3><table><tr><th>Chủ đề</th><th>Lần gọi</th><th>Token quy đổi</th><th>Token Claude viết ra</th></tr>
+    ${Object.entries(byJob).map(([k, v]) => `<tr><td>${esc(k)}</td><td>${v.n}</td><td>${fmt(v.w)}</td><td>${fmt(v.out)}</td></tr>`).join("")}</table></section>
+    <section><h3>Từng lần gọi (mới nhất trước)</h3><table><tr><th>Lúc</th><th>Chủ đề</th><th>Bước</th><th>Mô hình</th><th>Token</th><th>Giây</th></tr>
+    ${t.entries.slice().reverse().slice(0, 100).map((e) => `<tr><td>${new Date(e.at).toLocaleString("vi")}</td><td>${esc(e.job)}</td><td>${esc(e.step)}</td><td>${esc(e.model)}</td><td>${fmt(e.weighted)}${e.ok ? "" : " ✘"}</td><td>${e.seconds}</td></tr>`).join("")}</table></section>`;
+}
+
+window.renderFrame = () => {};
+window.ready = new Promise((r) => setTimeout(r, 2500)); // for screenshots
+load().then(() => { const slug = decodeURIComponent(location.hash.slice(1)); if (slug && jobs.some((j) => j.slug === slug)) { const j = jobs.find((x) => x.slug === slug); tab = (TABS.find((t) => t[2].includes(j.status)) || TABS[0])[0]; drawTabs(); show(slug); } });
+setInterval(() => { load(); }, 15000);
+</script>
+</body>
+</html>

@@ -81,7 +81,7 @@ export async function sdTurbo(): Promise<ImageGen | undefined> {
             "-W", String(width),
             "-H", String(height),
             "-s", String(parseInt(key.slice(0, 8), 16) % 2_147_483_647),
-            "-t", String(Math.max(1, os.availableParallelism())),
+            "-t", String(Math.max(1, Number(process.env.WATA_SD_THREADS) || os.availableParallelism())),
             "-o", tmp,
           ],
           { timeoutMs: TIMEOUT_MS, env: { ...process.env, LD_LIBRARY_PATH: [path.dirname(cli), process.env.LD_LIBRARY_PATH].filter(Boolean).join(":") } },

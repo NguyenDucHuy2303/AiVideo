@@ -11,7 +11,7 @@ import { research, type Source } from "../research/wiki.ts";
 import { moodOf, splitSpeakers } from "../tts/narrate.ts";
 import { exists } from "../utils/fs.ts";
 import { castVoices, type CastMember } from "./cast.ts";
-import { jobDir, loadJob, saveJob, setStatus, type Job } from "./jobs.ts";
+import { jobDir, loadJob, saveJob, type Job } from "./jobs.ts";
 import { eras } from "./topics.ts";
 
 export interface Part { who: string; how: string; text: string }
@@ -66,6 +66,12 @@ const SCHEMA = {
     look: { type: "string" },
   },
   required: ["title", "scenes", "cast", "facts", "look"],
+};
+
+const SCENES_SCHEMA = {
+  type: "object",
+  properties: { scenes: { type: "array", items: { type: "object", properties: { index: { type: "number" }, parts: SCHEMA.properties.scenes.items.properties.parts }, required: ["index", "parts"] } } },
+  required: ["scenes"],
 };
 
 const MOOD_WORDS = "vui vẻ, mừng rỡ, hớn hở, cười, buồn rầu, thở dài, khóc, lo lắng, sợ hãi, hoảng hốt, tức giận, quát, ngạc nhiên, sửng sốt, hô to, hét, dõng dạc, quyết tâm, tự hào, mệt";
@@ -149,11 +155,14 @@ export function check(plan: Plan): string[] {
   return [...new Set(problems)];
 }
 
-/** Write (or rewrite, with the user's notes) the script of a job. */
-export async function writeScript(slug: string, log: (s: string) => void = console.log): Promise<Job> {
+/**
+ * Write (or rewrite, with the user's notes) the script of a job. The job stays where it is;
+ * the caller moves it on (after the costume sheet). Returns the problems the checks left.
+ */
+export async function writeScript(slug: string, log: (s: string) => void = console.log): Promise<string[]> {
   let job = await loadJob(slug);
   const dir = jobDir(slug);
-  try {
+  {
     const topicFile = path.join(dir, "topic.json");
     const topic = (await exists(topicFile)) ? JSON.parse(await fs.readFile(topicFile, "utf8")) : {};
     const sources = await research(job.topic, { titles: topic.wiki });
@@ -167,11 +176,25 @@ export async function writeScript(slug: string, log: (s: string) => void = conso
     let { data: plan, by } = await think<Plan>({ ...ask, step: previous ? "rewrite-script" : "write-script", model: "opus", effort: "medium", prompt: prompt(job, era, sources, previous ? notes : [], previous) }, log);
     let problems = check(plan);
     if (problems.length) {
-      log(`  checks: ${problems.length} problem(s), revising`);
-      ({ data: plan } = await think<Plan>({ ...ask, step: "revise-script", model: "sonnet", prompt: [
-        "Sửa kịch bản (JSON) dưới đây cho hết các lỗi, giữ nguyên nội dung và giọng văn, trả lại toàn bộ kịch bản.",
-        "Lỗi:", ...problems.map((p) => `- ${p}`), "", JSON.stringify(plan),
-      ].join("\n") }, log));
+      // Problems in a few scenes: only those scenes go back (a whole script costs ~30k tokens).
+      const local = problems.every((p) => /^Cảnh \d+:/.test(p));
+      const bad = [...new Set(problems.map((p) => Number(/^Cảnh (\d+):/.exec(p)?.[1]) - 1).filter((i) => i >= 0))];
+      log(`  checks: ${problems.length} problem(s), revising ${local ? `scene(s) ${bad.map((i) => i + 1).join(", ")}` : "the script"}`);
+      if (local) {
+        const { data } = await think<{ scenes: { index: number; parts: Part[] }[] }>({ ...ask, step: "revise-scenes", model: "sonnet", schema: SCENES_SCHEMA, prompt: [
+          "Sửa các cảnh dưới đây cho hết lỗi, giữ nguyên nội dung và giọng văn. Trả lại đúng các cảnh này (index giữ nguyên).",
+          `Nhân vật được phép có lời thoại: ${plan.cast.map((c) => c.name).join(", ")}.`,
+          `Cách nói chọn trong: ${MOOD_WORDS}.`,
+          "Lỗi:", ...problems.map((p) => `- ${p}`), "",
+          JSON.stringify(bad.map((i) => ({ index: i + 1, parts: plan.scenes[i]!.parts }))),
+        ].join("\n") }, log);
+        for (const sc of data.scenes) if (plan.scenes[sc.index - 1]) plan.scenes[sc.index - 1] = { parts: sc.parts };
+      } else {
+        ({ data: plan } = await think<Plan>({ ...ask, step: "revise-script", model: "sonnet", prompt: [
+          "Sửa kịch bản (JSON) dưới đây cho hết các lỗi, giữ nguyên nội dung và giọng văn, trả lại toàn bộ kịch bản.",
+          "Lỗi:", ...problems.map((p) => `- ${p}`), "", JSON.stringify(plan),
+        ].join("\n") }, log));
+      }
       problems = check(plan);
     }
     await fs.writeFile(path.join(dir, "plan.json"), JSON.stringify(plan, null, 2));
@@ -180,10 +203,6 @@ export async function writeScript(slug: string, log: (s: string) => void = conso
     job = await loadJob(slug);
     job.by = by;
     await saveJob(job);
-    return setStatus(job, "review", problems.length ? `${problems.length} vấn đề còn lại: ${problems.slice(0, 3).join(" ")}` : undefined);
-  } catch (err) {
-    job = await loadJob(slug);
-    job.error = (err as Error).message;
-    return setStatus(job, "failed", job.error);
+    return problems;
   }
 }

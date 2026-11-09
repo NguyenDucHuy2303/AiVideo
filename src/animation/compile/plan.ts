@@ -207,7 +207,7 @@ export function completeCast(cast: CastMember[], parsed: ParsedStory, era?: stri
   const firstHorse = cast.find((c) => c.kind === "horse");
   for (const c of cast) {
     if (c.kind === "horse" && firstHorse && c !== firstHorse) { merged.set(c.id, firstHorse.id); continue; }
-    const look = archetype(c, era);
+    const look = c.designed ? undefined : archetype(c, era);
     out.push(look ? { ...c, look } : c);
   }
   const text = parsed.scenes.map((s) => s.narration).join(" ");

@@ -30,6 +30,8 @@ export interface Job {
   history: { at: string; status: JobStatus; info?: string }[];
   /** Which brain wrote the script (claude-opus, ollama-…). */
   by?: string;
+  /** While producing: "ready" once only the render is left. */
+  stage?: string;
   error?: string;
 }
 

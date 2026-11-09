@@ -1,0 +1,492 @@
+[
+  {
+    "id": "dong_tu_ngheo",
+    "name": "Chử Đồng Tử (thời nghèo)",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#c99663",
+      "outfit": {
+        "type": "loincloth",
+        "skirt": "#5a4a32",
+        "trim": "#a87a3a"
+      },
+      "bareChest": true,
+      "tattoo": false,
+      "hair": {
+        "style": "short",
+        "color": "#2a1a12"
+      },
+      "bracelets": false,
+      "props": [
+        {
+          "type": "basket"
+        }
+      ],
+      "build": "slim",
+      "face": {
+        "shape": "oval",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin",
+        "iris": "#2a1a12"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Chử Đồng Tử"
+    ],
+    "role": "Chàng trai gầy rám nắng, tóc cắt ngắn. Khi nghèo chỉ vẽ nửa thân trên, ngâm nước ngang bụng hoặc vùi cát tới vai, không lộ phần thân dưới; cầm giỏ cá.",
+    "designed": true
+  },
+  {
+    "id": "dong_tu",
+    "name": "Chử Đồng Tử (sau khi gặp Tiên Dung)",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#c99663",
+      "outfit": {
+        "type": "dongson",
+        "skirt": "#5a4a32",
+        "trim": "#c9902a",
+        "color": "#7a5030"
+      },
+      "bareChest": false,
+      "tattoo": false,
+      "hair": {
+        "style": "short",
+        "color": "#2a1a12"
+      },
+      "bracelets": true,
+      "props": [],
+      "build": "slim",
+      "face": {
+        "shape": "oval",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin",
+        "iris": "#2a1a12"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Chử Đồng Tử"
+    ],
+    "role": "Chàng trai gầy rám nắng, tóc ngắn, khố và áo ngắn chui đầu màu nâu, vòng đồng ở cổ tay; về sau cầm gậy thần.",
+    "designed": true
+  },
+  {
+    "id": "cha",
+    "name": "Chử Cù Vân",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "skin": "#c99a66",
+      "outfit": {
+        "type": "dongson",
+        "color": "#8a7a5a",
+        "skirt": "#6a5a42",
+        "trim": "#a87a3a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#e8e4dc"
+      },
+      "beard": "#e8e4dc",
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "droopy",
+        "nose": "long",
+        "brows": "thin",
+        "wrinkles": true
+      },
+      "build": "slim",
+      "bracelets": false,
+      "earrings": false
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Cha"
+    ],
+    "role": "Ông già dáng còng, tóc bạc búi, khố và áo ngắn chui đầu cũ sờn màu nâu xám, không trang sức.",
+    "designed": true
+  },
+  {
+    "id": "tien_dung",
+    "name": "Công chúa Tiên Dung",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "dongson",
+        "color": "#efe4cc",
+        "skirt": "#efe4cc",
+        "trim": "#c9902a"
+      },
+      "hair": {
+        "style": "long",
+        "color": "#1a1210"
+      },
+      "earrings": true,
+      "bracelets": true,
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "button",
+        "brows": "thin",
+        "iris": "#2a1a12",
+        "eyeScale": 1.1
+      },
+      "build": "slim",
+      "props": []
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Tiên Dung"
+    ],
+    "role": "Thiếu nữ dịu dàng, tóc dài búi một phần, áo ngắn chui đầu và váy dài kín đáo màu trắng ngà viền hoa văn Đông Sơn, khuyên tai và vòng tay đồng.",
+    "designed": true
+  },
+  {
+    "id": "thi_nu",
+    "name": "Thị nữ",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "outfit": {
+        "type": "dongson",
+        "color": "#b89a6e",
+        "skirt": "#b89a6e",
+        "trim": "#a87a3a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "earrings": false,
+      "props": [],
+      "build": "slim",
+      "skin": "#e0aa74",
+      "bracelets": true,
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Thị nữ"
+    ],
+    "role": "Người hầu của công chúa, áo ngắn chui đầu và váy nâu nhạt, tóc búi, vòng đồng ở tay.",
+    "designed": true
+  },
+  {
+    "id": "vua_hung",
+    "name": "Vua Hùng thứ mười tám",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "plume",
+        "color": "#8a3a22",
+        "skirt": "#6a4a2a",
+        "trim": "#c9902a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "headwear": "feather",
+      "beard": "#4a3a30",
+      "bracelets": true,
+      "earrings": true,
+      "face": {
+        "shape": "square",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thick",
+        "wrinkles": true
+      },
+      "build": "heavy"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Vua Hùng"
+    ],
+    "role": "Vua trang nghiêm đáng kính, râu dài, mũ lông chim năm lông, áo đính đồng, váy lông chim; ngồi trong nhà sàn lớn có trống đồng.",
+    "designed": true
+  },
+  {
+    "id": "lac_tuong",
+    "name": "Lạc tướng",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "outfit": {
+        "type": "dongson",
+        "color": "#2f5a4a",
+        "skirt": "#4a3a2a",
+        "trim": "#c9902a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "headwear": "feather_band",
+      "bracelets": true,
+      "prop": {
+        "type": "spear"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "long",
+        "brows": "thick",
+        "mustache": "thin"
+      },
+      "build": "average",
+      "skin": "#d0a070",
+      "tattoo": true,
+      "props": [
+        {
+          "type": "shield"
+        }
+      ]
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Lạc tướng"
+    ],
+    "role": "Tướng của vua Hùng: dải lông chim trên đầu, khố, áo đính đồng xanh lục, giáo đồng và khiên đồng.",
+    "designed": true
+  },
+  {
+    "id": "tien_ong",
+    "name": "Tiên ông",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "skin": "#e0b080",
+      "outfit": {
+        "type": "dongson",
+        "color": "#f2eee4",
+        "skirt": "#e8e2d4",
+        "trim": "#d8d0b8"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#f4f4f0"
+      },
+      "beard": "#f8f8f4",
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "droopy",
+        "nose": "long",
+        "brows": "bushy",
+        "wrinkles": true
+      },
+      "build": "slim",
+      "cape": true,
+      "bracelets": false
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Tiên ông"
+    ],
+    "role": "Cụ già râu tóc bạc phơ, áo choàng vải thô trắng, chống gậy; ngồi trong am cỏ tranh trên núi giữa biển.",
+    "designed": true
+  },
+  {
+    "id": "bac_lai_thuyen",
+    "name": "Bác lái thuyền",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#b88a58",
+      "outfit": {
+        "type": "dongson",
+        "skirt": "#4a3a2a",
+        "trim": "#a87a3a",
+        "color": "#6a5a3a"
+      },
+      "bareChest": false,
+      "tattoo": true,
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "bracelets": true,
+      "props": [
+        {
+          "type": "bamboo"
+        }
+      ],
+      "build": "average",
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thin"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Bác lái thuyền"
+    ],
+    "role": "Người đi thuyền buôn rám nắng, khố, áo ngắn chui đầu nâu, xăm hoa văn, cầm sào tre.",
+    "designed": true
+  },
+  {
+    "id": "dan_lang",
+    "name": "Dân làng",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "dongson",
+        "skirt": "#5a4a32",
+        "trim": "#a87a3a",
+        "color": "#8a6a42"
+      },
+      "bareChest": false,
+      "tattoo": true,
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "bracelets": true,
+      "props": [
+        {
+          "type": "basket"
+        }
+      ],
+      "build": "average"
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Dân làng"
+    ],
+    "role": "Đám đông dân chợ và dân quanh vùng: đàn ông khố, áo ngắn chui đầu, xăm hoa văn, mang giỏ tre.",
+    "designed": true
+  },
+  {
+    "id": "dan_lang_nu",
+    "name": "Dân làng nữ",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "outfit": {
+        "type": "dongson",
+        "color": "#6a5a3a",
+        "skirt": "#3a2a22",
+        "trim": "#c9902a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "earrings": true,
+      "props": [
+        {
+          "type": "basket"
+        }
+      ]
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Phụ nữ trong chợ và thành: áo ngắn chui đầu, váy, tóc búi, mang giỏ hoa quả.",
+    "designed": true
+  },
+  {
+    "id": "quan_linh",
+    "name": "Quân lính",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#d8a070",
+      "outfit": {
+        "type": "dongson",
+        "skirt": "#6a4a2a",
+        "trim": "#c9902a"
+      },
+      "bareChest": true,
+      "tattoo": true,
+      "headwear": "feather_band",
+      "bracelets": true,
+      "prop": {
+        "type": "spear"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "thick"
+      },
+      "props": [
+        {
+          "type": "bronze_axe"
+        }
+      ]
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Quân hầu, người chèo thuyền, lính gác và quân vua Hùng: khố, xăm hoa văn, dải lông chim, cầm giáo hoặc rìu đồng.",
+    "designed": true
+  },
+  {
+    "id": "tien_dong",
+    "name": "Tiên đồng ngọc nữ",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "outfit": {
+        "type": "dongson",
+        "color": "#f2e6b8",
+        "trim": "#d8a830",
+        "skirt": "#e3c890"
+      },
+      "hair": {
+        "style": "traidao"
+      },
+      "bracelets": true,
+      "props": [],
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin"
+      }
+    },
+    "scale": 0.85,
+    "group": true,
+    "speaks": [],
+    "role": "Các tiên đồng ngọc nữ trong tòa thành phép lạ: tóc chỏm, áo trắng vàng nhạt viền vàng lấp lánh.",
+    "designed": true
+  }
+]

@@ -1,0 +1,699 @@
+[
+  {
+    "id": "quoc_toan",
+    "name": "Trần Quốc Toản",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "slim",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "robe",
+        "color": "#2f66a8",
+        "skirt": "#2a4f80",
+        "trim": "#c9372c"
+      },
+      "pants": "#3b3b4a",
+      "hair": {
+        "style": "bun",
+        "color": "#1a1410"
+      },
+      "prop": {
+        "type": "sword"
+      },
+      "props": [
+        {
+          "type": "sword"
+        },
+        {
+          "type": "flag"
+        }
+      ],
+      "face": {
+        "shape": "oval",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thick",
+        "eyeScale": 1.15
+      }
+    },
+    "scale": 0.92,
+    "group": false,
+    "speaks": [
+      "Trần Quốc Toản"
+    ],
+    "role": "Thiếu niên 15–16 tuổi, mặt sáng, búi tóc gọn buộc đỏ, áo giao lĩnh dài màu lam thắt đai, quần dài; cầm kiếm thẳng, nhân vật chính.",
+    "designed": true
+  },
+  {
+    "id": "quoc_toan_tran",
+    "name": "Trần Quốc Toản ra trận",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "slim",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "armor",
+        "color": "#7a5a3a",
+        "skirt": "#2f66a8",
+        "trim": "#c9372c"
+      },
+      "pants": "#3b3b4a",
+      "hair": {
+        "style": "bun",
+        "color": "#1a1410"
+      },
+      "prop": {
+        "type": "sword"
+      },
+      "props": [
+        {
+          "type": "sword"
+        },
+        {
+          "type": "flag"
+        }
+      ],
+      "face": {
+        "shape": "oval",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thick",
+        "eyeScale": 1.15
+      }
+    },
+    "scale": 0.92,
+    "group": false,
+    "formOf": "quoc_toan",
+    "speaks": [
+      "Trần Quốc Toản"
+    ],
+    "role": "Quốc Toản ra trận: áo chẽn ngắn, giáp da kết vảy đơn giản, kiếm thẳng vỏ gỗ, cờ đỏ sáu chữ vàng.",
+    "designed": true
+  },
+  {
+    "id": "vua_tran",
+    "name": "Vua Trần Nhân Tông",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "robe",
+        "color": "#f0dc9a",
+        "skirt": "#e2c877",
+        "trim": "#b8862b"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1410"
+      },
+      "headwear": "crown",
+      "face": {
+        "shape": "round",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thin",
+        "mustache": "thin"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Vua"
+    ],
+    "role": "Vua hiền từ, áo bào vàng nhạt tay rộng cổ chéo, đội mũ cao triều phục.",
+    "designed": true
+  },
+  {
+    "id": "hung_dao",
+    "name": "Hưng Đạo Vương",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "robe",
+        "color": "#7a1f2b",
+        "skirt": "#5e1620",
+        "trim": "#c9a23a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1410"
+      },
+      "headwear": "crown",
+      "beard": "#1a1a1a",
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "long",
+        "brows": "bushy",
+        "mustache": "thick"
+      }
+    },
+    "scale": 1.05,
+    "group": false,
+    "speaks": [
+      "Hưng Đạo Vương"
+    ],
+    "role": "Đại tướng uy nghiêm, áo bào cổ chéo đỏ sẫm, mũ quan, râu đen dày.",
+    "designed": true
+  },
+  {
+    "id": "quang_khai",
+    "name": "Trần Quang Khải",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "heavy",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "robe",
+        "color": "#6b4a2e",
+        "skirt": "#54381f",
+        "trim": "#b08a4a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1410"
+      },
+      "headwear": "crown",
+      "beard": "#222222",
+      "face": {
+        "shape": "jowl",
+        "eyes": "droopy",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "droopy"
+      }
+    },
+    "scale": 1.02,
+    "group": false,
+    "speaks": [
+      "Trần Quang Khải"
+    ],
+    "role": "Thượng tướng, áo bào cổ chéo màu nâu, mũ quan, râu đen, mặt đầy đặn.",
+    "designed": true
+  },
+  {
+    "id": "nguyen_khoai",
+    "name": "Nguyễn Khoái",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "build": "heavy",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "armor",
+        "color": "#5b4a3a",
+        "skirt": "#3f3f3f",
+        "trim": "#a33a2a"
+      },
+      "hair": {
+        "style": "short",
+        "color": "#111111"
+      },
+      "headwear": "helmet",
+      "prop": {
+        "type": "sword"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "bushy",
+        "mustache": "thick"
+      }
+    },
+    "scale": 1.08,
+    "group": false,
+    "speaks": [
+      "Nguyễn Khoái"
+    ],
+    "role": "Tướng quân vạm vỡ, giáp da nâu, mũ sắt, ria dày, dũng cảm.",
+    "designed": true
+  },
+  {
+    "id": "khanh_du",
+    "name": "Trần Khánh Dư",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#c99560",
+      "outfit": {
+        "type": "tunic",
+        "color": "#7a5230",
+        "skirt": "#7a5230",
+        "trim": "#5a3a20"
+      },
+      "pants": "#6a5a48",
+      "hair": {
+        "style": "short",
+        "color": "#2a2018"
+      },
+      "headwear": "nonla",
+      "face": {
+        "shape": "jowl",
+        "eyes": "narrow",
+        "nose": "long",
+        "brows": "thick",
+        "mustache": "thin",
+        "wrinkles": true
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Trần Khánh Dư"
+    ],
+    "role": "Tướng bị mất chức đi bán than: nón lá, áo ngắn nâu, quần xắn, đứng trên thuyền than.",
+    "designed": true
+  },
+  {
+    "id": "ong_lao",
+    "name": "Ông lão gia nô",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "slim",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "tunic",
+        "color": "#7b5a3c",
+        "skirt": "#7b5a3c",
+        "trim": "#5a3f28"
+      },
+      "pants": "#6f6250",
+      "hair": {
+        "style": "bun",
+        "color": "#e8e8e8"
+      },
+      "beard": "#e8e8e8",
+      "face": {
+        "shape": "round",
+        "eyes": "droopy",
+        "nose": "round",
+        "brows": "thin",
+        "mustache": "droopy",
+        "wrinkles": true
+      }
+    },
+    "scale": 0.95,
+    "group": false,
+    "speaks": [
+      "Ông lão"
+    ],
+    "role": "Ông lão hiền hậu, tóc bạc búi, áo nâu cánh ngắn, quần ống rộng, dáng còng.",
+    "designed": true
+  },
+  {
+    "id": "gia_no",
+    "name": "Gia nô",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "tunic",
+        "color": "#3a4f73",
+        "skirt": "#3a4f73",
+        "trim": "#2a3a55"
+      },
+      "pants": "#5a4a38",
+      "hair": {
+        "style": "turban",
+        "color": "#d8cfae"
+      },
+      "prop": {
+        "type": "spear"
+      },
+      "props": [
+        {
+          "type": "spear"
+        },
+        {
+          "type": "shield"
+        },
+        {
+          "type": "bamboo"
+        }
+      ],
+      "face": {
+        "shape": "square",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thick"
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Gia nô"
+    ],
+    "role": "Đoàn gia nô: áo ngắn chàm, quần gối, khăn quấn đầu, chân đất, cầm giáo, khiên.",
+    "designed": true
+  },
+  {
+    "id": "dan_binh",
+    "name": "Dân binh",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "tunic",
+        "color": "#7b5a3c",
+        "skirt": "#7b5a3c",
+        "trim": "#5a3f28"
+      },
+      "pants": "#5a4a38",
+      "hair": {
+        "style": "turban",
+        "color": "#cfc4a0"
+      },
+      "prop": {
+        "type": "spear"
+      },
+      "props": [
+        {
+          "type": "spear"
+        },
+        {
+          "type": "shield"
+        },
+        {
+          "type": "bronze_axe"
+        }
+      ],
+      "face": {
+        "shape": "round",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thick"
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Dân binh, thợ đóng thuyền: áo ngắn nâu, khăn đầu, chèo thuyền, đẽo gỗ, tập giáo.",
+    "designed": true
+  },
+  {
+    "id": "dan_lang",
+    "name": "Dân làng",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "tunic",
+        "color": "#8a6a45",
+        "skirt": "#8a6a45",
+        "trim": "#6a4f30"
+      },
+      "pants": "#6f6250",
+      "hair": {
+        "style": "bun",
+        "color": "#1a1410"
+      },
+      "headwear": "nonla",
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin"
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Dân làng hai bên bờ sông reo hò, vẫy chào, áo nâu giản dị, nón lá.",
+    "designed": true
+  },
+  {
+    "id": "linh_tin",
+    "name": "Lính đưa tin",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "slim",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "tunic",
+        "color": "#9a3a2a",
+        "skirt": "#9a3a2a",
+        "trim": "#e0c070"
+      },
+      "pants": "#4a4a4a",
+      "hair": {
+        "style": "short",
+        "color": "#1a1410"
+      },
+      "prop": {
+        "type": "scroll"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin",
+        "eyeScale": 1.1
+      }
+    },
+    "scale": 0.95,
+    "group": false,
+    "speaks": [
+      "Lính đưa tin"
+    ],
+    "role": "Người trẻ phi ngựa báo tin, áo chẽn đỏ gạch, hớt hải.",
+    "designed": true
+  },
+  {
+    "id": "linh_gac",
+    "name": "Lính gác",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#c99560",
+      "outfit": {
+        "type": "tunic",
+        "color": "#3a3a3a",
+        "skirt": "#3a3a3a",
+        "trim": "#a33a2a"
+      },
+      "pants": "#4a4a4a",
+      "hair": {
+        "style": "short",
+        "color": "#111111"
+      },
+      "headwear": "nonla",
+      "prop": {
+        "type": "spear"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "thick"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Lính gác"
+    ],
+    "role": "Lính canh bến Bình Than: áo chẽn sẫm, nón dẹt, cầm giáo.",
+    "designed": true
+  },
+  {
+    "id": "vi_quan",
+    "name": "Vị quan",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "slim",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "robe",
+        "color": "#4a6a4f",
+        "skirt": "#3a553e",
+        "trim": "#b0a070"
+      },
+      "hair": {
+        "style": "turban",
+        "color": "#151515"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "long",
+        "brows": "thin",
+        "mustache": "thin"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Vị quan"
+    ],
+    "role": "Quan dự họp, áo cổ chéo xanh rêu, đai lưng, mũ vải đen, ngạc nhiên.",
+    "designed": true
+  },
+  {
+    "id": "hoai_nhan",
+    "name": "Hoài Nhân vương Kiện",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "slim",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "robe",
+        "color": "#2f8a8a",
+        "skirt": "#276f6f",
+        "trim": "#d0b060"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1410"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin"
+      }
+    },
+    "scale": 0.88,
+    "group": false,
+    "speaks": [],
+    "role": "Vương hầu trẻ cùng tuổi Quốc Toản, áo xanh ngọc, búi tóc.",
+    "designed": true
+  },
+  {
+    "id": "thoat_hoan",
+    "name": "Thoát Hoan",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "build": "heavy",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "enemy",
+        "color": "#6a4a2a",
+        "skirt": "#4a3a2a",
+        "trim": "#c9a23a"
+      },
+      "hair": {
+        "style": "short",
+        "color": "#1a1410"
+      },
+      "headwear": "enemy_helmet",
+      "face": {
+        "shape": "jowl",
+        "eyes": "narrow",
+        "nose": "long",
+        "brows": "bushy",
+        "mustache": "droopy"
+      }
+    },
+    "scale": 1.1,
+    "group": false,
+    "speaks": [
+      "Thoát Hoan"
+    ],
+    "role": "Chủ tướng Nguyên Mông, mũ lông tròn, áo da dài cài vạt, ngạo mạn rồi hốt hoảng, không đáng sợ.",
+    "designed": true
+  },
+  {
+    "id": "linh_giac",
+    "name": "Lính giặc",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "enemy",
+        "color": "#7a5a3a",
+        "skirt": "#4a3a2a",
+        "trim": "#9a7a3a"
+      },
+      "hair": {
+        "style": "short",
+        "color": "#1a1410"
+      },
+      "headwear": "enemy_helmet",
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "thick"
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Lính giặc"
+    ],
+    "role": "Quân Nguyên Mông: mũ lông tròn, áo da dài, ngã rạp và bỏ chạy, không đáng sợ.",
+    "designed": true
+  },
+  {
+    "id": "ngua_toan",
+    "name": "Ngựa của Quốc Toản",
+    "kind": "horse",
+    "look": {
+      "kind": "plain",
+      "color": "#8a5a3a",
+      "mane": "#2a1a10",
+      "saddle": "#c9372c"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [],
+    "role": "Ngựa nâu của Quốc Toản, yên đỏ.",
+    "designed": true
+  },
+  {
+    "id": "ngua_tin",
+    "name": "Ngựa lính đưa tin",
+    "kind": "horse",
+    "look": {
+      "kind": "plain",
+      "color": "#6a6a6a",
+      "mane": "#222222",
+      "saddle": "#9a3a2a"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [],
+    "role": "Ngựa xám của người đưa tin, phi nhanh.",
+    "designed": true
+  },
+  {
+    "id": "ngua_thoat_hoan",
+    "name": "Ngựa của Thoát Hoan",
+    "kind": "horse",
+    "look": {
+      "kind": "plain",
+      "color": "#3a2a20",
+      "mane": "#111111",
+      "saddle": "#c9a23a"
+    },
+    "scale": 1.1,
+    "group": false,
+    "speaks": [],
+    "role": "Ngựa đen cao lớn của Thoát Hoan, yên vàng.",
+    "designed": true
+  }
+]

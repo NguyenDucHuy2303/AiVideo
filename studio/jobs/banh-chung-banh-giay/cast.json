@@ -1,0 +1,389 @@
+[
+  {
+    "id": "lang_lieu",
+    "name": "Lang Liêu",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "dongson",
+        "skirt": "#6a4a2a",
+        "trim": "#a87a3a",
+        "color": "#8a6a42"
+      },
+      "bareChest": false,
+      "tattoo": true,
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "bracelets": true,
+      "props": [
+        {
+          "type": "basket"
+        },
+        {
+          "type": "bowl"
+        }
+      ],
+      "build": "slim",
+      "face": {
+        "shape": "oval",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin",
+        "eyeScale": 1.1
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Lang Liêu"
+    ],
+    "role": "Hoàng tử thứ mười tám, da rám nắng, tóc búi gọn, áo ngắn chui đầu vải thô nâu, khố nâu, vòng đồng mộc mạc, xăm hoa văn nhỏ ở tay.",
+    "designed": true
+  },
+  {
+    "id": "vua_hung",
+    "name": "Vua Hùng",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "plume",
+        "color": "#8a3a22",
+        "skirt": "#6a4a2a",
+        "trim": "#c9902a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#ece8e0"
+      },
+      "headwear": "feather",
+      "beard": "#ece8e0",
+      "bracelets": true,
+      "earrings": true,
+      "face": {
+        "shape": "square",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thick",
+        "wrinkles": true
+      },
+      "build": "average"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Vua Hùng"
+    ],
+    "role": "Vua Hùng thứ sáu, tóc bạc búi cao, râu dài, mũ lông lạc, áo đính đồng, váy lông chim ngày lễ, vòng đồng, dáng trang nghiêm.",
+    "designed": true
+  },
+  {
+    "id": "than",
+    "name": "Thần",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "dongson",
+        "color": "#f6f2e8",
+        "skirt": "#ebe5d6",
+        "trim": "#d8d0b8"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#fafafa"
+      },
+      "beard": "#fafafa",
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "droopy",
+        "nose": "long",
+        "brows": "bushy",
+        "wrinkles": true
+      },
+      "build": "slim",
+      "cape": true,
+      "bracelets": false
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Thần"
+    ],
+    "role": "Thần báo mộng, ông lão râu tóc bạc phơ, áo choàng vải trắng giản dị kiểu cổ, hiện ra trong giấc mơ.",
+    "designed": true
+  },
+  {
+    "id": "lang_ca",
+    "name": "Lang Cả",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "skin": "#d8a070",
+      "outfit": {
+        "type": "dongson",
+        "skirt": "#6a4a2a",
+        "trim": "#c9902a",
+        "color": "#a0442a"
+      },
+      "bareChest": true,
+      "tattoo": true,
+      "headwear": "feather_band",
+      "bracelets": true,
+      "prop": {
+        "type": "spear"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thick"
+      },
+      "build": "heavy",
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      }
+    },
+    "scale": 1.05,
+    "group": false,
+    "speaks": [
+      "Lang Cả"
+    ],
+    "role": "Anh cả đi săn, vạm vỡ, khố và áo nhiều hoa văn đỏ gạch, tóc búi dải lông chim, vòng đồng sáng, xăm mình, mang giáo đồng.",
+    "designed": true
+  },
+  {
+    "id": "lang_hai",
+    "name": "Lang Hai",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#c99a68",
+      "outfit": {
+        "type": "dongson",
+        "skirt": "#4a3a2a",
+        "trim": "#c9902a",
+        "color": "#2f5a7a"
+      },
+      "bareChest": false,
+      "tattoo": true,
+      "headwear": "feather_band",
+      "bracelets": true,
+      "prop": {
+        "type": "bamboo"
+      },
+      "face": {
+        "shape": "jowl",
+        "eyes": "almond",
+        "nose": "long",
+        "brows": "thin",
+        "mustache": "thin",
+        "eyeScale": 0.95
+      },
+      "build": "slim",
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Lang Hai"
+    ],
+    "role": "Anh thứ hai ra biển chài cá, áo chui đầu xanh biển nhiều hoa văn, dải lông chim, vòng đồng, xăm mình, cầm mái chèo tre, vẻ tinh nghịch.",
+    "designed": true
+  },
+  {
+    "id": "su_gia",
+    "name": "Sứ giả",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "outfit": {
+        "type": "loincloth",
+        "color": "#6a4a2a",
+        "skirt": "#6a4a2a",
+        "trim": "#c9902a"
+      },
+      "hair": {
+        "style": "short",
+        "color": "#2a1a12"
+      },
+      "headwear": "feather_band",
+      "bracelets": true,
+      "prop": {
+        "type": "horn"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "round",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thin"
+      },
+      "build": "average",
+      "skin": "#d8a070",
+      "bareChest": true
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Sứ giả"
+    ],
+    "role": "Sứ giả của vua, dải lông chim trên đầu, đóng khố, cầm tù và bằng sừng để truyền lệnh.",
+    "designed": true
+  },
+  {
+    "id": "ba_cu",
+    "name": "Bà cụ",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "outfit": {
+        "type": "dongson",
+        "color": "#7a5a3a",
+        "skirt": "#3a2a22",
+        "trim": "#c9902a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#c8c4bc"
+      },
+      "earrings": true,
+      "props": [
+        {
+          "type": "basket"
+        }
+      ],
+      "build": "average",
+      "skin": "#d9a06c",
+      "bracelets": true,
+      "face": {
+        "shape": "round",
+        "eyes": "droopy",
+        "nose": "button",
+        "brows": "thin",
+        "wrinkles": true
+      }
+    },
+    "scale": 0.95,
+    "group": false,
+    "speaks": [
+      "Bà cụ"
+    ],
+    "role": "Bà cụ trong làng, áo ngắn chui đầu và váy dài kín đáo, tóc bạc búi, khuyên tai và vòng tay đồng, gói bánh chưng ngày Tết.",
+    "designed": true
+  },
+  {
+    "id": "cac_lang",
+    "name": "Các lang",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "dongson",
+        "skirt": "#5a4a32",
+        "trim": "#c9902a",
+        "color": "#b8863a"
+      },
+      "bareChest": false,
+      "tattoo": true,
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "bracelets": true,
+      "props": [
+        {
+          "type": "bowl"
+        }
+      ],
+      "headwear": "feather_band"
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Các hoàng tử anh em của Lang Liêu, khố và áo Đông Sơn, dải lông chim, bưng mâm lễ vật.",
+    "designed": true
+  },
+  {
+    "id": "dan_lang",
+    "name": "Dân làng",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "dongson",
+        "skirt": "#5a4a32",
+        "trim": "#a87a3a",
+        "color": "#6a5a3a"
+      },
+      "bareChest": true,
+      "tattoo": true,
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "bracelets": true,
+      "props": [
+        {
+          "type": "basket"
+        }
+      ]
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Đám đông dân làng thời Văn Lang, mặc khố và áo Đông Sơn, quây quần canh nồi bánh ngày Tết.",
+    "designed": true
+  },
+  {
+    "id": "tre_em",
+    "name": "Các cháu nhỏ",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "outfit": {
+        "type": "dongson",
+        "color": "#c9a46a",
+        "trim": "#8a3a22",
+        "skirt": "#7a4a2a"
+      },
+      "hair": {
+        "style": "traidao"
+      },
+      "bracelets": true,
+      "props": [
+        {
+          "type": "bowl"
+        }
+      ],
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin"
+      }
+    },
+    "scale": 0.8,
+    "group": true,
+    "speaks": [],
+    "role": "Đám trẻ nhỏ chỏm tóc, áo Đông Sơn, quây quanh bà cụ gói bánh chưng.",
+    "designed": true
+  }
+]

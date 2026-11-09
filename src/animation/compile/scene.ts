@@ -53,6 +53,8 @@ export interface CastMember {
   formOf?: string;
   /** Drawn as a crowd (an army, villagers), never as one character. */
   group?: boolean;
+  /** Designed for this story (the studio's cast sheet, approved): never replaced by an archetype. */
+  designed?: boolean;
   look: unknown;
 }
 

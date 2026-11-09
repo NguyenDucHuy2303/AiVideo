@@ -1,0 +1,456 @@
+[
+  {
+    "id": "son_tinh",
+    "name": "Sơn Tinh",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "outfit": {
+        "type": "dongson",
+        "color": "#3f7a4a",
+        "skirt": "#6a4a2a",
+        "trim": "#c9902a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "cape": false,
+      "bracelets": true,
+      "face": {
+        "shape": "square",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thick"
+      },
+      "build": "average",
+      "skin": "#c98f5c",
+      "headwear": "feather_band",
+      "tattoo": true
+    },
+    "scale": 1.05,
+    "group": false,
+    "speaks": [
+      "Sơn Tinh"
+    ],
+    "role": "Thần núi Tản Viên: chàng trai khỏe, da nâu, tóc búi cao cài lông chim, áo chui đầu xanh lá rừng, khố, xăm núi và chim Lạc, vòng đồng bắp tay; làm phép có ánh sáng xanh lục.",
+    "designed": true
+  },
+  {
+    "id": "thuy_tinh",
+    "name": "Thủy Tinh",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "slim",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "dongson",
+        "color": "#1f3f66",
+        "skirt": "#2a3a4a",
+        "trim": "#7fc4c8"
+      },
+      "hair": {
+        "style": "long",
+        "color": "#1a1a24"
+      },
+      "tattoo": true,
+      "bracelets": true,
+      "face": {
+        "shape": "jowl",
+        "eyes": "narrow",
+        "nose": "long",
+        "brows": "bushy",
+        "iris": "#2a4a6a"
+      }
+    },
+    "scale": 1.15,
+    "group": false,
+    "speaks": [
+      "Thủy Tinh"
+    ],
+    "role": "Thần biển cả: chàng trai cao, tóc dài rối như sóng, áo chui đầu xanh biển sẫm, khố, xăm sóng nước và cá sấu, vòng đồng vỏ sò; làm phép có mây đen sóng xoáy, mặt giận nhưng không đáng sợ.",
+    "designed": true
+  },
+  {
+    "id": "vua_hung",
+    "name": "Vua Hùng",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "plume",
+        "color": "#8a3a22",
+        "skirt": "#6a4a2a",
+        "trim": "#c9902a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "headwear": "feather",
+      "beard": "#2a1a12",
+      "bracelets": true,
+      "earrings": true,
+      "face": {
+        "shape": "square",
+        "eyes": "almond",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thick"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Vua Hùng"
+    ],
+    "role": "Vua Hùng thứ mười tám: trang nghiêm phúc hậu, mũ lông chim, áo nâu đỏ đính đồng, váy lông chim, vòng đồng, râu đen.",
+    "designed": true
+  },
+  {
+    "id": "mi_nuong",
+    "name": "Mị Nương",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "skin": "#e8b27c",
+      "outfit": {
+        "type": "dongson",
+        "color": "#f0e2c0",
+        "skirt": "#2a3f6a",
+        "trim": "#c9902a"
+      },
+      "hair": {
+        "style": "long",
+        "color": "#1a1210"
+      },
+      "earrings": true,
+      "bracelets": true,
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "button",
+        "brows": "thin"
+      }
+    },
+    "scale": 0.95,
+    "group": false,
+    "speaks": [
+      "Mị Nương"
+    ],
+    "role": "Công chúa hiền dịu: tóc đen dài búi một phần, áo kem kín vai, váy chàm dài quá bắp chân, khuyên tai và vòng tay đồng.",
+    "designed": true
+  },
+  {
+    "id": "lac_hau",
+    "name": "Lạc hầu",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "outfit": {
+        "type": "dongson",
+        "color": "#7a5430",
+        "skirt": "#4a3a2a",
+        "trim": "#c9902a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "headwear": "feather_band",
+      "bracelets": true,
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "almond",
+        "nose": "long",
+        "brows": "thick",
+        "mustache": "thin",
+        "wrinkles": true
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Lạc hầu"
+    ],
+    "role": "Quan văn trung niên: tóc búi, áo chui đầu nâu, khố, dải lông chim ngắn trên đầu.",
+    "designed": true
+  },
+  {
+    "id": "su_gia",
+    "name": "Sứ giả",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "outfit": {
+        "type": "dongson",
+        "color": "#b8863a",
+        "skirt": "#5a4a32",
+        "trim": "#8a3a22"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "headwear": "feather_band",
+      "bracelets": true,
+      "prop": {
+        "type": "horn"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thin"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Sứ giả"
+    ],
+    "role": "Sứ giả: áo ngắn chui đầu, khố, cầm tù và sừng trâu thổi rao tin.",
+    "designed": true
+  },
+  {
+    "id": "lac_tuong",
+    "name": "Lạc tướng",
+    "kind": "human",
+    "look": {
+      "body": "strong",
+      "skin": "#c99060",
+      "outfit": {
+        "type": "dongson",
+        "skirt": "#6a4a2a",
+        "trim": "#c9902a"
+      },
+      "bareChest": true,
+      "tattoo": true,
+      "headwear": "feather_band",
+      "bracelets": true,
+      "prop": {
+        "type": "bronze_axe"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "bushy",
+        "mustache": "thick"
+      },
+      "build": "heavy",
+      "props": [
+        {
+          "type": "shield"
+        }
+      ]
+    },
+    "scale": 1.1,
+    "group": false,
+    "speaks": [
+      "Lạc tướng"
+    ],
+    "role": "Tướng chỉ huy chiến binh: ở trần xăm hoa văn, khố, dải lông chim, rìu đồng và khiên đồng chữ nhật.",
+    "designed": true
+  },
+  {
+    "id": "dan_lang",
+    "name": "Dân làng",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "dongson",
+        "skirt": "#5a4a32",
+        "trim": "#a87a3a"
+      },
+      "bareChest": true,
+      "tattoo": true,
+      "hair": {
+        "style": "short",
+        "color": "#2a1a12"
+      },
+      "bracelets": true,
+      "props": [
+        {
+          "type": "basket"
+        }
+      ]
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [
+      "Dân làng"
+    ],
+    "role": "Đám đông dân Văn Lang: đàn ông khố, ở trần hoặc áo chui đầu, xăm hình, tóc ngắn hoặc búi; phụ nữ áo ngắn và váy, tóc búi; gánh sọt đắp đê.",
+    "designed": true
+  },
+  {
+    "id": "ong_lao",
+    "name": "Ông lão",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "dongson",
+        "color": "#8a6a42",
+        "skirt": "#5a4a32",
+        "trim": "#c9902a"
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#9a948a"
+      },
+      "beard": "#ece8e0",
+      "prop": {
+        "type": "bamboo"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "droopy",
+        "nose": "long",
+        "brows": "bushy",
+        "wrinkles": true
+      }
+    },
+    "scale": 0.95,
+    "group": false,
+    "speaks": [
+      "Ông lão"
+    ],
+    "role": "Cụ già trong làng: tóc bạc búi, râu bạc, áo chui đầu nâu, chống gậy tre.",
+    "designed": true
+  },
+  {
+    "id": "cau_be",
+    "name": "Cậu bé",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "outfit": {
+        "type": "dongson",
+        "color": "#c9a46a",
+        "trim": "#8a3a22",
+        "skirt": "#7a4a2a"
+      },
+      "hair": {
+        "style": "traidao",
+        "color": "#1a1210"
+      },
+      "bracelets": true,
+      "props": [
+        {
+          "type": "bowl"
+        }
+      ],
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin"
+      }
+    },
+    "scale": 0.8,
+    "group": false,
+    "speaks": [
+      "Cậu bé"
+    ],
+    "role": "Cháu của ông lão: tóc cắt ngắn để chỏm, khố nhỏ, vòng đồng ở cổ chân, cùng gánh đất đắp đê.",
+    "designed": true
+  },
+  {
+    "id": "chien_binh",
+    "name": "Chiến binh",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#d8a070",
+      "outfit": {
+        "type": "dongson",
+        "skirt": "#6a4a2a",
+        "trim": "#c9902a"
+      },
+      "bareChest": true,
+      "tattoo": true,
+      "headwear": "feather_band",
+      "bracelets": true,
+      "prop": {
+        "type": "spear"
+      },
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "thick"
+      },
+      "props": [
+        {
+          "type": "shield"
+        }
+      ]
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Chiến binh giúp Sơn Tinh: ở trần xăm hình, khố, dải lông chim, giáo đồng, khiên đồng, cung nỏ.",
+    "designed": true
+  },
+  {
+    "id": "thuy_toc",
+    "name": "Quân thủy tộc",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "skin": "#6fa8a0",
+      "outfit": {
+        "type": "loincloth",
+        "skirt": "#2a5a70",
+        "trim": "#e8d8b0",
+        "color": "#2f6f86"
+      },
+      "bareChest": true,
+      "tattoo": true,
+      "headwear": "feather_band",
+      "bracelets": true,
+      "prop": {
+        "type": "spear"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thick"
+      }
+    },
+    "scale": 0.95,
+    "group": true,
+    "speaks": [
+      "Quân thủy tộc"
+    ],
+    "role": "Đoàn quân của Thủy Tinh: dáng tròn trịa, da xanh biển, khố sóng, cầm vũ khí kiểu vỏ sò; thua thì ngã lăn chạy tan tác, không máu.",
+    "designed": true
+  },
+  {
+    "id": "ngua_hong_mao",
+    "name": "Ngựa chín hồng mao",
+    "kind": "horse",
+    "look": {
+      "kind": "plain",
+      "color": "#e8e0d0",
+      "mane": "#c9902a"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [],
+    "role": "Ngựa chín hồng mao trong đoàn sính lễ của Sơn Tinh, không yên cương.",
+    "designed": true
+  }
+]
