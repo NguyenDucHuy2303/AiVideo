@@ -1,0 +1,63 @@
+{
+  "castFile": "cast.json",
+  "duration": 12.37,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><g font-family=\"sans-serif\" font-size=\"30\" fill=\"#2a2a40\" text-anchor=\"middle\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"><text x=\"500\" y=\"70\" font-size=\"42\" stroke=\"none\">Why clouds are white</text><line x1=\"500\" y1=\"120\" x2=\"500\" y2=\"540\" stroke-dasharray=\"14 10\" stroke-width=\"4\"/><g data-in=\"1\"><circle cx=\"120\" cy=\"310\" r=\"12\" fill=\"#4aa3e0\"/><text x=\"120\" y=\"450\" stroke=\"none\">Air molecule</text></g><g data-in=\"2.5\"><circle cx=\"340\" cy=\"310\" r=\"95\" fill=\"#cfe9f8\"/><circle cx=\"310\" cy=\"280\" r=\"20\" fill=\"#ffffff\" stroke=\"none\"/><text x=\"340\" y=\"450\" stroke=\"none\">Cloud droplet</text></g><g data-in=\"5\" class=\"float\"><circle cx=\"580\" cy=\"290\" r=\"50\" fill=\"#ffffff\"/><circle cx=\"650\" cy=\"260\" r=\"60\" fill=\"#ffffff\"/><circle cx=\"715\" cy=\"300\" r=\"45\" fill=\"#ffffff\"/><rect x=\"580\" y=\"290\" width=\"135\" height=\"55\" fill=\"#ffffff\" stroke=\"none\"/><text x=\"650\" y=\"450\" stroke=\"none\">Fluffy: white</text></g><g data-in=\"8\"><circle cx=\"800\" cy=\"290\" r=\"45\" fill=\"#7a7f8a\"/><circle cx=\"860\" cy=\"255\" r=\"55\" fill=\"#6b707c\"/><circle cx=\"925\" cy=\"295\" r=\"40\" fill=\"#7a7f8a\"/><rect x=\"800\" y=\"290\" width=\"125\" height=\"50\" fill=\"#7a7f8a\" stroke=\"none\"/><text x=\"860\" y=\"450\" stroke=\"none\">Storm: grey</text></g></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

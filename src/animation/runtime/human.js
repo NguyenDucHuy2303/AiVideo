@@ -35,7 +35,10 @@
     B.torsoW *= build[0]; B.legW *= build[1]; B.armW *= build[1]; B.belly = build[2];
     const skin = look.skin || (look.body === "child" ? "#f3c590" : "#e8b27c");
     const outfit = look.outfit || { type: "tunic", color: "#8a5a2a" };
-    const P = { root: g(parent), B, look, S };
+    const P = { root: g(parent), B, look, S, seed, sway: [], sleeves: [] };
+    // Parts that swing after the body (hair, beard, feathers, plumes): a group turned about the
+    // point where the part is attached. `up` parts stand up from it (feathers), the rest hang.
+    P.swayG = (parent, px, py, gain = 1, up = false) => { const gg = g(parent); P.sway.push({ g: gg, px, py, gain, up }); return gg; };
     const far = (hex) => shade(hex, -0.25);
     // Clothes made of parts (every era after Văn Lang): garments.js decides colours and lengths.
     const G = outfit.type === "parts" ? WA.garments.resolve(outfit, look, B, skin) : null;
@@ -44,17 +47,26 @@
     const pantsHex = look.pants || (G ? G.pantsHex : outfit.type === "armor" ? "#3a4350" : bareLegs ? skin : "#5c3b22");
     const feetHex = G ? G.feetHex : outfit.type === "armor" || outfit.type === "enemy" ? "#2b3139" : shade(skin, -0.1);
     const sleeveHex = G ? G.sleeveHex : outfit.type === "armor" ? "#5d6a79" : outfit.type === "loincloth" || outfit.type === "dongson" || outfit.type === "plume" ? skin : outfit.type === "enemy" ? "#4a2626" : outfit.color;
+    // The colour of the body at the shoulders (where the near arm starts).
+    const torsoHex = G ? (outfit.top?.cut === "yem" ? skin : outfit.top?.color || "#6a4a2a")
+      : outfit.type === "loincloth" || (outfit.type === "dongson" && look.bareChest && look.body !== "woman") ? skin
+      : outfit.type === "armor" ? null : outfit.type === "enemy" ? "#4a2626" : outfit.type === "dongson" || outfit.type === "plume" ? outfit.color || "#8a5a2a" : outfit.color;
 
     if (look.cape) P.cape = el("path", { fill: look.cape === true ? "url(#cape)" : look.cape, ...OUT }, P.root);
     const leg = (front) => {
       const hip = g(P.root);
       WA.human.limb(S, hip, B.thigh, B.legW, front ? pantsHex : far(pantsHex));
       const knee = g(hip);
-      WA.human.limb(S, knee, B.shin, B.legW * 0.88, front ? legHex : far(legHex));
+      WA.human.limb(S, knee, B.shin, B.legW * 0.9, front ? legHex : far(legHex), 0.7, 0.09, 0.3);
       const w = B.legW;
-      el("path", { d: `M ${f2(-w * 0.45)} ${B.shin + 2} Q ${f2(-w * 0.5)} ${f2(B.shin + w * 0.55)} ${f2(w * 0.1)} ${f2(B.shin + w * 0.55)} L ${f2(w * 1.1)} ${f2(B.shin + w * 0.5)} Q ${f2(w * 1.15)} ${f2(B.shin + w * 0.1)} ${f2(w * 0.4)} ${B.shin - 2} Z`, fill: front ? feetHex : far(feetHex), ...OUT }, knee);
-      return { hip, knee };
+      el("path", { d: `M ${f2(-w * 0.45)} ${B.shin + 2} Q ${f2(-w * 0.5)} ${f2(B.shin + w * 0.55)} ${f2(w * 0.1)} ${f2(B.shin + w * 0.55)} L ${f2(w * 1.1)} ${f2(B.shin + w * 0.5)} Q ${f2(w * 1.15)} ${f2(B.shin + w * 0.1)} ${f2(w * 0.4)} ${B.shin - 2} Z`, fill: front ? feetHex : far(feetHex), ...OUT, "data-limb": 1 }, knee);
+      // The outline underneath, the colour on top: no ring at the knee or the ankle.
+      const o = outlineUnder(hip);
+      return { hip, knee, o: { hip: o, knee: o.querySelector(":scope > g") } };
     };
+    // The far arm hangs on the far side of the body: behind the legs, the skirt and the coat, not
+    // only behind the chest. It has its own group, turned with the torso (apply).
+    P.torsoBack = g(P.root);
     P.legB = leg(false);
     P.legF = leg(true);
     // Long clothes hang over both legs from the hips.
@@ -69,6 +81,8 @@
     // Đông Sơn skirts end in a patterned hem; the king's in a fringe of feathers.
     if (skirtLen && (outfit.type === "dongson" || outfit.type === "plume")) P.hem = el("path", { fill: "none", stroke: outfit.type === "plume" ? "#f2e6c8" : outfit.trim || "#c9902a", "stroke-width": outfit.type === "plume" ? 9 : 6, "stroke-dasharray": outfit.type === "plume" ? "4 7" : "10 6", "stroke-linecap": "round" }, P.root);
     P.skirtLen = skirtLen;
+    // A short top (a woman's Đông Sơn áo) ends above the hips: the skirt's waist rises under it.
+    P.skirtTop = outfit.type === "dongson" && female ? -B.torsoH * 0.18 - 8 : -6;
     // A long top hangs over the legs (and the skirt) as a coat tail, drawn like a skirt.
     if (G && G.coat) {
       P.coat = el("path", { fill: S.mat(G.coat.color, true), ...OUT }, P.root);
@@ -79,23 +93,36 @@
 
     P.torso = g(P.root);
     const arm = (front) => {
-      const sh = g(P.torso);
+      const sh = g(front ? P.torso : P.torsoBack);
       WA.human.limb(S, sh, B.upper, B.armW, front ? sleeveHex : far(sleeveHex));
       const elbow = g(sh);
       const foreHex = G ? G.foreHex : outfit.type === "armor" || outfit.type === "enemy" ? skin : outfit.type === "robe" || outfit.type === "dress" ? outfit.color : skin;
-      WA.human.limb(S, elbow, B.fore, B.armW * 0.88, front ? foreHex : far(foreHex));
-      if (G && G.wide) WA.garments.sleeve(S, elbow, B, outfit.top.color || "#6a4a2a", front);
+      WA.human.limb(S, elbow, B.fore, B.armW * 0.92, front ? foreHex : far(foreHex), 0.66, 0.08, 0.28);
+      if (G && G.wide) {
+        const sg = g(elbow);
+        WA.garments.sleeve(S, sg, B, outfit.top.color || "#6a4a2a", front);
+        P.sleeves.push({ path: sg.firstChild, front });
+      }
       if (look.tattoo && (outfit.type === "loincloth" || outfit.type === "dongson")) {
         for (let i = 0; i < 3; i++) el("path", { d: `M ${f2(-B.armW * 0.4)} ${f2(B.fore * (0.25 + i * 0.18))} l ${f2(B.armW * 0.4)} -6 l ${f2(B.armW * 0.4)} 6`, stroke: "#3a3a5a", "stroke-width": 2.5, fill: "none", opacity: 0.55 }, elbow);
       }
       if (look.bracelets) for (let i = 0; i < 2; i++) el("rect", { x: f2(-B.armW * 0.5), y: f2(B.fore - 10 - i * 9), width: f2(B.armW), height: 6, rx: 3, fill: "url(#gold)", stroke: INK, "stroke-width": 1.5 }, elbow);
       const hand = g(elbow, { transform: `translate(0,${B.fore + 4})` });
-      // A cartoon hand: the palm and a thumb on the side facing forward.
-      const hw = B.armW * 0.62;
-      el("ellipse", { cx: f2(hw * 0.5), cy: f2(-hw * 0.1), rx: f2(hw * 0.42), ry: f2(hw * 0.3), fill: front ? skin : far(skin), ...OUT, "stroke-width": 3, transform: `rotate(-35 ${f2(hw * 0.5)} ${f2(-hw * 0.1)})` }, hand);
-      el("ellipse", { cx: 0, cy: f2(hw * 0.15), rx: f2(hw * 0.82), ry: f2(hw * 0.95), fill: front ? skin : far(skin), ...OUT }, hand);
-      el("path", { d: `M ${f2(-hw * 0.5)} ${f2(hw * 0.55)} q ${f2(hw * 0.5)} ${f2(hw * 0.3)} ${f2(hw)} 0`, stroke: shade(skin, -0.3), "stroke-width": 2, fill: "none", opacity: 0.7 }, hand); // knuckles
-      return { sh, elbow, hand };
+      // A cartoon hand: the palm, the fingers together in one rounded lobe with two finger lines,
+      // the thumb apart on the side facing forward.
+      const hw = B.armW * 0.6, hc = front ? skin : far(skin), hl = shade(skin, -0.32);
+      el("path", { d: `M ${f2(hw * 0.45)} ${f2(-hw * 0.15)} Q ${f2(hw * 1.15)} ${f2(hw * 0.1)} ${f2(hw * 1.0)} ${f2(hw * 0.62)} Q ${f2(hw * 0.75)} ${f2(hw * 0.78)} ${f2(hw * 0.5)} ${f2(hw * 0.5)} Z`, fill: hc, ...OUT, "stroke-width": 3 }, hand);
+      el("path", { d: `M ${f2(-hw * 0.72)} ${f2(-hw * 0.25)} Q ${f2(-hw * 0.85)} ${f2(hw * 0.9)} ${f2(-hw * 0.35)} ${f2(hw * 1.55)} Q ${f2(hw * 0.05)} ${f2(hw * 1.95)} ${f2(hw * 0.45)} ${f2(hw * 1.5)} Q ${f2(hw * 0.78)} ${f2(hw * 0.95)} ${f2(hw * 0.68)} ${f2(-hw * 0.25)} Q 0 ${f2(-hw * 0.5)} ${f2(-hw * 0.72)} ${f2(-hw * 0.25)} Z`, fill: hc, ...OUT }, hand);
+      for (const xk of [-0.22, 0.18]) el("path", { d: `M ${f2(hw * xk)} ${f2(hw * 0.95)} q ${f2(hw * 0.03)} ${f2(hw * 0.32)} ${f2(hw * 0.02)} ${f2(hw * 0.55)}`, stroke: hl, "stroke-width": 2, fill: "none", "stroke-linecap": "round" }, hand);
+      const o = outlineUnder(sh);
+      // The near arm in the same cloth (or skin) as the body: the round top of the upper arm
+      // has no line across the chest, so the arm grows out of the shoulder instead of lying on
+      // it like a tube. Its outline starts at the shoulder joint.
+      if (front && sleeveHex === torsoHex) {
+        const up = o.querySelector(":scope > path");
+        up.setAttribute("d", up.getAttribute("d").replace(/^M (\S+) 0 A \S+ \S+ 0 0 1 (\S+) 0/, "M $1 0 L $2 0"));
+      }
+      return { sh, elbow, hand, o: { sh: o, elbow: o.querySelector(":scope > g") } };
     };
     P.armB = arm(false);
     drawTorso(S, P.torso, B, outfit, skin, look);
@@ -110,16 +137,44 @@
       P.props[pr.type] = WA.human.prop(S, hand, pr.type);
     }
     P.activeProp = look.prop?.type ?? null;
+    P.root.insertBefore(P.legF.o.hip, P.skirt || P.coat || P.torso);
     P.root.insertBefore(P.legF.hip, P.skirt || P.coat || P.torso);
     P.legLen = B.thigh + B.shin + B.legW * 0.5;
     P.height = P.legLen + B.torsoH + B.headR * (B.round ? 2 : 2.35);
     return P;
   }
 
-  /** A limb from its joint, pointing down: round at both ends, tapering from w to w × taper. */
-  function limb(S, parent, L, w, hex, taper = 0.8) {
-    const a = w / 2, b = (w * taper) / 2;
-    return el("path", { d: `M ${f2(-a)} 0 A ${f2(a)} ${f2(a)} 0 0 1 ${f2(a)} 0 L ${f2(b)} ${f2(L)} A ${f2(b)} ${f2(b)} 0 0 1 ${f2(-b)} ${f2(L)} Z`, fill: S.mat(hex), ...OUT }, parent);
+  /**
+   * A limb drawn as one piece: a copy of it underneath in solid ink (strokes twice as wide),
+   * and the limb's own segments without strokes on top, so the overlapping round ends at the
+   * knee, the elbow or the ankle show no line across, while the silhouette keeps its outline.
+   * The copy is moved with the limb (apply). Detail lines (tattoos, finger lines) stay on top.
+   */
+  function outlineUnder(grp) {
+    const o = grp.cloneNode(true);
+    o.setAttribute("data-outline-of", "limb");
+    for (const n of o.querySelectorAll("*")) {
+      if (n.tagName === "g") continue;
+      const f = n.getAttribute("fill");
+      if (!f || f === "none") { n.setAttribute("display", "none"); continue; }
+      n.setAttribute("fill", INK);
+      n.setAttribute("stroke", INK);
+      n.setAttribute("data-outline", 1);
+      n.setAttribute("stroke-width", f2((parseFloat(n.getAttribute("stroke-width")) || 4.5) * 2));
+    }
+    grp.parentNode.insertBefore(o, grp);
+    for (const n of grp.querySelectorAll("[data-limb]")) n.setAttribute("stroke", "none");
+    return o;
+  }
+
+  /**
+   * A limb from its joint, pointing down: round at both ends, tapering from w to w × taper, the
+   * sides swelling a little where the muscle is (bulge, at `at` of the length), so an arm or a
+   * leg is not a plain tube.
+   */
+  function limb(S, parent, L, w, hex, taper = 0.8, bulge = 0.07, at = 0.35) {
+    const a = w / 2, b = (w * taper) / 2, m = a + (b - a) * at + w * bulge;
+    return el("path", { d: `M ${f2(-a)} 0 A ${f2(a)} ${f2(a)} 0 0 1 ${f2(a)} 0 Q ${f2(m * 1.02)} ${f2(L * at)} ${f2(b)} ${f2(L)} A ${f2(b)} ${f2(b)} 0 0 1 ${f2(-b)} ${f2(L)} Q ${f2(-m * 1.02)} ${f2(L * at)} ${f2(-a)} 0 Z`, fill: S.mat(hex), ...OUT, "data-limb": 1 }, parent);
   }
 
   /** A band of Đông Sơn bronze-drum pattern: concentric circles between zigzags. */
@@ -138,8 +193,12 @@
     const T = B.torsoH, w = B.torsoW, belly = (B.belly || 0) * w;
     // Back, shoulders, chest and (for a heavy build) a belly curving out at the front.
     const body = `M ${f2(-w / 2)} 8 C ${f2(-w * 0.56)} ${f2(-T * 0.4)} ${f2(-w * 0.52)} ${f2(-T * 0.8)} ${f2(-w * 0.44)} ${f2(-T + 6)} Q 0 ${f2(-T - 14)} ${f2(w * 0.46)} ${f2(-T + 6)} C ${f2(w * 0.56 + belly * 0.3)} ${f2(-T * 0.7)} ${f2(w * 0.5 + belly)} ${f2(-T * 0.3)} ${f2(w / 2 + 4)} 8 Q 2 20 ${f2(-w / 2)} 8 Z`;
-    const folds = (color) => {
-      el("path", { d: `M ${f2(-w * 0.3)} ${f2(-T * 0.62)} q ${f2(w * 0.1)} ${f2(T * 0.12)} ${f2(w * 0.04)} ${f2(T * 0.3)} M ${f2(w * 0.18)} ${f2(-T * 0.35)} q ${f2(w * 0.08)} ${f2(T * 0.1)} ${f2(w * 0.02)} ${f2(T * 0.25)}`, stroke: shade(color, -0.3), "stroke-width": 2.5, fill: "none", opacity: 0.6, "stroke-linecap": "round" }, t);
+    // Cloth folds: two soft creases down the chest and a few pulled at the waist (drawn over
+    // the garment, after it).
+    const folds = (color, hem = 0) => {
+      const c = shade(color, -0.32);
+      el("path", { d: `M ${f2(-w * 0.3)} ${f2(-T * 0.66)} q ${f2(w * 0.1)} ${f2(T * 0.14)} ${f2(w * 0.04)} ${f2(T * 0.32)} M ${f2(w * 0.2)} ${f2(-T * 0.48)} q ${f2(w * 0.08)} ${f2(T * 0.1)} ${f2(w * 0.02)} ${f2(T * 0.24)}`, stroke: c, "stroke-width": 2.5, fill: "none", opacity: 0.6, "stroke-linecap": "round" }, t);
+      el("path", { d: `M ${f2(-w * 0.36)} ${f2(hem - T * 0.12)} q ${f2(w * 0.06)} ${f2(T * 0.05)} ${f2(w * 0.1)} ${f2(T * 0.09)} M ${f2(w * 0.3)} ${f2(hem - T * 0.13)} q ${f2(-w * 0.05)} ${f2(T * 0.05)} ${f2(-w * 0.08)} ${f2(T * 0.1)}`, stroke: c, "stroke-width": 2, fill: "none", opacity: 0.5, "stroke-linecap": "round" }, t);
     };
     switch (outfit.type) {
       case "parts":
@@ -147,19 +206,24 @@
         break;
       case "dongson": {
         const female = look.body === "woman", color = outfit.color || "#8a5a2a";
-        if (!(!female && look.bareChest)) folds(color);
         if (!female && look.bareChest) {
           el("path", { d: body, fill: S.mat(skin), ...OUT }, t);
           if (look.tattoo) for (let i = 0; i < 3; i++) el("path", { d: `M ${f2(-w * 0.3)} ${f2(-T * (0.7 - i * 0.12))} q ${f2(w * 0.3)} 10 ${f2(w * 0.6)} 0`, stroke: "#3a3a5a", "stroke-width": 2.5, fill: "none", opacity: 0.5 }, t);
         } else {
           // A short top pulled over the head (áo chui đầu), ending at the waist.
-          el("path", { d: `M ${f2(-w / 2)} ${f2(female ? -T * 0.18 : -2)} L ${f2(-w * 0.46)} ${f2(-T + 6)} Q 0 ${f2(-T - 14)} ${f2(w * 0.48)} ${f2(-T + 6)} L ${f2(w / 2 + 4)} ${f2(female ? -T * 0.18 : -2)} Q 2 ${f2(female ? -T * 0.1 : 8)} ${f2(-w / 2)} ${f2(female ? -T * 0.18 : -2)} Z`, fill: S.mat(color), ...OUT }, t);
+          // Rounded shoulders, the sides drawn in a little at the waist, the hem flaring and curved.
+          const hem = female ? -T * 0.18 : -2;
+          el("path", { d: `M ${f2(-w * 0.53)} ${f2(hem)} C ${f2(-w * 0.47)} ${f2(-T * 0.4)} ${f2(-w * 0.55)} ${f2(-T * 0.8)} ${f2(-w * 0.44)} ${f2(-T + 6)} Q 0 ${f2(-T - 14)} ${f2(w * 0.48)} ${f2(-T + 6)} C ${f2(w * 0.58 + belly * 0.3)} ${f2(-T * 0.78)} ${f2(w * 0.48 + belly)} ${f2(-T * 0.4)} ${f2(w * 0.56 + 4)} ${f2(hem)} Q 2 ${f2(hem + 12)} ${f2(-w * 0.53)} ${f2(hem)} Z`, fill: S.mat(color), ...OUT }, t);
+          folds(color, hem);
           el("path", { d: `M ${f2(-w * 0.18)} ${f2(-T - 1)} Q 4 ${f2(-T * 0.72)} ${f2(w * 0.26)} ${f2(-T - 1)}`, stroke: shade(color, -0.35), "stroke-width": 5, fill: "none" }, t); // round neck
           dongsonBand(t, -w / 2 + 2, w / 2 + 2, female ? -T * 0.34 : -T * 0.2, 16, outfit.trim || "#c9902a");
         }
         if (!female) {
           // Khố: a cloth wrapped round the hips, its end hanging in front.
-          el("path", { d: `M ${f2(-w / 2)} -12 L ${f2(w / 2 + 4)} -12 L ${f2(w / 2 + 2)} 12 L ${f2(w * 0.22)} 46 L ${f2(-w * 0.08)} 12 L ${f2(-w / 2)} 10 Z`, fill: S.mat(outfit.skirt || "#6a4a2a", true), ...OUT }, t);
+          // (the front flap hangs in soft curves, a fold down it)
+          const kc = outfit.skirt || "#6a4a2a";
+          el("path", { d: `M ${f2(-w / 2)} -12 L ${f2(w / 2 + 4)} -12 Q ${f2(w / 2 + 5)} 2 ${f2(w / 2 + 1)} 13 Q ${f2(w * 0.36)} 30 ${f2(w * 0.24)} 46 Q ${f2(w * 0.12)} 40 ${f2(w * 0.02)} 26 Q ${f2(-w * 0.06)} 14 ${f2(-w * 0.12)} 12 Q ${f2(-w * 0.32)} 14 ${f2(-w / 2)} 10 Z`, fill: S.mat(kc, true), ...OUT }, t);
+          el("path", { d: `M ${f2(w * 0.14)} 14 Q ${f2(w * 0.17)} 28 ${f2(w * 0.22)} 40`, stroke: shade(kc, -0.35), "stroke-width": 2, fill: "none", opacity: 0.6, "stroke-linecap": "round" }, t);
           dongsonBand(t, -w / 2, w / 2 + 4, -12, 12, outfit.trim || "#c9902a");
         }
         break;
@@ -193,7 +257,7 @@
       default: {
         // tunic (áo cánh), robe (áo thụng) and dress (áo tứ thân) tops
         el("path", { d: body, fill: S.mat(outfit.color || "#8a5a2a"), ...OUT }, t);
-        folds(outfit.color || "#8a5a2a");
+        folds(outfit.color || "#8a5a2a", 8);
         el("path", { d: `M 3 ${f2(-T + 2)} L 8 2`, stroke: shade(outfit.color || "#8a5a2a", -0.3), "stroke-width": 3 }, t);
         if (outfit.type === "tunic") for (let i = 0; i < 4; i++) el("circle", { cx: 8, cy: f2(-T * 0.83 + i * T * 0.22), r: 3, fill: "#f1d08a", stroke: INK, "stroke-width": 1.5 }, t);
         if (outfit.trim) el("path", { d: `M ${f2(-w * 0.2)} ${f2(-T - 2)} Q 4 ${f2(-T * 0.6)} ${f2(w * 0.3)} ${f2(-T - 2)}`, stroke: outfit.trim, "stroke-width": 7, fill: "none" }, t);
@@ -221,11 +285,22 @@
     // Head centre relative to the neck joint.
     const cx = round ? 4 : 8, cy = round ? -R : -R * 1.3, xc = cx + R * 0.28;
     // A short, sturdy neck (a thin one made adults look like lollipops).
-    if (!round) el("path", { d: `M ${f2(cx - R * 0.42)} 6 L ${f2(cx - R * 0.36)} ${f2(-R * 0.62)} L ${f2(cx + R * 0.4)} ${f2(-R * 0.62)} L ${f2(cx + R * 0.5)} 6 Z`, fill: S.mat(shade(skin, -0.1)), ...OUT }, h);
-    if (hair.style === "long") el("path", { d: `M ${f2(cx - R * 0.9)} ${f2(cy - R * 0.3)} Q ${f2(cx - R * 1.4)} ${f2(cy + R * 1.4)} ${f2(cx - R * 0.6)} ${f2(cy + R * 2.6)} L ${f2(cx - R * 0.1)} ${f2(cy + R * 1.6)} Q ${f2(cx - R * 0.2)} ${f2(cy + R * 0.6)} ${f2(cx)} ${f2(cy)} Z`, fill: hairHex, ...OUT }, h);
-    if (hair.style === "bun") el("circle", { cx: f2(cx - R * 0.95), cy: f2(cy - R * 0.55), r: f2(R * 0.36), fill: hairHex, ...OUT }, h);
+    if (!round) {
+      const nd = `M ${f2(cx - R * 0.42)} 6 L ${f2(cx - R * 0.36)} ${f2(-R * 0.62)} L ${f2(cx + R * 0.4)} ${f2(-R * 0.62)} L ${f2(cx + R * 0.5)} 6 Z`;
+      el("path", { d: nd, fill: S.mat(shade(skin, -0.1)), ...OUT }, h);
+      // The jaw's shadow on the neck: a hard-edged band following the chin (not in flat prints).
+      if (!S.flat) {
+        const id = S.id("nk");
+        S.addDefs(`<clipPath id="${id}"><path d="${nd}"/></clipPath>`);
+        el("ellipse", { cx: f2(cx + R * 0.12), cy: f2(cy + R * 1.08), rx: f2(R * 0.85), ry: f2(R * 0.42), fill: shade(skin, -0.32), opacity: 0.6, "clip-path": `url(#${id})` }, h);
+      }
+    }
+    if (hair.style === "long") el("path", { d: `M ${f2(cx - R * 0.9)} ${f2(cy - R * 0.3)} Q ${f2(cx - R * 1.4)} ${f2(cy + R * 1.4)} ${f2(cx - R * 0.6)} ${f2(cy + R * 2.6)} L ${f2(cx - R * 0.1)} ${f2(cy + R * 1.6)} Q ${f2(cx - R * 0.2)} ${f2(cy + R * 0.6)} ${f2(cx)} ${f2(cy)} Z`, fill: hairHex, ...OUT }, P.swayG(h, cx - R * 0.55, cy - R * 0.2, 0.8));
+    // A hat that closes over the head hides the bun (it is gathered inside).
+    const hatOverBun = ["mu_canh_chuon", "binh_thien", "crown", "helmet", "enemy_helmet", "khan_xep", "khan_mo_qua", "khan_van", "non_chop"].includes(look.headwear);
+    if (hair.style === "bun" && !hatOverBun) el("circle", { cx: f2(cx - R * 0.95), cy: f2(cy - R * 0.55), r: f2(R * 0.36), fill: hairHex, ...OUT }, P.swayG(h, cx - R * 0.7, cy - R * 0.5, 0.25));
     // The face (three-quarter view): head, ear, eyes, brows, nose, mouth, marks.
-    P.face = WA.face.build(S, h, { cx, cy, R, skin, face: faceFor(look, seed), child: round, female: look.body === "woman", hairColor: hairHex, browColor: hair.style === "bald" ? shade(skin, -0.5) : undefined }, seed);
+    P.face = WA.face.build(S, h, { cx, cy, R, skin, face: faceFor(look, seed), child: round, female: look.body === "woman", hairColor: hair.style === "turban" ? look.beard || "#2a1a12" : hairHex, browColor: hair.style === "bald" ? shade(skin, -0.5) : undefined, browTop: hair.style === "traidao" || hair.style === "bald" ? undefined : cy - R * 0.44 }, seed);
     // Hair over the scalp.
     if (hair.style === "traidao") {
       el("path", { d: `M ${f2(cx - R * 0.8)} ${f2(cy - R * 0.4)} Q ${f2(cx - R * 0.45)} ${f2(cy - R * 1.08)} ${f2(cx + R * 0.33)} ${f2(cy - R * 1.04)} Q ${f2(cx - R * 0.15)} ${f2(cy - R * 0.85)} ${f2(cx - R * 0.37)} ${f2(cy - R * 0.52)} Z`, fill: shade(skin, -0.1), opacity: 0.6 }, h);
@@ -233,17 +308,49 @@
       el("path", { d: `M ${f2(-R * 0.26)} 2 Q ${f2(-R * 0.11)} ${f2(-R * 0.63)} ${f2(R * 0.48)} ${f2(-R * 0.56)} Q ${f2(R * 0.19)} ${f2(-R * 0.41)} ${f2(R * 0.22)} ${f2(-R * 0.15)} Q ${f2(R * 0.04)} ${f2(-R * 0.07)} ${f2(-R * 0.26)} 2 Z`, fill: hairHex, ...OUT }, P.tuft);
     } else if (hair.style !== "bald") {
       // A hairline that follows the turned head: higher over the far temple.
-      el("path", { d: `M ${f2(cx - R * 0.97)} ${f2(cy + R * 0.12)} Q ${f2(cx - R * 1.06)} ${f2(cy - R * 1.12)} ${f2(cx + R * 0.15)} ${f2(cy - R * 1.08)} Q ${f2(cx + R * 0.86)} ${f2(cy - R * 1.0)} ${f2(cx + R * 0.9)} ${f2(cy - R * 0.55)} Q ${f2(xc)} ${f2(cy - R * (hair.style === "long" ? 0.62 : 0.78))} ${f2(cx - R * 0.32)} ${f2(cy - R * 0.5)} Q ${f2(cx - R * 0.6)} ${f2(cy - R * 0.25)} ${f2(cx - R * 0.66)} ${f2(cy + R * 0.18)} Z`, fill: hairHex, ...OUT }, h);
+      // The fringe falls in a few locks along the hairline (not one straight edge, which read as
+      // a wig); strands and a soft shine on the crown give the hair its volume.
+      const lo = hair.style === "long" ? 0.08 : 0;
+      const fringe = el("path", { d: `M ${f2(cx - R * 0.97)} ${f2(cy + R * 0.12)} Q ${f2(cx - R * 1.06)} ${f2(cy - R * 1.12)} ${f2(cx + R * 0.15)} ${f2(cy - R * 1.08)} Q ${f2(cx + R * 0.86)} ${f2(cy - R * 1.0)} ${f2(cx + R * 0.9)} ${f2(cy - R * 0.55)}`
+        + ` Q ${f2(cx + R * 0.74)} ${f2(cy - R * (0.42 - lo))} ${f2(cx + R * 0.5)} ${f2(cy - R * 0.7)}`
+        + ` Q ${f2(cx + R * 0.32)} ${f2(cy - R * (0.5 - lo))} ${f2(cx + R * 0.08)} ${f2(cy - R * 0.72)}`
+        + ` Q ${f2(cx - R * 0.08)} ${f2(cy - R * (0.46 - lo))} ${f2(cx - R * 0.32)} ${f2(cy - R * 0.5)}`
+        + ` Q ${f2(cx - R * 0.6)} ${f2(cy - R * 0.25)} ${f2(cx - R * 0.66)} ${f2(cy + R * 0.18)} Z`, fill: S.mat(hairHex, true), ...OUT }, h);
+      // Cel shadow of the fringe on the forehead: the same locks, a little lower, cut to the head.
+      if (!S.flat) h.insertBefore(el("path", { d: fringe.getAttribute("d"), transform: `translate(0 ${f2(R * 0.09)})`, fill: shade(skin, -0.3), opacity: 0.45, "clip-path": `url(#${P.face.clip})` }, h), fringe);
+      const strand = WA.core.mixColor(hairHex, parseInt(hairHex.slice(1), 16) > 0x888888 ? "#7a7068" : "#ffffff", 0.28);
+      for (const [x0, y0, x1, y1, qx, qy] of [[-0.75, -0.55, 0.1, -1.0, -0.5, -1.0], [-0.55, -0.35, 0.45, -0.9, -0.2, -0.95], [-0.2, -0.6, 0.7, -0.75, 0.25, -0.9]]) {
+        el("path", { d: `M ${f2(cx + R * x0)} ${f2(cy + R * y0)} Q ${f2(cx + R * qx)} ${f2(cy + R * qy)} ${f2(cx + R * x1)} ${f2(cy + R * y1)}`, stroke: strand, "stroke-width": 2, fill: "none", opacity: 0.55, "stroke-linecap": "round" }, h);
+      }
+      el("path", { d: `M ${f2(cx - R * 0.55)} ${f2(cy - R * 0.85)} Q ${f2(cx - R * 0.1)} ${f2(cy - R * 1.12)} ${f2(cx + R * 0.45)} ${f2(cy - R * 0.98)}`, stroke: "#ffffff", "stroke-width": 5, fill: "none", opacity: 0.18, "stroke-linecap": "round" }, h);
     }
     if (hair.style === "turban") el("path", { d: `M ${f2(cx - R * 1.0)} ${f2(cy - R * 0.25)} Q ${f2(cx)} ${f2(cy - R * 1.5)} ${f2(cx + R * 0.95)} ${f2(cy - R * 0.45)} L ${f2(cx + R * 0.9)} ${f2(cy - R * 0.2)} Q ${f2(cx)} ${f2(cy - R * 0.95)} ${f2(cx - R * 0.95)} ${f2(cy + R * 0.05)} Z`, fill: S.mat(hair.color || "#3a2a20", true), ...OUT }, h);
     // Brows stay over the hairline.
     for (const b of P.face.brows) h.appendChild(b);
     if (look.earrings) el("circle", { cx: f2(cx - R * 0.9), cy: f2(cy + R * 0.45), r: f2(R * 0.11), fill: "none", stroke: "url(#gold)", "stroke-width": 4 }, h);
-    if (look.beard) el("path", { d: `M ${f2(xc - R * 0.52)} ${f2(cy + R * 0.42)} Q ${f2(xc - R * 0.6)} ${f2(cy + R * 1.3)} ${f2(xc)} ${f2(cy + R * 1.5)} Q ${f2(xc + R * 0.48)} ${f2(cy + R * 1.25)} ${f2(xc + R * 0.44)} ${f2(cy + R * 0.4)} Q ${f2(xc + R * 0.1)} ${f2(cy + R * 0.92)} ${f2(xc - R * 0.52)} ${f2(cy + R * 0.42)} Z`, fill: look.beard, ...OUT }, h);
-    drawHeadwear(S, h, look.headwear, cx, cy, R);
+    if (look.beard) {
+      // A beard along the jaw, ending in three locks, a few strands in it; its top leaves the
+      // mouth free, and it lies under the mouth so an open mouth always shows.
+      const bd = P.swayG(h, xc - R * 0.1, cy + R * 0.5, 0.3);
+      // Back edge: from the sideburn in front of the ear, round the jaw (a little outside it, so
+      // the jaw line is covered); top edge: from the sideburn down the cheek to the mouth.
+      el("path", { d: `M ${f2(cx - R * 0.64)} ${f2(cy + R * 0.12)} L ${f2(cx - R * 0.95)} ${f2(cy + R * 0.34)} Q ${f2(cx - R * 0.84)} ${f2(cy + R * 1.04)} ${f2(xc - R * 0.36)} ${f2(cy + R * 1.34)}`
+        + ` Q ${f2(xc - R * 0.24)} ${f2(cy + R * 1.2)} ${f2(xc - R * 0.14)} ${f2(cy + R * 1.26)} Q ${f2(xc - R * 0.06)} ${f2(cy + R * 1.5)} ${f2(xc + R * 0.02)} ${f2(cy + R * 1.56)}`
+        + ` Q ${f2(xc + R * 0.08)} ${f2(cy + R * 1.38)} ${f2(xc + R * 0.16)} ${f2(cy + R * 1.3)} Q ${f2(xc + R * 0.24)} ${f2(cy + R * 1.36)} ${f2(xc + R * 0.3)} ${f2(cy + R * 1.32)}`
+        + ` Q ${f2(xc + R * 0.5)} ${f2(cy + R * 0.95)} ${f2(xc + R * 0.46)} ${f2(cy + R * 0.42)}`
+        + ` Q ${f2(xc + R * 0.4)} ${f2(cy + R * 0.66)} ${f2(xc + R * 0.24)} ${f2(cy + R * 0.74)} Q ${f2(xc)} ${f2(cy + R * 0.84)} ${f2(xc - R * 0.28)} ${f2(cy + R * 0.72)} Q ${f2(xc - R * 0.42)} ${f2(cy + R * 0.64)} ${f2(xc - R * 0.5)} ${f2(cy + R * 0.48)}`
+        + ` Q ${f2(cx - R * 0.42)} ${f2(cy + R * 0.34)} ${f2(cx - R * 0.64)} ${f2(cy + R * 0.12)} Z`, fill: S.mat(look.beard, true), ...OUT }, bd);
+      const bs = WA.core.mixColor(look.beard, parseInt(look.beard.slice(1), 16) > 0x888888 ? "#8a8278" : "#ffffff", 0.3);
+      for (const [x0, y0, x1, y1] of [[-0.82, 0.5, -0.66, 0.92], [-0.4, 0.86, -0.28, 1.18], [-0.04, 0.95, 0.0, 1.38], [0.24, 0.86, 0.2, 1.18]]) {
+        el("path", { d: `M ${f2(xc + R * x0)} ${f2(cy + R * y0)} Q ${f2(xc + R * (x0 + x1) / 2 - R * 0.03)} ${f2(cy + R * (y0 + y1) / 2)} ${f2(xc + R * x1)} ${f2(cy + R * y1)}`, stroke: bs, "stroke-width": 2, fill: "none", opacity: 0.6, "stroke-linecap": "round" }, bd);
+      }
+      h.insertBefore(bd, P.face.mouth);
+    }
+    drawHeadwear(S, h, look.headwear, cx, cy, R, P);
   }
 
-  function drawHeadwear(S, h, type, cx, cy, R) {
+  function drawHeadwear(S, h, type, cx, cy, R, P) {
+    const up = (px, py, gain = 1) => (P ? P.swayG(h, px, py, gain, true) : h);
     if (WA.garments && WA.garments.headwear(S, h, type, cx, cy, R)) return;
     switch (type) {
       case "nonla":
@@ -252,7 +359,7 @@
         break;
       case "helmet":
         el("path", { d: `M ${f2(cx - R * 1.1)} ${f2(cy - R * 0.1)} Q ${f2(cx - R * 1.2)} ${f2(cy - R * 1.45)} ${f2(cx + R * 0.05)} ${f2(cy - R * 1.5)} Q ${f2(cx + R * 1.15)} ${f2(cy - R * 1.45)} ${f2(cx + R * 1.1)} ${f2(cy - R * 0.3)} L ${f2(cx + R * 0.65)} ${f2(cy - R * 0.55)} Q ${f2(cx)} ${f2(cy - R * 0.85)} ${f2(cx - R * 0.6)} ${f2(cy - R * 0.6)} L ${f2(cx - R * 0.75)} ${f2(cy + R * 0.38)} Q ${f2(cx - R * 1.05)} ${f2(cy + R * 0.35)} ${f2(cx - R * 1.1)} ${f2(cy - R * 0.1)} Z`, fill: "url(#iron)", ...OUT }, h);
-        el("path", { d: `M ${f2(cx - R * 0.05)} ${f2(cy - R * 1.48)} Q ${f2(cx - R * 0.65)} ${f2(cy - R * 2.85)} ${f2(cx - R * 2.3)} ${f2(cy - R * 2.8)} Q ${f2(cx - R * 1.3)} ${f2(cy - R * 2.2)} ${f2(cx - R * 1.15)} ${f2(cy - R * 1.5)} Z`, fill: "url(#cape)", ...OUT }, h);
+        el("path", { d: `M ${f2(cx - R * 0.05)} ${f2(cy - R * 1.48)} Q ${f2(cx - R * 0.65)} ${f2(cy - R * 2.85)} ${f2(cx - R * 2.3)} ${f2(cy - R * 2.8)} Q ${f2(cx - R * 1.3)} ${f2(cy - R * 2.2)} ${f2(cx - R * 1.15)} ${f2(cy - R * 1.5)} Z`, fill: "url(#cape)", ...OUT }, up(cx - R * 0.05, cy - R * 1.48, 1.1));
         el("circle", { cx: f2(cx), cy: f2(cy - R * 1.45), r: f2(R * 0.22), fill: "url(#gold)", ...OUT }, h);
         break;
       case "enemy_helmet":
@@ -262,24 +369,38 @@
       case "feather": {
         // Feather headdress of the Hùng kings, as on the Đông Sơn bronze drums.
         el("path", { d: `M ${f2(cx - R * 1.0)} ${f2(cy - R * 0.45)} Q ${f2(cx)} ${f2(cy - R * 0.95)} ${f2(cx + R * 0.95)} ${f2(cy - R * 0.5)} L ${f2(cx + R * 0.9)} ${f2(cy - R * 0.25)} Q ${f2(cx)} ${f2(cy - R * 0.7)} ${f2(cx - R * 0.98)} ${f2(cy - R * 0.2)} Z`, fill: "url(#gold)", ...OUT }, h);
+        const fg = up(cx, cy - R * 0.75, 0.7);
         for (let i = 0; i < 7; i++) {
           const a = -70 + i * 22, bx = cx - R * 0.7 + i * R * 0.25, by = cy - R * 0.75;
-          el("path", { d: `M ${f2(bx)} ${f2(by)} q ${f2(-R * 0.25)} ${f2(-R * 0.9)} ${f2(R * 0.05)} ${f2(-R * 1.9)} q ${f2(R * 0.28)} ${f2(R * 0.9)} ${f2(-R * 0.05)} ${f2(R * 1.9)} Z`, fill: i % 2 ? "#f2e6c8" : "#c0392b", ...OUT, "stroke-width": 3, transform: `rotate(${f2(a * 0.4)} ${f2(bx)} ${f2(by)})` }, h);
+          el("path", { d: `M ${f2(bx)} ${f2(by)} q ${f2(-R * 0.25)} ${f2(-R * 0.9)} ${f2(R * 0.05)} ${f2(-R * 1.9)} q ${f2(R * 0.28)} ${f2(R * 0.9)} ${f2(-R * 0.05)} ${f2(R * 1.9)} Z`, fill: i % 2 ? "#f2e6c8" : "#c0392b", ...OUT, "stroke-width": 3, transform: `rotate(${f2(a * 0.4)} ${f2(bx)} ${f2(by)})` }, fg);
         }
         break;
       }
       case "feather_band": {
         // A headband with a few upright feathers: the Lạc lords and warriors of the bronze drums.
         el("path", { d: `M ${f2(cx - R * 0.98)} ${f2(cy - R * 0.32)} Q ${f2(cx)} ${f2(cy - R * 0.78)} ${f2(cx + R * 0.95)} ${f2(cy - R * 0.4)} L ${f2(cx + R * 0.92)} ${f2(cy - R * 0.2)} Q ${f2(cx)} ${f2(cy - R * 0.58)} ${f2(cx - R * 0.96)} ${f2(cy - R * 0.1)} Z`, fill: S.mat("#8a5a2a", true), ...OUT }, h);
+        const fb = up(cx - R * 0.25, cy - R * 0.62, 0.9);
         for (let i = 0; i < 3; i++) {
           const bx = cx - R * 0.55 + i * R * 0.3, by = cy - R * 0.62 - i * 2;
-          el("path", { d: `M ${f2(bx)} ${f2(by)} q ${f2(-R * 0.2)} ${f2(-R * 0.7)} ${f2(-R * 0.05)} ${f2(-R * 1.5)} q ${f2(R * 0.26)} ${f2(R * 0.7)} ${f2(R * 0.05)} ${f2(R * 1.5)} Z`, fill: i === 1 ? "#c0392b" : "#f2e6c8", ...OUT, "stroke-width": 3, transform: `rotate(${f2(-18 + i * 6)} ${f2(bx)} ${f2(by)})` }, h);
+          el("path", { d: `M ${f2(bx)} ${f2(by)} q ${f2(-R * 0.2)} ${f2(-R * 0.7)} ${f2(-R * 0.05)} ${f2(-R * 1.5)} q ${f2(R * 0.26)} ${f2(R * 0.7)} ${f2(R * 0.05)} ${f2(R * 1.5)} Z`, fill: i === 1 ? "#c0392b" : "#f2e6c8", ...OUT, "stroke-width": 3, transform: `rotate(${f2(-18 + i * 6)} ${f2(bx)} ${f2(by)})` }, fb);
         }
         break;
       }
-      case "crown":
-        el("path", { d: `M ${f2(cx - R * 0.9)} ${f2(cy - R * 0.7)} L ${f2(cx - R * 0.8)} ${f2(cy - R * 1.5)} L ${f2(cx - R * 0.35)} ${f2(cy - R * 1.1)} L ${f2(cx)} ${f2(cy - R * 1.65)} L ${f2(cx + R * 0.35)} ${f2(cy - R * 1.1)} L ${f2(cx + R * 0.8)} ${f2(cy - R * 1.5)} L ${f2(cx + R * 0.9)} ${f2(cy - R * 0.7)} Z`, fill: "url(#gold)", ...OUT }, h);
+      case "crown": {
+        // A king's (or queen's) cap where the records do not say which: a gold cap with a red
+        // band and a jewel over the forehead, its back raised higher, as on East Asian court
+        // hats; never the pointed European crown.
+        const gold = "url(#gold)";
+        el("path", { d: `M ${f2(cx - R * 0.98)} ${f2(cy - R * 0.5)} Q ${f2(cx - R * 1.05)} ${f2(cy - R * 1.9)} ${f2(cx - R * 0.2)} ${f2(cy - R * 1.92)} Q ${f2(cx + R * 0.3)} ${f2(cy - R * 1.9)} ${f2(cx + R * 0.32)} ${f2(cy - R * 1.2)} Z`, fill: S.mat("#8b1a1a", true), ...OUT }, h);
+        el("path", { d: `M ${f2(cx - R * 0.8)} ${f2(cy - R * 1.2)} Q ${f2(cx - R * 0.7)} ${f2(cy - R * 1.75)} ${f2(cx - R * 0.2)} ${f2(cy - R * 1.76)}`, stroke: "#f1d08a", "stroke-width": 3, fill: "none", opacity: 0.8 }, h);
+        el("path", { d: `M ${f2(cx - R * 1.02)} ${f2(cy - R * 0.2)} Q ${f2(cx - R * 1.08)} ${f2(cy - R * 1.35)} ${f2(cx + R * 0.02)} ${f2(cy - R * 1.38)} Q ${f2(cx + R * 1.02)} ${f2(cy - R * 1.3)} ${f2(cx + R * 0.97)} ${f2(cy - R * 0.4)} Q ${f2(cx)} ${f2(cy - R * 0.78)} ${f2(cx - R * 1.02)} ${f2(cy - R * 0.2)} Z`, fill: gold, ...OUT }, h);
+        el("path", { d: `M ${f2(cx - R * 1.02)} ${f2(cy - R * 0.2)} Q ${f2(cx)} ${f2(cy - R * 0.78)} ${f2(cx + R * 0.97)} ${f2(cy - R * 0.4)} L ${f2(cx + R * 0.99)} ${f2(cy - R * 0.62)} Q ${f2(cx)} ${f2(cy - R * 1.0)} ${f2(cx - R * 1.04)} ${f2(cy - R * 0.44)} Z`, fill: S.mat("#a8241e", true), ...OUT, "stroke-width": 2.5 }, h);
+        for (let i = 0; i < 5; i++) el("circle", { cx: f2(cx - R * 0.7 + i * R * 0.38), cy: f2(cy - R * (0.47 + 0.24 * Math.sin((i / 4) * Math.PI) + i * 0.02)), r: f2(R * 0.045), fill: "#f1d08a" }, h);
+        el("path", { d: `M ${f2(cx + R * 0.2)} ${f2(cy - R * 1.28)} Q ${f2(cx + R * 0.3)} ${f2(cy - R * 0.95)} ${f2(cx + R * 0.32)} ${f2(cy - R * 0.85)}`, stroke: "#9a7420", "stroke-width": 2.5, fill: "none", opacity: 0.7 }, h);
+        el("circle", { cx: f2(cx + R * 0.42), cy: f2(cy - R * 1.02), r: f2(R * 0.13), fill: "#c0392b", ...OUT, "stroke-width": 2.5 }, h);
+        el("circle", { cx: f2(cx + R * 0.38), cy: f2(cy - R * 1.06), r: f2(R * 0.04), fill: "#ffffff", opacity: 0.7 }, h);
         break;
+      }
     }
   }
 
@@ -382,40 +503,80 @@
     tr(P.root, p.x, hipY, (p.rot || 0) * facing, s * facing * (p.sx || 1), s * (p.sy || 1));
     P.root.setAttribute("opacity", f2(clamp(p.opacity ?? 1)));
     tr(P.torso, 0, 0, (p.lean || 0) + (B.stoop || 0), 1, 1 + (p.breath || 0));
-    tr(P.head, 4, -T, p.headTilt || 0);
+    tr(P.torsoBack, 0, 0, (p.lean || 0) + (B.stoop || 0), 1, 1 + (p.breath || 0));
+    // Follow-through: f = how the body is moving (from the player: forward speed vf in rig units
+    // per second, lean speed dl and forearm turn speeds wF/wB in degrees per second).
+    const f = p.follow || { vf: 0, dl: 0, wF: 0, wB: 0 };
+    // The head nods a little with the voice and lags when the body pitches.
+    const nod = (p.talk || 0) * 3.2 * Math.sin(t * 6.3 + P.seed) - Math.max(-6, Math.min(6, f.dl * 0.06));
+    tr(P.head, 4, -T, (p.headTilt || 0) + nod);
     for (const k of ["legF", "legB"]) {
       const a = p[k] || [0, 0];
       tr(P[k].hip, k === "legF" ? 7 : -7, 0, -a[0]);
       tr(P[k].knee, 0, B.thigh, -a[1]);
+      tr(P[k].o.hip, k === "legF" ? 7 : -7, 0, -a[0]);
+      tr(P[k].o.knee, 0, B.thigh, -a[1]);
     }
     for (const k of ["armF", "armB"]) {
       const a = p[k] || [0, 0];
       tr(P[k].sh, k === "armF" ? 10 : -6, -T + 14, -a[0]);
       tr(P[k].elbow, 0, B.upper, -a[1]);
+      tr(P[k].o.sh, k === "armF" ? 10 : -6, -T + 14, -a[0]);
+      tr(P[k].o.elbow, 0, B.upper, -a[1]);
     }
     P.legB.hip.setAttribute("opacity", p.hideBackLeg ? 0 : 1);
+    P.legB.o.hip.setAttribute("opacity", p.hideBackLeg ? 0 : 1);
     // A hand raised above the shoulder passes behind the (turned) head, never across the face.
     const behind = p.armsBehindHead || (p.armF?.[0] ?? 0) - (p.lean || 0) > 115;
-    if (behind) { if (P.armF.sh.nextSibling !== P.head) P.torso.insertBefore(P.armF.sh, P.head); }
-    else if (P.armF.sh.nextSibling === P.head) P.torso.insertBefore(P.armF.sh, P.head.nextSibling);
+    if (behind) { if (P.armF.sh.nextSibling !== P.head) { P.torso.insertBefore(P.armF.o.sh, P.head); P.torso.insertBefore(P.armF.sh, P.head); } }
+    else if (P.armF.sh.nextSibling === P.head) { P.torso.appendChild(P.armF.o.sh); P.torso.appendChild(P.armF.sh); }
     WA.face.apply(P.face, p.face || "neutral", t, p.talk || 0, p.viseme);
+    // The head's shadow side is away from the light: the back of the head, or the face when the
+    // light is behind (the player sets lightFlip).
+    if (P.face.form) P.face.form.setAttribute("cx", f2(P.face.formX[P.lightFlip ? 1 : 0]));
     const shown = p.prop !== undefined ? p.prop : P.activeProp;
     for (const k in P.props) P.props[k].setAttribute("opacity", k === shown ? 1 : 0);
     if (P.tuft) tr(P.tuft, 0, 0, p.tuft || 0);
+    // Hair, beard, feathers trail behind the movement and settle with a slow sway.
+    const drag = Math.max(-14, Math.min(14, f.vf * 0.028)), pitch = Math.max(-10, Math.min(10, f.dl * 0.1));
+    for (const w of P.sway) {
+      const a = ((w.up ? -drag : drag) - pitch + 1.8 * Math.sin(t * 1.7 + w.px * 0.07 + P.seed)) * w.gain;
+      w.g.setAttribute("transform", `rotate(${f2(a)} ${f2(w.px)} ${f2(w.py)})`);
+    }
+    // Wide sleeves: the cloth stays sewn along the forearm, the open bag of it hangs towards the
+    // ground (part of the way, so it never folds over the arm) and lags when the arm swings.
+    for (const sl of P.sleeves) {
+      const a = p[sl.front ? "armF" : "armB"] || [0, 0], lag = Math.max(-25, Math.min(25, (sl.front ? f.wF : f.wB) * 0.05));
+      const R = (Math.max(-50, Math.min(50, ((p.lean || 0) + (B.stoop || 0) - a[0] - a[1]) * 0.4 + lag)) * Math.PI) / 180;
+      const L = B.fore, w = B.armW, dx = Math.sin(R), dy = Math.cos(R);
+      // The bag: one smooth curve from the inner top to the wrist, pulled out towards its lowest
+      // point (no corner), then back up the forearm.
+      const bx = -w * 0.55, by = L * 0.15, wx = w * 0.6, wy = L * 0.9;
+      const cx2 = -w * 1.3 + dx * L * 0.45, cy2 = L * 0.5 + dy * L * 0.48;
+      sl.path.setAttribute("d", `M ${f2(bx)} ${f2(by)} C ${f2(bx + (cx2 - bx) * 1.25)} ${f2(by + (cy2 - by) * 1.25)} ${f2(wx + (cx2 - wx) * 1.25)} ${f2(wy + (cy2 - wy) * 1.25)} ${f2(wx)} ${f2(wy)} L ${f2(w * 0.5)} ${f2(by)} Z`);
+    }
     if (P.skirt) {
-      const L = P.skirtLen, w = B.torsoW, a = ((p.legF?.[0] || 0) - (p.legB?.[0] || 0)) * 0.6, sw = Math.sin(t * 3) * 3;
-      P.skirt.setAttribute("d", `M ${f2(-w / 2 + 2)} -6 L ${f2(w / 2 + 2)} -6 L ${f2(w * 0.6 + a + sw)} ${f2(L)} Q 0 ${f2(L + 14)} ${f2(-w * 0.62 - Math.abs(a) * 0.3 + sw)} ${f2(L)} Z`);
+      const L = P.skirtLen, w = B.torsoW, a = ((p.legF?.[0] || 0) - (p.legB?.[0] || 0)) * 0.6, sw = Math.sin(t * 3) * 3 - Math.max(-9, Math.min(9, f.vf * 0.02));
+      const sb = -w * 0.62 - Math.abs(a) * 0.3 + sw, sf = w * 0.6 + a + sw;
+      const st = P.skirtTop;
+      P.skirt.setAttribute("d", `M ${f2(-w / 2 + 2)} ${f2(st)} L ${f2(w / 2 + 2)} ${f2(st)} C ${f2(w / 2 + 5)} ${f2(L * 0.3)} ${f2(sf - 4)} ${f2(L * 0.6)} ${f2(sf)} ${f2(L)} Q 0 ${f2(L + 14)} ${f2(sb)} ${f2(L)} C ${f2(sb + 4)} ${f2(L * 0.6)} ${f2(-w * 0.52)} ${f2(L * 0.3)} ${f2(-w / 2 + 2)} ${f2(st)} Z`);
       P.skirtFolds?.setAttribute("d", `M ${f2(-w * 0.15)} 4 Q ${f2(-w * 0.2 + sw * 0.5)} ${f2(L * 0.5)} ${f2(-w * 0.28 + sw)} ${f2(L - 6)} M ${f2(w * 0.2)} 4 Q ${f2(w * 0.26 + a * 0.4 + sw * 0.5)} ${f2(L * 0.5)} ${f2(w * 0.32 + a * 0.6 + sw)} ${f2(L - 6)}`);
       if (P.hem) P.hem.setAttribute("d", `M ${f2(-w * 0.62 - Math.abs(a) * 0.3 + sw)} ${f2(L - 8)} Q 0 ${f2(L + 6)} ${f2(w * 0.6 + a + sw)} ${f2(L - 8)}`);
     }
     if (P.coat) {
-      const L = P.coatLen, w = B.torsoW, a = ((p.legF?.[0] || 0) - (p.legB?.[0] || 0)) * 0.55, sw = Math.sin(t * 3 + 1) * 2.5;
-      P.coat.setAttribute("d", `M ${f2(-w / 2)} -14 L ${f2(w / 2 + 3)} -14 L ${f2(w * 0.52 + a + sw)} ${f2(L)} Q 0 ${f2(L + 10)} ${f2(-w * 0.58 - Math.abs(a) * 0.3 + sw)} ${f2(L)} Z`);
-      P.coatFolds?.setAttribute("d", `M ${f2(-w * 0.1)} 4 Q ${f2(-w * 0.16 + sw * 0.5)} ${f2(L * 0.5)} ${f2(-w * 0.24 + sw)} ${f2(L - 6)} M ${f2(w * 0.22)} 4 Q ${f2(w * 0.28 + a * 0.4)} ${f2(L * 0.5)} ${f2(w * 0.3 + a * 0.6 + sw)} ${f2(L - 6)}`);
-      P.coatHem?.setAttribute("d", `M ${f2(-w * 0.58 - Math.abs(a) * 0.3 + sw)} ${f2(L - 4)} Q 0 ${f2(L + 8)} ${f2(w * 0.52 + a + sw)} ${f2(L - 4)}`);
+      // The coat tail hangs from the waist (as wide as the body there, belly included), its sides
+      // curving out to a flared, rounded hem; the front edge swings with the legs.
+      const L = P.coatLen, w = B.torsoW, bf = (B.belly || 0) * w * 0.55, a = ((p.legF?.[0] || 0) - (p.legB?.[0] || 0)) * 0.55, sw = Math.sin(t * 3 + 1) * 2.5 - Math.max(-9, Math.min(9, f.vf * 0.02));
+      const xb = -w * 0.62 - Math.abs(a) * 0.3 + sw, xf = w * 0.6 + bf * 0.6 + a + sw;
+      P.coat.setAttribute("d", `M ${f2(-w / 2)} -14 L ${f2(w / 2 + 3 + bf)} -14 C ${f2(w / 2 + 6 + bf)} ${f2(L * 0.3)} ${f2(xf - 4)} ${f2(L * 0.6)} ${f2(xf)} ${f2(L)}`
+        + ` Q ${f2((xf * 2) / 3)} ${f2(L + 9)} ${f2(xf / 3 + xb / 6)} ${f2(L + 7)} Q ${f2(xb / 2)} ${f2(L + 12)} ${f2(xb)} ${f2(L)} C ${f2(xb + 4)} ${f2(L * 0.6)} ${f2(-w * 0.53)} ${f2(L * 0.3)} ${f2(-w / 2)} -14 Z`);
+      P.coatFolds?.setAttribute("d", `M ${f2(-w * 0.12)} 6 Q ${f2(-w * 0.18 + sw * 0.5)} ${f2(L * 0.55)} ${f2(-w * 0.3 + sw)} ${f2(L - 2)}`
+        + ` M ${f2(w * 0.18 + bf * 0.3)} 6 Q ${f2(w * 0.24 + bf * 0.3 + a * 0.4)} ${f2(L * 0.55)} ${f2(w * 0.3 + bf * 0.4 + a * 0.6 + sw)} ${f2(L)}`
+        + ` M ${f2(w * 0.02)} ${f2(L * 0.45)} Q ${f2(w * 0.04 + sw * 0.3)} ${f2(L * 0.75)} ${f2(w * 0.02 + sw * 0.5)} ${f2(L + 4)}`);
+      P.coatHem?.setAttribute("d", `M ${f2(xb + 1)} ${f2(L - 4)} Q ${f2(xb / 2)} ${f2(L + 8)} ${f2(xf / 3 + xb / 6)} ${f2(L + 3)} Q ${f2((xf * 2) / 3)} ${f2(L + 5)} ${f2(xf - 1)} ${f2(L - 4)}`);
     }
     if (P.cape) {
-      const w = p.capeWave || 0, fl = Math.sin(t * 13) * w, fl2 = Math.sin(t * 9 + 1) * w;
+      const w = Math.min(1.4, (p.capeWave || 0) + Math.abs(f.vf) * 0.0025), fl = Math.sin(t * 13) * w, fl2 = Math.sin(t * 9 + 1) * w;
       P.cape.setAttribute("d", `M -14 ${-T + 12} C ${f2(-70 - w * 30)} ${f2(-T * 0.5 + fl * 10)} ${f2(-120 - w * 60)} ${f2(-30 + w * 10 + fl2 * 12)} ${f2(-170 - w * 110)} ${f2(40 - w * 25 + fl * 22)} Q ${f2(-120 - w * 80)} ${f2(70 - w * 10 + fl2 * 14)} ${f2(-60 - w * 50)} ${f2(58 - w * 4)} C -36 10 -30 ${f2(-T * 0.5)} 14 ${-T + 22} Z`);
     }
   }

@@ -1,0 +1,34 @@
+{
+  "slug": "why-is-the-sky-blue",
+  "topic": "Why is the sky blue?",
+  "status": "producing",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-10T07:57:22.798Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-10T08:00:39.613Z",
+      "status": "review"
+    },
+    {
+      "at": "2026-11-10T08:50:26.201Z",
+      "status": "approved",
+      "info": "bạn yêu cầu làm video thử"
+    },
+    {
+      "at": "2026-11-10T08:50:29.607Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-10T08:50:29.616Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    }
+  ],
+  "kind": "qa",
+  "by": "claude-opus",
+  "stage": "ready"
+}

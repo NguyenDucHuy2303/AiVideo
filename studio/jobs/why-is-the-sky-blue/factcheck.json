@@ -1,0 +1,10 @@
+{
+  "issues": [
+    {
+      "scene": 30,
+      "quote": "Tiny molecules in the air scatter the short blue waves much more than the others",
+      "problem": "Not true. Violet waves are even shorter than blue and are scattered even more (the script says so in scene 11). The sources say blue is scattered much more than red or green, not more than every other colour. The sky still looks blue, not violet, for reasons the script does not explain.",
+      "fix": "Tiny molecules in the air scatter short waves like blue much more than long waves like red, so blue light comes at us from all over the sky."
+    }
+  ]
+}

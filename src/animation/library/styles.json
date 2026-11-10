@@ -12,8 +12,7 @@
     "backdrop": "Vietnamese Dong Ho folk woodblock print, flat areas of earthy natural colors (vermilion red, ochre yellow, indigo blue, leaf green, charcoal black) on handmade do paper coated with shimmering seashell powder, bold black carved outlines, simple stylized shapes, decorative pattern",
     "look": {
       "ink": "#120c08",
-      "line": 1.45,
-      "posterize": 5,
+      "line": 1.15,
       "saturate": 0.82,
       "contrast": 1.06,
       "tint": "#efd6a2",
@@ -21,7 +20,8 @@
       "texture": "paper",
       "textureAmt": 0.75,
       "flecks": 0.3,
-      "vignette": 0.35
+      "vignette": 0.35,
+      "flat": true
     },
     "character": "Vietnamese Dong Ho folk woodblock print style, flat earthy natural colors, bold black carved outlines, simple stylized shapes, handmade paper texture"
   },
@@ -121,7 +121,6 @@
     "look": {
       "ink": "#3a2a20",
       "line": 0.4,
-      "posterize": 6,
       "saturate": 1.08,
       "shadow": {
         "dx": 5,
@@ -131,7 +130,8 @@
       },
       "texture": "cutpaper",
       "textureAmt": 0.6,
-      "vignette": 0.28
+      "vignette": 0.28,
+      "flat": true
     },
     "character": "cut paper collage character, flat colored paper shapes with clean edges, subtle paper texture, simple stylized shapes"
   }

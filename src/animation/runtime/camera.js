@@ -30,8 +30,12 @@
     const k = smooth(seg(t, shot.at, shot.end ?? shot.at + 4));
     const push = 1 + (shot.push || 0) * k;
     const facing = pts[0].facing ?? 1;
-    const moving = ctx.speedOf ? Math.abs(ctx.speedOf(ids[0], t)) > 50 : false;
-    const lead = shot.lead ?? (moving ? 0.12 : 0);
+    const speed = ctx.speedOf ? Math.abs(ctx.speedOf(ids[0], t)) : 0, moving = speed > 50;
+    // Lead room grows with the speed (no jump when the subject starts or stops).
+    const lead = shot.lead ?? 0.12 * Math.min(1, speed / 400);
+    // A subject that has walked somewhere since the shot began is framed where it is now
+    // (the camera does not swing back to where it started).
+    const moved = pts.some((p, i) => Math.abs(p.feet[0] - ptsLock[i].feet[0]) > 1);
     if (shot.type === "close") {
       const p = pts[0], part = p[shot.part || "head"] || p.head;
       // A face close-up shows head and shoulders, the face a little above the centre.
@@ -44,7 +48,7 @@
     }
     // Everything the shot is on must fit: the union of their boxes, sized a little late.
     const sized = ids.map((id) => ctx.pointsAt(id, Math.max(shot.at, t - (shot.sizeLag ?? 0.5))));
-    const place = shot.follow || shot.type === "track" || moving ? pts : ptsLock;
+    const place = shot.follow || shot.type === "track" || moving || moved ? pts : ptsLock;
     const boxH = Math.max(...sized.map((p) => p.box[3] - p.box[1]));
     const boxW = Math.max(...sized.map((p) => p.box[2] - p.box[0])) + (Math.max(...place.map((p) => p.feet[0])) - Math.min(...place.map((p) => p.feet[0])));
     const left = Math.min(...place.map((p) => p.box[0])), right = Math.max(...place.map((p) => p.box[2]));

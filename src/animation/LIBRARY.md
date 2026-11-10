@@ -30,7 +30,7 @@ Thời đại mới thì thêm một khối vào `eras.json`, gồm mô tả, nh
   - Thời muộn hơn: `tunic`, `robe`, `dress`.
 - Chi tiết: `bareChest`, `tattoo` (xăm hoa văn), `bracelets`, `earrings` (đồ đồng), `beard`, `cape`, `cheeks`, `eyeScale`
 - Tóc: `traidao` `bun` `long` `short` `turban` `bald`
-- Mũ: `feather` (mũ lông chim vua Hùng) `feather_band` (dải lông chim Lạc tướng/lính) `helmet` (nón sắt tráng sĩ) `enemy_helmet` `crown` `nonla` (chỉ dùng cho thời có tư liệu)
+- Mũ: `feather` (mũ lông chim vua Hùng) `feather_band` (dải lông chim Lạc tướng/lính) `helmet` (nón sắt tráng sĩ) `enemy_helmet` `crown` (mũ vua chung khi tư liệu không rõ: chỏm vàng, vành đỏ, ngọc trước trán, hậu mũ nhô cao; không dùng vương miện răng cưa châu Âu) `nonla` (chỉ dùng cho thời có tư liệu)
 - Đạo cụ (`prop`, `props` để đổi giữa cảnh bằng `set.prop`): `iron_whip` `broken_whip` `bamboo` `spear` `bronze_axe` `shield` `horn` (tù và) `sword` `stick` `basket` `bowl` `scroll` (không dùng cho thời Văn Lang) `flag`
 - **Mảnh trang phục** (`runtime/garments.js`, mọi thời đại sau Văn Lang): `outfit: { type: "parts", top, inner, lower, belt }`
   - `top.cut`: `chui` · `canh` (áo cánh) · `tu_than` (áo tứ thân, mặc ngoài yếm) · `giao_linh` (cổ chéo) · `vien_linh` (cổ tròn, quan, vua) · `ngu_than` (thời Nguyễn) · `yem`; `length` waist…ankle (dài thì có vạt áo phủ chân, đung đưa theo bước); `sleeves` none/short/long/wide (tay thụng); `pattern` dongson/dragon/flowers/dots
@@ -41,26 +41,6 @@ Thời đại mới thì thêm một khối vào `eras.json`, gồm mô tả, nh
 - **Khuôn mặt hướng 3/4** (`runtime/face.js`, `look.face`): `shape` round/oval/square/jowl · `eyes` round/almond/narrow/droopy · `nose` button/round/long · `brows` thin/thick/bushy · `wrinkles` · `mustache` thin/thick/droopy · `iris` · `eyeScale`. Mẫu nhân vật thời Văn Lang đã có sẵn gương mặt riêng.
 - 15 nét mặt: `neutral happy joy laugh sad worried scared angry determined surprised shout yawn sleepy proud crying`. `happy` cười tươi, má đẩy mi dưới lên thành mắt cười, có nếp cười ở khóe miệng. `joy` là mừng rỡ, mắt nhắm híp cong, miệng cười rộng ("mừng rỡ / hớn hở / sung sướng" trong lời thoại tự ra `joy`). Mí trên, mí dưới, đồng tử co giãn, mắt nhắm cười, miệng có răng và lưỡi, ký hiệu mồ hôi, nước mắt, má đỏ, gân giận. Mắt tự chớp. `talk` để nhép môi, `viseme` (a/o/u/i/e/m) khi có lời thoại. `lookAt: <id>` để ánh mắt nhìn về một nhân vật.
 - Tay giơ quá vai tự vẽ phía sau đầu, không che mặt trong cảnh cận.
-
-## Nhân vật vẽ tay: rối giấy (`puppet/paint.ts`, `puppet/cut.py`, `runtime/puppet.js`)
-
-Thay cho người vẽ bằng code, mỗi nhân vật có thể là một **con rối giấy vẽ tay**: FLUX.2 klein vẽ nhân vật theo phong cách của phim rồi cắt thành từng mảnh. Rối diễn bằng **chính các động tác của người vector** (`motions.js`: đi, chạy, nói, giơ tay, chỉ, cúi chào, quỳ, cưỡi…), nhép miệng theo giọng thật và chớp mắt.
-
-- **Bật:** `project.json` `"characters": "puppet"`, chọn trên trang duyệt; thử một cảnh thì `render.ts --characters puppet`.
-- **Từ thiết kế ra lời tả:** `describeLook` dịch thiết kế đã duyệt (thân hình, da, trang phục, màu, tóc, mũ, thời đại) thành lời tả tiếng Anh theo quy tắc, không tốn token.
-- **Ba ảnh vẽ** (nền trắng, góc ba phần tư quay sang phải như người vector, 512×896):
-  - `base.png`: ảnh gốc.
-  - `armless.png`: cùng nhân vật nhưng không có tay, máy sửa từ ảnh gốc, để có phần thân bị tay che.
-  - `face.png`: mở miệng và nhắm mắt.
-- **Cắt rối** (`cut.py`, Python riêng ở `vendor/puppet`, cài bằng `scripts/setup-puppet.sh`):
-  - Tay là phần ảnh gốc có mà ảnh không tay không có. Lấy cánh tay lớn hơn (phía gần); trục của nó cho ra vai, khuỷu, cổ tay.
-  - Chân cắt dưới gấu áo, phần trên kéo dài để giấu dưới vạt áo.
-  - Cổ là chỗ hẹp nhất giữa đầu và vai.
-  - Miệng và mắt là các miếng dán mép mềm, đã chỉnh màu da cho khớp.
-  - Đầu ra: `parts/*.png` và `rig.json` (toạ độ các khớp).
-- **Tay và chân phía xa** là bản sao của phía gần, tô tối, đặt lùi sau. Áo dài phủ chân thì chân không cử động (rối lướt và nhún).
-- **Thư viện:** mỗi tổ hợp thiết kế × thời đại × phong cách chỉ vẽ một lần, lưu ở `assets/library/puppets/<khóa>/`, mọi truyện dùng lại. Mỗi nhân vật mới mất khoảng 30 phút ở 5 luồng CPU. Bộ lập lịch vẽ từng con một, ưu tiên phim đã duyệt; phim chỉ render khi đủ rối.
-- Ngựa và thú vật vẫn vẽ bằng code. Đạo cụ (giáo, kiếm, roi…) cũng vẽ bằng code, gắn vào cổ tay rối.
 
 ## Thú vật (`runtime/animals.js`)
 

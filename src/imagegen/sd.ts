@@ -38,6 +38,10 @@ export interface GenerateOptions {
   seed?: number;
   /** Words written as is (the style and the "no border" words are not added). */
   raw?: boolean;
+  /** Repaint part of a picture (FLUX.2 klein): the picture, a mask (white = repaint), strength. */
+  init?: string;
+  mask?: string;
+  strength?: number;
 }
 
 /** Model load + 4 steps takes well under a minute on a 6-core CPU; this only catches hangs. */
@@ -127,7 +131,8 @@ export async function flux2Klein(): Promise<ImageGen | undefined> {
       const [width, height] = opts.size ?? SIZES[opts.shape ?? "square"];
       const refs = opts.refs ?? [];
       // A reference changes the picture: its bytes are part of the cache key.
-      const refHash = refs.length ? sha256((await Promise.all(refs.map((r) => fs.readFile(r)))).map((b) => sha256(b.toString("base64"))).join("|")) : "";
+      const pics = [...refs, ...(opts.init ? [opts.init] : []), ...(opts.mask ? [opts.mask] : [])];
+      const refHash = pics.length ? sha256((await Promise.all(pics.map((r) => fs.readFile(r)))).map((b) => sha256(b.toString("base64"))).join("|")) + (opts.strength ?? "") : "";
       const key = sha256(`${KLEIN_ID}|${width}x${height}|${full}${refHash ? `|refs:${refHash}` : ""}${opts.seed !== undefined ? `|seed:${opts.seed}` : ""}`);
       const file = path.join(outDir, `${key.slice(0, 12)}.png`);
       if (await exists(file)) return { file, cached: true };
@@ -139,6 +144,8 @@ export async function flux2Klein(): Promise<ImageGen | undefined> {
           "-p", full, "--cfg-scale", "1.0", "--steps", "4",
           "-W", String(width), "-H", String(height),
           ...refs.flatMap((r) => ["-r", r]),
+          ...(opts.init ? ["-i", opts.init, "--strength", String(opts.strength ?? 1)] : []),
+          ...(opts.mask ? ["--mask", opts.mask] : []),
           "-s", String(opts.seed ?? parseInt(key.slice(0, 8), 16) % 2_147_483_647),
           "-t", String(Math.max(1, Number(process.env.WATA_SD_THREADS) || os.availableParallelism())),
           "--vae-tiling", "--mmap", "-o", tmp,

@@ -1,0 +1,58 @@
+{
+  "castFile": "cast.json",
+  "duration": 11.43,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "red rocky Mars ground under a dusty orange-pink sky",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": 250,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "joy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "cheer",
+      "face": "joy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "share": 0.62
+    }
+  ],
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/9b56dcf089d7.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

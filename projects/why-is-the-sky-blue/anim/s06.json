@@ -1,0 +1,75 @@
+{
+  "castFile": "cast.json",
+  "duration": 10.73,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 7.51,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "raise",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 600'><text x='500' y='75' text-anchor='middle' font-family='sans-serif' font-size='40' font-weight='bold' fill='#2a2a40'>Sunlight Through a Prism</text><g data-in='0.5'><polygon points='450,190 340,400 560,400' fill='#d6efff' stroke='#3a2a20' stroke-width='5' stroke-linejoin='round'/><text x='450' y='450' text-anchor='middle' font-family='sans-serif' font-size='36' fill='#2a2a40'>Prism</text></g><g data-in='1.5'><line x1='60' y1='320' x2='382' y2='320' stroke='#3a2a20' stroke-width='20' stroke-linecap='round'/><line x1='60' y1='320' x2='382' y2='320' stroke='#ffffff' stroke-width='11' stroke-linecap='round'/></g><g data-in='3'><polygon points='518,320 940,150 940,207' fill='#e53935' stroke='#3a2a20' stroke-width='3'/><text x='800' y='235' text-anchor='middle' font-family='sans-serif' font-size='28' fill='#ffffff'>Red</text></g><g data-in='3.6'><polygon points='518,320 940,207 940,263' fill='#fb8c00' stroke='#3a2a20' stroke-width='3'/><text x='800' y='273' text-anchor='middle' font-family='sans-serif' font-size='28' fill='#2a2a40'>Orange</text></g><g data-in='4.2'><polygon points='518,320 940,263 940,320' fill='#ffd23f' stroke='#3a2a20' stroke-width='3'/><text x='800' y='311' text-anchor='middle' font-family='sans-serif' font-size='28' fill='#2a2a40'>Yellow</text></g><g data-in='4.8'><polygon points='518,320 940,320 940,377' fill='#43a047' stroke='#3a2a20' stroke-width='3'/><text x='800' y='349' text-anchor='middle' font-family='sans-serif' font-size='28' fill='#ffffff'>Green</text></g><g data-in='5.4'><polygon points='518,320 940,377 940,433' fill='#4aa3e0' stroke='#3a2a20' stroke-width='3'/><text x='800' y='387' text-anchor='middle' font-family='sans-serif' font-size='28' fill='#ffffff'>Blue</text></g><g data-in='6'><polygon points='518,320 940,433 940,490' fill='#8e24aa' stroke='#3a2a20' stroke-width='3'/><text x='800' y='424' text-anchor='middle' font-family='sans-serif' font-size='28' fill='#ffffff'>Violet</text></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

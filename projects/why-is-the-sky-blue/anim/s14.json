@@ -1,0 +1,61 @@
+{
+  "castFile": "cast.json",
+  "duration": 11.13,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 7.79,
+      "do": "talk",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0.3\" x=\"500\" y=\"80\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Air is full of molecules</text><circle data-in=\"0.6\" cx=\"380\" cy=\"335\" r=\"210\" fill=\"#bfe3f7\" stroke=\"#3a2a20\" stroke-width=\"6\"/><g data-in=\"1.5\"><circle class=\"float\" cx=\"300\" cy=\"240\" r=\"24\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><g data-in=\"2.0\"><circle class=\"float\" cx=\"450\" cy=\"230\" r=\"24\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><g data-in=\"2.5\"><circle class=\"float\" cx=\"500\" cy=\"360\" r=\"24\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><g data-in=\"3.0\"><circle class=\"float\" cx=\"290\" cy=\"400\" r=\"24\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><g data-in=\"3.5\"><circle class=\"float\" cx=\"420\" cy=\"470\" r=\"24\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><g data-in=\"4.0\"><circle class=\"float\" cx=\"380\" cy=\"340\" r=\"20\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><g data-in=\"4.5\"><circle class=\"float\" cx=\"250\" cy=\"320\" r=\"20\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><g data-in=\"5.0\"><circle class=\"float\" cx=\"520\" cy=\"250\" r=\"20\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><g data-in=\"5.5\"><circle class=\"float\" cx=\"480\" cy=\"460\" r=\"20\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><g data-in=\"6.0\"><circle class=\"float\" cx=\"340\" cy=\"180\" r=\"20\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><g data-in=\"6.6\"><circle cx=\"690\" cy=\"250\" r=\"24\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text x=\"735\" y=\"264\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#2a2a40\">Nitrogen</text></g><g data-in=\"7.2\"><circle cx=\"690\" cy=\"420\" r=\"20\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text x=\"735\" y=\"434\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#2a2a40\">Oxygen</text></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

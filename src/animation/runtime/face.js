@@ -63,6 +63,17 @@
     el("path", { d: `M ${f2(cx - R * 0.78)} ${f2(cy - R * 0.12)} C ${f2(cx - R * 1.08)} ${f2(cy - R * 0.28)} ${f2(cx - R * 1.14)} ${f2(cy + R * 0.32)} ${f2(cx - R * 0.8)} ${f2(cy + R * 0.38)} Z`, fill: S.mat(shade(o.skin, -0.06)), ...OUT }, head);
     el("path", { d: `M ${f2(cx - R * 0.84)} ${f2(cy - R * 0.04)} q ${f2(-R * 0.12)} ${f2(R * 0.12)} ${f2(R * 0.02)} ${f2(R * 0.28)}`, stroke: shade(o.skin, -0.3), "stroke-width": 3, fill: "none", "stroke-linecap": "round" }, head);
     F.head = el("path", { d: headPath(cx, cy, R, shape), fill: S.mat(o.skin), ...OUT }, head);
+    // Cel shadow: a hard-edged band down the side of the head away from the light, cut to the
+    // head's outline (so it follows its form, not a straight line). The player turns it to the
+    // face side when the light comes from behind (setLight). Not in flat prints.
+    F.headId = S.id("hd");
+    F.head.setAttribute("id", F.headId);
+    F.clip = S.id("hc");
+    S.addDefs(`<clipPath id="${F.clip}"><use href="#${F.headId}"/></clipPath>`);
+    if (!S.flat) {
+      F.form = el("ellipse", { cx: f2(cx - R * 1.32), cy: f2(cy + R * 0.08), rx: f2(R * 0.78), ry: f2(R * 1.3), fill: shade(o.skin, -0.3), opacity: 0.42, "clip-path": `url(#${F.clip})` }, head);
+      F.formX = [cx - R * 1.32, cx + R * 1.5];
+    }
     // Rounded light on the cheek turned to the light, shadow under the jaw.
     el("ellipse", { cx: f2(cx + R * 0.55), cy: f2(cy + R * 0.05), rx: f2(R * 0.3), ry: f2(R * 0.4), fill: "#ffffff", opacity: 0.12 }, head);
 
@@ -94,16 +105,22 @@
       const lash = el("path", { fill: "none", stroke: INK, "stroke-width": o.female ? 4.5 : 3.5, "stroke-linecap": "round" }, open);
       const closedArc = el("path", { fill: "none", stroke: INK, "stroke-width": 4, "stroke-linecap": "round" }, eg);
       F.eyes.push({ eg, open, pupil, dot, upper, lower, lowerLine, outlineClip, lash, closedArc, x, y, rx, ry, droopy: fc.eyes === "droopy" });
-      const bw = { thin: 3.5, thick: 6.5, bushy: 9 }[fc.brows || (o.child ? "thin" : "thick")] || 5;
-      F.brows.push(el("path", { fill: "none", stroke: o.browColor || o.hairColor || INK, "stroke-width": f2(bw * (i ? 0.85 : 1)), "stroke-linecap": "round" }, head));
+      const bw = { thin: 4, thick: 7.5, bushy: 10.5 }[fc.brows || (o.child ? "thin" : "thick")] || 6;
+      // A brow is a tapered shape: full at the inner end (towards the nose), fine at the tail.
+      const brow = el("path", { fill: o.browColor || o.hairColor || INK, stroke: shade(o.browColor || o.hairColor || INK, -0.3), "stroke-width": 0.8, "stroke-linejoin": "round" }, head);
+      brow.bw = bw * (i ? 0.85 : 1); brow.inner = i ? -1 : 1;   // the inner end is towards the face's centre line
+      F.brows.push(brow);
     });
     // Nose, on the centre line, pointing to the side the head is turned to.
     const nose = fc.nose || (o.child ? "button" : "round"), nx = xc + R * 0.12, ny = cy + R * 0.2, nc = shade(o.skin, -0.28);
-    if (nose === "button") el("path", { d: `M ${f2(nx - R * 0.02)} ${f2(ny - R * 0.08)} q ${f2(R * 0.12)} ${f2(R * 0.06)} ${f2(R * 0.02)} ${f2(R * 0.12)}`, stroke: nc, "stroke-width": 3.5, fill: "none", "stroke-linecap": "round" }, head);
-    else if (nose === "round") {
-      el("ellipse", { cx: f2(nx + R * 0.04), cy: f2(ny + R * 0.02), rx: f2(R * 0.14), ry: f2(R * 0.11), fill: S.mat(shade(o.skin, -0.05)), stroke: nc, "stroke-width": 2.5 }, head);
-      el("path", { d: `M ${f2(nx - R * 0.06)} ${f2(ny + R * 0.08)} q ${f2(R * 0.06)} ${f2(R * 0.04)} ${f2(R * 0.12)} 0`, stroke: nc, "stroke-width": 2.5, fill: "none" }, head);
-    } else el("path", { d: `M ${f2(nx - R * 0.06)} ${f2(ny - R * 0.3)} L ${f2(nx + R * 0.14)} ${f2(ny + R * 0.06)} Q ${f2(nx + R * 0.1)} ${f2(ny + R * 0.14)} ${f2(nx - R * 0.02)} ${f2(ny + R * 0.1)}`, stroke: nc, "stroke-width": 3, fill: "none", "stroke-linecap": "round", "stroke-linejoin": "round" }, head);
+    // One line in the cartoon manner: down the bridge (on the side turned away from the light),
+    // round the tip, back into a small nostril curl. A soft shadow sits under the tip.
+    const bridge = { button: 0.08, round: 0.17, long: 0.24 }[nose] ?? 0.18, tip = { button: 0.1, round: 0.15, long: 0.14 }[nose] ?? 0.15;
+    el("ellipse", { cx: f2(nx + R * 0.02), cy: f2(ny + R * 0.13), rx: f2(R * tip * 0.95), ry: f2(R * 0.045), fill: shade(o.skin, -0.18), opacity: 0.45 }, head);
+    el("path", {
+      d: `M ${f2(nx - R * 0.03)} ${f2(ny - R * bridge)} Q ${f2(nx + R * tip * 0.6)} ${f2(ny - R * 0.02)} ${f2(nx + R * tip)} ${f2(ny + R * 0.04)} Q ${f2(nx + R * tip * 1.05)} ${f2(ny + R * 0.12)} ${f2(nx + R * tip * 0.35)} ${f2(ny + R * 0.11)} q ${f2(-R * 0.05)} ${f2(-R * 0.005)} ${f2(-R * 0.06)} ${f2(-R * 0.05)}`,
+      stroke: nc, "stroke-width": nose === "button" ? 3 : 3.2, fill: "none", "stroke-linecap": "round", "stroke-linejoin": "round",
+    }, head);
     // Blush, wrinkles, mustache.
     F.blush = [
       el("ellipse", { cx: f2(xc - R * 0.48), cy: f2(cy + R * 0.3), rx: f2(R * 0.17), ry: f2(R * 0.09), fill: "#f07a6a", opacity: 0 }, head),
@@ -166,7 +183,7 @@
         eye.closedArc.setAttribute("d", d);
         eye.closedArc.setAttribute("opacity", 1);
       } else eye.closedArc.setAttribute("opacity", 0);
-      const lid = clamp((x.lid ?? 0.12) + (eye.droopy ? 0.25 * (1 - clamp((x.smile ?? 0) - 0.5)) : 0)), lt = (x.lidTilt || 0) * 0.5;
+      const lid = clamp((x.lid ?? 0.12) + (eye.droopy ? 0.1 * (1 - clamp((x.smile ?? 0) - 0.5)) * (1 - clamp(x.lift || 0)) : 0)), lt = (x.lidTilt || 0) * 0.5;
       // The upper lid comes down to lidY; tilt lowers the inner (+x) or outer corner.
       const ly = -ry + 2 * ry * lid, inner = ly + lt * ry, outer = ly - lt * ry;
       eye.upper.setAttribute("d", `M ${f2(-rx * 1.2)} ${f2(-ry * 1.3)} L ${f2(rx * 1.2)} ${f2(-ry * 1.3)} L ${f2(rx * 1.2)} ${f2(inner)} Q 0 ${f2(ly - ry * 0.12)} ${f2(-rx * 1.2)} ${f2(outer)} Z`);
@@ -182,9 +199,15 @@
       tr(eye.pupil, look[0] * rx * 0.35, look[1] * ry * 0.35, 0, x.pupil ?? 1);
       // Brows: lift up/down; tilt 1 = angry (inner end down), -1 = sad (inner end up).
       // Cartoon brows move a lot: that is most of the acting.
-      const by = eye.y - Math.max(ry, rx * 0.8) * 1.55 - (x.lift || 0) * ry * 1.15, a = (x.tilt || 0) * ry * 0.95;
+      let by = eye.y - Math.max(ry, rx * 0.8) * 1.55 - (x.lift || 0) * ry * 1.15;
+      const a = (x.tilt || 0) * ry * 0.95;
       const bx0 = eye.x - rx * 1.15, bx1 = eye.x + rx * 1.15;
-      F.brows[i].setAttribute("d", `M ${f2(bx0)} ${f2(by - a)} Q ${f2(eye.x)} ${f2(by - ry * 0.4 - Math.max(0, x.lift || 0) * ry * 0.25)} ${f2(bx1)} ${f2(by + a)}`);
+      const br = F.brows[i];
+      // (raised brows stay under the fringe: they never climb onto the hair)
+      if (F.o.browTop !== undefined) by = Math.max(by, F.o.browTop + Math.abs(a) + br.bw * 0.6);
+      const my = by - ry * 0.4 - Math.max(0, x.lift || 0) * ry * 0.25;
+      const tIn = br.bw, tOut = br.bw * 0.3, t0 = br.inner > 0 ? tOut : tIn, t1 = br.inner > 0 ? tIn : tOut, tm = (t0 + t1) / 2;
+      br.setAttribute("d", `M ${f2(bx0)} ${f2(by - a - t0 * 0.3)} Q ${f2(eye.x)} ${f2(my - tm * 0.55)} ${f2(bx1)} ${f2(by + a - t1 * 0.5)} Q ${f2(bx1 + t1 * 0.35)} ${f2(by + a)} ${f2(bx1)} ${f2(by + a + t1 * 0.5)} Q ${f2(eye.x)} ${f2(my + tm * 0.55)} ${f2(bx0)} ${f2(by - a + t0 * 0.3)} Z`);
     });
     // Mouth: open, smile and shape, with lip-sync on top while talking.
     const flap = talk > 0 && !viseme ? talk * clamp(0.35 + 0.65 * Math.abs(Math.sin(t * 17) * Math.sin(t * 6.1 + 1))) : 0;

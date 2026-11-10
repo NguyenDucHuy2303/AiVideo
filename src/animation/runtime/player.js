@@ -29,6 +29,7 @@
 
   function create(container, scene, W, H) {
     const S = WA.stage.createStage(container, W, H, scene.time || "day");
+    S.flat = !!scene.styleLook?.flat;
     // The era decides what may be drawn (Văn Lang: boat-roofed stilt houses…), see library/eras.json.
     S.era = scene.era;
     S.architecture = scene.architecture;
@@ -36,19 +37,18 @@
     const objects = WA.scenery.build(S, scene.set?.name || "village", { ...(scene.set || {}), painted: !!scene.backdrop }) || [];
     // A painted backdrop (backdrops.ts): the capture waits until it is loaded.
     const ready = scene.backdrop ? S.setBackdrop(scene.backdrop.src, scene.backdrop.size) : Promise.resolve();
-    const actors = {}, puppetLoads = [];
+    const actors = {};
     const shadowLayer = S.layer("shadows"), actorLayer = S.layer("actors");
     for (const c of scene.cast || []) {
       const seed = WA.core.hash(c.id);
       // Horses and the other animals share the four-legged gaits; people have their own.
       const kind = c.type === "horse" || c.type === "animal" ? c.type : "human";
-      // A person with a painted puppet (puppet.js) moves by the same poses as a vector one.
-      const puppet = kind === "human" && c.look?.puppet;
-      const rig = kind === "horse" ? WA.horse.build(S, actorLayer, c.look || {}) : kind === "animal" ? WA.animal.build(S, actorLayer, c.look || {}) : puppet ? WA.puppet.build(S, actorLayer, c.look, seed) : WA.human.build(S, actorLayer, c.look || {}, seed);
-      if (rig.ready) puppetLoads.push(rig.ready);
+      S.matScope = { mats: {}, list: [] };
+      const rig = kind === "horse" ? WA.horse.build(S, actorLayer, c.look || {}) : kind === "animal" ? WA.animal.build(S, actorLayer, c.look || {}) : WA.human.build(S, actorLayer, c.look || {}, seed);
       const shadow = WA.core.el("ellipse", { fill: "url(#shadow)", rx: 0, ry: 0 }, shadowLayer);
       const acts = (scene.actions || []).filter((a) => a.actor === c.id).sort((a, b) => a.at - b.at);
-      actors[c.id] = { c, rig, shadow, acts, horse: kind !== "human", kind, R: kind === "animal" ? WA.animal : kind === "horse" ? WA.horse : puppet ? WA.puppet : WA.human };
+      actors[c.id] = { c, rig, shadow, acts, horse: kind !== "human", kind, R: kind === "animal" ? WA.animal : kind === "horse" ? WA.horse : WA.human, mats: S.matScope.list, flip: false };
+      S.matScope = null;
     }
     // Running and galloping kick up dust by themselves.
     const fx = [...(scene.fx || [])];
@@ -59,8 +59,52 @@
         fx.push({ fx: "dust", on: a.actor, at: a.at, dur: Math.max(0.2, end - a.at), rate: a.do === "gallop" ? 30 : 12 });
       }
     }
+    // The explainer board (question channel): fixed to the screen, above the stage and its
+    // vignette (a clean card), under the fade to black.
+    const board = scene.board ? WA.board.build(S, scene.board, S.svg.insertBefore(WA.core.g(S.svg), S.black)) : null;
     // The drawing style of the film (library/styles.json), once everything is built.
     WA.style.apply(S, scene.styleLook);
+    // The light of the scene (stage.js LIGHT, or the scene's own "light") on the characters and on
+    // the houses, trees and things of the set near them (their colours are fixed, unlike the sky
+    // and hills, which have a palette per time of day). The light does not change during a scene,
+    // so it is multiplied into their colours once here: a filter would cost a third more per frame.
+    Object.assign(S.light, scene.light || {});
+    {
+      const L = S.light, tint = [1, 3, 5].map((k) => parseInt(L.tint.slice(k, k + 2), 16) / 255);
+      const m = tint.map((v) => L.bright * (1 - L.amt + L.amt * v));
+      const lit = (c) => {
+        if (typeof c !== "string" || c[0] !== "#") return c;
+        const h = c.length === 4 ? c.replace(/^#(.)(.)(.)$/, "#$1$1$2$2$3$3") : c;
+        if (!/^#[0-9a-f]{6}$/i.test(h)) return c;
+        return "#" + [1, 3, 5].map((k, i) => Math.round(Math.min(255, parseInt(h.slice(k, k + 2), 16) * m[i])).toString(16).padStart(2, "0")).join("");
+      };
+      if (m.some((v) => Math.abs(v - 1) > 0.01)) {
+        const grads = new Set();
+        for (const layer of [actorLayer, S.layer("village"), S.layer("back")]) {
+          for (const n of [layer, ...layer.querySelectorAll("*")]) {
+            for (const a of ["fill", "stroke"]) {
+              const v = n.getAttribute(a);
+              if (!v) continue;
+              const u = /^url\(#([^)]+)\)$/.exec(v);
+              if (u) grads.add(u[1]); else n.setAttribute(a, lit(v));
+            }
+          }
+        }
+        for (const id of grads) {
+          const gr = S.defs.querySelector(`[id="${id}"]`);
+          if (gr && !gr.dataset.lit) { gr.dataset.lit = "1"; for (const st of gr.querySelectorAll("stop")) st.setAttribute("stop-color", lit(st.getAttribute("stop-color"))); }
+        }
+      }
+    }
+    // Line weight: every stroke of the actors scales with a variable set each frame from the
+    // camera's zoom, so close-ups do not swell into marker strokes and wide shots stay readable;
+    // inner detail lines (folds, brows, creases: strokes with no fill) are finer than outlines.
+    for (const n of actorLayer.querySelectorAll("[stroke-width]")) {
+      const w = parseFloat(n.getAttribute("stroke-width"));
+      if (!Number.isFinite(w)) continue;
+      const detail = n.getAttribute("fill") === "none" ? 0.8 : 1;
+      n.style.strokeWidth = `calc(${f2(w * detail)}px * var(--lw, 1))`;
+    }
     const shots = (scene.shots || [{ at: 0, type: "wide", on: Object.keys(actors).slice(0, 1) }]).slice().sort((a, b) => a.at - b.at);
     shots.forEach((s, i) => (s.end = shots[i + 1]?.at ?? scene.duration));
 
@@ -193,20 +237,50 @@
     const speedOf = (id, t) => (pointsAt(id, t + 0.05).feet[0] - pointsAt(id, t - 0.05).feet[0]) / 0.1;
     const ctx = { pointsAt, speedOf };
 
+    /**
+     * How a person is moving at t, for the parts that follow through (hair, sleeves, skirts):
+     * forward speed (rig units/s, + = the way they face), lean and forearm turn speeds (°/s).
+     * Measured over the last 0.16 s from the poses (which are pure functions of time), weighted
+     * to the older half so the parts lag a little behind the body.
+     */
+    const FT = 0.08;
+    function followOf(id, t, p) {
+      const p1 = poseAt(id, Math.max(0, t - FT)), p2 = poseAt(id, Math.max(0, t - 2 * FT));
+      const v = (k, a, b) => (0.45 * (k(a) - k(b)) + 0.55 * (k(b) - k(p2))) / FT;
+      const fore = (q, arm) => (q.lean || 0) - (q[arm]?.[0] || 0) - (q[arm]?.[1] || 0);
+      return {
+        vf: (v((q) => q.x, p, p1) * (p.facing || 1)) / (p.scale || 1),
+        dl: v((q) => q.lean || 0, p, p1),
+        wF: v((q) => fore(q, "armF"), p, p1),
+        wB: v((q) => fore(q, "armB"), p, p1),
+      };
+    }
+
     /** timeScale < 1 plays the script slower (a scene stretched to longer narration). */
     function renderFrame(time) {
       const t = time * (scene.timeScale ?? 1);
       if (memo.size > 4000) memo.clear();
       const cam = WA.camera.at(shots, t, ctx, S);
+      actorLayer.style.setProperty("--lw", clamp(1 / Math.pow(cam.z, 0.6), 0.42, 1.12).toFixed(3));
       for (const id in actors) {
         const A = actors[id], p = poseAt(id, t);
+        if (!A.horse && A.kind !== "animal") p.follow = followOf(id, t, p);
+        // The lit side of every part faces the light, whichever way the character is turned.
+        const flip = (p.facing ?? 1) !== S.light.side;
+        A.rig.lightFlip = flip;
+        if (flip !== A.flip) {
+          for (const gr of A.mats) { gr.setAttribute("x1", flip ? 1 : 0); gr.setAttribute("x2", flip ? 0 : 1); }
+          A.flip = flip;
+        }
         A.R.apply(A.rig, p, t);
         const pts = pointsAt(id, t), air = clamp(-(A.horse ? p.y || 0 : pts.feet[1]) / 900);
         const w = (A.kind === "animal" ? A.rig.sp.body[0] * 0.6 : A.horse ? 200 : 60) * p.scale * (A.rig.B?.round ? 1 : 1.15);
         const hidden = !A.horse && p.seated;
-        A.shadow.setAttribute("cx", f2(pts.feet[0] + (A.horse ? 10 * p.scale * p.facing : 0)));
+        // A low sun throws the shadow long, away from the light.
+        const cast = S.light.cast * (1 - air);
+        A.shadow.setAttribute("cx", f2(pts.feet[0] + (A.horse ? 10 * p.scale * p.facing : 0) - S.light.side * w * cast * 0.55));
         A.shadow.setAttribute("cy", "6");
-        A.shadow.setAttribute("rx", f2(w * (1 - 0.5 * air)));
+        A.shadow.setAttribute("rx", f2(w * (1 - 0.5 * air) * (1 + cast * 0.6)));
         A.shadow.setAttribute("ry", f2(w * (A.horse ? 0.12 : 0.16) * (1 - 0.3 * air)));
         A.shadow.setAttribute("opacity", f2(hidden ? 0 : p.opacity * (1 - 0.7 * air)));
       }
@@ -214,6 +288,7 @@
         const show = (o.from === undefined ? 1 : WA.core.smooth(seg(t, o.from, o.from + 0.3))) * (o.until === undefined ? 1 : 1 - WA.core.smooth(seg(t, o.until, o.until + 0.3)));
         node.setAttribute("opacity", f2(show));
       }
+      if (board) WA.board.render(board, t);
       const shake = WA.fx.render(S, fx, t, ctx);
       S.styleTick(t);
       S.setCamera(cam, t, shake);
@@ -224,7 +299,7 @@
       const g = scene.grade;
       if (g) S.grade.setAttribute("opacity", f2(lerp(g.from ?? 0.06, g.to ?? 0.06, seg(t, g.at ?? 0, (g.at ?? 0) + (g.dur ?? 1)))));
     }
-    return { S, renderFrame, poseAt, pointsAt, duration: scene.duration, ready: Promise.all([ready, ...puppetLoads]) };
+    return { S, renderFrame, poseAt, pointsAt, duration: scene.duration, ready };
   }
 
   WA.player = { create };

@@ -70,6 +70,24 @@ export async function backdropFor(scene: { set?: { name?: string }; time?: strin
   return file;
 }
 
+/**
+ * A painting of any place, described in words (the question channel: a studio, a beach, Mars…),
+ * cached like the others. Unlike the story backdrops, buildings and modern things are allowed.
+ */
+export async function backdropOfPlace(place: string, time = "day", style?: string): Promise<string | undefined> {
+  generator ??= bestImageGen();
+  const gen = await generator;
+  if (!gen) return undefined;
+  await fs.mkdir(DIR, { recursive: true });
+  const sky = styleOf(style).sky?.[time] ?? TIMES[time] ?? TIMES.day;
+  const { file } = await gen.generate(`${place}, ${sky}`, DIR, {
+    style: `${styleOf(style).backdrop}, children's cartoon background, wide view, empty floor in the foreground, no people, no animals, no text`,
+    negative: "people, person, figure, character, animal, text, letters, words, watermark, signature, frame, border, photo, realistic, 3d render, blurry, deformed",
+    shape: "landscape",
+  });
+  return file;
+}
+
 /** Give a scene its painted backdrop (unless it has one, or says "backdrop": false). */
 export async function withBackdrop<T extends object>(scene: T): Promise<T> {
   const s = scene as { set?: { name?: string }; time?: string; era?: string; style?: string; backdrop?: unknown };

@@ -1,0 +1,61 @@
+{
+  "castFile": "cast.json",
+  "duration": 9.43,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "determined"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "determined"
+    },
+    {
+      "actor": "huy",
+      "at": 6.6,
+      "do": "talk",
+      "face": "determined"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><g font-family=\"sans-serif\" font-size=\"34\" fill=\"#2a2a40\" text-anchor=\"middle\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"><text x=\"500\" y=\"70\" font-size=\"42\" stroke=\"none\">Short trip, long trip</text><circle cx=\"500\" cy=\"850\" r=\"440\" fill=\"#bfe3f7\" stroke=\"none\" data-in=\"0.3\"/><circle cx=\"500\" cy=\"850\" r=\"400\" fill=\"#43a047\" data-in=\"0.3\"/><text x=\"500\" y=\"560\" stroke=\"none\" data-in=\"1\">Air</text><g data-in=\"1.8\"><circle cx=\"240\" cy=\"170\" r=\"45\" fill=\"#ffd23f\" class=\"pulse\"/><text x=\"240\" y=\"260\" stroke=\"none\">Midday</text></g><line data-in=\"2.8\" class=\"flow\" x1=\"240\" y1=\"290\" x2=\"240\" y2=\"515\" stroke=\"#fb8c00\" stroke-width=\"12\" stroke-dasharray=\"20 12\"/><text x=\"140\" y=\"400\" stroke=\"none\" data-in=\"3.6\">Short</text><g data-in=\"5\"><circle cx=\"880\" cy=\"390\" r=\"45\" fill=\"#fb8c00\" class=\"pulse\"/><text x=\"880\" y=\"325\" stroke=\"none\">Sunset</text></g><line data-in=\"6\" class=\"flow\" x1=\"830\" y1=\"400\" x2=\"500\" y2=\"412\" stroke=\"#e53935\" stroke-width=\"12\" stroke-dasharray=\"20 12\"/><text x=\"670\" y=\"370\" stroke=\"none\" data-in=\"6.6\">Long, sideways</text></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

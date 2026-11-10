@@ -1,0 +1,75 @@
+{
+  "castFile": "cast.json",
+  "duration": 11.17,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 7.82,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "talk",
+      "face": "joy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 600'><text x='500' y='65' text-anchor='middle' font-family='sans-serif' font-size='40' fill='#2a2a40'>Every Colour Has Its Own Waves</text><path class='draw' data-in='2.2' d='M60 190 q100 -80 200 0 t200 0 t200 0' fill='none' stroke='#e53935' stroke-width='9' stroke-linecap='round'/><text data-in='3.2' x='360' y='275' text-anchor='middle' font-family='sans-serif' font-size='32' fill='#2a2a40'>Red: long waves</text><path class='draw' data-in='4.6' d='M60 410 q25 -70 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0' fill='none' stroke='#4aa3e0' stroke-width='9' stroke-linecap='round'/><text data-in='5.6' x='360' y='505' text-anchor='middle' font-family='sans-serif' font-size='32' fill='#2a2a40'>Blue: short waves</text><g data-in='6.6'><circle cx='80' cy='553' r='13' fill='#8e24aa' stroke='#3a2a20' stroke-width='4'/><text x='108' y='564' font-family='sans-serif' font-size='30' fill='#2a2a40'>Violet: even shorter</text></g><g data-in='7.5' class='float'><rect x='725' y='200' width='30' height='60' rx='10' fill='#43a047' stroke='#3a2a20' stroke-width='5'/><rect x='925' y='200' width='30' height='60' rx='10' fill='#43a047' stroke='#3a2a20' stroke-width='5'/><path d='M740 230 Q840 520 940 230' fill='none' stroke='#fb8c00' stroke-width='9' stroke-linecap='round'/><text x='840' y='470' text-anchor='middle' font-family='sans-serif' font-size='30' fill='#2a2a40'>Jump rope</text></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

@@ -148,7 +148,7 @@
     if (look.ink || look.line) {
       for (const n of svg.querySelectorAll("[stroke]")) {
         if (!dark(n.getAttribute("stroke"))) continue;
-        if (look.ink) n.setAttribute("stroke", look.ink);
+        if (look.ink) { n.setAttribute("stroke", look.ink); if (n.hasAttribute("data-outline")) n.setAttribute("fill", look.ink); }
         const w = parseFloat(n.getAttribute("stroke-width"));
         if (look.line && Number.isFinite(w)) n.setAttribute("stroke-width", f2(w * look.line));
       }
@@ -163,8 +163,10 @@
     // behind them is already painted in the style.
     const vec = el("g", {}, world);
     world.insertBefore(vec, S.layers.village.node);
+    // Effects and the blurred foreground stay out of the filter (faster, and they read better).
     let n = S.layers.village.node;
-    while (n && n !== S.screen) { const next = n.nextSibling; vec.appendChild(n); n = next; }
+    const stop = S.layers.fx ? S.layers.fx.node : S.screen;
+    while (n && n !== stop) { const next = n.nextSibling; vec.appendChild(n); n = next; }
 
     let fx = "", src = "SourceGraphic";
     if (look.posterize) {

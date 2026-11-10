@@ -1,8 +1,4 @@
 {
-  "perJobTokens": 80000,
-  "perDayTokens": 1000000,
-  "fallbackModel": "gemma3:12b",
-  "paused": false,
   "office": {
     "days": [
       1,
@@ -15,5 +11,27 @@
     "end": "18:00"
   },
   "scriptsAhead": 6,
-  "officeThreads": 2
+  "officeThreads": 2,
+  "pick": {
+    "at": "17:00",
+    "lines": [
+      {
+        "id": "ask-huy",
+        "name": "Ask Huy (hỏi–đáp tiếng Anh)",
+        "kinds": [
+          "qa"
+        ],
+        "perDay": 2
+      },
+      {
+        "id": "huy-ke-chuyen",
+        "name": "Huy Kể Chuyện (truyện, lịch sử)",
+        "perDay": 2
+      }
+    ]
+  },
+  "perJobTokens": 80000,
+  "perDayTokens": 1000000,
+  "fallbackModel": "gemma3:12b",
+  "paused": false
 }

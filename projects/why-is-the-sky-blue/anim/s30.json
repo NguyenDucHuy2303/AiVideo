@@ -1,0 +1,61 @@
+{
+  "castFile": "cast.json",
+  "duration": 11.57,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 8.1,
+      "do": "talk",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0\" x=\"500\" y=\"70\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#2a2a40\">Why is the sky blue?</text><rect x=\"30\" y=\"250\" width=\"940\" height=\"190\" rx=\"20\" fill=\"#e3f2fd\"/><g data-in=\"0.8\"><circle class=\"pulse\" cx=\"110\" cy=\"170\" r=\"45\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M90 180 Q110 200 130 180\" stroke=\"#3a2a20\" stroke-width=\"4\" fill=\"none\"/><text x=\"110\" y=\"250\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"32\" fill=\"#2a2a40\">Sunlight</text></g><g data-in=\"2.0\" stroke-width=\"8\" stroke-dasharray=\"24 8\" class=\"flow\"><line x1=\"170\" y1=\"150\" x2=\"520\" y2=\"280\" stroke=\"#e53935\"/><line x1=\"170\" y1=\"159\" x2=\"520\" y2=\"289\" stroke=\"#fb8c00\"/><line x1=\"170\" y1=\"168\" x2=\"520\" y2=\"298\" stroke=\"#ffd23f\"/><line x1=\"170\" y1=\"177\" x2=\"520\" y2=\"307\" stroke=\"#43a047\"/><line x1=\"170\" y1=\"186\" x2=\"520\" y2=\"316\" stroke=\"#4aa3e0\"/><line x1=\"170\" y1=\"195\" x2=\"520\" y2=\"325\" stroke=\"#8e24aa\"/></g><g data-in=\"4.5\"><circle cx=\"580\" cy=\"340\" r=\"16\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"720\" cy=\"310\" r=\"16\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"840\" cy=\"380\" r=\"16\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"680\" cy=\"400\" r=\"16\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text x=\"700\" y=\"285\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#2a2a40\" opacity=\"0\"> </text></g><g data-in=\"5.8\" class=\"flow\" stroke=\"#4aa3e0\" stroke-width=\"6\" stroke-dasharray=\"14 8\"><line x1=\"580\" y1=\"340\" x2=\"520\" y2=\"400\"/><line x1=\"580\" y1=\"340\" x2=\"600\" y2=\"270\"/><line x1=\"720\" y1=\"310\" x2=\"780\" y2=\"262\"/><line x1=\"720\" y1=\"310\" x2=\"650\" y2=\"262\"/><line x1=\"840\" y1=\"380\" x2=\"930\" y2=\"340\"/><line x1=\"840\" y1=\"380\" x2=\"900\" y2=\"430\"/><line x1=\"680\" y1=\"400\" x2=\"640\" y2=\"435\"/><line x1=\"680\" y1=\"400\" x2=\"750\" y2=\"435\"/></g><g data-in=\"8.0\"><circle cx=\"300\" cy=\"490\" r=\"28\" fill=\"#ffcc99\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"272\" y=\"518\" width=\"56\" height=\"40\" rx=\"12\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text x=\"360\" y=\"510\" font-family=\"sans-serif\" font-size=\"38\" fill=\"#2a2a40\">I see blue!</text></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

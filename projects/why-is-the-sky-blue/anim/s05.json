@@ -1,0 +1,61 @@
+{
+  "castFile": "cast.json",
+  "duration": 6.6,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 4.62,
+      "do": "talk",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 600'><text x='500' y='80' text-anchor='middle' font-family='sans-serif' font-size='44' font-weight='bold' fill='#2a2a40'>Step One</text><g data-in='0.4' class='pulse'><g class='spin'><line x1='170' y1='170' x2='170' y2='200' stroke='#fb8c00' stroke-width='8' stroke-linecap='round'/><line x1='170' y1='400' x2='170' y2='430' stroke='#fb8c00' stroke-width='8' stroke-linecap='round'/><line x1='55' y1='300' x2='85' y2='300' stroke='#fb8c00' stroke-width='8' stroke-linecap='round'/><line x1='255' y1='300' x2='285' y2='300' stroke='#fb8c00' stroke-width='8' stroke-linecap='round'/></g><circle cx='170' cy='300' r='80' fill='#ffd23f' stroke='#3a2a20' stroke-width='5'/><circle cx='142' cy='285' r='9' fill='#3a2a20'/><circle cx='198' cy='285' r='9' fill='#3a2a20'/><path d='M135 320 Q170 355 205 320' fill='none' stroke='#3a2a20' stroke-width='5' stroke-linecap='round'/></g><polygon data-in='1.4' points='250,270 790,285 790,315 250,330' fill='#fff3b0' stroke='#3a2a20' stroke-width='4' stroke-linejoin='round'/><line data-in='1.8' class='flow' x1='260' y1='300' x2='780' y2='300' stroke='#ffd23f' stroke-width='8' stroke-dasharray='24 18'/><g data-in='2.6'><circle cx='850' cy='300' r='60' fill='#4aa3e0' stroke='#3a2a20' stroke-width='5'/><path d='M820 270 Q850 255 870 285 Q850 310 830 330 Q805 300 820 270Z' fill='#43a047' stroke='#3a2a20' stroke-width='4'/></g><text data-in='3.2' x='520' y='235' text-anchor='middle' font-family='sans-serif' font-size='44' font-weight='bold' fill='#2a2a40'>Sunlight</text><text data-in='4.3' x='500' y='480' text-anchor='middle' font-family='sans-serif' font-size='36' fill='#2a2a40'>Many colours, mixed together</text></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "castFile": "cast.json",
+  "duration": 9.47,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "proud"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "proud"
+    },
+    {
+      "actor": "huy",
+      "at": 6.63,
+      "do": "talk",
+      "face": "proud"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><g font-family=\"sans-serif\" font-size=\"34\" fill=\"#2a2a40\" text-anchor=\"middle\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"><text x=\"500\" y=\"70\" font-size=\"42\" stroke=\"none\">Blue gets scattered away</text><rect x=\"170\" y=\"150\" width=\"620\" height=\"300\" rx=\"40\" fill=\"#e6f3fc\" stroke=\"none\"/><g data-in=\"0.5\"><circle cx=\"90\" cy=\"300\" r=\"45\" fill=\"#fb8c00\" class=\"pulse\"/><text x=\"90\" y=\"390\" stroke=\"none\">Low Sun</text></g><line data-in=\"1.5\" class=\"draw\" x1=\"135\" y1=\"300\" x2=\"840\" y2=\"300\" stroke=\"#ffd23f\" stroke-width=\"14\"/><g data-in=\"3\" stroke=\"#4aa3e0\" stroke-width=\"8\" fill=\"#4aa3e0\"><line x1=\"300\" y1=\"300\" x2=\"270\" y2=\"195\"/><polygon points=\"255,215 285,215 270,180\"/></g><g data-in=\"3.8\" stroke=\"#4aa3e0\" stroke-width=\"8\" fill=\"#4aa3e0\"><line x1=\"430\" y1=\"300\" x2=\"460\" y2=\"405\"/><polygon points=\"445,385 475,385 460,420\"/></g><g data-in=\"4.6\" stroke=\"#4aa3e0\" stroke-width=\"8\" fill=\"#4aa3e0\"><line x1=\"560\" y1=\"300\" x2=\"530\" y2=\"195\"/><polygon points=\"515,215 545,215 530,180\"/></g><text x=\"400\" y=\"520\" fill=\"#4aa3e0\" stroke=\"none\" data-in=\"5.2\">Blue scatters away</text><g data-in=\"6.5\"><line x1=\"640\" y1=\"270\" x2=\"750\" y2=\"270\" stroke=\"#fb8c00\" stroke-width=\"10\"/><polygon points=\"750,250 750,290 785,270\" fill=\"#fb8c00\" stroke=\"none\"/><line x1=\"640\" y1=\"330\" x2=\"750\" y2=\"330\" stroke=\"#e53935\" stroke-width=\"10\"/><polygon points=\"750,310 750,350 785,330\" fill=\"#e53935\" stroke=\"none\"/></g><g data-in=\"6.5\"><circle cx=\"890\" cy=\"300\" r=\"40\" fill=\"#fff3b0\"/><text x=\"890\" y=\"390\" stroke=\"none\">Mai</text></g><text x=\"760\" y=\"520\" stroke=\"none\" fill=\"#e53935\" data-in=\"6.9\">Orange + red</text></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

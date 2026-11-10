@@ -1,0 +1,70 @@
+{
+  "castFile": "cast.json",
+  "duration": 9.67,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a green park with grass and trees",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": 250,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "mai",
+      "at": 1.4,
+      "do": "point",
+      "face": "surprised"
+    },
+    {
+      "actor": "mai",
+      "at": 6.77,
+      "do": "talk",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "share": 0.62
+    }
+  ],
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/e9c35f8f15c4.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

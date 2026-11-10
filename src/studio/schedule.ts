@@ -8,7 +8,7 @@
  * The writer keeps `scriptsAhead` scripts waiting for review, proposing new topics when short,
  * so the user can approve several at once and the nights never run dry.
  */
-import { castPuppets, paintNextPuppet, wantsPuppets } from "./puppets.ts";
+import { dailyPick, PICK_DEFAULTS, type PickSettings } from "./pick.ts";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { exists } from "../utils/fs.ts";
@@ -29,13 +29,15 @@ export interface ScheduleSettings {
   scriptsAhead: number;
   /** Threads for the image model during office hours. */
   officeThreads: number;
+  /** The daily pick (pick.ts): cut-off time and content lines with their videos per day. */
+  pick: PickSettings;
 }
-const DEFAULTS: ScheduleSettings = { office: { days: [1, 2, 3, 4, 5], start: "08:00", end: "18:00" }, scriptsAhead: 6, officeThreads: 2 };
+const DEFAULTS: ScheduleSettings = { office: { days: [1, 2, 3, 4, 5], start: "08:00", end: "18:00" }, scriptsAhead: 6, officeThreads: 2, pick: PICK_DEFAULTS };
 
 async function settings(): Promise<ScheduleSettings> {
   const raw = (await exists(SETTINGS)) ? JSON.parse(await fs.readFile(SETTINGS, "utf8")) : {};
   const s = { ...DEFAULTS, ...raw };
-  if (!raw.office) await fs.writeFile(SETTINGS, JSON.stringify({ ...raw, ...DEFAULTS, ...raw }, null, 2));
+  if (!raw.office || !raw.pick) await fs.writeFile(SETTINGS, JSON.stringify({ ...DEFAULTS, ...raw }, null, 2));
   return s;
 }
 
@@ -46,7 +48,7 @@ export function isOffice(at: Date, s: ScheduleSettings): boolean {
   return s.office.days.includes(at.getDay()) && now >= minutes(s.office.start) && now < minutes(s.office.end);
 }
 
-interface State { pid: number; since: string; window: "office" | "free"; task?: { slug: string; what: string; since: string }; lastTick?: string; lastError?: string; nextTopicsAt?: string }
+interface State { pid: number; since: string; window: "office" | "free"; task?: { slug: string; what: string; since: string }; lastTick?: string; lastError?: string; nextTopicsAt?: string; pickedOn?: string }
 let state: State = { pid: process.pid, since: new Date().toISOString(), window: "free" };
 
 async function save(): Promise<void> {
@@ -72,29 +74,28 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   // Jobs waiting for Claude to come back are left alone until their time.
   const first = (f: (j: Job) => boolean) => jobs.find((j) => (!j.retryAt || new Date(j.retryAt) <= new Date()) && f(j));
   const say = (slug: string) => (l: string) => void log(`[${slug}] ${l.trim()}`);
-  // Hand-painted puppets (painting is allowed in office hours): an approved film's first, so
-  // its render never waits; a film is only rendered once all its puppets are painted.
-  const needs = new Map<string, number>();
-  for (const j of jobs) if (wantsPuppets(j) && ["review", "approved", "producing", "fix", "video", "done"].includes(j.status)) needs.set(j.slug, (await castPuppets(j)).missing.length);
-  const ready = first((j) => j.status === "producing" && j.stage === "ready" && !needs.get(j.slug));
+  const ready = first((j) => j.status === "producing" && j.stage === "ready");
   if (!office && ready) return { what: "render", slug: ready.slug, run: () => render(ready.slug, say(ready.slug)) };
   const cut = first((j) => (j.status === "video" || j.status === "done") && !j.shorts);
   if (!office && cut) return { what: "shorts", slug: cut.slug, run: () => shorts(cut.slug, say(cut.slug)) };
   // The English version of an approved film: voices by day, the film at night.
   const enFilm = first((j) => j.status === "done" && j.english === "ready");
   if (!office && enFilm) return { what: "english-render", slug: enFilm.slug, run: () => english(enFilm.slug, "render", say(enFilm.slug)) };
-  const paint = first((j) => !!needs.get(j.slug) && j.status !== "review") ?? first((j) => !!needs.get(j.slug));
-  if (paint) return { what: "puppets", slug: paint.slug, run: () => paintNextPuppet(paint.slug, say(paint.slug)) };
   // Paused by the user: only work that needs no Claude (renders) goes on.
   if ((await brainSettings()).paused) return undefined;
   // Producing a job whose era the library lacks waits for the era builder.
+  // The daily pick, once a day from the cut-off time: lines short of approved scripts get the best ones.
+  const today = new Date().toLocaleDateString("sv"), now = new Date().getHours() * 60 + new Date().getMinutes();
+  if (state.pickedOn !== today && now >= minutes(s.pick.at)) {
+    return { what: "pick", run: async () => { try { await dailyPick(jobs, s.pick, (l) => void log(l.trim())); } finally { state.pickedOn = today; } } };
+  }
   const toPrepare = first((j) => (j.status === "approved" || j.status === "fix") && (!j.era || !!known[j.era]));
   if (toPrepare) return { what: "prepare", slug: toPrepare.slug, run: () => prepare(toPrepare.slug, say(toPrepare.slug)) };
-  const enPrep = first((j) => j.status === "done" && !j.english);
+  const enPrep = first((j) => j.status === "done" && !j.english && j.kind !== "qa");
   if (enPrep && !(await brainSettings()).paused) return { what: "english", slug: enPrep.slug, run: () => english(enPrep.slug, "prepare", say(enPrep.slug)) };
   const toWrite = first((j) => j.status === "writing" || j.status === "rewrite");
   if (toWrite) return { what: "write", slug: toWrite.slug, run: () => writeJob(toWrite.slug, say(toWrite.slug)) };
-  const waiting = jobs.filter((j) => ["writing", "rewrite", "review"].includes(j.status)).length;
+  const waiting = jobs.filter((j) => ["writing", "rewrite", "review"].includes(j.status) && j.kind !== "qa").length;
   if (waiting < s.scriptsAhead && (!state.nextTopicsAt || new Date(state.nextTopicsAt) <= new Date())) {
     return {
       what: "topics",

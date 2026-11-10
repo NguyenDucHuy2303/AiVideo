@@ -1,0 +1,63 @@
+{
+  "castFile": "cast.json",
+  "duration": 7.83,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "proud"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "talk",
+      "face": "joy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0\" x=\"500\" y=\"85\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#2a2a40\">Mai's sky notebook</text><g data-in=\"0.6\"><rect x=\"65\" y=\"140\" width=\"150\" height=\"200\" rx=\"12\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"140\" cy=\"440\" r=\"45\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M140 440 L140 410 M140 440 L160 450\" stroke=\"#3a2a20\" stroke-width=\"5\" fill=\"none\"/></g><g data-in=\"1.5\"><rect x=\"245\" y=\"140\" width=\"150\" height=\"200\" rx=\"12\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"320\" cy=\"440\" r=\"45\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M320 440 L320 410 M320 440 L335 465\" stroke=\"#3a2a20\" stroke-width=\"5\" fill=\"none\"/></g><g data-in=\"2.4\"><rect x=\"425\" y=\"140\" width=\"150\" height=\"200\" rx=\"12\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"500\" cy=\"440\" r=\"45\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M500 440 L500 410 M500 440 L485 470\" stroke=\"#3a2a20\" stroke-width=\"5\" fill=\"none\"/></g><g data-in=\"3.3\"><rect x=\"605\" y=\"140\" width=\"150\" height=\"200\" rx=\"12\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"680\" cy=\"440\" r=\"45\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M680 440 L680 410 M680 440 L660 440\" stroke=\"#3a2a20\" stroke-width=\"5\" fill=\"none\"/></g><g data-in=\"4.2\"><rect x=\"785\" y=\"140\" width=\"150\" height=\"200\" rx=\"12\" fill=\"#1a237e\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"860\" cy=\"440\" r=\"45\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M860 440 L860 410 M860 440 L842 425\" stroke=\"#3a2a20\" stroke-width=\"5\" fill=\"none\"/></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

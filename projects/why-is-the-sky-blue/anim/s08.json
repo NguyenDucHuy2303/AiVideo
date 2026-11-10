@@ -1,0 +1,61 @@
+{
+  "castFile": "cast.json",
+  "duration": 5.03,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.26,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 3.52,
+      "do": "talk",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 600'><text x='500' y='75' text-anchor='middle' font-family='sans-serif' font-size='44' fill='#2a2a40'>Sunlight Is Many Colours</text><g class='float'><circle cx='90' cy='300' r='48' fill='#ffd23f' stroke='#3a2a20' stroke-width='5'/><circle cx='74' cy='288' r='6' fill='#3a2a20'/><circle cx='106' cy='288' r='6' fill='#3a2a20'/><path d='M68 312 Q90 334 112 312' fill='none' stroke='#3a2a20' stroke-width='5' stroke-linecap='round'/></g><rect data-in='0.6' x='150' y='235' width='380' height='130' rx='30' fill='#ffffff' stroke='#3a2a20' stroke-width='6'/><g data-in='1.2'><path d='M200 265 L530 265 L700 150' fill='none' stroke='#e53935' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/><text x='725' y='162' font-family='sans-serif' font-size='34' fill='#2a2a40'>red</text></g><g data-in='1.7'><path d='M200 279 L530 279 L700 220' fill='none' stroke='#fb8c00' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/><text x='725' y='232' font-family='sans-serif' font-size='34' fill='#2a2a40'>orange</text></g><g data-in='2.2'><path d='M200 293 L530 293 L700 290' fill='none' stroke='#ffd23f' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/><text x='725' y='302' font-family='sans-serif' font-size='34' fill='#2a2a40'>yellow</text></g><g data-in='2.7'><path d='M200 307 L530 307 L700 360' fill='none' stroke='#43a047' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/><text x='725' y='372' font-family='sans-serif' font-size='34' fill='#2a2a40'>green</text></g><g data-in='3.1'><path d='M200 321 L530 321 L700 430' fill='none' stroke='#4aa3e0' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/><text x='725' y='442' font-family='sans-serif' font-size='34' fill='#2a2a40'>blue</text></g><g data-in='3.5'><path d='M200 335 L530 335 L700 500' fill='none' stroke='#8e24aa' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/><text x='725' y='512' font-family='sans-serif' font-size='34' fill='#2a2a40'>violet</text></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

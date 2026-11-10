@@ -1,0 +1,75 @@
+{
+  "castFile": "cast.json",
+  "duration": 13.3,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "surprised"
+    },
+    {
+      "actor": "huy",
+      "at": 9.31,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 600'><text x='60' y='65' font-family='sans-serif' font-size='40' fill='#2a2a40'>Tiny Waves in a Hair</text><line data-in='0.8' x1='70' y1='130' x2='70' y2='440' stroke='#c68b59' stroke-width='14' stroke-linecap='round'/><g data-in='2'><circle cx='70' cy='285' r='30' fill='none' stroke='#3a2a20' stroke-width='5'/><line class='flow' x1='96' y1='268' x2='420' y2='200' stroke='#3a2a20' stroke-width='4' stroke-dasharray='10 8'/><line class='flow' x1='96' y1='302' x2='420' y2='460' stroke='#3a2a20' stroke-width='4' stroke-dasharray='10 8'/></g><g data-in='3'><line x1='765' y1='485' x2='900' y2='560' stroke='#8d5a3b' stroke-width='22' stroke-linecap='round'/><circle cx='610' cy='330' r='220' fill='#ffffff' stroke='#3a2a20' stroke-width='8'/></g><rect data-in='3.5' x='500' y='150' width='220' height='360' fill='#c68b59' stroke='#3a2a20' stroke-width='5'/><path class='draw' data-in='4.5' d='M500 330 q5.5 -28 11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0 t11 0' fill='none' stroke='#4aa3e0' stroke-width='5' stroke-linecap='round'/><g data-in='6'><rect x='40' y='480' width='310' height='90' rx='20' fill='#ffffff' stroke='#3a2a20' stroke-width='5'/><text x='60' y='520' font-family='sans-serif' font-size='28' fill='#2a2a40'>Blue wave: about</text><text x='60' y='556' font-family='sans-serif' font-size='28' fill='#2a2a40'>470 nanometres</text></g><g data-in='8.6'><line x1='505' y1='420' x2='715' y2='420' stroke='#3a2a20' stroke-width='5'/><polygon points='502,420 524,408 524,432' fill='#3a2a20'/><polygon points='718,420 696,408 696,432' fill='#3a2a20'/><text x='610' y='465' text-anchor='middle' font-family='sans-serif' font-size='28' fill='#2a2a40'>one hair</text></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

@@ -1,0 +1,655 @@
+{
+  "title": "Why Is the Sky Blue? | Ask Huy",
+  "question": "Why is the sky blue?",
+  "answer": "Sunlight is a mix of all the colours of the rainbow. When it passes through the air, tiny gas molecules bounce (scatter) the short blue waves much more than the long red ones, so blue light reaches our eyes from every part of the sky. At sunset the light travels through much more air, the blue is scattered away, and orange and red are left.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Huy and Mai lie on the grass in a park, looking up at a bright, clear blue sky. Mai points up with a big question mark above her head."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Huy, look up! Why is the sky blue? Did somebody paint it?"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "Nobody painted it, Mai. And here is a surprise. The air is not blue, and sunlight is not blue either."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Then where does all that blue come from?"
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy faces the camera. Three small icons pop up beside him: a sunbeam, a bouncing ball, and an orange sunset."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Great question! Today we will find out what sunlight is made of, how it bounces around in the air, and why the sky turns orange at sunset."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai and Huy on a beach. Mai points from the blue sea up to the blue sky; a small cartoon Earth floats in a thought bubble, looking blue."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "proudly",
+          "text": "I know! The sky is like a giant mirror. It shows us the blue sea."
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "That is a smart guess, Mai. The sea and the sky really do look alike. Astronauts even say the whole Earth looks blue from space."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "compare",
+        "what": "Side by side, a sandy desert with camels and a beach with waves. Both have the same blue sky above them. Next to it, Mai holds up an empty clear glass."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "But look at a desert, far away from any sea. The sky there is blue too. So the sea cannot be the whole story."
+        },
+        {
+          "who": "Mai",
+          "how": "worried",
+          "text": "Hmm. Then maybe air is blue, like blue juice?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Good thinking again! But a glass full of air looks clear, not blue. The real secret is hiding inside sunlight."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "diagram",
+        "what": "A smiling Sun on the left sends a white-yellow beam of light to a small Earth on the right. The beam is labelled Sunlight."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step one. Sunlight looks white, or a little yellow. But it is really a mix of many colours all travelling together."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "experiment",
+        "what": "A white beam of light enters a triangle of glass labelled Prism and comes out as a fan of rainbow stripes: red, orange, yellow, green, blue, violet. Mai's eyes go wide."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Shine sunlight through a special piece of glass called a prism, and it spreads out into a rainbow. Red, orange, yellow, green, blue and violet."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "The rainbow was hiding inside the light all along?"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "scene",
+        "what": "After the rain, Huy and Mai stand by puddles on a street while a big rainbow arcs across the sky behind them."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Yes! A rainbow after the rain is the same trick. Raindrops spread sunlight out into its colours."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "labels",
+        "what": "A thick white sunbeam drawn like a cable cut open, showing coloured strands inside labelled red, orange, yellow, green, blue, violet."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So here is step one. Sunlight is all the colours of the rainbow mixed together."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "A pond with ripples spreading out, and above it a wavy line of light going up and down in the same pattern."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step two. Light travels in waves, a bit like the ripples on a pond, up and down, up and down."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "labels",
+        "what": "One wavy line with a two-headed arrow from the top of one bump to the top of the next, labelled Wavelength."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "The distance from the top of one wave to the top of the next is called the wavelength. It just means how long each wave is."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "compare",
+        "what": "Two waves stacked: a red wave with long, gentle bumps and a blue wave with short, tight bumps. Mai swings a jump rope next to them."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Every colour has its own wavelength. Red light has long, lazy waves. Blue light has short, choppy waves. Only violet has shorter ones."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "Like a jump rope! Big slow swings for red, tiny fast wiggles for blue!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "zoom",
+        "what": "A magnifying circle zooms in on a single hair. Across its width, many tiny blue waves sit side by side, with a tag saying about 470 nanometres."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "And these waves are tiny. A blue wave is about 470 nanometres long. A nanometre is one billionth of a metre. Lots of blue waves could fit side by side across one hair."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "host",
+        "what": "Huy holds a short blue wave in one hand and a long red wave in the other, like two ribbons."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step two in one line. Blue light has short waves, and red light has long waves."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "zoom",
+        "what": "A zoom circle into the blue sky shows lots of tiny round dots floating with space between them, labelled Nitrogen and Oxygen molecules."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step three. Air looks empty, but it is full of tiny bits called molecules. A molecule is a tiny piece of stuff, much too small to see. Most air molecules are nitrogen and oxygen."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "arrows",
+        "what": "A sunbeam hits one round molecule, and small arrows of light fly off it in every direction, like a splash. Label says Scattering."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "When sunlight hits these molecules, some of the light bounces off in all directions. Scientists call this scattering. Scattering means spreading out every which way."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "compare",
+        "what": "Two paths through a field of molecules: a red arrow goes almost straight through, while a blue arrow zigzags and bounces off many molecules."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Now here is the key. Short blue waves get scattered much, much more than long red waves. Red light mostly zooms straight on. Blue light gets bounced all over the sky."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai imagines the sky as a giant pinball machine, with blue light balls bouncing between round air-molecule bumpers."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "So blue light is like a pinball, bouncing around up there?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Exactly! It gets bounced around by molecules all across the sky."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "arrows",
+        "what": "Mai stands on the ground under a big dome of sky. Blue arrows come down to her eyes from every part of the dome; the Sun sits off to one side."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So wherever you look, away from the Sun, blue light is coming to your eyes from that part of the sky. That is why the whole sky glows blue."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "compare",
+        "what": "Mai holds a dark blue crayon up against the pale blue sky. Beside them, a pot of blue paint with a dab of white being stirred in."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "",
+          "text": "But why is it pale blue, not dark blue like my crayon?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Other colours get scattered too, just much less. They mix in with the blue and make it softer and paler, a bit like blue paint with white added."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "host",
+        "what": "Huy stands under a glowing blue sky with little blue arrows bouncing around him."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step three. Air scatters blue light much more than red, so blue reaches us from all over the sky."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai and Huy on a rooftop at sunset. The sky is orange and pink, and the low Sun glows red over the houses."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Then why is the sky orange and red at sunset? Did the blue run away?"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "diagram",
+        "what": "A curved Earth with a thin layer of air. A short sunbeam comes straight down from a high Sun labelled Midday; a long beam skims sideways from a low Sun labelled Sunset."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step four. At midday, the Sun is high, so its light takes a short trip through the air. At sunset, the Sun is low, so its light travels sideways through much more air."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "arrows",
+        "what": "A long sunbeam crosses the air from a low Sun. Along the way, little blue arrows peel off sideways, and only orange and red arrows arrive at Mai."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "On that long trip, most of the blue gets scattered away before it reaches you. What is left is mostly orange and red. So the Sun and the clouds glow orange and red."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "compare",
+        "what": "Left, a tiny air molecule next to a big round cloud droplet drawn much larger. Right, a fluffy white cloud beside a dark grey storm cloud."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "",
+          "text": "And clouds? Why are they white, not blue?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Cloud droplets are much bigger than light waves. They scatter all the colours about the same, and all colours mixed together look white. Very thick storm clouds let little light through, so they look grey."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "The same rooftop at night. The sky fades from very dark blue to black, with twinkling stars and Mai in pyjamas looking up."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "And at night, there is no sunlight shining on our sky to scatter, so it turns very dark blue, then black, and the stars shine through."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "host",
+        "what": "Huy stands in front of a split background: blue midday sky on one side, orange sunset on the other."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step four. At sunset, light passes through more air, so the blue is scattered away and orange and red are left."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai in a little space suit stands on red rocky Mars ground under a pink sky, holding a paintbrush."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Now imagine standing on Mars in a space suit. The air on Mars is different from ours, so its sky has a different colour. It looks a dusty orange pink!"
+        },
+        {
+          "who": "Mai",
+          "how": "joyfully",
+          "text": "An orange pink sky! I would paint every picture that colour!"
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Mai and her mum sit by a window in the evening with a notebook and crayons, drawing the sky. A small sign says Do not look at the Sun."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here is a check you can try. This evening, with a grown-up, watch the sky while the Sun goes down. Every few minutes, draw the colours you see. Never look straight at the Sun, because it can hurt your eyes."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "compare",
+        "what": "Mai's notebook page with five boxes in a row: blue, pale yellow, orange, red, dark blue, each with a little clock drawn under it."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "proudly",
+          "text": "Mine went from blue, to yellow, to orange, to red, and then dark blue!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "You watched, you wrote it down, and you found a pattern. That is exactly how scientists work."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "diagram",
+        "what": "A summary drawing: the Sun sends a rainbow-striped beam into the air, tiny molecules scatter blue arrows everywhere, and Mai below sees a blue sky."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "firmly",
+          "text": "So why is the sky blue? Sunlight holds every colour. Tiny molecules in the air scatter short waves like blue much more than long waves like red, so blue light comes at us from all over the sky."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "count",
+        "what": "A timeline arrow with a pin at 1871 and a friendly cartoon of Lord Rayleigh with a beard, then a pin at today with Mai waving."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Fun fact. A scientist called Lord Rayleigh explained this back in 1871, more than 150 years ago. That is why it is called Rayleigh scattering."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "Next time I see a blue sky, I will say thank you, Lord Rayleigh!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "scene",
+        "what": "Huy and Mai on the beach by the waves. Mai imagines a giant tipping a huge salt shaker over the sea; a subscribe button glows in the corner."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Next time, another big question. Why is the sea salty?"
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "Maybe a giant spilled the salt!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Let us find out together. Subscribe so you do not miss it. Bye for now!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "On a clear day the sky appears blue.",
+      "source": "Sky"
+    },
+    {
+      "claim": "Earth looks blue when seen from outer space by astronauts.",
+      "source": "Blue"
+    },
+    {
+      "claim": "The sky is blue even far from the sea, over deserts; air in a glass looks clear.",
+      "source": "Basic school knowledge"
+    },
+    {
+      "claim": "Sunlight (white light) is a mix of the colours of the rainbow; a prism and raindrops spread it into a rainbow.",
+      "source": "Basic school knowledge"
+    },
+    {
+      "claim": "Light travels as waves; each colour has its own wavelength, red long and blue short.",
+      "source": "Diffuse sky radiation"
+    },
+    {
+      "claim": "Apart from violet, blue has the shortest wavelength of the rainbow colours, about 470 nanometres.",
+      "source": "Blue"
+    },
+    {
+      "claim": "A nanometre is one billionth of a metre; many such waves fit across a single hair.",
+      "source": "Basic school knowledge"
+    },
+    {
+      "claim": "The sky is made of gas molecules; nitrogen and oxygen molecules are involved in the scattering.",
+      "source": "Diffuse sky radiation"
+    },
+    {
+      "claim": "Most of the air is nitrogen and oxygen.",
+      "source": "Basic school knowledge"
+    },
+    {
+      "claim": "Sunlight is scattered in random directions by air molecules.",
+      "source": "Sky"
+    },
+    {
+      "claim": "Blue light scatters much more than red, which is why the sky appears blue on a clear day.",
+      "source": "Sky"
+    },
+    {
+      "claim": "Looking at the sky away from the direct sunlight, people see it as blue.",
+      "source": "Diffuse sky radiation"
+    },
+    {
+      "claim": "The sky's colour looks like blue mixed with white light, a pale blue.",
+      "source": "Diffuse sky radiation"
+    },
+    {
+      "claim": "At sunrise and sunset sunlight takes a much longer path through the air, the blue is scattered away, and the Sun and clouds look orange to red.",
+      "source": "Diffuse sky radiation"
+    },
+    {
+      "claim": "Cloud droplets are larger than light waves and scatter all colours about equally; the thickest storm clouds let very little light through.",
+      "source": "Diffuse sky radiation"
+    },
+    {
+      "claim": "At night the sky looks very dark blue to black.",
+      "source": "Sky"
+    },
+    {
+      "claim": "Other planets have different sky colours; the sky on Mars is pink.",
+      "source": "Sky"
+    },
+    {
+      "claim": "Lord Rayleigh explained the blue colour of the sky in 1871; the effect is called Rayleigh scattering.",
+      "source": "Diffuse sky radiation"
+    },
+    {
+      "claim": "Looking straight at the Sun can hurt your eyes.",
+      "source": "Basic school knowledge"
+    }
+  ],
+  "shorts": [
+    1,
+    15,
+    30,
+    31
+  ],
+  "thumbnail": "WHY IS THE SKY BLUE?",
+  "description": "Why is the sky blue, and why does it turn orange at sunset? Huy and Mai find out that sunlight is all the colours mixed together, and that tiny bits of air bounce the blue light all over the sky. It's a short, friendly science lesson for kids aged 6–12, ending with a safe sunset-watching activity to try with a grown-up.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": ""
+}

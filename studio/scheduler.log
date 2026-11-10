@@ -75,3 +75,36 @@
 2026-11-09 16:13:06 [quang-trung-dai-pha-quan-thanh] cast and costume sheet
 2026-11-09 16:13:56 [quang-trung-dai-pha-quan-thanh] design-cast: Claude sonnet, 23.654 tokens
 2026-11-09 17:12:31 scheduler started (pid 578663)
+2026-11-09 17:34:49 scheduler started (pid 603710)
+2026-11-10 08:45:08 scheduler started (pid 1410038)
+2026-11-10 11:46:32 scheduler started (pid 1602210)
+2026-11-10 11:50:20 scheduler started (pid 1606339)
+2026-11-10 14:09:54 scheduler started (pid 1833661)
+2026-11-10 14:49:07 scheduler started (pid 1896919)
+2026-11-10 14:54:25 scheduler started (pid 1914585)
+2026-11-10 14:57:22 scheduler started (pid 1918168)
+2026-11-10 14:57:52 → write why-is-the-sky-blue (giờ hành chính)
+2026-11-10 14:57:55 [why-is-the-sky-blue] research: Sky, Blue, Diffuse sky radiation, Sky blue
+2026-11-10 15:00:09 [why-is-the-sky-blue] qa-write: Claude opus, 25.237 tokens
+2026-11-10 15:00:33 [why-is-the-sky-blue] qa-factcheck: Claude sonnet, 12.866 tokens
+2026-11-10 15:00:33 [why-is-the-sky-blue] fact check: 1 issue(s)
+2026-11-10 15:00:33 [why-is-the-sky-blue] fixing scene(s) 30
+2026-11-10 15:00:39 [why-is-the-sky-blue] qa-fix: Claude sonnet, 3.140 tokens
+2026-11-10 15:00:39 → write how-do-bees-make-honey (giờ hành chính)
+2026-11-10 15:00:42 [how-do-bees-make-honey] research: Honey, Africanized bee, Honey, Africanized bee
+2026-11-10 15:02:51 [how-do-bees-make-honey] qa-write: Claude opus, 23.858 tokens
+2026-11-10 15:03:10 [how-do-bees-make-honey] qa-factcheck: Claude sonnet, 13.502 tokens
+2026-11-10 15:03:10 [how-do-bees-make-honey] fact check: 2 issue(s)
+2026-11-10 15:03:10 [how-do-bees-make-honey] fixing scene(s) 22, 16
+2026-11-10 15:03:18 [how-do-bees-make-honey] qa-fix: Claude sonnet, 3.040 tokens
+2026-11-10 15:03:18 → write how-can-a-bridge-hold-up-so-much-weight (giờ hành chính)
+2026-11-10 15:03:18 [how-can-a-bridge-hold-up-so-much-weight] research: Bridge, Structural engineering, Arch bridge, Truss bridge
+2026-11-10 15:05:30 [how-can-a-bridge-hold-up-so-much-weight] qa-write: Claude opus, 23.477 tokens
+2026-11-10 15:05:47 [how-can-a-bridge-hold-up-so-much-weight] qa-factcheck: Claude sonnet, 11.668 tokens
+2026-11-10 15:05:47 [how-can-a-bridge-hold-up-so-much-weight] fact check: 0 issue(s)
+2026-11-10 15:06:13 scheduler started (pid 1927617)
+2026-11-10 15:07:00 scheduler started (pid 1928691)
+2026-11-10 15:07:22 scheduler started (pid 1929278)
+2026-11-10 15:50:29 scheduler started (pid 1979814)
+2026-11-10 15:50:29 → prepare why-is-the-sky-blue (giờ hành chính)
+2026-11-10 15:50:29 [why-is-the-sky-blue] paintings

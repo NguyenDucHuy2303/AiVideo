@@ -15,8 +15,6 @@ export interface Art {
   style: string;
   intro: string;
   outro: string;
-  /** People drawn in code ("vector") or as hand-painted paper puppets ("puppet"). */
-  characters?: "vector" | "puppet";
   /** What the brain (or the rules) recommended, and why. */
   suggest: { style: string; intro: string; outro: string; why: string; by: "brain" | "rules" };
 }
@@ -38,7 +36,7 @@ export function suggestArt(job: Pick<Job, "topic" | "kind" | "era">): Art {
 /** The job's look: chosen, else suggested. */
 export function artOf(job: Job): Art {
   const a = job.art ?? suggestArt(job);
-  return { ...a, characters: a.characters === "puppet" ? "puppet" : "vector", style: validStyle(a.style) ? a.style : DEFAULT_STYLE, intro: validTheme(a.intro) ? a.intro : DEFAULT_THEME, outro: validTheme(a.outro) ? a.outro : DEFAULT_THEME };
+  return { ...a, style: validStyle(a.style) ? a.style : DEFAULT_STYLE, intro: validTheme(a.intro) ? a.intro : DEFAULT_THEME, outro: validTheme(a.outro) ? a.outro : DEFAULT_THEME };
 }
 
 /** Write the job's look into a project folder (project.json "style" and "brand"), if it has one. */
@@ -46,6 +44,6 @@ export async function syncArt(job: Job, projectDir: string): Promise<void> {
   const f = path.join(projectDir, "project.json");
   if (!(await exists(f))) return;
   const a = artOf(job), p = JSON.parse(await fs.readFile(f, "utf8"));
-  if (p.style === a.style && p.characters === a.characters && p.brand?.intro === a.intro && p.brand?.outro === a.outro) return;
-  await fs.writeFile(f, JSON.stringify({ ...p, style: a.style, characters: a.characters, brand: { ...(p.brand ?? {}), intro: a.intro, outro: a.outro } }, null, 2));
+  if (p.style === a.style && p.brand?.intro === a.intro && p.brand?.outro === a.outro) return;
+  await fs.writeFile(f, JSON.stringify({ ...p, style: a.style, brand: { ...(p.brand ?? {}), intro: a.intro, outro: a.outro } }, null, 2));
 }

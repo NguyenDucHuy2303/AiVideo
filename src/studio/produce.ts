@@ -8,6 +8,8 @@
  * A note on the video ("fix") re-directs the scenes with the note and renders again; only the
  * scenes that changed are drawn again.
  */
+import { writeQA } from "./qa.ts";
+import { prepareQA, renderQA } from "./qaproduce.ts";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { ROOT } from "../config.ts";
@@ -50,6 +52,11 @@ export async function writeJob(slug: string, log: (s: string) => void = console.
     const dir = jobDir(slug);
     // A script already written (an interrupted run) is not written again.
     const resume = job.status === "writing" && (await exists(path.join(dir, "plan.json")));
+    // A question for the English question channel (qa.ts): its own writer, no era or costumes.
+    if (job.kind === "qa") {
+      const problems = resume ? [] : await writeQA(slug, log);
+      return setStatus(await loadJob(slug), "review", problems.length ? `${problems.length} vấn đề còn lại: ${problems.slice(0, 3).join(" ")}` : undefined);
+    }
     const problems = resume ? [] : await writeScript(slug, log);
     // An era the library lacks is researched and built before the cast is designed in it.
     if (job.era && !(await loadEras())[job.era]) {
@@ -90,7 +97,7 @@ async function buildProject(job: Job, proj: string, opts: { scenes?: number; not
   const project = JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8"));
   const subtitle = { "lịch sử": "Lịch sử Việt Nam", "truyền thuyết": "Truyền thuyết Việt Nam", "ngụ ngôn": "Truyện ngụ ngôn Việt Nam" }[job.kind ?? ""] ?? "Truyện cổ tích Việt Nam";
   const art = artOf(job);
-  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers, thumbnail: { title: plan.title.replace(/\s*[–-]\s*/g, " "), subtitle }, style: art.style, characters: art.characters, brand: { intro: art.intro, outro: art.outro } }, null, 2));
+  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers, thumbnail: { title: plan.title.replace(/\s*[–-]\s*/g, " "), subtitle }, style: art.style, brand: { intro: art.intro, outro: art.outro } }, null, 2));
   // Voices (the timing of everything else).
   if (opts.revoice !== false || !(await exists(path.join(proj, "timeline.json")))) {
     log("  voices");
@@ -114,7 +121,9 @@ export async function prepare(slug: string, log: (s: string) => void = console.l
     const fixing = job.status === "fix";
     from = job.status;
     job = await setStatus(job, "producing", fixing ? "sửa theo góp ý" : "chuẩn bị");
-    await buildProject(job, projectOf(slug), { notes: job.notes.filter((n) => n.on === "video").map((n) => n.text), redirect: fixing, revoice: !fixing }, log);
+    // A question (Ask Huy): its own voices, direction and paintings (qaproduce.ts).
+    if (job.kind === "qa") await prepareQA(slug, log);
+    else await buildProject(job, projectOf(slug), { notes: job.notes.filter((n) => n.on === "video").map((n) => n.text), redirect: fixing, revoice: !fixing }, log);
     job = await loadJob(slug);
     job.stage = "ready";
     await saveJob(job);
@@ -157,8 +166,12 @@ export async function render(slug: string, log: (s: string) => void = console.lo
   try {
     let job = await loadJob(slug);
     job = await setStatus(job, "producing", "đang render");
-    await syncArt(job, projectOf(slug)); // a style or intro changed on the review page since
-    const out = await renderStory(projectOf(slug), { onLog: log });
+    let out: string;
+    if (job.kind === "qa") out = await renderQA(slug, log);
+    else {
+      await syncArt(job, projectOf(slug)); // a style or intro changed on the review page since
+      out = await renderStory(projectOf(slug), { onLog: log });
+    }
     const dir = jobDir(slug);
     for (const [from, to] of [[out, "video.mp4"], [out.replace(/\.mp4$/, "_thumbnail.jpg"), "thumbnail.jpg"]] as const) {
       const target = path.join(dir, to);

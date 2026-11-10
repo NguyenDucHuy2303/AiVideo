@@ -1,0 +1,61 @@
+{
+  "castFile": "cast.json",
+  "duration": 10.83,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "determined"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "determined"
+    },
+    {
+      "actor": "huy",
+      "at": 7.58,
+      "do": "talk",
+      "face": "determined"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0\" x=\"500\" y=\"80\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#2a2a40\">Watch the sunset</text><g data-in=\"0.8\"><rect x=\"60\" y=\"120\" width=\"400\" height=\"330\" rx=\"12\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\"/><rect x=\"72\" y=\"132\" width=\"376\" height=\"306\" fill=\"#ffb74d\"/><circle class=\"float\" cx=\"265\" cy=\"340\" r=\"55\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"72\" y=\"380\" width=\"376\" height=\"58\" fill=\"#43a047\"/><line x1=\"260\" y1=\"132\" x2=\"260\" y2=\"438\" stroke=\"#3a2a20\" stroke-width=\"5\"/><line x1=\"72\" y1=\"285\" x2=\"448\" y2=\"285\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g><g data-in=\"3.5\"><rect x=\"540\" y=\"120\" width=\"380\" height=\"250\" rx=\"14\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\"/><text x=\"730\" y=\"335\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\">Draw the colours</text></g><rect data-in=\"4.5\" x=\"560\" y=\"150\" width=\"80\" height=\"140\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect data-in=\"5.2\" x=\"650\" y=\"150\" width=\"80\" height=\"140\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect data-in=\"5.9\" x=\"740\" y=\"150\" width=\"80\" height=\"140\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect data-in=\"6.6\" x=\"830\" y=\"150\" width=\"80\" height=\"140\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\"/><g data-in=\"7.4\"><rect x=\"540\" y=\"400\" width=\"380\" height=\"150\" rx=\"16\" fill=\"#fff3b0\" stroke=\"#e53935\" stroke-width=\"6\"/><text x=\"730\" y=\"462\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"42\" fill=\"#e53935\">Do not look</text><text x=\"730\" y=\"515\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"42\" fill=\"#e53935\">at the Sun!</text></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

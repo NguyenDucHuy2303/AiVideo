@@ -1,0 +1,75 @@
+{
+  "castFile": "cast.json",
+  "duration": 10.23,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 7.16,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "raise",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><g font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\" text-anchor=\"middle\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"><text x=\"500\" y=\"80\" font-size=\"44\" stroke=\"none\">Pale blue, not dark</text><g data-in=\"0.5\"><rect x=\"60\" y=\"130\" width=\"340\" height=\"260\" rx=\"24\" fill=\"#a9d8f5\"/><text x=\"230\" y=\"440\" stroke=\"none\">Sky</text></g><g data-in=\"1.5\" class=\"float\"><rect x=\"190\" y=\"180\" width=\"60\" height=\"190\" rx=\"8\" fill=\"#1e4fa0\"/><polygon points=\"190,180 250,180 220,130\" fill=\"#1e4fa0\"/><text x=\"220\" y=\"500\" stroke=\"none\">Dark crayon</text></g><g data-in=\"3.5\"><path d=\"M560 300 L580 450 Q660 490 740 450 L760 300 Z\" fill=\"#fff3b0\"/><ellipse cx=\"660\" cy=\"300\" rx=\"100\" ry=\"28\" fill=\"#1e4fa0\"/><text x=\"660\" y=\"540\" stroke=\"none\">Blue paint</text></g><g data-in=\"5\"><circle cx=\"625\" cy=\"298\" r=\"20\" fill=\"#ffffff\"/><text x=\"620\" y=\"230\" stroke=\"none\">+ white</text></g><g data-in=\"6\" class=\"pulse\"><path d=\"M700 200 L690 290\" fill=\"none\" stroke-width=\"10\"/></g><g data-in=\"7.5\"><circle cx=\"880\" cy=\"390\" r=\"60\" fill=\"#a9d8f5\"/><text x=\"880\" y=\"500\" stroke=\"none\">Paler!</text></g></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

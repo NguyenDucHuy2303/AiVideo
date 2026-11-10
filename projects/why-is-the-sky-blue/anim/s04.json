@@ -1,0 +1,75 @@
+{
+  "castFile": "cast.json",
+  "duration": 14.5,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 10.15,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "raise",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 600'><text x='500' y='75' text-anchor='middle' font-family='sans-serif' font-size='42' font-weight='bold' fill='#2a2a40'>Is It the Sea?</text><g data-in='0.5'><rect x='40' y='100' width='290' height='150' fill='#4aa3e0' stroke='#3a2a20' stroke-width='5'/><rect x='40' y='250' width='290' height='170' fill='#f4c872' stroke='#3a2a20' stroke-width='5'/><path d='M40 300 Q120 260 200 300 T330 290' fill='none' stroke='#3a2a20' stroke-width='4'/><ellipse cx='150' cy='350' rx='45' ry='24' fill='#c68a3c' stroke='#3a2a20' stroke-width='4'/><circle cx='140' cy='322' r='15' fill='#c68a3c' stroke='#3a2a20' stroke-width='4'/><line x1='185' y1='340' x2='205' y2='305' stroke='#3a2a20' stroke-width='9' stroke-linecap='round'/><ellipse cx='215' cy='299' rx='16' ry='10' fill='#c68a3c' stroke='#3a2a20' stroke-width='4'/><line x1='125' y1='370' x2='125' y2='400' stroke='#3a2a20' stroke-width='7' stroke-linecap='round'/><line x1='175' y1='370' x2='175' y2='400' stroke='#3a2a20' stroke-width='7' stroke-linecap='round'/><text x='185' y='460' text-anchor='middle' font-family='sans-serif' font-size='36' fill='#2a2a40'>Desert</text></g><g data-in='2.8'><rect x='355' y='100' width='290' height='150' fill='#4aa3e0' stroke='#3a2a20' stroke-width='5'/><rect x='355' y='250' width='290' height='90' fill='#2f86c8' stroke='#3a2a20' stroke-width='5'/><rect x='355' y='340' width='290' height='80' fill='#f4c872' stroke='#3a2a20' stroke-width='5'/><path d='M365 285 Q400 265 435 285 T505 285 T575 285 T635 285' fill='none' stroke='#ffffff' stroke-width='5'/><path d='M365 315 Q400 295 435 315 T505 315 T575 315 T635 315' fill='none' stroke='#ffffff' stroke-width='5'/><text x='500' y='460' text-anchor='middle' font-family='sans-serif' font-size='36' fill='#2a2a40'>Beach</text></g><text data-in='5' x='345' y='525' text-anchor='middle' font-family='sans-serif' font-size='34' fill='#2a2a40'>Same blue sky!</text><g data-in='7.5' class='float'><polygon points='750,170 900,170 880,420 770,420' fill='#eaf6ff' stroke='#3a2a20' stroke-width='5' stroke-linejoin='round'/><ellipse cx='825' cy='170' rx='75' ry='10' fill='#ffffff' stroke='#3a2a20' stroke-width='4'/></g><text data-in='8.5' x='825' y='460' text-anchor='middle' font-family='sans-serif' font-size='34' fill='#2a2a40'>Glass of air</text><text data-in='10.5' x='825' y='525' text-anchor='middle' font-family='sans-serif' font-size='32' fill='#e53935'>Clear, not blue!</text></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

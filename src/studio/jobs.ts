@@ -39,8 +39,10 @@ export interface Job {
   english?: "ready" | "done" | `failed: ${string}`;
   /** Drawing style, intro and outro (art.ts): suggested with the cast, changeable on the review page. */
   art?: Art;
-  /** Hand-painted puppets of the cast (when art.characters is "puppet"): how many are painted. */
-  puppets?: { done: number; total: number };
+  /** The brain's score of the script (pick.ts), for the daily pick; hash: the script it scored. */
+  score?: { value: number; why: string; hash: string };
+  /** Approved by the daily pick (the user had not chosen by the cut-off time). */
+  autoPicked?: boolean;
   /** Claude was unavailable: the job is not tried again before this time. */
   retryAt?: string;
   error?: string;

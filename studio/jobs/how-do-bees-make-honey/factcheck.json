@@ -1,0 +1,16 @@
+{
+  "issues": [
+    {
+      "scene": 22,
+      "quote": "Scientists have found honey thousands of years old that could still be eaten!",
+      "problem": "The sources disagree. One says honey found in Egyptian tombs was still edible after thousands of years. Another says no edible honey has been found in Egyptian tombs, and those cases turned out to be other substances or chemical traces. A third says only that honey from archaeological sites was edible after 'millennia'. The script states it as plain fact and does not mention the disagreement.",
+      "fix": "Scientists think honey can last for thousands of years. They say some very old honey found by archaeologists was still safe to eat, but not everyone agrees about the oldest finds."
+    },
+    {
+      "scene": 16,
+      "quote": "This can go on for about 20 minutes.",
+      "problem": "The source says it can take 'as long as' 20 minutes, which is a maximum. 'About 20 minutes' makes it sound like the usual time.",
+      "fix": "This can go on for up to 20 minutes."
+    }
+  ]
+}

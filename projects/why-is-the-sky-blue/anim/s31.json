@@ -1,0 +1,75 @@
+{
+  "castFile": "cast.json",
+  "duration": 17.2,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 12.04,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "wave",
+      "face": "joy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0.3\" x=\"500\" y=\"80\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">A Fun Fact</text><line data-in=\"1\" class=\"draw\" x1=\"80\" y1=\"440\" x2=\"900\" y2=\"440\" stroke=\"#3a2a20\" stroke-width=\"8\" stroke-linecap=\"round\"/><polygon data-in=\"2\" points=\"960,440 900,410 900,470\" fill=\"#3a2a20\"/><g data-in=\"3\"><path d=\"M200 440 L200 370\" stroke=\"#3a2a20\" stroke-width=\"6\"/><circle cx=\"200\" cy=\"350\" r=\"26\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\"/><text x=\"200\" y=\"505\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"40\" font-weight=\"bold\" fill=\"#2a2a40\">1871</text></g><g data-in=\"4\" class=\"float\"><circle cx=\"200\" cy=\"215\" r=\"70\" fill=\"#ffd9b0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M135 225 Q140 320 200 325 Q260 320 265 225 Q235 270 200 270 Q165 270 135 225 Z\" fill=\"#d9d9d9\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M135 200 Q140 140 200 140 Q260 140 265 200 Q230 160 200 165 Q170 160 135 200 Z\" fill=\"#d9d9d9\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"175\" cy=\"213\" r=\"7\" fill=\"#3a2a20\"/><circle cx=\"225\" cy=\"213\" r=\"7\" fill=\"#3a2a20\"/><path d=\"M180 245 Q200 262 220 245\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linecap=\"round\"/></g><text data-in=\"5\" x=\"350\" y=\"270\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#2a2a40\">Lord Rayleigh</text><text data-in=\"7\" x=\"500\" y=\"400\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#8e24aa\">150+ years!</text><g data-in=\"9\"><path d=\"M780 440 L780 370\" stroke=\"#3a2a20\" stroke-width=\"6\"/><circle cx=\"780\" cy=\"350\" r=\"26\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\"/><text x=\"780\" y=\"505\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"40\" font-weight=\"bold\" fill=\"#2a2a40\">Today</text></g><g data-in=\"10.5\" class=\"float\"><circle cx=\"780\" cy=\"215\" r=\"60\" fill=\"#ffd9b0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M720 205 Q720 145 780 145 Q840 145 840 205 Q810 170 780 175 Q750 170 720 205 Z\" fill=\"#3a2a20\"/><circle cx=\"760\" cy=\"215\" r=\"6\" fill=\"#3a2a20\"/><circle cx=\"800\" cy=\"215\" r=\"6\" fill=\"#3a2a20\"/><path d=\"M760 238 Q780 255 800 238\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M850 230 L885 180\" stroke=\"#3a2a20\" stroke-width=\"8\" stroke-linecap=\"round\"/></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

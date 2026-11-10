@@ -17,8 +17,6 @@ import { cleanLook, VOCABULARY } from "./vocabulary.ts";
 import { BRAND_THEMES } from "../animation/brand/brand.ts";
 import { styleKeys, styleMenu, styleOf } from "../animation/styles.ts";
 import { artOf } from "./art.ts";
-import { puppetKey, PUPPETS_DIR } from "../animation/puppet/paint.ts";
-import { exists } from "../utils/fs.ts";
 import type { Plan } from "./write.ts";
 
 const PLAYER = path.join(ROOT, "src", "animation", "player.html");
@@ -140,15 +138,12 @@ export async function costumeSheet(slug: string): Promise<string> {
       actions: [{ actor: c.id, at: 0, do: c.kind === "horse" ? "stand" : "idle", ...(c.kind === "human" ? { face: "happy" } : {}) }],
       shots: [{ at: 0, type: "full", on: c.id }],
     };
-    // Hand-painted puppets: the painting itself (when painted), on the sheet's paper.
-    const painted = art.characters === "puppet" && c.kind === "human" ? path.join(PUPPETS_DIR, puppetKey(c.look as Record<string, unknown>, job.era, style), "base.png") : "";
-    if (painted && (await exists(painted))) { items.push({ src: pathToFileURL(painted).href, name: c.name, role: c.role }); continue; }
     await still({ page: PLAYER, width: 480, height: 640, output: out, at: 1, params: { scene, width: 480, height: 640 } });
     items.push({ src: pathToFileURL(out).href, name: c.name, role: c.role });
   }
   const rows = Math.ceil(items.length / 4), height = 120 + rows * 735 + 40;
   const file = path.join(dir, "costumes.png");
-  await still({ page: SHEET, width: 1920, height, output: file, params: { title: `${plan.title}: bảng trang phục`, era: `${all[job.era ?? ""]?.name ?? job.era ?? ""} · phong cách ${styleOf(style).name}${art.characters === "puppet" ? " · nhân vật vẽ tay" : ""}`, items } });
+  await still({ page: SHEET, width: 1920, height, output: file, params: { title: `${plan.title}: bảng trang phục`, era: `${all[job.era ?? ""]?.name ?? job.era ?? ""} · phong cách ${styleOf(style).name}`, items } });
   await fs.rm(tiles, { recursive: true, force: true });
   return file;
 }

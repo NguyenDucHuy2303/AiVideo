@@ -52,13 +52,17 @@
       breath: 0.012 * sin(τ * 3.5), legF: [16, -6], legB: [-18, -4], armF: [116 + 4 * sin(τ * 2), 24], armB: [-22, 66], headTilt: -4,
       face: c.face || "determined",
     }),
-    raise: (τ, c) => ({ legF: [10, -4], legB: [-12, -4], armF: [lerp(40, 165, EASE.backOut(τ / 0.5)), 8], armB: [-20, 60], headTilt: -10, face: c.face || "shout" }),
+    // (148°, not straight up: in the side view the hand then shows above the brow instead of
+    // vanishing behind the head)
+    raise: (τ, c) => ({ legF: [10, -4], legB: [-12, -4], armF: [lerp(40, 148, EASE.backOut(τ / 0.5)), 8], armB: [-20, 60], headTilt: -10, face: c.face || "shout" }),
     point: (τ, c) => ({ ...human.idle(τ, c), armF: [lerp(10, 86, EASE.out(τ / 0.4)), 4], headTilt: -2, face: c.face || "determined" }),
     talk: (τ, c) => ({ ...human.idle(τ, c), armF: [30 + 18 * sin(τ * 2.6), 50 + 20 * sin(τ * 3.1)], talk: 1, face: c.face || "neutral" }),
-    wave: (τ, c) => ({ ...human.idle(τ, c), armF: [150, 40 + 30 * sin(τ * 10)], face: c.face || "happy" }),
+    // The upper arm forward and up, the forearm upright and waving: the hand is in front of the
+    // face at head height, seen in the side view (raised behind the head it was hidden).
+    wave: (τ, c) => ({ ...human.idle(τ, c), armF: [82, 64 + 13 * sin(τ * 10)], face: c.face || "happy" }),
     cheer: (τ, c) => ({ ...human.idle(τ, c), dy: -6 * Math.abs(sin(τ * 6)), armF: [150 + 20 * sin(τ * 8), 30], armB: [140 - 20 * sin(τ * 8), 30], talk: 0.6, face: c.face || "laugh" }),
     bow: (τ, c) => { const k = EASE.inOut(τ / 0.6); return { legF: [4, -2], legB: [-4, -2], lean: 38 * k, headTilt: 18 * k, armF: [30 * k, 50 * k], armB: [20 * k, 50 * k], face: c.face || "neutral" }; },
-    kneel: (τ, c) => { const k = EASE.out(τ / 0.5); return { dy: c.B.thigh * 0.95 * k, legF: [90 * k, -92 * k], legB: [-12 * k, -100 * k], lean: 6, armF: [30, 60], armB: [20, 60], face: c.face || "worried" }; },
+    kneel: (τ, c) => { const k = EASE.out(τ / 0.5); return { dy: c.B.thigh * 0.95 * k, legF: [90 * k, -92 * k], legB: [-12 * k, -78 * k], lean: 6, armF: [30, 60], armB: [20, 60], face: c.face || "worried" }; },
     sit: (τ, c) => { const k = EASE.out(τ / 0.5); return { dy: (c.B.thigh + c.B.shin * 0.85) * k, legF: [88 * k, -70 * k], legB: [80 * k, -80 * k], lean: 4, armF: [30, 50], armB: [20, 50], face: c.face || "neutral" }; },
     crouch: (τ, c) => ({ dy: 18, legF: [36, -70], legB: [20, -64], armF: [60, 40], armB: [-40, 60], lean: 16, headTilt: -10, face: c.face || "determined" }),
     leap: (τ, c) => ({ legF: [86, -118], legB: [64, -108], armF: [160, 12], armB: [120, 30], lean: 12, headTilt: -8, capeWave: 1, face: c.face || "shout" }),

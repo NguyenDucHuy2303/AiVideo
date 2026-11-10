@@ -59,10 +59,25 @@
       else for (let k = 0; k < 5; k++) el("circle", { cx: f2(x + Math.cos(k * 1.256) * 4.5), cy: f2(y + Math.sin(k * 1.256) * 4.5), r: 2.6, fill: gold, opacity: 0.85 }, t);
     }
     if (kind === "dragon") {
-      // A dragon coiled on the chest: a gold S-curve with a head and scales, as on royal robes.
-      el("path", { d: `M ${f2(-w * 0.3)} ${f2(-T * 0.25)} C ${f2(-w * 0.45)} ${f2(-T * 0.6)} ${f2(w * 0.35)} ${f2(-T * 0.45)} ${f2(w * 0.2)} ${f2(-T * 0.75)} C ${f2(w * 0.1)} ${f2(-T * 0.92)} ${f2(-w * 0.2)} ${f2(-T * 0.85)} ${f2(-w * 0.1)} ${f2(-T * 0.7)}`, stroke: gold, "stroke-width": 7, fill: "none", "stroke-linecap": "round" }, t);
-      el("circle", { cx: f2(-w * 0.1), cy: f2(-T * 0.7), r: 7, fill: gold, stroke: INK, "stroke-width": 1.5 }, t);
-      for (let i = 0; i < 6; i++) el("circle", { cx: f2(-w * 0.28 + i * w * 0.1), cy: f2(-T * (0.32 + (i % 3) * 0.12)), r: 2.5, fill: "#c0392b" }, t);
+      // A dragon coiled on the chest: an S-shaped body (gold, edged in ink) with spines along
+      // its back, a head with an eye, a horn and a whisker, and two small clouds.
+      const body = `M ${f2(-w * 0.32)} ${f2(-T * 0.18)} C ${f2(-w * 0.5)} ${f2(-T * 0.5)} ${f2(w * 0.36)} ${f2(-T * 0.38)} ${f2(w * 0.22)} ${f2(-T * 0.66)} C ${f2(w * 0.14)} ${f2(-T * 0.82)} ${f2(-w * 0.12)} ${f2(-T * 0.84)} ${f2(-w * 0.06)} ${f2(-T * 0.7)}`;
+      el("path", { d: body, stroke: INK, "stroke-width": 10, fill: "none", "stroke-linecap": "round" }, t);
+      el("path", { d: body, stroke: gold, "stroke-width": 6.5, fill: "none", "stroke-linecap": "round" }, t);
+      const probe = el("path", { d: body, fill: "none" }, t);
+      let len = 0;
+      try { len = probe.getTotalLength(); } catch { /* not laid out: no spines */ }
+      if (len) for (let i = 1; i < 9; i++) {
+        const a = probe.getPointAtLength((len * i) / 10), b = probe.getPointAtLength(Math.min(len, (len * i) / 10 + 2));
+        const dx = b.x - a.x, dy = b.y - a.y, n = Math.hypot(dx, dy) || 1, nx = -dy / n, ny = dx / n;
+        el("path", { d: `M ${f2(a.x - dx * 1.2 + nx * 3)} ${f2(a.y - dy * 1.2 + ny * 3)} L ${f2(a.x + nx * 8)} ${f2(a.y + ny * 8)} L ${f2(a.x + dx * 1.2 + nx * 3)} ${f2(a.y + dy * 1.2 + ny * 3)} Z`, fill: "#c0392b", stroke: INK, "stroke-width": 1.2 }, t);
+      }
+      probe.remove();
+      const hx = -w * 0.06, hy = -T * 0.7;
+      el("path", { d: `M ${f2(hx - 6)} ${f2(hy - 5)} Q ${f2(hx + 4)} ${f2(hy - 10)} ${f2(hx + 12)} ${f2(hy - 3)} L ${f2(hx + 9)} ${f2(hy + 4)} Q ${f2(hx)} ${f2(hy + 7)} ${f2(hx - 6)} ${f2(hy + 3)} Z`, fill: gold, stroke: INK, "stroke-width": 1.5 }, t);
+      el("circle", { cx: f2(hx + 3), cy: f2(hy - 3), r: 1.6, fill: INK }, t);
+      el("path", { d: `M ${f2(hx - 3)} ${f2(hy - 6)} q -3 -7 -9 -8 M ${f2(hx + 10)} ${f2(hy + 2)} q 8 2 10 9`, stroke: gold, "stroke-width": 2, fill: "none", "stroke-linecap": "round" }, t);
+      for (const [cx2, cy2] of [[w * 0.28, -T * 0.28], [-w * 0.3, -T * 0.6]]) el("path", { d: `M ${f2(cx2 - 8)} ${f2(cy2)} q 0 -6 6 -5 q 2 -5 7 -2 q 6 -1 5 5 Z`, fill: "none", stroke: gold, "stroke-width": 2, opacity: 0.85 }, t);
     }
   }
 
@@ -137,6 +152,8 @@
     if (belt || top.cut === "tu_than") {
       const bc = (belt && belt.color) || (female ? "#3f8f5a" : "#6a3a22");
       el("rect", { x: f2(-w / 2 - 1), y: -12, width: f2(w + 6), height: 14, rx: 6, fill: S.mat(bc, true), ...OUT, "stroke-width": 2.5 }, t);
+      // The belt's cel shadow on the cloth just under it.
+      if (!S.flat) el("path", { d: `M ${f2(-w / 2 + 1)} 2 L ${f2(w / 2 + 4)} 2 L ${f2(w / 2 + 4)} 7 Q 2 12 ${f2(-w / 2 + 1)} 7 Z`, fill: shade(color, -0.35), opacity: 0.5 }, t);
       if (!belt || belt.ends !== false) el("path", { d: `M ${f2(w * 0.3)} 0 q -6 22 -2 42 l 9 0 q -2 -20 4 -42 M ${f2(w * 0.42)} 0 q 4 18 10 34 l 8 -3 q -6 -16 -8 -31`, fill: S.mat(bc, true), ...OUT, "stroke-width": 2 }, t);
     }
   }
@@ -170,11 +187,16 @@
         el("path", { d: `M ${f2(cx - R * 1.35)} ${f2(cy - R * 0.45)} L ${f2(cx + R * 0.05)} ${f2(cy - R * 2.1)} L ${f2(cx + R * 1.4)} ${f2(cy - R * 0.45)} Q ${f2(cx)} ${f2(cy - R * 0.25)} ${f2(cx - R * 1.35)} ${f2(cy - R * 0.45)} Z`, fill: S.mat("#b88a4a", true), ...OUT }, h);
         el("circle", { cx: f2(cx + R * 0.05), cy: f2(cy - R * 2.15), r: f2(R * 0.16), fill: "#8a5a2a", ...OUT, "stroke-width": 2 }, h);
         return true;
-      case "mu_canh_chuon": // the official's hat with two wings behind
-        el("path", { d: `M ${f2(cx - R * 1.0)} ${f2(cy - R * 0.25)} Q ${f2(cx - R * 1.05)} ${f2(cy - R * 1.45)} ${f2(cx)} ${f2(cy - R * 1.5)} Q ${f2(cx + R * 1.0)} ${f2(cy - R * 1.4)} ${f2(cx + R * 0.95)} ${f2(cy - R * 0.4)} Q ${f2(cx)} ${f2(cy - R * 0.75)} ${f2(cx - R * 1.0)} ${f2(cy - R * 0.25)} Z`, fill: S.mat(black, true), ...OUT }, h);
-        el("ellipse", { cx: f2(cx - R * 1.35), cy: f2(cy - R * 0.95), rx: f2(R * 0.75), ry: f2(R * 0.28), fill: S.mat(black, true), ...OUT, "stroke-width": 2.5, transform: `rotate(-12 ${f2(cx - R * 1.35)} ${f2(cy - R * 0.95)})` }, h);
-        el("path", { d: `M ${f2(cx - R * 0.6)} ${f2(cy - R * 1.2)} L ${f2(cx + R * 0.6)} ${f2(cy - R * 1.15)}`, stroke: "#c9a04a", "stroke-width": 3 }, h);
+      case "mu_canh_chuon": { // the official's hat: a rounded crown, a raised back, two flat wings behind
+        const wing = (x, y, rx, rot, front) => el("ellipse", { cx: f2(x), cy: f2(y), rx: f2(rx), ry: f2(R * 0.15), fill: S.mat(front ? black : "#2e2824", true), ...OUT, "stroke-width": 2.5, transform: `rotate(${rot} ${f2(x)} ${f2(y)})` }, h);
+        wing(cx + R * 0.55, cy - R * 1.12, R * 0.5, 10, false);   // the far wing, mostly hidden
+        el("path", { d: `M ${f2(cx - R * 0.95)} ${f2(cy - R * 0.6)} Q ${f2(cx - R * 1.0)} ${f2(cy - R * 1.82)} ${f2(cx - R * 0.25)} ${f2(cy - R * 1.82)} Q ${f2(cx + R * 0.2)} ${f2(cy - R * 1.8)} ${f2(cx + R * 0.2)} ${f2(cy - R * 1.2)} Z`, fill: S.mat(black, true), ...OUT }, h);
+        wing(cx - R * 1.45, cy - R * 1.2, R * 0.62, -8, true);
+        el("path", { d: `M ${f2(cx - R * 1.0)} ${f2(cy - R * 0.25)} Q ${f2(cx - R * 1.05)} ${f2(cy - R * 1.4)} ${f2(cx)} ${f2(cy - R * 1.42)} Q ${f2(cx + R * 1.0)} ${f2(cy - R * 1.35)} ${f2(cx + R * 0.95)} ${f2(cy - R * 0.4)} Q ${f2(cx)} ${f2(cy - R * 0.75)} ${f2(cx - R * 1.0)} ${f2(cy - R * 0.25)} Z`, fill: S.mat(black, true), ...OUT }, h);
+        el("path", { d: `M ${f2(cx - R * 0.98)} ${f2(cy - R * 0.5)} Q ${f2(cx)} ${f2(cy - R * 1.0)} ${f2(cx + R * 0.96)} ${f2(cy - R * 0.62)}`, stroke: "#c9a04a", "stroke-width": 3, fill: "none" }, h);
+        el("path", { d: `M ${f2(cx - R * 0.6)} ${f2(cy - R * 1.24)} Q ${f2(cx)} ${f2(cy - R * 1.36)} ${f2(cx + R * 0.55)} ${f2(cy - R * 1.2)}`, stroke: "#4a403a", "stroke-width": 2, fill: "none" }, h);
         return true;
+      }
       case "binh_thien": { // the king's crown: a flat board on top, strings of beads front and back
         el("path", { d: `M ${f2(cx - R * 0.95)} ${f2(cy - R * 0.35)} Q ${f2(cx - R * 1.0)} ${f2(cy - R * 1.35)} ${f2(cx)} ${f2(cy - R * 1.4)} Q ${f2(cx + R * 0.95)} ${f2(cy - R * 1.3)} ${f2(cx + R * 0.9)} ${f2(cy - R * 0.45)} Q ${f2(cx)} ${f2(cy - R * 0.75)} ${f2(cx - R * 0.95)} ${f2(cy - R * 0.35)} Z`, fill: S.mat(black, true), ...OUT }, h);
         el("rect", { x: f2(cx - R * 1.5), y: f2(cy - R * 1.62), width: f2(R * 3.0), height: f2(R * 0.22), rx: 3, fill: S.mat("#2a2a2a", true), ...OUT, "stroke-width": 2.5, transform: `rotate(-6 ${f2(cx)} ${f2(cy - R * 1.5)})` }, h);

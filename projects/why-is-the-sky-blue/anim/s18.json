@@ -1,0 +1,61 @@
+{
+  "castFile": "cast.json",
+  "duration": 7.87,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 5.51,
+      "do": "talk",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0.2\" x=\"500\" y=\"70\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"40\" font-weight=\"bold\" fill=\"#2a2a40\">Blue light from everywhere</text><path data-in=\"0.4\" d=\"M80 470 A420 380 0 0 1 920 470 Z\" fill=\"#d6ecfa\" stroke=\"#3a2a20\" stroke-width=\"6\"/><rect x=\"30\" y=\"470\" width=\"940\" height=\"100\" rx=\"20\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\"/><g data-in=\"0.8\"><rect x=\"478\" y=\"452\" width=\"44\" height=\"60\" rx=\"12\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"500\" cy=\"425\" r=\"26\" fill=\"#ffd7b5\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><g data-in=\"1.5\"><circle class=\"pulse\" cx=\"890\" cy=\"100\" r=\"45\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\"/><text x=\"890\" y=\"185\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#2a2a40\">Sun</text></g><g data-in=\"2.5\"><line class=\"flow\" x1=\"190\" y1=\"390\" x2=\"434\" y2=\"418\" stroke=\"#1e6fb8\" stroke-width=\"8\" stroke-linecap=\"round\"/><polygon points=\"462,421 432,432 436,404\" fill=\"#1e6fb8\" stroke=\"#3a2a20\" stroke-width=\"3\"/></g><g data-in=\"3.2\"><line class=\"flow\" x1=\"290\" y1=\"230\" x2=\"452\" y2=\"380\" stroke=\"#1e6fb8\" stroke-width=\"8\" stroke-linecap=\"round\"/><polygon points=\"472,399 442,390 461,370\" fill=\"#1e6fb8\" stroke=\"#3a2a20\" stroke-width=\"3\"/></g><g data-in=\"3.9\"><line class=\"flow\" x1=\"500\" y1=\"130\" x2=\"500\" y2=\"359\" stroke=\"#1e6fb8\" stroke-width=\"8\" stroke-linecap=\"round\"/><polygon points=\"500,387 486,359 514,359\" fill=\"#1e6fb8\" stroke=\"#3a2a20\" stroke-width=\"3\"/></g><g data-in=\"4.6\"><line class=\"flow\" x1=\"710\" y1=\"230\" x2=\"548\" y2=\"380\" stroke=\"#1e6fb8\" stroke-width=\"8\" stroke-linecap=\"round\"/><polygon points=\"528,399 539,370 558,390\" fill=\"#1e6fb8\" stroke=\"#3a2a20\" stroke-width=\"3\"/></g><g data-in=\"5.3\"><line class=\"flow\" x1=\"810\" y1=\"390\" x2=\"566\" y2=\"418\" stroke=\"#1e6fb8\" stroke-width=\"8\" stroke-linecap=\"round\"/><polygon points=\"538,421 564,404 568,432\" fill=\"#1e6fb8\" stroke=\"#3a2a20\" stroke-width=\"3\"/></g></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

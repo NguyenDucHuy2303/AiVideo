@@ -68,6 +68,7 @@
   .themes select { font: inherit; font-size: 15px; padding: 6px 8px; border-radius: 8px; border: 1.5px solid var(--line); width: 100%; margin: 6px 0; }
   .themes video { border-radius: 10px; }
   .warn { background: #fff0d6; border: 1.5px solid #e8b25a; border-radius: 10px; padding: 8px 12px; margin-bottom: 12px; font-size: 14px; }
+  .dls { display:flex; gap:10px; flex-wrap:wrap } a.dl { display:inline-block; padding:7px 14px; border-radius:8px; background:#2e7d32; color:#fff; text-decoration:none; font-weight:600 } a.dl:hover { background:#256628 }
 </style>
 </head>
 <body>
@@ -126,11 +127,14 @@ function drawList() {
   $("#list").innerHTML = list.length ? list.map((j) => `
     <div class="job ${current === j.slug ? "on" : ""}" onclick="show('${j.slug}')">
       <b>${esc(j.topic)}</b>
-      <small>${esc(j.kind || "")} · ${esc(j.era || "")} · ${fmt(j.tokens)} token</small><br>
+      <small>${j.kind === "qa" ? "hỏi–đáp (tiếng Anh)" : `${esc(j.kind || "")} · ${esc(j.era || "")}`} · ${fmt(j.tokens)} token${j.score ? ` · ${j.score.value}/10` : ""}${j.autoPicked ? " · tự chọn" : ""}</small><br>
       <span class="st ${j.status}">${STATUS[j.status] || j.status}</span>
       <small> ${ago(j.history.at(-1).at)}</small>
     </div>`).join("") : `<div class="empty">Trống.</div>`;
 }
+
+/** A download button for a file of the job (named after the job, ready to upload). */
+const dl = (slug, file, label, name) => `<a class="dl" href="/files/${slug}/${file}" download="${esc(name || `${slug}-${file}`)}">⬇ ${label}</a>`;
 
 async function show(slug) {
   current = slug; drawList(); history.replaceState(null, "", `#${slug}`);
@@ -142,33 +146,47 @@ async function show(slug) {
   const used = d.tokens.reduce((n, e) => n + e.input + e.cacheWrite + e.output + Math.round(e.cacheRead * 0.1), 0);
   const canReview = job.status === "review" || job.status === "video";
   const last = job.history.at(-1);
+  // A question for the English question channel (qa.ts): no era, costumes or art yet.
+  const qa = job.kind === "qa";
   let h = `<h2>${esc(plan?.title || job.topic)}</h2>
-    <div class="meta">${esc(job.kind || "")} · thời đại ${esc(job.era || "?")} · ${STATUS[job.status]} · viết bởi ${esc(job.by || "?")} · ${fmt(used)} token</div>`;
+    <div class="meta">${qa ? `Kênh hỏi–đáp (tiếng Anh) · ${esc(project?.channel || "")}` : `${esc(job.kind || "")} · thời đại ${esc(job.era || "?")}`} · ${STATUS[job.status]} · viết bởi ${esc(job.by || "?")} · ${fmt(used)} token</div>`;
   if (canReview || job.status === "failed" || job.status === "rejected") {
     h += `<div class="actions">
-      ${canReview ? `<button class="ok" onclick="act('approve')">✔ Duyệt ${job.status === "video" ? "video" : "kịch bản và trang phục"}</button>
+      ${canReview ? `<button class="ok" onclick="act('approve')">✔ Duyệt ${job.status === "video" ? "video" : qa ? "kịch bản" : "kịch bản và trang phục"}</button>
       <button class="fixb" onclick="toggleNote()">✎ Yêu cầu sửa…</button>` : ""}
       ${job.status === "failed" ? `<button class="ok" onclick="act('retry')">↻ Thử lại</button>` : ""}
       ${job.status === "rejected" ? `<button class="fixb" onclick="act('retry')">↩ Lấy lại để duyệt</button>` : ""}
       ${job.status !== "rejected" ? `<button class="no" onclick="if(confirm('Bỏ chủ đề này?'))act('reject')">✘ Bỏ</button>` : ""}
-      <div id="note"><textarea id="noteText" placeholder="${job.status === "video" ? "Ví dụ: cảnh 5 mẹ phải đang nấu cơm; Sơn Tinh nói to hơn…" : "Ví dụ: thêm cảnh mẹ ru con; bớt cảnh đánh nhau; áo Mị Nương màu hồng…"}"></textarea>
+      <div id="note"><textarea id="noteText" placeholder="${job.status === "video" ? "Ví dụ: cảnh 5 mẹ phải đang nấu cơm; Sơn Tinh nói to hơn…" : qa ? "Ví dụ: giải thích thêm vì sao trời không màu tím; cảnh 26 có sáu loại cầu, không phải năm…" : "Ví dụ: thêm cảnh mẹ ru con; bớt cảnh đánh nhau; áo Mị Nương màu hồng…"}"></textarea>
         <button class="fixb" onclick="act('fix')">Gửi yêu cầu sửa</button></div>
     </div>`;
   }
+  if (job.score) h += `<div class="meta">Điểm của bộ não: <b>${job.score.value}/10</b> — ${esc(job.score.why)}${job.autoPicked ? " · <b>studio tự chọn</b> (bạn chưa chọn trước giờ chốt)" : ""}</div>`;
   if (job.error) h += `<div class="warn">Lỗi: ${esc(job.error)}</div>`;
   else if (last?.info && /vấn đề/.test(last.info)) h += `<div class="warn">${esc(last.info)}</div>`;
-  h += await artSection(job, d.art, d.redrawing, d.puppets);
+  if (!qa) h += await artSection(job, d.art, d.redrawing);
+  if (qa && plan) {
+    const fc = has("factcheck.json") ? await fetch(`/files/${slug}/factcheck.json`).then((r) => r.json()).catch(() => null) : null;
+    const shortWords = (plan.shorts || []).map((n) => plan.scenes[n - 1]).filter(Boolean).flatMap((s) => s.parts).reduce((n, p) => n + p.text.split(/\s+/).length, 0);
+    h += `<section><h3>Câu trả lời</h3><p>${esc(plan.answer || "")}</p>
+      <p><b>Chữ trên ảnh bìa:</b> ${esc(plan.thumbnail || "")}</p>
+      <p><b>Shorts:</b> cảnh ${(plan.shorts || []).join(", ")} · ${shortWords} chữ (khoảng ${Math.round(shortWords / 2.5)} giây)</p>
+      <p><b>Mô tả YouTube:</b> ${esc(plan.description || "")}</p></section>`;
+    if (fc) h += `<section><h3>Soát sự thật · ${fc.issues.length ? `${fc.issues.length} chỗ đã sửa` : "không có chỗ sai"}</h3>${fc.issues.length ? `<ul>${fc.issues.map((x) => `<li><b>Cảnh ${x.scene}</b>: <s>${esc(x.quote)}</s><br><small>${esc(x.problem)}</small><br>→ ${esc(x.fix)}</li>`).join("")}</ul>` : ""}</section>`;
+  }
   if (has("video.mp4")) h += `<section><h3>Video</h3><video controls preload="metadata" src="/files/${slug}/video.mp4" ${has("thumbnail.jpg") ? `poster="/files/${slug}/thumbnail.jpg"` : ""}></video>
+    <p class="dls">${dl(slug, "video.mp4", "Tải video", `${slug}.mp4`)}${has("thumbnail.jpg") ? dl(slug, "thumbnail.jpg", "Tải ảnh bìa", `${slug}.jpg`) : ""}</p>
     ${has("thumbnail.jpg") ? `<p><b>Thumbnail</b></p><img style="width:50%;border-radius:10px" src="/files/${slug}/thumbnail.jpg">` : ""}</section>`;
-  if (has("video.en.mp4")) h += `<section><h3>English version</h3><video controls preload="metadata" src="/files/${slug}/video.en.mp4" ${has("thumbnail.en.jpg") ? `poster="/files/${slug}/thumbnail.en.jpg"` : ""}></video></section>`;
+  if (has("video.en.mp4")) h += `<section><h3>English version</h3><video controls preload="metadata" src="/files/${slug}/video.en.mp4" ${has("thumbnail.en.jpg") ? `poster="/files/${slug}/thumbnail.en.jpg"` : ""}></video>
+    <p class="dls">${dl(slug, "video.en.mp4", "Tải video tiếng Anh", `${slug}-en.mp4`)}${has("thumbnail.en.jpg") ? dl(slug, "thumbnail.en.jpg", "Tải ảnh bìa tiếng Anh", `${slug}-en.jpg`) : ""}</p></section>`;
   else if (job.english) h += `<section><h3>English version</h3><div class="meta">${job.english === "ready" ? "Giọng tiếng Anh xong, render tối nay" : esc(job.english)}</div></section>`;
-  if (job.shorts?.length) h += `<section><h3>Shorts (Reels, TikTok) · ${job.shorts.length} clip</h3><div style="display:flex;gap:14px;flex-wrap:wrap">${job.shorts.map((f) => `<video controls preload="metadata" style="width:240px;border-radius:12px" src="/files/${slug}/${f}"></video>`).join("")}</div></section>`;
+  if (job.shorts?.length) h += `<section><h3>Shorts (Reels, TikTok) · ${job.shorts.length} clip</h3><div style="display:flex;gap:14px;flex-wrap:wrap">${job.shorts.map((f, i) => `<div><video controls preload="metadata" style="width:240px;border-radius:12px" src="/files/${slug}/${f}"></video><br>${dl(slug, f, `Tải short ${i + 1}`, `${slug}-short-${i + 1}.mp4`)}</div>`).join("")}</div></section>`;
   if (has("costumes.png")) h += `<section class="sheet"><h3>Bảng trang phục</h3><img src="/files/${slug}/costumes.png?${Date.now()}" onclick="zoom(this.src)"></section>`;
-  else if (plan) h += `<section><h3>Bảng trang phục</h3><div class="meta">Đang vẽ…</div><p>${esc(plan.look)}</p></section>`;
+  else if (plan && !qa) h += `<section><h3>Bảng trang phục</h3><div class="meta">Đang vẽ…</div><p>${esc(plan.look)}</p></section>`;
   if (job.notes.length) h += `<section><h3>Góp ý của bạn</h3><ul class="notes">${job.notes.map((n) => `<li><small>${new Date(n.at).toLocaleString("vi")} · ${n.on === "video" ? "video" : "kịch bản"}</small><br>${esc(n.text)}</li>`).join("")}</ul></section>`;
   if (plan) {
     h += `<section><h3>Kịch bản · ${plan.scenes.length} cảnh · ${plan.scenes.flatMap((s) => s.parts).reduce((n, p) => n + p.text.split(/\s+/).length, 0)} chữ</h3>` +
-      plan.scenes.map((s, i) => `<div class="scene"><div class="num">${i + 1}</div><div>${s.parts.map((p) => p.who ? `<div class="say"><span class="who">${esc(p.who)}</span> <span class="how">(${esc(p.how)})</span>: “${esc(p.text)}”</div>` : `<p class="tell">${esc(p.text)}</p>`).join("")}</div></div>`).join("") + `</section>`;
+      plan.scenes.map((s, i) => `<div class="scene"><div class="num">${i + 1}</div><div>${s.visual ? `<div class="meta">${esc(s.beat)}${s.step ? ` ${s.step}` : ""} · hình: <b>${esc(s.visual.kind)}</b> — ${esc(s.visual.what)}</div>` : ""}${s.parts.map((p) => p.who ? `<div class="say"><span class="who">${esc(p.who)}</span>${p.how ? ` <span class="how">(${esc(p.how)})</span>` : ""}: “${esc(p.text)}”</div>` : `<p class="tell">${esc(p.text)}</p>`).join("")}</div></div>`).join("") + `</section>`;
     h += `<section><h3>Nhân vật và giọng</h3><table><tr><th>Nhân vật</th><th>Vai</th><th>Giọng</th><th></th></tr>` +
       plan.cast.map((c) => { const v = voices[c.name], name = voiceOf(c.name); return `<tr><td><b>${esc(c.name)}</b></td><td>${esc(c.role)}</td><td>${esc(name || "")}${v && v.pitch ? ` (cao độ ${v.pitch > 0 ? "+" : ""}${v.pitch})` : ""}</td><td>${name ? `<button class="play" title="Nghe giọng mẫu" onclick="play('${esc(name)}')">▶</button>` : ""}</td></tr>`; }).join("") +
       `<tr><td><b>Người kể</b></td><td></td><td>${esc(project?.voice || "")}</td><td><button class="play" onclick="play('${esc(project?.voice || "")}')">▶</button></td></tr></table></section>`;
@@ -180,7 +198,7 @@ async function show(slug) {
 }
 
 /** Style, intro and outro: what the brain suggests (★) and what is chosen (✔); a click changes it. */
-async function artSection(job, art, redrawing, puppets) {
+async function artSection(job, art, redrawing) {
   if (!art || job.status === "writing" || job.status === "rejected") return "";
   ART ||= await fetch("/api/art").then((r) => r.json());
   const sg = art.suggest || {};
@@ -194,11 +212,6 @@ async function artSection(job, art, redrawing, puppets) {
   };
   return `<section><h3>Phong cách vẽ, intro và outro</h3>
     <div class="meta">★ Gợi ý ${sg.by === "brain" ? "của bộ não" : "theo chủ đề"}: <b>${esc(styleName(sg.style))}</b> · intro ${esc(themeName(sg.intro))} · outro ${esc(themeName(sg.outro))}${sg.why ? `: <i>${esc(sg.why)}</i>` : ""}</div>
-    <p style="margin:12px 0 4px"><b>Nhân vật</b></p>
-    <div class="styles">${[["vector", "Vector", "vẽ bằng code: nhẹ, nhanh, làm được mọi thứ (ngựa, thú vật)"], ["puppet", "Vẽ tay (rối giấy)", "máy vẽ từng nhân vật theo phong cách rồi cắt thành rối: đẹp như tranh; mỗi nhân vật mới vẽ khoảng 30 phút, rồi lưu thư viện"]].map(([k, name, desc]) => `<div class="sty ${art.characters === k ? "on" : ""}" onclick="setArt({ characters: '${k}' })">
-      <img src="/art/style/characters-${k}.jpg" onerror="this.outerHTML='<div class=ph>chưa có ảnh mẫu</div>'">
-      ${art.characters === k ? `<span class="chosen">✔ đang chọn</span>` : ""}<b>${name}</b><small>${desc}</small></div>`).join("")}</div>
-    ${puppets ? `<div class="${puppets.missing.length ? "warn" : "meta"}">${puppets.missing.length ? `Đang chờ vẽ rối: ${puppets.total - puppets.missing.length}/${puppets.total} nhân vật xong (còn: ${puppets.missing.map(esc).join(", ")}). Bảng trang phục tự cập nhật khi vẽ xong; video chỉ render khi đủ rối.` : `Đủ rối cho ${puppets.total} nhân vật.`}</div>` : ""}
     <p style="margin:12px 0 4px"><b>Phong cách vẽ</b></p>
     <div class="styles">${ART.styles.map((s) => `<div class="sty ${s.key === art.style ? "on" : ""}" onclick="setArt({ style: '${s.key}' })" title="${esc(s.for)}">
       ${s.sample ? `<img src="${s.sample}">` : `<div class="ph">chưa có ảnh mẫu</div>`}

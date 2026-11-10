@@ -50,7 +50,7 @@ Node ≥ 22.18 chạy TypeScript trực tiếp, không có bước build. Import
   - SD-Turbo chỉ còn làm dự phòng (giấy phép Stability phải đăng ký nếu kiếm tiền).
 - **Intro/outro:** 6 bộ (`brand/brand.html` cho trống đồng, `brand/themes.js` cho các bộ khác), chọn theo `project.json` `"brand": {intro, outro}`. Clip cache ở `assets/brand/clips/`; sửa thiết kế thì xóa file trong đó.
 - **Lựa chọn của từng video** (`job.art`, `src/studio/art.ts`): bộ não gợi ý, người dùng đổi trên trang duyệt, render thì đồng bộ vào `project.json`.
-- **Nhân vật vẽ tay (rối giấy):** `project.json` `"characters": "puppet"`. FLUX vẽ nhân vật ở góc ba phần tư, `puppet/cut.py` cắt thành mảnh, `runtime/puppet.js` diễn bằng chính tư thế của `motions.js`. Rối lưu ở `assets/library/puppets/`. Cài bằng `scripts/setup-puppet.sh`. Chi tiết trong LIBRARY.md.
+- **Nhân vật** luôn là vector. Hướng rối vẽ tay (cắt tranh AI thành rối) đã thử ngày 10/11/2026 và bỏ: khớp vai không liền mạch được, đừng làm lại theo cách đó.
 
 ## Giọng
 

@@ -18,23 +18,40 @@
   const LAYERS = [["clouds", 0.04], ["far", 0.1], ["mid", 0.25], ["village", 0.55], ["ground", 1], ["back", 1], ["shadows", 1], ["actors", 1], ["fx", 1], ["front", 1.45]];
   const HAZE_AFTER = { far: 0.1, mid: 0.07, village: 0.04 };
 
+  /**
+   * How the light of the time of day falls on the characters: a colour they are tinted towards
+   * (amt), their brightness, and how long their shadows reach (cast: low sun = long shadows).
+   * side: where the light comes from on screen (+1 right, -1 left); a scene may override any of it.
+   */
+  const LIGHT = {
+    dawn: { tint: "#ffc4a8", amt: 0.2, bright: 0.96, cast: 0.7 },
+    day: { tint: "#fff2d8", amt: 0.05, bright: 1, cast: 0.18 },
+    dusk: { tint: "#ffa860", amt: 0.3, bright: 0.88, cast: 0.8 },
+    night: { tint: "#8da2ff", amt: 0.42, bright: 0.64, cast: 0.08 },
+  };
+
   function createStage(parent, W, H, time = "day") {
     const P = PALETTES[time] || PALETTES.day;
     const svg = el("svg", { width: W, height: H, viewBox: `0 0 ${W} ${H}` }, parent);
     const defs = el("defs", {}, svg);
-    const S = { svg, defs, W, H, palette: P, time, layers: {}, materials: {}, ids: 0, hazeNodes: [] };
+    const S = { svg, defs, W, H, palette: P, time, layers: {}, materials: {}, ids: 0, hazeNodes: [], light: { side: 1, ...(LIGHT[time] || LIGHT.day) } };
 
     S.addDefs = (html) => defs.insertAdjacentHTML("beforeend", html);
     S.id = (prefix = "d") => `${prefix}${S.ids++}`;
     /** Rounded shading across a part (shadow side, base, warm rim) or down it (vertical). */
     S.mat = (hex, vertical = false) => {
-      const key = hex + (vertical ? "v" : "h");
-      if (S.materials[key]) return S.materials[key];
+      // Flat styles (woodblock prints, paper cut-outs) fill with plain colour, no gradient.
+      if (S.flat) return hex;
+      // While a character is built its materials are its own (matScope), so the lit side of
+      // them can be turned to the light whichever way the character faces (player.js).
+      const store = S.matScope ? S.matScope.mats : S.materials, key = hex + (vertical ? "v" : "h");
+      if (store[key]) return store[key];
       const id = S.id("m"), rim = P.rim;
       S.addDefs(vertical
         ? `<linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${shade(hex, 0.22)}"/><stop offset="0.35" stop-color="${hex}"/><stop offset="1" stop-color="${shade(hex, -0.32)}"/></linearGradient>`
         : `<linearGradient id="${id}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${shade(hex, -0.34)}"/><stop offset="0.5" stop-color="${hex}"/><stop offset="0.82" stop-color="${shade(hex, 0.14)}"/><stop offset="1" stop-color="${WA.core.mixColor(shade(hex, 0.3), rim, 0.35)}"/></linearGradient>`);
-      return (S.materials[key] = `url(#${id})`);
+      if (S.matScope && !vertical) S.matScope.list.push(defs.lastElementChild);
+      return (store[key] = `url(#${id})`);
     };
     /** A vertical two-colour gradient (hills, ground). */
     S.grad = (top, bottom, at = 0.6) => {
@@ -100,7 +117,9 @@
       // The model's pictures often have a stray line of pixels at the edge, which mirroring
       // doubles into a visible seam: each tile is drawn a little larger and clipped to size.
       const cid = S.id("bdclip");
-      el("rect", { x: -0.4, y: 0, width: size[0] + 0.8, height: size[1] }, el("clipPath", { id: cid }, defs));
+      // Neighbouring (mirrored) tiles also overlap by 2 units, so no hairline of the sky shows
+      // between them at small frame sizes, where 0.4 unit is under half a pixel.
+      el("rect", { x: -2, y: 0, width: size[0] + 4, height: size[1] }, el("clipPath", { id: cid }, defs));
       for (let i = -3; i <= 3; i++) {
         const t = g(S.backdropNode, { "clip-path": `url(#${cid})` });
         el("image", { href, x: -4, y: -3, width: size[0] + 8, height: size[1] + 6, preserveAspectRatio: "none" }, t);

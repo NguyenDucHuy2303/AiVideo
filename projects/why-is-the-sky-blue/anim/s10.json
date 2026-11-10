@@ -1,0 +1,61 @@
+{
+  "castFile": "cast.json",
+  "duration": 7.03,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "neutral"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "neutral"
+    },
+    {
+      "actor": "huy",
+      "at": 4.92,
+      "do": "talk",
+      "face": "neutral"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 600'><text x='500' y='75' text-anchor='middle' font-family='sans-serif' font-size='44' fill='#2a2a40'>How Long Is a Wave?</text><path class='draw' data-in='0.4' d='M80 350 q60 -100 120 0 t120 0 t120 0 t120 0 t120 0 t120 0 t120 0' fill='none' stroke='#fb8c00' stroke-width='9' stroke-linecap='round'/><circle data-in='1.8' cx='380' cy='300' r='13' fill='#e53935' stroke='#3a2a20' stroke-width='4'/><circle data-in='2.8' cx='620' cy='300' r='13' fill='#e53935' stroke='#3a2a20' stroke-width='4'/><g data-in='3.3'><line x1='380' y1='290' x2='380' y2='225' stroke='#3a2a20' stroke-width='4' stroke-dasharray='8 8'/><line x1='620' y1='290' x2='620' y2='225' stroke='#3a2a20' stroke-width='4' stroke-dasharray='8 8'/><line x1='395' y1='240' x2='605' y2='240' stroke='#3a2a20' stroke-width='6'/><polygon points='380,240 405,226 405,254' fill='#3a2a20'/><polygon points='620,240 595,226 595,254' fill='#3a2a20'/></g><text data-in='4' x='500' y='195' text-anchor='middle' font-family='sans-serif' font-size='48' fill='#2a2a40'>Wavelength</text><text data-in='4.7' x='500' y='500' text-anchor='middle' font-family='sans-serif' font-size='36' fill='#2a2a40'>= how long one wave is</text></svg>"
+  },
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

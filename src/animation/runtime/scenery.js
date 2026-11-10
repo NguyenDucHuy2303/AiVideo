@@ -358,6 +358,8 @@
   function build(S, name, opts = {}) {
     const R = rand(opts.seed ?? 11);
     clouds(S, 8, 21);
+    // Only the painting (question channel places: a studio, a beach, a rooftop…) and the objects.
+    if (name === "plain") return (opts.objects || []).map((o) => ({ o, node: object(S, o) }));
     if (name === "sky") {
       cloudFloor(S);
       return (opts.objects || []).map((o) => ({ o, node: object(S, o) }));
