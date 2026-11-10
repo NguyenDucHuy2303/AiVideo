@@ -110,7 +110,7 @@ function sceneOf(d: Directed, plan: QAPlan, i: number, seconds: number): Record<
   return {
     castFile: "cast.json", duration: Math.max(1, Math.round(seconds * 100) / 100), time: d.time, style: STYLE, styleLook: styleOf(STYLE).look,
     set: { name: "plain" }, place: d.layout === "place" ? d.place : STUDIO, cast, actions, shots: [shot],
-    ...(d.layout === "board" && d.board.trim() ? { board: { svg: d.board } } : {}),
+    ...(d.layout === "board" && d.board.trim() ? { board: { svg: d.board }, speakerShots: false } : {}),
   };
 }
 

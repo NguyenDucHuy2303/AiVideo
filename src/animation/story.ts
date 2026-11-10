@@ -244,6 +244,8 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
       }
       if (speech.length) {
         s.scene.speech = speech;
+        // A scene can keep its own framing (speakerShots: false), e.g. a presenter beside a board.
+        if (s.scene.speakerShots === false) { clipStart += D; continue; }
         // Cut to the speaker for the line, then back to the shot that was running.
         // While someone speaks the close-up on them wins: shots planned inside a line give way.
         const long = (speech as { from: number; to: number }[]).filter((sp) => sp.to - sp.from >= 0.8);

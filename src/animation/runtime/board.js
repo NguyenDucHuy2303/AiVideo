@@ -27,7 +27,7 @@
 
   function build(S, board, parent) {
     const { W, H } = S;
-    const x = (board.x ?? 0.36) * W, y = (board.y ?? 0.08) * H, w = (board.w ?? 0.61) * W, h = (board.h ?? 0.78) * H;
+    const x = (board.x ?? 0.36) * W, y = (board.y ?? 0.08) * H, w = (board.w ?? 0.61) * W, h = (board.h ?? 0.74) * H;
     const root = g(parent);
     // The card: a soft shadow, a rounded panel, a thin frame.
     el("rect", { x: f2(x + 8), y: f2(y + 12), width: f2(w), height: f2(h), rx: 26, fill: "#000", opacity: 0.18 }, root);
@@ -68,10 +68,12 @@
     return { root, items };
   }
 
-  /** The board at scene time t (pop-in of the card itself at the start). */
+  /** The board at scene time t (the card pops in at the start: solid at once, growing to size). */
   function render(B, t) {
-    const k = smooth(clamp(t / 0.35));
-    B.root.setAttribute("opacity", f2(k));
+    const k = smooth(clamp(t / 0.3));
+    B.root.style.transformBox = "fill-box";
+    B.root.style.transformOrigin = "center";
+    B.root.style.transform = `scale(${f2(0.9 + 0.1 * k)})`;
     for (const it of B.items) {
       const inK = Number.isFinite(it.at) ? smooth(clamp((t - it.at) / 0.35)) : 1;
       const outK = Number.isFinite(it.out) ? 1 - smooth(clamp((t - it.out) / 0.3)) : 1;
