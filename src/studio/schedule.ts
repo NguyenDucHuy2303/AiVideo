@@ -8,7 +8,8 @@
  * The writer keeps `scriptsAhead` scripts waiting for review, proposing new topics when short,
  * so the user can approve several at once and the nights never run dry.
  */
-import { dailyPick, PICK_DEFAULTS, type PickSettings } from "./pick.ts";
+import { dailyPick, lineOf, PICK_DEFAULTS, proposerOf, type PickSettings } from "./pick.ts";
+import { proposeQuestions } from "./qa.ts";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { exists } from "../utils/fs.ts";
@@ -48,7 +49,7 @@ export function isOffice(at: Date, s: ScheduleSettings): boolean {
   return s.office.days.includes(at.getDay()) && now >= minutes(s.office.start) && now < minutes(s.office.end);
 }
 
-interface State { pid: number; since: string; window: "office" | "free"; task?: { slug: string; what: string; since: string }; lastTick?: string; lastError?: string; nextTopicsAt?: string; pickedOn?: string }
+interface State { pid: number; since: string; window: "office" | "free"; task?: { slug: string; what: string; since: string }; lastTick?: string; lastError?: string; nextTopicsAt?: Record<string, string>; pickedOn?: string }
 let state: State = { pid: process.pid, since: new Date().toISOString(), window: "free" };
 
 async function save(): Promise<void> {
@@ -95,20 +96,37 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   if (enPrep && !(await brainSettings()).paused) return { what: "english", slug: enPrep.slug, run: () => english(enPrep.slug, "prepare", say(enPrep.slug)) };
   const toWrite = first((j) => j.status === "writing" || j.status === "rewrite");
   if (toWrite) return { what: "write", slug: toWrite.slug, run: () => writeJob(toWrite.slug, say(toWrite.slug)) };
-  const waiting = jobs.filter((j) => ["writing", "rewrite", "review"].includes(j.status) && j.kind !== "qa").length;
-  if (waiting < s.scriptsAhead && (!state.nextTopicsAt || new Date(state.nextTopicsAt) <= new Date())) {
+  // Every content line keeps its scripts written ahead: running low, it finds new topics its
+  // own way (stories or questions), at most once an hour per line, also after a failure.
+  for (const line of s.pick.lines) {
+    const mine = jobs.filter((j) => lineOf(j, s.pick.lines) === line);
+    const waiting = mine.filter((j) => ["writing", "rewrite", "review"].includes(j.status)).length, ahead = line.ahead ?? s.scriptsAhead;
+    const next = state.nextTopicsAt?.[line.id];
+    if (waiting >= ahead || (next && new Date(next) > new Date())) continue;
     return {
-      what: "topics",
+      what: `topics ${line.id}`,
       run: async () => {
         try {
-          for (const t of await proposeTopics(Math.min(5, s.scriptsAhead - waiting), (l) => void log(l.trim()))) {
-            const job = await newJob(t.title, { kind: t.kind, era: t.era, summary: t.summary });
-            await fs.writeFile(path.join(jobDir(job.slug), "topic.json"), JSON.stringify(t, null, 2));
-            await log(`+ ${job.slug} [${t.era}]`);
+          const count = Math.min(5, ahead - waiting);
+          if (proposerOf(line) === "questions") {
+            const made = await Promise.all(mine.map(async (j) => {
+              const f = path.join(jobDir(j.slug), "topic.json");
+              return { topic: j.topic, area: (await exists(f)) ? JSON.parse(await fs.readFile(f, "utf8")).area : undefined };
+            }));
+            for (const q of await proposeQuestions(count, made, (l) => void log(l.trim()))) {
+              const job = await newJob(q.question, { kind: "qa", summary: q.why });
+              await fs.writeFile(path.join(jobDir(job.slug), "topic.json"), JSON.stringify(q, null, 2));
+              await log(`+ ${job.slug} [${q.area}]`);
+            }
+          } else {
+            for (const t of await proposeTopics(count, (l) => void log(l.trim()))) {
+              const job = await newJob(t.title, { kind: t.kind, era: t.era, summary: t.summary });
+              await fs.writeFile(path.join(jobDir(job.slug), "topic.json"), JSON.stringify(t, null, 2));
+              await log(`+ ${job.slug} [${t.era}]`);
+            }
           }
         } finally {
-          // Proposals at most every hour, also after a failure.
-          state.nextTopicsAt = new Date(Date.now() + 60 * 60_000).toISOString();
+          state.nextTopicsAt = { ...(state.nextTopicsAt ?? {}), [line.id]: new Date(Date.now() + 60 * 60_000).toISOString() };
         }
       },
     };

@@ -1,0 +1,708 @@
+{
+  "title": "Why Do We Have Seasons? | Ask Huy",
+  "question": "Why do we have seasons?",
+  "answer": "Earth's spin axis is tilted by about 23 degrees, and the tilt always points the same way in space. As Earth travels around the Sun, each half of the planet leans toward the Sun for part of the year and away from it for the other part. When your half leans toward the Sun, the Sun climbs high and the days are long, so it is summer. When it leans away, the Sun stays low and the days are short, so it is winter. Earth's distance from the Sun is not what causes seasons.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "A split picture of Mai. On the left she wears shorts and sandals under a bright summer sun. On the right she wears a puffy coat in the snow. Huy stands in the middle, shrugging and smiling."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Mai, in summer you wear shorts and sandals. In winter you wear a big puffy coat. But why does the weather change at all?"
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Wait, it does not just happen by magic?"
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy talks to the camera. Next to him a small Earth with a January calendar page sits very close to a smiling Sun. The top half of the Earth is covered in snow."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here is a surprise. Earth comes closest to the Sun in early January. But January is winter in the top half of the world! Today we will find out what really makes summer, autumn, winter and spring."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai points at a drawing on a whiteboard. Earth sits close to the Sun with the word summer, and far from the Sun with the word winter. A cosy heater stands in the corner of the room."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "proudly",
+          "text": "I know! In summer, Earth moves closer to the Sun. In winter, it moves far away."
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "That is a great guess, Mai. Near a heater you feel warm, and far away you feel cooler. Lots of grown-ups think this too."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "diagram",
+        "what": "Earth's path around the Sun, drawn as a loop that is almost a perfect circle. A small label at the closest point says January and shows a snowflake over the top half of Earth."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "But look at Earth's path around the Sun. It is almost a perfect circle, so the distance changes only a little. And Earth is closest in January, when the north is having winter!"
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Closest, and it is still cold?"
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "compare",
+        "what": "Two pictures side by side with the same calendar date above them. On the left, a child in Canada builds a snowman. On the right, a child in Australia plays at the beach in the sun."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here is another clue. On the very same day, it can be winter in Canada and summer in Australia. If distance made the seasons, the whole Earth would have summer at once."
+        },
+        {
+          "who": "Mai",
+          "how": "",
+          "text": "Then what makes them?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "The secret is a tilt!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "diagram",
+        "what": "The Sun in the middle and Earth moving along a big loop around it, with a dotted arrow showing the path. The loop is labelled orbit and a badge reads about 365 days."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step one. Earth travels around the Sun in a giant loop called an orbit. One full trip takes about 365 days. That is one year!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "count",
+        "what": "A long measuring ribbon stretching from Earth to the Sun, labelled about 150 million kilometres. A second, much longer ribbon wraps around the orbit, labelled about 940 million kilometres in one year."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "The Sun is about 150 million kilometres away. In one year, Earth travels about 940 million kilometres around it."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "And I thought the walk to school was long!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "labels",
+        "what": "Earth spinning like a top, with a dashed line running through it from top to bottom. Labels say North Pole, South Pole and axis, and a curved arrow shows the spin."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Earth also spins, like a spinning top. It turns around an invisible line that goes through the North Pole and the South Pole. That line is called the axis. One spin gives us one day and one night."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "diagram",
+        "what": "Earth with its axis leaning to one side next to a straight up and down dotted line. The gap between them is marked about 23 degrees. In a small corner picture, Mai leans back on her chair."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Now here is the secret. Earth's axis is not straight up and down. It leans to one side, by about 23 degrees. We call that the tilt."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "Earth is like me leaning back on my chair!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "arrows",
+        "what": "Earth drawn at four places around its orbit. At every place its axis arrow leans in exactly the same direction, all pointing toward the same corner of the picture."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "And the tilt always points the same way in space, all year long, wherever Earth is in its orbit."
+        },
+        {
+          "who": "Huy",
+          "how": "firmly",
+          "text": "So remember. Earth is tilted, and the tilt always points the same way."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "Earth on one side of the Sun with a June label. Its top half leans toward the Sun and glows brightly."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step two. Let's watch Earth travel. In June, the top half of Earth leans toward the Sun."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "labels",
+        "what": "Earth with a line around its middle. The top half is coloured blue and labelled Northern Hemisphere. The bottom half is coloured green and labelled Southern Hemisphere."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Each half of Earth has a name. Half of a ball is called a hemisphere. The top half is the Northern Hemisphere. The bottom half is the Southern Hemisphere."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "Earth now on the opposite side of the Sun with a December label. The axis still leans the same way, so the top half now leans away from the Sun and looks dimmer."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Six months later, in December, Earth is on the other side of the Sun. The tilt still points the same way. So now the north leans away from the Sun."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "experiment",
+        "what": "In a classroom, a lamp stands in the middle as the Sun. Mai walks in a circle around it holding a ball on a tilted stick that always leans toward the window."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "happily",
+          "text": "Let me try! I walk around the lamp, and keep my ball leaning toward the window. Now the top leans toward the lamp. Now it leans away!"
+        },
+        {
+          "who": "Huy",
+          "how": "proudly",
+          "text": "Exactly! For half the year, your half of Earth leans toward the Sun. For the other half, it leans away."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "compare",
+        "what": "Two lunchtime pictures of Mai in a park. In summer the Sun is high and her shadow is short. In winter the Sun is low and her shadow is long."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step three. Why does leaning toward the Sun make it warm? First, the Sun climbs high in the sky. In winter, it stays low, even at lunchtime."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "That is why my shadow is so long in winter!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "experiment",
+        "what": "Huy holds a torch pointing straight down at a sheet of paper. It makes a small, round, very bright spot."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "A high Sun shines straight down. Watch this torch. Point it straight down, and you get a small, bright spot."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "experiment",
+        "what": "Huy tilts the same torch, and the light makes a big, stretched, dimmer oval on the paper. In a corner picture, a tiny bit of butter is spread over a giant slice of toast."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Now tilt the torch, like a low winter Sun. The same light spreads over a much bigger patch, so each bit gets less."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "It is like spreading a tiny bit of butter on a giant piece of toast!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "compare",
+        "what": "Two clocks with day and night colours. The summer clock has a big yellow daytime part. The winter clock has a small yellow part and a big dark night part."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Second, when your half leans toward the Sun, the days are longer. The Sun rises early and sets late, so the ground has more hours to warm up. In winter, days are short and nights are long."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "count",
+        "what": "A calendar strip for the year. 21 June is marked with a big sun and the words longest day. 21 December is marked with a small sun and the words shortest day."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "The longest day of the year is called the summer solstice. In the north, it comes around 21 June. The shortest day, the winter solstice, comes around 21 December. Solstice comes from old Latin words meaning the sun stands still."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "count",
+        "what": "The same calendar strip, now with 20 March and 23 September marked with a balanced scale showing a sun on one side and a moon on the other."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "In between, around 20 March and 23 September, day and night are about the same length. These days are called equinoxes, and they mark spring and autumn."
+        },
+        {
+          "who": "Mai",
+          "how": "happily",
+          "text": "So spring and autumn are the in-between seasons!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai dips one toe into a swimming pool on a sunny early summer day and shivers. A calendar on the wall shows the hottest weeks coming about a month after June 21."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "The hottest weeks usually come about a month after the longest day. The land and sea take time to warm up, just like a swimming pool stays chilly at the start of summer."
+        },
+        {
+          "who": "Huy",
+          "how": "firmly",
+          "text": "High Sun and long days make summer. Low Sun and short days make winter."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "map",
+        "what": "A globe with the top half dusted with snow and labelled winter. The bottom half is sunny and green and labelled summer. The Sun shines from the side, lighting the bottom half more."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step four. Because Earth is tilted, the two hemispheres always have opposite seasons. When the north leans away and has winter, the south leans toward the Sun and has summer."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "A December calendar page floats above two children. A child in Australia builds a sandcastle on a sunny beach while a child in the north builds a snowman."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "So kids in Australia have summer in December?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Yes! In Australia, summer begins on 1 December. Some kids build sandcastles while others are building snowmen!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "map",
+        "what": "A world map with a band around the middle shaded in. Inside the band there are two icons, a rain cloud for the rainy season and a dry sun for the dry season. The top part of Australia is highlighted."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Near the middle of the Earth, the temperature does not change very much. Many of these places have just two seasons, a rainy season and a dry season. The top part of Australia is like this."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "compare",
+        "what": "Two pictures of a snowy polar land. On the left, a clock shows midnight and the Sun is still in the sky. On the right, it is dark with stars at lunchtime. Mai peeks out from behind thick curtains."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Near the poles, the tilt makes things extreme. In summer, the Sun stays up even at midnight. That is the midnight sun. In winter, some days have no sunshine at all. That is polar night."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Bedtime in daylight? I would need very thick curtains!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "A farm shown in two halves. On the left, a farmer plants seeds in spring with little green shoots. On the right, the same farmer gathers a golden harvest in autumn."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Seasons change how we live too. Farmers often plant crops in spring and harvest them in autumn."
+        },
+        {
+          "who": "Huy",
+          "how": "firmly",
+          "text": "So the season you get depends on where on Earth you live."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "compare",
+        "what": "Our tilted Earth next to an imaginary Earth with a perfectly straight axis. The straight Earth has the same calendar picture repeated for every month."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "",
+          "text": "Huy, what if Earth stood up straight, with no tilt at all?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Then the Sun's height and the length of the day would hardly change all year. Scientists think the seasons would almost disappear!"
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "diagram",
+        "what": "Uranus, a blue planet, rolling around the Sun on its side with its axis lying almost flat. A label says about 98 degrees, and a small cartoon rock bumps it in a corner bubble."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Some planets lean much more than Earth. Uranus rolls around the Sun on its side, tilted about 98 degrees! Scientists think a giant crash long ago may have knocked it over."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "Poor Uranus, it fell over and never got up!"
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Mai and a grown-up at a kitchen table with a torch and a sheet of paper. There are two pencil outlines on the paper, a small round one and a big stretched oval."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "You can check the torch trick at home with a grown-up. Shine a torch straight down on paper and draw around the bright spot. Then tilt the torch and draw again."
+        },
+        {
+          "who": "Mai",
+          "how": "proudly",
+          "text": "The tilted spot is bigger and dimmer, just like winter sunshine!"
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "host",
+        "what": "Huy talks to the camera next to a small tilted Earth going around the Sun. A summer icon and a winter icon appear as each half leans toward and away from the Sun."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So, why do we have seasons? Earth is tilted. As it travels around the Sun, each half leans toward the Sun and then away. Leaning toward means a high Sun and long days, so summer. Leaning away means winter."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "count",
+        "what": "Earth with speed lines zooming along its orbit and a speedometer reading about 30 kilometres every second. A stopwatch shows about 7 minutes next to a line drawn across Earth's width."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Fun fact. Earth zooms around the Sun at about 30 kilometres every second. That is fast enough to cross the whole width of the Earth in about 7 minutes!"
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "And I cannot even feel it moving!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "scene",
+        "what": "Huy and Mai lie on the grass looking up at a bright blue sky with a big question mark cloud. A subscribe button floats beside them."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Next time, we will ask why the sky is blue. Do not miss it!"
+        },
+        {
+          "who": "Mai",
+          "how": "joyfully",
+          "text": "Subscribe and come back with your own questions!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Many areas of the Earth have four seasons: spring, summer, autumn and winter.",
+      "source": "Season"
+    },
+    {
+      "claim": "Earth is closest to the Sun in early January (around 3 January) and farthest in early July, so the north is coldest when Earth is nearest.",
+      "source": "Earth's orbit"
+    },
+    {
+      "claim": "Earth's orbit is almost a circle (eccentricity close to zero), so the distance to the Sun changes only a little; the distance effect is much smaller than the effect of the tilt.",
+      "source": "Earth's orbit"
+    },
+    {
+      "claim": "The northern and southern hemispheres always have opposite seasons.",
+      "source": "Season"
+    },
+    {
+      "claim": "The axial tilt of Earth causes the seasons.",
+      "source": "Axial tilt"
+    },
+    {
+      "claim": "One full orbit takes about 365 days.",
+      "source": "Earth's orbit"
+    },
+    {
+      "claim": "Earth is on average about 150 million km from the Sun and travels about 940 million km in one orbit.",
+      "source": "Earth's orbit"
+    },
+    {
+      "claim": "Earth spins on an axis through the North and South Poles; one spin gives day and night.",
+      "source": "Basic school knowledge"
+    },
+    {
+      "claim": "Earth's axis is tilted by about 23 degrees (23.44°).",
+      "source": "Axial tilt"
+    },
+    {
+      "claim": "The axis keeps the same direction in space as Earth orbits.",
+      "source": "Solstice"
+    },
+    {
+      "claim": "For half the year the Northern Hemisphere leans toward the Sun, and for the other half the Southern Hemisphere does.",
+      "source": "Solstice"
+    },
+    {
+      "claim": "A hemisphere is a half of the Earth.",
+      "source": "Season"
+    },
+    {
+      "claim": "Summer is warm because the days are longer and the Sun is high, giving direct light; winter is cold because the days are shorter and the Sun is low, giving indirect light.",
+      "source": "Season"
+    },
+    {
+      "claim": "When the Sun is low, shadows are longer; light hitting at a slant spreads over a bigger area.",
+      "source": "Basic school knowledge"
+    },
+    {
+      "claim": "The summer solstice is the longest day and the winter solstice the shortest; in the north they come around 21 June and 21 December.",
+      "source": "Earth's orbit"
+    },
+    {
+      "claim": "The word solstice comes from the Latin sol (sun) and sistere (to stand still).",
+      "source": "Solstice"
+    },
+    {
+      "claim": "At the equinoxes, around 20 March and 23 September, day and night are about the same length; solstices and equinoxes mark the seasons.",
+      "source": "Earth's orbit"
+    },
+    {
+      "claim": "The warmest and coldest periods of the year come about one month after the solstices because Earth takes time to warm up and cool down.",
+      "source": "Solstice"
+    },
+    {
+      "claim": "In Australia, summer begins on 1 December.",
+      "source": "Season"
+    },
+    {
+      "claim": "Tropical places often have two seasons, rainy and dry, because the rain changes more than the temperature; northern Australia is an example.",
+      "source": "Season"
+    },
+    {
+      "claim": "Near the poles there is midnight sun in summer and polar night with no daylight in winter.",
+      "source": "Earth's orbit"
+    },
+    {
+      "claim": "Crops are often planted in spring and harvested in autumn.",
+      "source": "Season"
+    },
+    {
+      "claim": "Without the tilt, the Sun's height and day length would hardly change, so seasons would almost disappear (inferred from tilt being the cause of seasons).",
+      "source": "Axial tilt"
+    },
+    {
+      "claim": "Uranus rotates on its side with a tilt of about 98 degrees (97.75); the usual idea is that a large collision long ago knocked it over.",
+      "source": "Axial tilt"
+    },
+    {
+      "claim": "Earth moves around the Sun at about 30 km per second, fast enough to cross the planet's diameter in about 7 minutes.",
+      "source": "Earth's orbit"
+    }
+  ],
+  "shorts": [
+    1,
+    9,
+    30,
+    31
+  ],
+  "thumbnail": "Closest to Sun in WINTER?!",
+  "description": "Why is it hot in summer and cold in winter? Huy and Mai find out it's not about how close Earth is to the Sun. It's all about Earth's tilt, with a simple torch test you can try at home with a grown-up. A short, fact-checked science video for curious kids aged 6–12 and the grown-ups who watch with them.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": ""
+}

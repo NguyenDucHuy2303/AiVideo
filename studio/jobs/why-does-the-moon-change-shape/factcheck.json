@@ -1,0 +1,16 @@
+{
+  "issues": [
+    {
+      "scene": 11,
+      "quote": "It takes the Moon about 29 and a half days to go around and come back to the same shape. That is about one month. Mai: A whole month for one lap? Huy: The Moon is very far away, Mai. Its loop is enormous!",
+      "problem": "Mixes up two things. 29.5 days is the time for the phases to repeat. A real lap around Earth takes about 27 days, because Earth also moves around the Sun. Mai's \"one lap\" then gets the 29.5 days. The sources only give 29.5 days for the phase cycle, not for a lap. Saying the long trip is only because the Moon is far away is also a simplification.",
+      "fix": "It takes the Moon about 29 and a half days to go through all its shapes and come back to the same one. That is about one month. Mai: A whole month for the shapes to repeat? Huy: Yes, Mai. The Moon's loop around Earth is enormous, and it takes about a month to go round."
+    },
+    {
+      "scene": 13,
+      "quote": "We never see it from here.",
+      "problem": "Too absolute. The sources say the Moon wobbles a little (libration), so from Earth we can sometimes see a small part of the far side, up to about 5%. Most of the far side stays hidden.",
+      "fix": "We can hardly ever see it from here. The Moon wobbles a tiny bit, but most of the far side stays hidden."
+    }
+  ]
+}

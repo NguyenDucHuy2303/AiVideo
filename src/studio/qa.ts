@@ -212,3 +212,32 @@ export async function writeQA(slug: string, log: (s: string) => void = console.l
   await saveJob(job);
   return problems;
 }
+
+/** The four areas of questions, kept in balance by the proposer. */
+export const AREAS = ["science & nature", "animals & the human body", "world history & geography", "how things work & are made"] as const;
+export interface Question { question: string; area: (typeof AREAS)[number]; why: string }
+
+/**
+ * New questions for the channel: the brain proposes questions children really ask (and search
+ * for), none already made, the areas with the fewest questions first (~6k tokens a batch).
+ */
+export async function proposeQuestions(count: number, made: { topic: string; area?: string }[], log?: (s: string) => void): Promise<Question[]> {
+  const per = Object.fromEntries(AREAS.map((a) => [a, made.filter((m) => m.area === a).length]));
+  const { data } = await think<{ questions: Question[] }>({
+    job: "topics-qa", step: "propose-questions", model: "sonnet",
+    system: `You plan the videos of "${QA.channel}", an animated YouTube channel that answers one question per video for children aged 6–12.`,
+    schema: { type: "object", properties: { questions: { type: "array", items: { type: "object", properties: { question: { type: "string" }, area: { enum: [...AREAS] }, why: { type: "string" } }, required: ["question", "area", "why"] } } }, required: ["questions"] },
+    prompt: [
+      `Propose ${count} questions for the next videos.`,
+      "- Questions children really ask and parents search for (Why…? How…? What…? Which…? When…?), each answerable in 5–8 minutes from Wikipedia-level sources, with a clear, true answer.",
+      "- Visual: the answer can be shown with simple diagrams, places and comparisons.",
+      "- Safe and friendly for children: no frightening, violent or medical-advice topics.",
+      `- Balance the areas; so far: ${AREAS.map((a) => `${a} ${per[a]}`).join(", ")}. Give more to the areas with fewer.`,
+      "- Not any of these (made or waiting), nor the same question in other words:",
+      ...made.map((m) => `  - ${m.topic}`),
+      "- why: one line on why children will click and watch to the end.",
+    ].join("\n"),
+  }, log);
+  const seen = new Set(made.map((m) => m.topic.toLowerCase().replace(/[^a-z ]/g, "").trim()));
+  return data.questions.filter((q) => !seen.has(q.question.toLowerCase().replace(/[^a-z ]/g, "").trim()));
+}

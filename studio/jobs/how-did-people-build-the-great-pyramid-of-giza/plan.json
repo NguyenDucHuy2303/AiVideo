@@ -1,0 +1,695 @@
+{
+  "title": "How Did People Build the Great Pyramid of Giza?",
+  "question": "How did people build the Great Pyramid of Giza?",
+  "answer": "About 4,500 years ago, thousands of paid, skilled Egyptian workers cut the stone blocks with copper tools, hard stones and sand. They carried the blocks by boat on the Nile and dragged them over land on wooden sledges. Then they got them up the pyramid with ramps and levers. The work took about 20 years. Scientists still don't agree on exactly what the ramps looked like.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Huy and a tiny Mai stand in the sandy desert at the foot of the Great Pyramid, craning their necks to look up at the top. A small sun shines in a blue sky."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Huy, this pyramid is gigantic! How did people build it without trucks or cranes?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Great question, Mai. Here is a surprise. It was built more than 4,500 years ago, and it has about 2,300,000 stone blocks!"
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy talks to camera with the pyramid behind him. Four round icons pop up beside him, one at a time: a chisel, a boat, a ramp and a crowd of workers."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Today we find out how the Egyptians cut the stones, moved them, lifted them up, and who did all that hard work. Let's go back in time!"
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai with a thought bubble showing sad-looking slaves pulling a big block while a bossy man points. Huy listens and nods kindly."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "firmly",
+          "text": "I know! Slaves built it. Lots of them, forced to work."
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "That's a very sensible guess. Even the ancient Greeks believed it, long after the pyramid was built."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Archaeologists with brushes and hats gently dig in the sand near the pyramid and uncover simple stone graves. A small sign says 1990."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "But in 1990, archaeologists found the workers' graves near the pyramid. Archaeologists are scientists who dig up clues from the past. The clues show the builders were workers who got paid. Some worked as a kind of tax, which means paying the king with work instead of money."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "So they were builders with a real job?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Exactly! And how they did it is a story in four steps."
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "beat": "step",
+      "visual": {
+        "kind": "map",
+        "what": "A simple map of Egypt with the blue river Nile running from bottom to top. Dots are labelled Giza, Tura across the river from Giza, and Aswan far to the south."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "The pyramid was built for a king called Khufu. Egyptian kings were called pharaohs. Most of the stone came from right next to the building site. Fine white limestone came from Tura, across the river Nile. Very hard granite came from Aswan, far to the south."
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "beat": "step",
+      "visual": {
+        "kind": "scene",
+        "what": "A sunny stone quarry with tall pale rock walls. Workers tap copper chisels with wooden mallets to cut out a square block."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "A place where people cut stone out of the ground is called a quarry. Workers cut the limestone with copper tools, like chisels, drills and saws."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Copper? Isn't copper quite soft?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Plain copper is. But theirs had another material mixed in, so it was harder, and hammering it made it harder still."
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "beat": "step",
+      "visual": {
+        "kind": "zoom",
+        "what": "A close-up of a copper saw blade on a granite block, with tiny sand grains under the blade and arrows showing the saw moving back and forth."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "worried",
+          "text": "What about the super hard granite?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Copper alone can't cut granite. So workers pounded it with an even harder stone, and sawed it with sand under the blade. The tiny sand grains did the scratching. It took a very long time!"
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "beat": "step",
+      "visual": {
+        "kind": "compare",
+        "what": "A limestone block labelled about 2.5 tonnes next to a smaller family car. Mai stands between them for size."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Most blocks weighed about 2.5 tonnes. That's heavier than a family car! A few giant granite blocks were much heavier."
+        },
+        {
+          "who": "Huy",
+          "how": "proudly",
+          "text": "Step one takeaway. Copper tools, hard stones and sand turned rock into blocks."
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "beat": "step",
+      "visual": {
+        "kind": "scene",
+        "what": "Inside a rocky cave, Mai holds an old papyrus scroll covered in Egyptian writing while Huy points at it."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "How do we know how the stones travelled? In 2013, scientists found old writings in a cave in Egypt. They are the diary of an official named Merer, written more than 4,500 years ago."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "Does it say what he had for lunch?"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "Sadly not! But it says his team took limestone blocks from Tura to Giza by boat."
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "beat": "step",
+      "visual": {
+        "kind": "arrows",
+        "what": "The Nile map again, with little wooden boats carrying blocks and arrows showing them sailing from Tura over to Giza."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Boats were the trucks of ancient Egypt, and the river Nile was the big road. A heavy block is much easier to move floating on water than dragged across the desert."
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "beat": "step",
+      "visual": {
+        "kind": "diagram",
+        "what": "A block on a wooden sledge, pulled by a line of workers with ropes. One worker pours water from a jar onto the sand in front. Labels say sledge, rope and water."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "On land, blocks rode on a sledge. A sledge is a wooden sled, like a snow sled but with no snow. Teams pulled it with ropes. Scientists think water was poured in front to help it slide."
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "beat": "step",
+      "visual": {
+        "kind": "count",
+        "what": "Eight little worker icons in a row holding a rope tied to a block labelled about 2,750 kg, with a big number 8 above them."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "",
+          "text": "How many people did it take to pull one block?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "One expert worked out that about eight workers could move a block of about 2,750 kilograms on a sledge, if the track was made slippery."
+        },
+        {
+          "who": "Mai",
+          "how": "proudly",
+          "text": "Only eight? My football team could do that!"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "Maybe, after a lot of practice!"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "beat": "step",
+      "visual": {
+        "kind": "scene",
+        "what": "A busy riverside. Boats unload blocks onto the bank, and sledges carry them away toward a half-built pyramid."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "proudly",
+          "text": "Step two takeaway. Boats carried the stones along the river, and sledges slid them over land."
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "beat": "step",
+      "visual": {
+        "kind": "compare",
+        "what": "The new pyramid labelled about 146 metres stands beside a football pitch stood up on its end, which is clearly shorter."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Now for the hardest part. When it was new, the pyramid was about 146 metres tall. That's taller than a football pitch is long, if you stood the pitch on its end!"
+        },
+        {
+          "who": "Mai",
+          "how": "worried",
+          "text": "So how do you get a heavy block all the way up there?"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "beat": "step",
+      "visual": {
+        "kind": "diagram",
+        "what": "A half-built pyramid with a sloping path of mud and stones leaning against it. A sledge with a block is being pulled up the path. A label says ramp."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Most experts think the answer starts with ramps. A ramp is a sloping path, like a slide you walk up. Builders dragged the sledges up ramps to the higher layers. Remains of small ramps have been found at the Great Pyramid."
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "beat": "step",
+      "visual": {
+        "kind": "labels",
+        "what": "A worker pushes down on the end of a long wooden pole. The other end tips up the edge of a block. Labels say lever, push down, block lifts."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ramps were probably helped by levers. A lever is a long, strong pole. Push down on one end, and the other end lifts something heavy a little bit. Lever, nudge, lever again, and the block slowly creeps into place."
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "beat": "step",
+      "visual": {
+        "kind": "compare",
+        "what": "Three small pyramid drawings side by side. One has a giant straight ramp with a red X over it, one has a zigzag ramp up one face, and one has a ramp spiralling round the outside, both with question marks."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "",
+          "text": "So what did the ramp look like?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here's a secret. Scientists still don't agree! One giant straight ramp would have been enormous, so most experts think it wasn't that. Some think of a zigzag ramp up one side, or a ramp that spirals round the outside."
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "beat": "step",
+      "visual": {
+        "kind": "diagram",
+        "what": "A cut-open pyramid showing a ramp spiralling up inside its walls, plus a short ramp outside near the bottom. A small label says one idea."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "A French architect called Jean-Pierre Houdin has another idea. He thinks a ramp spiralled up inside the pyramid, plus a ramp outside for the big blocks lower down."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "A ramp hidden inside? That's sneaky!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Maybe they used different tricks at different heights. Scientists are still hunting for clues."
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "beat": "step",
+      "visual": {
+        "kind": "host",
+        "what": "Huy talks to camera, holding a toy ramp in one hand and a big question mark sign in the other."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "firmly",
+          "text": "Step three takeaway. Ramps and levers got the blocks up, but exactly what the ramps looked like is still a mystery."
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "beat": "step",
+      "visual": {
+        "kind": "diagram",
+        "what": "Flat desert ground with long straight trenches full of water. Workers mark the water line on the trench walls with little sticks. A label says the water is flat."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Before the first block, the ground had to be really flat. Some experts think workers dug long trenches and filled them with water. Still water lies flat, so they could mark a level line."
+        },
+        {
+          "who": "Mai",
+          "how": "happily",
+          "text": "Like my bathwater when I stop splashing!"
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "beat": "step",
+      "visual": {
+        "kind": "scene",
+        "what": "A busy workers' camp of simple huts near the half-built pyramid. Groups of workers cut, drag and measure stones."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Experts think about 20,000 workers built it, and it took about 20 years. They camped near the pyramid. They were skilled, which means they were very good at their jobs, like cutting, dragging and measuring."
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "beat": "step",
+      "visual": {
+        "kind": "labels",
+        "what": "A wall of rough, uneven blocks with the gaps filled. Labels say rough block, rubble and gypsum plaster."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "The blocks inside weren't perfect. They were roughly cut. Workers filled the gaps with rubble, which means broken bits of stone, and a kind of plaster called gypsum."
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "beat": "step",
+      "visual": {
+        "kind": "compare",
+        "what": "On the left, the new pyramid covered in smooth white stones. On the right, the pyramid today with its rough stepped blocks and just a few white stones left at the bottom."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Last came the outside. Smooth white stones covered the whole pyramid. Most of them are gone now, but you can still see some around the bottom."
+        },
+        {
+          "who": "Mai",
+          "how": "joyfully",
+          "text": "So it used to be a giant smooth white triangle!"
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "beat": "step",
+      "visual": {
+        "kind": "scene",
+        "what": "A planner in Egyptian clothes unrolls a papyrus plan of the pyramid in front of a group of workers."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "All this needed a planner. Experts think it may have been Hemiunu, the king's top helper."
+        },
+        {
+          "who": "Huy",
+          "how": "proudly",
+          "text": "Step four takeaway. Thousands of paid, skilled workers and lots of smart planning built it over about 20 years."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "count",
+        "what": "A counter showing 2,300,000 blocks, then an arrow to about 300 blocks a day, then a clock showing one block about every 2 minutes."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Imagine if you had to place 2,300,000 blocks in 20 years. That's about 300 blocks every single day. If you worked ten hours a day, you'd need to place a block about every two minutes!"
+        },
+        {
+          "who": "Mai",
+          "how": "tired",
+          "text": "I'm tired just hearing that."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Mai in a sandbox with a grown-up, pulling a small box of pebbles on a string. One side of the sand is dry and the other is darker and damp."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Want to test the sledge idea? In a sandbox, with a grown-up, put some pebbles in a small box and tie on a string. Pull it over dry sand. Then sprinkle a little water on the sand and pull again."
+        },
+        {
+          "who": "Mai",
+          "how": "happily",
+          "text": "Will it feel easier or harder? I'm going to find out!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Tell us what you find. Testing ideas is exactly what scientists do."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "scene",
+        "what": "Huy and Mai sit on a big stone block in front of the pyramid at sunset, with little icons floating above them: a chisel, a boat, a sledge and a ramp."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So, how was it built? Thousands of paid workers cut stones with copper tools and sand, moved them by boat and sledge, and got them up with ramps and levers, over about 20 years."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "count",
+        "what": "A long timeline bar labelled over 3,800 years, with the pyramid at the start wearing a little crown that says tallest."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here's a fun fact. The Great Pyramid was the tallest building in the world for over 3,800 years!"
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Nobody built anything taller for 3,800 years? Wow!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "host",
+        "what": "Huy waves to camera holding a papyrus plant in one hand and a sheet of papyrus paper in the other, with Mai peeking in beside him. A subscribe button glows."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Next time, how did the ancient Egyptians make paper from a plant?"
+        },
+        {
+          "who": "Mai",
+          "how": "joyfully",
+          "text": "Paper from a plant? I have to know!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Subscribe so you don't miss it. Bye for now!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "The Great Pyramid was built more than 4,500 years ago by the Ancient Egyptians.",
+      "source": "Great Pyramid of Giza"
+    },
+    {
+      "claim": "Its core has about 2,300,000 blocks of limestone and granite.",
+      "source": "Great Pyramid of Giza"
+    },
+    {
+      "claim": "The ancient Greeks, many years later, believed the pyramids were built by slaves.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "Workers' graves were found near the pyramid in 1990, and they show the builders were paid workers, not slaves.",
+      "source": "Great Pyramid of Giza"
+    },
+    {
+      "claim": "Some workers worked for a salary and some as a form of tax payment (corvée), and they camped near the pyramids.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "The pyramid was built for the pharaoh Khufu, perhaps by his vizier Hemiunu.",
+      "source": "Great Pyramid of Giza"
+    },
+    {
+      "claim": "Locally quarried limestone was used for the main body, better limestone from Tura for the outer casing, and granite from near Aswan for some parts.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "Workers probably cut softer stone like limestone with copper chisels, drills and saws.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "The copper they used had another material mixed in (arsenical copper), which made it more effective, and hammering made it harder.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "Granite can't be cut with copper tools alone, so it was pounded with harder stone (dolerite) and sawed with the help of sand.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "Most blocks weighed about 2.5 tonnes, and some blocks were much heavier.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "Merer's diary, written more than 4,500 years ago and found in a cave in 2013, describes taking limestone blocks from Tura to Giza by boat.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "Blocks were moved on sledges that were probably made slippery with water.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "One expert, Denys Stocks, estimated that about eight workers could move a slippery-tracked block of about 2,750 kg.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "When it was new, the pyramid was about 146.5 metres tall.",
+      "source": "Great Pyramid of Giza"
+    },
+    {
+      "claim": "Most Egyptologists think ramps are the most likely way the blocks were raised, with help from levers, and remains of ramps have been found at the Great Pyramid.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "The Egyptians used simple machines such as the ramp and the lever.",
+      "source": "Ancient Egyptian technology"
+    },
+    {
+      "claim": "Scientists disagree about the kind of ramp. A single large straight ramp is widely rejected, and zigzag and spiral ramps have been suggested.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "Jean-Pierre Houdin, a French architect, suggests a ramp that spirals up inside the pyramid, plus an outside ramp for the bigger blocks lower down.",
+      "source": "Giza Necropolis"
+    },
+    {
+      "claim": "The foundation may have been levelled using trenches filled with water.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "Building it is thought to have taken about 20,000 workers and about 20 years.",
+      "source": "Giza Necropolis"
+    },
+    {
+      "claim": "The core stones were roughly cut, and the gaps were filled with gypsum and rubble.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "The pyramid was once covered in smooth white stones, and some can still be seen around the base.",
+      "source": "Great Pyramid of Giza"
+    },
+    {
+      "claim": "The Great Pyramid was the tallest building in the world for over 3,800 years.",
+      "source": "Great Pyramid of Giza"
+    },
+    {
+      "claim": "Egyptian paper (papyrus) was made from the papyrus plant.",
+      "source": "Ancient Egyptian technology"
+    },
+    {
+      "claim": "A football pitch is about 100 metres long, and a family car weighs less than 2.5 tonnes.",
+      "source": "Basic school knowledge"
+    }
+  ],
+  "shorts": [
+    1,
+    15,
+    16,
+    28,
+    29
+  ],
+  "thumbnail": "How Was THIS Built?",
+  "description": "How did people build the Great Pyramid of Giza more than 4,500 years ago, without trucks or cranes? Huy and Mai follow the stones from the quarry to the top. They look at copper tools, boats on the Nile, sledges, ramps and levers, and meet the paid workers who really built it. Archaeologists still argue about some of this, and the video says which parts are still a mystery. There's also a safe sandbox experiment kids can try with a grown-up.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": ""
+}

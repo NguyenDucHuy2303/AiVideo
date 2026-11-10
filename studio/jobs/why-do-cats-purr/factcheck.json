@@ -1,0 +1,22 @@
+{
+  "issues": [
+    {
+      "scene": 14,
+      "quote": "Takeaway two. The brain and the voice box team up, opening and shutting a tiny gap fast, to make the buzz.",
+      "problem": "The same scene says scientists are not sure how purring works. The takeaway then states one idea as settled fact. The sources call it a hypothesis.",
+      "fix": "Takeaway two. Scientists think the brain and the voice box team up, opening and shutting a tiny gap fast, to make the buzz."
+    },
+    {
+      "scene": 28,
+      "quote": "A purr is a fast buzz made by a cat's brain and voice box working together.",
+      "problem": "This states an unproven idea as fact. The sources say how cats purr is not fully explained.",
+      "fix": "A purr is a fast buzz. Scientists think it is made by a cat's brain and voice box working together."
+    },
+    {
+      "scene": 27,
+      "quote": "Some cats blink slowly back. That means they trust you.",
+      "problem": "This oversimplifies. The sources say a slow blink is read as a friendly signal, and cats that trust someone may return it. They do not say it proves trust.",
+      "fix": "Some cats blink slowly back. That is a friendly sign, and it may mean they trust you."
+    }
+  ]
+}

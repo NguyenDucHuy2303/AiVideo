@@ -1,0 +1,661 @@
+{
+  "title": "Why Do Cats Purr? The Secret Inside the Rumble",
+  "question": "Why do cats purr?",
+  "answer": "A purr is a fast buzz. Scientists think a cat makes it when its brain and its voice box work together, opening and closing a tiny gap in the throat about 20 to 30 times every second while it breathes in and out. Cats purr when they feel calm and safe, a habit that starts when kittens drink their mother's milk. They also purr when they are stressed, hurt or unwell, and scientists think this helps them calm themselves.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai sits on a sofa with a fat orange cat called Miso curled on her lap. Little wavy rumble lines rise from the cat, and Mai holds a hand to her ear, amazed."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Huy, listen! My cat Miso is making a tiny motor sound. Is there an engine inside her?"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "No engine, Mai. That cosy rumble is called a purr."
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy talks to camera. Three thought bubbles float beside him, a happy cat on a lap, a sleepy kitten, and a cat with a small bandage on its paw, all with purr lines."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here is a surprise. Cats do not only purr when they are happy! Today we will find out what a purr is, how a cat makes it, and why cats do it."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai stands proudly with one finger raised, next to Miso, who is stretched out happily on a sunny windowsill with purr lines."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "proudly",
+          "text": "That is easy. Cats purr because they are happy!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Great guess! Lots of grown-ups think that too, and you are often right. A cat curled up on a warm lap, eating, or resting will often purr."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "compare",
+        "what": "Two pictures side by side. Left, a relaxed cat on a lap with purr lines. Right, a cat curled up quietly in a basket looking a little poorly, also with purr lines."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "But cats also purr when they feel stressed, or hurt, or unwell. So happy is part of the answer, but not the whole story."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Purring when they are hurt? That is strange!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "It is! Let us solve this mystery, step by step."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "labels",
+        "what": "A side view of a cat with wavy lines coming from its throat and chest. Labels point to them saying soft buzz and vibration you can feel."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step one. What is a purr? A purr is a soft buzzing sound. It sounds a bit like rolling the letter r in your mouth. Rrrrrr."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "Rrrrrr! I sound just like Miso!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "count",
+        "what": "A big clock hand ticks one second. Under it, a row of about 25 tiny bumps in a line, labelled 20 to 30 buzzes in one second."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "A purr is made of tiny buzzes, very close together. A house cat makes about 20 to 30 of them every second. That is far too fast to count, so they blur together into one long rumble."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "arrows",
+        "what": "A cat breathing. One arrow goes into its nose labelled breathing in, another comes out labelled breathing out, and both arrows have purr wiggles on them."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here is a clever trick. A cat purrs while it breathes in and also while it breathes out. So the purr can keep going and going without a break."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Like a song with no gaps to breathe?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Exactly. Some other animals, like foxes, make a purr-like sound only when they breathe out."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai gently rests her hand on Miso's side. Little shake marks wiggle under her hand and her fingers tingle."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "I can feel it in my hand! Her whole body is tingling."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Yes! A purr makes small shakes, called vibrations, that you can feel through the fur."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "host",
+        "what": "Huy holds up a card with a purring cat and the number 20 to 30 on it."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Takeaway one. A purr is a fast buzz, about 20 to 30 times a second, that a cat makes while breathing in and out."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "labels",
+        "what": "A simple cut-away of a cat's head and neck. A small box in the throat is labelled voice box, and a tube below it is labelled windpipe."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step two. How does a cat make that buzz? Let us peek inside a cat's throat. Here is the voice box. Scientists call it the larynx. You have one too, in your neck."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "zoom",
+        "what": "A magnifying circle zooms into the voice box. Inside are two soft pink flaps labelled vocal folds, with a small gap between them."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Inside the voice box are two soft flaps called vocal folds. Between them is a little gap, where air goes in and out."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "arrows",
+        "what": "The two vocal folds shown twice, first closed, then open, with arrows showing them snapping together and apart, and little puffs of wavy air coming out."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Scientists think tiny muscles squeeze this gap shut and let it open again, over and over, very fast. Each time, the moving air gets a little shake. All those shakes make the purr."
+        },
+        {
+          "who": "Mai",
+          "how": "happily",
+          "text": "Like flapping a door open and shut, super fast?"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "A very tiny, very fast door. Yes!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "A cartoon cat brain with a little drummer inside it. Dotted arrows run from the brain down to the voice box in the throat."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "But what tells the muscles when to squeeze? Scientists think it is the brain. A cat's brain has a special rhythm part. It may work like a drummer, keeping a steady beat. Squeeze, open, squeeze, open."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "host",
+        "what": "Huy stands beside a big question mark. A small old-fashioned picture shows a scientist with a magnifying glass looking at a cat's chest."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "firmly",
+          "text": "Now, to be honest, scientists are still not completely sure how purring works. Long ago, some people thought the sound came from blood rushing through the chest. Today, many scientists think the brain and voice box work together. Takeaway two. Scientists think the brain and the voice box team up, opening and shutting a tiny gap fast, to make the buzz."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "So even scientists are still guessing?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Yes! Guessing and testing is how science moves forward."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "A cosy basket with a mother cat lying on her side. Four tiny newborn kittens with closed eyes snuggle against her tummy."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step three. Why do cats purr when they feel good? To find out, let us visit some brand-new kittens. Kittens are born with their eyes closed. They cannot see yet."
+        },
+        {
+          "who": "Mai",
+          "how": "worried",
+          "text": "They cannot see? How do they find their mum?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Mum stays right beside them, and they snuggle up to drink her milk. After about two weeks, their eyes open."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Close-up of kittens drinking milk from their mother, purr lines rising. Their little front paws push forward, with small arrows showing left, right, left, right."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Kittens use their voices very early. They purr most when they are feeding, drinking their mother's milk. While they drink, they push with their front paws, left, right, left, right. This is called kneading, like kneading bread dough."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Grown-up Miso stands on a fluffy blanket on Mai's lap, pushing with her front paws, eyes half closed, purr lines around her."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "Miso does that on my blanket! Push, push, push, and she purrs."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Many grown cats keep this kitten habit. They knead and purr when they feel cosy, often just before a nap."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "labels",
+        "what": "A happy cat with four labelled signs, purring, tail held high, slow blink, and rubbing its head against a leg."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Grown cats also purr when they are resting, eating, or close to someone they like. Look for other happy signs too. A tail held high means friendly. And a slow blink is a bit like a cat smile."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "host",
+        "what": "Huy holds up a card showing a kitten drinking milk next to a grown cat purring on a lap."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Takeaway three. Purring starts when kittens are feeding, and grown cats purr when they feel calm and close to friends."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Rain on a window at night. Inside, a cat is curled up under a chair looking a little uneasy, with soft purr lines around it."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step four. Now for the mystery. Why would a cat purr when it is stressed, hurt, or feeling unwell?"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai in her bedroom on a rainy night, hugging a teddy bear and humming, with little music notes floating around her."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Think about what you do when you feel nervous. Some people hum a little tune. Some people hug a teddy."
+        },
+        {
+          "who": "Mai",
+          "how": "happily",
+          "text": "I hum when there is thunder! It makes me feel braver."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "compare",
+        "what": "Side by side, Mai humming with her teddy, and a cat curled up purring. Both have the same soft wavy lines around them."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Scientists think purring can work a bit like that for cats. A purr may help a cat calm itself down. We call that self-soothing. Purring may even help a cat cope with pain."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai and her mum kneel a little way from a quiet cat in a basket. They are looking at it kindly and giving it space."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So a purr does not always mean everything is fine. If a cat is purring but also hiding, or seems unwell, tell the grown-up who looks after it. They will know what to do."
+        },
+        {
+          "who": "Mai",
+          "how": "",
+          "text": "So I should look at the whole cat, not just listen!"
+        },
+        {
+          "who": "Huy",
+          "how": "proudly",
+          "text": "That is exactly what cat experts do."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "host",
+        "what": "Huy holds up a card with two purring cats, one smiling, one curled up and calming down."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Takeaway four. A purr can mean I feel good. And it can also mean I am helping myself feel better."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai's daydream bubble shows her sitting in a classroom with rumble lines coming from her. Her classmates turn around and grin."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Imagine if you could purr like a cat. Every time you felt happy, or nervous before a test, your body would rumble. Rrrrrr."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "Everyone in class would know when I am happy!"
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Mai rests two fingers gently on the front of her neck and hums, with a long mmmm in a speech bubble and tiny buzz marks under her fingers."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here is a safe thing to try at home. Put your fingers gently on the front of your neck. Now hum a long mmmm. Can you feel the buzz? That is your own voice box shaking, a little like a cat's when it purrs."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "It tickles my fingers!"
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Mai sits quietly on the floor a little way from Miso. Both have their eyes half closed in a slow blink, with small hearts between them."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "One more try. If you know a friendly cat, ask a grown-up first. Then sit quietly, let the cat come to you, look at it, and blink very slowly. Some cats blink slowly back. That is a friendly sign, and it may mean they trust you."
+        },
+        {
+          "who": "Mai",
+          "how": "joyfully",
+          "text": "Miso blinked back at me!"
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "diagram",
+        "what": "A summary picture with a purring cat in the middle and three small pictures around it, the brain drummer, the voice box flaps, and a kitten drinking milk."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "So, why do cats purr? A purr is a fast buzz. Scientists think it is made by a cat's brain and voice box working together. Cats purr when they feel happy and safe. They also purr to calm themselves when they feel bad."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "compare",
+        "what": "Side by side, a lion roaring with a big ROAR bubble, and a cheetah sitting calmly with purr lines. Miso sits next to the cheetah."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here is a fun fact. A lion can roar, but scientists say it cannot purr like a house cat. A cheetah can purr, but it cannot roar. In fact, scientists say no cat can both purr and roar!"
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "So Miso is more like a cheetah than a lion!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "scene",
+        "what": "Miso hops off the sofa, twisting in mid-air above a soft cushion, with a big question mark beside her. Huy and Mai wave goodbye."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Next time, another cat mystery. Do cats really always land on their feet? Subscribe so you do not miss it, and keep asking questions!"
+        },
+        {
+          "who": "Mai",
+          "how": "happily",
+          "text": "Bye bye! Rrrrrr!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "A purr is a soft buzzing sound, similar to a rolled r in human speech.",
+      "source": "Purr"
+    },
+    {
+      "claim": "Domestic cats purr at about 20 to 30 vibrations per second.",
+      "source": "Purr"
+    },
+    {
+      "claim": "Cats purr while breathing in and while breathing out; foxes make purr-like sounds only when breathing out.",
+      "source": "Purr"
+    },
+    {
+      "claim": "Purring causes vibrations that can be felt on the surface of the body.",
+      "source": "Purr"
+    },
+    {
+      "claim": "One idea, backed by studies, is that muscles of the larynx (voice box) and the vocal folds rapidly open and close the gap between them, shaking the air as the cat breathes.",
+      "source": "Purr"
+    },
+    {
+      "claim": "A cat's brain has a special rhythm-making part (a neural oscillator), and scientists think the brain controls purring.",
+      "source": "Purr"
+    },
+    {
+      "claim": "Scientists have not yet fully explained how cats purr; an early idea was that the sound came from blood flowing through the chest.",
+      "source": "Purr"
+    },
+    {
+      "claim": "Purring is mostly linked with relaxation, contentment and social contact, and cats purr while eating and resting.",
+      "source": "Cat behavior"
+    },
+    {
+      "claim": "Cats also purr when they feel stress, pain or illness.",
+      "source": "Cat behavior"
+    },
+    {
+      "claim": "Scientists think cats purr to soothe themselves and to manage pain.",
+      "source": "Purr"
+    },
+    {
+      "claim": "Kittens are born blind with their eyes closed, drink their mother's milk, and their eyes open after about two weeks.",
+      "source": "Cat"
+    },
+    {
+      "claim": "Kittens make sounds very early in life.",
+      "source": "Cat behavior"
+    },
+    {
+      "claim": "Kittens purr mostly when newborn and when feeding; they knead with their front paws while drinking milk, and many grown cats keep kneading and purring, often before sleep.",
+      "source": "Cat behavior"
+    },
+    {
+      "claim": "A tail held high is a sign of friendliness.",
+      "source": "Cat behavior"
+    },
+    {
+      "claim": "A cat's slow blink is like a human smile, and cats may slow-blink back at a person they trust.",
+      "source": "Cat"
+    },
+    {
+      "claim": "Humans also have a larynx (voice box) in the neck that vibrates when we make sounds.",
+      "source": "Basic school knowledge"
+    },
+    {
+      "claim": "Lions roar but do not purr, cheetahs purr but do not roar, and no cat can both purr and roar.",
+      "source": "Purr"
+    },
+    {
+      "claim": "Cats try to land on their feet when they jump or fall, but they do not always manage it.",
+      "source": "Cat behavior"
+    }
+  ],
+  "shorts": [
+    1,
+    2,
+    28,
+    29
+  ],
+  "thumbnail": "WHY DO CATS PURR?",
+  "description": "Why do cats purr, and is it really just because they are happy? Join Huy and Mai as they look inside a cat's throat, visit newborn kittens and find out why cats also purr when they feel bad. This is a gentle, science-based explainer for children aged 6–12. It includes a safe hum-and-feel activity and tips for reading a cat's whole body, not just its purr.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": ""
+}

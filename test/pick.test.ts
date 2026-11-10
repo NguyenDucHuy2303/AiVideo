@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { approvedToday, lineOf, PICK_DEFAULTS, type Line } from "../src/studio/pick.ts";
+import { approvedToday, lineOf, PICK_DEFAULTS, proposerOf, type Line } from "../src/studio/pick.ts";
 import { gestures } from "../src/studio/qaproduce.ts";
 import type { Job } from "../src/studio/jobs.ts";
 
@@ -29,4 +29,10 @@ test("a presenter points in the middle of a scene, not the whole time", () => {
   assert.deepEqual(g.map((a) => a.do), ["talk", "point", "talk"]);
   assert.deepEqual(gestures("huy", { do: "point", face: "happy" }, 2).map((a) => a.do), ["point"]);
   assert.deepEqual(gestures("mai", { do: "cheer", face: "joy" }, 8).map((a) => a.do), ["cheer"]);
+});
+
+test("each line finds topics its own way; old settings without it are inferred from the kinds", () => {
+  assert.equal(proposerOf({ id: "a", name: "A", kinds: ["qa"], perDay: 1 }), "questions");
+  assert.equal(proposerOf({ id: "b", name: "B", perDay: 1 }), "stories");
+  assert.equal(proposerOf({ id: "c", name: "C", kinds: ["qa"], perDay: 1, propose: "stories" }), "stories");
 });

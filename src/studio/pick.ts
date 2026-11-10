@@ -15,13 +15,24 @@ import path from "node:path";
 import { think } from "../brain/claude.ts";
 import { jobDir, loadJob, saveJob, setStatus, type Job } from "./jobs.ts";
 
-export interface Line { id: string; name: string; kinds?: string[]; perDay: number }
+export interface Line {
+  id: string;
+  name: string;
+  kinds?: string[];
+  perDay: number;
+  /** Scripts kept written ahead, waiting for review (default: settings scriptsAhead). */
+  ahead?: number;
+  /** How new topics are found when the line runs low: Vietnamese stories, or questions (qa.ts). */
+  propose?: "stories" | "questions";
+}
+/** A line's way of finding topics (older settings without "propose": by its kinds). */
+export const proposerOf = (l: Line) => l.propose ?? (l.kinds?.includes("qa") ? "questions" : "stories");
 export interface PickSettings { at: string; lines: Line[] }
 export const PICK_DEFAULTS: PickSettings = {
   at: "17:00",
   lines: [
-    { id: "ask-huy", name: "Ask Huy (hỏi–đáp tiếng Anh)", kinds: ["qa"], perDay: 2 },
-    { id: "huy-ke-chuyen", name: "Huy Kể Chuyện (truyện, lịch sử)", perDay: 2 },
+    { id: "ask-huy", name: "Ask Huy (hỏi–đáp tiếng Anh)", kinds: ["qa"], perDay: 2, ahead: 6, propose: "questions" },
+    { id: "huy-ke-chuyen", name: "Huy Kể Chuyện (truyện, lịch sử)", perDay: 2, ahead: 6, propose: "stories" },
   ],
 };
 

@@ -1,0 +1,19 @@
+{
+  "slug": "why-do-cats-purr",
+  "topic": "Why do cats purr?",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-10T09:09:06.264Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-10T09:16:32.269Z",
+      "status": "review"
+    }
+  ],
+  "kind": "qa",
+  "summary": "Kids love cats and want to know what the mysterious sound means, with fun comparisons of happy, calm and hungry purrs.",
+  "by": "claude-opus"
+}

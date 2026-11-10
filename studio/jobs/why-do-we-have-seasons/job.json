@@ -1,0 +1,19 @@
+{
+  "slug": "why-do-we-have-seasons",
+  "topic": "Why do we have seasons?",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-10T09:09:06.260Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-10T09:11:47.912Z",
+      "status": "review"
+    }
+  ],
+  "kind": "qa",
+  "summary": "Kids feel summer and winter every year, and a tilted-Earth orbit diagram with a flashlight demo makes the surprising answer (it's the tilt, not distance) click.",
+  "by": "claude-opus"
+}
