@@ -26,6 +26,16 @@
         "propose": "questions"
       },
       {
+        "id": "hoi-huy",
+        "name": "Hỏi Huy (hỏi–đáp tiếng Việt)",
+        "kinds": [
+          "qa-vi"
+        ],
+        "perDay": 1,
+        "ahead": 2,
+        "propose": "questions"
+      },
+      {
         "id": "huy-ke-chuyen",
         "name": "Huy Kể Chuyện (truyện, lịch sử)",
         "perDay": 2,

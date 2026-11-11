@@ -21,7 +21,8 @@ import { backdropOfPlace } from "../animation/backdrops.ts";
 import { SIZES } from "../imagegen/sd.ts";
 import { styleOf } from "../animation/styles.ts";
 import { jobDir } from "./jobs.ts";
-import { QA, type QAPlan } from "./qa.ts";
+import { profileOf, type QAPlan, type QAProfile } from "./qa.ts";
+import { loadJob } from "./jobs.ts";
 
 export const qaProject = (slug: string) => path.join(ROOT, "projects", slug);
 const STYLE = "hien_dai";
@@ -70,7 +71,7 @@ const SCHEMA = {
 };
 interface Directed { index: number; layout: "board" | "host" | "place"; place: string; time: string; outfit?: (typeof OUTFITS)[number]; huy: { do: string; face: string }; mai: { do: string; face: string; show: boolean }; board: string }
 
-const SYSTEM = `You direct the scenes of "${QA.channel}", a 2D cartoon for children aged 6–12 that answers one question per video. Huy (the host, a young man) explains; Mai (8) asks and guesses. You also draw the explainer pictures, as SVG, in a clean, bright, friendly flat style: thick dark outlines (#3a2a20, stroke-width 4–6), flat fills, rounded shapes, big readable labels.`;
+const system = (P: QAProfile) => `You direct the scenes of "${P.channel}"${P.lang === "vi" ? " (in Vietnamese)" : ""}, a 2D cartoon for children aged 6–12 that answers one question per video. Huy (the host, a young man) explains; Mai (8) asks and guesses. You also draw the explainer pictures, as SVG, in a clean, bright, friendly flat style: thick dark outlines (#3a2a20, stroke-width 4–6), flat fills, rounded shapes, big readable labels.`;
 
 const BOARD_RULES = [
   "Board SVG rules (layout board):",
@@ -83,8 +84,9 @@ const BOARD_RULES = [
   "- Colours: sky blue #4aa3e0, sun yellow #ffd23f, red #e53935, orange #fb8c00, green #43a047, violet #8e24aa, cream #fff3b0, dark #3a2a20.",
 ].join("\n");
 
-function brief(plan: QAPlan, from: number, to: number, seconds: number[]): string {
+function brief(P: QAProfile, plan: QAPlan, from: number, to: number, seconds: number[]): string {
   return [
+    ...(P.lang === "vi" ? ["All text on the boards is in Vietnamese (with its diacritics), short and simple."] : []),
     "Choosing the layout: place only for a real place that can be painted (a park, a beach, a rooftop, Mars); anything imagined, impossible or abstract (\"Mai imagines the sky as a pinball machine\", inside a molecule) is a board picture instead.",
     "Moves: point = at the board or at something in front; raise = pointing up at the sky or above; wave = hello or goodbye; cheer = delight; worry = puzzled.",
     "outfit: spacesuit in space, on the Moon or on another planet; everyday otherwise.",
@@ -109,9 +111,9 @@ export function gestures(actor: string, move: { do: string; face: string }, seco
 }
 
 /** The scene script for the player (anim/sNN.json). */
-function sceneOf(d: Directed, plan: QAPlan, i: number, seconds: number): Record<string, unknown> {
+function sceneOf(P: QAProfile, d: Directed, plan: QAPlan, i: number, seconds: number): Record<string, unknown> {
   const speaks = new Set(plan.scenes[i]!.parts.map((p) => p.who));
-  const withMai = d.mai.show || speaks.has(QA.kid.name);
+  const withMai = d.mai.show || speaks.has(P.kid.name);
   const suit = d.outfit === "spacesuit" ? "_space" : "";
   const cast: Record<string, unknown>[] = [{ id: "huy", type: "human", look: `huy${suit}`, x: 0 }];
   if (withMai) cast.push({ id: "mai", type: "human", look: `mai${suit}`, x: d.layout === "board" ? -140 : 250, facing: d.layout === "board" ? 1 : -1 });
@@ -130,7 +132,7 @@ function sceneOf(d: Directed, plan: QAPlan, i: number, seconds: number): Record<
 
 /** Everything but the film: voices, direction, paintings. */
 export async function prepareQA(slug: string, log: (s: string) => void = console.log): Promise<string> {
-  const dir = jobDir(slug), proj = qaProject(slug), anim = path.join(proj, "anim");
+  const dir = jobDir(slug), proj = qaProject(slug), anim = path.join(proj, "anim"), P = profileOf((await loadJob(slug)).kind);
   const plan: QAPlan = JSON.parse(await fs.readFile(path.join(dir, "plan.json"), "utf8"));
   await fs.mkdir(anim, { recursive: true });
   const script = await fs.readFile(path.join(dir, "script.txt"), "utf8");
@@ -138,7 +140,7 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
   await fs.writeFile(path.join(proj, "script.txt"), [plan.title, ...lines].join("\n") + "\n");
   await fs.writeFile(path.join(proj, "storyboard.json"), JSON.stringify({ title: plan.title, kind: "story", scenes: lines.map((narration) => ({ narration, chapter: plan.title, onScreen: {}, visual: { description: "studio", mood: "calm" }, camera: "ken_burns", transition: "cut" })) }, null, 2));
   const project = JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8"));
-  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers: { [QA.host.name]: ["huy"], [QA.kid.name]: ["mai"] }, brandId: "ask-huy", style: STYLE, thumbnail: { title: plan.thumbnail, subtitle: QA.channel } }, null, 2));
+  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers: { [P.host.name]: ["huy"], [P.kid.name]: ["mai"] }, brandId: P.brandId, style: STYLE, thumbnail: { title: plan.thumbnail, subtitle: P.channel } }, null, 2));
   await fs.writeFile(path.join(anim, "cast.json"), JSON.stringify(LOOKS, null, 2));
   if (!(await exists(path.join(proj, "timeline.json")))) {
     log("  voices");
@@ -156,11 +158,11 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
     const to = Math.min(plan.scenes.length, from + BATCH);
     const names = Array.from({ length: to - from }, (_, k) => `s${String(from + k + 1).padStart(2, "0")}.json`);
     if ((await Promise.all(names.map((n) => exists(path.join(anim, n))))).every(Boolean)) continue;
-    const { data } = await think<{ scenes: Directed[] }>({ job: slug, phase: "produce", step: "qa-direct", model: "sonnet", system: SYSTEM, schema: SCHEMA, prompt: brief(plan, from, to, seconds) }, log);
+    const { data } = await think<{ scenes: Directed[] }>({ job: slug, phase: "produce", step: "qa-direct", model: "sonnet", system: system(P), schema: SCHEMA, prompt: brief(P, plan, from, to, seconds) }, log);
     for (const d of data.scenes) {
       const i = d.index - 1;
       if (i < from || i >= to) continue;
-      await fs.writeFile(path.join(anim, `s${String(i + 1).padStart(2, "0")}.json`), JSON.stringify(sceneOf(d, plan, i, seconds[i] ?? 4), null, 2));
+      await fs.writeFile(path.join(anim, `s${String(i + 1).padStart(2, "0")}.json`), JSON.stringify(sceneOf(P, d, plan, i, seconds[i] ?? 4), null, 2));
     }
   }
   // The paintings (the studio and every place), so the night only renders.
@@ -179,7 +181,8 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
 /** The film (heavy: nights and weekends), linked into the job folder as video.mp4. */
 export async function renderQA(slug: string, log: (s: string) => void = console.log): Promise<string> {
   // The channel's own intro, outro, corner logo and thumbnail (assets/brand/ask-huy).
-  const out = await renderStory(qaProject(slug), { lang: "en", onLog: log });
+  const P = profileOf((await loadJob(slug)).kind);
+  const out = await renderStory(qaProject(slug), { lang: P.lang === "en" ? "en" : undefined, onLog: log });
   for (const [from, to] of [[out, "video.mp4"]] as const) {
     const target = path.join(jobDir(slug), to);
     await fs.rm(target, { force: true });

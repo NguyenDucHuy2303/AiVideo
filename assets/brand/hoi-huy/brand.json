@@ -1,0 +1,14 @@
+{
+  "name": "Hỏi Huy",
+  "tagline": "Câu hỏi nhỏ, lời giải lớn",
+  "owner": "Nguyễn Đức Huy",
+  "theme": "ask_huy",
+  "texts": {
+    "thanks": "Cảm ơn các bạn đã xem!",
+    "subscribe": "ĐĂNG KÝ",
+    "subscribed": "ĐÃ ĐĂNG KÝ",
+    "watchFull": "Xem trọn câu trả lời trên kênh",
+    "follow": "Đăng ký để hỏi tiếp nhé!",
+    "ask": "Bạn có câu hỏi? Hỏi Huy nhé!"
+  }
+}

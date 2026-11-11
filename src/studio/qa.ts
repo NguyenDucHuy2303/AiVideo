@@ -11,24 +11,47 @@ import path from "node:path";
 import { think } from "../brain/claude.ts";
 import { research, type Source } from "../research/wiki.ts";
 import { moodOf, splitSpeakers } from "../tts/narrate.ts";
-import { castVoicesEn, type CastMember } from "./cast.ts";
+import { castVoices, castVoicesEn, type CastMember } from "./cast.ts";
 import { jobDir, loadJob, saveJob } from "./jobs.ts";
 import { toScript, type Part } from "./write.ts";
 
-/** The channel ("Ask Huy", chosen 2026-11-10) and its two regulars. */
-export const QA = {
-  channel: "Ask Huy",
-  host: { name: "Huy", gender: "male", age: "young", role: "the host: curious, warm, a little funny; explains", villain: false } as CastMember,
-  kid: { name: "Mai", gender: "female", age: "child", role: "an 8-year-old who asks, guesses and tries things", villain: false } as CastMember,
-  narrator: "am_michael",
+/**
+ * The question channels: one profile per language, the same two regulars (Huy explains, Mai
+ * asks). "qa": Ask Huy, English (chosen 2026-11-10); "qa-vi": Hỏi Huy, Vietnamese.
+ */
+export interface QAProfile {
+  kind: "qa" | "qa-vi";
+  lang: "en" | "vi";
+  channel: string;
+  brandId: string;
+  host: CastMember;
+  kid: CastMember;
+  engine: "kokoro" | "vieneu";
+  narrator: string;
   /** A calm pace for children (Kokoro at 1.0 is quick: ~200 words a minute). */
-  speed: 0.92,
+  speed: number;
+  /** The ways of speaking the face library understands, in the script's language. */
+  how: string;
+  /** What the writer is told about the language of the lines. */
+  write: string;
+}
+const HOST: CastMember = { name: "Huy", gender: "male", age: "young", role: "the host: curious, warm, a little funny; explains", villain: false };
+const KID: CastMember = { name: "Mai", gender: "female", age: "child", role: "an 8-year-old who asks, guesses and tries things", villain: false };
+export const PROFILES: Record<QAProfile["kind"], QAProfile> = {
+  qa: { kind: "qa", lang: "en", channel: "Ask Huy", brandId: "ask-huy", host: HOST, kid: KID, engine: "kokoro", narrator: "am_michael", speed: 0.92,
+    how: "happily, joyfully, laughing, surprised, worried, firmly, proudly, sadly, scared, tired", write: "Write every line in simple, natural English." },
+  "qa-vi": { kind: "qa-vi", lang: "vi", channel: "Hỏi Huy", brandId: "hoi-huy", host: HOST, kid: KID, engine: "vieneu", narrator: "Minh Đức", speed: 1.0,
+    how: "vui vẻ, mừng rỡ, cười, ngạc nhiên, lo lắng, quyết tâm, tự hào, buồn rầu, sợ hãi, mệt",
+    write: "Write every line in natural, warm Vietnamese for Vietnamese children (Huy calls the viewers \"các bạn\", Mai calls Huy \"anh Huy\"); explain in Vietnamese words, give the English or scientific word only when it helps. Examples and comparisons from Vietnamese children's life (a rice field, a motorbike, a bowl of phở). The checks below count words as written syllables." },
 };
+export const isQA = (kind?: string): kind is QAProfile["kind"] => kind === "qa" || kind === "qa-vi";
+export const profileOf = (kind?: string): QAProfile => PROFILES[isQA(kind) ? kind : "qa"];
+/** The English channel's profile (kept for the code that has one channel in mind). */
+export const QA = PROFILES.qa;
 
 export const BEATS = ["hook", "guess", "step", "imagine", "recap", "next"] as const;
 /** What the explainer pictures can show (phase 2 builds them in the vector runtime). */
 export const VISUALS = ["host", "scene", "diagram", "labels", "arrows", "map", "compare", "zoom", "count", "experiment"] as const;
-const HOW = "happily, joyfully, laughing, surprised, worried, firmly, proudly, sadly, scared, tired";
 
 export interface QAScene { beat: (typeof BEATS)[number]; step?: number; visual: { kind: (typeof VISUALS)[number]; what: string }; parts: Part[] }
 export interface QAPlan {
@@ -75,7 +98,7 @@ const CHECK_SCHEMA = {
 };
 const SCENES_SCHEMA = { type: "object", properties: { scenes: { type: "array", items: { type: "object", properties: { index: { type: "number" }, parts: { type: "array", items: PART } }, required: ["index", "parts"] } } }, required: ["scenes"] };
 
-const SYSTEM = `You write scripts for "${QA.channel}", an animated YouTube channel for children aged 6–12 that answers one question per video (5–8 minutes). The host ${QA.host.name} explains; ${QA.kid.name}, 8, asks, guesses and tries things.
+const system = (P: QAProfile) => `You write scripts for "${P.channel}", an animated YouTube channel for children aged 6–12 that answers one question per video (5–8 minutes). The host ${P.host.name} explains; ${P.kid.name}, 8, asks, guesses and tries things. ${P.write}
 
 Rules:
 - Correct above all: every claim must be supported by the sources given or be basic, settled school knowledge. Numbers rounded and said with "about". If the sources disagree or science is unsure, say so simply ("scientists think…").
@@ -84,7 +107,8 @@ Rules:
 - Safe: nothing dangerous to copy, no fire or chemicals at home, no medical advice; no gore or frightening detail.
 - Every scene is one picture that can be drawn as a simple 2D explainer cartoon.`;
 
-function prompt(question: string, sources: Source[], notes: string[], previous?: string): string {
+function prompt(P: QAProfile, question: string, sources: Source[], notes: string[], previous?: string): string {
+  const QA = P, HOW = P.how;
   return [
     `Write the script for the question: "${question}"`,
     "",
@@ -111,6 +135,12 @@ function prompt(question: string, sources: Source[], notes: string[], previous?:
   ].join("\n");
 }
 
+/** A Vietnamese question's key words: "Vì sao bầu trời có màu xanh?" → "bầu trời màu xanh". */
+export function viKeyWords(question: string): string {
+  const q = question.replace(/[?!.,"']/g, " ").replace(/(^|\s)(tại sao|vì sao|làm thế nào|làm sao|như thế nào|thế nào|là gì|có thể|có|được|không|lại|của|những|các|một|nào|bao nhiêu)(?=\s|$)/gi, " ");
+  return q.replace(/\s+/g, " ").trim() || question;
+}
+
 /** A question's key words for the search: "How do bees make honey?" → "bees honey". */
 export function keyWords(question: string): string {
   const q = question.replace(/[?!.,"']/g, " ").replace(/\b(how|why|what|which|when|where|who|whose|do|does|did|is|are|was|were|can|could|would|will|a|an|the|so|much|many|make|makes|made|really|up|we|you|our|your)\b/gi, " ");
@@ -123,16 +153,19 @@ export function keyWords(question: string): string {
  * bridge hold up…" finds "Rivet"), so a small model names the articles first (~500 tokens);
  * the search by key words only fills what is missing.
  */
-export async function qaSources(question: string, job = "qa-research"): Promise<Source[]> {
-  const query = keyWords(question);
-  let titles: string[] = [];
+export async function qaSources(question: string, job = "qa-research", lang: "en" | "vi" = "en"): Promise<Source[]> {
+  const query = lang === "vi" ? viKeyWords(question) : keyWords(question);
+  let titles: string[] = [], viTitles: string[] = [];
   try {
-    ({ data: { titles } } = await think<{ titles: string[] }>({ job, step: "qa-sources", model: "haiku", system: "You know Wikipedia well.",
-      schema: { type: "object", properties: { titles: { type: "array", items: { type: "string" } } }, required: ["titles"] },
-      prompt: `Exact titles of the 4 English Wikipedia articles most useful to answer this question for children, most useful first, general articles before narrow ones: "${question}"` }));
+    ({ data: { titles, vi: viTitles } } = await think<{ titles: string[]; vi: string[] }>({ job, step: "qa-sources", model: "haiku", system: "You know Wikipedia well.",
+      schema: { type: "object", properties: { titles: { type: "array", items: { type: "string" } }, vi: { type: "array", items: { type: "string" } } }, required: ["titles", "vi"] },
+      prompt: `Exact titles of the 4 English Wikipedia articles most useful to answer this question for children, most useful first, general articles before narrow ones${lang === "vi" ? "; and in vi the exact titles of the 3 most useful Vietnamese Wikipedia articles (vi.wikipedia.org)" : "; vi: an empty list"}: "${question}"` }));
   } catch { /* the search alone */ }
-  const simple = await research(question, { lang: "simple", count: 2, budget: 10_000, query, titles });
-  const en = await research(question, { lang: "en", count: 2, budget: 16_000, query, titles, skip: simple.map((s) => s.title) });
+  // A Vietnamese question: the Vietnamese Wikipedia first, then the English one (named by the small model).
+  const vi = lang === "vi" ? await research(question, { lang: "vi", count: 2, budget: 12_000, query, titles: viTitles ?? [] }) : [];
+  const simple = lang === "vi" ? [] : await research(question, { lang: "simple", count: 2, budget: 10_000, query, titles });
+  const en = await research(lang === "vi" ? `${question} (en)` : question, { lang: "en", count: 2, budget: 16_000, query: lang === "vi" ? titles[0] ?? query : query, titles, skip: simple.map((s) => s.title) });
+  if (lang === "vi") return [...vi, ...en];
   return [...simple, ...en];
 }
 
@@ -172,16 +205,16 @@ export function checkQA(plan: QAPlan): string[] {
  */
 export async function writeQA(slug: string, log: (s: string) => void = console.log): Promise<string[]> {
   let job = await loadJob(slug);
-  const dir = jobDir(slug);
-  const sources = await qaSources(job.topic, slug);
+  const dir = jobDir(slug), P = profileOf(job.kind), HOW = P.how;
+  const sources = await qaSources(job.topic, slug, P.lang);
   await fs.writeFile(path.join(dir, "sources.json"), JSON.stringify(sources.map(({ title, url }) => ({ title, url })), null, 2));
   log(`  research: ${sources.map((s) => s.title).join(", ")}`);
   const notes = job.notes.filter((n) => n.on === "script").map((n) => n.text);
   const prevFile = path.join(dir, "script.txt");
   const previous = job.status === "rewrite" && (await fs.stat(prevFile).catch(() => null)) ? await fs.readFile(prevFile, "utf8") : undefined;
-  const ask = { job: slug, system: SYSTEM };
-  const { data, by } = await think<Omit<QAPlan, "cast" | "look">>({ ...ask, schema: SCHEMA, step: previous ? "qa-rewrite" : "qa-write", model: "opus", effort: "medium", prompt: prompt(job.topic, sources, previous ? notes : [], previous) }, log);
-  let plan: QAPlan = { ...data, cast: [QA.host, QA.kid], look: "" };
+  const ask = { job: slug, system: system(P) };
+  const { data, by } = await think<Omit<QAPlan, "cast" | "look">>({ ...ask, schema: SCHEMA, step: previous ? "qa-rewrite" : "qa-write", model: "opus", effort: "medium", prompt: prompt(P, job.topic, sources, previous ? notes : [], previous) }, log);
+  let plan: QAPlan = { ...data, cast: [P.host, P.kid], look: "" };
 
   // The fact check: a second reader with only the sources and the script.
   const { data: fc } = await think<{ issues: { scene: number; quote: string; problem: string; fix: string }[] }>({ ...ask, schema: CHECK_SCHEMA, step: "qa-factcheck", model: "sonnet", effort: "medium", prompt: [
@@ -198,7 +231,7 @@ export async function writeQA(slug: string, log: (s: string) => void = console.l
     log(`  fixing scene(s) ${toFix.map((i) => i + 1).join(", ")}`);
     const { data: fixed } = await think<{ scenes: { index: number; parts: Part[] }[] }>({ ...ask, schema: SCENES_SCHEMA, step: "qa-fix", model: "sonnet", prompt: [
       "Fix these scenes: apply the fact-check corrections and the format problems, keep everything else (tone, length, speakers). Return exactly these scenes with their index.",
-      `Speakers: ${plan.cast.map((c) => c.name).join(", ")}. how chosen from: ${HOW}. No quotation marks or colons inside text.`,
+      `Speakers: ${plan.cast.map((c) => c.name).join(", ")}. how chosen from: ${HOW}. No quotation marks or colons inside text. ${P.write}`,
       "Fact check:", ...fc.issues.map((x) => `- scene ${x.scene}: "${x.quote}" — ${x.problem} → ${x.fix}`),
       "Format:", ...local.map((p) => `- ${p}`), "",
       JSON.stringify(toFix.map((i) => ({ index: i + 1, parts: plan.scenes[i]!.parts }))),
@@ -209,7 +242,7 @@ export async function writeQA(slug: string, log: (s: string) => void = console.l
   await fs.writeFile(path.join(dir, "factcheck.json"), JSON.stringify(fc, null, 2));
   await fs.writeFile(path.join(dir, "plan.json"), JSON.stringify(plan, null, 2));
   await fs.writeFile(path.join(dir, "script.txt"), toScript(plan));
-  await fs.writeFile(path.join(dir, "project.json"), JSON.stringify({ engine: "kokoro", voice: QA.narrator, speed: QA.speed, imageGen: "off", onlineImages: false, profiles: ["16x9"], channel: QA.channel, voices: castVoicesEn(plan.cast, QA.narrator) }, null, 2));
+  await fs.writeFile(path.join(dir, "project.json"), JSON.stringify({ engine: P.engine, voice: P.narrator, speed: P.speed, imageGen: "off", onlineImages: false, profiles: ["16x9"], channel: P.channel, voices: P.engine === "kokoro" ? castVoicesEn(plan.cast, P.narrator) : castVoices(plan.cast, P.narrator) }, null, 2));
   job = await loadJob(slug);
   job.by = by;
   await saveJob(job);
@@ -224,11 +257,12 @@ export interface Question { question: string; area: (typeof AREAS)[number]; why:
  * New questions for the channel: the brain proposes questions children really ask (and search
  * for), none already made, the areas with the fewest questions first (~6k tokens a batch).
  */
-export async function proposeQuestions(count: number, made: { topic: string; area?: string }[], log?: (s: string) => void): Promise<Question[]> {
+export async function proposeQuestions(count: number, made: { topic: string; area?: string }[], log?: (s: string) => void, kind: QAProfile["kind"] = "qa", hints: string[] = []): Promise<Question[]> {
+  const P = PROFILES[kind];
   const per = Object.fromEntries(AREAS.map((a) => [a, made.filter((m) => m.area === a).length]));
   const { data } = await think<{ questions: Question[] }>({
-    job: "topics-qa", step: "propose-questions", model: "sonnet",
-    system: `You plan the videos of "${QA.channel}", an animated YouTube channel that answers one question per video for children aged 6–12.`,
+    job: `topics-${kind}`, step: "propose-questions", model: "sonnet",
+    system: `You plan the videos of "${P.channel}", an animated YouTube channel that answers one question per video for children aged 6–12${P.lang === "vi" ? ", in Vietnamese, for Vietnamese children" : ""}.`,
     schema: { type: "object", properties: { questions: { type: "array", items: { type: "object", properties: { question: { type: "string" }, area: { enum: [...AREAS] }, why: { type: "string" } }, required: ["question", "area", "why"] } } }, required: ["questions"] },
     prompt: [
       `Propose ${count} questions for the next videos.`,
@@ -239,8 +273,11 @@ export async function proposeQuestions(count: number, made: { topic: string; are
       "- Not any of these (made or waiting), nor the same question in other words:",
       ...made.map((m) => `  - ${m.topic}`),
       "- why: one line on why children will click and watch to the end.",
+      ...(P.lang === "vi" ? ["- Write each question in natural Vietnamese, as a Vietnamese child would ask it (Vì sao…? Tại sao…? Làm thế nào…? … là gì?); include some about Vietnam itself (its nature, animals, inventions, places) as well as universal ones."] : []),
+      ...(hints.length ? ["- What is in season or trending now (use when it fits, never forced):", ...hints.map((h) => `  - ${h}`)] : []),
     ].join("\n"),
   }, log);
-  const seen = new Set(made.map((m) => m.topic.toLowerCase().replace(/[^a-z ]/g, "").trim()));
-  return data.questions.filter((q) => !seen.has(q.question.toLowerCase().replace(/[^a-z ]/g, "").trim()));
+  const norm = (t: string) => t.toLowerCase().replace(/[^\p{L} ]/gu, "").replace(/\s+/g, " ").trim();
+  const seen = new Set(made.map((m) => norm(m.topic)));
+  return data.questions.filter((q) => !seen.has(norm(q.question))).slice(0, count);
 }

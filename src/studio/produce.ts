@@ -8,7 +8,7 @@
  * A note on the video ("fix") re-directs the scenes with the note and renders again; only the
  * scenes that changed are drawn again.
  */
-import { writeQA } from "./qa.ts";
+import { isQA, writeQA } from "./qa.ts";
 import { prepareQA, renderQA } from "./qaproduce.ts";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -53,7 +53,7 @@ export async function writeJob(slug: string, log: (s: string) => void = console.
     // A script already written (an interrupted run) is not written again.
     const resume = job.status === "writing" && (await exists(path.join(dir, "plan.json")));
     // A question for the English question channel (qa.ts): its own writer, no era or costumes.
-    if (job.kind === "qa") {
+    if (isQA(job.kind)) {
       const problems = resume ? [] : await writeQA(slug, log);
       return setStatus(await loadJob(slug), "review", problems.length ? `${problems.length} vấn đề còn lại: ${problems.slice(0, 3).join(" ")}` : undefined);
     }
@@ -122,7 +122,7 @@ export async function prepare(slug: string, log: (s: string) => void = console.l
     from = job.status;
     job = await setStatus(job, "producing", fixing ? "sửa theo góp ý" : "chuẩn bị");
     // A question (Ask Huy): its own voices, direction and paintings (qaproduce.ts).
-    if (job.kind === "qa") await prepareQA(slug, log);
+    if (isQA(job.kind)) await prepareQA(slug, log);
     else await buildProject(job, projectOf(slug), { notes: job.notes.filter((n) => n.on === "video").map((n) => n.text), redirect: fixing, revoice: !fixing }, log);
     job = await loadJob(slug);
     job.stage = "ready";
@@ -148,7 +148,7 @@ export async function testRun(slug: string, scenes: number, log: (s: string) => 
 export async function shorts(slug: string, log: (s: string) => void = console.log): Promise<Job> {
   try {
     const job0 = await loadJob(slug);
-    const planned = job0.kind === "qa" ? (JSON.parse(await fs.readFile(path.join(jobDir(slug), "plan.json"), "utf8")).shorts as number[] | undefined) : undefined;
+    const planned = isQA(job0.kind) ? (JSON.parse(await fs.readFile(path.join(jobDir(slug), "plan.json"), "utf8")).shorts as number[] | undefined) : undefined;
     const files = await makeShorts(projectOf(slug), 3, log, planned);
     const job = await loadJob(slug);
     job.shorts = await linkShorts(files, jobDir(slug));
@@ -169,7 +169,7 @@ export async function render(slug: string, log: (s: string) => void = console.lo
     let job = await loadJob(slug);
     job = await setStatus(job, "producing", "đang render");
     let out: string;
-    if (job.kind === "qa") out = await renderQA(slug, log);
+    if (isQA(job.kind)) out = await renderQA(slug, log);
     else {
       await syncArt(job, projectOf(slug)); // a style or intro changed on the review page since
       out = await renderStory(projectOf(slug), { onLog: log });

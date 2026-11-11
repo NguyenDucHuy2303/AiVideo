@@ -44,7 +44,7 @@ Usage:
                                              with assets/brand/brand.json: channel intro, logo, outro, thumbnail)
   npm run wata -- topics [--count 5]         the brain proposes new topics and starts a job for each (studio/jobs/)
   npm run wata -- write <job|"topic"> [--era KEY]   research + write the job's script (5–8 min, dialogue) for review
-  npm run wata -- qa "Why is the sky blue?"        a question for the English question channel (written and fact-checked by the studio)
+  npm run wata -- qa "Why is the sky blue?" [--lang vi]   a question for Ask Huy (English) or, with --lang vi, Hỏi Huy (Vietnamese)
   npm run wata -- studio [--port 5175] [--no-scheduler]
                                              the studio: web page at http://127.0.0.1:5175 (review scripts, costume sheets,
                                              videos; tokens) + the scheduler (light work in office hours, renders at night)
@@ -258,7 +258,7 @@ async function main(): Promise<number> {
       // A question for the English question channel: the studio writes and fact-checks it.
       if (!file) throw new TimelineError('qa needs a question, e.g. qa "Why is the sky blue?"');
       const { newJob } = await import("./studio/jobs.ts");
-      const job = await newJob(file, { kind: "qa" });
+      const job = await newJob(file, { kind: values.lang === "vi" ? "qa-vi" : "qa" });
       console.log(`✔ studio/jobs/${job.slug} — the studio will write it (watch studio/scheduler.log)`);
       return 0;
     }

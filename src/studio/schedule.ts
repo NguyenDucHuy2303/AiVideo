@@ -8,9 +8,10 @@
  * The writer keeps `scriptsAhead` scripts waiting for review, proposing new topics when short,
  * so the user can approve several at once and the nights never run dry.
  */
+import { wasInterrupted } from "../utils/process.ts";
 import { channelOf, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings } from "./publish.ts";
 import { dailyPick, lineOf, PICK_DEFAULTS, proposerOf, type PickSettings } from "./pick.ts";
-import { proposeQuestions } from "./qa.ts";
+import { isQA, proposeQuestions } from "./qa.ts";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { exists } from "../utils/fs.ts";
@@ -118,7 +119,7 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   }
   const toPrepare = first((j) => (j.status === "approved" || j.status === "fix") && (!j.era || !!known[j.era]));
   if (toPrepare) return { what: "prepare", slug: toPrepare.slug, run: () => prepare(toPrepare.slug, say(toPrepare.slug)) };
-  const enPrep = first((j) => j.status === "done" && !j.english && j.kind !== "qa");
+  const enPrep = first((j) => j.status === "done" && !j.english && !isQA(j.kind));
   if (enPrep && !(await brainSettings()).paused) return { what: "english", slug: enPrep.slug, run: () => english(enPrep.slug, "prepare", say(enPrep.slug)) };
   const toWrite = first((j) => j.status === "writing" || j.status === "rewrite");
   if (toWrite) return { what: "write", slug: toWrite.slug, run: () => writeJob(toWrite.slug, say(toWrite.slug)) };
@@ -139,8 +140,9 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
               const f = path.join(jobDir(j.slug), "topic.json");
               return { topic: j.topic, area: (await exists(f)) ? JSON.parse(await fs.readFile(f, "utf8")).area : undefined };
             }));
-            for (const q of await proposeQuestions(count, made, (l) => void log(l.trim()))) {
-              const job = await newJob(q.question, { kind: "qa", summary: q.why });
+            const kind = line.kinds?.find(isQA) ?? "qa";
+            for (const q of await proposeQuestions(count, made, (l) => void log(l.trim()), kind)) {
+              const job = await newJob(q.question, { kind, summary: q.why });
               await fs.writeFile(path.join(jobDir(job.slug), "topic.json"), JSON.stringify(q, null, 2));
               await log(`+ ${job.slug} [${q.area}]`);
             }
@@ -164,6 +166,9 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
 export async function runScheduler(): Promise<never> {
   await log(`scheduler started (pid ${process.pid})`);
   for (;;) {
+    // Stopping (SIGTERM: the children are killed, the process exits in 3 s): start nothing more,
+    // or every task fails at once and the loop spins through the job list until the exit.
+    if (wasInterrupted()) await new Promise(() => {});
     try {
       const s = await settings();
       const office = isOffice(new Date(), s);

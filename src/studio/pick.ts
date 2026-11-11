@@ -26,12 +26,13 @@ export interface Line {
   propose?: "stories" | "questions";
 }
 /** A line's way of finding topics (older settings without "propose": by its kinds). */
-export const proposerOf = (l: Line) => l.propose ?? (l.kinds?.includes("qa") ? "questions" : "stories");
+export const proposerOf = (l: Line) => l.propose ?? (l.kinds?.some((k) => k === "qa" || k === "qa-vi") ? "questions" : "stories");
 export interface PickSettings { at: string; lines: Line[] }
 export const PICK_DEFAULTS: PickSettings = {
   at: "17:00",
   lines: [
     { id: "ask-huy", name: "Ask Huy (hỏi–đáp tiếng Anh)", kinds: ["qa"], perDay: 2, ahead: 6, propose: "questions" },
+    { id: "hoi-huy", name: "Hỏi Huy (hỏi–đáp tiếng Việt)", kinds: ["qa-vi"], perDay: 1, ahead: 2, propose: "questions" },
     { id: "huy-ke-chuyen", name: "Huy Kể Chuyện (truyện, lịch sử)", perDay: 2, ahead: 6, propose: "stories" },
   ],
 };
@@ -52,7 +53,7 @@ export async function scoreJob(slug: string, log: (s: string) => void = () => {}
   const script = await fs.readFile(path.join(jobDir(slug), "script.txt"), "utf8");
   const hash = createHash("sha256").update(script).digest("hex").slice(0, 16);
   if (job.score?.hash === hash) return job.score;
-  const qa = job.kind === "qa";
+  const qa = job.kind === "qa" || job.kind === "qa-vi";
   const { data } = await think<{ score: number; why: string }>({
     job: slug, step: "score", model: "sonnet", schema: SCHEMA,
     system: "Bạn là biên tập viên của các kênh YouTube hoạt hình cho trẻ em. Bạn chấm kịch bản thẳng thắn và công bằng.",

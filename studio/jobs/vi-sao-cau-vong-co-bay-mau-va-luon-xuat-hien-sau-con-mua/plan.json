@@ -1,0 +1,673 @@
+{
+  "title": "Vì sao cầu vồng có bảy màu và hay xuất hiện sau cơn mưa?",
+  "question": "Vì sao cầu vồng có bảy màu và luôn xuất hiện sau cơn mưa?",
+  "answer": "Mỗi giọt mưa giống một lăng kính tí hon. Nó bẻ cong ánh nắng và tách ánh nắng thành một dải màu liền nhau. Thật ra cầu vồng có rất nhiều màu, còn bảy màu là cách con người chọn để đếm, từ thời nhà khoa học Niu-tơn. Cầu vồng hay hiện ra sau mưa vì lúc ấy trong không khí còn nhiều giọt nước, Mặt Trời ló ra ở thấp và chiếu từ sau lưng người nhìn. Nhưng không phải lúc nào cũng có, vì thác nước hay bình tưới cây cũng tạo được cầu vồng.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai đứng ở hiên nhà sau cơn mưa, chỉ tay lên cầu vồng cong trên cánh đồng lúa xanh. Huy đứng cạnh, mỉm cười."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Anh Huy ơi, cầu vồng kìa! Ai tô bảy màu lên trời vậy anh?"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Không ai tô cả đâu. Mà em biết không, cầu vồng thật ra là một vòng tròn, mình chỉ thấy một nửa thôi."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Thế nửa kia trốn đi đâu?"
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy vẫy tay chào trước camera, sau lưng là cầu vồng và ba dấu hỏi nhỏ bay lơ lửng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Chào các bạn! Hôm nay mình cùng tìm hiểu vì sao cầu vồng có bảy màu, vì sao nó hay đến sau cơn mưa, và nửa kia trốn ở đâu nhé."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai giơ tay hứng mưa, bong bóng suy nghĩ vẽ những giọt mưa đủ màu đỏ, xanh, vàng rơi xuống. Trong lòng bàn tay Mai là một giọt nước trong veo."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Em đoán nhé. Nước mưa có màu, giọt đỏ, giọt xanh, rơi xuống thành cầu vồng!"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Đoán hay lắm, các nhà khoa học cũng bắt đầu bằng đoán đấy. Em hứng một giọt mưa xem nào."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Ơ, trong veo, chẳng có màu gì cả."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "compare",
+        "what": "Hai khung tranh cạnh nhau. Bên trái là trời mưa xám xịt, không có Mặt Trời, không có cầu vồng. Bên phải là mưa nhẹ có Mặt Trời ló ra, cầu vồng hiện lên."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Nước mưa rất quan trọng, em đúng một nửa rồi. Nhưng có ngày mưa suốt mà chẳng thấy cầu vồng. Vì còn thiếu một nhân vật nữa, đó là ông Mặt Trời."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "host",
+        "what": "Huy cầm một sợi dây thừng trắng, đầu dây bung ra thành nhiều sợi chỉ đỏ, cam, vàng, lục, lam, tím. Phía sau, tia nắng chiếu xuống."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bước một. Ánh nắng trông trắng trắng, nhưng thật ra là rất nhiều màu trộn vào nhau, giống sợi dây được bện từ nhiều sợi chỉ màu."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "experiment",
+        "what": "Một cốc nước trong trên bàn, ống hút cắm vào trông như bị gãy ở mặt nước. Mai tròn mắt, Huy rút ống hút lên thấy nó thẳng."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Anh Huy ơi, ống hút trong cốc nước bị gãy rồi!"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Rút lên xem, có gãy đâu. Ánh sáng đi từ nước ra không khí bị đổi hướng, nên mắt mình thấy ống hút như gãy."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "arrows",
+        "what": "Một chiếc xe đồ chơi lăn xiên từ sàn gạch lên tấm thảm, một bánh chạm thảm trước, mũi tên cho thấy xe quẹo đi. Bên cạnh là tia sáng đi xiên vào mặt nước và bị bẻ hướng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ánh sáng đi trong nước chậm hơn trong không khí. Giống chiếc xe đồ chơi lăn xiên từ sàn gạch lên thảm, bánh nào chạm thảm trước thì chậm trước, xe bị quẹo đi. Ánh sáng bị bẻ hướng như thế gọi là khúc xạ."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai giơ ngón tay cái, bên cạnh hiện tấm bảng nhỏ vẽ tia nắng nhiều màu và một giọt nước bẻ cong tia sáng."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "Vậy ánh nắng có nhiều màu, và nước làm ánh sáng rẽ hướng!"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Chính xác! Đó là điều cần nhớ của bước một."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "Một tia sáng trắng chiếu vào khối thủy tinh hình tam giác, đi ra xòe thành chiếc quạt màu, đỏ ở trên, tím ở dưới. Có chữ khúc xạ ít ở màu đỏ, khúc xạ nhiều ở màu lam."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bước hai. Điều kỳ diệu là mỗi màu bị bẻ cong khác nhau một chút. Màu lam bị bẻ nhiều hơn, màu đỏ bị bẻ ít hơn. Thế là các màu tách ra, xòe như cái quạt. Người ta gọi đó là tán sắc."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "compare",
+        "what": "Một hàng học sinh mặc áo đủ màu chạy cùng nhau trên sân, đến bãi cát thì mỗi bạn chậm lại một kiểu và tản ra thành hình quạt."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Giống cả lớp chạy vào bãi cát, mỗi bạn chậm lại một kiểu, nên tản ra ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Đúng rồi! Khối thủy tinh tên là lăng kính làm được việc này. Và mỗi giọt mưa cũng là một lăng kính tí hon."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "zoom",
+        "what": "Phóng to một giọt mưa tròn. Tia nắng trắng đi vào và bẻ cong, chạm mặt sau giọt nước rồi dội lại, đi ra ngoài thành một chiếc quạt màu nhỏ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Phóng to một giọt mưa nhé. Tia nắng chui vào, bị bẻ cong lần thứ nhất. Nó chạy tới mặt sau giọt nước, dội ngược lại như quả bóng đập vào tường. Rồi nó chui ra, bị bẻ cong lần nữa, các màu tách hẳn ra."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "Mai đứng dưới đất, trên trời có nhiều giọt mưa. Từ giọt ở cao, một tia đỏ đi vào mắt Mai. Từ giọt thấp hơn, một tia tím đi vào mắt Mai. Bên cạnh là cầu vồng đỏ ngoài, tím trong."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Trên trời có vô số giọt mưa. Từ giọt cao hơn, màu đỏ lọt vào mắt em. Từ giọt thấp hơn một chút, màu tím lọt vào. Vì thế cầu vồng có đỏ ở vòng ngoài, tím ở vòng trong."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai cầm một giọt nước khổng lồ bằng bông như cầm quả bóng, bên trong vẽ cái quạt màu nhỏ. Huy vỗ tay."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "Mỗi giọt mưa là một lăng kính tí hon, tách ánh nắng ra nhiều màu!"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Giỏi lắm! Nhớ nhé, đỏ ở ngoài, tím ở trong."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai đứng trên bờ ruộng, giơ ngón tay đếm từng màu của cầu vồng. Một dấu hỏi nhỏ hiện ra giữa dải vàng và dải lục."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "quyết tâm",
+          "text": "Em đếm nhé. Đỏ, cam, vàng, lục, lam, chàm, tím. Bảy màu! Nhưng giữa vàng với lục hình như còn màu nữa."
+        },
+        {
+          "who": "Huy",
+          "how": "ngạc nhiên",
+          "text": "Mắt em tinh quá!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "zoom",
+        "what": "Một chiếc kính lúp soi vào dải cầu vồng, bên trong là các màu chuyển dần sang nhau, không có đường kẻ ngăn cách. Bên cạnh là bầu trời hoàng hôn chuyển từ cam sang tím."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bước ba. Thật ra cầu vồng không có bảy dải tách rời. Các màu chuyển dần sang nhau liền một mạch, như bầu trời lúc hoàng hôn chuyển từ cam sang tím. Có nhiều màu hơn bảy rất nhiều."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "count",
+        "what": "Nhà khoa học Niu-tơn tóc dài, mặc áo kiểu xưa, cầm lăng kính. Bên cạnh là số 5 chuyển thành số 7, và bảy nốt nhạc đồ rê mi pha son la si bay ra."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hơn ba trăm năm trước, nhà khoa học người Anh tên là Niu-tơn chia cầu vồng thành năm màu. Sau đó ông thêm cam và chàm cho đủ bảy, vì ông muốn giống bảy nốt nhạc, đồ rê mi pha son la si."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai vừa hát vừa nhảy trên bảy bậc thang, mỗi bậc một màu cầu vồng, có nốt nhạc bay lên. Huy cười."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "cười",
+          "text": "Đồ là đỏ, rê là cam, mi là vàng. Cầu vồng biết hát!"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Ha ha! Từ đó, mọi người quen nói cầu vồng có bảy màu."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "compare",
+        "what": "Hai bạn nhỏ ở hai nơi khác nhau cùng nhìn một cầu vồng. Bong bóng suy nghĩ của một bạn có ít dải màu, của bạn kia có nhiều dải màu."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các nhà khoa học còn nghĩ rằng, người nói thứ tiếng có ít tên màu hơn thường đếm được ít dải màu hơn. Cùng một cầu vồng, mỗi người có thể đếm ra một con số khác nhau."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai giơ tấm thẻ có số 7 to, phía sau là cầu vồng với các màu chuyển dần. Huy gật đầu."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "Vậy bảy là con số con người chọn cho dễ nhớ!"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Đúng thế! Cầu vồng có rất nhiều màu, bảy là cách mình đếm."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "host",
+        "what": "Huy đứng cạnh ba biểu tượng to, ông Mặt Trời, đám giọt nước li ti, và một bạn nhỏ quay lưng về phía Mặt Trời."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bước bốn, vì sao lại sau cơn mưa? Để thấy cầu vồng cần ba thứ. Ánh nắng. Thật nhiều giọt nước trong không khí. Và em đứng quay lưng về phía Mặt Trời."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Làng quê sau mưa. Mây đen trôi về một phía, Mặt Trời ló ra phía bên kia, không khí lấp lánh giọt nước li ti. Mai cầm bát phở tưởng tượng trong bong bóng suy nghĩ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ngay sau cơn mưa, ba thứ ấy gặp nhau. Mây mưa trôi về một phía, Mặt Trời ló ra phía bên kia, trong không khí vẫn còn đầy giọt nước li ti."
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Giống nấu phở phải đủ bánh, nước dùng và thịt mới thành bát phở!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "compare",
+        "what": "Hai khung tranh. Bên trái là buổi trưa, Mặt Trời trên đỉnh đầu, không có cầu vồng. Bên phải là chiều muộn, Mặt Trời thấp ở phía tây, cầu vồng hiện ở phía đông."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Mặt Trời còn phải ở thấp. Buổi trưa Mặt Trời lên quá cao thì khó thấy cầu vồng. Nên cầu vồng hay hiện ra vào buổi sáng ở phía tây, hoặc chiều muộn ở phía đông."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Nửa bầu trời đen sẫm mây mưa, nửa kia trong xanh có nắng. Một cầu vồng sáng rực nổi trên nền mây tối, bên ngoài có thêm cầu vồng thứ hai mờ hơn, màu xếp ngược lại."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Có lần chiều mưa xong, nửa trời đen sì mà cầu vồng sáng rực!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Đó là lúc đẹp nhất, nền mây tối làm cầu vồng nổi bật. Có khi còn thấy cầu vồng thứ hai mờ hơn ở bên ngoài, màu xếp ngược lại."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "diagram",
+        "what": "Từ mắt Mai vẽ ra một hình nón nghiêng hướng ra xa Mặt Trời, đáy nón là một vòng tròn cầu vồng. Đường mặt đất cắt ngang, nửa dưới vòng tròn tô mờ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Còn vì sao nó cong? Ánh sáng từ giọt mưa chỉ vào mắt mình theo một góc nghiêng nhất định. Những giọt ở đúng góc ấy xếp thành một vòng tròn. Mặt đất che mất nửa dưới, nên mình thấy cái cầu cong."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai chạy trên bờ ruộng về phía cầu vồng, cầu vồng lùi ra xa theo. Huy đứng phía sau cười."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "quyết tâm",
+          "text": "Thế em chạy thật nhanh tới chân cầu vồng thì sao?"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Em chạy tới đâu, cầu vồng lùi tới đó! Cầu vồng không phải một vật, mà là ánh sáng đến mắt em. Mỗi người thấy một cầu vồng của riêng mình."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "host",
+        "what": "Huy đứng giữa, bên trái là Mặt Trời thấp sau lưng một bạn nhỏ, bên phải là màn giọt nước có cầu vồng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Nhớ nhé, cầu vồng hiện ra khi có giọt nước trong không khí và nắng thấp chiếu từ sau lưng mình. Sau mưa là lúc dễ có đủ cả hai nhất."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai và Huy ngồi cạnh cửa sổ máy bay, nhìn xuống lớp mây mù có một cầu vồng tròn trọn vẹn."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Thử tưởng tượng các bạn ngồi máy bay, nhìn xuống vùng mây mù. Trên cao, mặt đất không che nữa, đôi khi thấy cả cầu vồng tròn vành vạnh!"
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Vậy nửa kia trốn dưới đất! Lên cao là tìm thấy!"
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Buổi chiều nắng ở sân nhà, mẹ và Mai đứng quay lưng về phía Mặt Trời, Mai xịt bình tưới cây tạo màn nước mịn có cầu vồng nhỏ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ở nhà, các bạn cũng tự làm được cầu vồng. Chiều nắng, nhờ bố mẹ cùng ra sân, đứng quay lưng về phía Mặt Trời, rồi xịt nước thật mịn bằng bình tưới cây."
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Có rồi! Cầu vồng tí hon ngay trong sân nhà mình!"
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "scene",
+        "what": "Huy giơ ngón tay nhắc nhở, bên cạnh là biểu tượng con mắt và Mặt Trời bị gạch chéo. Phía xa là thác nước và đài phun nước có cầu vồng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "lo lắng",
+          "text": "Nhớ nhé, đừng bao giờ nhìn thẳng vào Mặt Trời, vì rất hại mắt. Cầu vồng luôn ở phía đối diện Mặt Trời, nên cứ quay lưng lại là đúng. Gần thác nước hay đài phun nước cũng hay có cầu vồng đấy."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "host",
+        "what": "Huy đứng bên sơ đồ đơn giản, Mặt Trời chiếu vào giọt mưa, giọt mưa xòe ra quạt màu, quạt màu đi vào mắt một bạn nhỏ, phía trên là số 7."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Tóm lại, mỗi giọt mưa là một lăng kính tí hon, bẻ cong và tách ánh nắng thành dải màu liền nhau. Bảy màu là cách con người đếm. Cầu vồng hay đến sau mưa vì lúc ấy có giọt nước lơ lửng và nắng chiếu từ sau lưng."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "count",
+        "what": "Một chiếc đồng hồ chạy gần chín vòng giờ, phía sau là dãy núi xanh ở Đài Loan có cầu vồng, góc tranh ghi năm 2017."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Thêm một điều thú vị. Cầu vồng lâu nhất từng được ghi nhận kéo dài gần chín tiếng, ở vùng núi Đài Loan năm hai nghìn không trăm mười bảy."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Chín tiếng! Lâu hơn cả một ngày đi học!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai chỉ lên bầu trời xanh trong, có dấu hỏi to. Huy vẫy tay, bên cạnh là nút đăng ký kênh Hỏi Huy."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Anh Huy ơi, thế vì sao bầu trời lại màu xanh ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Câu hỏi hay! Mình sẽ tìm hiểu ở video sau. Các bạn nhớ bấm đăng ký kênh Hỏi Huy nhé. Hẹn gặp lại!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Cầu vồng là ánh nắng bị khúc xạ, phản xạ và tán sắc trong các giọt nước.",
+      "source": "Cầu vồng"
+    },
+    {
+      "claim": "Khi bay trên máy bay, đôi khi có thể thấy cầu vồng thành một vòng tròn trọn vẹn. Ở dưới đất, mặt đất che mất một nửa vòng tròn hoặc hơn.",
+      "source": "Rainbow"
+    },
+    {
+      "claim": "Ánh sáng trắng gồm nhiều màu, và lăng kính hay giọt mưa có thể tách nó ra thành các màu.",
+      "source": "Refraction"
+    },
+    {
+      "claim": "Ánh sáng đi trong nước chậm hơn. Khi đi xiên vào nước, một bên tia sáng chậm lại trước nên tia sáng đổi hướng. Hiện tượng này gọi là khúc xạ.",
+      "source": "Refraction"
+    },
+    {
+      "claim": "Ánh sáng đổi hướng khi đi từ nước ra không khí, nên ống hút trong cốc nước trông như bị gãy.",
+      "source": "Kiến thức phổ thông (Refraction)"
+    },
+    {
+      "claim": "Mỗi màu bị khúc xạ khác nhau. Ánh sáng lam bị bẻ nhiều hơn ánh sáng đỏ. Hiện tượng này gọi là tán sắc.",
+      "source": "Rainbow; Tán sắc"
+    },
+    {
+      "claim": "Trong giọt mưa, ánh sáng bị khúc xạ khi đi vào, phản xạ ở mặt sau, rồi khúc xạ thêm lần nữa khi đi ra.",
+      "source": "Rainbow"
+    },
+    {
+      "claim": "Ở cầu vồng chính, màu đỏ nằm ở vòng ngoài và màu tím nằm ở vòng trong.",
+      "source": "Rainbow"
+    },
+    {
+      "claim": "Cầu vồng là một dải màu liền nhau. Các dải màu riêng rẽ mà ta thấy là do cách mắt người cảm nhận màu.",
+      "source": "Cầu vồng; Rainbow"
+    },
+    {
+      "claim": "Bảy màu hay được nhắc tới là đỏ, cam, vàng, lục, lam, chàm, tím.",
+      "source": "Cầu vồng"
+    },
+    {
+      "claim": "Năm 1672, Niu-tơn chia quang phổ thành năm màu. Sau đó ông thêm cam và chàm cho đủ bảy, giống số nốt trong một gam nhạc.",
+      "source": "Rainbow"
+    },
+    {
+      "claim": "Một số nghiên cứu cho thấy người nói thứ tiếng có ít tên màu hơn thường thấy ít dải màu hơn.",
+      "source": "Rainbow"
+    },
+    {
+      "claim": "Muốn thấy cầu vồng thì cần có giọt nước trong không khí và ánh nắng chiếu từ sau lưng người nhìn, khi Mặt Trời ở thấp.",
+      "source": "Rainbow"
+    },
+    {
+      "claim": "Cầu vồng do ánh nắng tạo ra luôn nằm ở phía bầu trời đối diện Mặt Trời.",
+      "source": "Rainbow"
+    },
+    {
+      "claim": "Buổi sáng cầu vồng hay hiện ở phía tây, chiều muộn hay hiện ở phía đông. Khi Mặt Trời lên quá cao, sẽ không thấy cầu vồng trên nền trời.",
+      "source": "Rainbow"
+    },
+    {
+      "claim": "Cầu vồng đẹp nhất khi nửa trời còn tối vì mây mưa. Lúc đó có thể thấy cầu vồng thứ hai mờ hơn ở bên ngoài, màu xếp ngược lại.",
+      "source": "Rainbow; Cầu vồng"
+    },
+    {
+      "claim": "Cầu vồng có hình cung vì chỉ những giọt nước ở đúng một góc nhất định, khoảng 42 độ, mới đưa ánh sáng vào mắt người nhìn.",
+      "source": "Cầu vồng; Rainbow"
+    },
+    {
+      "claim": "Cầu vồng không phải là một vật, nên không thể đến chạm vào được. Mỗi người nhìn thấy một cầu vồng khác nhau.",
+      "source": "Cầu vồng"
+    },
+    {
+      "claim": "Cầu vồng cũng hay xuất hiện gần thác nước và đài phun nước. Có thể tự tạo cầu vồng bằng cách xịt nước vào không khí trong ngày nắng.",
+      "source": "Rainbow"
+    },
+    {
+      "claim": "Cầu vồng lâu nhất từng được ghi nhận kéo dài 8 giờ 58 phút, trên dãy núi Dương Minh Sơn ở Đài Bắc, Đài Loan, vào tháng 11 năm 2017.",
+      "source": "Rainbow"
+    }
+  ],
+  "shorts": [
+    1,
+    30,
+    31
+  ],
+  "thumbnail": "Cầu vồng là vòng tròn?",
+  "description": "Vì sao cầu vồng có bảy màu, và vì sao nó hay xuất hiện sau cơn mưa? Huy và Mai cùng phóng to một giọt mưa để xem nó tách ánh nắng thành màu ra sao. Hai bạn còn kể chuyện nhà khoa học Niu-tơn chọn con số bảy, và vì sao ta không bao giờ chạy tới được chân cầu vồng. Cuối video có một cách tự làm cầu vồng an toàn bằng bình tưới cây, các bé nên làm cùng bố mẹ.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": ""
+}

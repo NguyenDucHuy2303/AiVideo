@@ -42,6 +42,7 @@ export const PUBLISH_DEFAULTS: PublishSettings = {
   "huy-ke-chuyen": { name: "Huy Kể Chuyện", lang: "vi", category: "1", long: ["18:00"], shorts: ["11:30", "16:30", "20:30"], enabled: false },
   "huy-tells-tales": { name: "Huy Tells Tales", lang: "en", category: "1", long: ["19:00"], shorts: [], enabled: false },
   "ask-huy": { name: "Ask Huy", lang: "en", category: "27", long: ["17:00"], shorts: ["12:00", "15:00", "19:30"], enabled: false },
+  "hoi-huy": { name: "Hỏi Huy", lang: "vi", category: "27", long: ["17:30"], shorts: ["12:30", "19:00"], enabled: false },
 };
 
 export interface Published { videoId: string; url: string; publishAt: string; channel: string; at: string }
@@ -143,10 +144,19 @@ export async function metaOf(job: Job, what: What, cfg: ChannelCfg, longUrl?: st
   const dir = jobDir(job.slug);
   const read = async (f: string) => ((await exists(path.join(dir, f))) ? JSON.parse(await fsp.readFile(path.join(dir, f), "utf8")) : undefined);
   const sources = ((await read("sources.json")) ?? []) as { title: string; url: string }[];
-  const qa = job.kind === "qa";
+  const qa = job.kind === "qa" || job.kind === "qa-vi";
   const plan = what === "en" ? (await read("plan.en.json")) ?? (await read("plan.json")) : await read("plan.json");
   const title0 = String(plan?.title ?? job.topic);
   const watch = longUrl ? (cfg.lang === "vi" ? `Xem trọn video: ${longUrl}\n\n` : `Watch the full video: ${longUrl}\n\n`) : "";
+  if (qa && cfg.lang === "vi") {
+    const question = String(plan?.question ?? job.topic);
+    const base = what === "short" ? `${cut(question, 88)} #Shorts` : title0.includes(cfg.name) ? title0 : `${title0} | ${cfg.name}`;
+    return {
+      title: cut(base, 100), categoryId: cfg.category, lang: "vi",
+      description: cut(`${watch}${plan?.description ?? ""}\n\n${plan?.answer ? `Trả lời ngắn: ${plan.answer}\n\n` : ""}${sources.length ? `Nguồn tư liệu:\n${sources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Hỏi Huy: mỗi video trả lời một câu hỏi lớn cho các bạn nhỏ hay tò mò.\n\n#HoiHuy #KhoaHocThieuNhi #HocMaChoi`, 5000),
+      tags: tagsOf(["Hỏi Huy", "khoa học thiếu nhi", "giải đáp thắc mắc", "phim hoạt hình giáo dục", question]),
+    };
+  }
   if (qa) {
     const question = String(plan?.question ?? job.topic);
     const base = what === "short" ? `${cut(question, 88)} #Shorts` : title0.includes(cfg.name) ? title0 : `${title0} | ${cfg.name}`;
