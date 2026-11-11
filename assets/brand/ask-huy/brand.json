@@ -1,0 +1,14 @@
+{
+  "name": "Ask Huy",
+  "tagline": "Big answers to little questions",
+  "owner": "Nguyễn Đức Huy",
+  "theme": "ask_huy",
+  "texts": {
+    "thanks": "Thanks for watching!",
+    "subscribe": "SUBSCRIBE",
+    "subscribed": "SUBSCRIBED",
+    "watchFull": "Watch the full answer on",
+    "follow": "Subscribe for more answers!",
+    "ask": "Got a question? Ask Huy!"
+  }
+}

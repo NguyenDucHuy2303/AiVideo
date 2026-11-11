@@ -3682,6 +3682,11 @@
       "at": "2026-11-11T01:38:51.155Z",
       "status": "producing",
       "info": "sửa theo góp ý"
+    },
+    {
+      "at": "2026-11-11T01:41:02.397Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
     }
   ],
   "kind": "qa",

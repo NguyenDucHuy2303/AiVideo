@@ -318,7 +318,8 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
 
   const out = path.join(dir, "out", `${slugify(storyboard.title || path.basename(dir))}-hoat-hinh${variant}_${shape}.mp4`);
   await fs.mkdir(path.dirname(out), { recursive: true });
-  const brand = opts.brand === false ? undefined : await loadBrand(opts.lang);
+  // The channel's brand: project.json "brandId" for another channel's own (Ask Huy), else the first.
+  const brand = opts.brand === false ? undefined : await loadBrand(opts.lang, project.brandId);
   const esc = (p: string) => p.replace(/\\/g, "\\\\").replace(/:/g, "\\:").replace(/'/g, "\\'");
   const mix = [
     "[1:a]apad,asplit=2[voice][key]",

@@ -138,7 +138,7 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
   await fs.writeFile(path.join(proj, "script.txt"), [plan.title, ...lines].join("\n") + "\n");
   await fs.writeFile(path.join(proj, "storyboard.json"), JSON.stringify({ title: plan.title, kind: "story", scenes: lines.map((narration) => ({ narration, chapter: plan.title, onScreen: {}, visual: { description: "studio", mood: "calm" }, camera: "ken_burns", transition: "cut" })) }, null, 2));
   const project = JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8"));
-  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers: { [QA.host.name]: ["huy"], [QA.kid.name]: ["mai"] }, style: STYLE, thumbnail: { title: plan.thumbnail, subtitle: QA.channel } }, null, 2));
+  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers: { [QA.host.name]: ["huy"], [QA.kid.name]: ["mai"] }, brandId: "ask-huy", style: STYLE, thumbnail: { title: plan.thumbnail, subtitle: QA.channel } }, null, 2));
   await fs.writeFile(path.join(anim, "cast.json"), JSON.stringify(LOOKS, null, 2));
   if (!(await exists(path.join(proj, "timeline.json")))) {
     log("  voices");
@@ -146,6 +146,10 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
   }
   const timeline = JSON.parse(await fs.readFile(path.join(proj, "timeline.json"), "utf8"));
   const seconds: number[] = timeline.scenes.map((s: { durationFrames: number }) => s.durationFrames / timeline.fps);
+  // The thumbnail's picture: the opening scene (Huy and Mai, the question asked), not a board.
+  const pj = JSON.parse(await fs.readFile(path.join(proj, "project.json"), "utf8"));
+  pj.thumbnail = { ...pj.thumbnail, at: Math.round((seconds[0] ?? 4) * 0.6 * 100) / 100 };
+  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify(pj, null, 2));
   // Direction in batches (the SVG pictures are long answers), each batch written as it comes.
   const BATCH = 6;
   for (let from = 0; from < plan.scenes.length; from += BATCH) {
@@ -174,7 +178,8 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
 
 /** The film (heavy: nights and weekends), linked into the job folder as video.mp4. */
 export async function renderQA(slug: string, log: (s: string) => void = console.log): Promise<string> {
-  const out = await renderStory(qaProject(slug), { lang: "en", brand: false, onLog: log });
+  // The channel's own intro, outro, corner logo and thumbnail (assets/brand/ask-huy).
+  const out = await renderStory(qaProject(slug), { lang: "en", onLog: log });
   for (const [from, to] of [[out, "video.mp4"]] as const) {
     const target = path.join(jobDir(slug), to);
     await fs.rm(target, { force: true });

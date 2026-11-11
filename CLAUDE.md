@@ -4,6 +4,16 @@ Phần mềm chạy trên máy, tự làm phim hoạt hình thiếu nhi tiếng 
 
 Luồng chính: chủ đề → tư liệu → kịch bản có lời thoại → nhân vật và bảng trang phục → **người dùng duyệt** → giọng, chỉ đạo cảnh, tranh nền → render → **người dùng duyệt video** → bản tiếng Anh và Shorts.
 
+Kênh thứ hai **Ask Huy** (tiếng Anh, trẻ 6–12, mỗi video trả lời một câu hỏi): job `kind: "qa"`.
+- `src/studio/qa.ts`: kịch bản, soát sự thật, đề xuất câu hỏi.
+- `qaproduce.ts`: giọng, chỉ đạo cảnh, tranh nền, render.
+- `runtime/board.js`: bảng giải thích SVG.
+- Người dẫn là Huy, bé Mai hỏi.
+
+Mỗi **dòng nội dung** khai báo trong `studio/settings.json` → `pick.lines`, gồm `kinds`, `perDay`, `ahead`, `propose`.
+- Studio tự tìm chủ đề khi sắp hết kịch bản.
+- 17:00 tự chọn kịch bản điểm cao nhất nếu người dùng chưa chọn đủ (`src/studio/pick.ts`).
+
 Tài liệu chi tiết:
 - `README.md`: lệnh và cách dùng.
 - `src/animation/LIBRARY.md`: thư viện hình (thời đại, trang phục, nhà, thú vật, phong cách, brand).
@@ -48,6 +58,7 @@ Node ≥ 22.18 chạy TypeScript trực tiếp, không có bước build. Import
   - Phim lấy phong cách từ `project.json` `"style"`, do `loadScene` gắn vào từng cảnh.
 - **Tranh nền:** FLUX.2 klein 4B Q4 (Apache-2.0) qua stable-diffusion.cpp, khoảng 3–4 phút mỗi ảnh. Mỗi tổ hợp set × giờ × thời đại × phong cách chỉ vẽ một lần, cache ở `assets/library/generated/backdrops/`.
   - SD-Turbo chỉ còn làm dự phòng (giấy phép Stability phải đăng ký nếu kiếm tiền).
+- **Thương hiệu theo kênh:** Huy Kể Chuyện ở `assets/brand/`; Ask Huy ở `assets/brand/ask-huy/` (kiểu `ask_huy`, vẽ trong `brand/askhuy.js`). Phim chọn theo `project.json` `"brandId"`.
 - **Intro/outro:** 6 bộ (`brand/brand.html` cho trống đồng, `brand/themes.js` cho các bộ khác), chọn theo `project.json` `"brand": {intro, outro}`. Clip cache ở `assets/brand/clips/`; sửa thiết kế thì xóa file trong đó.
 - **Lựa chọn của từng video** (`job.art`, `src/studio/art.ts`): bộ não gợi ý, người dùng đổi trên trang duyệt, render thì đồng bộ vào `project.json`.
 - **Nhân vật** luôn là vector. Hướng rối vẽ tay (cắt tranh AI thành rối) đã thử ngày 10/11/2026 và bỏ: khớp vai không liền mạch được, đừng làm lại theo cách đó.

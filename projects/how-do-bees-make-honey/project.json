@@ -1,7 +1,7 @@
 {
   "engine": "kokoro",
   "voice": "am_michael",
-  "speed": 1,
+  "speed": 0.92,
   "imageGen": "off",
   "onlineImages": false,
   "profiles": [
@@ -26,6 +26,8 @@
   "style": "hien_dai",
   "thumbnail": {
     "title": "Bees Blow Bubbles for Honey?",
-    "subtitle": "Ask Huy"
-  }
+    "subtitle": "Ask Huy",
+    "at": 10.12
+  },
+  "brandId": "ask-huy"
 }

@@ -11,7 +11,7 @@
  * end card 2.5 s), so the sounds of brand.ts fit them all. Uses brand.html's helpers.
  */
 (function () {
-  if (THEME === "trong_dong" || !["intro", "outro", "end"].includes(mode)) return;
+  if (THEME === "trong_dong" || THEME === "ask_huy" || !["intro", "outro", "end"].includes(mode)) return;
   const V = H > W, U = Math.min(W, H);
   const add = (html) => defs.insertAdjacentHTML("beforeend", html);
   const D = P.duration || (mode === "intro" ? 3.5 : mode === "end" ? 2.5 : 5);
