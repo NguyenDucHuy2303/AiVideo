@@ -132,12 +132,12 @@ function sceneOf(P: QAProfile, d: Directed, plan: QAPlan, i: number, seconds: nu
   const actions: Record<string, unknown>[] = gestures("huy", d.huy, seconds);
   if (withMai) actions.push(...gestures("mai", d.mai, seconds));
   const on = withMai ? ["huy", "mai"] : ["huy"];
-  const shot = d.layout === "board" ? { at: 0, type: "full", on, dx: 0.33, share: 0.56, gy: 0.9 }
+  const shot = d.layout === "board" ? { at: 0, type: "full", on, dx: 0.33, share: 0.56, gy: 0.9, push: 0.05 }
     : d.layout === "host" ? { at: 0, type: withMai ? "full" : "medium", on, push: 0.06 }
     : { at: 0, type: "full", on, share: 0.62 };
   return {
     castFile: "cast.json", duration: Math.max(1, Math.round(seconds * 100) / 100), time: d.time, style: STYLE, styleLook: styleOf(STYLE).look,
-    set: { name: "plain" }, place: d.layout === "place" ? d.place : STUDIO, cast, actions, shots: [shot],
+    set: { name: "plain" }, place: d.layout === "place" ? d.place : STUDIO, cast, actions, shots: [shot], mood: "playful",
     ...(d.layout === "board" && d.board.trim() ? { board: boardOf(d.board, style, i, log), speakerShots: false } : {}),
   };
 }

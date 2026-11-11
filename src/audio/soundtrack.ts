@@ -7,9 +7,9 @@ import { run } from "../utils/process.ts";
  * đàn tranh) over a soft drone, with drums for battle; effects are short synthesized hits.
  */
 
-export const MUSIC_MOODS = ["calm", "tense", "battle", "majestic"] as const;
+export const MUSIC_MOODS = ["calm", "tense", "battle", "majestic", "playful"] as const;
 export type MusicMood = (typeof MUSIC_MOODS)[number];
-export const SFX_TYPES = ["boom", "whoosh", "drums", "wind", "shimmer", "chime"] as const;
+export const SFX_TYPES = ["boom", "whoosh", "drums", "wind", "shimmer", "chime", "pop"] as const;
 export type SfxType = (typeof SFX_TYPES)[number];
 
 export interface MusicSection {
@@ -31,6 +31,8 @@ const MOOD: Record<MusicMood, { beat: number; rest: number; octave: number; drum
   tense: { beat: 1.0, rest: 0.45, octave: 0.05, drumEvery: 2, drum: 0.35, pluck: 0.22, drone: 0.22 },
   battle: { beat: 0.36, rest: 0.25, octave: 0.25, drumEvery: 1, drum: 0.55, pluck: 0.26, drone: 0.18 },
   majestic: { beat: 0.6, rest: 0.2, octave: 0.45, drumEvery: 4, drum: 0.3, pluck: 0.32, drone: 0.2 },
+  // The question channels: quick, high and light, a soft tick every other beat, little drone.
+  playful: { beat: 0.42, rest: 0.32, octave: 0.4, drumEvery: 2, drum: 0.12, pluck: 0.28, drone: 0.08 },
 };
 
 /** Pseudo-random in [0,1) from an expression, the classic sin hash. */
@@ -78,6 +80,9 @@ export function sfxSource(type: SfxType): { src: string; chain: string; duration
       const notes = [784, 880, 1047, 1175, 1568].map((f, i) => `gte(t,${i * 0.11})*exp(-2.5*(t-${i * 0.11}))*sin(2*PI*${f}*(t-${i * 0.11}))`).join("+");
       return { src: `aevalsrc='0.22*(${notes})':s=${sr}:d=2.5`, chain: "aecho=0.8:0.6:90:0.3", duration: 2.5 };
     }
+    case "pop":
+      // A bubble pop: a quick rising blip (a picture appearing on a board).
+      return { src: `aevalsrc='0.55*exp(-28*t)*sin(2*PI*(380+2600*t)*t)':s=${sr}:d=0.3`, chain: "highpass=f=200", duration: 0.3 };
     case "chime":
       return { src: `aevalsrc='0.35*exp(-1.8*t)*sin(2*PI*523.25*t)+0.2*exp(-2.6*t)*sin(2*PI*784*t)+0.1*exp(-3.5*t)*sin(2*PI*1568*t)':s=${sr}:d=3`, chain: "aecho=0.8:0.5:120:0.25", duration: 3 };
   }

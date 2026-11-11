@@ -178,7 +178,8 @@
     const k = smooth(clamp(t / 0.3));
     B.root.style.transformBox = "fill-box";
     B.root.style.transformOrigin = "center";
-    B.root.style.transform = `scale(${f2(0.9 + 0.1 * k)})`;
+    // …then drifts in very slowly while it is explained.
+    B.root.style.transform = `scale(${f2((0.9 + 0.1 * k) * (1 + 0.018 * Math.min(1, t / 10)))})`;
     for (const it of B.items) {
       const inK = Number.isFinite(it.at) ? smooth(clamp((t - it.at) / 0.35)) : 1;
       const outK = Number.isFinite(it.out) ? 1 - smooth(clamp((t - it.out) / 0.3)) : 1;

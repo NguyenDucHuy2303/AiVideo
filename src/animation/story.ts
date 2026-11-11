@@ -56,6 +56,12 @@ function covers(name: string): number[] | undefined {
 function sfxOf(s: Script): SfxEvent[] {
   const k = 1 / (s.scene.timeScale ?? 1), out: SfxEvent[] = [];
   for (const e of (s.scene.audio?.sfx ?? []) as SfxEvent[]) out.push({ ...e, at: e.at * k });
+  // A board: a soft pop as each picture appears (at most one every quarter second).
+  if (s.scene.board?.svg) {
+    const times = [...String(s.scene.board.svg).matchAll(/data-in\s*=\s*["']([\d.]+)["']/g)].map((m) => Number(m[1])).filter((x) => Number.isFinite(x)).sort((a, b) => a - b);
+    let last = -1;
+    for (const t of times) if (t - last >= 0.25) { out.push({ type: "pop", at: t * k }); last = t; }
+  }
   if (s.scene.audio?.sfx) return out;
   for (const f of s.scene.fx ?? []) {
     const at = f.at * k;
