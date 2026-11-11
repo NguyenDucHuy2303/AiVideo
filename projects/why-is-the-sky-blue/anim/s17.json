@@ -7,7 +7,7 @@
   "set": {
     "name": "plain"
   },
-  "place": "a giant pinball machine in the sky",
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
   "cast": [
     {
       "id": "huy",
@@ -19,8 +19,8 @@
       "id": "mai",
       "type": "human",
       "look": "mai",
-      "x": 250,
-      "facing": -1
+      "x": -140,
+      "facing": 1
     }
   ],
   "actions": [
@@ -45,14 +45,20 @@
         "huy",
         "mai"
       ],
-      "share": 0.62
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
     }
   ],
   "backdrop": {
-    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/6862684e86f1.png",
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
     "size": [
       768,
       448
     ]
-  }
+  },
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\">\n<text x=\"500\" y=\"60\" font-size=\"40\" font-family=\"sans-serif\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2a2a40\">The sky is a giant pinball game!</text>\n<rect x=\"120\" y=\"90\" width=\"760\" height=\"470\" rx=\"40\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"6\"/>\n<g data-in=\"0.3\"><circle cx=\"300\" cy=\"230\" r=\"42\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"520\" cy=\"190\" r=\"42\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"690\" cy=\"300\" r=\"42\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"420\" cy=\"380\" r=\"42\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"620\" cy=\"460\" r=\"42\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g>\n<text x=\"300\" y=\"300\" font-size=\"28\" font-family=\"sans-serif\" text-anchor=\"middle\" fill=\"#ffffff\" data-in=\"0.6\">air molecule</text>\n<path d=\"M150 150 L300 230 L520 190 L690 300 L420 380 L620 460 L850 520\" stroke=\"#ffffff\" stroke-width=\"8\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"draw\" data-in=\"1\"/>\n<circle cx=\"150\" cy=\"150\" r=\"20\" fill=\"#1e88e5\" stroke=\"#ffffff\" stroke-width=\"5\" class=\"pulse\" data-in=\"0.8\"/>\n<circle cx=\"850\" cy=\"520\" r=\"20\" fill=\"#1e88e5\" stroke=\"#ffffff\" stroke-width=\"5\" class=\"pulse\" data-in=\"2.2\"/>\n<text x=\"820\" y=\"150\" font-size=\"32\" font-family=\"sans-serif\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#ffffff\" data-in=\"2.4\">Boing!</text>\n</svg>"
+  },
+  "speakerShots": false
 }

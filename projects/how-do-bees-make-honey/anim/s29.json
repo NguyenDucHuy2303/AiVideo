@@ -1,0 +1,62 @@
+{
+  "castFile": "cast.json",
+  "duration": 12.73,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 8.91,
+      "do": "talk",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"85\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">From flower to honey</text><g data-in=\"0.5\"><line x1=\"140\" y1=\"330\" x2=\"140\" y2=\"430\" stroke=\"#43a047\" stroke-width=\"8\"/><circle cx=\"140\" cy=\"250\" r=\"30\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"140\" cy=\"310\" r=\"30\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"110\" cy=\"280\" r=\"30\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"170\" cy=\"280\" r=\"30\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"140\" cy=\"280\" r=\"22\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><path data-in=\"2.5\" d=\"M240 300 H280 M266 286 L282 300 L266 314\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g data-in=\"3\" class=\"float\"><ellipse cx=\"380\" cy=\"310\" rx=\"70\" ry=\"45\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\"/><ellipse cx=\"365\" cy=\"255\" rx=\"30\" ry=\"20\" fill=\"#cfeaff\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"410\" cy=\"315\" r=\"22\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"335\" cy=\"300\" r=\"6\" fill=\"#3a2a20\"/></g><path data-in=\"5\" d=\"M480 300 H520 M506 286 L522 300 L506 314\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g data-in=\"5.5\"><ellipse cx=\"600\" cy=\"330\" rx=\"50\" ry=\"32\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\"/><ellipse cx=\"592\" cy=\"290\" rx=\"22\" ry=\"14\" fill=\"#cfeaff\" stroke=\"#3a2a20\" stroke-width=\"4\"/><g class=\"float\"><circle cx=\"670\" cy=\"270\" r=\"20\" fill=\"#cfeaff\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"705\" cy=\"225\" r=\"13\" fill=\"#cfeaff\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><path class=\"flow\" d=\"M540 395 H700 M540 420 H700\" fill=\"none\" stroke=\"#4aa3e0\" stroke-width=\"6\" stroke-dasharray=\"16 12\" stroke-linecap=\"round\"/></g><path data-in=\"7\" d=\"M730 300 H760 M750 288 L762 300 L750 312\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g data-in=\"7.5\"><polygon points=\"860,210 938,255 938,345 860,390 782,345 782,255\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"/><circle cx=\"860\" cy=\"300\" r=\"52\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g></svg>"
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

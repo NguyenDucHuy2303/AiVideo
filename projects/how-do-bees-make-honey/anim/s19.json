@@ -1,0 +1,62 @@
+{
+  "castFile": "cast.json",
+  "duration": 12.93,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 9.05,
+      "do": "talk",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0.3\" x=\"500\" y=\"75\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Water in Nectar and Honey</text><g data-in=\"1\"><text x=\"250\" y=\"135\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\">Nectar</text><rect x=\"150\" y=\"160\" width=\"200\" height=\"350\" rx=\"20\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g><g data-in=\"2.5\"><rect x=\"155\" y=\"248\" width=\"190\" height=\"257\" rx=\"16\" fill=\"#4aa3e0\"/><text x=\"250\" y=\"390\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"40\" font-weight=\"bold\" fill=\"#2a2a40\">75% water</text></g><g data-in=\"4.5\"><text x=\"750\" y=\"135\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\">Honey</text><rect x=\"650\" y=\"160\" width=\"200\" height=\"350\" rx=\"20\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g><g data-in=\"6\"><rect x=\"655\" y=\"165\" width=\"190\" height=\"270\" rx=\"16\" fill=\"#ffb300\"/><rect x=\"655\" y=\"435\" width=\"190\" height=\"70\" rx=\"16\" fill=\"#4aa3e0\"/><text x=\"750\" y=\"310\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"40\" font-weight=\"bold\" fill=\"#2a2a40\">Thick!</text><text x=\"750\" y=\"482\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"30\" font-weight=\"bold\" fill=\"#2a2a40\">20% water</text></g><g data-in=\"8\"><line class=\"flow\" x1=\"390\" y1=\"340\" x2=\"600\" y2=\"340\" stroke=\"#e53935\" stroke-width=\"8\" stroke-dasharray=\"20 14\" stroke-linecap=\"round\"/><polygon points=\"610,340 580,318 580,362\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text x=\"500\" y=\"300\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#2a2a40\">Drying</text></g></svg>"
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

@@ -21,6 +21,8 @@ export const QA = {
   host: { name: "Huy", gender: "male", age: "young", role: "the host: curious, warm, a little funny; explains", villain: false } as CastMember,
   kid: { name: "Mai", gender: "female", age: "child", role: "an 8-year-old who asks, guesses and tries things", villain: false } as CastMember,
   narrator: "am_michael",
+  /** A calm pace for children (Kokoro at 1.0 is quick: ~200 words a minute). */
+  speed: 0.92,
 };
 
 export const BEATS = ["hook", "guess", "step", "imagine", "recap", "next"] as const;
@@ -94,7 +96,7 @@ function prompt(question: string, sources: Source[], notes: string[], previous?:
     "- recap (1–2 scenes): the answer in one or two sentences, then one fun fact.",
     "- next (1 scene): tease another question for next time, invite to subscribe.",
     "",
-    "Length: 26–38 scenes, about 850–1,150 words in all (5–8 minutes).",
+    "Length: 28–40 scenes, about 1,050–1,400 words in all (5–8 minutes at a calm pace for children).",
     `Parts: narration by the host to the viewer: who = "${QA.host.name}" too (he is on screen), how = "" or a word from the list. Dialogue: who = "${QA.host.name}" or "${QA.kid.name}" (only these two speak). how chosen from: ${HOW}. No quotation marks inside text, no colons inside text.`,
     "visual: kind = the kind of picture (host: the host talking to camera; scene: characters in a place; diagram: a simple labelled drawing of how it works; labels: an object with its parts named; arrows: movement or flow; map; compare: sizes or amounts side by side; zoom: going inside something small; count: numbers, a timeline; experiment), what = exactly what to draw, in one or two sentences. At most a third of the scenes may be host.",
     "facts: every factual claim in the script with the title of the source that supports it.",
@@ -140,9 +142,10 @@ const words = (scenes: QAScene[]) => scenes.flatMap((s) => s.parts).reduce((n, p
 export function checkQA(plan: QAPlan): string[] {
   const problems: string[] = [];
   const w = words(plan.scenes);
-  if (w < 800) problems.push(`The script is too short (${w} words): it needs about 850–1,150.`);
-  if (w > 1300) problems.push(`The script is too long (${w} words): it needs about 850–1,150.`);
-  if (plan.scenes.length < 22 || plan.scenes.length > 42) problems.push(`There are ${plan.scenes.length} scenes: it needs 26–38.`);
+  // Kokoro reads about 185 words a minute at speed 0.92: 1,050–1,400 words is 5.7–7.6 minutes.
+  if (w < 950) problems.push(`The script is too short (${w} words): it needs about 1,050–1,400.`);
+  if (w > 1550) problems.push(`The script is too long (${w} words): it needs about 1,050–1,400.`);
+  if (plan.scenes.length < 24 || plan.scenes.length > 44) problems.push(`There are ${plan.scenes.length} scenes: it needs 28–40.`);
   const order = plan.scenes.map((s) => BEATS.indexOf(s.beat));
   if (order.some((b, i) => i && b < order[i - 1]!)) problems.push("The beats are out of order: hook, guess, step, imagine, recap, next.");
   for (const b of BEATS) if (!plan.scenes.some((s) => s.beat === b)) problems.push(`The beat "${b}" is missing.`);
@@ -206,7 +209,7 @@ export async function writeQA(slug: string, log: (s: string) => void = console.l
   await fs.writeFile(path.join(dir, "factcheck.json"), JSON.stringify(fc, null, 2));
   await fs.writeFile(path.join(dir, "plan.json"), JSON.stringify(plan, null, 2));
   await fs.writeFile(path.join(dir, "script.txt"), toScript(plan));
-  await fs.writeFile(path.join(dir, "project.json"), JSON.stringify({ engine: "kokoro", voice: QA.narrator, speed: 1, imageGen: "off", onlineImages: false, profiles: ["16x9"], channel: QA.channel, voices: castVoicesEn(plan.cast, QA.narrator) }, null, 2));
+  await fs.writeFile(path.join(dir, "project.json"), JSON.stringify({ engine: "kokoro", voice: QA.narrator, speed: QA.speed, imageGen: "off", onlineImages: false, profiles: ["16x9"], channel: QA.channel, voices: castVoicesEn(plan.cast, QA.narrator) }, null, 2));
   job = await loadJob(slug);
   job.by = by;
   await saveJob(job);

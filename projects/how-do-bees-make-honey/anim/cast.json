@@ -1,0 +1,141 @@
+{
+  "huy": {
+    "body": "man",
+    "build": "slim",
+    "skin": "#e0a878",
+    "outfit": {
+      "type": "parts",
+      "top": {
+        "cut": "chui",
+        "color": "#2f7fd0",
+        "trim": "#1d5a9a",
+        "length": "hip",
+        "sleeves": "short"
+      },
+      "lower": {
+        "type": "pants",
+        "color": "#3b4a63",
+        "length": "ankle"
+      }
+    },
+    "hair": {
+      "style": "short",
+      "color": "#1a1410"
+    },
+    "shoes": "#2f3440",
+    "face": {
+      "shape": "oval",
+      "eyes": "round",
+      "nose": "button",
+      "brows": "thick",
+      "iris": "#2b1a0e",
+      "eyeScale": 1.15
+    }
+  },
+  "mai": {
+    "body": "child",
+    "skin": "#f0c08e",
+    "outfit": {
+      "type": "parts",
+      "top": {
+        "cut": "chui",
+        "color": "#f4a62a",
+        "length": "hip",
+        "sleeves": "short"
+      },
+      "lower": {
+        "type": "skirt",
+        "color": "#d9435a",
+        "length": "knee"
+      }
+    },
+    "hair": {
+      "style": "long",
+      "color": "#1a1410"
+    },
+    "shoes": "#e05a6e",
+    "face": {
+      "shape": "round",
+      "eyes": "round",
+      "nose": "button",
+      "brows": "thin",
+      "iris": "#2b1a0e"
+    }
+  },
+  "huy_space": {
+    "body": "man",
+    "build": "slim",
+    "skin": "#e0a878",
+    "outfit": {
+      "type": "parts",
+      "top": {
+        "cut": "chui",
+        "color": "#f2f4f7",
+        "trim": "#9aa8b6",
+        "length": "hip",
+        "sleeves": "long"
+      },
+      "lower": {
+        "type": "pants",
+        "color": "#e6e9ee",
+        "length": "ankle"
+      },
+      "belt": {
+        "color": "#7d8b99",
+        "ends": false
+      }
+    },
+    "hair": {
+      "style": "short",
+      "color": "#1a1410"
+    },
+    "shoes": "#aeb9c4",
+    "face": {
+      "shape": "oval",
+      "eyes": "round",
+      "nose": "button",
+      "brows": "thick",
+      "iris": "#2b1a0e",
+      "eyeScale": 1.15
+    },
+    "headwear": "space_helmet",
+    "gloves": "#e9edf2"
+  },
+  "mai_space": {
+    "body": "child",
+    "skin": "#f0c08e",
+    "outfit": {
+      "type": "parts",
+      "top": {
+        "cut": "chui",
+        "color": "#f2f4f7",
+        "trim": "#9aa8b6",
+        "length": "hip",
+        "sleeves": "long"
+      },
+      "lower": {
+        "type": "pants",
+        "color": "#e6e9ee",
+        "length": "ankle"
+      },
+      "belt": {
+        "color": "#7d8b99",
+        "ends": false
+      }
+    },
+    "hair": {
+      "style": "bun",
+      "color": "#1a1410"
+    },
+    "shoes": "#aeb9c4",
+    "face": {
+      "shape": "round",
+      "eyes": "round",
+      "nose": "button",
+      "brows": "thin",
+      "iris": "#2b1a0e"
+    },
+    "headwear": "space_helmet",
+    "gloves": "#e9edf2"
+  }
+}

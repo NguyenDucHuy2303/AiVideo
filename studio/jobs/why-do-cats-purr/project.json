@@ -1,7 +1,7 @@
 {
   "engine": "kokoro",
   "voice": "am_michael",
-  "speed": 1,
+  "speed": 0.92,
   "imageGen": "off",
   "onlineImages": false,
   "profiles": [

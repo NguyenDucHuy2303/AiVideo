@@ -15,7 +15,8 @@ test("narrator text and character lines are told apart", () => {
 });
 
 test("a child's voice: pitch up, tempo kept", () => {
-  assert.deepEqual(voiceFilters(1, 4), ["asetrate=48000*1.25992", "aresample=48000", "atempo=0.79370"]);
+  // The rate is set to 48 kHz first, whatever the engine speaks at (Kokoro: 24 kHz).
+  assert.deepEqual(voiceFilters(1, 4), ["aresample=48000", "asetrate=48000*1.25992", "aresample=48000", "atempo=0.79370"]);
   assert.deepEqual(voiceFilters(1.2), ["atempo=1.20000"]);
   assert.deepEqual(voiceFilters(1), []);
 });

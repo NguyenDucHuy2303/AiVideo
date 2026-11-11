@@ -80,20 +80,23 @@ export async function dailyPick(jobs: Job[], s: PickSettings, log: (s: string) =
     if (need <= 0) continue;
     const waiting = mine.filter((j) => j.status === "review" && !j.retryAt);
     if (!waiting.length) { log(`  ${line.name}: không có kịch bản chờ duyệt`); continue; }
+    // A script that cannot be scored (Claude at its limit, the job's budget spent) still counts:
+    // it comes after the scored ones, so the line never goes without its videos.
     const scored: { job: Job; score: number }[] = [];
     for (const j of waiting) {
       try { scored.push({ job: j, score: (await scoreJob(j.slug, log)).value }); }
-      catch (err) { log(`  ${j.slug}: chưa chấm được (${(err as Error).message.slice(0, 80)})`); }
+      catch (err) { scored.push({ job: j, score: 0 }); log(`  ${j.slug}: chưa chấm được (${(err as Error).message.slice(0, 80)})`); }
     }
-    // Best first; equal scores: the one waiting longest.
+    // Best first; equal scores (or none): the one waiting longest.
     scored.sort((a, b) => b.score - a.score || a.job.history[0]!.at.localeCompare(b.job.history[0]!.at));
     for (const { job, score } of scored.slice(0, need)) {
       const j = await loadJob(job.slug);
       if (j.status !== "review") continue;
       j.autoPicked = true;
-      await setStatus(j, "approved", `tự chọn lúc ${s.at} (điểm ${score}/10)`);
+      const why = score ? `điểm ${score}/10` : "chưa chấm được điểm, chờ lâu nhất";
+      await setStatus(j, "approved", `tự chọn lúc ${s.at} (${why})`);
       picked.push(j.slug);
-      log(`  ${line.name}: tự chọn ${j.slug} (điểm ${score}/10)`);
+      log(`  ${line.name}: tự chọn ${j.slug} (${why})`);
     }
   }
   return picked;

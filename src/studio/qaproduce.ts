@@ -30,9 +30,17 @@ const STUDIO = "a bright, cheerful children's TV studio: pastel walls with simpl
 
 /** Huy and Mai, always the same (the human rig: modern clothes made of parts). */
 export const LOOKS = {
-  huy: { body: "man", build: "slim", skin: "#e0a878", outfit: { type: "parts", top: { cut: "chui", color: "#2f7fd0", trim: "#1d5a9a", length: "hip", sleeves: "short" }, lower: { type: "pants", color: "#3b4a63", length: "ankle" } }, hair: { style: "short", color: "#1a1410" }, face: { shape: "oval", eyes: "round", nose: "button", brows: "thick", iris: "#2b1a0e", eyeScale: 1.15 } },
-  mai: { body: "child", skin: "#f0c08e", outfit: { type: "parts", top: { cut: "chui", color: "#f4a62a", length: "hip", sleeves: "short" }, lower: { type: "skirt", color: "#d9435a", length: "knee" } }, hair: { style: "long", color: "#1a1410" }, face: { shape: "round", eyes: "round", nose: "button", brows: "thin", iris: "#2b1a0e" } },
+  huy: { body: "man", build: "slim", skin: "#e0a878", outfit: { type: "parts", top: { cut: "chui", color: "#2f7fd0", trim: "#1d5a9a", length: "hip", sleeves: "short" }, lower: { type: "pants", color: "#3b4a63", length: "ankle" } }, hair: { style: "short", color: "#1a1410" }, shoes: "#2f3440", face: { shape: "oval", eyes: "round", nose: "button", brows: "thick", iris: "#2b1a0e", eyeScale: 1.15 } },
+  mai: { body: "child", skin: "#f0c08e", outfit: { type: "parts", top: { cut: "chui", color: "#f4a62a", length: "hip", sleeves: "short" }, lower: { type: "skirt", color: "#d9435a", length: "knee" } }, hair: { style: "long", color: "#1a1410" }, shoes: "#e05a6e", face: { shape: "round", eyes: "round", nose: "button", brows: "thin", iris: "#2b1a0e" } },
 };
+/** Outfits for places that need them (space, the Moon, Mars…): the same faces, other clothes. */
+const SUIT = { type: "parts", top: { cut: "chui", color: "#f2f4f7", trim: "#9aa8b6", length: "hip", sleeves: "long" }, lower: { type: "pants", color: "#e6e9ee", length: "ankle" }, belt: { color: "#7d8b99", ends: false } };
+Object.assign(LOOKS, {
+  huy_space: { ...LOOKS.huy, outfit: SUIT, headwear: "space_helmet", gloves: "#e9edf2", shoes: "#aeb9c4" },
+  // Long hair is tied up inside the helmet.
+  mai_space: { ...LOOKS.mai, outfit: SUIT, headwear: "space_helmet", gloves: "#e9edf2", shoes: "#aeb9c4", hair: { style: "bun", color: "#1a1410" } },
+});
+const OUTFITS = ["everyday", "spacesuit"] as const;
 
 const MOVES = ["idle", "talk", "point", "wave", "raise", "cheer", "worry", "give", "stretch"] as const;
 const FACES = ["neutral", "happy", "joy", "laugh", "surprised", "worried", "proud", "determined", "sad", "scared"] as const;
@@ -51,15 +59,16 @@ const SCHEMA = {
           time: { enum: ["day", "dawn", "dusk", "night"] },
           huy: WHO,
           mai: { ...WHO, properties: { ...WHO.properties, show: { type: "boolean" } }, required: ["do", "face", "show"] },
+          outfit: { enum: [...OUTFITS] },
           board: { type: "string" },
         },
-        required: ["index", "layout", "place", "time", "huy", "mai", "board"],
+        required: ["index", "layout", "place", "time", "outfit", "huy", "mai", "board"],
       },
     },
   },
   required: ["scenes"],
 };
-interface Directed { index: number; layout: "board" | "host" | "place"; place: string; time: string; huy: { do: string; face: string }; mai: { do: string; face: string; show: boolean }; board: string }
+interface Directed { index: number; layout: "board" | "host" | "place"; place: string; time: string; outfit?: (typeof OUTFITS)[number]; huy: { do: string; face: string }; mai: { do: string; face: string; show: boolean }; board: string }
 
 const SYSTEM = `You direct the scenes of "${QA.channel}", a 2D cartoon for children aged 6–12 that answers one question per video. Huy (the host, a young man) explains; Mai (8) asks and guesses. You also draw the explainer pictures, as SVG, in a clean, bright, friendly flat style: thick dark outlines (#3a2a20, stroke-width 4–6), flat fills, rounded shapes, big readable labels.`;
 
@@ -70,11 +79,15 @@ const BOARD_RULES = [
   "- Text: font-family=\"sans-serif\", font-size 28–48, short labels (1–4 words), dark (#2a2a40); at most one title of up to 6 words at the top. Never let text run past x 970.",
   "- Show exactly what the line explains (the visual note says what), like a good picture-book diagram: e.g. a smiling Sun, a prism, waves of different lengths, little molecule dots, arrows.",
   "- Animate with attributes only: data-in=\"seconds\" makes a part pop in at that time (the scene lasts the given seconds; bring parts in step by step, in the order the words mention them, the last one before 70% of the scene); class=\"float\" bobs, \"spin\" turns, \"pulse\" breathes, \"flow\" makes dashes run along a line (rays, arrows, currents), \"draw\" draws a line from start to end (with data-in). Use 1–3 kinds of motion per picture, not everything.",
+  "- Write it compactly: integer coordinates, no comments, no ids, no style attributes, classes only for the motions above, at most about 30 elements.",
   "- Colours: sky blue #4aa3e0, sun yellow #ffd23f, red #e53935, orange #fb8c00, green #43a047, violet #8e24aa, cream #fff3b0, dark #3a2a20.",
 ].join("\n");
 
 function brief(plan: QAPlan, from: number, to: number, seconds: number[]): string {
   return [
+    "Choosing the layout: place only for a real place that can be painted (a park, a beach, a rooftop, Mars); anything imagined, impossible or abstract (\"Mai imagines the sky as a pinball machine\", inside a molecule) is a board picture instead.",
+    "Moves: point = at the board or at something in front; raise = pointing up at the sky or above; wave = hello or goodbye; cheer = delight; worry = puzzled.",
+    "outfit: spacesuit in space, on the Moon or on another planet; everyday otherwise.",
     `Direct scenes ${from + 1}–${to} of "${plan.title}". For each: layout (board for every scene whose visual is diagram, labels, arrows, map, compare, zoom, count or experiment; host when only the host talks to camera; place when the visual is somewhere else: then place = that place in a few words, e.g. "a sandy beach with gentle waves", the same words every time the same place comes back; for board and host, place = "studio"), time (of the place: day unless the visual says sunset/night/dawn), what Huy and Mai do and their faces (talk while speaking; point at the board when explaining it; Mai shows when she speaks or reacts), and the board SVG (empty string unless layout is board).`,
     "", BOARD_RULES, "",
     "Scenes (index, seconds, visual kind, visual note, lines):",
@@ -99,8 +112,9 @@ export function gestures(actor: string, move: { do: string; face: string }, seco
 function sceneOf(d: Directed, plan: QAPlan, i: number, seconds: number): Record<string, unknown> {
   const speaks = new Set(plan.scenes[i]!.parts.map((p) => p.who));
   const withMai = d.mai.show || speaks.has(QA.kid.name);
-  const cast: Record<string, unknown>[] = [{ id: "huy", type: "human", look: "huy", x: 0 }];
-  if (withMai) cast.push({ id: "mai", type: "human", look: "mai", x: d.layout === "board" ? -140 : 250, facing: d.layout === "board" ? 1 : -1 });
+  const suit = d.outfit === "spacesuit" ? "_space" : "";
+  const cast: Record<string, unknown>[] = [{ id: "huy", type: "human", look: `huy${suit}`, x: 0 }];
+  if (withMai) cast.push({ id: "mai", type: "human", look: `mai${suit}`, x: d.layout === "board" ? -140 : 250, facing: d.layout === "board" ? 1 : -1 });
   const actions: Record<string, unknown>[] = gestures("huy", d.huy, seconds);
   if (withMai) actions.push(...gestures("mai", d.mai, seconds));
   const on = withMai ? ["huy", "mai"] : ["huy"];

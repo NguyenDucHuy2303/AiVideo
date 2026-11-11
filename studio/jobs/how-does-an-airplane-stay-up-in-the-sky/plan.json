@@ -1,0 +1,636 @@
+{
+  "title": "How Does an Airplane Stay Up in the Sky?",
+  "question": "How does an airplane stay up in the sky?",
+  "answer": "Engines push the airplane forward fast, so air rushes past its wings. The wings are shaped and tilted to push that air downward, and the air pushes the wings up. That upward push is called lift, and when lift is as strong as gravity, the plane stays up.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai presses her nose to a big airport window as a huge airliner lifts off the runway. Huy stands beside her, smiling."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Huy, look at that plane! It's enormous and super heavy. Why doesn't it just drop out of the sky like a rock?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Great question, Mai. And here's a surprise. The secret helper holding it up is something you can't even see."
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy talks to camera, with a small cartoon plane flying loops around his head."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Today we'll find out how an airplane stays up in the sky. We'll meet four pushes and pulls, find out what wings really do, and then you can try a little test at home."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "compare",
+        "what": "On the left, a red balloon floating up. On the right, a big heavy airplane sitting on the ground with a question mark above it."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "proudly",
+          "text": "I know! A plane is full of air, so it floats like a balloon."
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Nice thinking! Some balloons really do float up. But a plane is much heavier than the air around it. People call it a heavier-than-air machine. So it can't float up like a balloon does."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "arrows",
+        "what": "Close-up of a jet engine under a wing, with a big arrow showing air blasting out the back and a small arrow showing the plane moving forward."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Then the engines must push it straight up!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Engines are very important, good guess. But look which way they point. They blow backward, so they push the plane forward, not up. Something else does the lifting. Let's find out what."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "diagram",
+        "what": "A cartoon plane in the sky with four arrows, one pointing up, one down, one forward and one backward, each with a blank label."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "A plane in the sky feels four pushes and pulls at the same time. Scientists call them forces. A force is just a push or a pull."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "arrows",
+        "what": "The down arrow on the plane glows and is labelled Gravity. Next to it, Mai drops a football that falls to the grass."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "The first force is gravity. Gravity pulls everything down toward the ground. It's why your ball falls when you let go of it."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "And why my ice cream ends up on the floor."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "arrows",
+        "what": "The up arrow on the plane glows and is labelled Lift, coming from the wings."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "The second force pushes up. It's called lift. Lift is the force that keeps a plane in the air. It's the star of today's story."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "arrows",
+        "what": "The forward arrow is labelled Thrust, coming from a propeller and a jet engine. The backward arrow is labelled Drag, with little wind swirls rubbing the plane's nose."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "The third force is thrust. Thrust pushes the plane forward. It comes from propellers or jet engines. The fourth force is drag. Drag pulls backward. It's mostly the air rubbing against the plane, like when you run into a strong wind."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "compare",
+        "what": "A tug of war, with a team labelled Lift pulling up and a team labelled Gravity pulling down, the plane as the flag in the middle of the rope."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "happily",
+          "text": "So it's like a tug of war!"
+        },
+        {
+          "who": "Huy",
+          "how": "proudly",
+          "text": "Exactly! If lift is stronger than gravity, the plane goes up. If gravity is stronger, the plane goes down. When they're equal, the plane flies along at the same height."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "host",
+        "what": "Huy holds up a card with an up arrow and a down arrow the same size, with an equals sign between them."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So here's our first takeaway. To stay up, a plane needs lift that's as strong as gravity."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai stands still in a park holding a toy plane, looking puzzled at its wings."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "worried",
+          "text": "But where does lift come from? My toy plane doesn't lift anything."
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Lift is made when air flows past a wing. Air is a fluid. A fluid is anything that can flow, like water. Air flows too, we just can't see it."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "zoom",
+        "what": "A magnifying glass zooms into empty-looking air and shows lots of tiny bouncing dots, each one far too small to see."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Air looks like nothing at all. But zoom in and it's made of countless tiny bits, much too small to see. When something moves fast through the air, it bumps into loads of them."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "arrows",
+        "what": "A plane speeding down a long runway, with wind lines streaming faster and faster over its wings, and a speed meter climbing."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "That's why planes race down a long runway before they take off. The engines push the plane faster and faster, and more and more air rushes past the wings. Soon there's enough lift to beat gravity, and up it goes."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "scene",
+        "what": "A plane parked at a gate, with no wind lines around its wings and a sleepy face drawn on its nose."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "So a parked plane has no lift?"
+        },
+        {
+          "who": "Huy",
+          "how": "firmly",
+          "text": "Almost none. With no air rushing past its wings, it just sits there. Speed comes first."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "A simple chain of three pictures joined by arrows, showing an engine, then a speed meter, then wind flowing over a wing."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Second takeaway. Engines make speed, and speed makes air flow over the wings. No moving air, no lift."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "labels",
+        "what": "A wing cut open and seen from the side, with labels for rounded front edge, curved top, flatter bottom and thin back edge. The whole wing is tipped up slightly at the front."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Now let's look at a wing from the side. It's rounded at the front, curved on top, and thin at the back. And it's tipped up just a little at the front."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "arrows",
+        "what": "Blue wind lines flow over and under the wing, and behind the wing they all bend downward."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "As the wing slices through the air, its shape and its tilt bend the air downward. Look at the air leaving the back of the wing. It's heading down."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai sits on a skateboard on flat ground, pushes gently against a wall with her hands, and rolls backward away from it, giggling."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here's a rule of nature. When you push on something, it pushes back on you. Push on a wall while you sit on a skateboard and you roll away from it."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "The wall pushed me back!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "diagram",
+        "what": "The wing with small blue arrows pushing air down below it, and one big orange arrow labelled Lift pushing the wing up."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Wings work the same way. The wing pushes air down, so the air pushes the wing up. That upward push is lift!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "compare",
+        "what": "One tiny dot of air next to a giant cloud of air dots streaming down behind a plane's wings."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "But air is so light! How can it hold up a whole plane?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "One tiny bit of air is very light. But big fast wings push a huge amount of air down every single second. All those little pushes add up to one giant lift."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "host",
+        "what": "Huy flaps his arms like wings, with little cartoon air arrows going down and him bouncing up."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Third takeaway. Wings push air down, and the air pushes the wings up."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "diagram",
+        "what": "Mai standing with lots of small arrows pressing gently on her from every side, labelled Air pressure."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "There's another way to look at the very same lift. It's called air pressure. Pressure means how hard something presses. Air is gently pressing on you right now, from every side."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "arrows",
+        "what": "Wind lines over the curved top of the wing drawn close together and long, showing fast air, and lines under the wing drawn slower. A small portrait of Daniel Bernoulli in an old wig sits in the corner."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Air flowing over the top of a wing moves faster. About three hundred years ago, a scientist called Daniel Bernoulli wrote about a rule. When air or water flows faster, its pressure gets lower."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "compare",
+        "what": "The wing with small thin arrows pressing down on top and big thick arrows pressing up underneath."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So the air on top presses down only gently. The air underneath presses up harder. The wing gets pushed up, and that's lift again."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai holding two cards, one showing air pushed down and one showing pressure arrows, looking from one to the other. Huy laughing beside her."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "worried",
+          "text": "Wait, so which one is right? Pushing air down, or pressure?"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "Both! They are two ways of describing the same lift. Scientists still argue about the best simple way to explain it, and some popular explanations have even been shown to be wrong. That's how science works."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "diagram",
+        "what": "The wing showing both ideas together, with downward air behind it and the pressure arrows, and one big Lift arrow on top."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Fourth takeaway. Lower pressure above the wing and air pushed down below it are two sides of the same lift."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "scene",
+        "what": "A cartoon jumbo jet squeezed onto a tiny house driveway, looking embarrassed, next to a long airport runway stretching away."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Imagine if a big plane tried to take off from your driveway."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "It would never get fast enough! Not enough air on the wings."
+        },
+        {
+          "who": "Huy",
+          "how": "proudly",
+          "text": "Exactly. That's why airports have such long runways. Planes need room to speed up."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "On a table, two sheets of paper, one folded into a paper plane and one squashed into a ball. A small safety note shows a clear space with no people in front."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Now a test you can try at home. Take two sheets of paper. Fold one into a paper plane and squash the other into a ball. Find a clear space, make sure nobody is in front of you, and throw them both gently."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "The paper ball drops quickly to the floor while the paper plane glides smoothly across the room, with tiny air arrows going down under its wings."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "joyfully",
+          "text": "The ball dropped fast, but the plane glided all the way across the room!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "The wings pushed air down, so the air held the plane up a little longer. A paper plane has no engine, so your throw is its thrust."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "diagram",
+        "what": "The airliner in the sky with all four force arrows, the Lift and Gravity arrows the same size, and air flowing down behind the wings."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So how does a plane stay up? Engines push it forward fast, its wings push the rushing air down, and the air pushes the wings up. That lift balances gravity."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "compare",
+        "what": "An airliner wing with a Lift arrow pointing up, next to a race car whose back wing has a Lift arrow pointing down onto the road."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Fun fact! Lift doesn't always point up. Race cars have wings too, but theirs make lift that pushes down. It holds the car tight against the road so it can zoom round corners."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "An upside-down airplane wing on a car? So cool!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "host",
+        "what": "Huy and Mai wave, while a helicopter hovers above them with a big question mark beside it."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Next time, we'll find out how a helicopter can hover in one spot. Subscribe so you don't miss it, and keep asking questions!"
+        },
+        {
+          "who": "Mai",
+          "how": "joyfully",
+          "text": "Bye! Go throw some paper planes!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Lift is the upward force that keeps an aircraft in the air, made when air flows past a wing.",
+      "source": "Lift (force)"
+    },
+    {
+      "claim": "The simplest explanation of lift is that the wing deflects air downward and the reaction pushes the wing up.",
+      "source": "Lift (force)"
+    },
+    {
+      "claim": "There are several ways of explaining lift, and some have been shown to be false.",
+      "source": "Lift (force)"
+    },
+    {
+      "claim": "Lift can point in any direction; on a race car wing the lift points down.",
+      "source": "Lift (force)"
+    },
+    {
+      "claim": "Gravity pulls down; if lift is stronger than gravity the plane goes up, if gravity is stronger it goes down.",
+      "source": "Aerodynamics"
+    },
+    {
+      "claim": "Thrust pushes forward and is made by propellers or jets; drag pushes backward and is mostly caused by air friction.",
+      "source": "Aerodynamics"
+    },
+    {
+      "claim": "In planes, lift is caused by airflow over specially designed wings.",
+      "source": "Aerodynamics"
+    },
+    {
+      "claim": "Air is made of tiny molecules.",
+      "source": "Aerodynamics"
+    },
+    {
+      "claim": "Airplanes are heavier-than-air machines.",
+      "source": "Airplane"
+    },
+    {
+      "claim": "Airplanes are pushed forward by thrust from jet engines or propellers.",
+      "source": "Airplane"
+    },
+    {
+      "claim": "When a fluid flows faster, its pressure is lower (Bernoulli's principle).",
+      "source": "Bernoulli's principle"
+    },
+    {
+      "claim": "Daniel Bernoulli published the principle in 1738, about three hundred years ago.",
+      "source": "Bernoulli's principle"
+    },
+    {
+      "claim": "Air and water are both fluids, things that can flow.",
+      "source": "Lift (force)"
+    },
+    {
+      "claim": "When you push on something, it pushes back on you.",
+      "source": "Basic school science (Newton's third law)"
+    }
+  ],
+  "shorts": [
+    1,
+    13,
+    19,
+    30,
+    31
+  ],
+  "thumbnail": "Why Don't Planes Fall?",
+  "description": "How does a giant, heavy airplane stay up in the sky? Join Huy and Mai as they meet the four forces of flight, find out how wings push air down so the air pushes them up, and test it with a simple paper plane at home. It's a friendly, science-checked explainer for curious kids aged 6–12 and the grown-ups who watch with them.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": ""
+}

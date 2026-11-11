@@ -174,6 +174,8 @@ export async function render(slug: string, log: (s: string) => void = console.lo
     }
     const dir = jobDir(slug);
     for (const [from, to] of [[out, "video.mp4"], [out.replace(/\.mp4$/, "_thumbnail.jpg"), "thumbnail.jpg"]] as const) {
+      // A film without the channel's brand (Ask Huy for now) has no thumbnail: nothing to link.
+      if (!(await exists(from))) continue;
       const target = path.join(dir, to);
       await fs.rm(target, { force: true });
       await fs.link(from, target).catch(() => fs.copyFile(from, target));

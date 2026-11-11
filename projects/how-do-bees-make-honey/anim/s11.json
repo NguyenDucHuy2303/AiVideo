@@ -1,0 +1,62 @@
+{
+  "castFile": "cast.json",
+  "duration": 8.23,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "proud"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "proud"
+    },
+    {
+      "actor": "huy",
+      "at": 5.76,
+      "do": "talk",
+      "face": "proud"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"75\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Snip, Snip!</text><text data-in=\"0.3\" x=\"500\" y=\"145\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\">big sugars</text><g data-in=\"0.5\"><line x1=\"150\" y1=\"200\" x2=\"850\" y2=\"200\" stroke=\"#3a2a20\" stroke-width=\"6\"/><circle cx=\"150\" cy=\"200\" r=\"30\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"250\" cy=\"200\" r=\"30\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"350\" cy=\"200\" r=\"30\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"450\" cy=\"200\" r=\"30\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"550\" cy=\"200\" r=\"30\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"650\" cy=\"200\" r=\"30\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"750\" cy=\"200\" r=\"30\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"850\" cy=\"200\" r=\"30\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g><g data-in=\"2.5\" class=\"pulse\"><line x1=\"460\" y1=\"270\" x2=\"540\" y2=\"330\" stroke=\"#3a2a20\" stroke-width=\"8\"/><line x1=\"460\" y1=\"330\" x2=\"540\" y2=\"270\" stroke=\"#3a2a20\" stroke-width=\"8\"/><circle cx=\"450\" cy=\"270\" r=\"14\" fill=\"none\" stroke=\"#e53935\" stroke-width=\"6\"/><circle cx=\"450\" cy=\"330\" r=\"14\" fill=\"none\" stroke=\"#e53935\" stroke-width=\"6\"/></g><path data-in=\"3.5\" class=\"flow\" d=\"M300 260 L300 340\" stroke=\"#3a2a20\" stroke-width=\"6\" stroke-dasharray=\"10 8\" fill=\"none\"/><g data-in=\"4.5\"><circle cx=\"150\" cy=\"420\" r=\"30\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"270\" cy=\"420\" r=\"30\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"390\" cy=\"420\" r=\"30\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"510\" cy=\"420\" r=\"30\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"630\" cy=\"420\" r=\"30\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"750\" cy=\"420\" r=\"30\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g><text data-in=\"5.5\" x=\"500\" y=\"510\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\">simple sugars</text></svg>"
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

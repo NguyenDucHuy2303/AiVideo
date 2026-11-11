@@ -1,0 +1,64 @@
+{
+  "castFile": "cast.json",
+  "duration": 20.63,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "raise",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0.3\" x=\"500\" y=\"70\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Honey Through Time</text><line class=\"draw\" data-in=\"1\" x1=\"920\" y1=\"340\" x2=\"90\" y2=\"340\" stroke=\"#3a2a20\" stroke-width=\"8\" stroke-linecap=\"round\"/><polygon data-in=\"2\" points=\"60,340 100,314 100,366\" fill=\"#3a2a20\"/><g data-in=\"3\"><rect x=\"170\" y=\"110\" width=\"80\" height=\"22\" rx=\"8\" fill=\"#b5651d\" stroke=\"#3a2a20\" stroke-width=\"5\"/><rect x=\"182\" y=\"130\" width=\"56\" height=\"34\" fill=\"#b5651d\" stroke=\"#3a2a20\" stroke-width=\"5\"/><ellipse cx=\"210\" cy=\"235\" rx=\"85\" ry=\"85\" fill=\"#c97b3d\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M135 215 Q210 245 285 215\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"210\" cy=\"270\" r=\"12\" fill=\"#ffb300\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><text data-in=\"3.5\" x=\"210\" y=\"450\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"32\" fill=\"#2a2a40\">Thousands of years</text><g data-in=\"5\" class=\"pulse\"><rect x=\"740\" y=\"105\" width=\"130\" height=\"36\" rx=\"10\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\"/><rect x=\"725\" y=\"140\" width=\"160\" height=\"180\" rx=\"24\" fill=\"#ffb300\" stroke=\"#3a2a20\" stroke-width=\"5\"/><rect x=\"750\" y=\"205\" width=\"110\" height=\"50\" rx=\"8\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text x=\"805\" y=\"243\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"32\" font-weight=\"bold\" fill=\"#2a2a40\">HONEY</text></g><text data-in=\"5.5\" x=\"805\" y=\"450\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"32\" fill=\"#2a2a40\">Today</text><text data-in=\"8\" x=\"500\" y=\"200\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"38\" font-weight=\"bold\" fill=\"#43a047\">Still safe to eat?</text><text data-in=\"12.5\" x=\"500\" y=\"280\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"38\" font-weight=\"bold\" fill=\"#e53935\">Keep the lid on!</text></svg>"
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

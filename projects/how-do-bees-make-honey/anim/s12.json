@@ -1,0 +1,64 @@
+{
+  "castFile": "cast.json",
+  "duration": 15.3,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "worry",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  },
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\">\n<text x=\"500\" y=\"60\" font-size=\"40\" font-family=\"sans-serif\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2a2a40\">Passing nectar mouth to mouth</text>\n<rect x=\"80\" y=\"110\" width=\"840\" height=\"430\" rx=\"30\" fill=\"#ffe7a3\" stroke=\"#3a2a20\" stroke-width=\"5\"/>\n<g fill=\"#f6c343\" stroke=\"#3a2a20\" stroke-width=\"4\"><polygon points=\"700,150 740,127 780,150 780,196 740,219 700,196\"/><polygon points=\"780,196 820,173 860,196 860,242 820,265 780,242\"/><polygon points=\"700,242 740,219 780,242 780,288 740,311 700,288\"/></g>\n<g data-in=\"0.3\" class=\"float\"><ellipse cx=\"290\" cy=\"340\" rx=\"95\" ry=\"58\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M250 288 L250 392 M290 283 L290 397 M330 288 L330 392\" stroke=\"#3a2a20\" stroke-width=\"10\"/><circle cx=\"385\" cy=\"330\" r=\"34\" fill=\"#3a2a20\"/><circle cx=\"395\" cy=\"320\" r=\"7\" fill=\"#ffffff\"/><ellipse cx=\"260\" cy=\"270\" rx=\"45\" ry=\"28\" fill=\"#e6f4ff\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g>\n<text x=\"290\" y=\"450\" font-size=\"30\" font-family=\"sans-serif\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.6\">forager bee</text>\n<g data-in=\"0.9\" class=\"float\"><ellipse cx=\"640\" cy=\"340\" rx=\"95\" ry=\"58\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M600 288 L600 392 M640 283 L640 397 M680 288 L680 392\" stroke=\"#3a2a20\" stroke-width=\"10\"/><circle cx=\"545\" cy=\"330\" r=\"34\" fill=\"#3a2a20\"/><circle cx=\"535\" cy=\"320\" r=\"7\" fill=\"#ffffff\"/><ellipse cx=\"670\" cy=\"270\" rx=\"45\" ry=\"28\" fill=\"#e6f4ff\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g>\n<text x=\"640\" y=\"450\" font-size=\"30\" font-family=\"sans-serif\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"1.2\">hive bee</text>\n<path d=\"M420 330 L510 330\" stroke=\"#f6a623\" stroke-width=\"12\" stroke-linecap=\"round\" class=\"flow\" data-in=\"1.6\"/>\n<circle cx=\"465\" cy=\"330\" r=\"14\" fill=\"#f6a623\" stroke=\"#3a2a20\" stroke-width=\"3\" class=\"pulse\" data-in=\"1.6\"/>\n<text x=\"465\" y=\"290\" font-size=\"28\" font-family=\"sans-serif\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"1.8\">nectar</text>\n</svg>"
+  },
+  "speakerShots": false
+}

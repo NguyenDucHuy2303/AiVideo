@@ -1,0 +1,31 @@
+{
+  "engine": "kokoro",
+  "voice": "am_michael",
+  "speed": 1,
+  "imageGen": "off",
+  "onlineImages": false,
+  "profiles": [
+    "16x9"
+  ],
+  "channel": "Ask Huy",
+  "voices": {
+    "Huy": "am_liam",
+    "Mai": {
+      "voice": "af_nova",
+      "pitch": 3
+    }
+  },
+  "speakers": {
+    "Huy": [
+      "huy"
+    ],
+    "Mai": [
+      "mai"
+    ]
+  },
+  "style": "hien_dai",
+  "thumbnail": {
+    "title": "Bees Blow Bubbles for Honey?",
+    "subtitle": "Ask Huy"
+  }
+}

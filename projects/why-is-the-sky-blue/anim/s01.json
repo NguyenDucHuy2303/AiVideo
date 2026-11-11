@@ -33,19 +33,19 @@
     {
       "actor": "mai",
       "at": 0,
-      "do": "talk",
+      "do": "raise",
       "face": "surprised"
     },
     {
       "actor": "mai",
       "at": 1.4,
-      "do": "point",
+      "do": "raise",
       "face": "surprised"
     },
     {
       "actor": "mai",
       "at": 6.77,
-      "do": "talk",
+      "do": "raise",
       "face": "surprised"
     }
   ],

@@ -36,13 +36,17 @@ export interface SynthOptions {
   pitch?: number;
 }
 
-/** ffmpeg filters for a speed and a pitch change (pitch by resampling, tempo restored). */
+/**
+ * ffmpeg filters for a speed and a pitch change (pitch by resampling, tempo restored). The audio
+ * is brought to 48 kHz first: asetrate needs to know the rate it starts from (Kokoro speaks at
+ * 24 kHz; reading it as 48 kHz made a child's voice an octave too high and twice too fast).
+ */
 export function voiceFilters(speed: number, pitch = 0): string[] {
   const f: string[] = [];
   let tempo = speed;
   if (pitch) {
     const k = Math.pow(2, pitch / 12);
-    f.push(`asetrate=48000*${k.toFixed(5)}`, "aresample=48000");
+    f.push("aresample=48000", `asetrate=48000*${k.toFixed(5)}`, "aresample=48000");
     tempo /= k;
   }
   // atempo accepts 0.5–2 per stage.
@@ -201,7 +205,7 @@ export const kokoro: TtsEngine = {
   id: "kokoro",
   async fingerprint(opts) {
     if (!(await exists(KOKORO_PYTHON))) throw new Error(`Kokoro is not installed (${KOKORO_DIR}). Run: bash scripts/setup-kokoro.sh`);
-    return `kokoro:v1.0:${opts.voice}:${opts.speed}${opts.pitch ? `:p${opts.pitch}` : ""}`;
+    return `kokoro:v1.0:${opts.voice}:${opts.speed}${opts.pitch ? `:p${opts.pitch}r48` : ""}`;
   },
   async synthesize(text, outWav, opts) {
     const raw = `${outWav}.raw.wav`;

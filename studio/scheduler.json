@@ -1,6 +1,11 @@
 {
-  "pid": 2032156,
-  "since": "2026-11-10T09:40:11.787Z",
+  "pid": 2904812,
+  "since": "2026-11-11T01:38:51.122Z",
   "window": "office",
-  "lastTick": "2026-11-10T09:47:13.060Z"
+  "lastTick": "2026-11-11T01:38:51.145Z",
+  "task": {
+    "slug": "why-is-the-sky-blue",
+    "what": "prepare",
+    "since": "2026-11-11T01:38:51.153Z"
+  }
 }

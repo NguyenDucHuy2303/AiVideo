@@ -12,13 +12,13 @@
     {
       "id": "huy",
       "type": "human",
-      "look": "huy",
+      "look": "huy_space",
       "x": 0
     },
     {
       "id": "mai",
       "type": "human",
-      "look": "mai",
+      "look": "mai_space",
       "x": 250,
       "facing": -1
     }

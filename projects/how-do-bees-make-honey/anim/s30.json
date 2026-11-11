@@ -1,0 +1,76 @@
+{
+  "castFile": "cast.json",
+  "duration": 10.13,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "surprised"
+    },
+    {
+      "actor": "huy",
+      "at": 7.09,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "talk",
+      "face": "laugh"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"85\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">A year of honey</text><polygon points=\"440,480 560,480 500,260\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"/><line x1=\"200\" y1=\"260\" x2=\"800\" y2=\"260\" stroke=\"#3a2a20\" stroke-width=\"10\" stroke-linecap=\"round\"/><circle cx=\"500\" cy=\"260\" r=\"16\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"4\"/><path d=\"M200 260 L120 410 M200 260 L280 410 M800 260 L720 410 M800 260 L880 410\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"100\" y=\"410\" width=\"200\" height=\"20\" rx=\"10\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><rect x=\"700\" y=\"410\" width=\"200\" height=\"20\" rx=\"10\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><g data-in=\"1.5\"><rect x=\"120\" y=\"355\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"177\" y=\"355\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"234\" y=\"355\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"148\" y=\"298\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"206\" y=\"298\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><text data-in=\"2.5\" x=\"200\" y=\"500\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\">29 kg of honey</text><g data-in=\"4.5\" class=\"float\"><circle cx=\"800\" cy=\"320\" r=\"30\" fill=\"#ffd9b3\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"768\" y=\"350\" width=\"64\" height=\"60\" rx=\"14\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\"/><path d=\"M788 330 Q800 342 812 330\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"4\" stroke-linecap=\"round\"/></g><text data-in=\"5.5\" x=\"800\" y=\"500\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\">9-year-old</text></svg>"
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

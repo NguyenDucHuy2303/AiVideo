@@ -1,8 +1,14 @@
 {
   "slug": "how-do-bees-make-honey",
   "topic": "How do bees make honey?",
-  "status": "review",
-  "notes": [],
+  "status": "fix",
+  "notes": [
+    {
+      "at": "2026-11-11T01:38:20.239Z",
+      "on": "video",
+      "text": "Giọng Mai bị lỗi cao độ (Kokoro 24 kHz bị nâng như 48 kHz: nhanh gấp đôi, không nghe được). Đọc lại giọng, chậm 0,92; thêm giày, đồ phi hành gia."
+    }
+  ],
   "history": [
     {
       "at": "2026-11-10T07:57:23.092Z",
@@ -11,8 +17,76 @@
     {
       "at": "2026-11-10T08:03:18.854Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-10T10:04:46.261Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (điểm 8.4/10)"
+    },
+    {
+      "at": "2026-11-10T10:16:34.352Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-10T10:20:00.471Z",
+      "status": "approved",
+      "info": "chờ thử lại: Claude Code failed on qa-direct: You've hit your 5-hour limit · resets 6:50pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work waits"
+    },
+    {
+      "at": "2026-11-10T10:50:11.516Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-10T10:51:16.267Z",
+      "status": "approved",
+      "info": "chờ thử lại: Claude Code failed on qa-direct: You've hit your 5-hour limit · resets 6:50pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work waits"
+    },
+    {
+      "at": "2026-11-10T11:31:39.185Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-10T11:32:44.020Z",
+      "status": "approved",
+      "info": "chờ thử lại: Claude Code failed on qa-direct: You've hit your 5-hour limit · resets 6:50pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work waits"
+    },
+    {
+      "at": "2026-11-10T12:02:51.839Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-10T12:34:14.108Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-10T12:34:14.338Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-10T13:12:24.210Z",
+      "status": "failed",
+      "info": "ENOENT: no such file or directory, copyfile '/home/huynguyen/WataCreateVideo/projects/how-do-bees-make-honey/out/how-do-bees-make-honey-hoat-hinh_16x9_thumbnail.jpg' -> '/home/huynguyen/WataCreateVideo/studio/jobs/how-do-bees-make-honey/thumbnail.jpg'"
+    },
+    {
+      "at": "2026-11-11T01:38:20.239Z",
+      "status": "fix",
+      "info": "làm lại giọng Mai"
     }
   ],
   "kind": "qa",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.4,
+    "why": "Điểm mạnh: câu mở \"ong thổi bong bóng\" rất hấp dẫn, cấu trúc 4 bước rõ ràng, nội dung đúng khoa học (mật hoa, dạ dày mật, enzyme, quạt cánh, nắp sáp), có thí nghiệm an toàn và chủ đề nhiều người tìm, dễ dựng hình; điểm yếu: hơi dài và dày thông tin (nhiều thuật ngữ như proboscis, enzyme, hexagon), đoạn mật ong \"thọ nghìn năm\" còn gây tranh cãi và phần bubble/số liệu (3 km, 29 kg) cần kiểm chứng nguồn, nên cần cắt gọn để giữ chân trẻ 6–12 tuổi.",
+    "hash": "ab852b80f6087633"
+  },
+  "autoPicked": true,
+  "retryAt": "2026-11-10T12:02:44.019Z",
+  "stage": "ready"
 }

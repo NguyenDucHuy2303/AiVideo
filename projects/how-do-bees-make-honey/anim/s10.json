@@ -1,0 +1,62 @@
+{
+  "castFile": "cast.json",
+  "duration": 11.63,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 8.14,
+      "do": "talk",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"75\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Step 2: Enzymes</text><ellipse data-in=\"0.3\" cx=\"500\" cy=\"330\" rx=\"400\" ry=\"190\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"6\"/><g data-in=\"1\" fill=\"#fb8c00\" opacity=\"0.6\"><circle cx=\"250\" cy=\"430\" r=\"25\"/><circle cx=\"500\" cy=\"470\" r=\"30\"/><circle cx=\"760\" cy=\"420\" r=\"25\"/><circle cx=\"420\" cy=\"240\" r=\"20\"/></g><text data-in=\"1\" x=\"500\" y=\"530\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#2a2a40\">nectar</text><g data-in=\"3.5\" class=\"float\"><circle cx=\"300\" cy=\"330\" r=\"45\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"285\" cy=\"320\" r=\"6\" fill=\"#3a2a20\"/><circle cx=\"315\" cy=\"320\" r=\"6\" fill=\"#3a2a20\"/><path d=\"M283 342 Q300 360 317 342\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"4\"/><line x1=\"350\" y1=\"300\" x2=\"385\" y2=\"265\" stroke=\"#3a2a20\" stroke-width=\"6\"/><line x1=\"350\" y1=\"265\" x2=\"385\" y2=\"300\" stroke=\"#3a2a20\" stroke-width=\"6\"/></g><g data-in=\"4.5\" class=\"float\"><circle cx=\"520\" cy=\"310\" r=\"45\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"505\" cy=\"300\" r=\"6\" fill=\"#3a2a20\"/><circle cx=\"535\" cy=\"300\" r=\"6\" fill=\"#3a2a20\"/><path d=\"M503 322 Q520 340 537 322\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"4\"/><line x1=\"570\" y1=\"280\" x2=\"605\" y2=\"245\" stroke=\"#3a2a20\" stroke-width=\"6\"/><line x1=\"570\" y1=\"245\" x2=\"605\" y2=\"280\" stroke=\"#3a2a20\" stroke-width=\"6\"/></g><g data-in=\"5.5\" class=\"float\"><circle cx=\"730\" cy=\"350\" r=\"45\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"715\" cy=\"340\" r=\"6\" fill=\"#3a2a20\"/><circle cx=\"745\" cy=\"340\" r=\"6\" fill=\"#3a2a20\"/><path d=\"M713 362 Q730 380 747 362\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><text data-in=\"6.5\" x=\"500\" y=\"165\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\">enzyme helpers</text></svg>"
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

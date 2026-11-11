@@ -1,0 +1,76 @@
+{
+  "castFile": "cast.json",
+  "duration": 11.57,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 8.1,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "idle",
+      "face": "laugh"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0.3\" x=\"500\" y=\"80\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Inside a bee</text><g data-in=\"0.8\" class=\"float\"><ellipse cx=\"380\" cy=\"200\" rx=\"70\" ry=\"45\" transform=\"rotate(-20 380 200)\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><ellipse cx=\"470\" cy=\"195\" rx=\"70\" ry=\"45\" transform=\"rotate(15 470 195)\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g><g data-in=\"0.8\"><polygon points=\"540,330 600,345 540,365\" fill=\"#3a2a20\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"/><ellipse cx=\"340\" cy=\"330\" rx=\"205\" ry=\"130\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"6\"/><path d=\"M470 215 Q510 330 470 445\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"22\" stroke-linecap=\"round\"/></g><g data-in=\"1.5\"><circle cx=\"150\" cy=\"330\" r=\"75\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"6\"/><circle cx=\"125\" cy=\"310\" r=\"14\" fill=\"#3a2a20\"/><path d=\"M110 360 Q135 385 165 360\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linecap=\"round\"/></g><path data-in=\"4.2\" d=\"M190 330 Q240 320 300 300\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"8\" stroke-linecap=\"round\"/><ellipse data-in=\"4.5\" class=\"pulse\" cx=\"350\" cy=\"290\" rx=\"95\" ry=\"48\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\"/><g data-in=\"5.0\"><line x1=\"430\" y1=\"270\" x2=\"615\" y2=\"230\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text x=\"620\" y=\"240\" font-family=\"sans-serif\" font-size=\"36\" font-weight=\"bold\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"0.5\">honey stomach</text></g><ellipse data-in=\"6.5\" cx=\"330\" cy=\"390\" rx=\"75\" ry=\"36\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\"/><g data-in=\"7.0\"><line x1=\"405\" y1=\"395\" x2=\"615\" y2=\"450\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text x=\"620\" y=\"470\" font-family=\"sans-serif\" font-size=\"36\" font-weight=\"bold\" fill=\"#2a2a40\">food stomach</text></g></svg>"
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

@@ -11,7 +11,7 @@
  *       plume     a Hùng king's ceremonial dress: bronze-studded top, skirt fringed with feathers
  *     bracelets, earrings (bronze), tattoo (Đông Sơn patterns on bare arms and chest),
  *     pants, hair: { style: "traidao"|"bun"|"long"|"short"|"turban"|"bald", color },
- *     headwear: "nonla"|"helmet"|"feather"|"enemy_helmet"|"crown"|undefined,
+ *     headwear: "nonla"|"helmet"|"feather"|"enemy_helmet"|"crown"|"space_helmet"|undefined,
  *     beard: color, cape: color, prop: { type, hand: "front"|"back" },
  *     face: { shape, eyes, nose, brows, wrinkles, mustache, iris, eyeScale } (see face.js)
  *   }
@@ -45,7 +45,8 @@
     const legHex = G ? look.legs || G.legHex : outfit.type === "armor" ? "#55606f" : outfit.type === "enemy" ? "#3a2a2a" : look.legs || skin;
     const bareLegs = outfit.type === "loincloth" || outfit.type === "dongson" || outfit.type === "plume";
     const pantsHex = look.pants || (G ? G.pantsHex : outfit.type === "armor" ? "#3a4350" : bareLegs ? skin : "#5c3b22");
-    const feetHex = G ? G.feetHex : outfit.type === "armor" || outfit.type === "enemy" ? "#2b3139" : shade(skin, -0.1);
+    // look.shoes: shod feet (modern people, boots); else bare or era footwear as before.
+    const feetHex = look.shoes ? look.shoes : G ? G.feetHex : outfit.type === "armor" || outfit.type === "enemy" ? "#2b3139" : shade(skin, -0.1);
     const sleeveHex = G ? G.sleeveHex : outfit.type === "armor" ? "#5d6a79" : outfit.type === "loincloth" || outfit.type === "dongson" || outfit.type === "plume" ? skin : outfit.type === "enemy" ? "#4a2626" : outfit.color;
     // The colour of the body at the shoulders (where the near arm starts).
     const torsoHex = G ? (outfit.top?.cut === "yem" ? skin : outfit.top?.color || "#6a4a2a")
@@ -110,7 +111,8 @@
       const hand = g(elbow, { transform: `translate(0,${B.fore + 4})` });
       // A cartoon hand: the palm, the fingers together in one rounded lobe with two finger lines,
       // the thumb apart on the side facing forward.
-      const hw = B.armW * 0.6, hc = front ? skin : far(skin), hl = shade(skin, -0.32);
+      // look.gloves: gloved hands (astronauts, winter), else skin.
+      const handHex = look.gloves || skin, hw = B.armW * 0.6, hc = front ? handHex : far(handHex), hl = shade(handHex, -0.32);
       el("path", { d: `M ${f2(hw * 0.45)} ${f2(-hw * 0.15)} Q ${f2(hw * 1.15)} ${f2(hw * 0.1)} ${f2(hw * 1.0)} ${f2(hw * 0.62)} Q ${f2(hw * 0.75)} ${f2(hw * 0.78)} ${f2(hw * 0.5)} ${f2(hw * 0.5)} Z`, fill: hc, ...OUT, "stroke-width": 3 }, hand);
       el("path", { d: `M ${f2(-hw * 0.72)} ${f2(-hw * 0.25)} Q ${f2(-hw * 0.85)} ${f2(hw * 0.9)} ${f2(-hw * 0.35)} ${f2(hw * 1.55)} Q ${f2(hw * 0.05)} ${f2(hw * 1.95)} ${f2(hw * 0.45)} ${f2(hw * 1.5)} Q ${f2(hw * 0.78)} ${f2(hw * 0.95)} ${f2(hw * 0.68)} ${f2(-hw * 0.25)} Q 0 ${f2(-hw * 0.5)} ${f2(-hw * 0.72)} ${f2(-hw * 0.25)} Z`, fill: hc, ...OUT }, hand);
       for (const xk of [-0.22, 0.18]) el("path", { d: `M ${f2(hw * xk)} ${f2(hw * 0.95)} q ${f2(hw * 0.03)} ${f2(hw * 0.32)} ${f2(hw * 0.02)} ${f2(hw * 0.55)}`, stroke: hl, "stroke-width": 2, fill: "none", "stroke-linecap": "round" }, hand);
@@ -357,6 +359,14 @@
         el("path", { d: `M ${f2(cx - R * 1.9)} ${f2(cy - R * 0.35)} L ${f2(cx + R * 0.1)} ${f2(cy - R * 1.75)} L ${f2(cx + R * 2.0)} ${f2(cy - R * 0.35)} Q ${f2(cx)} ${f2(cy - R * 0.15)} ${f2(cx - R * 1.9)} ${f2(cy - R * 0.35)} Z`, fill: S.mat("#e9cf8f", true), ...OUT }, h);
         for (let i = 1; i < 4; i++) el("path", { d: `M ${f2(cx - R * 1.9 * (1 - i * 0.22))} ${f2(cy - R * (0.35 + i * 0.33))} L ${f2(cx + R * 2.0 * (1 - i * 0.22))} ${f2(cy - R * (0.35 + i * 0.33))}`, stroke: "#b8995a", "stroke-width": 2.5 }, h);
         break;
+      case "space_helmet": {
+        // A round glass bubble over the whole head (astronauts), its rim on the shoulders.
+        const hx = cx + R * 0.12, hy = cy + R * 0.12, r = R * 1.5;
+        el("circle", { cx: f2(hx), cy: f2(hy), r: f2(r), fill: "#d8eeff", "fill-opacity": 0.22, stroke: "#8fa9bf", "stroke-width": 5 }, h);
+        el("path", { d: `M ${f2(hx - r * 0.62)} ${f2(hy - r * 0.55)} A ${f2(r * 0.85)} ${f2(r * 0.85)} 0 0 1 ${f2(hx + r * 0.1)} ${f2(hy - r * 0.86)}`, stroke: "#ffffff", "stroke-width": 7, fill: "none", opacity: 0.75, "stroke-linecap": "round" }, h);
+        el("ellipse", { cx: f2(hx - R * 0.05), cy: f2(hy + r * 0.86), rx: f2(R * 0.62), ry: f2(R * 0.16), fill: "#c7d2dc", stroke: INK, "stroke-width": 3 }, h);
+        break;
+      }
       case "helmet":
         el("path", { d: `M ${f2(cx - R * 1.1)} ${f2(cy - R * 0.1)} Q ${f2(cx - R * 1.2)} ${f2(cy - R * 1.45)} ${f2(cx + R * 0.05)} ${f2(cy - R * 1.5)} Q ${f2(cx + R * 1.15)} ${f2(cy - R * 1.45)} ${f2(cx + R * 1.1)} ${f2(cy - R * 0.3)} L ${f2(cx + R * 0.65)} ${f2(cy - R * 0.55)} Q ${f2(cx)} ${f2(cy - R * 0.85)} ${f2(cx - R * 0.6)} ${f2(cy - R * 0.6)} L ${f2(cx - R * 0.75)} ${f2(cy + R * 0.38)} Q ${f2(cx - R * 1.05)} ${f2(cy + R * 0.35)} ${f2(cx - R * 1.1)} ${f2(cy - R * 0.1)} Z`, fill: "url(#iron)", ...OUT }, h);
         el("path", { d: `M ${f2(cx - R * 0.05)} ${f2(cy - R * 1.48)} Q ${f2(cx - R * 0.65)} ${f2(cy - R * 2.85)} ${f2(cx - R * 2.3)} ${f2(cy - R * 2.8)} Q ${f2(cx - R * 1.3)} ${f2(cy - R * 2.2)} ${f2(cx - R * 1.15)} ${f2(cy - R * 1.5)} Z`, fill: "url(#cape)", ...OUT }, up(cx - R * 0.05, cy - R * 1.48, 1.1));

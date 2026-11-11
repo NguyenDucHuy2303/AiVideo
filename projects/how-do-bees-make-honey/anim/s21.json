@@ -1,0 +1,62 @@
+{
+  "castFile": "cast.json",
+  "duration": 10.33,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "proud"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "proud"
+    },
+    {
+      "actor": "huy",
+      "at": 7.23,
+      "do": "talk",
+      "face": "proud"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9
+    }
+  ],
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0.2\" x=\"500\" y=\"70\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Germs vs Honey</text><g data-in=\"0.6\" class=\"pulse\"><path d=\"M500 120 C500 120 340 310 340 405 C340 500 410 540 500 540 C590 540 660 500 660 405 C660 310 500 120 500 120 Z\" fill=\"#ffb300\" stroke=\"#3a2a20\" stroke-width=\"6\"/><text x=\"500\" y=\"430\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Honey</text></g><g data-in=\"3\" class=\"float\"><circle cx=\"160\" cy=\"320\" r=\"45\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"145\" cy=\"315\" r=\"7\" fill=\"#3a2a20\"/><circle cx=\"177\" cy=\"315\" r=\"7\" fill=\"#3a2a20\"/><path d=\"M130 295 L155 305 M192 295 L167 305\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M142 345 Q160 332 178 345\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linecap=\"round\"/></g><g data-in=\"4\" class=\"float\"><circle cx=\"190\" cy=\"480\" r=\"45\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"175\" cy=\"475\" r=\"7\" fill=\"#3a2a20\"/><circle cx=\"207\" cy=\"475\" r=\"7\" fill=\"#3a2a20\"/><path d=\"M160 455 L185 465 M222 455 L197 465\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M172 505 Q190 492 208 505\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linecap=\"round\"/></g><g data-in=\"5\" class=\"float\"><circle cx=\"830\" cy=\"400\" r=\"45\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"815\" cy=\"395\" r=\"7\" fill=\"#3a2a20\"/><circle cx=\"847\" cy=\"395\" r=\"7\" fill=\"#3a2a20\"/><path d=\"M800 375 L825 385 M862 375 L837 385\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M812 425 Q830 412 848 425\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linecap=\"round\"/></g><g data-in=\"5.5\"><line class=\"flow\" x1=\"215\" y1=\"330\" x2=\"330\" y2=\"380\" stroke=\"#e53935\" stroke-width=\"6\" stroke-dasharray=\"14 12\" stroke-linecap=\"round\"/><line class=\"flow\" x1=\"245\" y1=\"470\" x2=\"340\" y2=\"450\" stroke=\"#e53935\" stroke-width=\"6\" stroke-dasharray=\"14 12\" stroke-linecap=\"round\"/><line class=\"flow\" x1=\"780\" y1=\"405\" x2=\"670\" y2=\"410\" stroke=\"#e53935\" stroke-width=\"6\" stroke-dasharray=\"14 12\" stroke-linecap=\"round\"/></g><text data-in=\"6.6\" x=\"760\" y=\"200\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"42\" font-weight=\"bold\" fill=\"#e53935\">Too sugary!</text></svg>"
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}
