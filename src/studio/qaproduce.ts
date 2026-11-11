@@ -42,6 +42,8 @@ Object.assign(LOOKS, {
   // Long hair is tied up inside the helmet.
   mai_space: { ...LOOKS.mai, outfit: SUIT, headwear: "space_helmet", gloves: "#e9edf2", shoes: "#aeb9c4", hair: { style: "bun", color: "#1a1410" } },
 });
+/** Seen from the front: Huy talking to the viewer (host scenes). */
+for (const k of Object.keys(LOOKS) as (keyof typeof LOOKS)[]) (LOOKS as Record<string, unknown>)[`${k}_front`] = { ...LOOKS[k], view: "front" };
 const OUTFITS = ["everyday", "spacesuit"] as const;
 
 const MOVES = ["idle", "talk", "point", "wave", "raise", "cheer", "worry", "give", "stretch"] as const;
@@ -127,7 +129,8 @@ function sceneOf(P: QAProfile, d: Directed, plan: QAPlan, i: number, seconds: nu
   const speaks = new Set(plan.scenes[i]!.parts.map((p) => p.who));
   const withMai = d.mai.show || speaks.has(P.kid.name);
   const suit = d.outfit === "spacesuit" ? "_space" : "";
-  const cast: Record<string, unknown>[] = [{ id: "huy", type: "human", look: `huy${suit}`, x: 0 }];
+  // In host scenes Huy talks to the viewer, seen from the front; Mai (when there) still turns to him.
+  const cast: Record<string, unknown>[] = [{ id: "huy", type: "human", look: `huy${suit}${d.layout === "host" ? "_front" : ""}`, x: 0 }];
   if (withMai) cast.push({ id: "mai", type: "human", look: `mai${suit}`, x: d.layout === "board" ? -140 : 250, facing: d.layout === "board" ? 1 : -1 });
   const actions: Record<string, unknown>[] = gestures("huy", d.huy, seconds);
   if (withMai) actions.push(...gestures("mai", d.mai, seconds));

@@ -35,7 +35,8 @@
     B.torsoW *= build[0]; B.legW *= build[1]; B.armW *= build[1]; B.belly = build[2];
     const skin = look.skin || (look.body === "child" ? "#f3c590" : "#e8b27c");
     const outfit = look.outfit || { type: "tunic", color: "#8a5a2a" };
-    const P = { root: g(parent), B, look, S, seed, sway: [], sleeves: [] };
+    // look.view "front": the presenters talk to the viewer (everyone else stays three-quarter).
+    const P = { root: g(parent), B, look, S, seed, sway: [], sleeves: [], front: look.view === "front" };
     // Parts that swing after the body (hair, beard, feathers, plumes): a group turned about the
     // point where the part is attached. `up` parts stand up from it (feathers), the rest hang.
     P.swayG = (parent, px, py, gain = 1, up = false) => { const gg = g(parent); P.sway.push({ g: gg, px, py, gain, up }); return gg; };
@@ -56,11 +57,14 @@
     if (look.cape) P.cape = el("path", { fill: look.cape === true ? "url(#cape)" : look.cape, ...OUT }, P.root);
     const leg = (front) => {
       const hip = g(P.root);
+      if (P.front) front = true; // seen from the front, both legs are as near
       WA.human.limb(S, hip, B.thigh, B.legW, front ? pantsHex : far(pantsHex));
       const knee = g(hip);
       WA.human.limb(S, knee, B.shin, B.legW * 0.9, front ? legHex : far(legHex), 0.7, 0.09, 0.3);
       const w = B.legW;
-      el("path", { d: `M ${f2(-w * 0.45)} ${B.shin + 2} Q ${f2(-w * 0.5)} ${f2(B.shin + w * 0.55)} ${f2(w * 0.1)} ${f2(B.shin + w * 0.55)} L ${f2(w * 1.1)} ${f2(B.shin + w * 0.5)} Q ${f2(w * 1.15)} ${f2(B.shin + w * 0.1)} ${f2(w * 0.4)} ${B.shin - 2} Z`, fill: front ? feetHex : far(feetHex), ...OUT, "data-limb": 1 }, knee);
+      // From the front the foot is a rounded toe cap under the shin, turned a little outwards.
+      if (P.front) el("path", { d: `M ${f2(-w * 0.62)} ${f2(B.shin - 2)} Q ${f2(-w * 0.78)} ${f2(B.shin + w * 0.62)} ${f2(w * 0.05)} ${f2(B.shin + w * 0.62)} Q ${f2(w * 0.86)} ${f2(B.shin + w * 0.62)} ${f2(w * 0.68)} ${f2(B.shin - 2)} Z`, fill: feetHex, ...OUT, "data-limb": 1 }, knee);
+      else el("path", { d: `M ${f2(-w * 0.45)} ${B.shin + 2} Q ${f2(-w * 0.5)} ${f2(B.shin + w * 0.55)} ${f2(w * 0.1)} ${f2(B.shin + w * 0.55)} L ${f2(w * 1.1)} ${f2(B.shin + w * 0.5)} Q ${f2(w * 1.15)} ${f2(B.shin + w * 0.1)} ${f2(w * 0.4)} ${B.shin - 2} Z`, fill: front ? feetHex : far(feetHex), ...OUT, "data-limb": 1 }, knee);
       // The outline underneath, the colour on top: no ring at the knee or the ankle.
       const o = outlineUnder(hip);
       return { hip, knee, o: { hip: o, knee: o.querySelector(":scope > g") } };
@@ -93,8 +97,15 @@
     }
 
     P.torso = g(P.root);
+    // From the front the neck and the long hair are behind the shoulders (the collar comes over
+    // the neck): a group moved with the head (apply).
+    if (P.front) P.hairBack = g(P.torso);
     const arm = (front) => {
-      const sh = g(front ? P.torso : P.torsoBack);
+      // From the front both arms hang on the sides in front of the body; the far one is the near
+      // one mirrored (the same angles open it to the other side).
+      const near = front || P.front;
+      const sh = g(P.front ? (front ? P.torso : g(P.torso, { transform: "scale(-1,1)" })) : front ? P.torso : P.torsoBack);
+      front = near;
       WA.human.limb(S, sh, B.upper, B.armW, front ? sleeveHex : far(sleeveHex));
       const elbow = g(sh);
       const foreHex = G ? G.foreHex : outfit.type === "armor" || outfit.type === "enemy" ? skin : outfit.type === "robe" || outfit.type === "dress" ? outfit.color : skin;
@@ -126,11 +137,12 @@
       }
       return { sh, elbow, hand, o: { sh: o, elbow: o.querySelector(":scope > g") } };
     };
-    P.armB = arm(false);
+    if (!P.front) P.armB = arm(false);
     drawTorso(S, P.torso, B, outfit, skin, look);
     P.head = g(P.torso);
     P.headInner = g(P.head);
     drawHead(S, P, P.headInner, B, look, skin, seed);
+    if (P.front) P.armB = arm(false);
     P.armF = arm(true);
     // Props: the one in `prop` shows; `props` are extra ones a scene can switch to.
     P.props = {};
@@ -285,18 +297,21 @@
     const R = B.headR, round = !!B.round, hair = look.hair || { style: round ? "traidao" : "short" };
     const hairHex = hair.color || "#2a1a12";
     // Head centre relative to the neck joint.
-    const cx = round ? 4 : 8, cy = round ? -R : -R * 1.3, xc = cx + R * 0.28;
+    const front = P.front;
+    const cx = front ? 0 : round ? 4 : 8, cy = round ? -R : -R * 1.3, xc = front ? cx : cx + R * 0.28;
     // A short, sturdy neck (a thin one made adults look like lollipops).
     if (!round) {
-      const nd = `M ${f2(cx - R * 0.42)} 6 L ${f2(cx - R * 0.36)} ${f2(-R * 0.62)} L ${f2(cx + R * 0.4)} ${f2(-R * 0.62)} L ${f2(cx + R * 0.5)} 6 Z`;
-      el("path", { d: nd, fill: S.mat(shade(skin, -0.1)), ...OUT }, h);
+      const nd = front ? `M ${f2(cx - R * 0.44)} 6 L ${f2(cx - R * 0.36)} ${f2(-R * 0.62)} L ${f2(cx + R * 0.36)} ${f2(-R * 0.62)} L ${f2(cx + R * 0.44)} 6 Z`
+        : `M ${f2(cx - R * 0.42)} 6 L ${f2(cx - R * 0.36)} ${f2(-R * 0.62)} L ${f2(cx + R * 0.4)} ${f2(-R * 0.62)} L ${f2(cx + R * 0.5)} 6 Z`;
+      el("path", { d: nd, fill: S.mat(shade(skin, -0.1)), ...OUT }, front ? P.hairBack : h);
       // The jaw's shadow on the neck: a hard-edged band following the chin (not in flat prints).
       if (!S.flat) {
         const id = S.id("nk");
         S.addDefs(`<clipPath id="${id}"><path d="${nd}"/></clipPath>`);
-        el("ellipse", { cx: f2(cx + R * 0.12), cy: f2(cy + R * 1.08), rx: f2(R * 0.85), ry: f2(R * 0.42), fill: shade(skin, -0.32), opacity: 0.6, "clip-path": `url(#${id})` }, h);
+        el("ellipse", { cx: f2(cx + (front ? 0 : R * 0.12)), cy: f2(cy + R * 1.08), rx: f2(R * 0.85), ry: f2(R * 0.42), fill: shade(skin, -0.32), opacity: 0.6, "clip-path": `url(#${id})` }, front ? P.hairBack : h);
       }
     }
+    if (front) return drawHeadFront(S, P, h, B, look, skin, seed, cx, cy, R, hair, hairHex);
     if (hair.style === "long") el("path", { d: `M ${f2(cx - R * 0.9)} ${f2(cy - R * 0.3)} Q ${f2(cx - R * 1.4)} ${f2(cy + R * 1.4)} ${f2(cx - R * 0.6)} ${f2(cy + R * 2.6)} L ${f2(cx - R * 0.1)} ${f2(cy + R * 1.6)} Q ${f2(cx - R * 0.2)} ${f2(cy + R * 0.6)} ${f2(cx)} ${f2(cy)} Z`, fill: hairHex, ...OUT }, P.swayG(h, cx - R * 0.55, cy - R * 0.2, 0.8));
     // A hat that closes over the head hides the bun (it is gathered inside).
     const hatOverBun = ["mu_canh_chuon", "binh_thien", "crown", "helmet", "enemy_helmet", "khan_xep", "khan_mo_qua", "khan_van", "non_chop"].includes(look.headwear);
@@ -351,6 +366,51 @@
     drawHeadwear(S, h, look.headwear, cx, cy, R, P);
   }
 
+  /**
+   * The head from the front (presenters): a symmetric face, the hair parted over the forehead in
+   * locks, long hair falling behind the shoulders, a bun on top. Headwear and beards are only
+   * drawn three-quarter (the presenters have neither, except the space helmet).
+   */
+  function drawHeadFront(S, P, h, B, look, skin, seed, cx, cy, R, hair, hairHex) {
+    const round = !!B.round;
+    const face = faceFor(look, seed), shape = WA.face.SHAPES[face.shape || (round ? "round" : "oval")] || WA.face.SHAPES.oval;
+    const rx = R * shape.rx, ry = R * shape.ry;
+    if (hair.style === "long" && P.hairBack) {
+      // Behind the head and the shoulders: a curtain from the crown down past the shoulders,
+      // swaying a little.
+      const hb = P.swayG(P.hairBack, cx, cy - ry * 0.5, 0.35), bot = cy + R * 2.0, wx = rx * 1.22;
+      el("path", { d: `M ${f2(cx - rx * 1.04)} ${f2(cy - ry * 0.2)} Q ${f2(cx - rx * 1.06)} ${f2(cy - ry * 1.14)} ${f2(cx)} ${f2(cy - ry * 1.12)} Q ${f2(cx + rx * 1.06)} ${f2(cy - ry * 1.14)} ${f2(cx + rx * 1.04)} ${f2(cy - ry * 0.2)}`
+        + ` Q ${f2(cx + wx)} ${f2(cy + R * 1.1)} ${f2(cx + wx * 0.95)} ${f2(bot)} Q ${f2(cx + wx * 0.6)} ${f2(bot + R * 0.16)} ${f2(cx + wx * 0.3)} ${f2(bot - R * 0.06)}`
+        + ` L ${f2(cx - wx * 0.3)} ${f2(bot - R * 0.06)} Q ${f2(cx - wx * 0.6)} ${f2(bot + R * 0.16)} ${f2(cx - wx * 0.95)} ${f2(bot)} Q ${f2(cx - wx)} ${f2(cy + R * 1.1)} ${f2(cx - rx * 1.04)} ${f2(cy - ry * 0.2)} Z`, fill: S.mat(shade(hairHex, -0.05), true), ...OUT }, hb);
+      P.hairBack.insertBefore(hb, P.hairBack.firstChild); // (behind the neck too)
+    }
+    const hatOverBun = ["space_helmet"].includes(look.headwear) ? false : !!look.headwear;
+    if (hair.style === "bun" && !hatOverBun) el("circle", { cx: f2(cx), cy: f2(cy - ry * 1.12), r: f2(R * 0.34), fill: S.mat(hairHex, true), ...OUT }, P.swayG(h, cx, cy - ry * 0.95, 0.2));
+    P.face = WA.face.build(S, h, { cx, cy, R, skin, face, child: round, female: look.body === "woman", front: true, hairColor: hairHex, browColor: hair.style === "bald" ? shade(skin, -0.5) : undefined, browTop: hair.style === "bald" ? undefined : cy - R * 0.44 }, seed);
+    if (hair.style !== "bald") {
+      // The cap of hair over the crown, down the temples to the ears; the fringe in five locks.
+      const ox = rx * 1.05, top = cy - ry * 1.1, side = cy + R * (hair.style === "long" ? 0.42 : 0.05);
+      const lo = hair.style === "long" ? 0.06 : 0;
+      const locks = [[0.8, -0.42], [0.56, -0.66], [0.3, -0.5 + lo], [0.06, -0.7], [-0.2, -0.5 + lo], [-0.44, -0.68], [-0.66, -0.46 + lo], [-0.8, -0.42]];
+      let d = `M ${f2(cx - ox)} ${f2(side)} Q ${f2(cx - ox * 1.04)} ${f2(top - ry * 0.02)} ${f2(cx)} ${f2(top)} Q ${f2(cx + ox * 1.04)} ${f2(top - ry * 0.02)} ${f2(cx + ox)} ${f2(side)}`;
+      d += ` Q ${f2(cx + rx * 0.96)} ${f2(side + R * 0.1)} ${f2(cx + rx * 0.84)} ${f2(side - R * 0.04)} Q ${f2(cx + rx * 0.8)} ${f2(cy - R * 0.2)} ${f2(cx + rx * locks[0][0])} ${f2(cy + R * locks[0][1])}`;
+      for (let i = 1; i < locks.length; i++) {
+        const [x0, y0] = locks[i - 1], [x1, y1] = locks[i], hi = Math.min(y0, y1) - 0.02;
+        d += ` Q ${f2(cx + rx * (x0 + x1) / 2)} ${f2(cy + R * (y1 < y0 ? hi + 0.24 : hi))} ${f2(cx + rx * x1)} ${f2(cy + R * y1)}`;
+      }
+      d += ` Q ${f2(cx - rx * 0.8)} ${f2(cy - R * 0.2)} ${f2(cx - rx * 0.84)} ${f2(side - R * 0.04)} Q ${f2(cx - rx * 0.96)} ${f2(side + R * 0.1)} ${f2(cx - ox)} ${f2(side)} Z`;
+      const fringe = el("path", { d, fill: S.mat(hairHex, true), ...OUT }, h);
+      if (!S.flat) h.insertBefore(el("path", { d, transform: `translate(0 ${f2(R * 0.09)})`, fill: shade(skin, -0.3), opacity: 0.45, "clip-path": `url(#${P.face.clip})` }, h), fringe);
+      const strand = WA.core.mixColor(hairHex, parseInt(hairHex.slice(1), 16) > 0x888888 ? "#7a7068" : "#ffffff", 0.28);
+      for (const sd of [-1, 1]) {
+        el("path", { d: `M ${f2(cx + sd * rx * 0.1)} ${f2(top + ry * 0.08)} Q ${f2(cx + sd * rx * 0.6)} ${f2(top + ry * 0.12)} ${f2(cx + sd * rx * 0.78)} ${f2(cy - R * 0.5)}`, stroke: strand, "stroke-width": 2, fill: "none", opacity: 0.55, "stroke-linecap": "round" }, h);
+      }
+      el("path", { d: `M ${f2(cx - rx * 0.5)} ${f2(top + ry * 0.16)} Q ${f2(cx)} ${f2(top - ry * 0.02)} ${f2(cx + rx * 0.5)} ${f2(top + ry * 0.16)}`, stroke: "#ffffff", "stroke-width": 5, fill: "none", opacity: 0.18, "stroke-linecap": "round" }, h);
+    }
+    for (const b of P.face.brows) h.appendChild(b);
+    if (look.headwear === "space_helmet") drawHeadwear(S, h, "space_helmet_front", cx, cy, R, P);
+  }
+
   function drawHeadwear(S, h, type, cx, cy, R, P) {
     const up = (px, py, gain = 1) => (P ? P.swayG(h, px, py, gain, true) : h);
     if (WA.garments && WA.garments.headwear(S, h, type, cx, cy, R)) return;
@@ -359,12 +419,13 @@
         el("path", { d: `M ${f2(cx - R * 1.9)} ${f2(cy - R * 0.35)} L ${f2(cx + R * 0.1)} ${f2(cy - R * 1.75)} L ${f2(cx + R * 2.0)} ${f2(cy - R * 0.35)} Q ${f2(cx)} ${f2(cy - R * 0.15)} ${f2(cx - R * 1.9)} ${f2(cy - R * 0.35)} Z`, fill: S.mat("#e9cf8f", true), ...OUT }, h);
         for (let i = 1; i < 4; i++) el("path", { d: `M ${f2(cx - R * 1.9 * (1 - i * 0.22))} ${f2(cy - R * (0.35 + i * 0.33))} L ${f2(cx + R * 2.0 * (1 - i * 0.22))} ${f2(cy - R * (0.35 + i * 0.33))}`, stroke: "#b8995a", "stroke-width": 2.5 }, h);
         break;
-      case "space_helmet": {
+      case "space_helmet":
+      case "space_helmet_front": {
         // A round glass bubble over the whole head (astronauts), its rim on the shoulders.
-        const hx = cx + R * 0.12, hy = cy + R * 0.12, r = R * 1.5;
+        const hx = type === "space_helmet_front" ? cx : cx + R * 0.12, hy = cy + R * 0.12, r = R * 1.5;
         el("circle", { cx: f2(hx), cy: f2(hy), r: f2(r), fill: "#d8eeff", "fill-opacity": 0.22, stroke: "#8fa9bf", "stroke-width": 5 }, h);
         el("path", { d: `M ${f2(hx - r * 0.62)} ${f2(hy - r * 0.55)} A ${f2(r * 0.85)} ${f2(r * 0.85)} 0 0 1 ${f2(hx + r * 0.1)} ${f2(hy - r * 0.86)}`, stroke: "#ffffff", "stroke-width": 7, fill: "none", opacity: 0.75, "stroke-linecap": "round" }, h);
-        el("ellipse", { cx: f2(hx - R * 0.05), cy: f2(hy + r * 0.86), rx: f2(R * 0.62), ry: f2(R * 0.16), fill: "#c7d2dc", stroke: INK, "stroke-width": 3 }, h);
+        el("ellipse", { cx: f2(hx - (type === "space_helmet_front" ? 0 : R * 0.05)), cy: f2(hy + r * 0.86), rx: f2(R * 0.62), ry: f2(R * 0.16), fill: "#c7d2dc", stroke: INK, "stroke-width": 3 }, h);
         break;
       }
       case "helmet":
@@ -519,6 +580,7 @@
     const f = p.follow || { vf: 0, dl: 0, wF: 0, wB: 0 };
     // The head nods a little with the voice and lags when the body pitches.
     const nod = (p.talk || 0) * 3.2 * Math.sin(t * 6.3 + P.seed) - Math.max(-6, Math.min(6, f.dl * 0.06));
+    if (P.front) return applyFront(P, p, t, f, nod);
     tr(P.head, 4, -T, (p.headTilt || 0) + nod);
     for (const k of ["legF", "legB"]) {
       const a = p[k] || [0, 0];
@@ -540,6 +602,57 @@
     const behind = p.armsBehindHead || (p.armF?.[0] ?? 0) - (p.lean || 0) > 115;
     if (behind) { if (P.armF.sh.nextSibling !== P.head) { P.torso.insertBefore(P.armF.o.sh, P.head); P.torso.insertBefore(P.armF.sh, P.head); } }
     else if (P.armF.sh.nextSibling === P.head) { P.torso.appendChild(P.armF.o.sh); P.torso.appendChild(P.armF.sh); }
+    applyRest(P, p, t, f);
+  }
+
+  /**
+   * The joints of a rig seen from the front. The poses are written for the side view (angles
+   * forward-positive); from the front an arm lifted forward opens out to the side instead, and a
+   * bent elbow folds the forearm in front of the body while the arm is low (talking, worrying)
+   * or up over it once the arm is raised (waving, cheering). Legs only part a little.
+   */
+  function applyFront(P, p, t, f, nod) {
+    const B = P.B, T = B.torsoH;
+    tr(P.head, 2, -T, (p.headTilt || 0) * 0.5 + nod * 0.6);
+    if (P.hairBack) tr(P.hairBack, 2, -T, (p.headTilt || 0) * 0.5 + nod * 0.6);
+    const hx = B.torsoW * 0.2 + 2;
+    for (const k of ["legF", "legB"]) {
+      const a = p[k] || [0, 0], sd = k === "legF" ? 1 : -1, x = 2 + sd * hx;
+      // (the far leg mirrored: both open outwards)
+      const r = sd * (2 + Math.abs(a[0]) * 0.12), kn = -sd * Math.abs(a[1]) * 0.08;
+      for (const [hp, kn2] of [[P[k].hip, P[k].knee], [P[k].o.hip, P[k].o.knee]]) {
+        hp.setAttribute("transform", `translate(${f2(x)},0) rotate(${f2(r)})`);
+        tr(kn2, 0, B.thigh, kn);
+      }
+    }
+    const sx = B.torsoW / 2 - B.armW * 0.42;
+    // A raised arm stays out to the side: a child's big head is wider than its shoulders, an arm
+    // straight up would cross the face.
+    const maxUp = B.round ? 146 : 166;
+    for (const k of ["armF", "armB"]) {
+      const a = p[k] || [0, 0], up = 6 + Math.max(0, Math.min(maxUp - 6, a[0]));
+      // -1 (forearm folds in front of the body) … +1 (forearm goes on up), by how high the arm is
+      const bend = Math.max(-1, Math.min(1, (a[0] - 70) / 20));
+      const lo = Math.min(a[1] * (bend < 0 ? bend * 2 : bend), maxUp + 8 - up);
+      // Raised high, the arm passes behind the head (beside it, never over the face).
+      const grp = k === "armF" ? P.armF.sh : P.armB.sh.parentNode, og = k === "armF" ? P.armF.o.sh : null;
+      const behind = up > 110;
+      if (behind && grp.nextSibling !== P.head && (!og || og.nextSibling !== P.head)) { if (og) P.torso.insertBefore(og, P.head); P.torso.insertBefore(grp, P.head); }
+      else if (!behind && P.head.compareDocumentPosition(grp) & 2) { if (og) P.torso.appendChild(og); P.torso.appendChild(grp); }
+      // The far arm sits in a mirrored group: the shoulder's x is measured from the body's centre
+      // (2) on its own side.
+      const x = k === "armF" ? 2 + sx : sx - 2;
+      tr(P[k].sh, x, -T + 14, -up);
+      tr(P[k].elbow, 0, B.upper, -lo);
+      tr(P[k].o.sh, x, -T + 14, -up);
+      tr(P[k].o.elbow, 0, B.upper, -lo);
+    }
+    applyRest(P, p, t, f);
+  }
+
+  /** Face, props, hair sway, sleeves, skirt, coat, cape: the same from any side. */
+  function applyRest(P, p, t, f) {
+    const B = P.B, T = B.torsoH;
     WA.face.apply(P.face, p.face || "neutral", t, p.talk || 0, p.viseme);
     // The head's shadow side is away from the light: the back of the head, or the face when the
     // light is behind (the player sets lightFlip).
