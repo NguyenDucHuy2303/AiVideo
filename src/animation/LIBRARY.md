@@ -44,7 +44,15 @@ Thời đại mới thì thêm một khối vào `eras.json`, gồm mô tả, nh
 
 ## Thú vật (`runtime/animals.js`)
 
-`{ "type": "animal", "look": { "species": "buffalo", "color": "…" } }`, species: `buffalo` (trâu, sừng cong) · `tiger` (hổ vằn) · `elephant` (voi, vòi đung đưa, tai phe phẩy) · `dog` · `cat` · `rabbit` · `fox` (đuôi bông) · `turtle` (rùa mai) · `deer` (hươu sao) · `goat` (dê râu).
+`{ "type": "animal", "look": { "species": "buffalo", "color": "…" } }`, species: `buffalo` (trâu, sừng cong) · `tiger` (hổ vằn) · `elephant` (voi, vòi đung đưa, tai phe phẩy) · `dog` · `cat` · `rabbit` · `fox` (đuôi bông) · `turtle` (rùa mai) · `deer` (hươu sao) · `goat` (dê râu) · `mouse` (chuột).
+
+Chim, cá, ếch, kiến dùng rối riêng (`runtime/critters.js`) nhưng khai báo giống hệt các con vật khác:
+- **Loài:** `crow` (quạ), `chicken` (gà mái có mào), `fish` (cá), `frog` (ếch), `ant` (kiến).
+- **Động tác:**
+  - Chim: `walk`, `peck` (mổ), `flap` (vỗ cánh), `fly` (bay).
+  - Cá luôn bơi.
+  - Ếch: `walk` và `hop` đều là nhảy.
+- **Khung hình:** cảnh bay hoặc bơi nên dùng khung có `follow: true`.
 - Dùng chung dáng đi của ngựa: `stand` `walk` `gallop`; tên động tác của người được hiểu tương ứng (`run`/`charge` → phi, còn lại → đứng).
 - Biết nói (truyện ngụ ngôn): đặt `speakers` trong `project.json` như với người, miệng mở theo giọng thật; mắt tự chớp.
 - Trâu, voi có chỗ ngồi (`onto` để cưỡi: cậu bé chăn trâu, voi chiến).

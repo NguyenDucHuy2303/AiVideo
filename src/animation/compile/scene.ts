@@ -13,6 +13,8 @@ export const ENTRIES = ["none", "from_left", "from_right"] as const;
 export const MOTIONS = [
   "idle", "still", "walk", "run", "talk", "call", "point", "wave", "cheer", "bow", "kneel", "sit", "lie", "sit_up",
   "stretch", "heroic", "raise", "worry", "eat", "give", "carry", "march", "charge", "swing", "fall", "fly", "ride", "undress",
+  // birds, fish, frogs (critters.js); anyone else given them just stands
+  "peck", "flap", "swim", "hop",
 ] as const;
 export const FACES = ["neutral", "happy", "joy", "laugh", "sad", "worried", "angry", "determined", "surprised", "shout", "proud"] as const;
 export const EFFECTS = ["transform", "sparkle", "glow", "fire", "smoke", "embers", "flash", "shake", "rays", "pop"] as const;

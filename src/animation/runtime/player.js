@@ -42,12 +42,13 @@
     for (const c of scene.cast || []) {
       const seed = WA.core.hash(c.id);
       // Horses and the other animals share the four-legged gaits; people have their own.
-      const kind = c.type === "horse" || c.type === "animal" ? c.type : "human";
+      // Birds, fish, frogs and ants (critters.js) are animals too, with a rig of their own.
+      const kind = c.type === "horse" ? "horse" : c.type === "animal" ? (WA.critters?.SPECIES[c.look?.species] ? "critter" : "animal") : "human";
       S.matScope = { mats: {}, list: [] };
-      const rig = kind === "horse" ? WA.horse.build(S, actorLayer, c.look || {}) : kind === "animal" ? WA.animal.build(S, actorLayer, c.look || {}) : WA.human.build(S, actorLayer, c.look || {}, seed);
+      const rig = kind === "horse" ? WA.horse.build(S, actorLayer, c.look || {}) : kind === "critter" ? WA.critters.build(S, actorLayer, c.look || {}) : kind === "animal" ? WA.animal.build(S, actorLayer, c.look || {}) : WA.human.build(S, actorLayer, c.look || {}, seed);
       const shadow = WA.core.el("ellipse", { fill: "url(#shadow)", rx: 0, ry: 0 }, shadowLayer);
       const acts = (scene.actions || []).filter((a) => a.actor === c.id).sort((a, b) => a.at - b.at);
-      actors[c.id] = { c, rig, shadow, acts, horse: kind !== "human", kind, R: kind === "animal" ? WA.animal : kind === "horse" ? WA.horse : WA.human, mats: S.matScope.list, flip: false };
+      actors[c.id] = { c, rig, shadow, acts, horse: kind !== "human", kind, R: kind === "critter" ? WA.critters : kind === "animal" ? WA.animal : kind === "horse" ? WA.horse : WA.human, mats: S.matScope.list, flip: false };
       S.matScope = null;
     }
     // Running and galloping kick up dust by themselves.
@@ -173,7 +174,7 @@
       const key = `${id}|${t.toFixed(4)}`;
       if (memo.has(key)) return memo.get(key);
       const A = actors[id];
-      const lib = A.horse ? WA.motions.horse : WA.motions.human;
+      const lib = A.kind === "critter" ? WA.critters.motions : A.horse ? WA.motions.horse : WA.motions.human;
       const props = propsAt(A, t);
       const { cur, prev } = motionAt(A, t);
       const mount = A.horse ? null : mountAt(A, t);
@@ -183,7 +184,8 @@
       // In the saddle, only riding motions apply; anything else means "keep riding".
       const run = (a) => {
         // Four-legged actors understand the people's words: run is a gallop, the rest a stand.
-        const name = riding && !RIDING.has(a.do) ? "ride" : A.horse ? BEAST[a.do] || a.do : a.do;
+        let name = riding && !RIDING.has(a.do) ? "ride" : A.horse ? BEAST[a.do] || a.do : a.do;
+        if (A.kind === "critter") name = WA.critters.forKind(A.rig.sp.kind, name);
         const fn = lib[name] || lib[A.horse ? "stand" : "idle"];
         return fn(t - Math.max(a.at, riding && name === "ride" ? mountEnd : -Infinity), ctx(a));
       };
@@ -266,7 +268,7 @@
       actorLayer.style.setProperty("--lw", clamp(1 / Math.pow(cam.z, 0.6), 0.42, 1.12).toFixed(3));
       for (const id in actors) {
         const A = actors[id], p = poseAt(id, t);
-        if (!A.horse && A.kind !== "animal") p.follow = followOf(id, t, p);
+        if (!A.horse) p.follow = followOf(id, t, p);
         // The lit side of every part faces the light, whichever way the character is turned.
         const flip = (p.facing ?? 1) !== S.light.side;
         A.rig.lightFlip = flip;
@@ -276,7 +278,7 @@
         }
         A.R.apply(A.rig, p, t);
         const pts = pointsAt(id, t), air = clamp(-(A.horse ? p.y || 0 : pts.feet[1]) / 900);
-        const w = (A.kind === "animal" ? A.rig.sp.body[0] * 0.6 : A.horse ? 200 : 60) * p.scale * (A.rig.B?.round ? 1 : 1.15);
+        const w = (A.kind === "animal" || A.kind === "critter" ? A.rig.sp.body[0] * 0.6 : A.horse ? 200 : 60) * p.scale * (A.rig.B?.round ? 1 : 1.15);
         const hidden = !A.horse && p.seated;
         // A low sun throws the shadow long, away from the light.
         const cast = S.light.cast * (1 - air);

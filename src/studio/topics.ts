@@ -63,7 +63,7 @@ async function made(): Promise<string[]> {
 }
 
 /** The animals the cartoon can draw (runtime/animals.js, horse.js): a fable's cast must be among them. */
-export const ANIMALS = "trâu, hổ, voi, chó, mèo, thỏ, cáo, rùa, hươu, dê, ngựa";
+export const ANIMALS = "trâu, hổ, voi, chó, mèo, thỏ, cáo, rùa, hươu, dê, ngựa, chuột, quạ, gà, cá, ếch, kiến";
 
 /**
  * Topics for the next videos. fables: only animal fables whose characters the cartoon can draw;
@@ -92,7 +92,7 @@ export async function proposeTopics(count: number, log?: (s: string) => void, op
       "",
       "CHỈ đề xuất truyện ngụ ngôn (kind: \"ngụ ngôn\") có nhân vật chính là con vật biết nói, mỗi truyện một bài học rõ ràng cho trẻ 3–7 tuổi:",
       "- Ưu tiên ngụ ngôn Việt Nam (Thầy bói xem voi, Đeo nhạc cho mèo…), rồi truyện ngụ ngôn kinh điển của thế giới hợp với trẻ Việt (Rùa và Thỏ…).",
-      `- Mọi con vật trong truyện phải thuộc các loài vẽ được: ${ANIMALS}. Có thể có thêm người. Không chọn truyện cần ếch, quạ, chuột, gà, kiến… (chưa vẽ được).`,
+      `- Mọi con vật trong truyện phải thuộc các loài vẽ được: ${ANIMALS}. Có thể có thêm người. Không chọn truyện cần con vật khác (chưa vẽ được).`,
       "- era: co_tich_lang_que (làng quê, rừng núi Việt Nam), newEra: false.",
     ] : ["", "Không đề xuất truyện ngụ ngôn con vật (có dòng riêng)."]),
     ...(opts.hints?.length ? ["", "Đang vào mùa hoặc đang được quan tâm (dùng khi hợp, không gượng ép):", ...opts.hints.map((h) => `- ${h}`)] : []),

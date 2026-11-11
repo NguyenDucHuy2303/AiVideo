@@ -2,7 +2,8 @@
  * Four-legged animals for fables and folk tales: one rig, shaped by the species.
  *   cast: { "type": "animal", "look": { "species": "buffalo", "color": "#4a4a52" } }
  *   species: buffalo (trâu) · tiger (hổ) · elephant (voi) · dog (chó) · cat (mèo) ·
- *            rabbit (thỏ) · fox (cáo) · turtle (rùa) · deer (hươu) · goat (dê)
+ *            rabbit (thỏ) · fox (cáo) · turtle (rùa) · deer (hươu) · goat (dê) · mouse (chuột)
+ * Birds, fish, frogs and ants have their own rig (critters.js).
  * The pose is the horse's (legs × 4, neck, head, tail, bob, pitch), so the horse gaits move
  * them (stand, walk, gallop); fables make them talk: the mouth opens with `talk`, eyes blink.
  * Origin on the ground under the belly, facing right.
@@ -21,6 +22,7 @@
     fox: { color: "#d4692a", belly: "#fff3e0", body: [190, 78], front: [42, 38], hind: [46, 38], legW: 18, foot: "paw", neck: [86, -24, 34], head: "canine", snout: 1.3, ears: "pointy", tail: "bushy" },
     turtle: { color: "#8aa65a", shell: "#6e5a30", body: [190, 90], front: [16, 16], hind: [16, 16], legW: 26, foot: "pad", neck: [96, 8, 40], head: "turtle", tail: "tiny" },
     deer: { color: "#b5763a", belly: "#f3e2c4", pattern: "spots", body: [210, 96], front: [64, 62], hind: [68, 62], legW: 18, foot: "hoof", neck: [92, -40, 70], head: "canine", snout: 1.1, ears: "pointy", antlers: true, tail: "puff" },
+    mouse: { color: "#9c9aa6", belly: "#ece6ea", body: [96, 50], front: [16, 14], hind: [20, 16], legW: 10, foot: "paw", neck: [44, -14, 8], head: "feline", ears: "round", tail: "string", whiskers: true },
     goat: { color: "#e8e2d4", belly: "#f6f2e8", body: [190, 96], front: [48, 44], hind: [50, 44], legW: 20, foot: "hoof", neck: [84, -34, 40], head: "bovine", ears: "side", horns: "goat", beard: true, tail: "puff" },
   };
 
@@ -57,6 +59,7 @@
       case "bushy": el("path", { d: "M 0 0 C -40 -10 -100 0 -130 30 C -96 44 -40 36 0 14 Z", fill: S.mat(coat, true), ...OUT }, A.tail); el("path", { d: "M -100 18 C -112 22 -124 26 -130 30 C -118 36 -106 38 -96 36 Z", fill: "#fffaf2", ...OUT, "stroke-width": 2 }, A.tail); break;
       case "curl": el("path", { d: "M 0 0 C -30 -10 -40 -50 -16 -56", stroke: INK, "stroke-width": 13, fill: "none", "stroke-linecap": "round" }, A.tail); el("path", { d: "M 0 0 C -30 -10 -40 -50 -16 -56", stroke: coat, "stroke-width": 8, fill: "none", "stroke-linecap": "round" }, A.tail); break;
       case "puff": el("circle", { cx: -6, cy: -6, r: sp.body[1] * 0.16, fill: "#fffaf2", ...OUT }, A.tail); break;
+      case "string": el("path", { d: "M 0 0 C -30 12 -60 -14 -96 -4", stroke: INK, "stroke-width": 6, fill: "none", "stroke-linecap": "round" }, A.tail); el("path", { d: "M 0 0 C -30 12 -60 -14 -96 -4", stroke: shade(coat, 0.15), "stroke-width": 3, fill: "none", "stroke-linecap": "round" }, A.tail); break;
       case "thin": el("path", { d: "M 0 0 C -10 20 -12 50 -10 80", stroke: INK, "stroke-width": 5, fill: "none" }, A.tail); break;
       default: el("path", { d: "M 0 0 L -22 6 L 0 12 Z", fill: coat, ...OUT, "stroke-width": 2 }, A.tail);
     }
