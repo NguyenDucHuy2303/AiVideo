@@ -1,8 +1,14 @@
 {
   "slug": "gia-dinh-family-mom-dad-grandma-grandpa-brother-sister-baby-",
   "topic": "Gia đình (Family): mom, dad, grandma, grandpa, brother, sister, baby, me",
-  "status": "review",
-  "notes": [],
+  "status": "rewrite",
+  "notes": [
+    {
+      "at": "2026-11-11T06:53:10.327Z",
+      "on": "script",
+      "text": "Xưng hô: Huy là anh trai trẻ, gọi người xem là \"các bạn\", gọi Mai là \"em\"; Mai gọi \"anh Huy\" và xưng \"em\" (không xưng \"con\"); không ai gọi người xem là \"con\". Giữ nguyên phần còn lại."
+    }
+  ],
   "history": [
     {
       "at": "2026-11-11T03:38:48.430Z",
@@ -11,6 +17,11 @@
     {
       "at": "2026-11-11T03:41:58.231Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-11T06:53:10.327Z",
+      "status": "rewrite",
+      "info": "sửa xưng hô"
     }
   ],
   "kind": "lesson",
