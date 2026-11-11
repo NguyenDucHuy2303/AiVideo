@@ -33,13 +33,13 @@ export interface PickSettings { at: string; lines: Line[] }
 export const PICK_DEFAULTS: PickSettings = {
   at: "17:00",
   lines: [
-    { id: "ask-huy", name: "Ask Huy (hỏi–đáp tiếng Anh)", kinds: ["qa"], perDay: 2, ahead: 6, propose: "questions" },
+    { id: "ask-huy", name: "Ask Huy (hỏi–đáp tiếng Anh)", kinds: ["qa"], perDay: 1, ahead: 6, propose: "questions" },
     { id: "hoi-huy", name: "Hỏi Huy (hỏi–đáp tiếng Việt)", kinds: ["qa-vi"], perDay: 1, ahead: 2, propose: "questions" },
     { id: "ngu-ngon", name: "Truyện ngụ ngôn con vật", kinds: ["ngụ ngôn"], perDay: 1, ahead: 2, propose: "fables", channel: "huy-ke-chuyen" },
-    { id: "ask-huy-shorts", name: "Shorts \"Did you know?\" (Ask Huy)", kinds: ["fact"], perDay: 2, ahead: 3, propose: "facts", channel: "ask-huy" },
+    { id: "ask-huy-shorts", name: "Shorts \"Did you know?\" (Ask Huy)", kinds: ["fact"], perDay: 1, ahead: 3, propose: "facts", channel: "ask-huy" },
     { id: "hoc-tieng-anh", name: "Học tiếng Anh cùng Huy", kinds: ["lesson"], perDay: 1, ahead: 2, propose: "lessons", channel: "hoi-huy" },
     { id: "hoi-huy-shorts", name: "Shorts \"Bạn có biết?\" (Hỏi Huy)", kinds: ["fact-vi"], perDay: 1, ahead: 2, propose: "facts", channel: "hoi-huy" },
-    { id: "huy-ke-chuyen", name: "Huy Kể Chuyện (truyện, lịch sử)", perDay: 2, ahead: 6, propose: "stories" },
+    { id: "huy-ke-chuyen", name: "Huy Kể Chuyện (truyện, lịch sử)", perDay: 1, ahead: 6, propose: "stories" },
   ],
 };
 

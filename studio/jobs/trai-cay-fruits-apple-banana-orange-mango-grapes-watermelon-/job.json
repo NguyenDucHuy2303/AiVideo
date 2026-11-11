@@ -1,7 +1,7 @@
 {
   "slug": "trai-cay-fruits-apple-banana-orange-mango-grapes-watermelon-",
   "topic": "Trái cây (Fruits): apple, banana, orange, mango, grapes, watermelon, pineapple, strawberry, coconut",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-11T06:53:10.324Z",
@@ -22,6 +22,10 @@
       "at": "2026-11-11T06:53:10.324Z",
       "status": "rewrite",
       "info": "sửa xưng hô"
+    },
+    {
+      "at": "2026-11-11T06:54:21.287Z",
+      "status": "review"
     }
   ],
   "kind": "lesson",

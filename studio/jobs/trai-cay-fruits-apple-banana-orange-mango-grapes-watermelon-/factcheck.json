@@ -1,16 +1,10 @@
 {
   "issues": [
     {
-      "scene": 10,
-      "quote": "nhớ là có chữ r hai lần nhé",
-      "problem": "Strawberry (s-t-r-a-w-b-e-r-r-y) has three r letters: one in 'str' and a double 'rr' near the end. 'Hai lần' is inaccurate and would confuse children who try to spell it.",
-      "fix": "Huy: 'nhớ là có chữ r ở giữa chữ st, và hai chữ r đứng cạnh nhau ở cuối nhé.' Or simply: 'nhớ là cuối từ có hai chữ r đứng cạnh nhau nhé.'"
-    },
-    {
-      "scene": 19,
-      "quote": "Chữ r hai lần... Strawberry! Dâu tây!",
-      "problem": "This repeats the inaccurate clue that strawberry has the letter r only twice. It actually has three r letters, with 'rr' together at the end.",
-      "fix": "Mai: 'Có hai chữ r đứng cạnh nhau... Strawberry! Dâu tây!'"
+      "scene": 2,
+      "quote": "Trong tiếng Anh, trái cây là fruits.",
+      "problem": "As a general word for the food, 'fruit' is normally uncountable and singular. Teaching 'fruits' as the basic word is less natural. 'Fruits' means different kinds of fruit.",
+      "fix": "Huy: Trong tiếng Anh, trái cây là fruit. / Emma: Fruit. Fruit. / Mai: Fruit. Fruit."
     }
   ]
 }

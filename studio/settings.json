@@ -21,7 +21,7 @@
         "kinds": [
           "qa"
         ],
-        "perDay": 2,
+        "perDay": 1,
         "ahead": 6,
         "propose": "questions"
       },
@@ -52,7 +52,7 @@
         "kinds": [
           "fact"
         ],
-        "perDay": 2,
+        "perDay": 1,
         "ahead": 3,
         "propose": "facts",
         "channel": "ask-huy"
@@ -82,7 +82,7 @@
       {
         "id": "huy-ke-chuyen",
         "name": "Huy Kể Chuyện (truyện, lịch sử)",
-        "perDay": 2,
+        "perDay": 1,
         "ahead": 6,
         "propose": "stories"
       }
