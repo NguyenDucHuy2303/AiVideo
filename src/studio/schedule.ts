@@ -8,6 +8,7 @@
  * The writer keeps `scriptsAhead` scripts waiting for review, proposing new topics when short,
  * so the user can approve several at once and the nights never run dry.
  */
+import { hasApiKey, hintsFor, refreshOwnStats, refreshPopular } from "./trends.ts";
 import { wasInterrupted } from "../utils/process.ts";
 import { channelOf, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings } from "./publish.ts";
 import { dailyPick, lineOf, PICK_DEFAULTS, proposerOf, type PickSettings } from "./pick.ts";
@@ -54,7 +55,7 @@ export function isOffice(at: Date, s: ScheduleSettings): boolean {
   return s.office.days.includes(at.getDay()) && now >= minutes(s.office.start) && now < minutes(s.office.end);
 }
 
-interface State { pid: number; since: string; window: "office" | "free"; task?: { slug: string; what: string; since: string }; lastTick?: string; lastError?: string; nextTopicsAt?: Record<string, string>; pickedOn?: string }
+interface State { pid: number; since: string; window: "office" | "free"; task?: { slug: string; what: string; since: string }; lastTick?: string; lastError?: string; nextTopicsAt?: Record<string, string>; pickedOn?: string; trendsOn?: string }
 let state: State = { pid: process.pid, since: new Date().toISOString(), window: "free" };
 
 async function save(): Promise<void> {
@@ -124,6 +125,10 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   if (enPrep && !(await brainSettings()).paused) return { what: "english", slug: enPrep.slug, run: () => english(enPrep.slug, "prepare", say(enPrep.slug)) };
   const toWrite = first((j) => j.status === "writing" || j.status === "rewrite");
   if (toWrite) return { what: "write", slug: toWrite.slug, run: () => writeJob(toWrite.slug, say(toWrite.slug)) };
+  // Once a day (light, needs only the API key): what children watch on YouTube, and how ours do.
+  if ((await hasApiKey()) && state.trendsOn !== new Date().toLocaleDateString("sv")) {
+    return { what: "trends", run: async () => { try { await refreshPopular(s.pick.lines, (l) => void log(l.trim())); await refreshOwnStats(jobs); } finally { state.trendsOn = new Date().toLocaleDateString("sv"); } } };
+  }
   // Every content line keeps its scripts written ahead: running low, it finds new topics its
   // own way (stories or questions), at most once an hour per line, also after a failure.
   for (const line of s.pick.lines) {
@@ -136,8 +141,11 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
       run: async () => {
         try {
           const count = Math.min(5, ahead - waiting);
+          // The season, what is watched, how ours do (trends.ts): hints for the proposer.
+          const lang = line.kinds?.some((k) => k === "qa" || k === "fact") ? "en" : "vi";
+          const hints = await hintsFor(line, lang, jobs, s.pick.lines);
           if (proposerOf(line) === "lessons") {
-            for (const t of await proposeLessons(count, mine.map((j) => ({ topic: j.topic })), (l) => void log(l.trim()))) {
+            for (const t of await proposeLessons(count, mine.map((j) => ({ topic: j.topic })), (l) => void log(l.trim()), hints)) {
               const job = await newJob(t.question, { kind: "lesson", summary: t.why });
               await fs.writeFile(path.join(jobDir(job.slug), "topic.json"), JSON.stringify(t, null, 2));
               await log(`+ ${job.slug} [bài tiếng Anh]`);
@@ -148,14 +156,14 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
               return { topic: j.topic, area: (await exists(f)) ? JSON.parse(await fs.readFile(f, "utf8")).area : undefined };
             }));
             const kind = line.kinds?.find(isQA) ?? "qa";
-            const found = isFact(kind) ? await proposeFacts(count, made, (l) => void log(l.trim()), kind as "fact" | "fact-vi") : await proposeQuestions(count, made, (l) => void log(l.trim()), kind as "qa" | "qa-vi");
+            const found = isFact(kind) ? await proposeFacts(count, made, (l) => void log(l.trim()), kind as "fact" | "fact-vi", hints) : await proposeQuestions(count, made, (l) => void log(l.trim()), kind as "qa" | "qa-vi", hints);
             for (const q of found) {
               const job = await newJob(q.question, { kind, summary: q.why });
               await fs.writeFile(path.join(jobDir(job.slug), "topic.json"), JSON.stringify(q, null, 2));
               await log(`+ ${job.slug} [${q.area}]`);
             }
           } else {
-            for (const t of await proposeTopics(count, (l) => void log(l.trim()), { fables: proposerOf(line) === "fables" })) {
+            for (const t of await proposeTopics(count, (l) => void log(l.trim()), { fables: proposerOf(line) === "fables", hints })) {
               const job = await newJob(t.title, { kind: t.kind, era: t.era, summary: t.summary });
               await fs.writeFile(path.join(jobDir(job.slug), "topic.json"), JSON.stringify(t, null, 2));
               await log(`+ ${job.slug} [${t.era}]`);

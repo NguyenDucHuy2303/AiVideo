@@ -45,6 +45,8 @@ export interface Job {
   autoPicked?: boolean;
   /** On YouTube (publish.ts): the film, its English version, its Shorts. */
   published?: { long?: import("./publish.ts").Published; en?: import("./publish.ts").Published; shorts?: import("./publish.ts").Published[] };
+  /** Views and likes of its published videos (trends.ts), by video id. */
+  stats?: Record<string, { views: number; likes: number; at: string }>;
   /** The user held it back from publishing. */
   publishHold?: boolean;
   /** The last publishing failure, and when to try again. */

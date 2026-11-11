@@ -345,6 +345,12 @@ Studio tự đăng video bạn đã duyệt xong. Video được tải lên ở 
    - Bấm **Kết nối kênh** cho từng kênh: Huy Kể Chuyện, Huy Tells Tales, Ask Huy.
    - Đăng nhập Google và chọn đúng kênh. Nếu kênh là tài khoản thương hiệu (Brand Account), Google sẽ hỏi bạn chọn kênh nào.
 6. Bật **Tự động đăng lên kênh này** và chỉnh giờ công khai nếu muốn.
+7. Tạo API key để studio xem xu hướng (không bắt buộc):
+   - Vào **Credentials → Create credentials → API key**.
+   - Bấm **Restrict key** và chỉ chọn **YouTube Data API v3**.
+   - Lưu chuỗi key vào `studio/secrets/youtube_api_key.txt`.
+
+   Mỗi ngày một lần, studio xem các video thiếu nhi đang được xem nhiều nhất theo từng dòng nội dung, và lượt xem của các video mình đã đăng. Bộ đề xuất chủ đề dùng những thông tin này làm gợi ý. Lịch mùa lễ (Tết, Trung Thu, 1/6, khai giảng, 20/11, Halloween, Giáng sinh…) chạy sẵn, không cần key.
 
 Muốn đặt ảnh bìa riêng, kênh phải được xác minh số điện thoại tại <https://www.youtube.com/verify>. Nếu chưa xác minh, video vẫn được đăng, chỉ thiếu ảnh bìa.
 

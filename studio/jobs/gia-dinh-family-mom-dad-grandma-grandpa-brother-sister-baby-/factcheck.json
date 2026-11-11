@@ -1,0 +1,28 @@
+{
+  "issues": [
+    {
+      "scene": 13,
+      "quote": "Emma: What is this?",
+      "problem": "The picture shows a person (a woman), so the natural question is \"Who is this?\". \"What is this?\" is wrong for a person. Scene 15 uses \"Who is this?\" correctly.",
+      "fix": "Emma: Who is this?"
+    },
+    {
+      "scene": 13,
+      "quote": "Emma: Mom. This is a mom.",
+      "problem": "\"This is a mom\" is unnatural. A child would say \"This is my mom.\" or \"This is Mom.\"",
+      "fix": "Emma: Mom. This is my mom."
+    },
+    {
+      "scene": 14,
+      "quote": "Emma: What is this?",
+      "problem": "The picture shows a person (grandpa with white hair and a cane), so the question should be \"Who is this?\".",
+      "fix": "Emma: Who is this?"
+    },
+    {
+      "scene": 12,
+      "quote": "Love đọc là lớp, giống chữ lờ rồi mở miệng nhẹ.",
+      "problem": "\"lớp\" ends in a p sound, and it is also a Vietnamese word meaning \"class\". English \"love\" ends in /v/ (upper teeth on the lower lip), so this hint teaches the wrong ending.",
+      "fix": "Love đọc là lớv: bắt đầu bằng lờ, rồi cuối từ đặt răng trên chạm môi dưới và thổi nhẹ như âm vờ."
+    }
+  ]
+}

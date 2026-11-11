@@ -268,7 +268,15 @@ async function showYoutube() {
       <p><label><input type="checkbox" id="on-${c.key}" ${c.enabled ? "checked" : ""} ${c.connected ? "" : "disabled"}> Tự động đăng lên kênh này</label></p>
       <table><tr><td>Giờ công khai video chính</td><td><input id="long-${c.key}" value="${esc(c.long.join(", "))}"></td></tr>
       <tr><td>Giờ công khai Shorts</td><td><input id="shorts-${c.key}" value="${esc(c.shorts.join(", "))}"></td></tr></table>
-      <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="savePublish('${c.key}')">Lưu</button></p></section>`).join("")}`;
+      <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="savePublish('${c.key}')">Lưu</button></p></section>`).join("")}${await trendsSection()}`;
+}
+async function trendsSection() {
+  const t = await fetch("/api/trends").then((r) => r.json());
+  const pop = Object.entries(t.popular || {});
+  return `<section><h3>Xu hướng (gợi ý cho bộ đề xuất chủ đề)</h3>
+    <p><b>Dịp sắp tới (3 tuần):</b> ${[...t.seasonal.vi, ...t.seasonal.en.filter((x) => !/Vietnam/.test(x))].map(esc).join(" · ") || "chưa có"}</p>
+    ${t.hasKey ? (pop.length ? pop.map(([line, list]) => `<p><b>${esc(line)}</b>: ${list.slice(0, 5).map((v) => `${esc(v.title)} <small>(${v.views.toLocaleString("vi")})</small>`).join(" · ")}</p>`).join("") + `<p class="meta">Cập nhật ${esc(t.day || "")}</p>` : `<p class="meta">Có API key, sẽ cập nhật trong lượt chạy tới.</p>`)
+      : `<div class="warn">Chưa có <b>studio/secrets/youtube_api_key.txt</b>: chưa xem được video đang hot và lượt xem của kênh mình (README, mục "Kết nối YouTube", bước API key). Lịch mùa lễ vẫn chạy.</div>`}</section>`;
 }
 async function savePublish(key) {
   const split = (v) => v.split(/[,\s]+/).filter(Boolean);

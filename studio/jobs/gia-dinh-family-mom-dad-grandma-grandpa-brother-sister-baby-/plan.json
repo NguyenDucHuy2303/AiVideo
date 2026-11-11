@@ -1,0 +1,855 @@
+{
+  "title": "Học tiếng Anh: Gia đình | Mom, Dad, Baby, Family",
+  "question": "Gia đình của bé",
+  "answer": "mom (mẹ), dad (bố), grandma (bà), grandpa (ông), brother (anh trai, em trai), sister (chị gái, em gái), baby (em bé), me (con, tôi), family (gia đình), love (yêu thương)",
+  "words": [
+    {
+      "en": "mom",
+      "vi": "mẹ"
+    },
+    {
+      "en": "dad",
+      "vi": "bố"
+    },
+    {
+      "en": "grandma",
+      "vi": "bà"
+    },
+    {
+      "en": "grandpa",
+      "vi": "ông"
+    },
+    {
+      "en": "brother",
+      "vi": "anh trai, em trai"
+    },
+    {
+      "en": "sister",
+      "vi": "chị gái, em gái"
+    },
+    {
+      "en": "baby",
+      "vi": "em bé"
+    },
+    {
+      "en": "me",
+      "vi": "con, tôi"
+    },
+    {
+      "en": "family",
+      "vi": "gia đình"
+    },
+    {
+      "en": "love",
+      "vi": "yêu thương"
+    }
+  ],
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy vẫy tay chào trước một căn nhà ấm áp có cửa sổ vàng, Mai nhảy lên vui sướng bên cạnh"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Chào các bạn! Mình là Huy đây. Hôm nay chúng mình sẽ cùng học tiếng Anh về chủ đề gia đình nhé."
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Con chào cả nhà! Con có mẹ, có bố, có ông bà và cả em bé nữa. Con háo hức quá đi!"
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Bức tranh cả gia đình đứng chụp ảnh trước nhà: mẹ, bố, bà, ông, anh, chị, em bé và Mai, mỗi người có một dấu sao nhỏ"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Hôm nay chúng mình học mười từ mới. Đó là mẹ, bố, bà, ông, anh trai, chị gái, em bé, con, gia đình và yêu thương. Học xong, các bạn sẽ tự giới thiệu được gia đình mình bằng tiếng Anh đấy."
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Hay quá! Anh Huy ơi, cho con học ngay đi!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Hình người mẹ mỉm cười đang ôm con nhỏ. Chữ MOM thật to ở dưới, bên dưới nữa là nghĩa mẹ"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Từ đầu tiên là mom, nghĩa là mẹ. Mẹ là người yêu thương các bạn nhất. Nghe Emma đọc nhé."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Mom. Mom."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Mom. Con yêu mẹ lắm!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "My kind mom."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Hình người bố cao to đội mũ, đang cười. Chữ DAD thật to ở dưới, bên dưới nữa là nghĩa bố"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Từ thứ hai là dad, nghĩa là bố hay ba. Chữ dad đọc là đát, nhớ mở miệng rộng một chút."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Dad. Dad."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Dad. Dad của con rất khỏe!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "My strong dad."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Hình bà tóc bạc đang đan len, đeo kính tròn. Chữ GRANDMA thật to ở dưới, bên dưới nữa là nghĩa bà"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Grandma là bà. Bà nội hay bà ngoại đều gọi là grandma. Từ này hơi dài, các bạn chia làm hai phần, grand rồi ma."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Grandma. Grandma."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Grand ma. Grandma! Bà con hay nấu chè ngon lắm."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "My sweet grandma."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Hình ông tóc bạc chống gậy, đội mũ, cười hiền. Chữ GRANDPA thật to ở dưới, bên dưới nữa là nghĩa ông"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Grandpa là ông, ông nội hay ông ngoại đều được. Bà là grandma, ông là grandpa. Các bạn chỉ cần đổi ma thành pa thôi."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Grandpa. Grandpa."
+        },
+        {
+          "who": "Mai",
+          "how": "cười",
+          "text": "Grandpa. Ông ơi, ông nghe con đọc không?"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A kind grandpa."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Hình cậu bé lớn hơn đang đá bóng. Chữ BROTHER thật to ở dưới, bên dưới nữa là nghĩa anh trai, em trai"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Brother là anh trai hoặc em trai. Chữ th ở giữa khó đấy. Các bạn đặt đầu lưỡi nhẹ giữa hai hàm răng rồi thổi hơi ra."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Brother. Brother."
+        },
+        {
+          "who": "Mai",
+          "how": "cười",
+          "text": "Brother. Ôi, lưỡi con thè ra ngoài rồi! Brother."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "My big brother."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Hình bé gái buộc hai bím tóc đang cầm bông hoa. Chữ SISTER thật to ở dưới, bên dưới nữa là nghĩa chị gái, em gái"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Sister là chị gái hoặc em gái. Âm s ở đầu từ đọc nhẹ như tiếng xì."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Sister. Sister."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Sister. Con cũng là sister của em bé đó!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "My little sister."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Hình em bé nằm trong nôi, mút tay, có chiếc xúc xắc bên cạnh. Chữ BABY thật to ở dưới, bên dưới nữa là nghĩa em bé"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Baby là em bé. Baby đọc là bây bi, âm đầu kéo dài một chút."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Baby. Baby."
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Baby. Em bé dễ thương quá!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A happy baby."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Hình Mai tự chỉ vào ngực mình, mỉm cười. Chữ ME thật to ở dưới, bên dưới nữa là nghĩa con, tôi, mình"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Me nghĩa là tôi, là con, là chính bạn đó. Me đọc là mi, kéo dài như đang cười."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Me. Me."
+        },
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "Me! Là con đây!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "It is me."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Hình cả nhà tám người quây quần bên bàn ăn. Chữ FAMILY thật to ở dưới, bên dưới nữa là nghĩa gia đình"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Family là gia đình, gồm tất cả mọi người thân trong nhà. Family đọc là phem mơ li."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Family. Family."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Family. Gia đình con rất vui!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "My happy family."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Hình một trái tim đỏ lớn, hai người ôm nhau ở giữa. Chữ LOVE thật to ở dưới, bên dưới nữa là nghĩa yêu thương"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Love là yêu thương. Chúng ta dùng từ này khi nói về những người thân. Love đọc là lớv: bắt đầu bằng lờ, rồi cuối từ đặt răng trên chạm môi dưới và thổi nhẹ như âm vờ."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Love. Love."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Love. Con love cả nhà!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "I love you."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Hình người mẹ mỉm cười đang ôm bé, dấu hỏi lớn bên cạnh"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Giờ mình chơi đố vui nhé. Các bạn nhìn hình đầu tiên đây. Emma sẽ hỏi."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Who is this?"
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Con biết rồi! Là dad!"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Ơ, đây là một người phụ nữ mà Mai."
+        },
+        {
+          "who": "Mai",
+          "how": "lo lắng",
+          "text": "À, con nhầm rồi! Là mom! Là mẹ!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Mom. This is my mom."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Hình ông đeo kính, chống gậy, ngồi trên ghế, dấu hỏi lớn bên cạnh"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Tiếp theo là một người có tóc bạc và chiếc gậy. Các bạn đoán xem là ai?"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Who is this?"
+        },
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "Grandpa! Là ông!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Yes. Grandpa."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Hình em bé nằm trong nôi đang cười, dấu hỏi lớn bên cạnh"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Người nhỏ nhất nhà đang nằm trong nôi. Đó là ai nhỉ?"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Who is this?"
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Baby! Là em bé!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Baby. A little baby."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "count",
+        "what": "Một cậu bé và một cô bé đứng cạnh nhau, số 1 và số 2 hiện lên bên trên, chữ brother và sister hiện dần"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Bây giờ mình đếm nhé. Một bạn nam và một bạn nữ. Một anh trai và một chị gái."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Brother. Sister."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Brother. Sister. Hai anh chị em!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Brother and sister."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "compare",
+        "what": "Bên trái là bà tóc búi đang đan len, bên phải là ông đội mũ chống gậy, mũi tên chỉ vào bà"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Có hai người lớn tuổi đây. Một người là bà, một người là ông. Mai chọn giúp mình nhé."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Which one is grandma?"
+        },
+        {
+          "who": "Mai",
+          "how": "quyết tâm",
+          "text": "Là bên trái ạ! Bà đang đan len!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Yes. Grandma."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai chỉ tay vào ngực mình, trên đầu có mũi tên và dấu hỏi lớn"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Câu này dễ lắm. Mai hãy chỉ vào chính mình nhé."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Who is this?"
+        },
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "Me! Là con!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Me. It is me."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Bức tranh cả gia đình đông đủ trước ngôi nhà, dấu hỏi lớn ở giữa"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Câu cuối cùng nè. Tất cả mọi người trong nhà cùng đứng chung với nhau."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "What is this?"
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Family! Là gia đình ạ!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Family. A big happy family."
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai ôm mẹ, trên đầu hiện câu I love my mom với trái tim đỏ"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Giờ mình ghép các từ thành câu nhé. Nghe Emma đọc câu đầu tiên."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "I love my mom."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "I love my mom."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Câu này nghĩa là con yêu mẹ của con. Từ my nghĩa là của con, của tôi."
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai ôm bố, trên đầu hiện câu I love my dad, chữ dad được tô màu"
+      },
+      "parts": [
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "I love my dad."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "I love my dad."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Các bạn chỉ cần đổi mom thành dad là nói được yêu bố. Muốn yêu ai, các bạn cứ thay từ đó vào."
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "compare",
+        "what": "Bên trái bà với câu This is my grandma, bên phải ông với câu This is my grandpa"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Còn khi muốn giới thiệu ông bà, các bạn nói thế này."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "This is my grandma. This is my grandpa."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "This is my grandma. This is my grandpa."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "This is nghĩa là đây là. Vậy câu trên là đây là bà của con, đây là ông của con."
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "count",
+        "what": "Một anh trai và một chị gái đứng cạnh Mai, số 1 và số 1 hiện lên, câu I have a brother and a sister bên dưới"
+      },
+      "parts": [
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "I have a brother. I have a sister."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "I have a brother. I have a sister."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "I have nghĩa là con có. Câu này là con có một anh trai, con có một chị gái."
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai đứng cạnh nôi em bé, trên đầu hiện câu I have a baby sister"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Ghép hai từ lại, baby sister là em gái nhỏ. Mai thử nói nhé."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "I have a baby sister."
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "I have a baby sister!"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Đúng rồi! Con có một em gái nhỏ."
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "scene",
+        "what": "Cả nhà đứng bên nhau, Mai giơ tay ở giữa, câu This is my family. I love my family bay lên"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Bây giờ Mai giới thiệu cả nhà mình với mọi người nào."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "This is my family. I love my family."
+        },
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "This is my family. I love my family!"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Đây là gia đình của con. Con yêu gia đình của con. Các bạn cũng thử nói nhé!"
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "labels",
+        "what": "Tám thẻ từ xếp thành hàng gồm mom, dad, grandma, grandpa, brother, sister, baby, me, thêm family và love, mỗi thẻ sáng lên khi được đọc"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Mình cùng ôn lại các từ hôm nay nhé. Emma đọc, các bạn đọc theo."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Mom. Dad. Grandma. Grandpa. Brother. Sister. Baby. Me. Family. Love."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "zoom",
+        "what": "Cận cảnh thẻ từ BROTHER sáng lên, hình cậu bé đá bóng, chữ th được tô màu"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Mai thấy từ nào khó nhất?"
+        },
+        {
+          "who": "Mai",
+          "how": "quyết tâm",
+          "text": "Dạ, từ brother ạ! Để con đọc lại. Brother. Brother!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Brother. Good job."
+        },
+        {
+          "who": "Huy",
+          "how": "tự hào",
+          "text": "Giỏi lắm! Các bạn nhớ đặt lưỡi nhẹ giữa hai hàm răng nhé."
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "host",
+        "what": "Huy vẫy tay trước nút Đăng ký màu đỏ, Mai ôm cả nhà bên cạnh, phía sau hiện hình quả táo, ly sữa và chiếc bánh mì cho bài sau"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Bài sau chúng mình sẽ học chủ đề đồ ăn và thức uống như táo, sữa, bánh mì. Các bạn nhớ bấm đăng ký kênh để không bỏ lỡ nhé. Hẹn gặp lại!"
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Tạm biệt các bạn! Con yêu cả nhà!"
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    3,
+    4,
+    9,
+    11,
+    28
+  ],
+  "thumbnail": "MOM, DAD, BABY!",
+  "description": "Trong bài học này, bé làm quen với mười từ tiếng Anh về gia đình như mom, dad, grandma, grandpa, brother, sister và baby, kèm các câu đơn giản như I love my mom. Ba mẹ có thể cho bé xem cùng, rồi để bé tự giới thiệu từng người thân trong nhà bằng tiếng Anh.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Emma",
+      "gender": "female",
+      "age": "adult",
+      "role": "the English voice of the word cards: reads every word and sentence slowly and clearly",
+      "villain": false
+    }
+  ],
+  "look": "",
+  "facts": []
+}

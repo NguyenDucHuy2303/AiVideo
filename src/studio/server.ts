@@ -18,6 +18,7 @@ import { artOf, validStyle, validTheme } from "./art.ts";
 import { costumeSheet } from "./design.ts";
 import { BRAND_DIR, BRAND_THEMES } from "../animation/brand/brand.ts";
 import { authUrl, finishAuth, hasClient, publishSettings, savePublishSettings, token } from "./publish.ts";
+import { hasApiKey, seasonal } from "./trends.ts";
 import { styles } from "../animation/styles.ts";
 
 const UI = path.join(path.dirname(fileURLToPath(import.meta.url)), "ui.html");
@@ -147,6 +148,10 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
         await saveJob(job);
       }
       return json(res, { job: await setStatus(job, to, note?.trim() ? `bạn: ${note.trim().slice(0, 200)}` : `bạn: ${parts[3]}`) });
+    }
+    if (req.method === "GET" && parts[1] === "trends") {
+      const raw = await readJson(path.join(ROOT, "studio", "trends.json")) as { popular?: unknown; day?: string } | undefined;
+      return json(res, { hasKey: await hasApiKey(), seasonal: { vi: seasonal("vi"), en: seasonal("en") }, popular: raw?.popular ?? {}, day: raw?.day });
     }
     if (parts[1] === "publish") {
       if (req.method === "POST") {
