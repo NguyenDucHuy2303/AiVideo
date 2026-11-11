@@ -210,7 +210,7 @@ export async function buildProject(storyboardFile: string, options: BuildOptions
       const n = await narrateScene(id, narration, {
         engine,
         synth: { voice, speed: settings.speed },
-        speakers: Object.fromEntries(Object.entries(settings.voices).map(([who, v]) => [who, typeof v === "string" ? { voice: v, speed: settings.speed } : { voice: v.voice, speed: v.speed ?? settings.speed, pitch: v.pitch }])),
+        speakers: Object.fromEntries(Object.entries(settings.voices).map(([who, v]) => [who, typeof v === "string" ? { voice: v, speed: settings.speed } : { voice: v.voice, speed: v.speed ?? settings.speed, pitch: v.pitch, engine: v.engine }])),
         fps: settings.fps,
         ttsDir: path.join(genDir, "tts"),
         audioDir: path.join(genDir, "audio"),

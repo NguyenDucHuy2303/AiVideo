@@ -1,0 +1,32 @@
+{
+  "slug": "rua-va-tho",
+  "topic": "Rùa và Thỏ",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-11T03:23:51.742Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-11T03:28:41.469Z",
+      "status": "review"
+    }
+  ],
+  "kind": "ngụ ngôn",
+  "era": "co_tich_lang_que",
+  "summary": "Thỏ chạy nhanh nên chê Rùa đi chậm và thách chạy thi. Cuộc đua bắt đầu, Thỏ phóng vọt lên trước rồi chủ quan nằm ngủ dưới gốc cây. Rùa vẫn kiên trì bò từng bước, không nghỉ, và về đích trước. Hươu làm trọng tài, các bạn thú trong rừng reo hò. Bài học: kiên trì và chăm chỉ sẽ thắng, đừng chủ quan hay coi thường người khác.",
+  "by": "claude-opus",
+  "art": {
+    "style": "mau_nuoc",
+    "intro": "dong_que",
+    "outro": "sach_truyen",
+    "suggest": {
+      "style": "mau_nuoc",
+      "intro": "dong_que",
+      "outro": "sach_truyen",
+      "why": "Truyện ngụ ngôn nhẹ nhàng toàn thú vật giữa thiên nhiên hồ rừng hợp nét màu nước mềm mại, mở đầu bằng diều đồng quê và khép lại bằng cuốn sách truyện.",
+      "by": "brain"
+    }
+  }
+}

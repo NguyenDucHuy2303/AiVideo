@@ -1,0 +1,19 @@
+{
+  "slug": "did-you-know-a-wombat-s-poop-is-shaped-like-little-cubes",
+  "topic": "Did you know a wombat's poop is shaped like little cubes?",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-11T03:28:51.995Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-11T03:29:29.995Z",
+      "status": "review"
+    }
+  ],
+  "kind": "fact",
+  "summary": "Wombats are the only known animal that makes cube-shaped droppings, and scientists have studied how their intestines shape them. It's a silly fact kids love to repeat. It's easy to show with a cute wombat and a stack of cube-shaped blocks, and it's on Wikipedia's Wombat page.",
+  "by": "claude-sonnet"
+}

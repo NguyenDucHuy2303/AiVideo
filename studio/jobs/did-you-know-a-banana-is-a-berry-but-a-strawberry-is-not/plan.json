@@ -1,0 +1,175 @@
+{
+  "title": "A banana is a berry, but a strawberry is not!",
+  "question": "Did you know a banana is a berry, but a strawberry is not?",
+  "answer": "To plant scientists, a banana is a true berry because its seeds grow inside its soft flesh, but a strawberry is not a true berry because its seeds sit on the outside.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "A big yellow banana and a red strawberry stand side by side on a table, each with a glowing question mark above. The banana wears a tiny gold crown labeled BERRY."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "surprised",
+          "text": "Did you know a banana is a berry, but a strawberry is not?"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai, hands on her cheeks, looks at the banana and strawberry. Her thought bubble shows the two fruits swapped places."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "What? That sounds backwards!"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "I know! Let me show you."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "A simple flower with the ovary at the bottom highlighted and labeled OVARY. An arrow points from it to a soft round fruit."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Botanists are people who study plants. They say a berry is a soft fruit that grows from one part of a flower, called the ovary."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "zoom",
+        "what": "A banana cut across, showing soft flesh with seeds inside. Beside it, a grape and a tomato, each with a small green tick."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "proudly",
+          "text": "In a true berry, the seeds are inside the soft flesh. A banana fits! So do grapes and tomatoes."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "zoom",
+        "what": "A big close-up of a strawberry with its tiny seeds on the outside skin. A red cross sits next to it."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Wait, the strawberry seeds are on the outside!"
+        },
+        {
+          "who": "Huy",
+          "how": "joyfully",
+          "text": "Yes! They look like seeds on the outside. But the real reason is that the red part does not grow from the ovary."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 5,
+      "visual": {
+        "kind": "labels",
+        "what": "A strawberry with arrows. One arrow points to a tiny dot labeled A TINY FRUIT WITH A SEED INSIDE. Another points to the red part labeled GROWS FROM ANOTHER PART OF THE FLOWER."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Each little dot is really a tiny fruit with a seed inside. And the red part grows from a different part of the flower."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "host",
+        "what": "Huy holds up a banana in one hand and a strawberry in the other. Mai cheers beside him and a Follow button pops up on the screen."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "proudly",
+          "text": "So plant words are tricky! Follow Ask Huy for more wow facts."
+        },
+        {
+          "who": "Mai",
+          "how": "joyfully",
+          "text": "See you next time!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "A banana is botanically a berry.",
+      "source": "Banana"
+    },
+    {
+      "claim": "Botanists mean a simple fruit made from a single ovary when they say berry, and the seeds are inside the soft part.",
+      "source": "Berry"
+    },
+    {
+      "claim": "Grapes and tomatoes are true berries, and bananas are true berries even though they have no berry in their name.",
+      "source": "Berry"
+    },
+    {
+      "claim": "On a real berry the seeds are inside the fruit, but on a strawberry the seeds are on the outside, so it is not a berry.",
+      "source": "Fruit"
+    },
+    {
+      "claim": "Botanically the strawberry is not a berry but an aggregate accessory fruit, and each apparent seed on the outside is an achene, a fruit with a seed inside.",
+      "source": "Strawberry"
+    },
+    {
+      "claim": "The fleshy part of a strawberry comes from the receptacle, not the ovary.",
+      "source": "Strawberry"
+    },
+    {
+      "claim": "In everyday speech, many fruits called berries are not berries to botanists.",
+      "source": "Berry"
+    }
+  ],
+  "description": "A banana is a berry, but a strawberry is not! Find out why plant scientists think so in under a minute.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": "",
+  "shorts": [],
+  "thumbnail": ""
+}

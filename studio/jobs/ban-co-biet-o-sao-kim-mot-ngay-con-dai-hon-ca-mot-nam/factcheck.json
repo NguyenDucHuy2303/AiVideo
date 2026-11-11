@@ -1,0 +1,16 @@
+{
+  "issues": [
+    {
+      "scene": 1,
+      "quote": "Ở sao Kim, một ngày còn dài hơn cả một năm!",
+      "problem": "Misleading. It is the spin (243 Earth days) that is longer than the year (about 225 days). A Venus day, sunrise to sunrise, is about 117 Earth days, which is about half a year. The script says this itself in scene 5, so the opening hook contradicts it.",
+      "fix": "Ở sao Kim, một vòng tự xoay quanh mình còn dài hơn cả một năm!"
+    },
+    {
+      "scene": 6,
+      "quote": "Wow, ngày dài hơn cả năm!",
+      "problem": "Repeats the same error as the hook. Scene 5 just said the Sun-to-Sun day is about 117 days, which is shorter than the 225-day year. Children will leave with a wrong idea.",
+      "fix": "Wow, một vòng xoay của sao Kim dài hơn cả một năm!"
+    }
+  ]
+}

@@ -70,7 +70,7 @@ export const ProjectSettings = z.object({
   engine: z.enum(["piper", "vieneu", "kokoro", "dummy"]).default("piper"),
   voice: z.string().optional(),
   /** Characters' voices, by the name used in `Tên: "…"` lines: a voice, or { voice, pitch, speed }. */
-  voices: z.record(z.string(), z.union([z.string(), z.object({ voice: z.string(), pitch: z.number().min(-12).max(12).optional(), speed: z.number().min(0.5).max(2).optional() })])).default({}),
+  voices: z.record(z.string(), z.union([z.string(), z.object({ voice: z.string(), pitch: z.number().min(-12).max(12).optional(), speed: z.number().min(0.5).max(2).optional(), engine: z.string().optional() })])).default({}),
   speed: z.number().min(0.5).max(2).default(1),
   fps: z.union([z.literal(24), z.literal(25), z.literal(30), z.literal(60)]).default(30),
   profiles: z.array(z.enum(PROFILE_IDS)).min(1).default(["9x16", "16x9"]),

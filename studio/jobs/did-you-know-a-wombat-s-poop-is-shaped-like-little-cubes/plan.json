@@ -1,0 +1,176 @@
+{
+  "title": "Wombats poop tiny cubes!",
+  "question": "Did you know a wombat's poop is shaped like little cubes?",
+  "answer": "Wombats are the only known mammals whose poop comes out in the shape of little cubes.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "A cute wombat in a green Australian forest looks at the camera, with a pile of small brown cubes beside it and big sparkle marks around them."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "surprised",
+          "text": "Did you know a wombat's poop is shaped like little cubes?"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "compare",
+        "what": "Left side shows a dice-like cube with six square faces highlighted. Right side shows a small brown cube of wombat poop. An equals sign sits between them."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Cubes? Like dice?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Yes! A cube has six flat, square sides."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "scene",
+        "what": "A wombat at night under a moon, nibbling grass and roots near its burrow. A label shows a metre-long ruler beside it."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "A wombat is a furry animal from Australia, about one metre long. At night it eats grass, roots and plants."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "diagram",
+        "what": "A simple cartoon wombat belly with a cutaway tube labelled large intestine. Little water drops are drawn leaving the tube."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Poop is leftover food. In the large intestine, the body takes water out of it."
+        },
+        {
+          "who": "Mai",
+          "how": "happily",
+          "text": "So it gets drier!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "arrows",
+        "what": "A soft squiggly tube on the left. Arrows lead to the right, where neat little cubes pop out one by one. A question mark floats above the tube."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "firmly",
+          "text": "Wombats are the only animals we know of whose poop is shaped like cubes. Scientists are still working out exactly how they make them."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 5,
+      "visual": {
+        "kind": "zoom",
+        "what": "A child explorer with a magnifying glass finds brown cubes on a rock in a forest. A thought bubble shows a wombat nearby."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "proudly",
+          "text": "Cubes are useful too. When people spot them, they know wombats live nearby."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "And they show what the wombat ate!"
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "host",
+        "what": "Huy and Mai wave happily beside a smiling wombat holding a tiny dice-like cube. A Follow button pops up on screen."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "Wombat poop is like tiny dice!"
+        },
+        {
+          "who": "Huy",
+          "how": "joyfully",
+          "text": "Follow Ask Huy for more wow facts!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Wombats are the only known mammals that excrete feces in a cubic shape.",
+      "source": "Wombat"
+    },
+    {
+      "claim": "Cubic feces let people know wombat habitats are nearby and show what the wombat may have eaten.",
+      "source": "Wombat"
+    },
+    {
+      "claim": "Wombats live in Australia, are about a metre long, are nocturnal and eat plants, roots and grasses.",
+      "source": "Wombat"
+    },
+    {
+      "claim": "Feces are the body's solid waste left over from eating food.",
+      "source": "Feces"
+    },
+    {
+      "claim": "The large intestine takes water out of waste material before it leaves the body.",
+      "source": "Large intestine"
+    },
+    {
+      "claim": "A cube has six square faces of the same size.",
+      "source": "Cube"
+    }
+  ],
+  "description": "Wombats are the only known mammals that make cube-shaped poop! Find out what a cube is, what wombats eat, and why those little cubes are useful.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": "",
+  "shorts": [],
+  "thumbnail": ""
+}

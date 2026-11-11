@@ -7,6 +7,7 @@ import { run } from "../utils/process.ts";
 import { probe } from "../utils/probe.ts";
 import type { SynthOptions, TtsEngine } from "./engines.ts";
 import { normalizeForSpeech, splitSentences } from "./normalize-vi.ts";
+import { ENGINES, engineLang } from "./engines.ts";
 
 /** Breathing room around and between sentences, in seconds. */
 export const PACING = { lead: 0.2, gap: 0.3, tail: 0.5, minScene: 2.0 };
@@ -77,6 +78,15 @@ export interface NarrateContext {
 }
 
 /** Synthesize one sentence, cached by engine fingerprint + spoken text. Returns path and duration. */
+/**
+ * Text as an engine should read it: Vietnamese numbers, ranges and signs written out for the
+ * Vietnamese engines; for English (Kokoro reads numbers itself) only the signs it would spell.
+ */
+export function speakable(text: string, lang: "vi" | "en"): string {
+  if (lang === "vi") return normalizeForSpeech(text);
+  return text.normalize("NFC").replace(/(\d)\s?[-–]\s?(\d)/g, "$1 to $2").replace(/&/g, " and ").replace(/[*_#"“”«»()[\]]/g, " ").replace(/\s+/g, " ").trim();
+}
+
 async function sentenceAudio(spoken: string, ctx: NarrateContext, fingerprint: string): Promise<{ file: string; seconds: number }> {
   const file = path.join(ctx.ttsDir, `${sha256(`${fingerprint}\n${spoken}`).slice(0, 16)}.wav`);
   if (!(await exists(file))) {
@@ -119,10 +129,12 @@ export async function narrateScene(sceneId: string, narration: string, ctx: Narr
   for (const seg of splitSpeakers(narration)) {
     const synth = seg.who ? ctx.speakers?.[seg.who] : undefined;
     if (seg.who && !synth) ctx.log.warn(`no voice for "${seg.who}" in project.json "voices": the narrator reads it`);
-    const segCtx = synth ? { ...ctx, synth } : ctx;
-    const fp = synth ? await ctx.engine.fingerprint(synth) : fingerprint;
+    // A voice may have its own engine (an English teacher in a Vietnamese lesson).
+    const engine = synth?.engine && ENGINES[synth.engine] ? ENGINES[synth.engine]! : ctx.engine;
+    const segCtx = synth ? { ...ctx, synth, engine } : ctx;
+    const fp = synth ? await engine.fingerprint(synth) : fingerprint;
     for (const sentence of seg.who ? [seg.text] : splitSentences(seg.text)) {
-      const spoken = normalizeForSpeech(sentence);
+      const spoken = speakable(sentence, engineLang(engine.id));
       if (!/[\p{L}\d]/u.test(spoken)) continue;
       parts.push({ caption: sentence, who: seg.who, mood: seg.mood, ...(await sentenceAudio(spoken, segCtx, fp)) });
     }

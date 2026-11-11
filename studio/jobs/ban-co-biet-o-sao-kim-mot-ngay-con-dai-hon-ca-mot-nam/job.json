@@ -1,0 +1,19 @@
+{
+  "slug": "ban-co-biet-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam",
+  "topic": "Bạn có biết ở sao Kim, một ngày còn dài hơn cả một năm?",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-11T03:30:51.373Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-11T03:32:29.408Z",
+      "status": "review"
+    }
+  ],
+  "kind": "fact-vi",
+  "summary": "Sao Kim tự quay quanh mình mất khoảng 243 ngày Trái Đất, còn quay quanh Mặt Trời chỉ khoảng 225 ngày (Wikipedia: Venus). Dễ minh họa bằng hai vòng tròn so sánh: một vòng quay quanh mình và một vòng quanh Mặt Trời. An toàn, bất ngờ và dễ nhớ.",
+  "by": "claude-sonnet"
+}

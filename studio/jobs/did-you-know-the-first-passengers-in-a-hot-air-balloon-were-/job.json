@@ -1,0 +1,19 @@
+{
+  "slug": "did-you-know-the-first-passengers-in-a-hot-air-balloon-were-",
+  "topic": "Did you know the first passengers in a hot-air balloon were a sheep, a duck and a rooster?",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-11T03:28:51.999Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-11T03:30:45.885Z",
+      "status": "review"
+    }
+  ],
+  "kind": "fact",
+  "summary": "In 1783 the Montgolfier brothers sent these three animals up in a balloon in front of King Louis XVI, before any person flew. All three landed safely. Kids can see how it worked with one picture of the balloon with the animals in the basket and one of hot air rising. It's on Wikipedia's Montgolfier brothers and Balloon flight pages.",
+  "by": "claude-sonnet"
+}

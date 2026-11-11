@@ -7,6 +7,11 @@
       "at": "2026-11-11T01:38:20.239Z",
       "on": "video",
       "text": "Giọng Mai bị lỗi cao độ (Kokoro 24 kHz bị nâng như 48 kHz: nhanh gấp đôi, không nghe được). Đọc lại giọng, chậm 0,92; thêm giày, đồ phi hành gia."
+    },
+    {
+      "at": "2026-11-11T03:32:36.507Z",
+      "on": "video",
+      "text": "Số trong câu tiếng Anh bị đọc bằng chữ số tiếng Việt (bộ chuẩn hóa chữ tiếng Việt chạy cho cả Kokoro). Đọc lại giọng."
     }
   ],
   "history": [
@@ -85,6 +90,21 @@
     },
     {
       "at": "2026-11-11T01:43:28.845Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-11T03:32:36.508Z",
+      "status": "fix",
+      "info": "đọc lại số bằng tiếng Anh"
+    },
+    {
+      "at": "2026-11-11T03:33:06.875Z",
+      "status": "producing",
+      "info": "sửa theo góp ý"
+    },
+    {
+      "at": "2026-11-11T03:33:48.159Z",
       "status": "producing",
       "info": "sẵn sàng render"
     }

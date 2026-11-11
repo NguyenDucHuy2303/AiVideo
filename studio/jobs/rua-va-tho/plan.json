@@ -1,0 +1,640 @@
+{
+  "title": "Rùa và Thỏ",
+  "scenes": [
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, theo các bạn, người chạy nhanh nhất có phải lúc nào cũng về đích đầu tiên không?"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Hôm nay, Huy Kể Chuyện sẽ kể cho các bạn nghe câu chuyện Rùa và Thỏ, một cuộc chạy thi thật đặc biệt."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngày xửa ngày xưa, sau lũy tre xanh của một làng quê, có một khu rừng nhỏ và một hồ nước trong vắt."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Bên kia hồ có một cây đa cổ thụ, tán lá xum xuê như chiếc ô khổng lồ. Muông thú sống quanh hồ rất vui vẻ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Một buổi sáng trời mát mẻ, Rùa đang hì hục tập chạy bên bờ hồ. Mỗi bước của Rùa chậm rãi nhưng thật chắc chắn."
+        },
+        {
+          "who": "Rùa",
+          "how": "quyết tâm",
+          "text": "Một, hai! Một, hai! Cố lên nào!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đúng lúc ấy, Thỏ nhảy tung tăng đi qua. Thỏ có đôi chân dài, đôi tai vểnh, chạy nhanh nhất khu rừng. Thấy Rùa tập chạy, Thỏ phá lên cười."
+        },
+        {
+          "who": "Thỏ",
+          "how": "cười",
+          "text": "Ha ha! Rùa ơi, cậu thôi cái việc vô ích ấy đi!"
+        },
+        {
+          "who": "Thỏ",
+          "how": "cười",
+          "text": "Khắp khu rừng này, ai chả biết họ nhà cậu chậm chạp nhất."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Rùa ngẩng đầu lên, vẫn nhỏ nhẹ trả lời."
+        },
+        {
+          "who": "Rùa",
+          "how": "vui vẻ",
+          "text": "Chào Thỏ. Tôi tập chạy cho khỏe người thôi mà."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thỏ vểnh đôi tai, ưỡn ngực, rồi nhảy vòng quanh Rùa mấy vòng liền để khoe đôi chân nhanh của mình."
+        },
+        {
+          "who": "Thỏ",
+          "how": "tự hào",
+          "text": "Tôi nói thật đấy! Dù cậu có tập cả đời cũng không bao giờ theo kịp tôi đâu."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Rùa thấy Thỏ ngạo mạn quá thì bực mình lắm. Rùa nhìn thẳng vào Thỏ."
+        },
+        {
+          "who": "Rùa",
+          "how": "tức giận",
+          "text": "Nếu vậy, tôi với cậu thử chạy thi xem ai về đích trước!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thỏ nghe xong thì lăn ra bãi cỏ, ôm bụng cười ngặt nghẽo."
+        },
+        {
+          "who": "Thỏ",
+          "how": "cười",
+          "text": "Chạy thi với tôi á? Sao cậu không rủ bác Sên thi cùng ấy? Chắc chắn cậu sẽ thắng!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Rùa không giận nữa, chỉ nói thật chắc nịch."
+        },
+        {
+          "who": "Rùa",
+          "how": "quyết tâm",
+          "text": "Cậu đừng chế giễu tôi. Chúng ta cứ thi xem sao. Chưa biết ai thua cuộc đâu!"
+        },
+        {
+          "who": "Thỏ",
+          "how": "tự hào",
+          "text": "Được thôi! Tôi sẽ cho cậu thấy!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Trên cành tre, chú Chim Sẻ nghe thấy hết. Chim Sẻ vỗ cánh bay khắp khu rừng."
+        },
+        {
+          "who": "Chim Sẻ",
+          "how": "hớn hở",
+          "text": "Các bạn ơi! Rùa và Thỏ sắp chạy thi! Ra bờ hồ xem đi!"
+        },
+        {
+          "who": "Chim Sẻ",
+          "how": "hô to",
+          "text": "Nhanh lên kẻo lỡ nhé!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thế là Sóc, Khỉ, cả nhà Gà rừng lẫn các bạn Ếch đều kéo nhau ra bờ hồ, đứng chật cả bãi cỏ."
+        },
+        {
+          "who": "Sóc",
+          "how": "ngạc nhiên",
+          "text": "Rùa thi chạy với Thỏ ư? Thật không thế?"
+        },
+        {
+          "who": "Khỉ",
+          "how": "cười",
+          "text": "Thỏ thắng chắc rồi, còn phải thi làm gì nữa!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Bỗng muông thú dạt sang hai bên. Bác Hươu với đôi sừng đẹp, hiền từ và hiểu biết nhất rừng, chậm rãi bước tới. Các bạn nhỏ đều cúi đầu chào bác."
+        },
+        {
+          "who": "Hươu",
+          "how": "vui vẻ",
+          "text": "Các cháu đã muốn thi thì phải thi cho công bằng. Bác sẽ làm trọng tài nhé."
+        },
+        {
+          "who": "Rùa",
+          "how": "vui vẻ",
+          "text": "Dạ, cháu cảm ơn bác Hươu ạ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Bác Hươu lấy chân vạch một đường trên mặt đất, rồi chỉ sang bên kia hồ."
+        },
+        {
+          "who": "Hươu",
+          "how": "dõng dạc",
+          "text": "Đây là vạch xuất phát. Đích là gốc cây đa cổ thụ bên kia hồ. Ai chạm vào gốc đa trước, người ấy thắng!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Rùa và Thỏ đứng vào vạch xuất phát. Thỏ vẫn ngạo nghễ, vắt chân đứng chơi."
+        },
+        {
+          "who": "Thỏ",
+          "how": "tự hào",
+          "text": "Tôi chấp cậu chạy trước nửa đường luôn đấy!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Rùa biết mình chậm nên không nói gì, chỉ hít một hơi thật sâu, nhìn về phía cây đa."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Hươu",
+          "how": "hô to",
+          "text": "Chuẩn bị! Chạy!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Rùa lập tức dồn sức bò đi. Còn Thỏ vẫn đứng yên, nhìn theo và vỗ tay."
+        },
+        {
+          "who": "Thỏ",
+          "how": "cười",
+          "text": "Cố lên Rùa ơi! Cứ đi trước đi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đợi Rùa bò được một quãng xa, Thỏ mới vươn vai, rồi phóng vút đi như một cơn gió. Chỉ chớp mắt, Thỏ đã vượt qua Rùa, bỏ xa tít phía sau."
+        },
+        {
+          "who": "Sóc",
+          "how": "sửng sốt",
+          "text": "Ôi, Thỏ nhanh quá!"
+        },
+        {
+          "who": "Khỉ",
+          "how": "hớn hở",
+          "text": "Thấy chưa, tớ nói mà!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Chạy được nửa đường, Thỏ ngoái lại. Con đường ven hồ vắng tanh, chẳng thấy Rùa đâu cả."
+        },
+        {
+          "who": "Thỏ",
+          "how": "cười",
+          "text": "Rùa còn ở tít đằng sau. Giờ mà chạy về thắng cậu ta cũng chẳng vẻ vang gì."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thỏ nhìn thấy một gốc cây mát rượi bên đường. Thỏ nghĩ bụng."
+        },
+        {
+          "who": "Thỏ",
+          "how": "vui vẻ",
+          "text": "Mình cứ nghỉ một lát. Đợi lúc Rùa gần tới nơi, mình phóng lên về đích trước, cậu ta càng phải nể phục!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Thế là Thỏ ngồi xuống gốc cây, ngáp một cái thật dài."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Gió hiu hiu thổi, lá cây rì rào như hát ru. Thỏ lim dim, lim dim, rồi ngủ say lúc nào không biết. Trong mơ, Thỏ nô đùa cùng lũ bướm ven đường."
+        },
+        {
+          "who": "Thỏ",
+          "how": "cười",
+          "text": "Hi hi, bướm ơi, đợi tớ với!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Trong khi đó, Rùa vẫn bò từng bước, từng bước. Mặt trời lên cao, nắng chiếu xuống mai Rùa nóng ran."
+        },
+        {
+          "who": "Rùa",
+          "how": "mệt",
+          "text": "Phù, nóng quá. Nhưng mình không được dừng lại."
+        },
+        {
+          "who": "Rùa",
+          "how": "quyết tâm",
+          "text": "Từng bước một, rồi sẽ tới!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Rùa bò tới gốc cây, nơi Thỏ đang nằm ngáy khò khò. Chim Sẻ sà xuống, thì thầm."
+        },
+        {
+          "who": "Chim Sẻ",
+          "how": "ngạc nhiên",
+          "text": "Rùa ơi, Thỏ đang ngủ say kìa!"
+        },
+        {
+          "who": "Rùa",
+          "how": "vui vẻ",
+          "text": "Mình cứ đi đường của mình thôi, Sẻ ạ."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Rùa nhẹ nhàng bò qua, không dừng lại một giây nào."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Rùa bò qua bờ ao, qua bãi cỏ, qua bụi lau ven hồ. Chân Rùa mỏi nhừ, nhưng Rùa vẫn không nghỉ."
+        },
+        {
+          "who": "Rùa",
+          "how": "mệt",
+          "text": "Mỏi chân quá. Nhưng cây đa ở gần lắm rồi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Dưới gốc đa, các bạn thú đang chờ. Bỗng Khỉ đứng trên cành cao, chỉ tay về phía con đường."
+        },
+        {
+          "who": "Khỉ",
+          "how": "sửng sốt",
+          "text": "Ơ kìa! Rùa đang tới! Rùa đang tới!"
+        },
+        {
+          "who": "Sóc",
+          "how": "hô to",
+          "text": "Cố lên Rùa ơi! Cố lên!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Tiếng reo hò vang xa tận gốc cây bên đường. Thỏ đang nằm lim dim ngắm mây trôi nhè nhẹ, bỗng bật dậy."
+        },
+        {
+          "who": "Thỏ",
+          "how": "hoảng hốt",
+          "text": "Ôi thôi! Cuộc thi!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Thỏ ngước mắt nhìn. Rùa đã gần tới gốc đa mất rồi."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thỏ cắm đầu cắm cổ chạy, đôi tai bay phần phật, bụi bay mù mịt."
+        },
+        {
+          "who": "Thỏ",
+          "how": "hoảng hốt",
+          "text": "Đợi đã! Đợi tôi với!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Nhưng không kịp nữa rồi. Rùa bước thêm bước cuối cùng và chạm vào gốc cây đa."
+        },
+        {
+          "who": "Hươu",
+          "how": "dõng dạc",
+          "text": "Rùa về đích trước! Rùa thắng cuộc!"
+        },
+        {
+          "who": "Rùa",
+          "how": "mừng rỡ",
+          "text": "Mình làm được rồi!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Muông thú reo hò vang cả bờ hồ. Gà rừng vỗ cánh, Ếch nhảy tưng tưng."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Một lúc sau, Thỏ mới chạy tới nơi, thở hổn hển."
+        },
+        {
+          "who": "Thỏ",
+          "how": "mệt",
+          "text": "Hộc, hộc. Sao lại thế được?"
+        },
+        {
+          "who": "Khỉ",
+          "how": "cười",
+          "text": "Tại cậu mải ngủ đấy, Thỏ ạ!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thỏ cúi gằm mặt, đôi tai cụp xuống."
+        },
+        {
+          "who": "Thỏ",
+          "how": "buồn rầu",
+          "text": "Tôi chủ quan quá. Tôi cứ tưởng mình chắc chắn thắng."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Bác Hươu bước tới bên Thỏ, dịu dàng bảo."
+        },
+        {
+          "who": "Hươu",
+          "how": "vui vẻ",
+          "text": "Thỏ ạ, chạy nhanh là tài. Nhưng có tài mà chủ quan, coi thường bạn thì vẫn thua."
+        },
+        {
+          "who": "Hươu",
+          "how": "vui vẻ",
+          "text": "Còn Rùa tuy chậm, nhưng kiên trì không nghỉ, nên đã về đích trước."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thỏ đến bên Rùa, ngượng ngùng gãi tai."
+        },
+        {
+          "who": "Thỏ",
+          "how": "buồn rầu",
+          "text": "Rùa ơi, tớ xin lỗi vì đã chê cậu. Từ nay tớ không coi thường ai nữa."
+        },
+        {
+          "who": "Rùa",
+          "how": "vui vẻ",
+          "text": "Không sao đâu Thỏ. Mình làm bạn nhé!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Thỏ và Rùa cùng cười. Các bạn thú vỗ tay rộn ràng dưới bóng cây đa."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Chiều xuống, các bạn thú ngồi quây quần bên bờ hồ. Các bạn nhỏ biết không, Rùa và Thỏ là truyện ngụ ngôn của ông Aesop, người kể chuyện ở nước Hy Lạp từ rất xa xưa."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Câu chuyện được kể khắp thế giới, đi cùng câu nói quen thuộc chậm mà chắc. Ngày nay, người ta còn đặt tên cho một cách tính toán là thuật toán rùa và thỏ nữa đấy."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, dù chậm hay nhanh, chỉ cần chăm chỉ và kiên trì từng bước, chúng ta sẽ đến đích. Và đừng bao giờ chủ quan hay coi thường người khác nhé."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Nếu các bạn thích câu chuyện hôm nay, hãy đăng ký kênh Huy Kể Chuyện để nghe thêm thật nhiều truyện hay. Hẹn gặp lại các bạn!"
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "name": "Rùa",
+      "gender": "male",
+      "age": "young",
+      "role": "Nhân vật chính, chậm nhưng kiên trì, thắng cuộc đua",
+      "villain": false
+    },
+    {
+      "name": "Thỏ",
+      "gender": "male",
+      "age": "young",
+      "role": "Chạy nhanh nhưng kiêu ngạo, chủ quan ngủ quên nên thua, cuối truyện biết lỗi",
+      "villain": false
+    },
+    {
+      "name": "Hươu",
+      "gender": "male",
+      "age": "elder",
+      "role": "Trọng tài hiền từ, người lớn tuổi đáng kính trong rừng, nói bài học",
+      "villain": false
+    },
+    {
+      "name": "Chim Sẻ",
+      "gender": "female",
+      "age": "child",
+      "role": "Báo tin cuộc thi cho cả rừng, thấy Thỏ ngủ",
+      "villain": false
+    },
+    {
+      "name": "Sóc",
+      "gender": "female",
+      "age": "child",
+      "role": "Bạn thú cổ vũ Rùa",
+      "villain": false
+    },
+    {
+      "name": "Khỉ",
+      "gender": "male",
+      "age": "child",
+      "role": "Bạn thú tinh nghịch, lúc đầu tin Thỏ thắng, phát hiện Rùa sắp về đích",
+      "villain": false
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Rùa và Thỏ là truyện trong tập Ngụ ngôn Aesop, số 226 theo danh mục Perry",
+      "source": "Rùa và Thỏ"
+    },
+    {
+      "claim": "Một buổi sáng mát mẻ bên bờ hồ, Rùa đang tập chạy thì Thỏ đi qua chê cười họ nhà Rùa chậm chạp nhất",
+      "source": "Rùa và Thỏ"
+    },
+    {
+      "claim": "Rùa đáp mình tập chạy cho khỏe; Thỏ bảo Rùa có tập cả đời cũng không theo kịp",
+      "source": "Rùa và Thỏ"
+    },
+    {
+      "claim": "Bực vì Thỏ ngạo mạn, Rùa thách chạy thi; Thỏ cười, bảo Rùa rủ Sên mà thi",
+      "source": "Rùa và Thỏ"
+    },
+    {
+      "claim": "Hai bên lấy gốc cây cổ thụ bên kia hồ làm đích; Thỏ chấp Rùa chạy trước nửa đường",
+      "source": "Rùa và Thỏ"
+    },
+    {
+      "claim": "Thỏ nghĩ đợi Rùa gần tới mới phóng lên về đích cho Rùa nể phục, rồi ngủ dưới gốc cây, mơ nô đùa cùng lũ bướm",
+      "source": "Rùa và Thỏ"
+    },
+    {
+      "claim": "Thỏ tỉnh dậy thấy Rùa gần tới đích, cắm đầu chạy nhưng không kịp; Rùa thắng nhờ kiên trì",
+      "source": "Rùa và Thỏ"
+    },
+    {
+      "claim": "Bài học: kiên trì chiến thắng, đừng quá tự tin hay xem thường người khác; cách ngôn Chậm mà chắc",
+      "source": "Rùa và Thỏ"
+    },
+    {
+      "claim": "Truyện ngụ ngôn Aesop do Aesop, nhà văn Hy Lạp cổ đại, được lưu truyền qua nhiều thế kỷ, nhiều ngôn ngữ",
+      "source": "Ngụ ngôn Aesop"
+    },
+    {
+      "claim": "Thuật toán tìm chu trình của Floyd còn được gọi là thuật toán rùa và thỏ, đặt theo truyện ngụ ngôn Aesop",
+      "source": "Phát hiện chu trình"
+    }
+  ],
+  "look": "Phong cách: truyện loài vật vẽ hoạt hình dễ thương, các con vật đi bằng bốn chân như thật, không mặc quần áo người, mặt biểu cảm rõ. Bối cảnh: khu rừng nhỏ và hồ nước trong xanh nằm sau lũy tre làng đồng bằng sông Hồng thời Lê trung hưng – Nguyễn. Ở xa thấy mái nhà tranh vách đất, mái đình ngói cong hiền hòa kiểu Bắc Bộ (không cong vút kiểu Trung Hoa), cánh đồng lúa, đê sông. Bờ hồ có bụi lau, bèo, sen, hoa dại, bướm vàng. Đích là cây đa cổ thụ rễ phụ buông dài, tán lá rộng. Chỗ Thỏ ngủ là gốc cây xanh mát ven đường giữa bãi cỏ. Vạch xuất phát là một đường vạch trên đất. Nhân vật: Rùa – rùa xanh nâu, mai có vân, mắt to hiền lành, vẻ quyết tâm. Thỏ – thỏ trắng tai dài vểnh, chân sau dài, vẻ tự đắc lúc đầu, tai cụp khi biết lỗi. Hươu – hươu sao lông nâu đốm trắng, sừng lớn, râu cằm hơi bạc, dáng chững chạc hiền từ như cụ già trong làng. Chim Sẻ – sẻ nâu nhỏ nhắn, nhanh nhảu. Sóc – sóc nâu đuôi xù. Khỉ – khỉ vàng nâu tinh nghịch, hay leo cành cao. Quần chúng: gà rừng, ếch, chim chào mào. Không có đồ vật hiện đại, không có ngô, ớt; không cung điện, lâu đài; không nhà sàn hay trống đồng."
+}

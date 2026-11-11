@@ -1,0 +1,18 @@
+{
+  "engine": "kokoro",
+  "voice": "am_michael",
+  "speed": 0.92,
+  "imageGen": "off",
+  "onlineImages": false,
+  "profiles": [
+    "9x16"
+  ],
+  "channel": "Ask Huy",
+  "voices": {
+    "Huy": "am_liam",
+    "Mai": {
+      "voice": "af_nova",
+      "pitch": 3
+    }
+  }
+}

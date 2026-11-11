@@ -20,3 +20,10 @@ test("a child's voice: pitch up, tempo kept", () => {
   assert.deepEqual(voiceFilters(1.2), ["atempo=1.20000"]);
   assert.deepEqual(voiceFilters(1), []);
 });
+
+import { speakable } from "../src/tts/narrate.ts";
+
+test("numbers are read in the voice's language: Vietnamese words for VieNeu, left to Kokoro in English", () => {
+  assert.equal(speakable("Rayleigh, 1871, ages 6-12.", "en"), "Rayleigh, 1871, ages 6 to 12.");
+  assert.match(speakable("Năm 1871", "vi"), /một nghìn tám trăm bảy mươi mốt/);
+});

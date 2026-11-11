@@ -1857,3 +1857,61 @@
 2026-11-11 10:21:26 [may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro] fixing scene(s) 1, 7, 10
 2026-11-11 10:21:32 [may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro] qa-fix: Claude sonnet, 4.043 tokens
 2026-11-11 10:23:07 scheduler started (pid 3011771)
+2026-11-11 10:23:38 → topics ngu-ngon (giờ hành chính)
+2026-11-11 10:23:51 propose-topics: Claude sonnet, 9.613 tokens
+2026-11-11 10:23:51 + tri-khon-cua-ta-day [co_tich_lang_que]
+2026-11-11 10:23:51 + rua-va-tho [co_tich_lang_que]
+2026-11-11 10:23:51 → write tri-khon-cua-ta-day (giờ hành chính)
+2026-11-11 10:23:54 [tri-khon-cua-ta-day] research: Trâu, Hổ, Running Man Việt Nam (mùa 4)
+2026-11-11 10:25:54 [tri-khon-cua-ta-day] write-script: Claude opus, 30.151 tokens
+2026-11-11 10:25:54 [tri-khon-cua-ta-day] cast and costume sheet
+2026-11-11 10:26:24 [tri-khon-cua-ta-day] design-cast: Claude sonnet, 24.401 tokens
+2026-11-11 10:26:30 → write rua-va-tho (giờ hành chính)
+2026-11-11 10:26:33 [rua-va-tho] research: Rùa và Thỏ, Ngụ ngôn Aesop, Phát hiện chu trình
+2026-11-11 10:28:20 [rua-va-tho] write-script: Claude opus, 25.679 tokens
+2026-11-11 10:28:20 [rua-va-tho] cast and costume sheet
+2026-11-11 10:28:35 [rua-va-tho] design-cast: Claude sonnet, 20.299 tokens
+2026-11-11 10:28:41 → topics ask-huy-shorts (giờ hành chính)
+2026-11-11 10:28:51 propose-facts: Claude sonnet, 3.049 tokens
+2026-11-11 10:28:51 + did-you-know-a-wombat-s-poop-is-shaped-like-little-cubes [animals & the human body]
+2026-11-11 10:28:51 + did-you-know-a-banana-is-a-berry-but-a-strawberry-is-not [science & nature]
+2026-11-11 10:28:52 + did-you-know-the-first-passengers-in-a-hot-air-balloon-were- [how things work & are made]
+2026-11-11 10:28:52 → write did-you-know-a-wombat-s-poop-is-shaped-like-little-cubes (giờ hành chính)
+2026-11-11 10:29:00 [did-you-know-a-wombat-s-poop-is-shaped-like-little-cubes] research: Wombat, Feces, Large intestine, Cube
+2026-11-11 10:29:19 [did-you-know-a-wombat-s-poop-is-shaped-like-little-cubes] fact-write: Claude sonnet, 9.695 tokens
+2026-11-11 10:29:26 [did-you-know-a-wombat-s-poop-is-shaped-like-little-cubes] fact-check: Claude sonnet, 7.098 tokens
+2026-11-11 10:29:26 [did-you-know-a-wombat-s-poop-is-shaped-like-little-cubes] fact check: 1 issue(s)
+2026-11-11 10:29:29 [did-you-know-a-wombat-s-poop-is-shaped-like-little-cubes] fact-fix: Claude sonnet, 2.560 tokens
+2026-11-11 10:29:30 → write did-you-know-a-banana-is-a-berry-but-a-strawberry-is-not (giờ hành chính)
+2026-11-11 10:29:37 [did-you-know-a-banana-is-a-berry-but-a-strawberry-is-not] research: Fruit, Berry, Banana, Strawberry
+2026-11-11 10:29:56 [did-you-know-a-banana-is-a-berry-but-a-strawberry-is-not] fact-write: Claude sonnet, 10.393 tokens
+2026-11-11 10:30:04 [did-you-know-a-banana-is-a-berry-but-a-strawberry-is-not] fact-check: Claude sonnet, 8.685 tokens
+2026-11-11 10:30:04 [did-you-know-a-banana-is-a-berry-but-a-strawberry-is-not] fact check: 1 issue(s)
+2026-11-11 10:30:07 [did-you-know-a-banana-is-a-berry-but-a-strawberry-is-not] fact-fix: Claude sonnet, 2.348 tokens
+2026-11-11 10:30:07 → write did-you-know-the-first-passengers-in-a-hot-air-balloon-were- (giờ hành chính)
+2026-11-11 10:30:17 [did-you-know-the-first-passengers-in-a-hot-air-balloon-were-] research: Hot air balloon, Montgolfier brothers, Balloon (aeronautics)
+2026-11-11 10:30:37 [did-you-know-the-first-passengers-in-a-hot-air-balloon-were-] fact-write: Claude sonnet, 9.498 tokens
+2026-11-11 10:30:45 [did-you-know-the-first-passengers-in-a-hot-air-balloon-were-] fact-check: Claude sonnet, 7.367 tokens
+2026-11-11 10:30:45 [did-you-know-the-first-passengers-in-a-hot-air-balloon-were-] fact check: 0 issue(s)
+2026-11-11 10:30:45 → topics hoi-huy-shorts (giờ hành chính)
+2026-11-11 10:30:51 propose-facts: Claude sonnet, 2.433 tokens
+2026-11-11 10:30:51 + ban-co-biet-bach-tuoc-co-toi-3-trai-tim-va-mau-mau-xanh [animals & the human body]
+2026-11-11 10:30:51 + ban-co-biet-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam [science & nature]
+2026-11-11 10:30:51 → write ban-co-biet-bach-tuoc-co-toi-3-trai-tim-va-mau-mau-xanh (giờ hành chính)
+2026-11-11 10:31:02 [ban-co-biet-bach-tuoc-co-toi-3-trai-tim-va-mau-mau-xanh] research: Bạch tuộc, Hệ tuần hoàn, Octopus, Circulatory system
+2026-11-11 10:31:25 [ban-co-biet-bach-tuoc-co-toi-3-trai-tim-va-mau-mau-xanh] fact-write: Claude sonnet, 13.601 tokens
+2026-11-11 10:31:30 [ban-co-biet-bach-tuoc-co-toi-3-trai-tim-va-mau-mau-xanh] fact-check: Claude sonnet, 10.439 tokens
+2026-11-11 10:31:30 [ban-co-biet-bach-tuoc-co-toi-3-trai-tim-va-mau-mau-xanh] fact check: 0 issue(s)
+2026-11-11 10:31:30 → write ban-co-biet-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam (giờ hành chính)
+2026-11-11 10:31:40 [ban-co-biet-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam] research: Sao Kim, Venus, Day
+2026-11-11 10:32:17 [ban-co-biet-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam] fact-write: Claude sonnet, 13.241 tokens
+2026-11-11 10:32:25 [ban-co-biet-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam] fact-check: Claude sonnet, 9.003 tokens
+2026-11-11 10:32:25 [ban-co-biet-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam] fact check: 2 issue(s)
+2026-11-11 10:32:29 [ban-co-biet-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam] fact-fix: Claude sonnet, 2.807 tokens
+2026-11-11 10:32:36 scheduler started (pid 3024791)
+2026-11-11 10:32:36 → prepare why-is-the-sky-blue (giờ hành chính)
+2026-11-11 10:32:36 [why-is-the-sky-blue] voices
+2026-11-11 10:33:06 [why-is-the-sky-blue] paintings
+2026-11-11 10:33:06 → prepare how-do-bees-make-honey (giờ hành chính)
+2026-11-11 10:33:06 [how-do-bees-make-honey] voices
+2026-11-11 10:33:48 [how-do-bees-make-honey] paintings

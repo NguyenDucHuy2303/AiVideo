@@ -1,0 +1,10 @@
+{
+  "issues": [
+    {
+      "scene": 5,
+      "quote": "Yes! That is why it is not a true berry.",
+      "problem": "Misleading. The sources say the strawberry is not a berry because its fleshy red part comes from the receptacle, not the ovary. The 'seeds' on the outside are really tiny fruits (achenes), as scene 6 says. So 'seeds on the outside' is not the true reason, and scene 5 contradicts scene 6.",
+      "fix": "Yes! They look like seeds on the outside. But the real reason is that the red part does not grow from the ovary."
+    }
+  ]
+}

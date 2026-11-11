@@ -34,7 +34,12 @@ export interface SynthOptions {
   speed: number;
   /** Semitones up (a child from a woman's voice: +3…+4) or down. */
   pitch?: number;
+  /** Another engine for this voice than the project's (an English word read by Kokoro in a Vietnamese lesson). */
+  engine?: string;
 }
+
+/** The language an engine speaks: how its text is prepared (numbers read in that language). */
+export const engineLang = (id: string): "vi" | "en" => (id === "kokoro" ? "en" : "vi");
 
 /**
  * ffmpeg filters for a speed and a pitch change (pitch by resampling, tempo restored). The audio

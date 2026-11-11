@@ -1,0 +1,19 @@
+{
+  "slug": "did-you-know-a-banana-is-a-berry-but-a-strawberry-is-not",
+  "topic": "Did you know a banana is a berry, but a strawberry is not?",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-11T03:28:51.997Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-11T03:30:07.912Z",
+      "status": "review"
+    }
+  ],
+  "kind": "fact",
+  "summary": "Botanically, a berry is a fruit with seeds inside a fleshy wall, so bananas count and strawberries don't. It's a surprising reversal that kids can use to quiz their friends. It can be shown with a banana and a strawberry, one with a tick and one with a cross. It's on Wikipedia's Berry (botany) page.",
+  "by": "claude-sonnet"
+}

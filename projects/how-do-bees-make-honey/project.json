@@ -23,11 +23,11 @@
       "mai"
     ]
   },
+  "brandId": "ask-huy",
   "style": "hien_dai",
   "thumbnail": {
     "title": "Bees Blow Bubbles for Honey?",
     "subtitle": "Ask Huy",
     "at": 10.12
-  },
-  "brandId": "ask-huy"
+  }
 }

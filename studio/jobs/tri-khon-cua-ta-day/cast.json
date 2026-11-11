@@ -1,0 +1,251 @@
+[
+  {
+    "id": "bac_nong_dan",
+    "name": "Bác nông dân",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#c9905f",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#7a5230",
+          "trim": "#5a3a20",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#6b4a2b",
+          "length": "knee"
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "khan_chit",
+      "props": [
+        {
+          "type": "bamboo"
+        }
+      ],
+      "face": {
+        "shape": "square",
+        "eyes": "narrow",
+        "nose": "round",
+        "brows": "thick",
+        "mustache": "thin"
+      },
+      "prop": {
+        "type": "bamboo"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Bác nông dân"
+    ],
+    "role": "Nông dân trung niên da rám nắng, áo cánh nâu, quần xắn gối, khăn chít nâu, chân đất, cầm roi tre.",
+    "designed": true
+  },
+  {
+    "id": "trau",
+    "name": "Trâu",
+    "kind": "animal",
+    "look": {
+      "species": "buffalo",
+      "color": "#4a4e55"
+    },
+    "scale": 1.3,
+    "group": false,
+    "speaks": [
+      "Trâu"
+    ],
+    "role": "Trâu đầm xám đen, sừng cong lưỡi liềm, mắt hiền, có ách gỗ và thừng mũi khi cày.",
+    "designed": true
+  },
+  {
+    "id": "ho",
+    "name": "Hổ",
+    "kind": "animal",
+    "look": {
+      "species": "tiger",
+      "color": "#f0932b"
+    },
+    "scale": 1.4,
+    "group": false,
+    "speaks": [
+      "Hổ"
+    ],
+    "role": "Chúa sơn lâm kiêu căng, lông vàng cam trơn bóng, bụng trắng, chưa có vằn.",
+    "designed": true
+  },
+  {
+    "id": "ho_van",
+    "name": "Hổ vằn",
+    "kind": "animal",
+    "look": {
+      "species": "tiger",
+      "color": "#e8742a"
+    },
+    "scale": 1.4,
+    "group": false,
+    "formOf": "ho",
+    "speaks": [
+      "Hổ"
+    ],
+    "role": "Hổ sau đám lửa rơm: lông cam đỏ, vằn đen dài khắp mình, bụng trắng, chỉ xém lông nhẹ.",
+    "designed": true
+  },
+  {
+    "id": "cu_ti",
+    "name": "Cu Tí",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "build": "slim",
+      "skin": "#e0aa74",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#b08968",
+          "trim": "#8d6e63",
+          "length": "waist",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#7a5a43",
+          "length": "knee"
+        }
+      },
+      "hair": {
+        "style": "traidao",
+        "color": "#1a1a1a"
+      },
+      "prop": {
+        "type": "bamboo"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin",
+        "eyeScale": 1.15
+      }
+    },
+    "scale": 0.8,
+    "group": false,
+    "speaks": [
+      "Cu Tí"
+    ],
+    "role": "Bé trai 7 tuổi chăn trâu, đầu để chỏm, áo cánh nâu nhạt, quần lửng, chân đất, khoanh tay chào.",
+    "designed": true
+  },
+  {
+    "id": "cu_gia",
+    "name": "Cụ già",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "slim",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "ngu_than",
+          "color": "#4e342e",
+          "trim": "#3e2723",
+          "length": "shin",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#efe6d2",
+          "length": "ankle"
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#d9d9d9"
+      },
+      "headwear": "khan_xep",
+      "beard": "#e6e6e6",
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "oval",
+        "eyes": "droopy",
+        "nose": "long",
+        "brows": "bushy",
+        "wrinkles": true,
+        "mustache": "droopy"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [],
+    "role": "Cụ già râu bạc ngồi chỗ trên trong buổi kể chuyện tối bên đèn dầu.",
+    "designed": true
+  },
+  {
+    "id": "dan_lang",
+    "name": "Dân làng",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "tu_than",
+          "color": "#6d4c41",
+          "trim": "#3e2723",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "inner": {
+          "color": "#c8a46e"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#1a1a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#6b8e23",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "khan_mo_qua",
+      "prop": {
+        "type": "bowl"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "almond",
+        "nose": "button",
+        "brows": "thin"
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Dân làng ngồi chiếu nghe kể chuyện: nam áo cánh nâu, nữ áo tứ thân nâu, váy đen, khăn mỏ quạ.",
+    "designed": true
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "issues": [
+    {
+      "scene": 5,
+      "quote": "Scientists think the wombat's gut then shapes it into cubes.",
+      "problem": "The sources say wombats are the only known mammals with cube-shaped poop, but they say nothing about how the cubes form or that the gut shapes them. This claim is unsupported by the sources, even with the hedge.",
+      "fix": "Wombats are the only animals we know of whose poop is shaped like cubes. Scientists are still working out exactly how they make them."
+    }
+  ]
+}

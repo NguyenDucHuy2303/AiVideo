@@ -1,0 +1,18 @@
+{
+  "engine": "vieneu",
+  "voice": "Minh Đức",
+  "speed": 1,
+  "imageGen": "off",
+  "onlineImages": false,
+  "profiles": [
+    "9x16"
+  ],
+  "channel": "Hỏi Huy",
+  "voices": {
+    "Huy": "Thiện Minh",
+    "Mai": {
+      "voice": "Ngọc Linh",
+      "pitch": 4
+    }
+  }
+}
