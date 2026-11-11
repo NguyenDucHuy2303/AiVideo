@@ -147,6 +147,9 @@ export interface StoryOptions {
   tag?: string;
   /** Only storyboard scenes a..b (0-based, inclusive): a short cut from the story. */
   range?: [number, number];
+  /** Only these storyboard scenes (0-based), in order, not necessarily next to each other: a
+   * question channel's Short (the question, the answer, the fun fact). Wins over range. */
+  scenes?: number[];
   /** A short (Reels, Shorts, TikTok): no intro, a 2.5 s end card instead of the outro, no thumbnail. */
   short?: boolean;
   /** The brand's language (brand.json "languages"): "en" for the English version. */
@@ -161,10 +164,15 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
   const dir = path.resolve(projectDir);
   const storyboard = JSON.parse(await fs.readFile(path.join(dir, "storyboard.json"), "utf8"));
   const timeline = JSON.parse(await fs.readFile(path.join(dir, "timeline.json"), "utf8"));
-  const [from, to] = opts.range ?? [0, storyboard.scenes.length - 1];
-  if (opts.range) {
-    storyboard.scenes = storyboard.scenes.slice(from, to + 1);
-    timeline.scenes = timeline.scenes.slice(from, to + 1);
+  // The scenes kept (all, a range, or a list) and where each lands in the cut.
+  const all = storyboard.scenes.length;
+  const keep: number[] = opts.scenes ? [...new Set(opts.scenes)].filter((i) => i >= 0 && i < all).sort((a, b) => a - b)
+    : opts.range ? Array.from({ length: opts.range[1] - opts.range[0] + 1 }, (_, k) => opts.range![0] + k)
+    : Array.from({ length: all }, (_, k) => k);
+  const at = new Map(keep.map((i, k) => [i, k]));
+  if (keep.length !== all) {
+    storyboard.scenes = keep.map((i) => storyboard.scenes[i]);
+    timeline.scenes = keep.map((i) => timeline.scenes[i]);
   }
   const [W, H] = opts.vertical ? [1080, 1920] : [1920, 1080];
   const shape = opts.vertical ? "9x16" : "16x9";
@@ -176,8 +184,8 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
   const scripts: Script[] = [];
   for (const f of (await fs.readdir(animDir)).sort()) {
     const name = path.basename(f, ".json"), cov = f.endsWith(".json") ? covers(name) : undefined;
-    if (!cov || cov.some((i) => i < from || i > to)) continue;
-    scripts.push({ name, file: path.join(animDir, f), covers: cov.map((i) => i - from), scene: (await withBackdrop(await loadScene(path.join(animDir, f)))) as Script["scene"] });
+    if (!cov || cov.some((i) => !at.has(i))) continue;
+    scripts.push({ name, file: path.join(animDir, f), covers: cov.map((i) => at.get(i)!), scene: (await withBackdrop(await loadScene(path.join(animDir, f)))) as Script["scene"] });
   }
   const missing = durations.map((_, i) => i).filter((i) => !scripts.some((s) => s.covers.includes(i)));
   if (missing.length) throw new Error(`no scene script covers storyboard scene(s) ${missing.map((i) => i + 1).join(", ")}`);
@@ -203,7 +211,7 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
     if (last && (end >= durations.length || chapterStart(end))) s.scene.fadeOut = end >= durations.length ? 1.0 : CHAPTER_FADE;
   });
 
-  const variant = (opts.anim && opts.anim !== "anim" ? `-${opts.anim}` : "") + (opts.tag ? `-${slugify(opts.tag)}` : "") + (opts.range ? `-short-${from + 1}-${to + 1}` : "");
+  const variant = (opts.anim && opts.anim !== "anim" ? `-${opts.anim}` : "") + (opts.tag ? `-${slugify(opts.tag)}` : "") + (keep.length !== all ? `-short-${opts.scenes ? keep.map((i) => i + 1).join("-") : `${keep[0]! + 1}-${keep.at(-1)! + 1}`}` : "");
   const work = path.join(dir, "build", "anim", `${shape}${variant}-work`);
   await fs.mkdir(work, { recursive: true });
   // Narration first (the voice decides lip-sync and close-ups): each scene's voice at its start.

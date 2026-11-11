@@ -52,8 +52,15 @@ export async function pickShorts(projectDir: string, count = 3): Promise<ShortPi
 }
 
 /** Render the shorts of a project; returns the files. */
-export async function makeShorts(projectDir: string, count = 3, log: (s: string) => void = console.log): Promise<string[]> {
+export async function makeShorts(projectDir: string, count = 3, log: (s: string) => void = console.log, planned?: number[]): Promise<string[]> {
   const out: string[] = [];
+  // A question film (Ask Huy) has its Short planned in the script: the question, the answer,
+  // the fun fact (scene numbers, 1-based); then come the best runs as for a story.
+  if (planned?.length) {
+    log(`  short: scenes ${planned.join(", ")} (planned)`);
+    out.push(await renderStory(projectDir, { vertical: true, scenes: planned.map((n) => n - 1), short: true, onLog: log }));
+    count -= 1;
+  }
   for (const p of await pickShorts(projectDir, count)) {
     log(`  short: scenes ${p.from + 1}–${p.to + 1} (${p.seconds} s, interest ${p.score})`);
     out.push(await renderStory(projectDir, { vertical: true, range: [p.from, p.to], short: true, onLog: log }));

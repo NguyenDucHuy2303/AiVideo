@@ -105,7 +105,9 @@
       const detail = n.getAttribute("fill") === "none" ? 0.8 : 1;
       n.style.strokeWidth = `calc(${f2(w * detail)}px * var(--lw, 1))`;
     }
-    const shots = (scene.shots || [{ at: 0, type: "wide", on: Object.keys(actors).slice(0, 1) }]).slice().sort((a, b) => a.at - b.at);
+    let shots = (scene.shots || [{ at: 0, type: "wide", on: Object.keys(actors).slice(0, 1) }]).slice().sort((a, b) => a.at - b.at);
+    // A tall frame (Shorts) with a board: the board fills the top, the presenters stand below it.
+    if (scene.board && H > W) shots = shots.map((s) => ({ ...s, dx: 0, share: 0.34, gy: 0.96 }));
     shots.forEach((s, i) => (s.end = shots[i + 1]?.at ?? scene.duration));
 
     /** Position along x at time t: base x, then each move in order. */

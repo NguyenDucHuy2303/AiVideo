@@ -147,7 +147,9 @@ export async function testRun(slug: string, scenes: number, log: (s: string) => 
 /** Shorts from the finished film (heavy: nights and weekends); the job's status stays. */
 export async function shorts(slug: string, log: (s: string) => void = console.log): Promise<Job> {
   try {
-    const files = await makeShorts(projectOf(slug), 3, log);
+    const job0 = await loadJob(slug);
+    const planned = job0.kind === "qa" ? (JSON.parse(await fs.readFile(path.join(jobDir(slug), "plan.json"), "utf8")).shorts as number[] | undefined) : undefined;
+    const files = await makeShorts(projectOf(slug), 3, log, planned);
     const job = await loadJob(slug);
     job.shorts = await linkShorts(files, jobDir(slug));
     await saveJob(job);

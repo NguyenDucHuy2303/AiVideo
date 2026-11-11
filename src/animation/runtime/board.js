@@ -27,7 +27,10 @@
 
   function build(S, board, parent) {
     const { W, H } = S;
-    const x = (board.x ?? 0.36) * W, y = (board.y ?? 0.08) * H, w = (board.w ?? 0.61) * W, h = (board.h ?? 0.74) * H;
+    // Wide frames: the card on the right, the presenters on the left. Tall frames (Shorts): the
+    // card across the top half, the presenters under it.
+    const tall = H > W;
+    const x = (board.x ?? (tall ? 0.04 : 0.36)) * W, y = (board.y ?? (tall ? 0.06 : 0.08)) * H, w = (board.w ?? (tall ? 0.92 : 0.61)) * W, h = (board.h ?? (tall ? 0.42 : 0.74)) * H;
     const root = g(parent);
     // The card: a soft shadow, a rounded panel, a thin frame.
     el("rect", { x: f2(x + 8), y: f2(y + 12), width: f2(w), height: f2(h), rx: 26, fill: "#000", opacity: 0.18 }, root);
