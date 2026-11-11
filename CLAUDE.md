@@ -61,6 +61,9 @@ Node ≥ 22.18 chạy TypeScript trực tiếp, không có bước build. Import
 - **Thương hiệu theo kênh:** Huy Kể Chuyện ở `assets/brand/`; Ask Huy ở `assets/brand/ask-huy/` (kiểu `ask_huy`, vẽ trong `brand/askhuy.js`). Phim chọn theo `project.json` `"brandId"`.
 - **Intro/outro:** 6 bộ (`brand/brand.html` cho trống đồng, `brand/themes.js` cho các bộ khác), chọn theo `project.json` `"brand": {intro, outro}`. Clip cache ở `assets/brand/clips/`; sửa thiết kế thì xóa file trong đó.
 - **Lựa chọn của từng video** (`job.art`, `src/studio/art.ts`): bộ não gợi ý, người dùng đổi trên trang duyệt, render thì đồng bộ vào `project.json`.
+- **Hình trên bảng giải thích:** bộ não ghi `<icon name="cat" …>`. Hình được tra từ Microsoft Fluent Emoji (MIT, khoảng 3.100 hình) bằng `src/animation/icons.ts`, rồi nhúng vào cảnh.
+  - Có 4 kiểu bảng: card, grid, chalk, sketch (Rough.js). Mỗi video một kiểu, chọn theo tên job.
+  - Cài thư viện bằng `bash scripts/setup-icons.sh` (vào `vendor/js`).
 - **Nhân vật** luôn là vector. Hướng rối vẽ tay (cắt tranh AI thành rối) đã thử ngày 10/11/2026 và bỏ: khớp vai không liền mạch được, đừng làm lại theo cách đó.
 
 ## Giọng

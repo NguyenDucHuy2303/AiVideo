@@ -19,6 +19,7 @@ import { run } from "../utils/process.ts";
 import { renderStory } from "../animation/story.ts";
 import { backdropOfPlace } from "../animation/backdrops.ts";
 import { SIZES } from "../imagegen/sd.ts";
+import { boardIcons } from "../animation/icons.ts";
 import { styleOf } from "../animation/styles.ts";
 import { jobDir } from "./jobs.ts";
 import { isFact, profileOf, type QAPlan, type QAProfile } from "./qa.ts";
@@ -76,9 +77,11 @@ const system = (P: QAProfile) => `You direct the scenes of "${P.channel}"${P.lan
 const BOARD_RULES = [
   "Board SVG rules (layout board):",
   `- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"> … </svg>; draw inside x 30–970, y 30–570; the card behind it is cream (#fffaf0), no background rect needed.`,
-  "- Simple shapes only (rect, circle, ellipse, path, polygon, line, text, g). At most about 40 elements. No images, no scripts, no filters, no gradients, no foreignObject.",
+  "- Things (animals, food, objects, people, vehicles, weather, plants, places, the Sun, the Earth…) are pictures from the icon library, not drawn: <icon name=\"cat\" x=\"100\" y=\"150\" size=\"180\"/> (x, y: top left; size: width; name: the plain English word for the thing, one or two words, no colours: cat, red apple, honeybee, sun, rainbow, airplane, volcano, backpack). Draw yourself only what no icon shows: diagrams, arrows, waves, rays, layouts, labels, charts, cut-aways.",
+  "- Simple shapes only (rect, circle, ellipse, path, polygon, line, text, g, icon). At most about 40 elements. No images, no scripts, no filters, no gradients, no foreignObject.",
   "- Text: font-family=\"sans-serif\", font-size 28–48, short labels (1–4 words), dark (#2a2a40); at most one title of up to 6 words at the top. Never let text run past x 970.",
   "- Show exactly what the line explains (the visual note says what), like a good picture-book diagram: e.g. a smiling Sun, a prism, waves of different lengths, little molecule dots, arrows.",
+  "- Icons take data-in and the motion classes too.",
   "- Animate with attributes only: data-in=\"seconds\" makes a part pop in at that time (the scene lasts the given seconds; bring parts in step by step, in the order the words mention them, the last one before 70% of the scene); class=\"float\" bobs, \"spin\" turns, \"pulse\" breathes, \"flow\" makes dashes run along a line (rays, arrows, currents), \"draw\" draws a line from start to end (with data-in). Use 1–3 kinds of motion per picture, not everything.",
   "- Write it compactly: integer coordinates, no comments, no ids, no style attributes, classes only for the motions above, at most about 30 elements.",
   "- Colours: sky blue #4aa3e0, sun yellow #ffd23f, red #e53935, orange #fb8c00, green #43a047, violet #8e24aa, cream #fff3b0, dark #3a2a20.",
@@ -111,8 +114,16 @@ export function gestures(actor: string, move: { do: string; face: string }, seco
   return [{ actor, at: 0, do: "talk", face: move.face }, { actor, at, do: "point", face: move.face }, ...(back < seconds - 0.5 ? [{ actor, at: back, do: "talk", face: move.face }] : [])];
 }
 
+/** The board looks, one per video (by its name, so a video keeps its look when directed again). */
+export const BOARD_STYLES = ["card", "grid", "chalk", "sketch"] as const;
+export function boardStyleOf(slug: string): (typeof BOARD_STYLES)[number] {
+  let h = 0;
+  for (const c of slug) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return BOARD_STYLES[h % BOARD_STYLES.length]!;
+}
+
 /** The scene script for the player (anim/sNN.json). */
-function sceneOf(P: QAProfile, d: Directed, plan: QAPlan, i: number, seconds: number): Record<string, unknown> {
+function sceneOf(P: QAProfile, d: Directed, plan: QAPlan, i: number, seconds: number, style: (typeof BOARD_STYLES)[number] = "card", log: (s: string) => void = () => {}): Record<string, unknown> {
   const speaks = new Set(plan.scenes[i]!.parts.map((p) => p.who));
   const withMai = d.mai.show || speaks.has(P.kid.name);
   const suit = d.outfit === "spacesuit" ? "_space" : "";
@@ -127,8 +138,15 @@ function sceneOf(P: QAProfile, d: Directed, plan: QAPlan, i: number, seconds: nu
   return {
     castFile: "cast.json", duration: Math.max(1, Math.round(seconds * 100) / 100), time: d.time, style: STYLE, styleLook: styleOf(STYLE).look,
     set: { name: "plain" }, place: d.layout === "place" ? d.place : STUDIO, cast, actions, shots: [shot],
-    ...(d.layout === "board" && d.board.trim() ? { board: { svg: d.board }, speakerShots: false } : {}),
+    ...(d.layout === "board" && d.board.trim() ? { board: boardOf(d.board, style, i, log), speakerShots: false } : {}),
   };
+}
+
+/** A board: its SVG, its look, and the icons it asks for (flat ones on chalk and sketch). */
+function boardOf(svg: string, style: (typeof BOARD_STYLES)[number], i: number, log: (s: string) => void): Record<string, unknown> {
+  const { icons, missing } = boardIcons(svg, style === "chalk" || style === "sketch" ? "flat" : "color");
+  if (missing.length) log(`  s${String(i + 1).padStart(2, "0")}: no icon for ${missing.join(", ")} (its name is shown)`);
+  return { svg, style, icons };
 }
 
 /** Everything but the film: voices, direction, paintings. */
@@ -160,11 +178,11 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
     const to = Math.min(plan.scenes.length, from + BATCH);
     const names = Array.from({ length: to - from }, (_, k) => `s${String(from + k + 1).padStart(2, "0")}.json`);
     if ((await Promise.all(names.map((n) => exists(path.join(anim, n))))).every(Boolean)) continue;
-    const { data } = await think<{ scenes: Directed[] }>({ job: slug, phase: "produce", step: "qa-direct", model: "sonnet", system: system(P), schema: SCHEMA, prompt: brief(P, plan, from, to, seconds, kind) }, log);
+    const { data } = await think<{ scenes: Directed[] }>({ job: slug, phase: "produce", step: "qa-direct", model: "sonnet", effort: "low", system: system(P), schema: SCHEMA, prompt: brief(P, plan, from, to, seconds, kind) }, log);
     for (const d of data.scenes) {
       const i = d.index - 1;
       if (i < from || i >= to) continue;
-      await fs.writeFile(path.join(anim, `s${String(i + 1).padStart(2, "0")}.json`), JSON.stringify(sceneOf(P, d, plan, i, seconds[i] ?? 4), null, 2));
+      await fs.writeFile(path.join(anim, `s${String(i + 1).padStart(2, "0")}.json`), JSON.stringify(sceneOf(P, d, plan, i, seconds[i] ?? 4, boardStyleOf(slug), log), null, 2));
     }
   }
   // The paintings (the studio and every place), so the night only renders.
@@ -202,3 +220,6 @@ if (process.argv[1]?.endsWith("qaproduce.ts")) {
   }
   console.log(what === "prepare" ? await prepareQA(slug) : await renderQA(slug));
 }
+
+/** For trying the direction on a few scenes without making a project (scratch tests). */
+export const _direct = { brief, system, SCHEMA, sceneOf };
