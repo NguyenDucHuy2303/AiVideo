@@ -43,6 +43,13 @@ export interface Job {
   score?: { value: number; why: string; hash: string };
   /** Approved by the daily pick (the user had not chosen by the cut-off time). */
   autoPicked?: boolean;
+  /** On YouTube (publish.ts): the film, its English version, its Shorts. */
+  published?: { long?: import("./publish.ts").Published; en?: import("./publish.ts").Published; shorts?: import("./publish.ts").Published[] };
+  /** The user held it back from publishing. */
+  publishHold?: boolean;
+  /** The last publishing failure, and when to try again. */
+  publishError?: string;
+  publishRetryAt?: string;
   /** Claude was unavailable: the job is not tried again before this time. */
   retryAt?: string;
   error?: string;

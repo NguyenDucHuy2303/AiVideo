@@ -325,3 +325,29 @@ npm run wata -- render fixtures/demo/timeline.json      # → fixtures/demo/out/
 - `transitionOut.type`: cut, fade, fadeblack, dissolve, slide_left, slide_up, wipe_left, circle_open
 
 Layout của từng tỷ lệ (vùng an toàn, cỡ chữ, vị trí) nằm ở `src/layouts/index.ts`.
+
+## Kết nối YouTube (tự đăng video)
+
+Studio tự đăng video bạn đã duyệt xong. Video được tải lên ở chế độ riêng tư, kèm giờ công khai; đến giờ YouTube tự công khai. Bạn chỉ cần làm các bước dưới đây **một lần**.
+
+1. Vào <https://console.cloud.google.com/> và tạo một dự án mới, ví dụ "Wata Studio".
+2. Vào **APIs & Services → Library**, tìm **YouTube Data API v3**, bấm **Enable**.
+3. Vào **APIs & Services → OAuth consent screen** (Google Auth Platform):
+   - Chọn **External**.
+   - Điền tên ứng dụng và email của bạn.
+   - Ở mục Audience, bấm **Publish app** để chuyển sang **In production**. Nếu để ở "Testing", quyền đăng hết hạn sau 7 ngày.
+   - Ứng dụng chỉ mình bạn dùng, nên không cần gửi Google xét duyệt. Khi đăng nhập sẽ có cảnh báo "Google chưa xác minh ứng dụng này": bấm **Advanced → Go to …** để tiếp tục.
+4. Vào **APIs & Services → Credentials**:
+   - Chọn **Create credentials → OAuth client ID**, loại **Desktop app**.
+   - Tải file JSON về, đổi tên thành `client_secret.json`.
+   - Đặt vào `studio/secrets/client_secret.json`. Thư mục này không đưa lên git.
+5. Mở trang duyệt ở tab **Đăng YouTube** (<http://127.0.0.1:5175/#youtube>):
+   - Bấm **Kết nối kênh** cho từng kênh: Huy Kể Chuyện, Huy Tells Tales, Ask Huy.
+   - Đăng nhập Google và chọn đúng kênh. Nếu kênh là tài khoản thương hiệu (Brand Account), Google sẽ hỏi bạn chọn kênh nào.
+6. Bật **Tự động đăng lên kênh này** và chỉnh giờ công khai nếu muốn.
+
+Muốn đặt ảnh bìa riêng, kênh phải được xác minh số điện thoại tại <https://www.youtube.com/verify>. Nếu chưa xác minh, video vẫn được đăng, chỉ thiếu ảnh bìa.
+
+Mọi video đều được khai **dành cho trẻ em** (Made for Kids). YouTube bắt buộc khai như vậy với nội dung thiếu nhi (luật COPPA).
+
+Hạn mức của Google: mỗi ngày tối đa 100 lần tải lên. Mỗi lần đặt ảnh bìa tốn 50 trong 10.000 điểm/ngày, nên dư sức cho studio.

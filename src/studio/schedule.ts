@@ -8,6 +8,7 @@
  * The writer keeps `scriptsAhead` scripts waiting for review, proposing new topics when short,
  * so the user can approve several at once and the nights never run dry.
  */
+import { channelOf, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings } from "./publish.ts";
 import { dailyPick, lineOf, PICK_DEFAULTS, proposerOf, type PickSettings } from "./pick.ts";
 import { proposeQuestions } from "./qa.ts";
 import fs from "node:fs/promises";
@@ -32,13 +33,15 @@ export interface ScheduleSettings {
   officeThreads: number;
   /** The daily pick (pick.ts): cut-off time and content lines with their videos per day. */
   pick: PickSettings;
+  /** YouTube channels (publish.ts): times, on/off. */
+  publish: PublishSettings;
 }
-const DEFAULTS: ScheduleSettings = { office: { days: [1, 2, 3, 4, 5], start: "08:00", end: "18:00" }, scriptsAhead: 6, officeThreads: 2, pick: PICK_DEFAULTS };
+const DEFAULTS: ScheduleSettings = { office: { days: [1, 2, 3, 4, 5], start: "08:00", end: "18:00" }, scriptsAhead: 6, officeThreads: 2, pick: PICK_DEFAULTS, publish: PUBLISH_DEFAULTS };
 
 async function settings(): Promise<ScheduleSettings> {
   const raw = (await exists(SETTINGS)) ? JSON.parse(await fs.readFile(SETTINGS, "utf8")) : {};
-  const s = { ...DEFAULTS, ...raw };
-  if (!raw.office || !raw.pick) await fs.writeFile(SETTINGS, JSON.stringify({ ...DEFAULTS, ...raw }, null, 2));
+  const s = { ...DEFAULTS, ...raw, publish: { ...PUBLISH_DEFAULTS, ...(raw.publish ?? {}) } };
+  if (!raw.office || !raw.pick || !raw.publish) await fs.writeFile(SETTINGS, JSON.stringify(s, null, 2));
   return s;
 }
 
@@ -82,6 +85,29 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   // The English version of an approved film: voices by day, the film at night.
   const enFilm = first((j) => j.status === "done" && j.english === "ready");
   if (!office && enFilm) return { what: "english-render", slug: enFilm.slug, run: () => english(enFilm.slug, "render", say(enFilm.slug)) };
+  // Publishing (light: network only, any hour): the next item of a finished job whose channel
+  // is connected and turned on.
+  for (const j of jobs) {
+    if (j.publishRetryAt && new Date(j.publishRetryAt) > new Date()) continue;
+    const files = await fs.readdir(jobDir(j.slug)).catch(() => [] as string[]);
+    for (const item of toPublish(j, files)) {
+      const ch = channelOf(j, item.what, s.pick.lines);
+      if (!s.publish[ch]?.enabled || !(await token(ch))) continue;
+      return {
+        what: `publish ${item.what}`, slug: j.slug,
+        run: async () => {
+          try { await publishOne(j.slug, item, jobs, s.publish, s.pick.lines, say(j.slug)); }
+          catch (err) {
+            const job = await loadJob(j.slug);
+            job.publishError = (err as Error).message.slice(0, 400);
+            job.publishRetryAt = new Date(Date.now() + 60 * 60_000).toISOString();
+            await saveJob(job);
+            throw err;
+          }
+        },
+      };
+    }
+  }
   // Paused by the user: only work that needs no Claude (renders) goes on.
   if ((await brainSettings()).paused) return undefined;
   // Producing a job whose era the library lacks waits for the era builder.

@@ -92,6 +92,7 @@ const TABS = [
   ["done", "Xong", ["done"]],
   ["off", "Bỏ / Lỗi", ["rejected", "failed"]],
   ["tokens", "Token", []],
+  ["youtube", "Đăng YouTube", []],
 ];
 const STATUS = { writing: "đang viết", review: "chờ duyệt kịch bản", rewrite: "đang viết lại", approved: "đã duyệt, chờ làm", producing: "đang làm video", video: "chờ duyệt video", fix: "chờ sửa video", done: "xong", rejected: "đã bỏ", failed: "lỗi" };
 const TASK = { write: "viết kịch bản", prepare: "chuẩn bị video", render: "render video", shorts: "cắt Shorts", english: "chuẩn bị bản tiếng Anh", "english-render": "render bản tiếng Anh", topics: "đề xuất chủ đề" };
@@ -116,13 +117,13 @@ async function load() {
 function drawTabs() {
   $("#tabs").innerHTML = TABS.map(([k, label, sts]) => {
     const n = jobs.filter((j) => sts.includes(j.status)).length;
-    return `<button class="${k === tab ? "on" : ""}" onclick="tab='${k}';current=null;load();${k === "tokens" ? "showTokens()" : ""}">${label}${n ? `<span class="n">${n}</span>` : ""}</button>`;
+    return `<button class="${k === tab ? "on" : ""}" onclick="tab='${k}';current=null;load();${k === "tokens" ? "showTokens()" : k === "youtube" ? "showYoutube()" : ""}">${label}${n ? `<span class="n">${n}</span>` : ""}</button>`;
   }).join("");
 }
 
 function drawList() {
   const sts = TABS.find((t) => t[0] === tab)[2];
-  if (tab === "tokens") { $("#list").innerHTML = ""; return; }
+  if (tab === "tokens" || tab === "youtube") { $("#list").innerHTML = ""; return; }
   const list = jobs.filter((j) => sts.includes(j.status));
   $("#list").innerHTML = list.length ? list.map((j) => `
     <div class="job ${current === j.slug ? "on" : ""}" onclick="show('${j.slug}')">
@@ -177,6 +178,13 @@ async function show(slug) {
   if (has("video.mp4")) h += `<section><h3>Video</h3><video controls preload="metadata" src="/files/${slug}/video.mp4" ${has("thumbnail.jpg") ? `poster="/files/${slug}/thumbnail.jpg"` : ""}></video>
     <p class="dls">${dl(slug, "video.mp4", "Tải video", `${slug}.mp4`)}${has("thumbnail.jpg") ? dl(slug, "thumbnail.jpg", "Tải ảnh bìa", `${slug}.jpg`) : ""}</p>
     ${has("thumbnail.jpg") ? `<p><b>Thumbnail</b></p><img style="width:50%;border-radius:10px" src="/files/${slug}/thumbnail.jpg">` : ""}</section>`;
+  if (job.status === "done" || job.published) {
+    const p = job.published || {}, item = (label, x) => x ? `<li>${label}: <a href="${esc(x.url)}" target="_blank">${esc(x.url)}</a> · công khai ${new Date(x.publishAt).toLocaleString("vi")}</li>` : "";
+    const list = [item("Video", p.long), item("Bản tiếng Anh", p.en), ...(p.shorts || []).map((x, i) => item(`Short ${i + 1}`, x))].join("");
+    h += `<section><h3>YouTube</h3>${list ? `<ul>${list}</ul>` : `<p class="meta">${job.publishHold ? "Đang hoãn đăng." : "Sẽ được đăng khi kênh đã kết nối và bật (tab Đăng YouTube)."}</p>`}
+      ${job.publishError ? `<div class="warn">Lần đăng trước lỗi: ${esc(job.publishError)} (thử lại sau 1 giờ)</div>` : ""}
+      <p><button class="fixb" onclick="holdPublish(${!job.publishHold})">${job.publishHold ? "▶ Cho đăng" : "⏸ Hoãn đăng video này"}</button></p></section>`;
+  }
   if (has("video.en.mp4")) h += `<section><h3>English version</h3><video controls preload="metadata" src="/files/${slug}/video.en.mp4" ${has("thumbnail.en.jpg") ? `poster="/files/${slug}/thumbnail.en.jpg"` : ""}></video>
     <p class="dls">${dl(slug, "video.en.mp4", "Tải video tiếng Anh", `${slug}-en.mp4`)}${has("thumbnail.en.jpg") ? dl(slug, "thumbnail.en.jpg", "Tải ảnh bìa tiếng Anh", `${slug}-en.jpg`) : ""}</p></section>`;
   else if (job.english) h += `<section><h3>English version</h3><div class="meta">${job.english === "ready" ? "Giọng tiếng Anh xong, render tối nay" : esc(job.english)}</div></section>`;
@@ -247,6 +255,31 @@ async function act(action) {
 function play(name) { const a = $("#audio"); a.src = `/voice/${encodeURIComponent(name)}`; a.play(); }
 function zoom(src) { $("#zoomImg").src = src; $("#zoom").style.display = "block"; }
 
+/** The YouTube channels: connect (Google sign-in), turn on, publishing times. */
+async function showYoutube() {
+  const p = await fetch("/api/publish").then((r) => r.json());
+  const ready = p.client;
+  $("#detail").innerHTML = `<h2>Đăng YouTube</h2>
+    <section><p>Video bạn duyệt xong (tab "Xong") được studio tải lên kênh ở chế độ riêng tư, kèm giờ công khai: đến giờ YouTube tự công khai. Ảnh bìa, tiêu đề, mô tả có nguồn tư liệu, thẻ, "dành cho trẻ em" được điền sẵn. Shorts đăng sau video chính (kèm link), bản tiếng Anh lên kênh tiếng Anh.</p>
+    ${ready ? "" : `<div class="warn">Chưa có <b>studio/secrets/client_secret.json</b>. Làm theo README, mục "Kết nối YouTube" (tạo dự án Google Cloud, bật YouTube Data API v3, tạo OAuth client loại Desktop, tải file JSON về đặt vào đó), rồi tải lại trang này.</div>`}</section>
+    ${p.channels.map((c) => `<section><h3>${esc(c.name)} <small>(${c.lang === "vi" ? "tiếng Việt" : "tiếng Anh"})</small></h3>
+      <p>${c.connected ? `✔ Đã kết nối: <b>${esc(c.channelTitle || "")}</b>` : "Chưa kết nối"}
+        ${ready ? `<a class="dl" style="margin-left:10px" href="/oauth/start?channel=${encodeURIComponent(c.key)}">${c.connected ? "Kết nối lại" : "Kết nối kênh"}</a>` : ""}</p>
+      <p><label><input type="checkbox" id="on-${c.key}" ${c.enabled ? "checked" : ""} ${c.connected ? "" : "disabled"}> Tự động đăng lên kênh này</label></p>
+      <table><tr><td>Giờ công khai video chính</td><td><input id="long-${c.key}" value="${esc(c.long.join(", "))}"></td></tr>
+      <tr><td>Giờ công khai Shorts</td><td><input id="shorts-${c.key}" value="${esc(c.shorts.join(", "))}"></td></tr></table>
+      <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="savePublish('${c.key}')">Lưu</button></p></section>`).join("")}`;
+}
+async function savePublish(key) {
+  const split = (v) => v.split(/[,\s]+/).filter(Boolean);
+  await fetch("/api/publish", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ channel: key, enabled: $(`#on-${key}`).checked, long: split($(`#long-${key}`).value), shorts: split($(`#shorts-${key}`).value) }) });
+  showYoutube();
+}
+async function holdPublish(hold) {
+  await fetch(`/api/job/${current}/hold`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ hold }) });
+  show(current);
+}
+
 async function showTokens() {
   const t = await fetch("/api/tokens").then((r) => r.json());
   const byJob = {};
@@ -281,7 +314,7 @@ async function saveCaps() {
   if (r.error) return alert(r.error);
   await load(); showTokens();
 }
-load().then(() => { const slug = decodeURIComponent(location.hash.slice(1)); if (slug && jobs.some((j) => j.slug === slug)) { const j = jobs.find((x) => x.slug === slug); tab = (TABS.find((t) => t[2].includes(j.status)) || TABS[0])[0]; drawTabs(); show(slug); } });
+load().then(() => { if (location.hash === "#youtube" || location.hash === "#tokens") { tab = location.hash.slice(1); drawTabs(); $("#list").innerHTML = ""; return tab === "youtube" ? showYoutube() : showTokens(); } const slug = decodeURIComponent(location.hash.slice(1)); if (slug && jobs.some((j) => j.slug === slug)) { const j = jobs.find((x) => x.slug === slug); tab = (TABS.find((t) => t[2].includes(j.status)) || TABS[0])[0]; drawTabs(); show(slug); } });
 setInterval(() => { load(); }, 15000);
 </script>
 </body>

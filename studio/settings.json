@@ -34,6 +34,46 @@
       }
     ]
   },
+  "publish": {
+    "huy-ke-chuyen": {
+      "name": "Huy Kể Chuyện",
+      "lang": "vi",
+      "category": "1",
+      "long": [
+        "18:00"
+      ],
+      "shorts": [
+        "11:30",
+        "16:30",
+        "20:30"
+      ],
+      "enabled": false
+    },
+    "huy-tells-tales": {
+      "name": "Huy Tells Tales",
+      "lang": "en",
+      "category": "1",
+      "long": [
+        "19:00"
+      ],
+      "shorts": [],
+      "enabled": false
+    },
+    "ask-huy": {
+      "name": "Ask Huy",
+      "lang": "en",
+      "category": "27",
+      "long": [
+        "17:00"
+      ],
+      "shorts": [
+        "12:00",
+        "15:00",
+        "19:30"
+      ],
+      "enabled": false
+    }
+  },
   "perJobTokens": 80000,
   "perDayTokens": 1000000,
   "fallbackModel": "gemma3:12b",

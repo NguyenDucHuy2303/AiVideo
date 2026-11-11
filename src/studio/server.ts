@@ -17,6 +17,7 @@ import { schedulerState } from "./schedule.ts";
 import { artOf, validStyle, validTheme } from "./art.ts";
 import { costumeSheet } from "./design.ts";
 import { BRAND_DIR, BRAND_THEMES } from "../animation/brand/brand.ts";
+import { authUrl, finishAuth, hasClient, publishSettings, savePublishSettings, token } from "./publish.ts";
 import { styles } from "../animation/styles.ts";
 
 const UI = path.join(path.dirname(fileURLToPath(import.meta.url)), "ui.html");
@@ -70,6 +71,20 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
   const url = new URL(req.url ?? "/", "http://localhost");
   const parts = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
   if (req.method === "GET" && parts.length === 0) return sendFile(req, res, UI);
+
+  // Connecting a YouTube channel (publish.ts): to Google and back.
+  if (req.method === "GET" && parts[0] === "oauth") {
+    const page = (msg: string): void => void res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" }).end(`<!doctype html><meta charset="utf-8"><body style="font-family:sans-serif;padding:40px"><h2>${msg.replace(/</g, "&lt;")}</h2><p><a href="/">← Về trang duyệt</a></p>`);
+    const redirect = `http://${req.headers.host ?? "127.0.0.1:5175"}/oauth/callback`;
+    try {
+      if (parts[1] === "start") { res.writeHead(302, { Location: await authUrl(url.searchParams.get("channel") ?? "", redirect) }).end(); return; }
+      if (parts[1] === "callback") {
+        if (url.searchParams.get("error")) return page(`Google từ chối: ${url.searchParams.get("error")}`);
+        const r = await finishAuth(url.searchParams.get("state") ?? "", url.searchParams.get("code") ?? "");
+        return page(`✔ Đã kết nối "${r.channel}" với kênh YouTube: ${r.title}`);
+      }
+    } catch (err) { return page(`✘ ${(err as Error).message}`); }
+  }
 
   if (parts[0] === "api") {
     if (req.method === "GET" && parts[1] === "jobs") {
@@ -132,6 +147,22 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
         await saveJob(job);
       }
       return json(res, { job: await setStatus(job, to, note?.trim() ? `bạn: ${note.trim().slice(0, 200)}` : `bạn: ${parts[3]}`) });
+    }
+    if (parts[1] === "publish") {
+      if (req.method === "POST") {
+        const b = await body(req) as unknown as { channel: string; enabled?: boolean; long?: string[]; shorts?: string[] };
+        try { await savePublishSettings(b.channel, b); } catch (err) { return json(res, { error: (err as Error).message }, 400); }
+      }
+      const cfg = await publishSettings();
+      const channels = await Promise.all(Object.entries(cfg).map(async ([key, c]) => { const t = await token(key); return { key, ...c, connected: !!t, channelTitle: t?.channelTitle }; }));
+      return json(res, { client: await hasClient(), channels });
+    }
+    if (req.method === "POST" && parts[1] === "job" && parts[3] === "hold" && SLUG.test(parts[2] ?? "")) {
+      const job = await loadJob(parts[2]!), b = await body(req) as unknown as { hold: boolean };
+      job.publishHold = !!b.hold;
+      if (!b.hold) { delete job.publishRetryAt; delete job.publishError; }
+      await saveJob(job);
+      return json(res, { ok: true, hold: job.publishHold });
     }
     if (req.method === "POST" && parts[1] === "settings") {
       const b = await body(req) as Record<string, unknown>, change: Record<string, unknown> = {};
