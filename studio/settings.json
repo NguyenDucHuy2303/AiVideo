@@ -58,6 +58,17 @@
         "channel": "ask-huy"
       },
       {
+        "id": "hoc-tieng-anh",
+        "name": "Học tiếng Anh cùng Huy",
+        "kinds": [
+          "lesson"
+        ],
+        "perDay": 1,
+        "ahead": 2,
+        "propose": "lessons",
+        "channel": "hoi-huy"
+      },
+      {
         "id": "hoi-huy-shorts",
         "name": "Shorts \"Bạn có biết?\" (Hỏi Huy)",
         "kinds": [

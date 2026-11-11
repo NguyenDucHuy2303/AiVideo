@@ -12,6 +12,7 @@ import { wasInterrupted } from "../utils/process.ts";
 import { channelOf, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings } from "./publish.ts";
 import { dailyPick, lineOf, PICK_DEFAULTS, proposerOf, type PickSettings } from "./pick.ts";
 import { isFact, isQA, proposeFacts, proposeQuestions } from "./qa.ts";
+import { proposeLessons } from "./lesson.ts";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { exists } from "../utils/fs.ts";
@@ -135,7 +136,13 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
       run: async () => {
         try {
           const count = Math.min(5, ahead - waiting);
-          if (proposerOf(line) === "questions" || proposerOf(line) === "facts") {
+          if (proposerOf(line) === "lessons") {
+            for (const t of await proposeLessons(count, mine.map((j) => ({ topic: j.topic })), (l) => void log(l.trim()))) {
+              const job = await newJob(t.question, { kind: "lesson", summary: t.why });
+              await fs.writeFile(path.join(jobDir(job.slug), "topic.json"), JSON.stringify(t, null, 2));
+              await log(`+ ${job.slug} [bài tiếng Anh]`);
+            }
+          } else if (proposerOf(line) === "questions" || proposerOf(line) === "facts") {
             const made = await Promise.all(mine.map(async (j) => {
               const f = path.join(jobDir(j.slug), "topic.json");
               return { topic: j.topic, area: (await exists(f)) ? JSON.parse(await fs.readFile(f, "utf8")).area : undefined };

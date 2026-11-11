@@ -149,6 +149,14 @@ export async function metaOf(job: Job, what: What, cfg: ChannelCfg, longUrl?: st
   const plan = what === "en" ? (await read("plan.en.json")) ?? (await read("plan.json")) : await read("plan.json");
   const title0 = String(plan?.title ?? job.topic);
   const watch = longUrl ? (cfg.lang === "vi" ? `Xem trọn video: ${longUrl}\n\n` : `Watch the full video: ${longUrl}\n\n`) : "";
+  if (job.kind === "lesson") {
+    const wordsTaught = ((plan?.words ?? []) as { en: string; vi: string }[]).map((w) => `${w.en} (${w.vi})`).join(", ");
+    return {
+      title: cut(what === "short" ? `${title0} #Shorts` : title0, 100), categoryId: "27", lang: "vi",
+      description: cut(`${watch}${plan?.description ?? ""}\n\n${wordsTaught ? `Từ vựng trong bài: ${wordsTaught}\n\n` : ""}Học tiếng Anh cùng Huy: mỗi bài một chủ đề, từ vựng có hình, giọng đọc mẫu chậm và rõ cho các bé.\n\n#HocTiengAnh #TiengAnhChoBe #HocTiengAnhCungHuy`, 5000),
+      tags: tagsOf(["học tiếng Anh", "tiếng Anh cho bé", "tiếng Anh trẻ em", "từ vựng tiếng Anh", "Học tiếng Anh cùng Huy", String(plan?.question ?? job.topic), ...((plan?.words ?? []) as { en: string }[]).map((w) => w.en)]),
+    };
+  }
   if (qa && cfg.lang === "vi") {
     const question = String(plan?.question ?? job.topic);
     const base = what === "short" ? `${cut(question, 88)} #Shorts` : title0.includes(cfg.name) ? title0 : `${title0} | ${cfg.name}`;

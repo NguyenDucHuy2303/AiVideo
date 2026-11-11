@@ -84,9 +84,10 @@ const BOARD_RULES = [
   "- Colours: sky blue #4aa3e0, sun yellow #ffd23f, red #e53935, orange #fb8c00, green #43a047, violet #8e24aa, cream #fff3b0, dark #3a2a20.",
 ].join("\n");
 
-function brief(P: QAProfile, plan: QAPlan, from: number, to: number, seconds: number[]): string {
+function brief(P: QAProfile, plan: QAPlan, from: number, to: number, seconds: number[], kind?: string): string {
   return [
-    ...(P.lang === "vi" ? ["All text on the boards is in Vietnamese (with its diacritics), short and simple."] : []),
+    ...(kind === "lesson" ? ["An English lesson for Vietnamese children: a word card shows the picture, the English word big (it is what the child learns) and the Vietnamese meaning smaller under it. Emma is only a voice (the card's): never on screen."]
+      : P.lang === "vi" ? ["All text on the boards is in Vietnamese (with its diacritics), short and simple."] : []),
     "Choosing the layout: place only for a real place that can be painted (a park, a beach, a rooftop, Mars); anything imagined, impossible or abstract (\"Mai imagines the sky as a pinball machine\", inside a molecule) is a board picture instead.",
     "Moves: point = at the board or at something in front; raise = pointing up at the sky or above; wave = hello or goodbye; cheer = delight; worry = puzzled.",
     "outfit: spacesuit in space, on the Moon or on another planet; everyday otherwise.",
@@ -132,7 +133,8 @@ function sceneOf(P: QAProfile, d: Directed, plan: QAPlan, i: number, seconds: nu
 
 /** Everything but the film: voices, direction, paintings. */
 export async function prepareQA(slug: string, log: (s: string) => void = console.log): Promise<string> {
-  const dir = jobDir(slug), proj = qaProject(slug), anim = path.join(proj, "anim"), P = profileOf((await loadJob(slug)).kind);
+  const kind = (await loadJob(slug)).kind;
+  const dir = jobDir(slug), proj = qaProject(slug), anim = path.join(proj, "anim"), P = profileOf(kind);
   const plan: QAPlan = JSON.parse(await fs.readFile(path.join(dir, "plan.json"), "utf8"));
   await fs.mkdir(anim, { recursive: true });
   const script = await fs.readFile(path.join(dir, "script.txt"), "utf8");
@@ -158,7 +160,7 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
     const to = Math.min(plan.scenes.length, from + BATCH);
     const names = Array.from({ length: to - from }, (_, k) => `s${String(from + k + 1).padStart(2, "0")}.json`);
     if ((await Promise.all(names.map((n) => exists(path.join(anim, n))))).every(Boolean)) continue;
-    const { data } = await think<{ scenes: Directed[] }>({ job: slug, phase: "produce", step: "qa-direct", model: "sonnet", system: system(P), schema: SCHEMA, prompt: brief(P, plan, from, to, seconds) }, log);
+    const { data } = await think<{ scenes: Directed[] }>({ job: slug, phase: "produce", step: "qa-direct", model: "sonnet", system: system(P), schema: SCHEMA, prompt: brief(P, plan, from, to, seconds, kind) }, log);
     for (const d of data.scenes) {
       const i = d.index - 1;
       if (i < from || i >= to) continue;

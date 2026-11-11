@@ -23,12 +23,12 @@ export interface Line {
   /** Scripts kept written ahead, waiting for review (default: settings scriptsAhead). */
   ahead?: number;
   /** How new topics are found when the line runs low: stories, animal fables, or questions (qa.ts). */
-  propose?: "stories" | "fables" | "questions" | "facts";
+  propose?: "stories" | "fables" | "questions" | "facts" | "lessons";
   /** The YouTube channel it is published on (publish.ts), when not one of its own (default: the id). */
   channel?: string;
 }
 /** A line's way of finding topics (older settings without "propose": by its kinds). */
-export const proposerOf = (l: Line) => l.propose ?? (l.kinds?.some((k) => k === "fact" || k === "fact-vi") ? "facts" : l.kinds?.some((k) => k === "qa" || k === "qa-vi") ? "questions" : "stories");
+export const proposerOf = (l: Line) => l.propose ?? (l.kinds?.includes("lesson") ? "lessons" : l.kinds?.some((k) => k === "fact" || k === "fact-vi") ? "facts" : l.kinds?.some((k) => k === "qa" || k === "qa-vi") ? "questions" : "stories");
 export interface PickSettings { at: string; lines: Line[] }
 export const PICK_DEFAULTS: PickSettings = {
   at: "17:00",
@@ -37,6 +37,7 @@ export const PICK_DEFAULTS: PickSettings = {
     { id: "hoi-huy", name: "Hỏi Huy (hỏi–đáp tiếng Việt)", kinds: ["qa-vi"], perDay: 1, ahead: 2, propose: "questions" },
     { id: "ngu-ngon", name: "Truyện ngụ ngôn con vật", kinds: ["ngụ ngôn"], perDay: 1, ahead: 2, propose: "fables", channel: "huy-ke-chuyen" },
     { id: "ask-huy-shorts", name: "Shorts \"Did you know?\" (Ask Huy)", kinds: ["fact"], perDay: 2, ahead: 3, propose: "facts", channel: "ask-huy" },
+    { id: "hoc-tieng-anh", name: "Học tiếng Anh cùng Huy", kinds: ["lesson"], perDay: 1, ahead: 2, propose: "lessons", channel: "hoi-huy" },
     { id: "hoi-huy-shorts", name: "Shorts \"Bạn có biết?\" (Hỏi Huy)", kinds: ["fact-vi"], perDay: 1, ahead: 2, propose: "facts", channel: "hoi-huy" },
     { id: "huy-ke-chuyen", name: "Huy Kể Chuyện (truyện, lịch sử)", perDay: 2, ahead: 6, propose: "stories" },
   ],
@@ -63,7 +64,7 @@ export async function scoreJob(slug: string, log: (s: string) => void = () => {}
     job: slug, step: "score", model: "sonnet", schema: SCHEMA,
     system: "Bạn là biên tập viên của các kênh YouTube hoạt hình cho trẻ em. Bạn chấm kịch bản thẳng thắn và công bằng.",
     prompt: [
-      `Chấm kịch bản dưới đây từ 1 đến 10 (số thập phân được) để chọn kịch bản nào làm thành video trước. ${qa ? "Kênh hỏi–đáp tiếng Anh \"Ask Huy\" cho trẻ 6–12 tuổi." : "Kênh \"Huy Kể Chuyện\", truyện cổ tích, truyền thuyết và lịch sử Việt Nam cho trẻ 4–10 tuổi."}`,
+      `Chấm kịch bản dưới đây từ 1 đến 10 (số thập phân được) để chọn kịch bản nào làm thành video trước. ${job.kind === "lesson" ? "Loạt \"Học tiếng Anh cùng Huy\" dạy tiếng Anh cho trẻ Việt 5–9 tuổi." : qa ? "Kênh hỏi–đáp \"Ask Huy\" / \"Hỏi Huy\" cho trẻ 6–12 tuổi." : "Kênh \"Huy Kể Chuyện\", truyện cổ tích, truyền thuyết và lịch sử Việt Nam cho trẻ 4–10 tuổi."}`,
       "Tiêu chí: hấp dẫn trẻ em từ câu đầu (giữ chân người xem), đúng sự thật và tư liệu, hợp lứa tuổi, mạch lạc và đủ ý, dễ dựng thành hình, có sức lan tỏa (chủ đề nhiều người tìm).",
       "why: một câu tiếng Việt nêu điểm mạnh và điểm yếu chính.", "", script,
     ].join("\n"),

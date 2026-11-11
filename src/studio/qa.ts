@@ -47,8 +47,8 @@ export const PROFILES: Record<QAProfile["kind"], QAProfile> = {
 /** "Did you know?" Shorts (writeFact): the same channels, one fact in under a minute, made 9:16. */
 export const isFact = (kind?: string) => kind === "fact" || kind === "fact-vi";
 /** Every kind made by the question pipeline (qaproduce.ts): questions and facts, both languages. */
-export const isQA = (kind?: string) => kind === "qa" || kind === "qa-vi" || isFact(kind);
-export const profileOf = (kind?: string): QAProfile => PROFILES[kind === "qa-vi" || kind === "fact-vi" ? "qa-vi" : "qa"];
+export const isQA = (kind?: string) => kind === "qa" || kind === "qa-vi" || isFact(kind) || kind === "lesson";
+export const profileOf = (kind?: string): QAProfile => PROFILES[kind === "qa-vi" || kind === "fact-vi" || kind === "lesson" ? "qa-vi" : "qa"];
 /** The English channel's profile (kept for the code that has one channel in mind). */
 export const QA = PROFILES.qa;
 
