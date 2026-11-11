@@ -128,7 +128,7 @@ function drawList() {
   $("#list").innerHTML = list.length ? list.map((j) => `
     <div class="job ${current === j.slug ? "on" : ""}" onclick="show('${j.slug}')">
       <b>${esc(j.topic)}</b>
-      <small>${j.kind === "qa" ? "hỏi–đáp (tiếng Anh)" : j.kind === "qa-vi" ? "hỏi–đáp (tiếng Việt)" : `${esc(j.kind || "")} · ${esc(j.era || "")}`} · ${fmt(j.tokens)} token${j.score ? ` · ${j.score.value}/10` : ""}${j.autoPicked ? " · tự chọn" : ""}</small><br>
+      <small>${j.kind === "qa" ? "hỏi–đáp (tiếng Anh)" : j.kind === "qa-vi" ? "hỏi–đáp (tiếng Việt)" : j.kind === "fact" ? "Short Did you know? (Ask Huy)" : j.kind === "fact-vi" ? "Short Bạn có biết? (Hỏi Huy)" : `${esc(j.kind || "")} · ${esc(j.era || "")}`} · ${fmt(j.tokens)} token${j.score ? ` · ${j.score.value}/10` : ""}${j.autoPicked ? " · tự chọn" : ""}</small><br>
       <span class="st ${j.status}">${STATUS[j.status] || j.status}</span>
       <small> ${ago(j.history.at(-1).at)}</small>
     </div>`).join("") : `<div class="empty">Trống.</div>`;
@@ -148,7 +148,7 @@ async function show(slug) {
   const canReview = job.status === "review" || job.status === "video";
   const last = job.history.at(-1);
   // A question for the English question channel (qa.ts): no era, costumes or art yet.
-  const qa = job.kind === "qa" || job.kind === "qa-vi";
+  const qa = ["qa", "qa-vi", "fact", "fact-vi"].includes(job.kind);
   let h = `<h2>${esc(plan?.title || job.topic)}</h2>
     <div class="meta">${qa ? `Kênh hỏi–đáp (tiếng Anh) · ${esc(project?.channel || "")}` : `${esc(job.kind || "")} · thời đại ${esc(job.era || "?")}`} · ${STATUS[job.status]} · viết bởi ${esc(job.by || "?")} · ${fmt(used)} token</div>`;
   if (canReview || job.status === "failed" || job.status === "rejected") {
@@ -171,7 +171,7 @@ async function show(slug) {
     const shortWords = (plan.shorts || []).map((n) => plan.scenes[n - 1]).filter(Boolean).flatMap((s) => s.parts).reduce((n, p) => n + p.text.split(/\s+/).length, 0);
     h += `<section><h3>Câu trả lời</h3><p>${esc(plan.answer || "")}</p>
       <p><b>Chữ trên ảnh bìa:</b> ${esc(plan.thumbnail || "")}</p>
-      <p><b>Shorts:</b> cảnh ${(plan.shorts || []).join(", ")} · ${shortWords} chữ (khoảng ${Math.round(shortWords / 2.5)} giây)</p>
+      ${plan.shorts?.length ? `<p><b>Shorts:</b> cảnh ${plan.shorts.join(", ")} · ${shortWords} chữ (khoảng ${Math.round(shortWords / 2.5)} giây)</p>` : `<p><b>Short dọc 9:16</b>, khoảng ${Math.round(plan.scenes.flatMap((s) => s.parts).reduce((n, p) => n + p.text.split(/\s+/).length, 0) / 2.5)} giây</p>`}
       <p><b>Mô tả YouTube:</b> ${esc(plan.description || "")}</p></section>`;
     if (fc) h += `<section><h3>Soát sự thật · ${fc.issues.length ? `${fc.issues.length} chỗ đã sửa` : "không có chỗ sai"}</h3>${fc.issues.length ? `<ul>${fc.issues.map((x) => `<li><b>Cảnh ${x.scene}</b>: <s>${esc(x.quote)}</s><br><small>${esc(x.problem)}</small><br>→ ${esc(x.fix)}</li>`).join("")}</ul>` : ""}</section>`;
   }

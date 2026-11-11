@@ -1,0 +1,22 @@
+{
+  "issues": [
+    {
+      "scene": 19,
+      "quote": "Còn ông cha ta, qua bao nhiêu thế hệ, đã vạch rõ đường biên giới thành chữ S hôm nay.",
+      "problem": "Misleading. The sources say the borders were settled at different times by different people. The Laos border was agreed between rulers in the 17th century and signed in 1977. The China border comes from French–Qing treaties of 1887 and 1895. The Cambodia border dates from the French annexation of 1867, with leftover issues settled in 1982–85. Saying that our ancestors over many generations drew the border is an oversimplification. It also hides that the northern and south-western borders were set under French rule.",
+      "fix": "Còn con người, qua nhiều thời kỳ, đã bàn bạc và ký các giấy tờ để định ra đường biên giới trên đất liền, như biên giới với Lào, Campuchia và Trung Quốc."
+    },
+    {
+      "scene": 30,
+      "quote": "Còn ông cha ta qua bao đời đã vạch rõ biên giới.",
+      "problem": "Same oversimplification as scene 19. Our ancestors did not draw the whole border. It was agreed in different periods, some of it under French treaties and some only in recent decades.",
+      "fix": "Còn con người, qua nhiều thời kỳ, đã bàn bạc và định ra đường biên giới."
+    },
+    {
+      "scene": 1,
+      "quote": "Mỗi năm, bản đồ ấy vẫn dài thêm một chút đấy.",
+      "problem": "Imprecise. The sources say the deltas push out into the sea, so the land grows bigger at the coast. They do not say the country gets longer. The claim is a teaser that could be misread as the whole country stretching.",
+      "fix": "Mỗi năm, bản đồ ấy vẫn lớn thêm một chút ở chỗ giáp biển đấy."
+    }
+  ]
+}

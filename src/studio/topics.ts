@@ -62,7 +62,14 @@ async function made(): Promise<string[]> {
   return [...new Set(titles)];
 }
 
-export async function proposeTopics(count: number, log?: (s: string) => void): Promise<Topic[]> {
+/** The animals the cartoon can draw (runtime/animals.js, horse.js): a fable's cast must be among them. */
+export const ANIMALS = "trâu, hổ, voi, chó, mèo, thỏ, cáo, rùa, hươu, dê, ngựa";
+
+/**
+ * Topics for the next videos. fables: only animal fables whose characters the cartoon can draw;
+ * otherwise folk tales, legends and history (fables left to their own line).
+ */
+export async function proposeTopics(count: number, log?: (s: string) => void, opts: { fables?: boolean; hints?: string[] } = {}): Promise<Topic[]> {
   const known = await eras();
   const done = await made();
   const system = "Bạn là biên tập viên nội dung của kênh YouTube hoạt hình \"Huy Kể Chuyện\" kể truyện cổ tích, truyền thuyết và lịch sử Việt Nam cho trẻ em 4–10 tuổi. Bạn am hiểu văn học dân gian và lịch sử Việt Nam, chỉ đề xuất truyện có thật trong kho tàng Việt Nam, không bịa truyện.";
@@ -81,7 +88,15 @@ export async function proposeTopics(count: number, log?: (s: string) => void): P
     "- Truyện có cốt truyện rõ, nhiều nhân vật và lời thoại, hợp với trẻ nhỏ, đúng thuần phong mỹ tục; truyện lịch sử thì kể theo hướng anh hùng, không bạo lực chi tiết.",
     "- Xếp theo mức độ hấp dẫn với trẻ em (nổi tiếng, có phép màu, có bài học).",
     "- wiki: 1–3 tên bài Wikipedia tiếng Việt chính xác để tra cứu.",
+    ...(opts.fables ? [
+      "",
+      "CHỈ đề xuất truyện ngụ ngôn (kind: \"ngụ ngôn\") có nhân vật chính là con vật biết nói, mỗi truyện một bài học rõ ràng cho trẻ 3–7 tuổi:",
+      "- Ưu tiên ngụ ngôn Việt Nam (Thầy bói xem voi, Đeo nhạc cho mèo…), rồi truyện ngụ ngôn kinh điển của thế giới hợp với trẻ Việt (Rùa và Thỏ…).",
+      `- Mọi con vật trong truyện phải thuộc các loài vẽ được: ${ANIMALS}. Có thể có thêm người. Không chọn truyện cần ếch, quạ, chuột, gà, kiến… (chưa vẽ được).`,
+      "- era: co_tich_lang_que (làng quê, rừng núi Việt Nam), newEra: false.",
+    ] : ["", "Không đề xuất truyện ngụ ngôn con vật (có dòng riêng)."]),
+    ...(opts.hints?.length ? ["", "Đang vào mùa hoặc đang được quan tâm (dùng khi hợp, không gượng ép):", ...opts.hints.map((h) => `- ${h}`)] : []),
   ].join("\n");
   const { data } = await think<{ topics: Topic[] }>({ job: "topics", step: "propose-topics", model: "sonnet", system, prompt, schema: SCHEMA }, log);
-  return data.topics.filter((t) => !done.some((d) => d.toLowerCase() === t.title.toLowerCase()));
+  return data.topics.filter((t) => !done.some((d) => d.toLowerCase() === t.title.toLowerCase()) && (!opts.fables || t.kind === "ngụ ngôn")).slice(0, count);
 }

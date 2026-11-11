@@ -29,3 +29,19 @@ test("too many host-only scenes and a bad Short length are reported", () => {
   assert.ok(p.some((x) => /only the host/.test(x)));
   assert.ok(p.some((x) => /The Short/.test(x)));
 });
+
+import { checkFact, isFact, isQA, profileOf } from "../src/studio/qa.ts";
+
+test("a Short: 100–140 words in 5–8 scenes with hook, step and recap", () => {
+  const sc = (beat: QAScene["beat"]): QAScene => ({ beat, visual: { kind: "diagram", what: "x" }, parts: [{ who: QA.host.name, how: "", text: line(20) }] });
+  const ok = plan([sc("hook"), sc("step"), sc("step"), sc("step"), sc("recap"), sc("recap")]);
+  assert.deepEqual(checkFact(ok), []);
+  assert.ok(checkFact(plan([sc("hook"), sc("step")])).some((x) => /too short/.test(x)));
+});
+
+test("question and fact kinds share the pipeline; the language follows the kind", () => {
+  assert.ok(isQA("fact-vi") && isFact("fact-vi") && !isFact("qa"));
+  assert.equal(profileOf("fact-vi").lang, "vi");
+  assert.equal(profileOf("fact").channel, "Ask Huy");
+  assert.equal(profileOf("qa-vi").channel, "Hỏi Huy");
+});

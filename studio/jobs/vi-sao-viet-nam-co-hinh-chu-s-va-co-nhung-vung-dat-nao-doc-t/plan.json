@@ -1,0 +1,721 @@
+{
+  "title": "Vì sao Việt Nam có hình chữ S? Đi dọc chữ S cùng Huy và Mai",
+  "question": "Vì sao Việt Nam có hình chữ S và có những vùng đất nào dọc theo hình chữ S ấy?",
+  "answer": "Việt Nam có dáng dài và hẹp vì phía tây có dãy Trường Sơn, phía đông có biển. Đất liền nằm kẹp ở giữa. Hai đầu phình tròn là do sông Hồng và sông Cửu Long bồi phù sa thành đồng bằng. Đường biên giới thì do ông cha ta, qua nhiều thế hệ, vạch rõ dần. Đi dọc chữ S, ta gặp vùng núi phía bắc, đồng bằng sông Hồng, dải đồng bằng hẹp ven biển miền Trung, cao nguyên Tây Nguyên, miền Nam, đồng bằng sông Cửu Long và mũi Cà Mau.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai ngồi trên chiếu ráp xong tấm bản đồ ghép hình Việt Nam cong cong như chữ S, ngạc nhiên chỉ vào. Huy ngồi cạnh, nháy mắt bí mật."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Anh Huy ơi, nhìn này! Bản đồ Việt Nam mình cong cong như chữ S. Ai đã uốn nó thành như thế ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Câu hỏi hay quá! Anh kể một bí mật nhé. Mỗi năm, bản đồ ấy vẫn lớn thêm một chút ở chỗ giáp biển đấy."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Hả? Đất nước mà cũng lớn lên được như em ạ?"
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy vẫy tay chào trước tấm bản đồ chữ S lớn. Một con đường chấm chấm chạy từ đỉnh núi phía bắc xuống mũi đất phía nam."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Chào các bạn! Hôm nay mình sẽ tìm hiểu vì sao Việt Nam có hình chữ S. Rồi mình cùng đi một chuyến dọc chữ S, từ núi cao phía bắc tới mũi đất xa nhất phía nam."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai cầm bút sáp to tô một chữ S lên giấy, mặt tự tin. Huy gật gù lắng nghe."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Em đoán nhé! Ngày xưa có ai đó cầm bút vẽ biên giới thành chữ S cho đẹp."
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Đoán hay đấy! Biên giới đúng là do con người bàn bạc mà có. Nhưng chẳng ai chọn chữ S cả. Mình gọi là hình chữ S chỉ vì trên bản đồ, nó trông giống chữ S thôi."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai tưởng tượng những con sóng to đang đẩy dải đất cho cong đi. Huy giơ ba ngón tay, trên đầu có ba hình nhỏ: ngọn núi, dòng sông, người nông dân."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "quyết tâm",
+          "text": "Vậy chắc sóng biển đã đẩy đất cong đi!"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Biển cũng góp một phần thật. Nhưng còn núi, còn sông, và cả ông cha mình nữa. Chữ S được vẽ bởi nhiều bàn tay lắm. Mình đi từng bước nhé."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "count",
+        "what": "Bản đồ chữ S có một đường thẳng chấm chấm từ đầu bắc tới đầu nam, ghi 'khoảng 1.650 km'. Bên cạnh, Mai tí hon đeo ba lô đi bộ, cạnh cuốn lịch lật gần hết ba tháng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Trước hết, chữ S dài cỡ nào? Đo thẳng như chim bay từ đầu bắc tới đầu nam, nó dài khoảng 1.650 ki-lô-mét. Nếu mỗi ngày đi bộ khoảng 20 ki-lô-mét, các bạn sẽ mất gần ba tháng đấy!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "compare",
+        "what": "Phóng to phần eo miền Trung gần Đồng Hới, có mũi tên từ biên giới phía tây ra tới biển, ghi 'chưa đầy 50 km'. Bên cạnh là chiếc xe máy và chiếc đồng hồ chỉ khoảng một tiếng."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Dài thế! Còn chỗ hẹp nhất thì sao ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ở gần Đồng Hới, miền Trung, từ biên giới phía tây ra tới biển chưa đầy 50 ki-lô-mét. Chỉ cỡ quãng đường xe máy chạy khoảng một tiếng thôi."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "diagram",
+        "what": "Bản đồ đơn giản: phía tây là dãy núi Trường Sơn màu nâu chạy dài như cái xương sống, phía đông là biển Đông xanh. Dải đất liền màu xanh lá nằm kẹp giữa, bên cạnh có hình ổ bánh mì kẹp nhân để so sánh."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Vì sao vừa dài vừa hẹp? Nhìn này. Phía tây có dãy núi Trường Sơn chạy dài như cái xương sống. Phía đông là biển Đông mênh mông. Đất liền nằm kẹp ở giữa, giống nhân kẹp trong ổ bánh mì."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "map",
+        "what": "Bản đồ biên giới Việt Nam và Lào chạy uốn theo dãy Trường Sơn, có lá cờ nhỏ cắm dọc sống núi. Một cuộn giấy ghi '1977'."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hơn ba trăm năm trước, vua nước ta và vua nước Lào đã thỏa thuận đường ranh giới, lấy dãy Trường Sơn làm mốc. Đến năm 1977, hai nước ký giấy tờ chính thức. Vì thế biên giới phía tây uốn theo núi."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "arrows",
+        "what": "Một mũi tên chạy dọc bờ biển cong cong từ bắc xuống nam, ghi 'khoảng 3.260 km'. Vài nhánh núi chồm ra biển, nổi bật bằng vòng tròn."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Bờ biển cũng cong cong theo luôn!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Đúng rồi. Bờ biển dài khoảng 3.260 ki-lô-mét, chưa kể các đảo. Có chỗ núi còn chồm hẳn ra biển."
+        },
+        {
+          "who": "Huy",
+          "how": "tự hào",
+          "text": "Ghi nhớ bước một nhé. Núi ở phía tây, biển ở phía đông, kẹp nước mình thành một dải đất dài và hẹp."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "map",
+        "what": "Bản đồ chữ S có hai đầu phình tròn được tô sáng. Ở đầu bắc có dòng sông đỏ ghi 'sông Hồng', ở đầu nam có dòng sông xanh nâu chia nhiều nhánh ghi 'sông Cửu Long'."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Nhưng sao hai đầu chữ S lại phình to ra ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Mắt tinh lắm! Hai cái đầu tròn ấy do hai dòng sông lớn vẽ nên. Phía bắc là sông Hồng. Phía nam là sông Mê Kông, đoạn chảy qua nước mình gọi là sông Cửu Long."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "zoom",
+        "what": "Phóng to vào làn nước sông thấy những hạt đất cát li ti trôi theo. Gần cửa biển, các hạt chìm xuống đáy, xếp thành từng lớp mỏng chồng lên nhau."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Nước sông chở theo rất nhiều hạt đất cát nhỏ li ti, gọi là phù sa. Ra gần biển, nước chảy chậm lại, phù sa lắng xuống từng lớp, từng lớp. Lâu dần, nó thành vùng đất phẳng, gọi là đồng bằng."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "count",
+        "what": "Dòng thời gian ba khung: khung một là vịnh biển xanh, khung hai phù sa lấp một nửa vịnh, khung ba là cánh đồng lúa xanh mướt có làng xóm."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ngày xưa thật xưa, đồng bằng sông Hồng bây giờ từng là một vịnh biển, tức là chỗ biển ăn sâu vào đất liền. Qua hàng nghìn năm, phù sa lấp đầy dần, thành cánh đồng lúa bát ngát."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "compare",
+        "what": "Mép đồng bằng lấn ra biển, bên cạnh là một sân bóng đá đặt nằm dọc để so chiều dài. Có nhãn 'sông Hồng khoảng 100 m mỗi năm' và 'sông Cửu Long khoảng 60 đến 80 m mỗi năm'."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "À, vậy là bản đồ lớn lên thật!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Đúng thế! Đồng bằng sông Hồng mỗi năm lấn ra biển khoảng 100 mét, gần bằng chiều dài một sân bóng đá. Đồng bằng sông Cửu Long thì khoảng 60 đến 80 mét mỗi năm."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "compare",
+        "what": "Hai đồng bằng đặt cạnh nhau: tam giác nhỏ ghi 'đồng bằng sông Hồng, khoảng 15.000 km²' và hình lớn hơn ghi 'đồng bằng sông Cửu Long, khoảng 40.000 km²'. Bên trên là hai đống phù sa, đống phía nam to hơn hẳn."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Người ta ước tính mỗi năm, sông Cửu Long bồi phù sa nhiều gấp khoảng mười ba lần sông Hồng. Đồng bằng phía nam rộng khoảng 40.000 ki-lô-mét vuông, gấp khoảng hai lần rưỡi đồng bằng phía bắc."
+        },
+        {
+          "who": "Huy",
+          "how": "tự hào",
+          "text": "Ghi nhớ bước hai. Hai dòng sông lớn bồi phù sa, vẽ nên hai cái đầu tròn của chữ S."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Một làng quê xưa ở đồng bằng sông Hồng có mái nhà tranh, ruộng lúa và con trâu. Người dân mặc áo nâu giản dị đang cấy lúa."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Núi và sông vẫn chưa kể hết câu chuyện đâu. Đường biên giới là do con người vạch ra. Từ hơn hai nghìn năm trước, tổ tiên người Việt đã sống ở đồng bằng sông Hồng."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "diagram",
+        "what": "Hình cắt ngang có dòng sông nước dâng cao, hai bên là con đê đất dài ghi 'đê', phía sau là làng và ruộng khô ráo. Một con kênh nhỏ dẫn nước vào ruộng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Sông Hồng hay có lũ, tức là nước dâng cao tràn vào làng. Ông cha ta đắp đê, là những bờ đất cao và dài, để giữ nước, rồi đào kênh dẫn nước vào ruộng. Nhờ thế, đồng bằng nuôi được rất nhiều người."
+        },
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "Ông bà mình giỏi ghê!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "arrows",
+        "what": "Bản đồ có những mũi tên nối tiếp nhau đi từ đồng bằng sông Hồng xuống phía nam, dọc dải ven biển, tới đồng bằng sông Cửu Long. Thanh thời gian bên cạnh ghi 'nhiều trăm năm'."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Qua nhiều trăm năm, người Việt dần đi về phương nam, dọc dải đồng bằng ven biển, xuống tận đồng bằng sông Cửu Long. Vùng đất của vương quốc Chăm Pa xưa ở miền Trung cũng dần trở thành một phần của Việt Nam."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "map",
+        "what": "Bản đồ chữ S có biên giới phía bắc và biên giới phía tây nam được tô đậm, bên cạnh là những cuộn giấy cũ. Mai nhìn bản đồ, mắt tròn xoe."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Đường biên giới phía bắc với Trung Quốc và phía tây nam với Campuchia cũng được định ra từ hơn một trăm năm trước."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Vậy chữ S là do cả thiên nhiên lẫn con người cùng vẽ ạ?"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "host",
+        "what": "Huy giơ ngón tay cái, sau lưng là chữ S được ghép từ bốn mảnh: núi, biển, sông và những người nắm tay nhau."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "tự hào",
+          "text": "Chính xác! Ghi nhớ bước ba. Núi, biển và sông tạo nên dáng đất. Còn con người, qua nhiều thời kỳ, đã bàn bạc và ký các giấy tờ để định ra đường biên giới trên đất liền, như biên giới với Lào, Campuchia và Trung Quốc."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "map",
+        "what": "Bản đồ chữ S tô ba màu cho miền Bắc, miền Trung và miền Nam. Huy và Mai đeo ba lô đứng ở đầu bắc, sẵn sàng lên đường."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Giờ mình lên đường dọc chữ S nhé! Người ta hay chia nước mình thành ba miền Bắc, Trung, Nam. Mỗi miền lại có nhiều vùng nhỏ, mỗi sách chia hơi khác nhau. Hôm nay mình đi theo dáng đất."
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Xuất phát thôi!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Vùng núi phía bắc có những dãy núi cao xanh và mây trắng, đỉnh cao nhất có biển nhỏ ghi 'Phan-xi-păng'. Ruộng bậc thang phía dưới, Mai quàng khăn ấm."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Trạm đầu tiên là vùng núi phía bắc. Ở đây có dãy Hoàng Liên Sơn với đỉnh Phan-xi-păng cao hơn 3.100 mét, cao nhất Việt Nam. Đây là nhà của nhiều dân tộc anh em."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Ở đây mùa đông lạnh lắm phải không anh?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Đúng rồi, miền Bắc có mùa đông lạnh."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Đồng bằng sông Hồng phẳng lì hình tam giác, ruộng lúa xanh mướt, đê chạy dọc sông, nhiều làng xóm. Xa xa là thủ đô Hà Nội."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Xuôi xuống là đồng bằng sông Hồng hình tam giác, đất thấp và phẳng, ruộng lúa xanh mướt và rất đông người. Thủ đô Hà Nội nằm ở vùng này."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Dải đất miền Trung hẹp: bên trái núi Trường Sơn, bên phải biển xanh. Những nhánh núi chạy ra biển chia dải ruộng ven biển thành từng ô, giống các ngăn hộp bút."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Tiếp theo là miền Trung, phần eo thon của chữ S. Một bên là núi, một bên là biển. Đồng bằng ở đây nhỏ và hẹp, bị những nhánh núi chạy ra biển chia thành từng ô."
+        },
+        {
+          "who": "Mai",
+          "how": "cười",
+          "text": "Giống mấy ngăn trong hộp bút của em!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "diagram",
+        "what": "Hình cắt ngang có miền đất thấp ven biển, rồi dốc lên một vùng đất cao, mặt bằng như cái bàn khổng lồ, ghi 'cao nguyên Tây Nguyên'. Trên mặt bàn có đất đỏ ba-dan và rừng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Phía tây miền Trung, trên cao là Tây Nguyên. Cao nguyên là vùng đất cao mà mặt khá bằng, như một cái bàn khổng lồ. Ở đây có đất ba-dan màu mỡ, rừng rộng, và Đà Lạt mát mẻ quanh năm."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Đồng bằng sông Cửu Long có sông và kênh rạch đan nhau như mạng nhện, thuyền nhỏ chở lúa, ruộng vàng óng. Mai cầm bát cơm trắng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Vào miền Nam, ta gặp Thành phố Hồ Chí Minh, thành phố lớn nhất nước. Rồi tới đồng bằng sông Cửu Long, kênh rạch chằng chịt như mạng nhện. Vùng này làm ra hơn một nửa số lúa cả nước."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Bát cơm của em có khi từ đây đấy!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Mũi Cà Mau có rừng đước xanh, rễ cây cắm xuống bùn ven biển. Huy và Mai đứng ở mũi đất, ngoài khơi có nhiều hòn đảo nhỏ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Tận cùng chữ S là mũi Cà Mau, với rừng đước cắm rễ xuống bùn ven biển. Ngoài đất liền, nước mình còn có vùng biển rộng và rất nhiều đảo."
+        },
+        {
+          "who": "Huy",
+          "how": "tự hào",
+          "text": "Ghi nhớ bước bốn. Dọc chữ S có núi cao, đồng bằng, dải đất ven biển, cao nguyên và rừng đước. Mỗi vùng một vẻ."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Trên nền nhà tắm có một cái khay nhựa, một túi cát ẩm và một cốc nước. Mẹ của Mai đứng cạnh giúp."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Các bạn có muốn tự làm một đồng bằng tí hon không? Nhờ bố mẹ chuẩn bị một cái khay, ít cát ẩm và một cốc nước. Làm ngoài sân hay trong nhà tắm cho khỏi bẩn nhà nhé."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Cát được đắp cao ở một đầu khay. Mai rót nước chậm từ trên cao, dòng nước kéo cát xuống và xòe ra thành hình quạt ở cuối khay."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Em đắp cát cao một đầu rồi rót nước thật chậm. Ơ, cát trôi theo nước, xòe ra cuối khay như cái quạt!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Đó là một đồng bằng mini đấy. Sông Hồng và sông Cửu Long cũng làm y như thế, chỉ là chậm hơn và to hơn rất rất nhiều."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "arrows",
+        "what": "Một hạt phù sa hoạt hình có mắt cười đi theo mũi tên dài từ núi cao Tây Tạng, qua nhiều nước, ra một trong chín cửa sông, rồi nằm xuống mép đất mũi Cà Mau."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Giờ thử tưởng tượng các bạn là một hạt phù sa trên sông Mê Kông nhé. Con sông dài khoảng 4.220 ki-lô-mét, bắt nguồn từ cao nguyên Tây Tạng và chảy qua nhiều nước rồi mới ra biển."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Em sẽ nằm ở mũi Cà Mau, thành một mẩu bản đồ mới!"
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "diagram",
+        "what": "Bản đồ chữ S tóm tắt có núi Trường Sơn ở phía tây, biển ở phía đông, hai đồng bằng tròn ở hai đầu được tô sáng, và dòng mũi tên người Việt đi về phương nam."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Tóm lại, núi Trường Sơn ở phía tây và biển ở phía đông kẹp nước mình thành một dải dài và hẹp. Hai dòng sông lớn bồi phù sa thành hai đầu tròn, và mỗi năm vẫn bồi thêm. Còn con người, qua nhiều thời kỳ, đã bàn bạc và định ra đường biên giới."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "count",
+        "what": "Đồng bằng sông Cửu Long nhìn từ trên cao, chín cửa sông được đánh số từ 1 đến 9, mỗi cửa có một chú rồng hoạt hình dễ thương bơi ra biển."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Thêm một điều thú vị nhé. Sông Mê Kông đổ ra biển qua chín cửa sông. Cửu nghĩa là chín, long nghĩa là rồng. Thế nên người ta gọi nó là sông Cửu Long, sông Chín Rồng!"
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Chín con rồng! Ngầu quá!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "host",
+        "what": "Huy và Mai vẫy tay. Một nửa bản đồ phía bắc có tuyết và khăn len, nửa phía nam có nắng ấm. Có nút Đăng ký nhấp nháy."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Anh Huy ơi, sao miền Bắc có mùa đông lạnh, còn miền Nam thì ấm áp quanh năm?"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Câu đó để lần sau nhé! Các bạn nhớ đăng ký kênh Hỏi Huy để không bỏ lỡ. Hẹn gặp lại!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Trên bản đồ, Việt Nam có hình chữ S. Từ bắc tới nam, đo theo đường chim bay, dài khoảng 1.650 km",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Chỗ hẹp nhất theo chiều đông tây nằm ở Đồng Hới, chưa đầy 50 km",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Dãy Trường Sơn chạy dọc biên giới với Lào. Phía đông Việt Nam là biển Đông",
+      "source": "Geography of Vietnam"
+    },
+    {
+      "claim": "Vua Việt Nam và vua Lào thỏa thuận biên giới từ giữa thế kỷ 17, lấy dãy Trường Sơn làm mốc. Hai nước ký hiệp ước phân định biên giới năm 1977",
+      "source": "Geography of Vietnam"
+    },
+    {
+      "claim": "Bờ biển dài khoảng 3.260 km, chưa kể các đảo. Có chỗ núi Trường Sơn chồm ra biển",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Ở phía bắc có đồng bằng sông Hồng, ở phía nam có đồng bằng sông Cửu Long (Mê Kông)",
+      "source": "Geography of Vietnam"
+    },
+    {
+      "claim": "Đồng bằng do phù sa của các con sông lắng đọng mà thành",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Đồng bằng sông Hồng trước kia là một vịnh nhỏ của vịnh Bắc Bộ, được phù sa bồi đắp qua hàng nghìn năm",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Mỗi năm, đồng bằng sông Hồng lấn ra biển khoảng 100 m, đồng bằng sông Cửu Long khoảng 60 đến 80 m",
+      "source": "Geography of Vietnam"
+    },
+    {
+      "claim": "Theo ước tính, phù sa sông Cửu Long bồi mỗi năm nhiều gấp gần 13 lần sông Hồng. Đồng bằng sông Cửu Long rộng khoảng 40.000 km², đồng bằng sông Hồng khoảng 15.000 km²",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Đồng bằng sông Hồng là quê hương của tổ tiên người Việt. Các nhà nước đầu tiên ra đời ở đây từ thiên niên kỷ thứ nhất trước Công nguyên",
+      "source": "Vietnam"
+    },
+    {
+      "claim": "Đồng bằng sông Hồng hay bị lũ. Người dân đã xây hệ thống đê và kênh để giữ nước và tưới ruộng, nhờ đó vùng này nuôi được rất đông người",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Các triều đại Việt Nam mở rộng dần về phía nam tới đồng bằng sông Cửu Long, trong đó có vùng đất của Chăm Pa",
+      "source": "Vietnam"
+    },
+    {
+      "claim": "Biên giới với Campuchia được xác định từ năm 1867. Biên giới với Trung Quốc được phác ra theo các hiệp ước năm 1887 và 1895",
+      "source": "Geography of Vietnam"
+    },
+    {
+      "claim": "Việt Nam thường được chia thành ba miền. Việc chia vùng có nhiều cách khác nhau",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Vùng núi phía bắc có dãy Hoàng Liên Sơn và đỉnh Fansipan cao hơn 3.100 m, cao nhất Việt Nam. Đây là nơi sinh sống của nhiều dân tộc thiểu số",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Miền Bắc có mùa đông lạnh",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Đồng bằng sông Hồng có hình tam giác, đất thấp, đông dân, trồng nhiều lúa",
+      "source": "Geography of Vietnam"
+    },
+    {
+      "claim": "Hà Nội là thủ đô. Thành phố Hồ Chí Minh là thành phố lớn nhất",
+      "source": "Vietnam"
+    },
+    {
+      "claim": "Đồng bằng ven biển miền Trung hẹp, bị các nhánh núi Trường Sơn chia thành nhiều ô",
+      "source": "Geography of Vietnam"
+    },
+    {
+      "claim": "Tây Nguyên là vùng cao nguyên đất ba-dan màu mỡ, có nhiều rừng. Đà Lạt có khí hậu mát mẻ",
+      "source": "Geography of Vietnam"
+    },
+    {
+      "claim": "Đồng bằng sông Cửu Long có rất nhiều sông và kênh, làm ra khoảng 56% sản lượng lúa cả nước",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Mũi Cà Mau có rừng rậm và đầm lầy đước",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Vùng biển Việt Nam rộng gấp nhiều lần đất liền và có nhiều đảo",
+      "source": "Địa lý Việt Nam"
+    },
+    {
+      "claim": "Sông Mê Kông dài khoảng 4.220 km, bắt nguồn từ cao nguyên Tây Tạng, chảy qua nhiều nước",
+      "source": "Geography of Vietnam"
+    },
+    {
+      "claim": "Sông Mê Kông đổ ra biển qua chín cửa nên được gọi là Cửu Long, nghĩa là chín con rồng",
+      "source": "Geography of Vietnam"
+    },
+    {
+      "claim": "Hạt phù sa lắng xuống khi nước chảy chậm lại",
+      "source": "Kiến thức cơ bản trong trường học (khoa học tự nhiên/địa lí)"
+    }
+  ],
+  "shorts": [
+    1,
+    30,
+    31
+  ],
+  "thumbnail": "Ai uốn Việt Nam thành chữ S?",
+  "description": "Vì sao bản đồ Việt Nam có hình chữ S, và vì sao mỗi năm nó lại dài thêm một chút? Đi cùng Huy và Mai, các bé sẽ biết núi Trường Sơn, biển Đông, hai dòng sông lớn và ông cha ta đã cùng vẽ nên dáng hình đất nước ra sao, rồi đi dọc chữ S từ đỉnh Phan-xi-păng tới mũi Cà Mau. Video có một thí nghiệm an toàn làm đồng bằng tí hon bằng khay cát, rất hợp để bố mẹ và các bé từ 6 đến 12 tuổi cùng làm.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": ""
+}

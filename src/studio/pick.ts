@@ -22,17 +22,22 @@ export interface Line {
   perDay: number;
   /** Scripts kept written ahead, waiting for review (default: settings scriptsAhead). */
   ahead?: number;
-  /** How new topics are found when the line runs low: Vietnamese stories, or questions (qa.ts). */
-  propose?: "stories" | "questions";
+  /** How new topics are found when the line runs low: stories, animal fables, or questions (qa.ts). */
+  propose?: "stories" | "fables" | "questions" | "facts";
+  /** The YouTube channel it is published on (publish.ts), when not one of its own (default: the id). */
+  channel?: string;
 }
 /** A line's way of finding topics (older settings without "propose": by its kinds). */
-export const proposerOf = (l: Line) => l.propose ?? (l.kinds?.some((k) => k === "qa" || k === "qa-vi") ? "questions" : "stories");
+export const proposerOf = (l: Line) => l.propose ?? (l.kinds?.some((k) => k === "fact" || k === "fact-vi") ? "facts" : l.kinds?.some((k) => k === "qa" || k === "qa-vi") ? "questions" : "stories");
 export interface PickSettings { at: string; lines: Line[] }
 export const PICK_DEFAULTS: PickSettings = {
   at: "17:00",
   lines: [
     { id: "ask-huy", name: "Ask Huy (hỏi–đáp tiếng Anh)", kinds: ["qa"], perDay: 2, ahead: 6, propose: "questions" },
     { id: "hoi-huy", name: "Hỏi Huy (hỏi–đáp tiếng Việt)", kinds: ["qa-vi"], perDay: 1, ahead: 2, propose: "questions" },
+    { id: "ngu-ngon", name: "Truyện ngụ ngôn con vật", kinds: ["ngụ ngôn"], perDay: 1, ahead: 2, propose: "fables", channel: "huy-ke-chuyen" },
+    { id: "ask-huy-shorts", name: "Shorts \"Did you know?\" (Ask Huy)", kinds: ["fact"], perDay: 2, ahead: 3, propose: "facts", channel: "ask-huy" },
+    { id: "hoi-huy-shorts", name: "Shorts \"Bạn có biết?\" (Hỏi Huy)", kinds: ["fact-vi"], perDay: 1, ahead: 2, propose: "facts", channel: "hoi-huy" },
     { id: "huy-ke-chuyen", name: "Huy Kể Chuyện (truyện, lịch sử)", perDay: 2, ahead: 6, propose: "stories" },
   ],
 };
@@ -53,7 +58,7 @@ export async function scoreJob(slug: string, log: (s: string) => void = () => {}
   const script = await fs.readFile(path.join(jobDir(slug), "script.txt"), "utf8");
   const hash = createHash("sha256").update(script).digest("hex").slice(0, 16);
   if (job.score?.hash === hash) return job.score;
-  const qa = job.kind === "qa" || job.kind === "qa-vi";
+  const qa = job.kind === "qa" || job.kind === "qa-vi" || job.kind === "fact" || job.kind === "fact-vi";
   const { data } = await think<{ score: number; why: string }>({
     job: slug, step: "score", model: "sonnet", schema: SCHEMA,
     system: "Bạn là biên tập viên của các kênh YouTube hoạt hình cho trẻ em. Bạn chấm kịch bản thẳng thắn và công bằng.",

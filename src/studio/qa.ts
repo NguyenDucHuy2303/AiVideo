@@ -44,8 +44,11 @@ export const PROFILES: Record<QAProfile["kind"], QAProfile> = {
     how: "vui vẻ, mừng rỡ, cười, ngạc nhiên, lo lắng, quyết tâm, tự hào, buồn rầu, sợ hãi, mệt",
     write: "Write every line in natural, warm Vietnamese for Vietnamese children (Huy calls the viewers \"các bạn\", Mai calls Huy \"anh Huy\"); explain in Vietnamese words, give the English or scientific word only when it helps. Examples and comparisons from Vietnamese children's life (a rice field, a motorbike, a bowl of phở). The checks below count words as written syllables." },
 };
-export const isQA = (kind?: string): kind is QAProfile["kind"] => kind === "qa" || kind === "qa-vi";
-export const profileOf = (kind?: string): QAProfile => PROFILES[isQA(kind) ? kind : "qa"];
+/** "Did you know?" Shorts (writeFact): the same channels, one fact in under a minute, made 9:16. */
+export const isFact = (kind?: string) => kind === "fact" || kind === "fact-vi";
+/** Every kind made by the question pipeline (qaproduce.ts): questions and facts, both languages. */
+export const isQA = (kind?: string) => kind === "qa" || kind === "qa-vi" || isFact(kind);
+export const profileOf = (kind?: string): QAProfile => PROFILES[kind === "qa-vi" || kind === "fact-vi" ? "qa-vi" : "qa"];
 /** The English channel's profile (kept for the code that has one channel in mind). */
 export const QA = PROFILES.qa;
 
@@ -275,6 +278,107 @@ export async function proposeQuestions(count: number, made: { topic: string; are
       "- why: one line on why children will click and watch to the end.",
       ...(P.lang === "vi" ? ["- Write each question in natural Vietnamese, as a Vietnamese child would ask it (Vì sao…? Tại sao…? Làm thế nào…? … là gì?); include some about Vietnam itself (its nature, animals, inventions, places) as well as universal ones."] : []),
       ...(hints.length ? ["- What is in season or trending now (use when it fits, never forced):", ...hints.map((h) => `  - ${h}`)] : []),
+    ].join("\n"),
+  }, log);
+  const norm = (t: string) => t.toLowerCase().replace(/[^\p{L} ]/gu, "").replace(/\s+/g, " ").trim();
+  const seen = new Set(made.map((m) => norm(m.topic)));
+  return data.questions.filter((q) => !seen.has(norm(q.question))).slice(0, count);
+}
+
+
+// ── "Did you know?" Shorts ──────────────────────────────────────────────────────────────────
+
+const FACT_SCHEMA = {
+  type: "object",
+  properties: {
+    title: { type: "string" }, question: { type: "string" }, answer: { type: "string" },
+    scenes: { type: "array", items: SCENE },
+    facts: { type: "array", items: { type: "object", properties: { claim: { type: "string" }, source: { type: "string" } }, required: ["claim", "source"] } },
+    description: { type: "string" },
+  },
+  required: ["title", "question", "answer", "scenes", "facts", "description"],
+};
+
+/** What is wrong with a Short's plan. */
+export function checkFact(plan: QAPlan): string[] {
+  const problems: string[] = [];
+  const w = words(plan.scenes);
+  if (w < 85) problems.push(`The Short is too short (${w} words): it needs about 100–140.`);
+  if (w > 165) problems.push(`The Short is too long (${w} words): it needs about 100–140.`);
+  if (plan.scenes.length < 4 || plan.scenes.length > 10) problems.push(`There are ${plan.scenes.length} scenes: it needs 5–8.`);
+  for (const b of ["hook", "step", "recap"] as const) if (!plan.scenes.some((s) => s.beat === b)) problems.push(`The beat "${b}" is missing.`);
+  const names = new Set(plan.cast.map((c) => c.name));
+  plan.scenes.forEach((sc, i) => {
+    for (const p of sc.parts) {
+      if (!names.has(p.who.trim())) problems.push(`Scene ${i + 1}: "${p.who}" speaks but is not in the cast.`);
+      if (p.how.trim() && !moodOf(p.how)) problems.push(`Scene ${i + 1}: the way of speaking "${p.how}" is not in the list.`);
+    }
+  });
+  return [...new Set(problems)];
+}
+
+/**
+ * Write a "Did you know?" Short: one surprising, true fact told in 40–55 seconds (hook, the
+ * fact explained in a few pictures, a wow ending), fact-checked like the long videos but with
+ * the smaller model (~25k tokens in all).
+ */
+export async function writeFact(slug: string, log: (s: string) => void = console.log): Promise<string[]> {
+  let job = await loadJob(slug);
+  const dir = jobDir(slug), P = profileOf(job.kind);
+  const sources = (await qaSources(job.topic, slug, P.lang)).map((s) => ({ ...s, text: s.text.slice(0, 5000) }));
+  await fs.writeFile(path.join(dir, "sources.json"), JSON.stringify(sources.map(({ title, url }) => ({ title, url })), null, 2));
+  log(`  research: ${sources.map((s) => s.title).join(", ")}`);
+  const notes = job.notes.filter((n) => n.on === "script").map((n) => n.text);
+  const ask = { job: slug, system: system(P) };
+  const { data, by } = await think<Omit<QAPlan, "cast" | "look" | "shorts" | "thumbnail">>({ ...ask, schema: FACT_SCHEMA, step: "fact-write", model: "sonnet", effort: "medium", prompt: [
+    `Write a YouTube Short (40–55 seconds, vertical) that tells one surprising, true fact for children: "${job.topic}"`,
+    "Beats: hook (1 scene: the fact as a question, \"Did you know…?\" or its equivalent, said with wonder), step (3–6 scenes: why it is true, one simple picture each), recap (1 scene: a wow line and an invitation to follow the channel for more).",
+    `About 100–140 words in all. Speakers: ${P.host.name} and ${P.kid.name} only; how chosen from: ${P.how}. No quotation marks or colons inside text.`,
+    "visual: kind and what to draw, as for the long videos (host, scene, diagram, labels, arrows, map, compare, zoom, count, experiment); most scenes show the fact, not the host.",
+    "title: the fact as a short, catchy line (under 60 characters). question: the fact as a question. answer: the fact in one sentence. facts: each claim with its source title. description: one or two sentences.",
+    ...(notes.length ? ["", "Notes to follow:", ...notes.map((n) => `- ${n}`)] : []),
+    "", "Sources:", ...sources.map((s) => `### ${s.title} (${s.url})\n${s.text}`),
+  ].join("\n") }, log);
+  let plan: QAPlan = { ...data, cast: [P.host, P.kid], look: "", shorts: [], thumbnail: "" };
+  const { data: fc } = await think<{ issues: { scene: number; quote: string; problem: string; fix: string }[] }>({ ...ask, schema: CHECK_SCHEMA, step: "fact-check", model: "sonnet", prompt: [
+    "Fact-check this children's Short against the sources: list every statement that is wrong, unsupported, misleading or unsafe, quoted exactly, with the corrected sentence. An empty list is a fine answer.",
+    "", ...plan.scenes.map((s, i) => `${i + 1}: ${s.parts.map((p) => `${p.who}: ${p.text}`).join(" ")}`),
+    "", "Sources:", ...sources.map((s) => `### ${s.title}\n${s.text}`),
+  ].join("\n") }, log);
+  log(`  fact check: ${fc.issues.length} issue(s)`);
+  if (fc.issues.length) {
+    const toFix = [...new Set(fc.issues.map((x) => x.scene - 1))].filter((i) => plan.scenes[i]);
+    const { data: fixed } = await think<{ scenes: { index: number; parts: Part[] }[] }>({ ...ask, schema: SCENES_SCHEMA, step: "fact-fix", model: "sonnet", prompt: [
+      `Apply these corrections to the scenes, keep everything else. Return exactly these scenes with their index. how chosen from: ${P.how}. ${P.write}`,
+      ...fc.issues.map((x) => `- scene ${x.scene}: "${x.quote}" — ${x.problem} → ${x.fix}`), "",
+      JSON.stringify(toFix.map((i) => ({ index: i + 1, parts: plan.scenes[i]!.parts }))),
+    ].join("\n") }, log);
+    for (const sc of fixed.scenes) if (plan.scenes[sc.index - 1]) plan.scenes[sc.index - 1]!.parts = sc.parts;
+  }
+  const problems = checkFact(plan);
+  await fs.writeFile(path.join(dir, "factcheck.json"), JSON.stringify(fc, null, 2));
+  await fs.writeFile(path.join(dir, "plan.json"), JSON.stringify(plan, null, 2));
+  await fs.writeFile(path.join(dir, "script.txt"), toScript(plan));
+  await fs.writeFile(path.join(dir, "project.json"), JSON.stringify({ engine: P.engine, voice: P.narrator, speed: P.speed, imageGen: "off", onlineImages: false, profiles: ["9x16"], channel: P.channel, voices: P.engine === "kokoro" ? castVoicesEn(plan.cast, P.narrator) : castVoices(plan.cast, P.narrator) }, null, 2));
+  job = await loadJob(slug);
+  job.by = by;
+  await saveJob(job);
+  return problems;
+}
+
+/** Facts for the Shorts: surprising, true, explainable in under a minute (~4k tokens a batch). */
+export async function proposeFacts(count: number, made: { topic: string }[], log?: (s: string) => void, kind: "fact" | "fact-vi" = "fact", hints: string[] = []): Promise<Question[]> {
+  const P = profileOf(kind);
+  const { data } = await think<{ questions: Question[] }>({
+    job: `topics-${kind}`, step: "propose-facts", model: "sonnet",
+    system: `You plan the "Did you know?" Shorts of "${P.channel}", an animated YouTube channel for children aged 6–12${P.lang === "vi" ? ", in Vietnamese" : ""}.`,
+    schema: { type: "object", properties: { questions: { type: "array", items: { type: "object", properties: { question: { type: "string" }, area: { enum: [...AREAS] }, why: { type: "string" } }, required: ["question", "area", "why"] } } }, required: ["questions"] },
+    prompt: [
+      `Propose ${count} facts for the next Shorts. question = the fact as a short headline${P.lang === "vi" ? " in Vietnamese (\"Bạn có biết…?\")" : " (\"Did you know…?\")"}.`,
+      "- Surprising, true and checkable on Wikipedia; the kind children repeat to their friends; safe and friendly.",
+      "- Each can be shown with one or two simple pictures; mix the areas.",
+      "- Not any of these, nor the same fact in other words:", ...made.map((m) => `  - ${m.topic}`),
+      ...(hints.length ? ["- In season or trending now (when it fits):", ...hints.map((h) => `  - ${h}`)] : []),
     ].join("\n"),
   }, log);
   const norm = (t: string) => t.toLowerCase().replace(/[^\p{L} ]/gu, "").replace(/\s+/g, " ").trim();

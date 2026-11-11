@@ -11,7 +11,7 @@
 import { wasInterrupted } from "../utils/process.ts";
 import { channelOf, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings } from "./publish.ts";
 import { dailyPick, lineOf, PICK_DEFAULTS, proposerOf, type PickSettings } from "./pick.ts";
-import { isQA, proposeQuestions } from "./qa.ts";
+import { isFact, isQA, proposeFacts, proposeQuestions } from "./qa.ts";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { exists } from "../utils/fs.ts";
@@ -135,19 +135,20 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
       run: async () => {
         try {
           const count = Math.min(5, ahead - waiting);
-          if (proposerOf(line) === "questions") {
+          if (proposerOf(line) === "questions" || proposerOf(line) === "facts") {
             const made = await Promise.all(mine.map(async (j) => {
               const f = path.join(jobDir(j.slug), "topic.json");
               return { topic: j.topic, area: (await exists(f)) ? JSON.parse(await fs.readFile(f, "utf8")).area : undefined };
             }));
             const kind = line.kinds?.find(isQA) ?? "qa";
-            for (const q of await proposeQuestions(count, made, (l) => void log(l.trim()), kind)) {
+            const found = isFact(kind) ? await proposeFacts(count, made, (l) => void log(l.trim()), kind as "fact" | "fact-vi") : await proposeQuestions(count, made, (l) => void log(l.trim()), kind as "qa" | "qa-vi");
+            for (const q of found) {
               const job = await newJob(q.question, { kind, summary: q.why });
               await fs.writeFile(path.join(jobDir(job.slug), "topic.json"), JSON.stringify(q, null, 2));
               await log(`+ ${job.slug} [${q.area}]`);
             }
           } else {
-            for (const t of await proposeTopics(count, (l) => void log(l.trim()))) {
+            for (const t of await proposeTopics(count, (l) => void log(l.trim()), { fables: proposerOf(line) === "fables" })) {
               const job = await newJob(t.title, { kind: t.kind, era: t.era, summary: t.summary });
               await fs.writeFile(path.join(jobDir(job.slug), "topic.json"), JSON.stringify(t, null, 2));
               await log(`+ ${job.slug} [${t.era}]`);

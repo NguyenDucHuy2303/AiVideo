@@ -1837,3 +1837,23 @@
 2026-11-11 10:09:49 [vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua] fact check: 0 issue(s)
 2026-11-11 10:09:49 → write vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien- (giờ hành chính)
 2026-11-11 10:10:01 [vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-] research: Phổi, Cá, Fish, Marine mammal
+2026-11-11 10:13:01 [vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-] qa-write: Claude opus, 34.606 tokens
+2026-11-11 10:13:27 [vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-] qa-factcheck: Claude sonnet, 21.813 tokens
+2026-11-11 10:13:27 [vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-] fact check: 3 issue(s)
+2026-11-11 10:13:27 [vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-] fixing scene(s) 14, 18, 13
+2026-11-11 10:13:31 [vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-] qa-fix: Claude sonnet, 4.333 tokens
+2026-11-11 10:13:31 → write vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t (giờ hành chính)
+2026-11-11 10:13:42 [vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t] research: Địa lý Việt Nam, Geography of Vietnam, Vietnam
+2026-11-11 10:17:35 [vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t] qa-write: Claude opus, 42.573 tokens
+2026-11-11 10:18:07 [vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t] qa-factcheck: Claude sonnet, 23.336 tokens
+2026-11-11 10:18:07 [vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t] fact check: 3 issue(s)
+2026-11-11 10:18:07 [vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t] fixing scene(s) 19, 30, 1
+2026-11-11 10:18:14 [vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t] qa-fix: Claude sonnet, 4.104 tokens
+2026-11-11 10:18:14 → write may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro (giờ hành chính)
+2026-11-11 10:18:23 [may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro] research: Máy bay, Aerodynamics, Lift (force)
+2026-11-11 10:20:57 [may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro] qa-write: Claude opus, 31.804 tokens
+2026-11-11 10:21:26 [may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro] qa-factcheck: Claude sonnet, 21.427 tokens
+2026-11-11 10:21:26 [may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro] fact check: 3 issue(s)
+2026-11-11 10:21:26 [may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro] fixing scene(s) 1, 7, 10
+2026-11-11 10:21:32 [may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro] qa-fix: Claude sonnet, 4.043 tokens
+2026-11-11 10:23:07 scheduler started (pid 3011771)

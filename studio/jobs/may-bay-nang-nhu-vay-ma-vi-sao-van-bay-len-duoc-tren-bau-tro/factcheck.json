@@ -1,0 +1,22 @@
+{
+  "issues": [
+    {
+      "scene": 1,
+      "quote": "Một chiếc máy bay chở khách nặng bằng hàng trăm chiếc xe máy cộng lại đấy.",
+      "problem": "The sources give no weights. The figure is stated without \"khoảng\" and is only a rough guess. A big airliner weighs the same as thousands of motorbikes, so \"hàng trăm\" understates it.",
+      "fix": "Một chiếc máy bay chở khách nặng bằng khoảng vài trăm, thậm chí hàng nghìn chiếc xe máy cộng lại đấy."
+    },
+    {
+      "scene": 7,
+      "quote": "Thật ra, không khí luôn ép nhẹ lên mọi thứ, từ mọi phía.",
+      "problem": "Misleading. Air pressure at ground level is actually large, not light. We don't feel it because it pushes on us from all sides and the inside of our bodies pushes back. \"Ép nhẹ\" also clashes with scene 6, where moving air pushes quite hard.",
+      "fix": "Thật ra, không khí luôn ép lên mọi thứ, từ mọi phía. Ta không thấy gì vì mọi phía đều ép như nhau."
+    },
+    {
+      "scene": 10,
+      "quote": "Cánh còn được gắn hơi ngóc lên một chút, chứ không nằm phẳng lì. Góc nghiêng nhỏ này gọi là góc tấn.",
+      "problem": "Misleading definition. The source defines angle of attack (góc tấn) as the angle between the airflow and the wing, which can change in flight. It is not the fixed angle at which the wing is mounted. Scene 11 also credits lift to the \"góc nghiêng\" alone.",
+      "fix": "Cánh còn hơi ngóc lên so với dòng không khí đang chảy tới, chứ không nằm song song với nó. Góc giữa cánh và dòng không khí gọi là góc tấn."
+    }
+  ]
+}

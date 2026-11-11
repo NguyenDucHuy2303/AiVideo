@@ -8,7 +8,7 @@
  * A note on the video ("fix") re-directs the scenes with the note and renders again; only the
  * scenes that changed are drawn again.
  */
-import { isQA, writeQA } from "./qa.ts";
+import { isFact, isQA, writeFact, writeQA } from "./qa.ts";
 import { prepareQA, renderQA } from "./qaproduce.ts";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -54,7 +54,7 @@ export async function writeJob(slug: string, log: (s: string) => void = console.
     const resume = job.status === "writing" && (await exists(path.join(dir, "plan.json")));
     // A question for the English question channel (qa.ts): its own writer, no era or costumes.
     if (isQA(job.kind)) {
-      const problems = resume ? [] : await writeQA(slug, log);
+      const problems = resume ? [] : await (isFact(job.kind) ? writeFact : writeQA)(slug, log);
       return setStatus(await loadJob(slug), "review", problems.length ? `${problems.length} vấn đề còn lại: ${problems.slice(0, 3).join(" ")}` : undefined);
     }
     const problems = resume ? [] : await writeScript(slug, log);
@@ -185,6 +185,7 @@ export async function render(slug: string, log: (s: string) => void = console.lo
     job = await loadJob(slug);
     delete job.stage;
     delete job.shorts; // the film changed: its shorts are cut again
+    if (isFact(job.kind)) job.shorts = []; // a Short itself: nothing to cut from it
     await saveJob(job);
     return setStatus(job, "video");
   } catch (err) {

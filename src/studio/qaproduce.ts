@@ -21,7 +21,7 @@ import { backdropOfPlace } from "../animation/backdrops.ts";
 import { SIZES } from "../imagegen/sd.ts";
 import { styleOf } from "../animation/styles.ts";
 import { jobDir } from "./jobs.ts";
-import { profileOf, type QAPlan, type QAProfile } from "./qa.ts";
+import { isFact, profileOf, type QAPlan, type QAProfile } from "./qa.ts";
 import { loadJob } from "./jobs.ts";
 
 export const qaProject = (slug: string) => path.join(ROOT, "projects", slug);
@@ -181,8 +181,9 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
 /** The film (heavy: nights and weekends), linked into the job folder as video.mp4. */
 export async function renderQA(slug: string, log: (s: string) => void = console.log): Promise<string> {
   // The channel's own intro, outro, corner logo and thumbnail (assets/brand/ask-huy).
-  const P = profileOf((await loadJob(slug)).kind);
-  const out = await renderStory(qaProject(slug), { lang: P.lang === "en" ? "en" : undefined, onLog: log });
+  const job = await loadJob(slug), P = profileOf(job.kind);
+  // A "Did you know?" Short is made tall (9:16) and ends on the channel's short card.
+  const out = await renderStory(qaProject(slug), { lang: P.lang === "en" ? "en" : undefined, onLog: log, ...(isFact(job.kind) ? { vertical: true, short: true } : {}) });
   for (const [from, to] of [[out, "video.mp4"]] as const) {
     const target = path.join(jobDir(slug), to);
     await fs.rm(target, { force: true });

@@ -1,0 +1,22 @@
+{
+  "issues": [
+    {
+      "scene": 14,
+      "quote": "Còn đây là cá mập voi, dài khoảng mười sáu mét, cỡ một chiếc xe buýt rưỡi.",
+      "problem": "Nguồn nói cá nhám voi (cá mập voi) là loài cá lớn nhất, dài tới 16 m. Câu này nói như thể con nào cũng dài đúng 16 m, nên dễ gây hiểu sai.",
+      "fix": "Còn đây là cá mập voi, con lớn nhất có thể dài tới khoảng mười sáu mét, cỡ một chiếc xe buýt rưỡi."
+    },
+    {
+      "scene": 18,
+      "quote": "Chỉ cần nhô lưng lên một chút là thở được.",
+      "problem": "Mâu thuẫn với câu trước. Lỗ thở nằm trên đỉnh đầu, không nằm trên lưng. Nhô lưng thì chưa chắc đã chạm tới lỗ thở.",
+      "fix": "Chỉ cần nhô đỉnh đầu lên khỏi mặt nước một chút là thở được."
+    },
+    {
+      "scene": 13,
+      "quote": "Đuôi cá dựng đứng và quẫy sang hai bên.",
+      "problem": "Nói quá chắc cho mọi loài cá. Nguồn nói mỗi đặc điểm của cá đều có ngoại lệ. Ví dụ cá đuối và cá bơn bơi khác, dáng đuôi cũng khác.",
+      "fix": "Đa số cá có đuôi dựng đứng và quẫy sang hai bên. Đuôi cá heo nằm ngang và quẫy lên xuống."
+    }
+  ]
+}

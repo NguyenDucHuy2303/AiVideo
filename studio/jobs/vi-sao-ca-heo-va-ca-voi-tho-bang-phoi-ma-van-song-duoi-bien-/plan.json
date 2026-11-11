@@ -1,0 +1,700 @@
+{
+  "title": "Vì sao cá heo thở bằng phổi mà vẫn sống dưới biển? | Hỏi Huy",
+  "question": "Vì sao cá heo và cá voi thở bằng phổi mà vẫn sống dưới biển, trong khi cá thì không?",
+  "answer": "Cá thở bằng mang, lấy khí oxy tan sẵn trong nước. Cá heo và cá voi không phải cá mà là thú, thở bằng phổi giống chúng ta. Vì thế chúng nín thở khi lặn và phải trồi lên mặt nước để hít không khí qua lỗ thở trên đỉnh đầu. Các nhà khoa học cho rằng tổ tiên của chúng là thú sống trên cạn, sau đó quay về biển nhưng vẫn giữ lại lá phổi.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Một chiếc thuyền trên biển xanh Nha Trang, Mai nhoài người bên lan can chỉ tay vào ba con cá heo đang nhảy lên khỏi mặt nước; Huy đứng cạnh mỉm cười."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Anh Huy ơi, cá heo kìa! Chúng nhảy lên khỏi nước rồi lại lặn xuống."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Mà khoan, cô giáo bảo cá heo thở bằng phổi giống người. Vậy sao chúng sống dưới biển được, còn cá thì lại thở kiểu khác?"
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy nói với máy quay, bên cạnh hiện hình con cá heo với một dấu hỏi to và chữ cá bị gạch chéo."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Câu hỏi hay quá! Anh tiết lộ một bí mật nhé. Cá heo và cá voi thật ra không phải là cá!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hôm nay, các bạn cùng anh và Mai tìm hiểu xem cá thở thế nào, cá heo là con gì, và làm sao một con vật thở bằng phổi lại sống cả đời dưới biển."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai chống cằm suy nghĩ, bong bóng ý nghĩ hiện con cá heo vừa có mang ở cổ vừa có phổi trong ngực."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "quyết tâm",
+          "text": "Con đoán nhé. Cá heo có cả mang lẫn phổi. Ở dưới nước thì dùng mang, lên trên thì dùng phổi."
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Đoán giỏi đấy! Có vài loài cá làm được gần như vậy thật. Nhưng cá heo thì không có mang đâu."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Bong bóng ý nghĩ của Mai hiện con cá heo nằm phơi nắng trên bãi đá cạnh một con hải cẩu; Huy giơ ngón tay lắc nhẹ, mặt vui vẻ."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "",
+          "text": "Thế chắc cá heo thỉnh thoảng bò lên bờ để thở, giống con hải cẩu?"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Hải cẩu đúng là hay lên bờ thật. Nhưng cá heo và cá voi sống hoàn toàn dưới nước. Cả hai cách đoán đều có lý, các nhà khoa học cũng bắt đầu bằng đoán như thế. Giờ mình đi từng bước nhé."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "diagram",
+        "what": "Hình một con cá nhìn ngang; mũi tên xanh cho thấy nước đi vào miệng, chảy qua mang màu đỏ ở hai bên đầu, rồi ra qua khe mang."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bước một, cá thở thế nào? Cá không hít không khí như mình. Cá thở bằng mang, nằm ở hai bên đầu."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Cá há miệng cho nước chảy vào, nước chảy qua mang, rồi đi ra ở hai bên đầu."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "zoom",
+        "what": "Phóng to vào mang cá: những hàng sợi mỏng màu hồng như răng lược, trong mỗi sợi có mạch máu đỏ li ti; các chấm xanh nhỏ là oxy đi từ nước vào mạch máu."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Nhìn gần, mang trông như những chiếc lược nhỏ xíu, có rất nhiều sợi mỏng. Trong mỗi sợi là những mạch máu li ti."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Nhưng trong nước làm gì có không khí hả anh?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Trong nước có một ít khí oxy tan vào. Oxy là thứ khí mà cơ thể cần để sống. Nó tan trong nước giống đường tan trong cốc nước chanh, mắt mình không thấy. Mang lấy oxy đó đưa vào máu."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai ngồi trước bể cá vàng ở nhà, nhìn con cá vàng bơi, mặt hơi lo lắng; Huy ngồi bên cạnh."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "lo lắng",
+          "text": "Thế nếu cá ra khỏi nước thì sao ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Mang được làm ra để làm việc trong nước. Ở ngoài không khí, mang không làm việc tốt được. Vì thế phần lớn cá phải ở trong nước mới thở được."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "compare",
+        "what": "Ba ô cạnh nhau: một con cá thường dưới nước có chữ mang; một con cá có phổi; một con cá thòi lòi đang bò trên bãi bùn cạnh cái hang."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Cũng có vài ngoại lệ thú vị. Một số loài cá có cả phổi. Còn cá thòi lòi hay kiếm ăn trên bãi bùn, rồi chui xuống nước trốn trong hang."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "host",
+        "what": "Huy giơ một tấm bảng nhỏ vẽ con cá với mang được tô đỏ và các chấm oxy xanh."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Vậy nhớ nhé, cá thở bằng mang, lấy oxy có sẵn trong nước."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "scene",
+        "what": "Huy đứng cạnh một tấm bảng vẽ con mực, con cá sấu, con cá voi và con cá heo, mỗi con có một dấu hỏi; Mai tròn mắt nhìn."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Nhưng tên nó có chữ cá mà anh!"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Bước hai đây. Trong tiếng Việt, mình gọi nhiều con vật dưới nước là cá, như cá mực, cá sấu, cá voi, cá heo. Nhưng chúng đều không phải cá thật. Cá sấu là bò sát, còn cá voi và cá heo là thú."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "labels",
+        "what": "Một con cá heo mẹ đang cho cá heo con bú ở giữa, xung quanh có bốn nhãn: thở bằng phổi, thân ấm, đẻ con, bú sữa mẹ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Thú, hay động vật có vú, là nhóm có con trâu, con mèo, và cả chúng ta. Thú thở bằng phổi, thân mình luôn ấm, hầu hết đẻ ra con, và mẹ cho con bú sữa."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Cá heo có đủ những điều đó. Cá heo mẹ cũng cho con bú sữa đấy."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai ôm con mèo nhà mình, bên cạnh là hình tưởng tượng một con cá heo đang cười, phía xa có con trâu ngoài ruộng lúa."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "cười",
+          "text": "Vậy con mèo nhà con với cá heo là cùng một nhóm ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Đúng rồi! Mèo, trâu, cá heo và các bạn đều là thú. Còn con cá vàng trong bể mới là cá thật."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "compare",
+        "what": "Bên trái đuôi cá dựng đứng với mũi tên trái phải; bên phải đuôi cá heo nằm ngang với mũi tên lên xuống."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Có một cách nhận ra rất dễ. Đa số cá có đuôi dựng đứng và quẫy sang hai bên. Đuôi cá heo nằm ngang và quẫy lên xuống."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "compare",
+        "what": "Con cá mập voi có khe mang, ghi chữ cá thật thở bằng mang, nằm cạnh hình một chiếc xe buýt rưỡi cho thấy độ dài; bên dưới là con cá voi ghi chữ thú thở bằng phổi."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Còn đây là cá mập voi, con lớn nhất có thể dài tới khoảng mười sáu mét, cỡ một chiếc xe buýt rưỡi. To như vậy nhưng nó là cá thật, thở bằng mang. To hay nhỏ không quan trọng, cách thở mới quan trọng."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "host",
+        "what": "Huy đứng cạnh hình con cá heo đội nón lá nhỏ, có nhãn thú."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Vậy nhớ nhé, cá heo và cá voi không phải cá, mà là thú, thở bằng phổi giống chúng ta."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "diagram",
+        "what": "Hình một bạn nhỏ với hai lá phổi hồng như hai quả bóng trong ngực, mũi tên không khí đi vào qua mũi; bên cạnh là ba chai nước to."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bước ba. Phổi là hai cái túi hơi nằm trong ngực. Hít vào, phổi phồng lên và đưa oxy từ không khí vào máu. Thở ra, phổi đẩy khí thải ra ngoài."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Phổi người lớn chứa được khoảng sáu lít không khí, cỡ ba chai nước to."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai trên thuyền nhìn xuống biển, bong bóng ý nghĩ hiện con cá heo dưới nước sâu xung quanh toàn nước, không có không khí."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "lo lắng",
+          "text": "Nhưng dưới biển toàn nước, cá heo lấy không khí ở đâu?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hỏi đúng chỗ rồi! Phổi không lấy được oxy từ nước. Nên cá heo và cá voi phải bơi lên mặt nước để hít không khí, rồi mới lặn xuống."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "labels",
+        "what": "Đầu cá heo nhìn từ trên xuống, có một lỗ nhỏ trên đỉnh đầu ghi nhãn lỗ thở, bên cạnh vẽ cái mũi nhỏ với mũi tên chỉ lên đỉnh đầu."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Chúng có một lỗ thở nằm trên đỉnh đầu, giống như cái mũi được dời lên trên đỉnh đầu vậy. Chỉ cần nhô đỉnh đầu lên khỏi mặt nước một chút là thở được."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "arrows",
+        "what": "Đường mũi tên cong cho thấy cá heo trồi lên mặt nước, phả hơi ra từ lỗ thở, hít vào, đóng lỗ thở, rồi lặn xuống."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Cá heo trồi lên, thở ra phù một cái, hít vào thật nhanh, đóng lỗ thở lại, rồi lặn xuống. Lỗ thở đóng kín nên nước không chui vào phổi."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "compare",
+        "what": "Bên trái con cá voi trên mặt biển phun cột hơi trắng; bên phải Mai mặc áo ấm trong buổi sáng mùa đông Hà Nội, thở ra làn khói trắng."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "A, vậy cái cột nước trắng cá voi phun lên là gì ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Đó chủ yếu là hơi thở ấm của cá voi, lẫn ít nước biển. Giống sáng mùa đông ở Hà Nội, các bạn thở ra thấy khói trắng ấy."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Dưới biển, cá heo đang đuổi theo đàn cá nhỏ; phía trên có hình chiếc đồng hồ nhỏ và mặt nước sáng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Mỗi lần hít một hơi, cá heo và cá voi có thể ở dưới nước lâu hơn chúng ta rất nhiều, để bơi và bắt cá. Hết hơi thì chúng lại trồi lên."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "host",
+        "what": "Huy làm động tác hít một hơi rồi chỉ tay lên, bên cạnh hình cá heo nhô lỗ thở lên mặt nước."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Vậy nhớ nhé, cá heo không thở dưới nước. Chúng nín thở khi lặn, và trồi lên mặt nước để thở."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "count",
+        "what": "Dòng thời gian từ trái sang phải: một con cá cổ có vây giống chân bò lên bờ; những con vật bốn chân trên cạn; một con thú bơi trở lại biển; con cá voi ngày nay."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "",
+          "text": "Nhưng thú thở bằng phổi thì sao lại ra biển sống ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bước bốn là một câu chuyện rất xa xưa. Rất lâu trước khi có người, có những loài cá đã có phổi. Dần dần, con cháu của chúng lên cạn, thành những con vật bốn chân."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai tròn mắt ngạc nhiên, Huy chỉ vào cuối dòng thời gian nơi con thú bước xuống biển và biến dần thành cá voi."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Vậy cá voi là con cháu của thú trên cạn ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các nhà khoa học nghĩ là vậy. Sau rất nhiều năm, một nhóm thú quay lại biển, và dần dần trở thành cá voi, cá heo ngày nay."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "compare",
+        "what": "Ba hình thon dài xếp cạnh nhau: con cá mập, con cá heo và chiếc thuyền máy, cùng một dáng mũi nhọn."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Sống lâu đời dưới nước, thân chúng dần thon dài, có vây, trông giống cá. Bơi trong nước thì dáng thon là tiện nhất, giống chiếc thuyền máy cũng thon như con cá vậy."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai giơ tay reo lên, phía trên đầu hiện hình cá heo với lá phổi được tô sáng; Huy vỗ tay."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "Con hiểu rồi! Chúng có dáng của cá, nhưng vẫn giữ lại lá phổi từ thời trên cạn."
+        },
+        {
+          "who": "Huy",
+          "how": "mừng rỡ",
+          "text": "Giỏi lắm Mai! Giờ chúng sống hoàn toàn dưới nước, nhưng vẫn thở bằng phổi như tổ tiên."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "host",
+        "what": "Huy đứng cạnh hai mũi tên, một mũi tên từ biển lên cạn và một mũi tên từ cạn quay về biển."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Vậy nhớ nhé, cá voi và cá heo là thú quay về biển nên giữ lại phổi, còn phần lớn cá vẫn thở bằng mang."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Mai ngồi ngay ngắn trên ghế, một tay đặt lên ngực; mẹ Mai cầm đồng hồ bấm giờ; trên tường có đồng hồ treo."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Giờ thử một việc thật an toàn nhé. Các bạn ngồi yên, đặt tay lên ngực, nhờ bố mẹ bấm đồng hồ một phút, rồi đếm xem mình thở mấy lần."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Một, hai, ba. Ngực con phồng lên xẹp xuống này!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Người lớn ngồi nghỉ thở khoảng mười hai đến mười lăm lần mỗi phút. Mỗi lần ngực phồng lên là phổi đang hít không khí vào đấy."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "scene",
+        "what": "Tranh vui tưởng tượng: Mai bơi ở bãi biển Đồ Sơn có cái lỗ thở nhỏ trên đỉnh đầu đang phả ra một làn hơi; Huy đứng trên bờ cười."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "cười",
+          "text": "Anh Huy ơi, nếu con có lỗ thở trên đầu như cá heo thì đi bơi chẳng cần ngóc đầu lên nữa!"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Nhưng lúc gội đầu thì phải cẩn thận lắm đấy!"
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "scene",
+        "what": "Tranh vui tưởng tượng: trong bể cá, cả đàn cá vàng xếp hàng thay nhau ngoi đầu lên mặt nước để hít không khí, Mai đứng ngoài bật cười."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Còn nếu cá vàng thở bằng phổi như cá heo, cả bể cá sẽ phải thay nhau ngoi lên mặt nước để hít không khí. Nhộn nhịp lắm nhỉ!"
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "diagram",
+        "what": "Hình chia đôi: bên trái con cá dưới nước với mang ghi chữ mang; bên phải con cá heo nhô lên mặt nước với lỗ thở ghi chữ phổi."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Tóm lại, cá thở bằng mang, lấy oxy tan trong nước. Cá heo và cá voi là thú, thở bằng phổi, nên chúng nín thở khi lặn và trồi lên mặt nước để hít không khí qua lỗ thở trên đầu."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "compare",
+        "what": "Bên trái con cá với cái bong bóng trong bụng được tô sáng; bên phải hai lá phổi người; một đường chấm nối hai bên với hình cây gia đình nhỏ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Thêm một điều thú vị nhé. Nhiều loài cá có cái bong bóng trong bụng giúp cá nổi lên chìm xuống. Các nhà khoa học cho rằng phổi của chúng ta và bong bóng cá là họ hàng xa, cùng có từ tổ tiên cá ngày xưa."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Vậy trong ngực con có họ hàng của bong bóng cá á!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "host",
+        "what": "Huy và Mai vẫy tay chào, phía sau là bể cá với một con cá đang lơ lửng mắt mở to và dấu hỏi nhỏ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Lần sau mình sẽ hỏi tiếp, cá có ngủ không, mà sao chẳng bao giờ thấy cá nhắm mắt? Nhớ bấm đăng ký kênh Hỏi Huy để cùng tìm câu trả lời nhé!"
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Tạm biệt các bạn!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Cá thở bằng mang ở hai bên đầu; nước vào miệng, chảy qua mang rồi ra ở hai bên.",
+      "source": "Fish"
+    },
+    {
+      "claim": "Mang gồm những sợi như răng lược, mỗi sợi có mạng mạch máu li ti để trao đổi oxy.",
+      "source": "Fish"
+    },
+    {
+      "claim": "Cá lấy oxy từ nước bằng mang.",
+      "source": "Fish"
+    },
+    {
+      "claim": "Trong nước có oxy hòa tan; mang chỉ làm việc tốt trong nước nên phần lớn cá phải ở trong nước để thở.",
+      "source": "Kiến thức phổ thông (Sinh học)"
+    },
+    {
+      "claim": "Một số loài cá có phổi.",
+      "source": "Cá"
+    },
+    {
+      "claim": "Cá thòi lòi kiếm ăn trên bãi bùn và xuống nước trốn trong hang.",
+      "source": "Fish"
+    },
+    {
+      "claim": "Trong tiếng Việt, cá mực, cá sấu, cá voi, cá heo được gọi là cá nhưng không phải cá thật; cá sấu là bò sát, cá voi và cá heo là động vật có vú.",
+      "source": "Cá"
+    },
+    {
+      "claim": "Thú thở bằng phổi, máu nóng, hầu hết đẻ con, mẹ cho con bú sữa; cá heo cũng vậy.",
+      "source": "Kiến thức phổ thông (Sinh học)"
+    },
+    {
+      "claim": "Đuôi cá quẫy sang hai bên, đuôi cá heo nằm ngang và quẫy lên xuống.",
+      "source": "Fish (cá bơi bằng cách co cơ hai bên xương sống); kiến thức phổ thông về cá heo"
+    },
+    {
+      "claim": "Cá mập voi là cá, dài tới khoảng 16 mét.",
+      "source": "Fish; Cá"
+    },
+    {
+      "claim": "Phổi trao đổi khí, đưa oxy từ không khí vào máu và thải khí carbon dioxide ra ngoài; phổi như hai túi hơi.",
+      "source": "Phổi"
+    },
+    {
+      "claim": "Phổi người lớn chứa khoảng 6 lít không khí.",
+      "source": "Phổi"
+    },
+    {
+      "claim": "Người lớn khi nghỉ thở khoảng 12 đến 15 lần mỗi phút.",
+      "source": "Phổi"
+    },
+    {
+      "claim": "Cá voi và cá heo sống hoàn toàn dưới nước, còn hải cẩu phải lên bờ cho một số việc quan trọng.",
+      "source": "Marine mammal"
+    },
+    {
+      "claim": "Cá voi, cá heo phải trồi lên mặt nước để thở qua lỗ thở trên đỉnh đầu; lỗ thở đóng lại khi lặn; cột hơi phun lên chủ yếu là hơi thở; chúng nín thở lâu hơn người.",
+      "source": "Kiến thức phổ thông (Sinh học)"
+    },
+    {
+      "claim": "Động vật bốn chân sống trên cạn có nguồn gốc từ cá vây thùy có phổi.",
+      "source": "Fish"
+    },
+    {
+      "claim": "Cá voi, cá heo về sau mới có dáng giống cá do sống dưới nước (tiến hóa hội tụ), tức tổ tiên chúng là động vật bốn chân.",
+      "source": "Fish"
+    },
+    {
+      "claim": "Nhiều loài cá xương có bong bóng giúp nổi chìm; phổi có cùng nguồn gốc với bong bóng cá.",
+      "source": "Fish"
+    }
+  ],
+  "shorts": [
+    1,
+    31,
+    32
+  ],
+  "thumbnail": "Cá heo không phải cá?",
+  "description": "Cá heo và cá voi thở bằng phổi giống chúng ta, vậy sao chúng sống cả đời dưới biển được? Cùng anh Huy và bé Mai tìm hiểu cá thở bằng mang thế nào, vì sao cá heo là thú chứ không phải cá, và chiếc lỗ thở trên đỉnh đầu giúp chúng lấy không khí ra sao. Video dành cho các bạn nhỏ 6 đến 12 tuổi, có một thí nghiệm đếm nhịp thở thật an toàn mà cả nhà có thể làm cùng nhau.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": ""
+}

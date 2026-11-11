@@ -31,3 +31,9 @@ test("only approved films are published: the film first, its Shorts after it, no
   assert.deepEqual(toPublish(job({ shorts: ["shorts/1.mp4"], published: { long } }), ["video.mp4", "video.en.mp4"]).map((x) => x.what), ["en", "short"]);
   assert.deepEqual(toPublish(job({ publishHold: true }), ["video.mp4"]), []);
 });
+
+test("a Did-you-know Short is published as a Short, once", () => {
+  assert.deepEqual(toPublish(job({ kind: "fact" }), ["video.mp4"]).map((x) => x.what), ["short"]);
+  const s = { videoId: "a", url: "u", publishAt: "t", channel: "c", at: "t" };
+  assert.deepEqual(toPublish(job({ kind: "fact", published: { shorts: [s] } }), ["video.mp4"]), []);
+});

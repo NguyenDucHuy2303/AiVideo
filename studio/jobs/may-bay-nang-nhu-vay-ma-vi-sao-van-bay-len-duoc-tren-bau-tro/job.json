@@ -1,14 +1,19 @@
 {
   "slug": "may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro",
   "topic": "Máy bay nặng như vậy mà vì sao vẫn bay lên được trên bầu trời?",
-  "status": "writing",
+  "status": "review",
   "notes": [],
   "history": [
     {
       "at": "2026-11-11T03:04:37.910Z",
       "status": "writing"
+    },
+    {
+      "at": "2026-11-11T03:21:32.315Z",
+      "status": "review"
     }
   ],
   "kind": "qa-vi",
-  "summary": "Câu hỏi kinh điển của trẻ em, có thể giải thích bằng hình vẽ cánh máy bay và luồng gió, cuối video có thể thử làm máy bay giấy."
+  "summary": "Câu hỏi kinh điển của trẻ em, có thể giải thích bằng hình vẽ cánh máy bay và luồng gió, cuối video có thể thử làm máy bay giấy.",
+  "by": "claude-opus"
 }

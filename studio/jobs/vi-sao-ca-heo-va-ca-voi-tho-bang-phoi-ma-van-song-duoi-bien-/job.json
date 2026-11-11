@@ -1,14 +1,19 @@
 {
   "slug": "vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-",
   "topic": "Vì sao cá heo và cá voi thở bằng phổi mà vẫn sống dưới biển, trong khi cá thì không?",
-  "status": "writing",
+  "status": "review",
   "notes": [],
   "history": [
     {
       "at": "2026-11-11T03:04:37.908Z",
       "status": "writing"
+    },
+    {
+      "at": "2026-11-11T03:13:31.607Z",
+      "status": "review"
     }
   ],
   "kind": "qa-vi",
-  "summary": "Bất ngờ khi biết cá heo không phải là cá; có sơ đồ so sánh phổi và mang, cùng cá heo trắng ở vùng biển Việt Nam để gần gũi."
+  "summary": "Bất ngờ khi biết cá heo không phải là cá; có sơ đồ so sánh phổi và mang, cùng cá heo trắng ở vùng biển Việt Nam để gần gũi.",
+  "by": "claude-opus"
 }

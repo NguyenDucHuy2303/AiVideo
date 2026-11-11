@@ -1,0 +1,693 @@
+{
+  "title": "Máy bay nặng như vậy mà vì sao vẫn bay được? | Hỏi Huy",
+  "question": "Máy bay nặng như vậy mà vì sao vẫn bay lên được trên bầu trời?",
+  "answer": "Động cơ đẩy máy bay lao thật nhanh về phía trước. Không khí chảy qua đôi cánh có hình dáng đặc biệt và hơi ngóc lên, nên mặt dưới cánh bị ép mạnh hơn mặt trên. Sự chênh lệch đó tạo ra lực nâng. Khi lực nâng lớn hơn sức nặng, máy bay bay lên.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Huy và Mai đứng trên bờ ruộng lúa xanh, ngước nhìn một chiếc máy bay chở khách to đang bay qua bầu trời. Mai chỉ tay lên, mắt tròn xoe."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Anh Huy ơi, nhìn kìa! Máy bay to thế, nặng thế, sao nó không rơi xuống ruộng nhỉ?"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Câu hỏi hay lắm Mai. Một chiếc máy bay chở khách nặng bằng khoảng vài trăm, thậm chí hàng nghìn chiếc xe máy cộng lại đấy."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Hàng trăm chiếc xe máy mà vẫn bay vù vù trên trời ạ?"
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy đứng trước nền trời xanh có mây trắng, cầm một chiếc máy bay đồ chơi, nháy mắt với người xem."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bí mật nằm ở một thứ các bạn không nhìn thấy, nhưng lúc nào cũng ở ngay quanh mình. Hôm nay, Hỏi Huy sẽ cùng các bạn tìm hiểu vì sao máy bay nặng như vậy mà vẫn bay được trên bầu trời nhé."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai cầm một quả bóng bay bơm khí đang bay lơ lửng ở hội chợ, bên cạnh là hình vẽ nhỏ một khinh khí cầu."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Em biết rồi! Máy bay giống quả bóng bay, bên trong chứa khí nhẹ nên nó tự bay lên."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Đoán giỏi đấy! Bóng bay và khinh khí cầu đúng là bay nhờ bên trong nhẹ hơn không khí xung quanh. Chúng lơ lửng được mà không cần chạy."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Nhưng máy bay thì đầy người, đầy hành lý, nặng hơn không khí rất nhiều. Nên nó không bay theo kiểu quả bóng đâu."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "compare",
+        "what": "Bên trái là tên lửa dựng đứng, lửa phụt xuống đất. Bên phải là máy bay nằm ngang trên đường băng, động cơ chĩa về phía sau."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "quyết tâm",
+          "text": "Vậy thì động cơ thổi thật mạnh xuống đất để đẩy máy bay lên, giống tên lửa!"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Ý này đúng được một nửa. Động cơ rất quan trọng. Nhưng các bạn để ý nhé, động cơ máy bay chĩa về phía sau. Nó đẩy máy bay đi tới trước, chứ không đẩy thẳng lên trời."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Ơ, thế thì cái gì nâng máy bay lên ạ?"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai thả diều trên cánh đồng lúa, những đường gió cong màu xanh nhạt thổi vào mặt diều làm diều bay cao."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Để trả lời, mình bắt đầu từ không khí. Không khí ở khắp quanh ta, dù mắt ta không nhìn thấy nó."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Nhưng em thấy diều bay nè anh Huy!"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Đúng rồi. Diều bay được là vì gió, tức là không khí đang chuyển động, đẩy vào mặt diều."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai ngồi trên chõng tre, cầm quạt nan quạt vào mặt, tóc bay phấp phới, có những đường gió nhỏ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Khi Mai quạt, Mai thấy mát và tóc bay phấp phới. Đó là không khí đang chạm vào mặt Mai đấy."
+        },
+        {
+          "who": "Mai",
+          "how": "cười",
+          "text": "Vậy không khí cũng biết đẩy người ta ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Biết chứ. Không khí rất nhẹ, nhưng khi nó chạy nhanh thì nó đẩy khá mạnh."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "zoom",
+        "what": "Phóng to quanh một quả bóng, thấy vô số chấm tròn tí hon là không khí, có mũi tên nhỏ ép vào bóng từ mọi phía."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Thật ra, không khí luôn ép lên mọi thứ, từ mọi phía. Ta không thấy gì vì mọi phía đều ép như nhau. Sức ép đó gọi là áp suất không khí. Các bạn cứ hiểu áp suất là không khí đè vào một vật mạnh hay yếu."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "host",
+        "what": "Huy giơ một ngón tay, bên cạnh hiện dòng chữ Bước 1 và hình chiếc diều đang bay."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ghi nhớ bước một nhé. Không khí tuy vô hình, nhưng nó có thật và có thể đẩy mọi vật."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "labels",
+        "what": "Mặt cắt ngang của cánh máy bay, có chú thích mặt trên cong vồng, mặt dưới phẳng hơn, mép trước tròn, mép sau nhọn."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bây giờ mình cắt ngang một cánh máy bay để xem nhé. Các bạn thấy không, mặt trên cong vồng lên, mặt dưới phẳng hơn. Hai mặt không giống nhau."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Trông giống ổ bánh mì nằm nghiêng ạ!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "Cánh máy bay hơi ngóc mép trước lên, có một góc nhỏ được tô màu và ghi chữ góc tấn."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Cánh còn hơi ngóc lên so với dòng không khí đang chảy tới, chứ không nằm song song với nó. Góc giữa cánh và dòng không khí gọi là góc tấn."
+        },
+        {
+          "who": "Mai",
+          "how": "cười",
+          "text": "Góc tấn. Nghe như tên một võ sĩ vậy!"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Haha, nghe oai thật đấy."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "arrows",
+        "what": "Những dòng không khí màu xanh chảy từ trái sang phải, uốn quanh mặt trên và mặt dưới của cánh máy bay."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Khi máy bay lao tới, không khí chảy ào qua cả mặt trên lẫn mặt dưới cánh. Nhờ hình dáng và góc nghiêng đặc biệt, không khí ở mặt dưới ép mạnh hơn, còn ở mặt trên thì ép yếu hơn."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "Dưới cánh có mũi tên to ghi ép mạnh, trên cánh có mũi tên nhỏ ghi ép yếu, giữa cánh hiện một mũi tên lớn hướng lên ghi lực nâng."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Dưới đẩy mạnh, trên đè nhẹ... thế thì cánh bị đẩy lên!"
+        },
+        {
+          "who": "Huy",
+          "how": "tự hào",
+          "text": "Chính xác! Sự chênh lệch đó tạo ra một lực đẩy cánh lên trên, gọi là lực nâng."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "arrows",
+        "what": "Cánh nghiêng hất các dòng không khí chúc xuống phía sau, mũi tên đỏ chỉ không khí đi xuống, mũi tên xanh chỉ cánh được đẩy lên. Góc nhỏ có hình Mai bơi, tay đẩy nước về sau."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Còn một cách nhìn nữa. Cánh nghiêng hất không khí xuống phía dưới. Mình đẩy không khí xuống, thì không khí đẩy ngược mình lên. Giống như khi bơi, tay đẩy nước về sau thì người lại tiến lên trước."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các nhà khoa học nói rằng giải thích thật đầy đủ về lực nâng khá phức tạp, nhưng hai cách nhìn này giúp mình hiểu ý chính."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "host",
+        "what": "Huy giơ hai ngón tay, bên cạnh hiện dòng chữ Bước 2 và hình mặt cắt cánh có mũi tên lực nâng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ghi nhớ bước hai. Cánh máy bay có hình dáng đặc biệt, biến dòng không khí chảy qua thành lực nâng."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai đứng im trong sân, giơ cao một chiếc cánh máy bay đồ chơi, chiếc cánh không nhúc nhích, Mai bĩu môi."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "buồn rầu",
+          "text": "Nhưng anh Huy ơi, em cầm cánh máy bay đồ chơi đứng im, nó đâu có bay."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Vì không khí chưa chảy qua cánh! Muốn có lực nâng, cánh phải lướt thật nhanh qua không khí. Và đây là lúc động cơ ra tay."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "labels",
+        "what": "Máy bay nhìn ngang, có chú thích động cơ, cánh, thân, đuôi. Luồng khí phụt ra phía sau, mũi tên lớn hướng về trước ghi lực đẩy."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Động cơ phụt khí rất mạnh ra phía sau, hoặc làm quay cánh quạt. Nhờ vậy, máy bay được đẩy về phía trước. Lực này gọi là lực đẩy."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "arrows",
+        "what": "Máy bay chạy trên đường băng dài, đồng hồ tốc độ kim tăng dần, mũi tên lực nâng trên cánh lớn dần, cuối cùng bánh xe nhấc khỏi mặt đất."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Trên đường băng, tức là con đường dài và phẳng để máy bay chạy lấy đà, máy bay chạy mỗi lúc một nhanh. Càng nhanh, không khí lùa qua cánh càng mạnh, lực nâng càng lớn."
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Rồi lực nâng lớn hơn sức nặng là máy bay nhấc bánh lên!"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Đúng vậy, đó chính là lúc cất cánh."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "compare",
+        "what": "Hai máy bay cạnh nhau, một chiếc cánh rộng dài có đồng hồ tốc độ chỉ thấp hơn, một chiếc cánh nhỏ có đồng hồ tốc độ chỉ cao hơn."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Cánh còn phải đủ rộng. Cánh càng rộng thì máy bay cất cánh được dù chạy chậm hơn. Cánh càng nhỏ thì phải chạy càng nhanh."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Thảo nào cánh máy bay chở khách dài ơi là dài!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "host",
+        "what": "Huy giơ ba ngón tay, bên cạnh hiện dòng chữ Bước 3 và hình máy bay đang chạy đà trên đường băng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ghi nhớ bước ba. Động cơ đẩy máy bay chạy thật nhanh, có đủ tốc độ thì cánh mới có đủ lực nâng."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "diagram",
+        "what": "Máy bay giữa trời với bốn mũi tên màu khác nhau, xuống là trọng lực, lên là lực nâng, tới trước là lực đẩy, về sau là lực cản."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Khi máy bay đang bay, có bốn lực cùng tác động lên nó. Trọng lực, tức là sức nặng, kéo xuống. Lực nâng đẩy lên. Lực đẩy kéo tới trước. Còn lực cản, tức là không khí cản lại, kéo về sau."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Sân trường, hai đội học sinh kéo co, sợi dây đứng yên ở giữa vạch, Mai đứng cổ vũ."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Giống trò kéo co ở trường em! Hai đội bằng sức thì sợi dây đứng yên."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Đúng rồi. Khi lực nâng cân bằng với sức nặng, và lực đẩy cân bằng với lực cản, máy bay bay đều đều ở một độ cao, không lên cũng không xuống."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "count",
+        "what": "Dòng thời gian có mốc năm 1799 với hình ông George Cayley vẽ bốn mũi tên, và mốc năm 1903 với chiếc máy bay đầu tiên có động cơ của anh em nhà Wright."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Người đầu tiên chỉ ra bốn lực này là nhà khoa học người Anh George Cayley, vào năm 1799, hơn hai trăm năm trước. Khoảng một trăm năm sau, năm 1903, anh em nhà Wright bay chiếc máy bay có động cơ đầu tiên."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "labels",
+        "what": "Máy bay nhìn chéo, có chú thích đuôi ngang, đuôi đứng, và cánh tà đang duỗi ra chúc xuống ở mép sau cánh."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Máy bay còn có cái đuôi phía sau. Đuôi ngang giúp máy bay không bị lộn nhào, đuôi đứng giúp nó giữ hướng bay thẳng. Khi cất cánh và hạ cánh, cánh tà ở mép sau cánh được duỗi ra để có thêm lực nâng lúc bay chậm."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Cánh máy bay còn biết duỗi ra nữa ạ? Hay quá!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "host",
+        "what": "Huy giơ bốn ngón tay, bên cạnh hiện dòng chữ Bước 4 và hình máy bay với bốn mũi tên cân bằng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ghi nhớ bước bốn. Máy bay bay được khi các lực cân bằng, và lực nâng thắng được sức nặng."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "scene",
+        "what": "Bong bóng suy nghĩ của Mai, trong đó một chiếc máy bay đứng giữa trời cạnh cột đèn giao thông màu đỏ, kèm dấu chấm hỏi to."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Anh Huy ơi, thử tưởng tượng máy bay dừng lại giữa trời như xe máy dừng đèn đỏ thì sao?"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Tưởng tượng vui đấy! Nhưng nếu cánh không lướt qua không khí nữa thì không còn lực nâng. Vì vậy máy bay không thể đứng yên một chỗ trên trời. Phi công luôn giữ cho máy bay bay đủ nhanh."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "compare",
+        "what": "Bên trái máy bay đang lướt nhanh có vệt gió. Bên phải trực thăng đứng yên giữa trời, cánh quạt trên đầu quay tít có vòng tròn mờ."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Nhưng trực thăng thì đứng yên trên trời được mà?"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Tinh mắt lắm! Trực thăng có cánh quạt lớn quay tít trên đầu. Thân nó đứng yên, nhưng cánh quạt vẫn quay vù vù qua không khí, nên vẫn có lực nâng."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Trong phòng khách rộng, Mai cầm hai tờ giấy, một tờ để phẳng đang chao qua chao lại rơi xuống, một tờ gấp thành máy bay giấy đang lượn xa."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Giờ các bạn thử ở nhà nhé. Lấy hai tờ giấy. Một tờ để nguyên rồi thả rơi. Tờ kia gấp thành máy bay giấy rồi phóng nhẹ về phía trước, trong phòng rộng, và đừng phóng vào mặt ai nha."
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Máy bay giấy lượn xa ơi là xa, còn tờ giấy kia chỉ chao qua chao lại rồi rơi xuống!"
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Mai phóng máy bay giấy, những đường không khí nhỏ chảy qua cánh giấy và một mũi tên lực nâng nhỏ xíu hướng lên."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Máy bay giấy có cánh và có tốc độ khi bay tới, nên không khí chảy qua cánh tạo ra một chút lực nâng. Các bạn thử phóng thật nhẹ, rồi mạnh hơn một chút, xem nó bay khác nhau thế nào nhé."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "diagram",
+        "what": "Máy bay bay trên cánh đồng lúa, động cơ có mũi tên lực đẩy, không khí chảy qua cánh, mũi tên lực nâng lớn hơn mũi tên trọng lực."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Tóm lại, động cơ đẩy máy bay lao thật nhanh. Không khí chảy qua đôi cánh có hình dáng đặc biệt, tạo ra lực nâng lớn hơn sức nặng, nên máy bay bay lên được."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "scene",
+        "what": "Dưới gốc cây dầu cao, những hạt dầu có hai cánh xoay tròn rơi xuống, xung quanh có chim, dơi, chuồn chuồn và con diều trên trời. Mai giơ tay hứng một hạt."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Và đây là điều thú vị. Không chỉ máy bay đâu. Chim, dơi, côn trùng, con diều, và cả hạt có cánh của một số loài cây, như hạt cây dầu, cũng dùng lực nâng để bay hoặc lượn trong gió."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "Vậy hạt cây dầu xoay xoay rơi xuống cũng là một chiếc máy bay tí hon ạ!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "scene",
+        "what": "Huy và Mai vẫy tay chào trên bến sông, phía sau là một con tàu thủy lớn bằng sắt đang nổi trên mặt nước, kèm dấu chấm hỏi."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Lần sau, mình sẽ tìm hiểu vì sao con tàu bằng sắt nặng như vậy mà vẫn nổi trên mặt nước. Nếu các bạn thích, hãy nhấn đăng ký kênh Hỏi Huy nhé!"
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Tạm biệt các bạn, hẹn gặp lại!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Máy bay bay được, thắng được trọng lực là nhờ lực nâng khí động lực học",
+      "source": "Máy bay"
+    },
+    {
+      "claim": "Lực nâng là do mặt dưới cánh có áp suất cao hơn mặt trên khi không khí chảy bao quanh cánh",
+      "source": "Máy bay"
+    },
+    {
+      "claim": "Mặt cắt cánh không đối xứng, mặt trên cong dài hơn mặt dưới",
+      "source": "Máy bay"
+    },
+    {
+      "claim": "Lực nâng phụ thuộc vào hình dáng cánh, góc tấn và vận tốc dòng không khí",
+      "source": "Máy bay"
+    },
+    {
+      "claim": "Giải thích đầy đủ về lực nâng rất phức tạp; các cách giải thích đơn giản đều bỏ sót một phần",
+      "source": "Lift (force)"
+    },
+    {
+      "claim": "Đẩy không khí xuống thì không khí đẩy ngược lại (lực và phản lực), một trong hai cách giải thích đơn giản về lực nâng",
+      "source": "Lift (force) (truncated; Newton approach) + kiến thức phổ thông về định luật III Newton"
+    },
+    {
+      "claim": "Bóng bay, khinh khí cầu bay nhờ nhẹ hơn không khí xung quanh và không cần chuyển động",
+      "source": "Lift (force)"
+    },
+    {
+      "claim": "Động cơ (qua cánh quạt hoặc dòng khí phản lực) đẩy máy bay về phía trước so với không khí",
+      "source": "Máy bay"
+    },
+    {
+      "claim": "Khi vận tốc đạt một mức nào đó, lực nâng đủ lớn để thắng trọng lực và máy bay bay lên",
+      "source": "Máy bay"
+    },
+    {
+      "claim": "Cánh càng rộng thì cất cánh với vận tốc nhỏ hơn; cánh càng nhỏ thì cần vận tốc càng lớn",
+      "source": "Máy bay"
+    },
+    {
+      "claim": "Bốn lực khi bay là trọng lực, lực nâng, lực cản và lực đẩy; George Cayley chỉ ra năm 1799",
+      "source": "Aerodynamics"
+    },
+    {
+      "claim": "Anh em nhà Wright bay chiếc máy bay có động cơ đầu tiên vào ngày 17 tháng 12 năm 1903",
+      "source": "Aerodynamics"
+    },
+    {
+      "claim": "Đuôi ngang giúp máy bay không bị lộn vòng; đuôi đứng giữ máy bay ổn định bay thẳng",
+      "source": "Máy bay"
+    },
+    {
+      "claim": "Cánh tà được kéo dài và chúc xuống khi cất, hạ cánh để tăng lực nâng lúc bay chậm",
+      "source": "Máy bay"
+    },
+    {
+      "claim": "Máy bay cánh cố định mất vận tốc thì mất lực nâng nên không thể đứng yên một chỗ trên trời",
+      "source": "Máy bay"
+    },
+    {
+      "claim": "Trực thăng có cánh quạt nâng quay nên vẫn có lực nâng khi đứng yên, bay đứng một chỗ được",
+      "source": "Máy bay"
+    },
+    {
+      "claim": "Chim, dơi, côn trùng, con diều và hạt của một số loài cây cũng dùng lực nâng",
+      "source": "Lift (force)"
+    },
+    {
+      "claim": "Máy bay chở khách nặng bằng hàng trăm chiếc xe máy cộng lại",
+      "source": "Kiến thức phổ thông (máy bay chở khách nặng hàng chục tấn, xe máy khoảng 100 kg)"
+    },
+    {
+      "claim": "Hạt cây dầu có cánh, xoay tròn khi rơi",
+      "source": "Kiến thức phổ thông về sinh học; Lift (force) cho ý hạt cây dùng lực nâng"
+    }
+  ],
+  "shorts": [
+    1,
+    29,
+    30
+  ],
+  "thumbnail": "Nặng thế sao vẫn bay?",
+  "description": "Máy bay nặng bằng hàng trăm chiếc xe máy, vậy mà vẫn bay vù vù trên trời. Trong video này, anh Huy và bé Mai khám phá lực nâng, hình dáng đặc biệt của cánh máy bay và bốn lực giúp máy bay bay được, kèm một thí nghiệm máy bay giấy an toàn để thử ở nhà. Video phù hợp cho các bạn nhỏ từ 6 đến 12 tuổi và cả gia đình cùng xem.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": ""
+}

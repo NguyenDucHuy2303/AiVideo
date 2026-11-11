@@ -51,7 +51,8 @@ export type What = "long" | "short" | "en";
 /** Which channel a job's video goes to. */
 export function channelOf(job: Job, what: What, lines: Line[]): string {
   if (what === "en") return "huy-tells-tales";
-  return lineOf(job, lines)?.id ?? "huy-ke-chuyen";
+  const line = lineOf(job, lines);
+  return line?.channel ?? line?.id ?? "huy-ke-chuyen";
 }
 
 // ── OAuth (installed app, loopback redirect, PKCE) ──────────────────────────────────────────
@@ -237,6 +238,8 @@ async function setThumbnail(channel: string, videoId: string, jpg: string, log: 
 export function toPublish(job: Job, files: string[]): { what: What; file: string; index?: number }[] {
   if (job.status !== "done" || job.publishHold) return [];
   const p = job.published ?? {}, out: { what: What; file: string; index?: number }[] = [];
+  // A "Did you know?" Short is itself the video: published as a Short.
+  if (job.kind === "fact" || job.kind === "fact-vi") return files.includes("video.mp4") && !p.shorts?.[0] ? [{ what: "short", file: "video.mp4", index: 0 }] : [];
   if (files.includes("video.mp4") && !p.long) out.push({ what: "long", file: "video.mp4" });
   if (files.includes("video.en.mp4") && !p.en) out.push({ what: "en", file: "video.en.mp4" });
   (job.shorts ?? []).forEach((f, i) => { if (p.long && !p.shorts?.[i]) out.push({ what: "short", file: f, index: i }); });
