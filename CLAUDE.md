@@ -7,7 +7,7 @@ Phần mềm chạy trên máy, tự làm phim hoạt hình thiếu nhi. Chủ k
 - TikTok và Facebook đăng tay: lời đăng ở `src/studio/social.ts` (không tốn token), tệp `dang-tiktok-facebook.txt` trong thư mục chủ đề.
 - Điện thoại: trang `/m` (`src/studio/phone.html`, khóa trong `src/studio/phone.ts`). Studio nghe mọi địa chỉ (0.0.0.0); máy khác phải có khóa (cookie từ mã QR). Cổng 5176 là https với chứng chỉ riêng của studio (`src/studio/tls.ts`, chỉ hợp lệ trong mạng nhà) để iPhone lưu video thẳng vào Ảnh. Người dùng dùng iPhone.
 
-Luồng chính: chủ đề → tư liệu → kịch bản có lời thoại → nhân vật và bảng trang phục → **người dùng duyệt** → giọng, chỉ đạo cảnh, tranh nền → render → **người dùng duyệt video** → bản tiếng Anh và Shorts.
+Luồng chính: chủ đề → tư liệu → kịch bản có lời thoại → nhân vật và bảng trang phục → **duyệt kịch bản** → giọng, chỉ đạo cảnh, tranh nền → render → **duyệt video** → bản tiếng Anh và Shorts. Từ 12/11/2026 studio tự duyệt cả hai bước: 17:00 tự chọn kịch bản, video qua kiểm tra máy móc thì tự duyệt sau `review.videoHours` (1 giờ). Người dùng chỉ nhận video cuối trong `~/youtube/` và đăng tay; video không qua kiểm tra thì nằm lại tab Duyệt video và phải báo người dùng.
 
 Kênh thứ hai **Ask Huy** (tiếng Anh, trẻ 6–12, mỗi video trả lời một câu hỏi): job `kind: "qa"`.
 - `src/studio/qa.ts`: kịch bản, soát sự thật, đề xuất câu hỏi.
