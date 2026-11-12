@@ -1,0 +1,75 @@
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { blurbOf, hashtagsOf, hookOf, platformsOf, postTitle, socialText } from "../src/studio/social.ts";
+import { hostAllowed, isLoopback, lanAddress } from "../src/studio/phone.ts";
+import type { Meta } from "../src/studio/publish.ts";
+
+const meta = (extra: Partial<Meta> = {}): Meta => ({
+  title: "Sơn Tinh – Thủy Tinh #Shorts", lang: "vi", tags: [], categoryId: "1",
+  description: "Xem trọn video: https://youtu.be/abcdefghijk\n\nVua Hùng kén rể cho Mị Nương. Hai chàng đến cầu hôn. Ai mang lễ trước thì được cưới.\n\nNguồn tư liệu:\n- x: y\n\n#HuyKeChuyen",
+  ...extra,
+});
+
+test("posts: a Short goes to TikTok and Facebook, a film to Facebook only", () => {
+  assert.deepEqual(platformsOf("short"), ["tiktok", "facebook"]);
+  assert.deepEqual(platformsOf("long"), ["facebook"]);
+  assert.deepEqual(platformsOf("en"), ["facebook"]);
+});
+
+test("post title: no #Shorts, no ' | channel' tail", () => {
+  assert.equal(postTitle(meta()), "Sơn Tinh – Thủy Tinh");
+  assert.equal(postTitle(meta({ title: "Why is the sky blue? | Ask Huy" })), "Why is the sky blue?");
+});
+
+test("blurb: the first story paragraph, whole sentences, no link or sources", () => {
+  assert.equal(blurbOf(meta().description), "Vua Hùng kén rể cho Mị Nương. Hai chàng đến cầu hôn. Ai mang lễ trước thì được cưới.");
+  assert.equal(blurbOf(meta().description, 40), "Vua Hùng kén rể cho Mị Nương.");
+  assert.equal(blurbOf("#tags only"), "");
+});
+
+test("hashtags: by language and kind, fewer on Facebook, no TikTok tag there", () => {
+  assert.ok(hashtagsOf("vi", "lịch sử", "tiktok").includes("#LichSuVietNam"));
+  assert.ok(hashtagsOf("vi", "fact-vi", "tiktok").includes("#BanCoBiet"));
+  assert.ok(hashtagsOf("en", "qa", "tiktok").includes("#LearnOnTikTok"));
+  const fb = hashtagsOf("en", "qa", "facebook");
+  assert.equal(fb.length, 3);
+  assert.ok(!fb.includes("#LearnOnTikTok"));
+});
+
+test("a Short's post: its own line first, where the film is (a link on Facebook only)", () => {
+  const o = { what: "short" as const, kind: "truyền thuyết", channel: "Huy Kể Chuyện", hook: "“Chặn nước lại!”" };
+  const tt = socialText("tiktok", meta(), { ...o, longUrl: "https://youtu.be/abcdefghijk" });
+  assert.ok(tt.startsWith("“Chặn nước lại!”\nSơn Tinh – Thủy Tinh"));
+  assert.ok(tt.includes("Xem trọn phim trên YouTube: Huy Kể Chuyện"));
+  assert.ok(!tt.includes("https://"), "TikTok shows no links");
+  assert.ok(!tt.includes("Vua Hùng"), "the hook stands for the blurb");
+  const fb = socialText("facebook", meta(), { ...o, longUrl: "https://youtu.be/abcdefghijk" });
+  assert.ok(fb.includes("Xem trọn phim: https://youtu.be/abcdefghijk"));
+  // A fact Short is whole: no "watch the film".
+  const fact = socialText("tiktok", meta({ lang: "en", title: "Wombat poop is a cube? #Shorts", description: "Wombats make cube poop." }), { what: "short", kind: "fact", channel: "Ask Huy", isFact: true });
+  assert.ok(!/whole video/.test(fact));
+  assert.ok(fact.includes("Follow Ask Huy for more!"));
+});
+
+test("hook: a called-out spoken line, else the first told one", () => {
+  assert.equal(hookOf([{ text: "Ngày xưa có một ông vua hiền." }, { text: "Đồi núi ơi, mọc lên!", who: "Sơn Tinh" }]), "“Đồi núi ơi, mọc lên!”");
+  assert.equal(hookOf([{ text: "Ngày xưa có một ông vua hiền." }, { text: "Ừ.", who: "A" }]), "Ngày xưa có một ông vua hiền.");
+  assert.equal(hookOf([]), undefined);
+});
+
+test("phone: the home network address, not Docker's bridges", () => {
+  const a = (address: string, internal = false) => ({ address, family: "IPv4" as const, internal, netmask: "", mac: "", cidr: null });
+  assert.equal(lanAddress({ lo: [a("127.0.0.1", true)], docker0: [a("172.17.0.1")], "br-a3f4": [a("172.18.0.1")], eno1: [a("192.168.100.107")] }), "192.168.100.107");
+  assert.equal(lanAddress({ wlp2s0: [a("10.0.0.5")] }), "10.0.0.5");
+  assert.equal(lanAddress({ lo: [a("127.0.0.1", true)] }), undefined);
+});
+
+test("phone: only this computer's own names as Host; loopback is the computer", () => {
+  assert.ok(hostAllowed("127.0.0.1:5175", "192.168.1.9"));
+  assert.ok(hostAllowed("localhost:5175", undefined));
+  assert.ok(hostAllowed("192.168.1.9:5175", "192.168.1.9"));
+  assert.ok(hostAllowed("[::1]:5175", undefined));
+  assert.ok(!hostAllowed("evil.example:5175", "192.168.1.9"));
+  assert.ok(!hostAllowed(undefined, "192.168.1.9"));
+  assert.ok(isLoopback("::ffff:127.0.0.1") && isLoopback("127.0.0.1") && !isLoopback("192.168.1.20"));
+});

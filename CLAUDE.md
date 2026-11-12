@@ -4,6 +4,8 @@ Phần mềm chạy trên máy, tự làm phim hoạt hình thiếu nhi. Chủ k
 - **Huy Kể Chuyện** (tiếng Việt): truyện, lịch sử, ngụ ngôn, chuyên mục Hỏi Huy, Học tiếng Anh, Shorts "Bạn có biết?".
 - **Ask Huy** (tiếng Anh): hỏi–đáp, Shorts "Did you know?", bản tiếng Anh của truyện (chuyên mục Huy Tells Tales).
 - Lời mời đăng ký luôn nêu tên kênh thật, không nêu tên chuyên mục (`home` trong `src/studio/qa.ts`). Đăng video: `src/studio/publish.ts` (Xuất tay: mỗi chủ đề một thư mục `~/youtube/<tên chủ đề>/` gom video dài, Shorts, ảnh bìa, tệp hướng dẫn; Tự đăng khi đã qua audit).
+- TikTok và Facebook đăng tay: lời đăng ở `src/studio/social.ts` (không tốn token), tệp `dang-tiktok-facebook.txt` trong thư mục chủ đề.
+- Điện thoại: trang `/m` (`src/studio/phone.html`, khóa trong `src/studio/phone.ts`). Studio nghe mọi địa chỉ (0.0.0.0); máy khác phải có khóa (cookie từ mã QR).
 
 Luồng chính: chủ đề → tư liệu → kịch bản có lời thoại → nhân vật và bảng trang phục → **người dùng duyệt** → giọng, chỉ đạo cảnh, tranh nền → render → **người dùng duyệt video** → bản tiếng Anh và Shorts.
 
@@ -25,7 +27,7 @@ Tài liệu chi tiết:
 
 ```bash
 npm run typecheck                 # tsc, phải sạch
-npm test                          # node --test test/*.test.ts (74 bài)
+npm test                          # node --test test/*.test.ts
 npm run wata                      # in danh sách mọi lệnh CLI (src/cli.ts)
 npm run wata -- studio            # trang duyệt http://127.0.0.1:5175 + bộ lập lịch
 node src/animation/render.ts <scene.json> [--style dong_ho] [--no-audio] --out x.mp4   # một cảnh

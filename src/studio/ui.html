@@ -81,6 +81,7 @@
   <span class="pill" id="sched">…</span>
   <span class="grow"></span>
   <span class="pill" id="tok">…</span>
+  <button class="pill" style="border:0;color:inherit;font:inherit;font-size:13px;cursor:pointer" onclick="showPhone()">📱 Điện thoại</button>
 </header>
 <nav id="tabs"></nav>
 <main>
@@ -88,6 +89,7 @@
   <div id="detail"><div class="empty">Chọn một mục bên trái.</div></div>
 </main>
 <div class="zoom" id="zoom" onclick="this.style.display='none'"><img id="zoomImg"></div>
+<div class="zoom" id="phone" onclick="this.style.display='none'" style="cursor:default"><div onclick="event.stopPropagation()" style="background:#fffdf8;max-width:440px;margin:60px auto;border-radius:16px;padding:22px 26px;text-align:center" id="phoneBox"></div></div>
 <audio id="audio"></audio>
 <script>
 const TABS = [
@@ -198,7 +200,7 @@ async function show(slug) {
     const box = ([what, label, file, x, i]) => `<li><b>${label}</b> <small>(${file})</small> · công khai ${when(x)}
       <br><input id="pub-${what}-${i ?? 0}" placeholder="Dán link YouTube sau khi đăng" style="width:60%"> <button class="fixb" onclick="markPublished('${what}', ${i ?? "undefined"})">✔ Đã đăng</button></li>`;
     h += `<section><h3>YouTube</h3>${list ? `<ul>${list}</ul>` : ""}
-      ${waiting.length ? `<p><b>Chờ anh đăng tay.</b> Mọi video và ảnh bìa ở cùng một thư mục, làm theo tệp <code>dang-len-youtube.txt</code> trong đó:<br><code style="user-select:all">${esc(waiting[0][3].dir)}</code></p>${waiting.some((w) => w[0] === "short") && !p.long && !fact ? `<p class="meta">Đăng video dài trước và dán link của nó: studio tự điền link vào mô tả các Short trong tệp.</p>` : ""}<ul>${waiting.map(box).join("")}</ul>` : ""}
+      ${waiting.length ? `<p><b>Chờ anh đăng tay.</b> Mọi video và ảnh bìa ở cùng một thư mục, làm theo tệp <code>dang-len-youtube.txt</code> trong đó (TikTok và Facebook: <code>dang-tiktok-facebook.txt</code>, hoặc trên điện thoại, bấm 📱 Điện thoại):<br><code style="user-select:all">${esc(waiting[0][3].dir)}</code></p>${waiting.some((w) => w[0] === "short") && !p.long && !fact ? `<p class="meta">Đăng video dài trước và dán link của nó: studio tự điền link vào mô tả các Short trong tệp.</p>` : ""}<ul>${waiting.map(box).join("")}</ul>` : ""}
       ${!list && !waiting.length ? `<p class="meta">${job.publishHold ? "Đang hoãn đăng." : job.shorts === undefined && !fact ? "Chưa tải về: studio chờ cắt xong Shorts (buổi tối) rồi gom cả video dài, Shorts và ảnh bìa vào một thư mục trong ~/youtube." : "Chưa tải về, chưa đăng. Studio tự gom vào ~/youtube trong ít phút; hoặc bấm nút dưới."}</p>` : ""}
       ${(job.lockedVideos || []).filter(Boolean).length ? `<div class="warn">YouTube khóa riêng tư các video studio tự tải lên (dự án Google chưa qua audit). Xóa chúng trong YouTube Studio: ${job.lockedVideos.filter(Boolean).map((x) => `<a href="https://studio.youtube.com/video/${esc(x.videoId)}/edit" target="_blank">${esc(x.videoId)}</a>`).join(", ")}. Bản để đăng tay đã được xuất lại.</div>` : ""}
       ${job.publishError ? `<div class="warn">Lần trước lỗi: ${esc(job.publishError)} (thử lại sau 1 giờ)</div>` : ""}
@@ -270,6 +272,18 @@ async function act(action) {
   const r = await fetch(`/api/job/${current}/${action}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ note }) }).then((r) => r.json());
   if (r.error) return alert(r.error);
   await load(); show(current);
+}
+/** The phone's QR code: the studio over the home Wi-Fi (phone.ts). */
+async function showPhone() {
+  const p = await fetch("/api/phone").then((r) => r.json());
+  $("#phoneBox").innerHTML = p.qr ? `<h2 style="margin:0 0 6px">📱 Mở trên điện thoại</h2>
+    <p style="margin:0 0 10px;color:var(--muted)">Điện thoại bắt cùng Wi-Fi với máy này, mở camera quét mã. Quét một lần là điện thoại nhớ.</p>
+    <div style="width:260px;margin:0 auto">${p.qr}</div>
+    <p style="font-size:14px">Trên điện thoại: duyệt kịch bản, duyệt video, <b>tải video về máy</b>, chép lời đăng YouTube, TikTok, Facebook.</p>
+    <p style="font-size:12px;color:var(--muted)">Mã chứa khóa riêng: đừng gửi ảnh mã này cho người khác. Muốn khóa lại mọi điện thoại: xóa studio/secrets/phone-key.txt rồi khởi động lại studio.</p>
+    <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="$('#phone').style.display='none'">Đóng</button></p>`
+    : `<h2>Không thấy mạng nhà</h2><p>Máy tính chưa nối Wi-Fi hoặc mạng dây nên điện thoại chưa vào được.</p>`;
+  $("#phone").style.display = "block";
 }
 function play(name) { const a = $("#audio"); a.src = `/voice/${encodeURIComponent(name)}`; a.play(); }
 function zoom(src) { $("#zoomImg").src = src; $("#zoom").style.display = "block"; }

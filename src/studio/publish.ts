@@ -33,6 +33,7 @@ import { STUDIO_DIR } from "../brain/claude.ts";
 import { exists } from "../utils/fs.ts";
 import { jobDir, loadJob, saveJob, type Job } from "./jobs.ts";
 import { lineOf, type Line } from "./pick.ts";
+import { PLATFORM_NAME, platformsOf, SETTINGS_VI, shortHooks, socialText, type Platform } from "./social.ts";
 
 export const SECRETS = path.join(STUDIO_DIR, "secrets");
 const CLIENT = path.join(SECRETS, "client_secret.json");
@@ -527,10 +528,83 @@ export async function exportJob(slug: string, jobs: Job[], settings: PublishSett
     "", "",
   ].join("\n");
   await fsp.writeFile(path.join(folder, "dang-len-youtube.txt"), head + sections.join(""));
+  const placed = new Set(items.map((i) => i.file));
+  const posts = (await socialPosts(job, files, settings, lines)).filter((p) => placed.has(p.file));
+  await fsp.writeFile(path.join(folder, "dang-tiktok-facebook.txt"), socialSheet(String(plan.title ?? job.topic).split(" | ")[0]!, posts));
   const fresh = await loadJob(slug);
   fresh.exported = exported;
   await saveJob(fresh);
   return folder;
+}
+
+// ── TikTok and Facebook (posted by hand) ──────────────────────────────────────────────────
+
+export const socialKey = (platform: Platform, what: What, index?: number) => `${platform}:${what}:${index ?? 0}`;
+export interface SocialPost {
+  what: What; index?: number;
+  /** The job's file, and its name in the topic folder. */
+  file: string; name: string; label: string;
+  /** The channel (its TikTok / Facebook accounts carry the same name). */
+  channel: string; account: string;
+  /** The YouTube time, when given: a good time on the other platforms too. */
+  publishAt?: string;
+  youtube: Meta;
+  text: Partial<Record<Platform, string>>;
+  /** Marked posted by the user: when. */
+  done: Partial<Record<Platform, string>>;
+}
+const labelOf = (job: Job, item: Item) => item.what === "long" ? "Video dài" : item.what === "en" ? "Bản tiếng Anh" : isFactJob(job) ? "Short" : `Short ${item.index! + 1}`;
+
+/** Every video of a job with its YouTube details and its TikTok / Facebook words. */
+export async function socialPosts(job: Job, files: string[], settings: PublishSettings, lines: Line[]): Promise<SocialPost[]> {
+  const out: SocialPost[] = [];
+  const plan = JSON.parse(await fsp.readFile(path.join(jobDir(job.slug), "plan.json"), "utf8").catch(() => "{}"));
+  const hooks = isFactJob(job) ? [] : await shortHooks(job.slug, job.shorts ?? [], jobDir(job.slug), plan.shorts);
+  for (const item of allItems(job, files)) {
+    const channel = channelOf(job, item.what, lines), cfg = settings[channel] ?? PUBLISH_DEFAULTS[channel]!;
+    const fact = isFactJob(job), longUrl = item.what === "short" && !fact ? job.published?.long?.url : undefined;
+    const youtube = await metaOf(job, item.what, cfg, longUrl);
+    const text: SocialPost["text"] = {}, done: SocialPost["done"] = {};
+    for (const p of platformsOf(item.what)) {
+      text[p] = socialText(p, youtube, { what: item.what, kind: job.kind, channel: cfg.name, longUrl, isFact: fact, hook: item.what === "short" ? hooks[item.index!] : undefined });
+      const d = job.social?.[socialKey(p, item.what, item.index)];
+      if (d) done[p] = d;
+    }
+    out.push({
+      what: item.what, index: item.index, file: item.file, name: fileNameOf(job, item), label: labelOf(job, item),
+      channel, account: cfg.name, publishAt: (publishedOf(job, item) ?? exportedOf(job, item))?.publishAt, youtube, text, done,
+    });
+  }
+  return out;
+}
+
+/** dang-tiktok-facebook.txt: the words of every post, what to set, what is already posted. */
+export function socialSheet(title: string, posts: SocialPost[]): string {
+  const head = [
+    `CHỦ ĐỀ: ${title}`, "",
+    "Short (dọc 9:16) đăng lên TikTok và Facebook Reels; video dài đăng lên Trang Facebook.",
+    "Mỗi kênh có tài khoản TikTok và Trang Facebook cùng tên (dòng TÀI KHOẢN). Điện thoại: mở trang /m của studio,",
+    "có nút tải video và nút chép lời đăng.", "",
+    ...(["tiktok", "facebook"] as Platform[]).flatMap((p) => [`${PLATFORM_NAME[p]}:`, ...SETTINGS_VI[p], ""]), "",
+  ];
+  const body = posts.filter((p) => Object.keys(p.text).length).map((p, n) => [
+    `════════ ${n + 1}. ${p.label.toUpperCase()}: ${p.name} ════════`,
+    `TÀI KHOẢN: ${p.account}`,
+    ...(p.publishAt ? [`GIỜ GỢI Ý: ${when(new Date(p.publishAt))} (cùng giờ với YouTube)`] : []), "",
+    ...(Object.entries(p.text) as [Platform, string][]).flatMap(([pl, t]) => [
+      `── ${PLATFORM_NAME[pl]}${pl === "facebook" ? (p.what === "short" ? " (Reel)" : " (Video)") : ""}${p.done[pl] ? " · ✔ ĐÃ ĐĂNG" : ""} ──`, t, "",
+    ]), "",
+  ].join("\n"));
+  return head.join("\n") + body.join("");
+}
+
+/** The user posted (or un-posted) a video on TikTok / Facebook. */
+export async function markSocial(slug: string, platform: Platform, what: What, index: number | undefined, done: boolean): Promise<Job> {
+  const job = await loadJob(slug), key = socialKey(platform, what, index);
+  job.social ??= {};
+  if (done) job.social[key] = new Date().toISOString(); else delete job.social[key];
+  await saveJob(job);
+  return job;
 }
 
 /** The video id in a YouTube link (watch, youtu.be, shorts, Studio), or a bare id. */

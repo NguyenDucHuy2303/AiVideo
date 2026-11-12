@@ -49,6 +49,8 @@ export interface Job {
   exported?: { long?: import("./publish.ts").Exported; en?: import("./publish.ts").Exported; shorts?: import("./publish.ts").Exported[] };
   /** Auto uploads YouTube kept locked private (an API project not audited): to delete by hand. */
   lockedVideos?: import("./publish.ts").Published[];
+  /** Posted by hand on TikTok / Facebook ("tiktok:short:0" → when the user marked it). */
+  social?: Record<string, string>;
   /** Views and likes of its published videos (trends.ts), by video id. */
   stats?: Record<string, { views: number; likes: number; at: string }>;
   /** The user held it back from publishing. */

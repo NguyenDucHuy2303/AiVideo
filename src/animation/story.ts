@@ -90,7 +90,7 @@ const stamp = (s: number) => {
 interface Cue { text: string; from: number; to: number; who?: string; mood?: string }
 
 /** Captions from the timed cues: the narrator in white, characters' lines in warm yellow. */
-function subtitles(cues: Cue[], cards: { at: number; title: string; no: number }[], W: number, H: number): string {
+export function subtitles(cues: Cue[], cards: { at: number; title: string; no: number }[], W: number, H: number): string {
   const vertical = H > W;
   const events: string[] = [];
   for (const c of cues) {
@@ -107,14 +107,17 @@ function subtitles(cues: Cue[], cards: { at: number; title: string; no: number }
     events.push(`Dialogue: 1,${stamp(k.at + 0.35)},${stamp(k.at + 3.6)},kicker,,0,0,0,,${fade}PHẦN ${k.no}`);
     events.push(`Dialogue: 1,${stamp(k.at + 0.45)},${stamp(k.at + 3.6)},card,,0,0,0,,${fade}${k.title}`);
   }
-  const capSize = vertical ? 64 : 62, capMargin = vertical ? 290 : 64;
+  // Vertical (Shorts, TikTok, Reels): big, and inside the apps' safe zone: above the caption and
+  // name they lay over the bottom ~20 %, clear of the button column on the right.
+  const capSize = vertical ? 74 : 62, capMargin = vertical ? 400 : 64, outline = vertical ? 6 : 5;
+  const [capL, capR] = vertical ? [90, 170] : [140, 140];
   const cardSize = vertical ? 92 : 88, top = vertical ? 300 : 120;
   return [
     "[Script Info]", "ScriptType: v4.00+", `PlayResX: ${W}`, `PlayResY: ${H}`, "WrapStyle: 0", "",
     "[V4+ Styles]",
     "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
-    `Style: cap,Noto Sans,${capSize},&H00FFFFFF,&H00FFFFFF,&H00201008,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,${vertical ? 70 : 140},${vertical ? 70 : 140},${capMargin},1`,
-    `Style: dlg,Noto Sans,${capSize},&H0070E6FF,&H00FFFFFF,&H00201008,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,${vertical ? 70 : 140},${vertical ? 70 : 140},${capMargin},1`,
+    `Style: cap,Noto Sans,${capSize},&H00FFFFFF,&H00FFFFFF,&H00201008,&H80000000,-1,0,0,0,100,100,0,0,1,${outline},2,2,${capL},${capR},${capMargin},1`,
+    `Style: dlg,Noto Sans,${capSize},&H0070E6FF,&H00FFFFFF,&H00201008,&H80000000,-1,0,0,0,100,100,0,0,1,${outline},2,2,${capL},${capR},${capMargin},1`,
     `Style: kicker,Noto Sans,${Math.round(cardSize * 0.45)},&H0040C8F0,&H00FFFFFF,&H00201008,&H80000000,-1,0,0,0,100,100,6,0,1,4,2,8,80,80,${top},1`,
     `Style: card,Noto Sans,${cardSize},&H00FFFFFF,&H00FFFFFF,&H00201008,&H80000000,-1,0,0,0,100,100,0,0,1,7,3,8,80,80,${top + Math.round(cardSize * 0.62)},1`,
     "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text", ...events, "",

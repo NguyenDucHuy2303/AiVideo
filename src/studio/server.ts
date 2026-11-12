@@ -1,7 +1,10 @@
 /**
- * The studio's web page (local only, 127.0.0.1): what waits for the user (scripts with their
+ * The studio's web page: what waits for the user (scripts with their
  * costume sheets, finished videos), what is being made, and what the brain has spent. The
  * user's buttons only change a job's status; the scheduler does the work.
+ *
+ * On this computer at http://127.0.0.1:5175; on the phone (same Wi-Fi) at /m, opened once with
+ * the QR code the computer's page shows (phone.ts: a secret key, kept as a cookie).
  *
  *   npm run wata -- studio [--port 5175]
  */
@@ -17,11 +20,15 @@ import { schedulerState, settings as scheduleSettings } from "./schedule.ts";
 import { artOf, validStyle, validTheme } from "./art.ts";
 import { costumeSheet } from "./design.ts";
 import { BRAND_DIR, BRAND_THEMES } from "../animation/brand/brand.ts";
-import { authUrl, EXPORT_DIR, exportJob, finishAuth, hasClient, markPublished, publishSettings, savePublishSettings, token, type Mode, type What } from "./publish.ts";
+import { authUrl, EXPORT_DIR, exportJob, finishAuth, hasClient, markPublished, markSocial, publishSettings, savePublishSettings, socialPosts, token, type Mode, type What } from "./publish.ts";
+import { allowed, hostAllowed, isLoopback, keyCookie, keyMatches, phoneKey, phoneLink } from "./phone.ts";
+import { PLATFORMS, type Platform } from "./social.ts";
 import { hasApiKey, seasonal } from "./trends.ts";
 import { styles } from "../animation/styles.ts";
 
 const UI = path.join(path.dirname(fileURLToPath(import.meta.url)), "ui.html");
+const PHONE = path.join(path.dirname(fileURLToPath(import.meta.url)), "phone.html");
+let PORT = 5175;
 const SAMPLES = path.join(ROOT, "vendor", "vieneu", "samples");
 const SLUG = /^[a-z0-9-]+$/;
 const STYLE_SAMPLES = path.join(ROOT, "assets", "styles");
@@ -42,10 +49,12 @@ async function readJson(file: string): Promise<unknown> {
 }
 
 /** A file, with byte ranges (the browser seeks videos this way). */
-function sendFile(req: http.IncomingMessage, res: http.ServerResponse, file: string): void {
+function sendFile(req: http.IncomingMessage, res: http.ServerResponse, file: string, download?: string): void {
   fs.stat(file, (err, st) => {
     if (err || !st.isFile()) { res.writeHead(404).end(); return; }
     const type = TYPES[path.extname(file).toLowerCase()] ?? "application/octet-stream";
+    // ?dl=<name>: saved, not played (the phone keeps it in Downloads / Files).
+    if (download) res.setHeader("Content-Disposition", `attachment; filename="${download.replace(/[^\w.-]/g, "_")}"; filename*=UTF-8''${encodeURIComponent(download)}`);
     const range = /bytes=(\d*)-(\d*)/.exec(req.headers.range ?? "");
     if (range) {
       const start = range[1] ? Number(range[1]) : 0, end = range[2] ? Number(range[2]) : st.size - 1;
@@ -71,10 +80,20 @@ async function body(req: http.IncomingMessage): Promise<Record<string, string>> 
 async function handle(req: http.IncomingMessage, res: http.ServerResponse): Promise<void> {
   const url = new URL(req.url ?? "/", "http://localhost");
   const parts = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
+  const local = isLoopback(req.socket.remoteAddress);
+  if (!hostAllowed(req.headers.host)) { res.writeHead(403).end(); return; }
+  // The phone's first visit, from the QR code: the key becomes a cookie, the link loses it.
+  if (req.method === "GET" && parts[0] === "m" && url.searchParams.has("k")) {
+    if (!(await keyMatches(url.searchParams.get("k")))) { res.writeHead(403, { "Content-Type": "text/html; charset=utf-8" }).end(LOCKED); return; }
+    res.writeHead(302, { "Set-Cookie": keyCookie(await phoneKey()), Location: "/m" }).end();
+    return;
+  }
+  if (!(await allowed(req))) { res.writeHead(403, { "Content-Type": "text/html; charset=utf-8" }).end(LOCKED); return; }
   if (req.method === "GET" && parts.length === 0) return sendFile(req, res, UI);
+  if (req.method === "GET" && parts.length === 1 && parts[0] === "m") return sendFile(req, res, PHONE);
 
-  // Connecting a YouTube channel (publish.ts): to Google and back.
-  if (req.method === "GET" && parts[0] === "oauth") {
+  // Connecting a YouTube channel (publish.ts): to Google and back, on the computer only.
+  if (req.method === "GET" && parts[0] === "oauth" && local) {
     const page = (msg: string): void => void res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" }).end(`<!doctype html><meta charset="utf-8"><body style="font-family:sans-serif;padding:40px"><h2>${msg.replace(/</g, "&lt;")}</h2><p><a href="/">← Về trang duyệt</a></p>`);
     const redirect = `http://${req.headers.host ?? "127.0.0.1:5175"}/oauth/callback`;
     try {
@@ -93,7 +112,7 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
       const jobs = (await listJobs()).map((j) => ({ ...j, tokens: all.filter((e) => e.job === j.slug).reduce((n, e) => n + weigh(e), 0) }));
       return json(res, { jobs, scheduler: await schedulerState() });
     }
-    if (req.method === "GET" && parts[1] === "job" && SLUG.test(parts[2] ?? "")) {
+    if (req.method === "GET" && parts.length === 3 && parts[1] === "job" && SLUG.test(parts[2] ?? "")) {
       const slug = parts[2]!, dir = jobDir(slug);
       const files = await fsp.readdir(dir).catch(() => [] as string[]);
       const job = await loadJob(slug);
@@ -149,6 +168,22 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
         await saveJob(job);
       }
       return json(res, { job: await setStatus(job, to, note?.trim() ? `bạn: ${note.trim().slice(0, 200)}` : `bạn: ${parts[3]}`) });
+    }
+    // The phone: its link and QR code (shown on the computer only).
+    if (req.method === "GET" && parts[1] === "phone") {
+      if (!local) return json(res, { error: "chỉ xem trên máy tính" }, 403);
+      return json(res, await phoneLink(PORT));
+    }
+    // TikTok and Facebook: every video's words, and the user's ticks.
+    if (parts[1] === "job" && parts[3] === "social" && SLUG.test(parts[2] ?? "")) {
+      if (req.method === "POST") {
+        const b = await body(req) as unknown as { platform: Platform; what: What; index?: number; done: boolean };
+        if (!PLATFORMS.includes(b.platform) || !["long", "en", "short"].includes(b.what)) return json(res, { error: "không hợp lệ" }, 400);
+        await markSocial(parts[2]!, b.platform, b.what, b.index === undefined || b.index === null ? undefined : Number(b.index), !!b.done);
+      }
+      const s = await scheduleSettings(), job = await loadJob(parts[2]!);
+      const files = await fsp.readdir(jobDir(job.slug)).catch(() => [] as string[]);
+      return json(res, { posts: await socialPosts(job, files, s.publish, s.pick.lines) });
     }
     if (req.method === "GET" && parts[1] === "trends") {
       const raw = await readJson(path.join(ROOT, "studio", "trends.json")) as { popular?: unknown; day?: string } | undefined;
@@ -211,7 +246,8 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
   const NAME = /^[\w.-]+$/;
   if (req.method === "GET" && parts[0] === "files" && SLUG.test(parts[1] ?? "") && parts.slice(2).every((x) => NAME.test(x) && x !== ".." && x !== ".")
     && (parts.length === 3 || (parts.length === 4 && parts[2] === "shorts"))) {
-    return sendFile(req, res, path.join(jobDir(parts[1]!), ...parts.slice(2)));
+    const dl = url.searchParams.get("dl");
+    return sendFile(req, res, path.join(jobDir(parts[1]!), ...parts.slice(2)), dl && NAME.test(dl.replace(/[^\x20-\x7e]/g, "_").replace(/ /g, "_")) ? dl.slice(0, 120) : undefined);
   }
   // Style samples and intro/outro previews.
   if (req.method === "GET" && parts[0] === "art" && parts.length === 3 && NAME.test(parts[2]!) && !parts[2]!.startsWith(".")) {
@@ -224,9 +260,17 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
   res.writeHead(404).end();
 }
 
+/** What a device without the key sees. */
+const LOCKED = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><body style="font-family:sans-serif;padding:30px;line-height:1.5"><h2>🔒 Studio Huy Kể Chuyện</h2><p>Mở trang studio trên máy tính, bấm <b>📱 Điện thoại</b> rồi quét mã QR bằng camera điện thoại.</p>`;
+
+/**
+ * Listens on every address (the phone comes over the Wi-Fi) unless WATA_STUDIO_HOST says
+ * otherwise (127.0.0.1: the computer only).
+ */
 export function startServer(port = 5175): Promise<http.Server> {
+  PORT = port;
   const server = http.createServer((req, res) => {
     handle(req, res).catch((err) => json(res, { error: (err as Error).message }, 500));
   });
-  return new Promise((resolve) => server.listen(port, "127.0.0.1", () => resolve(server)));
+  return new Promise((resolve) => server.listen(port, process.env.WATA_STUDIO_HOST ?? "0.0.0.0", () => resolve(server)));
 }

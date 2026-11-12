@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#a3261c">
+<title>Studio · điện thoại</title>
+<style>
+  :root { --red: #a3261c; --bronze: #c98a2a; --ink: #2a160a; --paper: #fbf5e9; --card: #fffdf8; --line: #e6d6b8; --muted: #7a6650; --green: #2f7a3a; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { margin: 0; font-family: "Noto Sans", system-ui, sans-serif; background: var(--paper); color: var(--ink); font-size: 16px; padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+  header { position: sticky; top: 0; z-index: 5; background: var(--red); color: #fff8e6; padding: 12px 14px; display: flex; align-items: center; gap: 10px; }
+  header h1 { margin: 0; font-size: 18px; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  header button { background: rgba(255,255,255,.18); color: #fff; border: 0; border-radius: 10px; padding: 8px 12px; font: inherit; font-size: 15px; }
+  nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 6; display: flex; background: #fff; border-top: 2px solid var(--line); padding-bottom: env(safe-area-inset-bottom); }
+  nav button { flex: 1; border: 0; background: none; padding: 10px 4px 12px; font: inherit; font-size: 13px; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  nav button b { font-size: 22px; line-height: 1; }
+  nav button.on { color: var(--red); font-weight: 700; }
+  nav .n { background: var(--bronze); color: #fff; border-radius: 999px; font-size: 11px; padding: 0 6px; margin-left: 3px; }
+  main { padding: 12px; }
+  .job { background: var(--card); border: 1.5px solid var(--line); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; }
+  .job b { display: block; font-size: 17px; }
+  small, .meta { color: var(--muted); font-size: 13px; }
+  .empty { color: var(--muted); text-align: center; padding: 50px 20px; }
+  h2 { color: var(--red); margin: 4px 0 6px; font-size: 22px; }
+  section { background: var(--card); border: 1.5px solid var(--line); border-radius: 14px; padding: 12px 14px; margin-bottom: 14px; }
+  section h3 { margin: 0 0 8px; font-size: 16px; }
+  video { width: 100%; border-radius: 12px; background: #000; display: block; }
+  video.v { height: 62vh; aspect-ratio: 9 / 16; width: auto; max-width: 100%; margin: 0 auto; }
+  img.full { width: 100%; border-radius: 10px; }
+  .scene { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  .scene:last-child { border: 0; }
+  .num { color: var(--bronze); font-weight: 700; margin-right: 4px; }
+  .say { margin: 4px 0 4px 6px; padding: 4px 10px; border-left: 3px solid var(--bronze); background: #fff7e6; border-radius: 0 8px 8px 0; }
+  .who { font-weight: 700; color: var(--red); }
+  p { line-height: 1.5; margin: 6px 0; }
+  .bar { position: fixed; left: 0; right: 0; bottom: calc(62px + env(safe-area-inset-bottom)); z-index: 4; background: var(--paper); border-top: 1.5px solid var(--line); padding: 10px 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .bar.with { padding-bottom: 12px; }
+  .pad { height: 70px; }
+  .btn { font: inherit; font-size: 16px; border-radius: 12px; padding: 11px 14px; border: 2px solid; background: #fff; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+  .bar .btn { flex: 1; }
+  .ok { background: var(--green); color: #fff; border-color: var(--green); }
+  .fix { color: #9a5a00; border-color: #e0a84a; }
+  .no { color: var(--red); border-color: #e3a29a; }
+  .dl { background: #2e7d32; color: #fff; border-color: #2e7d32; }
+  .cp { color: var(--ink); border-color: var(--line); font-size: 15px; padding: 9px 12px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+  .row .btn { flex: 1 1 auto; }
+  textarea, input { width: 100%; font: inherit; font-size: 16px; padding: 10px; border-radius: 10px; border: 1.5px solid var(--line); background: #fff; }
+  #note { display: none; width: 100%; }
+  .plat { border-top: 1.5px dashed var(--line); padding-top: 10px; margin-top: 10px; }
+  .plat h4 { margin: 0 0 6px; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+  .tag { font-size: 12px; border-radius: 6px; padding: 1px 7px; background: #eee3cc; font-weight: 600; }
+  .tag.done { background: #cfe8cf; color: #1d5a26; }
+  .text { white-space: pre-wrap; background: #fff7e6; border-radius: 10px; padding: 8px 10px; font-size: 14px; max-height: 7.5em; overflow: hidden; position: relative; }
+  .text.open { max-height: none; }
+  .tick { display: flex; align-items: center; gap: 10px; font-size: 16px; margin-top: 8px; }
+  .tick input { width: 26px; height: 26px; }
+  .toast { position: fixed; left: 50%; bottom: 150px; transform: translateX(-50%); background: rgba(30,20,10,.92); color: #fff; padding: 10px 18px; border-radius: 999px; z-index: 9; display: none; font-size: 15px; }
+  .warn { background: #fff0d6; border: 1.5px solid #e8b25a; border-radius: 10px; padding: 8px 12px; margin-bottom: 12px; font-size: 14px; }
+  .step { border-radius: 10px; padding: 10px 12px; margin-bottom: 12px; font-size: 14px; border-left: 6px solid #e0a030; background: #fff4dc; }
+  .step.v { background: #efe9fc; border-color: #6a4fc0; }
+</style>
+</head>
+<body>
+<header><button id="back" style="display:none" onclick="home()">←</button><h1 id="title">Huy Kể Chuyện · Studio</h1></header>
+<main id="main"><div class="empty">Đang tải…</div></main>
+<nav id="tabs"></nav>
+<div class="toast" id="toast"></div>
+<script>
+const TABS = [
+  ["script", "📝", "Kịch bản", (j) => j.status === "review"],
+  ["video", "🎬", "Video", (j) => j.status === "video"],
+  ["post", "📤", "Đăng", (j) => j.status === "done" && !j.publishHold],
+];
+const KIND = { qa: "Ask Huy · hỏi–đáp", "qa-vi": "Hỏi Huy · hỏi–đáp", lesson: "Học tiếng Anh cùng Huy", fact: "Short Did you know?", "fact-vi": "Short Bạn có biết?" };
+const QA = ["qa", "qa-vi", "fact", "fact-vi", "lesson"];
+let tab = localStorage.tab || "script", jobs = [], current = null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const when = (t) => new Date(t).toLocaleString("vi", { weekday: "short", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" });
+const api = async (url, body) => {
+  const r = await fetch(url, body === undefined ? {} : { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  if (r.status === 403) { document.body.innerHTML = await r.text(); throw new Error("locked"); }
+  return r.json();
+};
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.style.display = "block"; clearTimeout(t.h); t.h = setTimeout(() => t.style.display = "none", 1800); }
+
+/** Copy: the clipboard API needs https, so the old way (a selected text box) on the Wi-Fi address. */
+const CLIP = [];
+function copy(i, what) {
+  const text = CLIP[i];
+  const done = () => toast(`Đã chép ${what}`);
+  if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text).then(done);
+  const ta = document.createElement("textarea");
+  ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.top = "-1000px";
+  document.body.appendChild(ta); ta.focus(); ta.select(); ta.setSelectionRange(0, text.length);
+  const ok = document.execCommand("copy"); ta.remove();
+  ok ? done() : toast("Không chép được: giữ tay lên chữ để chép");
+}
+const copyBtn = (text, label, what) => { CLIP.push(text); return `<button class="btn cp" onclick="copy(${CLIP.length - 1}, '${what}')">📋 ${label}</button>`; };
+
+async function load() {
+  const r = await api("/api/jobs");
+  jobs = r.jobs;
+  drawTabs();
+  if (!current) drawList();
+}
+function drawTabs() {
+  $("#tabs").innerHTML = TABS.map(([k, icon, label, f]) => { const n = jobs.filter(f).length; return `<button class="${k === tab ? "on" : ""}" onclick="go('${k}')"><b>${icon}</b><span>${label}${n ? `<span class="n">${n}</span>` : ""}</span></button>`; }).join("");
+}
+function go(k) { tab = localStorage.tab = k; home(); }
+function home() { current = null; $("#back").style.display = "none"; $("#title").textContent = "Huy Kể Chuyện · Studio"; history.replaceState(null, "", "/m"); drawTabs(); drawList(); scrollTo(0, 0); }
+function drawList() {
+  const t = TABS.find((x) => x[0] === tab), list = jobs.filter(t[3]);
+  const hint = { script: "Kịch bản chờ anh duyệt. Duyệt xong studio làm giọng, tranh nền và render buổi tối.", video: "Video đã render, chờ anh xem và duyệt.", post: "Bài đã duyệt xong: tải video về máy, chép lời đăng cho YouTube, TikTok, Facebook." }[tab];
+  $("#main").innerHTML = `<p class="meta">${hint}</p>` + (list.length ? list.map((j) => `<div class="job" onclick="open_('${j.slug}')">
+    <b>${esc(j.topic)}</b><small>${esc(KIND[j.kind] || `${j.kind || ""} · ${j.era || ""}`)}${j.score ? ` · ${j.score.value}/10` : ""}</small></div>`).join("") : `<div class="empty">Không có gì chờ ở đây.</div>`);
+}
+
+async function open_(slug) {
+  current = slug; history.replaceState(null, "", `/m#${slug}`);
+  $("#back").style.display = "";
+  const d = await api(`/api/job/${slug}`), job = d.job;
+  // (opened from a link: the tab it belongs to)
+  const t = TABS.find((x) => x[3](job));
+  if (t && t[0] !== tab) { tab = localStorage.tab = t[0]; drawTabs(); }
+  $("#title").textContent = d.plan?.title || job.topic;
+  CLIP.length = 0;
+  if (job.status === "review") drawScript(d);
+  else if (job.status === "video") drawVideo(d);
+  else await drawPost(d);
+  scrollTo(0, 0);
+}
+
+const reviewBar = (job) => `<div class="pad"></div><div class="bar">
+  <button class="btn ok" onclick="act('approve')">✔ Duyệt</button>
+  <button class="btn fix" onclick="toggleNote()">✎ Sửa</button>
+  <button class="btn no" onclick="if(confirm('Bỏ chủ đề này?'))act('reject')">✘ Bỏ</button>
+  <div id="note"><textarea id="noteText" rows="3" placeholder="Cần sửa gì? Ví dụ: cảnh 5 thêm mẹ đang nấu cơm…"></textarea>
+    <div class="row"><button class="btn fix" onclick="act('fix')">Gửi yêu cầu sửa</button></div></div></div>`;
+
+function drawScript(d) {
+  const { job, plan } = d, qa = QA.includes(job.kind), has = (f) => d.files.includes(f);
+  let h = `<div class="step">📝 <b>Duyệt kịch bản</b>: đọc ${qa ? "" : "và xem bảng trang phục "}rồi bấm Duyệt ở dưới.</div>
+    <h2>${esc(plan?.title || job.topic)}</h2><div class="meta">${esc(KIND[job.kind] || `${job.kind || ""} · thời đại ${job.era || "?"}`)}</div>`;
+  if (job.score) h += `<p class="meta">Điểm của bộ não: <b>${job.score.value}/10</b>: ${esc(job.score.why)}</p>`;
+  if (job.error) h += `<div class="warn">Lỗi: ${esc(job.error)}</div>`;
+  if (qa && plan?.answer) h += `<section><h3>Câu trả lời</h3><p>${esc(plan.answer)}</p></section>`;
+  if (has("costumes.png")) h += `<section><h3>Bảng trang phục</h3><a href="/files/${job.slug}/costumes.png" target="_blank"><img class="full" src="/files/${job.slug}/costumes.png"></a><p class="meta">Chạm để xem to.</p></section>`;
+  if (job.notes?.length) h += `<section><h3>Góp ý trước</h3>${job.notes.map((n) => `<p>• ${esc(n.text)}</p>`).join("")}</section>`;
+  if (plan) h += `<section><h3>Kịch bản · ${plan.scenes.length} cảnh</h3>${plan.scenes.map((s, i) => `<div class="scene"><span class="num">${i + 1}</span>${s.parts.map((p) => p.who ? `<div class="say"><span class="who">${esc(p.who)}</span>: “${esc(p.text)}”</div>` : `<span>${esc(p.text)} </span>`).join("")}</div>`).join("")}</section>`;
+  $("#main").innerHTML = h + reviewBar(job);
+}
+
+function drawVideo(d) {
+  const { job, plan } = d, has = (f) => d.files.includes(f);
+  let h = `<div class="step v">🎬 <b>Duyệt video</b>: xem hết rồi bấm Duyệt ở dưới.</div><h2>${esc(plan?.title || job.topic)}</h2>`;
+  if (has("video.mp4")) h += `<section><video class="${job.kind?.startsWith("fact") ? "v" : ""}" controls playsinline preload="metadata" src="/files/${job.slug}/video.mp4" ${has("thumbnail.jpg") ? `poster="/files/${job.slug}/thumbnail.jpg"` : ""}></video></section>`;
+  if (job.notes?.length) h += `<section><h3>Góp ý trước</h3>${job.notes.map((n) => `<p>• ${esc(n.text)}</p>`).join("")}</section>`;
+  $("#main").innerHTML = h + reviewBar(job);
+}
+
+async function drawPost(d) {
+  const { job } = d, slug = job.slug;
+  const { posts } = await api(`/api/job/${slug}/social`);
+  const pub = job.published || {}, ex = job.exported || {};
+  const ytOf = (p) => p.what === "short" ? pub.shorts?.[p.index] : pub[p.what];
+  let h = `<h2>${esc(d.plan?.title || job.topic)}</h2><p class="meta">Tải video về máy, chép lời đăng, đăng xong thì đánh dấu. Đăng video dài lên YouTube trước: dán link của nó, lời các Short tự có link.</p>`;
+  if (!posts.length) h += `<div class="empty">Chưa có video để đăng.</div>`;
+  for (const p of posts) {
+    const yt = ytOf(p), name = `${slug}-${p.name}`, vertical = p.what === "short";
+    h += `<section><h3>${esc(p.label)} <small>· ${esc(p.account)}${p.publishAt ? ` · ${when(p.publishAt)}` : ""}</small></h3>
+      <video class="${vertical ? "v" : ""}" controls playsinline preload="metadata" src="/files/${slug}/${p.file}" ${!vertical && d.files.includes(p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg") ? `poster="/files/${slug}/${p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg"}"` : ""}></video>
+      <div class="row"><a class="btn dl" href="/files/${slug}/${p.file}?dl=${encodeURIComponent(name)}" download="${esc(name)}">⬇ Tải video</a>
+        ${!vertical && d.files.includes(p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg") ? `<a class="btn dl" href="/files/${slug}/${p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg"}?dl=${encodeURIComponent(`${slug}-${p.what === "en" ? "anh-bia-en" : "anh-bia"}.jpg`)}" download>⬇ Ảnh bìa</a>` : ""}</div>
+      <div class="plat"><h4>▶ YouTube ${yt ? `<span class="tag done">✔ đã đăng</span>` : `<span class="tag">chờ</span>`}</h4>
+        ${yt ? `<p><a href="${esc(yt.url)}">${esc(yt.url)}</a></p>` : `
+        <div class="row">${copyBtn(p.youtube.title, "Tiêu đề", "tiêu đề")}${copyBtn(p.youtube.description, "Mô tả", "mô tả")}${copyBtn(p.youtube.tags.join(", "), "Thẻ", "thẻ")}</div>
+        <p class="meta">Dành cho trẻ em: Có${p.youtube.playlist ? ` · danh sách phát: ${esc(p.youtube.playlist)}` : ""}${p.publishAt ? ` · lên lịch ${when(p.publishAt)}` : ""}</p>
+        <div class="row"><input id="yt-${p.what}-${p.index ?? 0}" placeholder="Dán link YouTube sau khi đăng"><button class="btn fix" onclick="ytDone('${p.what}', ${p.index ?? "undefined"})">✔ Đã đăng</button></div>`}</div>`;
+    for (const [pl, label] of [["tiktok", "♪ TikTok"], ["facebook", vertical ? "f Facebook Reels" : "f Facebook (video)"]]) {
+      const text = p.text[pl];
+      if (!text) continue;
+      h += `<div class="plat"><h4>${label} ${p.done[pl] ? `<span class="tag done">✔ đã đăng</span>` : `<span class="tag">chờ</span>`}</h4>
+        <div class="text" onclick="this.classList.toggle('open')">${esc(text)}</div>
+        <div class="row">${copyBtn(text, "Chép lời đăng", `lời đăng ${pl === "tiktok" ? "TikTok" : "Facebook"}`)}</div>
+        <label class="tick"><input type="checkbox" ${p.done[pl] ? "checked" : ""} onchange="socialDone('${pl}', '${p.what}', ${p.index ?? "undefined"}, this.checked)"> Đã đăng lên ${pl === "tiktok" ? "TikTok" : "Facebook"}</label></div>`;
+    }
+    h += `</section>`;
+  }
+  h += `<section><h3>Lưu ý khi đăng</h3><p>• TikTok và Facebook: bật nhãn <b>nội dung do AI tạo</b> (giọng đọc là giọng AI).</p><p>• Facebook: đăng lên <b>Trang</b> của kênh, Short đăng dạng Reel.</p><p>• Chrome hỏi “tải tệp không an toàn” thì chọn <b>Giữ lại</b>: video đi thẳng từ máy tính trong nhà, không qua mạng ngoài.</p></section>`;
+  $("#main").innerHTML = h;
+}
+
+function toggleNote() { const n = $("#note"); n.style.display = n.style.display === "block" ? "none" : "block"; if (n.style.display === "block") $("#noteText").focus(); }
+async function act(action) {
+  const note = action === "fix" ? $("#noteText").value : undefined;
+  if (action === "fix" && !note.trim()) return toast("Ghi cần sửa gì đã");
+  const r = await api(`/api/job/${current}/${action}`, { note });
+  if (r.error) return alert(r.error);
+  toast({ approve: "Đã duyệt", fix: "Đã gửi yêu cầu sửa", reject: "Đã bỏ" }[action]);
+  await load(); home();
+}
+async function ytDone(what, index) {
+  const url = $(`#yt-${what}-${index ?? 0}`).value.trim();
+  if (!url) return toast("Dán link YouTube đã");
+  const r = await api(`/api/job/${current}/published`, { what, index, url });
+  if (r.error) return alert(r.error);
+  toast("Đã lưu link"); open_(current);
+}
+async function socialDone(platform, what, index, done) {
+  const r = await api(`/api/job/${current}/social`, { platform, what, index, done });
+  if (r.error) return alert(r.error);
+  toast(done ? "Đã đánh dấu" : "Đã bỏ đánh dấu");
+}
+
+window.renderFrame = () => {};
+window.ready = new Promise((r) => setTimeout(r, 2500)); // for screenshots
+load().then(() => { const slug = decodeURIComponent(location.hash.slice(1)); if (slug && jobs.some((j) => j.slug === slug)) open_(slug); });
+setInterval(() => { if (!current) load(); }, 30000);
+</script>
+</body>
+</html>

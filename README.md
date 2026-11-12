@@ -15,6 +15,7 @@ npm run wata -- studio                     # trang web http://127.0.0.1:5175 + b
 bash scripts/install-studio-service.sh     # chạy nền thường trực (tự bật cùng máy)
 ```
 
+- **Trên điện thoại**: bấm **📱 Điện thoại** trên trang web rồi quét mã QR bằng camera (điện thoại cùng Wi-Fi với máy). Trang `/m` có ba tab: duyệt kịch bản, duyệt video, và **Đăng** (tải video về máy, chép tiêu đề / mô tả / thẻ YouTube và lời đăng TikTok, Facebook, đánh dấu đã đăng). Mã QR chứa khóa riêng `studio/secrets/phone-key.txt`; thiết bị khác không có khóa thì bị chặn. Xóa tệp đó rồi khởi động lại studio để khóa mọi điện thoại. Chỉ cho máy tính vào thì đặt `WATA_STUDIO_HOST=127.0.0.1`.
 - **Trang web**: Chờ bạn duyệt (kịch bản + bảng trang phục + giọng nghe thử, rồi video) với nút Duyệt / Yêu cầu sửa / Bỏ; Đang làm; Xong; Token (sổ token, trần ngày / kịch bản / video, nút **Tạm dừng Claude** khi bạn cần token cho việc khác và **Tiếp tục tự động**).
 - **Lịch**: giờ hành chính (T2–T6, 8:00–18:00) chỉ làm việc nhẹ, ưu tiên thấp; ngoài giờ và cuối tuần render. Luôn giữ sẵn 6 kịch bản chờ duyệt. Sửa trong `studio/settings.json`.
 - **Bộ não**: Claude (qua Claude Code, gói của bạn) cho việc cần suy nghĩ; mỗi lần gọi ghi vào `studio/ledger.jsonl`; quá trần thì chuyển sang Ollama (`gemma3:12b` nếu đã tải); tạm dừng thì việc cần Claude đứng chờ.
@@ -347,6 +348,7 @@ Mỗi kênh có một chế độ, chọn ở tab **Đăng YouTube** của trang
     short-1.mp4  short-2.mp4  short-3.mp4
     video-tieng-anh.mp4   anh-bia-tieng-anh.jpg   (khi có bản tiếng Anh: thêm vào sau)
     dang-len-youtube.txt
+    dang-tiktok-facebook.txt
   ```
 
   Video là liên kết cứng tới file của studio, không tốn thêm dung lượng. Tệp `dang-len-youtube.txt` có một mục cho mỗi video: kênh, giờ công khai, tiêu đề, mô tả, thẻ, danh mục, danh sách phát, ngôn ngữ, "dành cho trẻ em". Shorts "Bạn có biết?" chỉ có `short.mp4`.
@@ -354,6 +356,8 @@ Mỗi kênh có một chế độ, chọn ở tab **Đăng YouTube** của trang
   Cách đăng: đăng video dài trước bằng YouTube Studio, chọn **Lên lịch** đúng giờ ghi trong tệp. Dán link của nó vào bài trên trang duyệt (mục YouTube, ô **Đã đăng**): studio tự điền link vào mô tả các Short trong tệp (chỗ `[dán link video dài vào đây]`) và đánh dấu video dài đã đăng. Rồi đăng từng Short theo giờ của nó và dán link từng cái. Nút **📦 Tải về để đăng** trên mỗi bài và nút **Tải về tất cả bài chờ đăng** gom ngay, không chờ studio.
 - **Tự đăng**: studio tự tải lên ở chế độ riêng tư kèm giờ công khai; đến giờ YouTube tự công khai. **Chỉ bật khi dự án Google đã qua audit** (xem dưới). Nửa giờ sau giờ công khai, studio kiểm tra video. Nếu video vẫn riêng tư (bị khóa), studio chuyển kênh về Xuất tay, xuất lại các video bị khóa để bạn đăng tay, và báo trên trang duyệt những video cần xóa trong YouTube Studio.
 - **Tắt**: không làm gì.
+
+**TikTok và Facebook** (đăng tay): Short dọc đăng lên TikTok và Facebook Reels, video dài đăng lên Trang Facebook. Mỗi kênh có tài khoản TikTok và Trang Facebook cùng tên. Lời đăng nằm trong `dang-tiktok-facebook.txt` và trên trang điện thoại. Lời đăng được làm từ thông tin YouTube, không tốn token. Mỗi Short mở đầu bằng một câu thoại của chính đoạn đó, nên các Short không trùng lời. Khi đăng, bật nhãn nội dung do AI tạo (giọng đọc là giọng AI). Phụ đề trên Shorts chữ to và nằm trên vùng TikTok/YouTube phủ mô tả, chừa cột nút bên phải.
 
 Hai kênh tạo chung một tài khoản Google, không cần hai email. Một số điện thoại xác minh được hai kênh mỗi năm, vừa đủ. Vào YouTube, chọn ảnh đại diện → **Cài đặt** → **Thêm hoặc quản lý kênh** → **Tạo kênh**. Mỗi kênh là một tài khoản thương hiệu (Brand Account), có tên và logo riêng.
 
