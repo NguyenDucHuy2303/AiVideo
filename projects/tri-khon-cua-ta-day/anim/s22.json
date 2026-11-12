@@ -1,0 +1,95 @@
+{
+  "narration": "Lửa cháy đứt sợi thừng. Hổ vùng mạnh, thoát ra được, cắm đầu chạy một mạch vào rừng sâu, chẳng dám ngoái lại. Hổ (sợ hãi): \"Trí khôn của con người đáng sợ quá! Ta không dám coi thường con người nữa đâu!\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "run",
+        "face": "shout",
+        "then": "run",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "smoke",
+      "embers"
+    ],
+    "objects": [],
+    "shot": "track"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 11.3,
+  "time": "day",
+  "mood": "battle",
+  "set": {
+    "name": "field",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ho",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#f0932b"
+      },
+      "x": -582.4,
+      "scale": 1.4,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ho",
+      "at": 0,
+      "do": "run",
+      "face": "shout",
+      "move": {
+        "by": 840,
+        "ease": "linear"
+      },
+      "dur": 11.3
+    },
+    {
+      "actor": "ho",
+      "at": 5.65,
+      "do": "run",
+      "face": "worried",
+      "move": {
+        "by": 979.9999999999999,
+        "ease": "in"
+      },
+      "dur": 5.65
+    }
+  ],
+  "fx": [
+    {
+      "fx": "smoke",
+      "x": 1800,
+      "at": -2,
+      "dur": 13.3
+    },
+    {
+      "fx": "embers",
+      "x": 600,
+      "at": 0,
+      "dur": 11.3,
+      "width": 2600
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": [
+        "ho"
+      ],
+      "push": 0.06
+    }
+  ]
+}

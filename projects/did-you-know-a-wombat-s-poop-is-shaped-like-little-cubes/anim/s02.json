@@ -1,0 +1,80 @@
+{
+  "castFile": "cast.json",
+  "duration": 5.57,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.39,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 3.9,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0.2\" x=\"500\" y=\"90\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\">A cube has 6 square sides</text><icon data-in=\"0.5\" name=\"dice\" x=\"80\" y=\"190\" size=\"260\"/><text data-in=\"0.8\" x=\"210\" y=\"510\" font-family=\"sans-serif\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2a2a40\">Dice</text><g data-in=\"1.4\" class=\"pulse\"><polygon points=\"640,260 680,210 820,210 780,260\" fill=\"#a1887f\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"/><rect x=\"640\" y=\"260\" width=\"140\" height=\"140\" fill=\"#8d6e63\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"/><polygon points=\"780,260 820,210 820,350 780,400\" fill=\"#6d4c41\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"/></g><text data-in=\"2.4\" x=\"730\" y=\"510\" font-family=\"sans-serif\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2a2a40\">Wombat poop</text><rect data-in=\"1.9\" x=\"410\" y=\"290\" width=\"140\" height=\"22\" rx=\"10\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect data-in=\"1.9\" x=\"410\" y=\"350\" width=\"140\" height=\"22\" rx=\"10\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\"/></svg>",
+    "style": "chalk",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

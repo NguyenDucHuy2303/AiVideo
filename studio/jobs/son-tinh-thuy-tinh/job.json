@@ -1,7 +1,7 @@
 {
   "slug": "son-tinh-thuy-tinh",
   "topic": "Sơn Tinh – Thủy Tinh",
-  "status": "review",
+  "status": "video",
   "notes": [],
   "history": [
     {
@@ -11,10 +11,50 @@
     {
       "at": "2026-11-09T02:45:08.460Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-11T10:02:51.764Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (điểm 8.4/10)"
+    },
+    {
+      "at": "2026-11-11T10:02:51.779Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-11T10:55:39.708Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-11T11:24:22.818Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-11T12:41:30.033Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-11T15:05:51.583Z",
+      "status": "video",
+      "info": "3 shorts"
     }
   ],
   "kind": "truyền thuyết",
   "era": "van_lang",
   "summary": "Vua Hùng thứ mười tám kén rể cho công chúa Mị Nương xinh đẹp. Hai chàng trai tài giỏi đến cầu hôn: Sơn Tinh ở núi Tản Viên và Thủy Tinh ở biển cả. Vua ra điều kiện sính lễ đến trước thì được cưới. Sơn Tinh đến trước và rước Mị Nương về núi. Thủy Tinh đến sau, tức giận dâng nước đánh Sơn Tinh. Sơn Tinh bốc đồi, dựng thành chặn nước, nước dâng bao nhiêu núi cao bấy nhiêu. Thủy Tinh thua cuộc, nhưng năm nào cũng trở lại, nên dân ta đắp đê chống lũ.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.4,
+    "why": "Điểm mạnh: mở đầu bằng câu hỏi gần gũi, cốt truyện kinh điển nhiều người tìm, có xung đột rõ, nhiều cảnh hành động dễ dựng (vẫy tay dựng núi, quân thủy tộc, đắp đê), chi tiết Lạc Việt đúng tư liệu, bài học rõ; điểm yếu: hơi dài, đoạn cuối về đền thờ và thánh tích nặng thông tin, khô với trẻ 4–10 tuổi, thoại hơi nhiều và lặp nhãn cảm xúc (\"dõng dạc\", \"quyết tâm\"), nên cắt gọn phần kết.",
+    "hash": "3a5aa4f6953432ab"
+  },
+  "autoPicked": true,
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ]
 }

@@ -1,0 +1,671 @@
+{
+  "title": "Why Do We Get Hiccups? | Ask Huy",
+  "question": "Why do we get hiccups?",
+  "answer": "Your diaphragm, the dome-shaped breathing muscle under your lungs, suddenly jerks and pulls air in. Then your throat snaps shut, and the air bumping into it makes the hic sound. It is a reflex, often started by an air bubble in your belly. Scientists think hiccups may have started as a way to help babies burp out air so they can drink more milk.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai sits at a kitchen table with a bowl of noodles. She hiccups, her shoulders jump, and the juice in her cup jiggles. Little HIC bubbles float above her head."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Hic! Huy, help! Hic! My body keeps making this funny noise, and I am not doing it on purpose! Hic!"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "Ah, the hiccups! Here is a surprise, Mai. Babies can hiccup even before they are born, while they are still inside their mom's tummy. And cats, dogs, rabbits and horses get hiccups too!"
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy faces the camera and smiles. Behind him are three floating icons, a body with a question mark, a speech bubble saying HIC, and a baby."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So today we will find out what really happens inside you when you hiccup, where that hic sound comes from, and why our bodies might do this at all."
+        },
+        {
+          "who": "Mai",
+          "how": "happily",
+          "text": "Hic! Let's go!"
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai with a thought bubble that shows two far-away friends whispering and pointing at a little picture of her. Mai looks proud of her idea."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "proudly",
+          "text": "I know why! My grandma says you get hiccups when someone far away is talking about you. So somebody is talking about me right now!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "That is a great guess, and you are not alone. In lots of places, from Germany to Turkey to India to Kenya, people tell that same story."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "compare",
+        "what": "Left side shows the whispering friends with a big question mark. Right side shows a cartoon outline of a body with a magnifying glass over the chest and a sparkle under the lungs."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "It is a fun story. But scientists found that the real action is much closer. It is right inside your own body, just under your lungs. Nobody needs to be chatting about you!"
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "Hic! Oh. That is a little bit sad. Hic!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "labels",
+        "what": "A friendly cartoon body outline showing two pink lungs, a heart, and a red dome-shaped muscle under them labelled diaphragm. The stomach sits below, labelled belly."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Meet the star of today's show, the diaphragm. Say it with me, DIE-uh-fram. It is a flat sheet of muscle shaped like a dome, a bit like an upside-down bowl. It sits under your lungs and above your belly."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "diagram",
+        "what": "The diaphragm drawn as a curved wall across the middle of the body. Above it, the heart and lungs in a box labelled chest. Below it, the stomach in a box labelled belly. A small sign reads a wall in between."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "The name comes from an old Greek word that means a wall in between. And that is just what it is. Above it are your heart and lungs. Below it are your stomach and other belly parts."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "A muscle wall inside me? Hic! I never knew!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "arrows",
+        "what": "Two panels. In the first, the diaphragm pulls down flat, the lungs grow bigger, and blue arrows show air rushing in through the nose. In the second, the diaphragm moves back up into a dome and arrows show air flowing out."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "The diaphragm is your most important breathing muscle. When it tightens, it pulls down and gets flatter. That makes more room in your chest, so your lungs get bigger and air rushes in. When it relaxes, it moves back up and the air goes out."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "experiment",
+        "what": "Mai lies on a rug with a teddy bear on her belly. Dotted lines show the teddy rising as she breathes in and sinking as she breathes out."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Try this. Lie down and put a teddy on your belly. Breathe in slowly. See the teddy go up? That is your diaphragm pushing down on your belly."
+        },
+        {
+          "who": "Mai",
+          "how": "joyfully",
+          "text": "The teddy is riding a wave! Up, and down, and up!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "host",
+        "what": "Huy holds up a card with a simple drawing of the dome-shaped diaphragm under two lungs and a big number 1."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So here is step one. Your diaphragm is a dome-shaped muscle under your lungs, and every time it pulls down, you breathe in."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "The diaphragm suddenly jerks down, drawn with zigzag shake lines. A fast blue arrow shows air being pulled in with a whoosh."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Now, a hiccup. Most of the time your diaphragm moves smoothly, like a gentle swing. But in a hiccup it suddenly tightens with a quick jerk, all by itself. Whoosh! Air gets pulled in fast."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "labels",
+        "what": "A close-up of a cartoon throat showing the windpipe and two little flaps labelled vocal cords. The gap between them closes like a pair of sliding doors."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Then, a tiny moment later, something in your throat slams shut. It is the gap between your vocal cords. Those are two little flaps in your throat that help make your voice."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "arrows",
+        "what": "Air arrows rush up toward the closed vocal cords and bump into them like a ball hitting a shut door. A big speech bubble pops out saying HIC."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "The air rushing in bumps into that shut door, and the bump makes the sound. Hic! The throat shuts about thirty-five thousandths of a second after the jerk. That is super, super fast."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "So the hic is air crashing into a door in my throat? Hic! There it goes again!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "scene",
+        "what": "Mai frowns and holds her hands on her chest, saying stop. Beside her, a small picture shows a hand quickly pulling away from a prickly cactus."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "worried",
+          "text": "But why can't I stop it? I keep telling my body to stop!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Because a hiccup is a reflex. A reflex is something your body does without you deciding, like quickly pulling your hand away from something prickly. For hiccups, your body is the boss, not you."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "host",
+        "what": "Huy holds a card with three small pictures in a row, a jerking diaphragm, a closing throat door, and a HIC bubble, with a big number 2."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "And the word hiccup? People made it up by copying the sound. Step two. A hiccup is a sudden jerk of your diaphragm, then your throat snaps shut, and that makes the hic."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "count",
+        "what": "Five big icons in a row, numbered 1 to 5. A plate of food eaten fast, a gulp of air, a fizzy drink with bubbles, a chili pepper, and a face laughing hard."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So what starts hiccups? Scientists call these triggers. Common ones are eating very fast, swallowing lots of air, fizzy drinks, spicy food, and laughing hard for a long time."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "I did eat my noodles super fast. And then I laughed at your joke!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "zoom",
+        "what": "Zooming inside the belly, a round air bubble floats in the stomach and presses up against the underside of the dome-shaped diaphragm."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hiccups often happen when a bubble of air gets into your stomach and takes up space there, right under your diaphragm."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "arrows",
+        "what": "Tiny glowing messages travel from the stomach up a nerve to a spot in the brain labelled hiccup center, then a second message travels back down to the diaphragm, which jerks."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Scientists think tiny sensors in your stomach and around your diaphragm may notice the bubble. They may send a message up to a part of your brain called the hiccup center. Then the brain sends a message back down. Jerk! Hic!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "count",
+        "what": "A big clock face with HIC marks spaced evenly around it like drum beats. Below, a short timeline shows a few minutes of hiccups and then a quiet stop sign."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hiccups also keep a beat, like a drum. The time between one hic and the next usually stays about the same, often a few each minute. And most hiccups stop all by themselves after a few minutes."
+        },
+        {
+          "who": "Mai",
+          "how": "happily",
+          "text": "So my hiccups have their own song! Hic!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "host",
+        "what": "Huy holds a card showing an air bubble in a belly with an arrow up to the brain, and a big number 3."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Step three. Things like eating fast or swallowing air can make an air bubble in your belly, and scientists think that bubble may help set off the hiccup reflex."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Huy and Mai stand by a whiteboard with a giant question mark drawn on it. Mai has her arms crossed and a puzzled face."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "But wait. Why would a body even want hiccups? They are useless! Hic!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Great question, and here is an honest answer. Scientists do not know for sure. But they have some clever ideas."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "A baby is cuddled while drinking milk from a bottle. Small air bubbles slip down into the baby's tummy next to the milk."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "The main idea is about babies. When a baby drinks milk, it has to suck, swallow and breathe all at once. That is tricky, so some air sneaks into the tummy. And air takes up room where milk could go."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "arrows",
+        "what": "An air bubble is pulled from the baby's stomach up the food tube and out of the mouth as a cute burp cloud. The stomach now shows more space for milk."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here is the clever part. A hiccup shuts the throat and makes a pull inside the chest. That may tug the air bubble up and out of the mouth, like a burp. Now there is more room for milk!"
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "A hiccup is a burp helper? That is so funny!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "compare",
+        "what": "On the left, a baby with many HIC bubbles next to a grown-up with just one. On the right, a row of mammal moms feeding their babies milk, a cat, a dog, a horse and a rabbit."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Some clues fit this idea. Babies hiccup a lot, and we hiccup less as we grow older. And hiccups have only been described in mammals, the animals that feed their babies milk."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "A smiling tadpole in a pond gulps water through its gills, with a little speech bubble saying gulp. Mai peeks in from the side."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Some scientists have a second idea. Hiccups might be left over from long, long ago. Tadpoles gulp water and air across their gills with a simple movement a bit like a hiccup. Maybe our bodies kept an old trick."
+        },
+        {
+          "who": "Mai",
+          "how": "joyfully",
+          "text": "So maybe I am hiccuping like a tadpole! Ribbit! Hic!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "host",
+        "what": "Huy holds a card showing a happy baby with a burp cloud and a big number 4."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Step four. Nobody knows for sure why we hiccup, but scientists think it may have helped babies burp out air so they could drink more milk."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Mai sits under a big kitchen clock with a notebook, drawing a tally mark for each hiccup. The second hand ticks around."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here is a safe check you can try. Next time you have hiccups, look at a clock and count your hics for one minute. Make a little mark for each one. Is the time between them about the same?"
+        },
+        {
+          "who": "Mai",
+          "how": "proudly",
+          "text": "I have five marks in one minute! Hic! Six!"
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "compare",
+        "what": "Three thought bubbles with hiccup tricks, a glass of cold water, a child hugging their knees, and a clock with the words just wait. Only the clock has a small gold star."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "People all around the world have tricks to stop hiccups, like sipping cold water or pulling your knees up to your chest. But scientists say no trick has been proven to work best. Usually the easiest cure is just to wait."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "scene",
+        "what": "A big friendly cartoon horse in a flowery field goes HIC, and its shoulders give a little jump. The flowers wobble. Mai laughs nearby."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Now imagine if a horse got hiccups. Horses really can! Picture a big horse in a field going hic, with its shoulders giving a little jump each time."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "The flowers would wobble! Hic! Hic!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Wait, Mai. Listen."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Oh! My hiccups stopped! All by themselves!"
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "diagram",
+        "what": "A simple three-step strip. The diaphragm jerks down, the throat door snaps shut, and a big HIC bubble pops out, with a tiny burping baby in the corner."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So, why do we get hiccups? Your diaphragm, the breathing muscle under your lungs, suddenly jerks. Then your throat snaps shut, and the air bumping into it goes hic. Scientists think it may have started as a way to help babies burp."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "count",
+        "what": "A long timeline from 1922 to 1990 with a smiling cartoon man walking along it, and a counter showing about 430,000,000 hiccups."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "And here is a fun fact. A man in America named Charles Osborne had hiccups for about sixty-eight years! That is a world record, about four hundred and thirty million hiccups. Do not worry, that is very, very rare."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Sixty-eight years! Mine lasted about five minutes, and that felt long!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "scene",
+        "what": "Huy and Mai wave at the camera. Mai does a big stretchy yawn, and a bubble with a question mark floats above her. A subscribe button glows below."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "tired",
+          "text": "All that hiccuping made me sleepy. Ahhh. Huy, why do we yawn?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Ooh, that is a great question for next time! Subscribe so you do not miss it, and keep asking questions. See you soon!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Babies can hiccup before they are born, inside the mother.",
+      "source": "Hiccup"
+    },
+    {
+      "claim": "Hiccups have been seen in cats, rats, rabbits, dogs and horses.",
+      "source": "Hiccup"
+    },
+    {
+      "claim": "In many traditions (German, Turkish, Indian, Luo people in Kenya and others), people say you get hiccups when someone who is not there is talking about you.",
+      "source": "Hiccup"
+    },
+    {
+      "claim": "The diaphragm is a dome-shaped sheet of muscle below the lungs that separates the chest (heart and lungs) from the belly.",
+      "source": "Thoracic diaphragm"
+    },
+    {
+      "claim": "The word diaphragm comes from Ancient Greek meaning partition, a wall in between.",
+      "source": "Thoracic diaphragm"
+    },
+    {
+      "claim": "The diaphragm is the most important breathing muscle. When it tightens and pulls down, the chest gets more room and air is drawn into the lungs. When it relaxes, air goes out.",
+      "source": "Thoracic diaphragm; Respiratory system"
+    },
+    {
+      "claim": "When you breathe in, the diaphragm pushes down and the belly rises.",
+      "source": "Respiratory system (diaphragm pulled downward); basic school knowledge"
+    },
+    {
+      "claim": "A hiccup is a sudden tightening of the diaphragm that pulls air in, and a moment later the throat closes.",
+      "source": "Hiccups (Simple Wikipedia)"
+    },
+    {
+      "claim": "The throat closes at the gap between the vocal cords about 35 milliseconds after the diaphragm tightens, making the hic sound.",
+      "source": "Hiccup"
+    },
+    {
+      "claim": "A hiccup is a reflex, something the body does without you trying.",
+      "source": "Hiccups (Simple Wikipedia)"
+    },
+    {
+      "claim": "The word hiccup was made by copying the sound.",
+      "source": "Hiccup"
+    },
+    {
+      "claim": "Hiccups can be triggered by eating very fast, swallowing air, fizzy drinks, spicy food and laughing for a long time.",
+      "source": "Hiccups (Simple Wikipedia); Hiccup"
+    },
+    {
+      "claim": "Hiccups often happen when an air bubble forms in the belly below the diaphragm.",
+      "source": "Hiccups (Simple Wikipedia)"
+    },
+    {
+      "claim": "Sensors in the stomach, food tube and under the diaphragm send signals to a hiccup center in the brain, which triggers the hiccup.",
+      "source": "Hiccup"
+    },
+    {
+      "claim": "Hiccups are rhythmic, often several per minute, and usually stop on their own after a few minutes.",
+      "source": "Hiccups (Simple Wikipedia)"
+    },
+    {
+      "claim": "Nobody knows for sure why people hiccup.",
+      "source": "Hiccups (Simple Wikipedia)"
+    },
+    {
+      "claim": "The leading idea is that hiccups help young mammals get more milk by pulling swallowed air up out of the stomach, like a burp.",
+      "source": "Hiccup; Hiccups (Simple Wikipedia)"
+    },
+    {
+      "claim": "Babies hiccup a lot, hiccups become less frequent with age, and hiccups are only described in mammals, which feed their young milk.",
+      "source": "Hiccup"
+    },
+    {
+      "claim": "Another idea is that hiccups are left over from an old breathing reflex like tadpoles gulping air and water across their gills.",
+      "source": "Hiccup"
+    },
+    {
+      "claim": "There are many folk remedies, such as sipping ice-cold water or pulling the knees up to the chest, but no treatment is known to be especially effective. Hiccups are normally waited out.",
+      "source": "Hiccup"
+    },
+    {
+      "claim": "Charles Osborne of America had hiccups for 68 years (1922 to 1990), a Guinness World Record, about 430 million hiccups.",
+      "source": "Hiccup"
+    },
+    {
+      "claim": "Hiccups that last a very long time are rare.",
+      "source": "Hiccups (Simple Wikipedia); Hiccup"
+    }
+  ],
+  "shorts": [
+    1,
+    29,
+    30
+  ],
+  "thumbnail": "Why Do We HICCUP?",
+  "description": "What makes that funny hic sound, and why can't we stop it? Huy and Mai go inside the body to meet the diaphragm, find out what starts hiccups, and learn what scientists think hiccups might be for. A calm, accurate science explainer for kids aged 6 to 12, with a safe hiccup-counting check to try at home.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": ""
+}

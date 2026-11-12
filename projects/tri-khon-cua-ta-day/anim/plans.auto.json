@@ -1,0 +1,850 @@
+[
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "none",
+        "thenFace": "happy"
+      },
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "none",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "dawn",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "none",
+        "act": "sit_up",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "dawn",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "center",
+        "enter": "from_left",
+        "act": "carry",
+        "face": "joy",
+        "then": "walk",
+        "thenFace": "joy"
+      },
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "track"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "shout",
+        "then": "call",
+        "thenFace": "happy"
+      },
+      {
+        "id": "trau",
+        "place": "center",
+        "enter": "none",
+        "act": "walk",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "track"
+  },
+  {
+    "set": "bamboo",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "center",
+        "enter": "none",
+        "act": "still",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "bamboo",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "point",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "left",
+        "enter": "none",
+        "act": "eat",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "none",
+        "act": "eat",
+        "face": "happy",
+        "then": "eat",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "none",
+        "act": "eat",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "proud",
+        "then": "talk",
+        "thenFace": "proud"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "point",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "walk",
+        "face": "happy",
+        "then": "call",
+        "thenFace": "joy"
+      },
+      {
+        "id": "bac_nong_dan",
+        "place": "right",
+        "enter": "none",
+        "act": "sit",
+        "face": "surprised",
+        "then": "sit",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "idle",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "angry",
+        "then": "call",
+        "thenFace": "angry"
+      },
+      {
+        "id": "bac_nong_dan",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "shake"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "talk",
+        "thenFace": "worried"
+      },
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "worried",
+        "then": "talk",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "right",
+        "enter": "none",
+        "act": "call",
+        "face": "determined",
+        "then": "talk",
+        "thenFace": "determined"
+      },
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "shout",
+        "then": "raise",
+        "thenFace": "shout"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "right",
+        "enter": "none",
+        "act": "swing",
+        "face": "determined",
+        "then": "swing",
+        "thenFace": "determined"
+      },
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "still",
+        "face": "happy",
+        "then": "still",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stumps"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "right",
+        "enter": "from_right",
+        "act": "carry",
+        "face": "happy",
+        "then": "carry",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "still",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stumps"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "right",
+        "enter": "none",
+        "act": "call",
+        "face": "determined",
+        "then": "call",
+        "thenFace": "shout"
+      },
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "still",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "fire",
+      "smoke"
+    ],
+    "objects": [
+      "fire_pit"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "center",
+        "enter": "none",
+        "act": "run",
+        "face": "shout",
+        "then": "fall",
+        "thenFace": "shout"
+      }
+    ],
+    "fx": [
+      "fire",
+      "smoke",
+      "shake"
+    ],
+    "objects": [
+      "fire_pit"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "none",
+        "act": "stretch",
+        "face": "laugh",
+        "then": "cheer",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "smoke"
+    ],
+    "objects": [
+      "fire_pit"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "trau",
+        "place": "center",
+        "enter": "none",
+        "act": "fall",
+        "face": "laugh",
+        "then": "sit_up",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [
+      "pop"
+    ],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "bamboo",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "run",
+        "face": "shout",
+        "then": "run",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "smoke",
+      "embers"
+    ],
+    "objects": [],
+    "shot": "track"
+  },
+  {
+    "set": "mountain",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ho_van",
+        "place": "center",
+        "enter": "none",
+        "act": "swim",
+        "face": "sad",
+        "then": "worry",
+        "thenFace": "sad"
+      }
+    ],
+    "fx": [
+      "pop"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "mountain",
+    "time": "dusk",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ho_van",
+        "place": "center",
+        "enter": "none",
+        "act": "sit",
+        "face": "sad",
+        "then": "worry",
+        "thenFace": "sad"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "left",
+        "enter": "none",
+        "act": "give",
+        "face": "laugh",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "joy",
+        "then": "talk",
+        "thenFace": "joy"
+      }
+    ],
+    "fx": [
+      "smoke"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "dusk",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "left",
+        "enter": "from_right",
+        "act": "walk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "trau",
+        "place": "center",
+        "enter": "from_right",
+        "act": "walk",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      },
+      {
+        "id": "cu_ti",
+        "place": "right",
+        "enter": "from_right",
+        "act": "run",
+        "face": "happy",
+        "then": "bow",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "cu_ti",
+        "place": "center",
+        "enter": "none",
+        "act": "sit",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "surprised"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 4,
+      "act": "sit",
+      "then": "cheer"
+    },
+    "fx": [
+      "glow"
+    ],
+    "objects": [
+      "mat",
+      "bowls"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "cu_ti",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "wave",
+        "thenFace": "proud"
+      },
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "none",
+        "act": "walk",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "rays"
+    ],
+    "objects": [
+      "nong"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "mountain",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "ho_van",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "idle",
+        "thenFace": "proud"
+      }
+    ],
+    "fx": [
+      "rays",
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "wave",
+        "thenFace": "happy"
+      },
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      },
+      {
+        "id": "cu_ti",
+        "place": "left",
+        "enter": "none",
+        "act": "wave",
+        "face": "joy",
+        "then": "cheer",
+        "thenFace": "joy"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "cheer",
+      "then": "wave"
+    },
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "wide"
+  }
+]

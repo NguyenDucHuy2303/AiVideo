@@ -1,0 +1,33 @@
+{
+  "engine": "kokoro",
+  "voice": "am_michael",
+  "speed": 0.92,
+  "imageGen": "off",
+  "onlineImages": false,
+  "profiles": [
+    "16x9"
+  ],
+  "channel": "Ask Huy",
+  "voices": {
+    "Huy": "am_liam",
+    "Mai": {
+      "voice": "af_nova",
+      "pitch": 3
+    }
+  },
+  "speakers": {
+    "Huy": [
+      "huy"
+    ],
+    "Mai": [
+      "mai"
+    ]
+  },
+  "brandId": "ask-huy",
+  "style": "hien_dai",
+  "thumbnail": {
+    "title": "Closest to Sun in WINTER?!",
+    "subtitle": "Ask Huy",
+    "at": 6.6
+  }
+}

@@ -15,5 +15,10 @@
   ],
   "kind": "qa-vi",
   "summary": "Bất ngờ khi biết cá heo không phải là cá; có sơ đồ so sánh phổi và mang, cùng cá heo trắng ở vùng biển Việt Nam để gần gũi.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.4,
+    "why": "Mở bài hay (cá heo không phải cá), kiến thức chính xác, giải thích theo từng bước có nhắc lại và có thí nghiệm đếm nhịp thở an toàn, chủ đề được nhiều người tìm và dễ dựng hình; điểm yếu là kịch bản khá dài và dày (bốn bước, nhiều số liệu, đoạn cá mập voi và đoạn bong bóng cá hơi lan man) nên dễ vượt 8 phút và làm trẻ 6–7 tuổi mất tập trung.",
+    "hash": "a54ac58cd25f9372"
+  }
 }

@@ -15,5 +15,10 @@
   ],
   "kind": "fact",
   "summary": "In 1783 the Montgolfier brothers sent these three animals up in a balloon in front of King Louis XVI, before any person flew. All three landed safely. Kids can see how it worked with one picture of the balloon with the animals in the basket and one of hot air rising. It's on Wikipedia's Montgolfier brothers and Balloon flight pages.",
-  "by": "claude-sonnet"
+  "by": "claude-sonnet",
+  "score": {
+    "value": 7.2,
+    "why": "Câu mở đầu rất hấp dẫn (cừu, vịt, gà trống lên khinh khí cầu), ngắn gọn, vui, hợp trẻ 6–12 tuổi và hợp làm Shorts, nhưng \"bay khoảng 480 mét\" là sai/gây hiểu nhầm (480 m là độ cao, quãng bay khoảng 3 km, kéo dài ~8 phút), lại thiếu ý quan trọng là vì sao thử với động vật trước (kiểm tra an toàn), và \"vài tuần sau\" thực ra là hai tháng (21/11/1783).",
+    "hash": "8a91c02dcdcea36b"
+  }
 }

@@ -1,0 +1,83 @@
+{
+  "title": "Wombats poop tiny cubes!",
+  "kind": "story",
+  "scenes": [
+    {
+      "narration": "Huy (surprised): \"Did you know a wombat's poop is shaped like little cubes?\"",
+      "chapter": "Wombats poop tiny cubes!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Mai (surprised): \"Cubes? Like dice?\" Huy (happily): \"Yes! A cube has six flat, square sides.\"",
+      "chapter": "Wombats poop tiny cubes!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (happily): \"A wombat is a furry animal from Australia, about one metre long. At night it eats grass, roots and plants.\"",
+      "chapter": "Wombats poop tiny cubes!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (happily): \"Poop is leftover food. In the large intestine, the body takes water out of it.\" Mai (happily): \"So it gets drier!\"",
+      "chapter": "Wombats poop tiny cubes!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (firmly): \"Wombats are the only animals we know of whose poop is shaped like cubes. Scientists are still working out exactly how they make them.\"",
+      "chapter": "Wombats poop tiny cubes!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (proudly): \"Cubes are useful too. When people spot them, they know wombats live nearby.\" Mai (surprised): \"And they show what the wombat ate!\"",
+      "chapter": "Wombats poop tiny cubes!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Mai (laughing): \"Wombat poop is like tiny dice!\" Huy (joyfully): \"Follow Ask Huy for more wow facts!\"",
+      "chapter": "Wombats poop tiny cubes!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "castFile": "cast.json",
+  "duration": 14.9,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 10.43,
+      "do": "talk",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><icon name=\"grandmother\" x=\"130\" y=\"50\" size=\"260\" data-in=\"1\"/><icon name=\"grandfather\" x=\"610\" y=\"50\" size=\"260\" data-in=\"5\"/><text x=\"260\" y=\"380\" font-family=\"sans-serif\" font-size=\"40\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#e53935\" data-in=\"3\">grandma</text><text x=\"740\" y=\"380\" font-family=\"sans-serif\" font-size=\"40\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#43a047\" data-in=\"6.5\">grandpa</text><text x=\"260\" y=\"450\" font-family=\"sans-serif\" font-size=\"32\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"3.5\">This is my grandma.</text><text x=\"740\" y=\"450\" font-family=\"sans-serif\" font-size=\"32\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"7\">This is my grandpa.</text><text x=\"260\" y=\"515\" font-family=\"sans-serif\" font-size=\"28\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"10\">Đây là bà của em</text><text x=\"740\" y=\"515\" font-family=\"sans-serif\" font-size=\"28\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"10\">Đây là ông của em</text></svg>",
+    "style": "grid",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

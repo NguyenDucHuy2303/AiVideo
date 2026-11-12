@@ -15,5 +15,10 @@
   ],
   "kind": "fact",
   "summary": "Botanically, a berry is a fruit with seeds inside a fleshy wall, so bananas count and strawberries don't. It's a surprising reversal that kids can use to quiz their friends. It can be shown with a banana and a strawberry, one with a tick and one with a cross. It's on Wikipedia's Berry (botany) page.",
-  "by": "claude-sonnet"
+  "by": "claude-sonnet",
+  "score": {
+    "value": 7.5,
+    "why": "Mở đầu gây tò mò mạnh, chủ đề được nhiều người tìm, kiến thức đúng và dễ dựng minh họa (chuối, dâu, hạt), nhưng giải thích hơi lặp ở đoạn dâu tây, câu \"red part does not grow from the ovary\" còn khó hiểu với trẻ 6–12 tuổi, thiếu ví dụ bất ngờ thêm (như dưa hấu, bí là quả mọng) và lời thoại chưa viết bằng tiếng Việt như kênh yêu cầu.",
+    "hash": "02046b73d9915369"
+  }
 }

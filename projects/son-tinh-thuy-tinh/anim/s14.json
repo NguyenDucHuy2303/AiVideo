@@ -1,0 +1,216 @@
+{
+  "narration": "Thủy Tinh (tức giận): \"Ta không chịu! Ta sẽ đuổi theo, cướp Mị Nương về!\" Thủy Tinh đùng đùng nổi giận, quay về biển cả, quyết đánh Sơn Tinh.",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "thuy_tinh",
+        "place": "center",
+        "enter": "none",
+        "act": "call",
+        "face": "angry",
+        "then": "run",
+        "thenFace": "angry"
+      },
+      {
+        "id": "son_tinh",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "mi_nuong",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "shake"
+    ],
+    "objects": [],
+    "shot": "track"
+  },
+  "era": "van_lang",
+  "duration": 7.566666666666666,
+  "time": "day",
+  "mood": "battle",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "thuy_tinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#1f3f66",
+          "skirt": "#2a3a4a",
+          "trim": "#7fc4c8"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a24"
+        },
+        "tattoo": true,
+        "bracelets": true,
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "iris": "#2a4a6a"
+        }
+      },
+      "x": 0,
+      "scale": 1.15,
+      "facing": 1
+    },
+    {
+      "id": "son_tinh",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#3f7a4a",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": false,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "build": "average",
+        "skin": "#c98f5c",
+        "headwear": "feather_band",
+        "tattoo": true
+      },
+      "x": 520,
+      "scale": 1.05,
+      "facing": -1
+    },
+    {
+      "id": "mi_nuong",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f0e2c0",
+          "skirt": "#2a3f6a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1210"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": -520,
+      "scale": 0.95,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "thuy_tinh",
+      "at": 0,
+      "do": "call",
+      "face": "angry",
+      "talk": 1,
+      "move": {
+        "by": 690,
+        "ease": "linear"
+      },
+      "dur": 7.566666666666666
+    },
+    {
+      "actor": "thuy_tinh",
+      "at": 3.78,
+      "do": "run",
+      "face": "angry",
+      "move": {
+        "by": 804.9999999999999,
+        "ease": "in"
+      },
+      "dur": 3.7866666666666666
+    },
+    {
+      "actor": "son_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "mi_nuong",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "shake",
+      "at": 3.78,
+      "power": 0.5
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": [
+        "thuy_tinh",
+        "son_tinh",
+        "mi_nuong"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 2.72,
+      "type": "close",
+      "on": [
+        "thuy_tinh"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 5.15,
+      "type": "close",
+      "on": [
+        "son_tinh"
+      ],
+      "push": 0.05
+    }
+  ]
+}

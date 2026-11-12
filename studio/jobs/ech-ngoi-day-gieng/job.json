@@ -1,0 +1,32 @@
+{
+  "slug": "ech-ngoi-day-gieng",
+  "topic": "Ếch ngồi đáy giếng",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-11T18:51:34.005Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-11T18:54:04.707Z",
+      "status": "review"
+    }
+  ],
+  "kind": "ngụ ngôn",
+  "era": "co_tich_lang_que",
+  "summary": "Ếch con sống trong chiếc giếng cũ ở góc làng, ngày nào cũng cất tiếng ồm ộp và tin rằng bầu trời chỉ bé bằng cái vung, còn mình là chúa tể. Một hôm mưa to, nước dâng đưa ếch ra khỏi giếng. Ếch gặp bác Trâu hiền lành cùng bạn Kiến chăm chỉ và bạn Ngựa chạy nhanh trên đường làng, và lần đầu thấy cánh đồng, bầu trời rộng bao la. Ếch ngạc nhiên, nhận ra mình hiểu biết còn ít nên xin Trâu và các bạn chỉ cho đi khắp nơi để học hỏi. Bài học: đừng tự cao, hãy khiêm tốn học hỏi để mở mang hiểu biết. Hợp dịp Ngày Nhà giáo Việt Nam 20/11, vì nhắc trẻ biết ơn thầy cô đã mở cho mình cả bầu trời kiến thức.",
+  "by": "claude-opus",
+  "art": {
+    "style": "mau_nuoc",
+    "intro": "sach_truyen",
+    "outro": "dong_que",
+    "suggest": {
+      "style": "mau_nuoc",
+      "intro": "sach_truyen",
+      "outro": "dong_que",
+      "why": "Ngụ ngôn nhẹ nhàng nhiều con vật và thiên nhiên làng quê hợp màu nước, mở bằng cuốn sách cổ tích và khép lại bằng cánh diều đồng quê.",
+      "by": "brain"
+    }
+  }
+}

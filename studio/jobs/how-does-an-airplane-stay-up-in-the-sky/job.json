@@ -15,5 +15,10 @@
   ],
   "kind": "qa",
   "summary": "Kids see planes every day and wonder how something so heavy floats, and the answer can be shown with simple wing and air-flow animations they can try at home with a paper plane.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.4,
+    "why": "Chủ đề rất nhiều người tìm, mở đầu cuốn hút bằng câu hỏi và \"người giúp đỡ vô hình\", cấu trúc bốn lực, bốn ý chốt, thí nghiệm máy bay giấy và fun fact xe đua rất dễ dựng và đúng khoa học (có thừa nhận hai cách giải thích lực nâng); điểm yếu là hơi dài, nhiều khái niệm (lực, chất lưu, áp suất, Bernoulli) dễ làm trẻ 6–8 tuổi quá tải ở đoạn giữa, và thiếu cảnh gây bất ngờ mạnh hơn ở phần đầu.",
+    "hash": "75030d6830eb15bc"
+  }
 }

@@ -1,0 +1,308 @@
+{
+  "narration": "Nước cuồn cuộn dâng lên tận chân núi Tản Viên, như muốn nuốt cả ngọn núi. Mị Nương (lo lắng): \"Chàng ơi, nước dâng cao quá! Phải làm sao bây giờ?\" Sơn Tinh (quyết tâm): \"Nàng đừng sợ. Ta sẽ bảo vệ nàng và bà con!\"",
+  "plan": {
+    "set": "mountain",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "mi_nuong",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      },
+      {
+        "id": "son_tinh",
+        "place": "right",
+        "enter": "none",
+        "act": "heroic",
+        "face": "determined",
+        "then": "point",
+        "thenFace": "determined"
+      },
+      {
+        "id": "thuy_tinh",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "shake"
+    ],
+    "objects": [],
+    "shot": "medium",
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "cheer",
+      "then": "none"
+    }
+  },
+  "era": "van_lang",
+  "duration": 10.2,
+  "time": "night",
+  "mood": "tense",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "mi_nuong",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f0e2c0",
+          "skirt": "#2a3f6a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1210"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": -520,
+      "scale": 0.95,
+      "facing": 1
+    },
+    {
+      "id": "son_tinh",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#3f7a4a",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": false,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "build": "average",
+        "skin": "#c98f5c",
+        "headwear": "feather_band",
+        "tattoo": true
+      },
+      "x": 520,
+      "scale": 1.05,
+      "facing": -1
+    },
+    {
+      "id": "thuy_tinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#1f3f66",
+          "skirt": "#2a3a4a",
+          "trim": "#7fc4c8"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a24"
+        },
+        "tattoo": true,
+        "bracelets": true,
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "iris": "#2a4a6a"
+        }
+      },
+      "x": -520,
+      "scale": 1.15,
+      "facing": 1
+    },
+    {
+      "id": "dan_lang_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "mi_nuong",
+      "at": 0,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "mi_nuong",
+      "at": 5.1,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "son_tinh",
+      "at": 0,
+      "do": "heroic",
+      "face": "determined"
+    },
+    {
+      "actor": "son_tinh",
+      "at": 5.1,
+      "do": "point",
+      "face": "determined"
+    },
+    {
+      "actor": "thuy_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 0,
+      "do": "cheer"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "shake",
+      "at": 5.1,
+      "power": 0.5
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "mi_nuong",
+        "son_tinh",
+        "thuy_tinh"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.1,
+      "type": "full",
+      "on": [
+        "mi_nuong"
+      ],
+      "push": 0.06
+    }
+  ]
+}

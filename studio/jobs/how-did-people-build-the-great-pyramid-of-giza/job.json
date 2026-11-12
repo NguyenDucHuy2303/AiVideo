@@ -15,5 +15,10 @@
   ],
   "kind": "qa",
   "summary": "Huge-scale mystery and awe: kids see the stone blocks, ramps and workers step by step, and compare the pyramid's size to familiar buildings.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.4,
+    "why": "Chủ đề kim tự tháp Giza rất hot, mở đầu bằng con số gây choáng và phá lầm tưởng \"nô lệ\" nên giữ chân tốt, bốn bước rõ ràng, đúng tư liệu (mộ thợ, nhật ký Merer, tranh cãi về đường dốc), có thí nghiệm vui và hình ảnh dễ dựng; điểm yếu là hơi dài và dày đặc số liệu/thuật ngữ cho trẻ 6–12 (đặc biệt phần đá granite, đường dốc), ngôn ngữ là tiếng Anh nên cần chuyển sang tiếng Việt, và một vài con số như \"20.000 thợ\", \"mỗi 2 phút một khối\" cần ghi rõ là ước tính.",
+    "hash": "effbac7651718673"
+  }
 }

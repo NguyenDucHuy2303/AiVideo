@@ -1,0 +1,80 @@
+{
+  "castFile": "cast.json",
+  "duration": 14,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 9.8,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><icon name=\"grandfather\" x=\"330\" y=\"40\" size=\"340\" data-in=\"0.5\"/><text x=\"500\" y=\"468\" font-family=\"sans-serif\" font-size=\"48\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#fb8c00\" data-in=\"2\">GRANDPA</text><text x=\"500\" y=\"530\" font-family=\"sans-serif\" font-size=\"30\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"3.5\">ông</text></svg>",
+    "style": "grid",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

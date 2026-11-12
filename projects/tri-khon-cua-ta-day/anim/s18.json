@@ -1,0 +1,364 @@
+{
+  "narration": "Bác nông dân không trả lời. Bác chất rơm quanh gốc cây, rồi đánh lửa châm vào. Rơm khô bén lửa, khói bốc lên mù mịt. Bác nông dân (dõng dạc): \"Trí khôn của ta đây! Trí khôn của ta đây!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "bac_nong_dan",
+        "place": "right",
+        "enter": "none",
+        "act": "call",
+        "face": "determined",
+        "then": "call",
+        "thenFace": "shout"
+      }
+    ],
+    "fx": [
+      "fire",
+      "smoke"
+    ],
+    "objects": [
+      "fire_pit"
+    ],
+    "shot": "medium",
+    "crowd": {
+      "id": "dan_lang",
+      "count": 4,
+      "act": "idle",
+      "then": "none"
+    }
+  },
+  "era": "co_tich_lang_que",
+  "duration": 10.666666666666666,
+  "time": "day",
+  "mood": "battle",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "fire_pit",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "bac_nong_dan",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#c9905f",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#7a5230",
+            "trim": "#5a3a20",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#6b4a2b",
+            "length": "knee"
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "khan_chit",
+        "props": [
+          {
+            "type": "bamboo"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "round",
+          "brows": "thick",
+          "mustache": "thin"
+        },
+        "prop": {
+          "type": "bamboo"
+        }
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_1",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "tu_than",
+            "color": "#6d4c41",
+            "trim": "#3e2723",
+            "length": "knee",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "inner": {
+            "color": "#c8a46e"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1a1a1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b8e23",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "khan_mo_qua",
+        "prop": {
+          "type": "bowl"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_2",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "tu_than",
+            "color": "#6d4c41",
+            "trim": "#3e2723",
+            "length": "knee",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "inner": {
+            "color": "#c8a46e"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1a1a1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b8e23",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "khan_mo_qua",
+        "prop": {
+          "type": "bowl"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_3",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "tu_than",
+            "color": "#6d4c41",
+            "trim": "#3e2723",
+            "length": "knee",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "inner": {
+            "color": "#c8a46e"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1a1a1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b8e23",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "khan_mo_qua",
+        "prop": {
+          "type": "bowl"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_4",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "tu_than",
+            "color": "#6d4c41",
+            "trim": "#3e2723",
+            "length": "knee",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "inner": {
+            "color": "#c8a46e"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1a1a1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b8e23",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "khan_mo_qua",
+        "prop": {
+          "type": "bowl"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1860,
+      "scale": 1.02,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "bac_nong_dan",
+      "at": 0,
+      "do": "call",
+      "face": "determined",
+      "talk": 1,
+      "move": {
+        "by": -600,
+        "ease": "linear"
+      },
+      "dur": 10.666666666666666
+    },
+    {
+      "actor": "bac_nong_dan",
+      "at": 5.33,
+      "do": "call",
+      "face": "shout",
+      "talk": 1,
+      "move": {
+        "by": -700,
+        "ease": "in"
+      },
+      "dur": 5.336666666666666
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "dan_lang_4",
+      "at": 0,
+      "do": "idle"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "smoke",
+      "x": 1800,
+      "at": -2,
+      "dur": 12.666666666666666
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "bac_nong_dan"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.33,
+      "type": "full",
+      "on": [
+        "bac_nong_dan"
+      ],
+      "push": 0.06
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "ech",
+    "name": "Ếch",
+    "kind": "animal",
+    "look": {
+      "species": "frog",
+      "color": "#5fae4a"
+    },
+    "scale": 0.7,
+    "group": false,
+    "speaks": [
+      "Ếch"
+    ],
+    "role": "Ếch con xanh lá, mắt to tròn, bụng trắng; lúc kiêu thì ưỡn ngực phồng má, lúc biết lỗi thì cúi đầu má ửng hồng",
+    "designed": true
+  },
+  {
+    "id": "cua",
+    "name": "Cua",
+    "kind": "animal",
+    "look": {
+      "species": "turtle",
+      "color": "#c8743a"
+    },
+    "scale": 0.55,
+    "group": false,
+    "speaks": [
+      "Cua"
+    ],
+    "role": "Bạn Cua nhỏ nâu cam sống chung dưới giếng (thư viện chưa có cua nên dùng dáng bò có mai thay), hiền lành, bị Ếch bắt cúi chào",
+    "designed": true
+  },
+  {
+    "id": "nhai_ben",
+    "name": "Nhái bén",
+    "kind": "animal",
+    "look": {
+      "species": "frog",
+      "color": "#a8d98a"
+    },
+    "scale": 0.5,
+    "group": true,
+    "speaks": [],
+    "role": "Mấy bạn nhái bén xanh nhạt nhỏ xíu sống dưới giếng, đứng làm nền",
+    "designed": true
+  },
+  {
+    "id": "kien",
+    "name": "Kiến",
+    "kind": "animal",
+    "look": {
+      "species": "ant",
+      "color": "#8b3a2a"
+    },
+    "scale": 0.45,
+    "group": false,
+    "speaks": [
+      "Kiến"
+    ],
+    "role": "Bạn Kiến nhỏ nâu đỏ, mắt tròn tươi tắn, chăm chỉ tha hạt thóc vàng",
+    "designed": true
+  },
+  {
+    "id": "ngua",
+    "name": "Ngựa",
+    "kind": "horse",
+    "look": {
+      "kind": "plain",
+      "color": "#8b5a2b",
+      "mane": "#1a1a1a",
+      "saddle": false
+    },
+    "scale": 1.1,
+    "group": false,
+    "speaks": [
+      "Ngựa"
+    ],
+    "role": "Bạn Ngựa nâu khỏe, bờm đen, chỉ có dây cương thừng đơn giản, không yên cương; chạy nhanh, đã đi nhiều nơi",
+    "designed": true
+  },
+  {
+    "id": "bac_trau",
+    "name": "Bác Trâu",
+    "kind": "animal",
+    "look": {
+      "species": "buffalo",
+      "color": "#4a4f55"
+    },
+    "scale": 1.4,
+    "group": false,
+    "speaks": [
+      "Bác Trâu"
+    ],
+    "role": "Bác Trâu đen xám to lớn, sừng cong, mắt hiền, dáng thong thả; người thầy đầu tiên của Ếch",
+    "designed": true
+  },
+  {
+    "id": "cau_be_chan_trau",
+    "name": "Cậu bé chăn trâu",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "build": "slim",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#8d6e63",
+          "trim": "#5d4037",
+          "length": "waist",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#5d4037",
+          "length": "knee"
+        }
+      },
+      "hair": {
+        "style": "traidao",
+        "color": "#1a1a1a"
+      },
+      "prop": {
+        "type": "bamboo"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin",
+        "eyeScale": 1.15
+      }
+    },
+    "scale": 0.8,
+    "group": false,
+    "speaks": [],
+    "role": "Cậu bé tóc chỏm, áo cánh ngắn nâu, quần lửng, chân đất, ngồi lưng trâu thổi sáo trúc",
+    "designed": true
+  },
+  {
+    "id": "nong_dan",
+    "name": "Nông dân",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#7a5230",
+          "trim": "#5a3a20",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#5a3a20",
+          "length": "knee"
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "nonla",
+      "props": [
+        {
+          "type": "stick"
+        }
+      ],
+      "face": {
+        "shape": "square",
+        "eyes": "round",
+        "nose": "round",
+        "brows": "thick"
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Nông dân nam áo cánh nâu, quần xắn gối, nón lá, vác cuốc, chân đất, làm nền ngoài đồng",
+    "designed": true
+  },
+  {
+    "id": "phu_nu_cho",
+    "name": "Phụ nữ đi chợ",
+    "kind": "human",
+    "look": {
+      "body": "woman",
+      "build": "average",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "tu_than",
+          "color": "#8b5a2b",
+          "trim": "#5a3a20",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "inner": {
+          "color": "#c8a46e"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#1a1a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#6b8e23",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "nonla",
+      "prop": {
+        "type": "basket"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "almond",
+        "nose": "button",
+        "brows": "thin"
+      }
+    },
+    "scale": 1,
+    "group": true,
+    "speaks": [],
+    "role": "Phụ nữ áo tứ thân nâu ngoài yếm, váy đen dài, thắt lưng bao, nón lá, gánh thúng đi chợ quê",
+    "designed": true
+  }
+]

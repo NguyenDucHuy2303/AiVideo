@@ -16,5 +16,10 @@
   "kind": "truyền thuyết",
   "era": "au_lac",
   "summary": "Thục Phán lập nước Âu Lạc, xây thành Cổ Loa xây mãi bị đổ, Rùa Vàng giúp xây thành và tặng móng làm nỏ thần giữ nước. Kể theo hướng xây thành giữ nước, bài học cảnh giác; phần bi kịch Mỵ Châu kể nhẹ nhàng, không chi tiết đau thương.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.3,
+    "why": "Điểm mạnh: mở đầu bằng câu hỏi và hình ảnh lạ (thành vỏ ốc, rùa vàng biết nói) rất cuốn, chủ đề kinh điển nhiều người tìm, mạch truyện đủ ý và cảnh dễ dựng (thành đổ, Rùa Vàng đánh gà trắng, mưa tên đồng, cảnh biển), có bài học và phần dấu tích khảo cổ đúng tư liệu; điểm yếu: kịch bản khá dài so với trẻ 4–10 tuổi, hơi nhiều thoại \"vui vẻ/dõng dạc\" lặp lại, đoạn Mỵ Châu/Trọng Thủy bị lược bỏ chi tiết lông ngỗng và cái chết nên mất đi cao trào cảm xúc, và bài học \"đừng kể bí mật gia đình\" hơi gượng so với ý nghĩa lịch sử.",
+    "hash": "e23bfff164a8140e"
+  }
 }

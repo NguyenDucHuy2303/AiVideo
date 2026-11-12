@@ -1,0 +1,225 @@
+{
+  "narration": "Đêm ấy, Sơn Tinh trở về núi rừng. Núi rừng có sẵn muông thú quý, lúa nếp thơm. Chàng gom đủ lễ vật ngay trong đêm. Sơn Tinh (mừng rỡ): \"Voi chín ngà đây rồi! Gà chín cựa, ngựa chín hồng mao cũng đủ cả!\"",
+  "plan": {
+    "set": "mountain",
+    "time": "night",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "son_tinh",
+        "place": "left",
+        "enter": "from_left",
+        "act": "run",
+        "face": "happy",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "ngua_hong_mao",
+        "place": "right",
+        "enter": "from_right",
+        "act": "still",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "thuy_tinh",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "sparkle",
+      "glow"
+    ],
+    "objects": [
+      "rice"
+    ],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 11.9,
+  "time": "night",
+  "mood": "calm",
+  "set": {
+    "name": "mountain",
+    "objects": [
+      {
+        "type": "rice",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "son_tinh",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#3f7a4a",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": false,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "build": "average",
+        "skin": "#c98f5c",
+        "headwear": "feather_band",
+        "tattoo": true
+      },
+      "x": -2420,
+      "scale": 1.05,
+      "facing": 1
+    },
+    {
+      "id": "ngua_hong_mao",
+      "type": "horse",
+      "look": {
+        "kind": "plain",
+        "color": "#e8e0d0",
+        "mane": "#c9902a"
+      },
+      "x": 2420,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "thuy_tinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#1f3f66",
+          "skirt": "#2a3a4a",
+          "trim": "#7fc4c8"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a24"
+        },
+        "tattoo": true,
+        "bracelets": true,
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "iris": "#2a4a6a"
+        }
+      },
+      "x": -520,
+      "scale": 1.15,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "son_tinh",
+      "at": 0,
+      "do": "run",
+      "move": {
+        "to": -520,
+        "ease": "out"
+      },
+      "dur": 5.36,
+      "face": "happy"
+    },
+    {
+      "actor": "son_tinh",
+      "at": 5.36,
+      "do": "still",
+      "face": "happy"
+    },
+    {
+      "actor": "son_tinh",
+      "at": 5.95,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "ngua_hong_mao",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": 520,
+        "ease": "out"
+      },
+      "dur": 5.36,
+      "face": "neutral"
+    },
+    {
+      "actor": "ngua_hong_mao",
+      "at": 5.36,
+      "do": "stand",
+      "face": "neutral"
+    },
+    {
+      "actor": "thuy_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "sparkle",
+      "on": "son_tinh",
+      "at": 3.57,
+      "dur": 7.14
+    },
+    {
+      "fx": "glow",
+      "on": "son_tinh",
+      "at": 3.57,
+      "dur": 7.14
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "son_tinh",
+        "ngua_hong_mao",
+        "thuy_tinh"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 4.28,
+      "type": "close",
+      "on": [
+        "son_tinh"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 8.09,
+      "type": "close",
+      "on": [
+        "thuy_tinh"
+      ],
+      "push": 0.05
+    }
+  ]
+}

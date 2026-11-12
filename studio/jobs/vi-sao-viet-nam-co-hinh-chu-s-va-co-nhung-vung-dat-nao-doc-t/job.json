@@ -15,5 +15,10 @@
   ],
   "kind": "qa-vi",
   "summary": "Trẻ được đi dọc đất nước trên bản đồ hoạt hình từ Bắc vào Nam, nhận ra quê mình nằm ở đâu và học được điều mới về chính đất nước mình.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.2,
+    "why": "Mở đầu cuốn (\"bản đồ vẫn lớn thêm mỗi năm\"), bố cục bốn bước rõ, có thí nghiệm cát và mẹo \"sông Chín Rồng\", chủ đề phổ biến và dễ dựng bằng bản đồ; nhưng nhiều số liệu dày đặc (đặc biệt \"13 lần phù sa\", chiều dài Mê Kông, mốc \"hơn ba trăm năm\" với Lào) còn lỏng hoặc cần kiểm chứng, nói Cửu Long \"vẫn bồi thêm\" bỏ qua thực tế sạt lở/sụt lún, và phần đi dọc chữ S hơi giống liệt kê địa lý nên dễ chùng ở giữa.",
+    "hash": "eb164fc5ec66029e"
+  }
 }

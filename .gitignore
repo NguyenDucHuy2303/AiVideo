@@ -15,3 +15,7 @@ studio/research/
 studio/**/*.wav
 studio/**/*.mp4
 studio/secrets/
+
+# The scheduler of this machine (its state and log): each machine keeps its own.
+studio/scheduler.json
+studio/scheduler.log

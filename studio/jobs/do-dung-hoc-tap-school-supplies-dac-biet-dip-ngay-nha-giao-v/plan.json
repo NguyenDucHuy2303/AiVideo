@@ -1,0 +1,795 @@
+{
+  "title": "Học tiếng Anh: Đồ dùng học tập | Pencil, Pen, Teacher",
+  "question": "Đồ dùng học tập",
+  "answer": "pencil (bút chì), pen (bút mực), book (quyển sách), notebook (quyển vở), eraser (cục tẩy), ruler (thước kẻ), schoolbag (cặp sách), pencil case (hộp bút), teacher (thầy giáo, cô giáo), flower (bông hoa)",
+  "words": [
+    {
+      "en": "pencil",
+      "vi": "bút chì"
+    },
+    {
+      "en": "pen",
+      "vi": "bút mực"
+    },
+    {
+      "en": "book",
+      "vi": "quyển sách"
+    },
+    {
+      "en": "notebook",
+      "vi": "quyển vở"
+    },
+    {
+      "en": "eraser",
+      "vi": "cục tẩy"
+    },
+    {
+      "en": "ruler",
+      "vi": "thước kẻ"
+    },
+    {
+      "en": "schoolbag",
+      "vi": "cặp sách"
+    },
+    {
+      "en": "pencil case",
+      "vi": "hộp bút"
+    },
+    {
+      "en": "teacher",
+      "vi": "thầy giáo, cô giáo"
+    },
+    {
+      "en": "flower",
+      "vi": "bông hoa"
+    }
+  ],
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy đứng trước lớp học nhiều màu, sau lưng có dòng chữ School Supplies và tấm thiệp 20/11 với bông hoa. Huy vẫy tay chào."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Chào các bạn! Anh là Huy đây. Hôm nay mình cùng học các từ tiếng Anh về đồ dùng học tập, tiếng Anh là School Supplies. Còn đúng tám ngày nữa là đến Ngày Nhà giáo Việt Nam, hai mươi tháng mười một đó."
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai đeo cặp sách, nhảy lên vui sướng cạnh Huy; trên bàn bày sẵn bút, vở, thước và một bông hoa nhỏ."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Oa, hay quá! Em muốn nói tiếng Anh với cô giáo của em."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Giỏi lắm em. Hôm nay có mười từ, và có cả bông hoa tặng thầy cô nữa. Các bạn nhớ đọc to theo Emma nhé!"
+        },
+        {
+          "who": "Mai",
+          "how": "quyết tâm",
+          "text": "Mình bắt đầu thôi anh Huy ơi!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: một cây bút chì màu vàng có đầu nhọn và cục tẩy nhỏ ở đuôi; chữ PENCIL thật to; bên dưới ghi bút chì."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Từ đầu tiên là bút chì. Viết sai thì tẩy được, nên bút chì rất hợp với các bạn nhỏ."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Pencil. Pencil."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Pencil. Em có một cây pencil màu vàng."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: một cây bút mực màu xanh có nắp; chữ PEN thật to; bên dưới ghi bút mực."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Từ thứ hai là bút mực. Pen chỉ có ba chữ cái thôi, rất ngắn, các bạn dễ nhớ nhé."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Pen. Pen."
+        },
+        {
+          "who": "Mai",
+          "how": "cười",
+          "text": "Pen. Dễ quá anh ơi!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "compare",
+        "what": "Bên trái bút chì vàng, bên phải bút mực xanh, hai bên có chữ A yellow pencil và A blue pen; dưới ghi một bút chì vàng, một bút mực xanh."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Mình ghép hai từ này với màu sắc nhé. Các bạn nghe Emma đọc."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A yellow pencil. A blue pen."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "A yellow pencil. A blue pen."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "A nghĩa là một. Một bút chì vàng và một bút mực xanh."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: một quyển sách dày bìa đỏ có hình ngôi sao; chữ BOOK thật to; bên dưới ghi quyển sách."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Từ thứ ba là quyển sách. Sách có nhiều chữ và nhiều hình đẹp để đọc."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Book. Book."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Book. Có hai chữ o đứng cạnh nhau, em nhớ rồi."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: một quyển vở có dây lò xo, trang đầu có dòng kẻ ngang; chữ NOTEBOOK thật to; bên dưới ghi quyển vở."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Quyển vở tiếng Anh là notebook. Note là ghi chép, book là quyển. Ghép lại thành quyển để ghi chép."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Notebook. Notebook."
+        },
+        {
+          "who": "Mai",
+          "how": "quyết tâm",
+          "text": "Notebook. Em sẽ chép bài vào notebook."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "compare",
+        "what": "Bên trái quyển sách to, bên phải quyển vở nhỏ đặt cạnh nhau; chữ A big book và A small notebook; dưới ghi một quyển sách to, một quyển vở nhỏ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bây giờ mình so sánh sách và vở nhé."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A big book. A small notebook."
+        },
+        {
+          "who": "Mai",
+          "how": "cười",
+          "text": "A big book. A small notebook. Quyển sách to hơn quyển vở thật!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: một cục tẩy màu hồng hình chữ nhật, trên đó có vài vụn tẩy; chữ ERASER thật to; bên dưới ghi cục tẩy."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Từ tiếp theo là cục tẩy. Khi viết sai, em chỉ cần tẩy đi là xong. Cuối từ đọc nhẹ nhàng là ơ."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Eraser. Eraser."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Eraser. Em tẩy chữ sai bằng eraser."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: một cây thước kẻ dài màu xanh lá có vạch số; chữ RULER thật to; bên dưới ghi thước kẻ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Thước kẻ là ruler. Thước giúp em vẽ đường thẳng thật đẹp."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Ruler. Ruler. A long ruler."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Ruler. A long ruler. Cây thước dài của em đây!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: một chiếc cặp sách màu cam có quai đeo và hình chú mèo; chữ SCHOOLBAG thật to; bên dưới ghi cặp sách."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Cặp sách là schoolbag. School là trường, bag là cái túi. Cái túi đi đến trường đó các bạn."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Schoolbag. Schoolbag."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Schoolbag. Cặp của em có hình con mèo."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: một hộp bút màu tím mở nắp, bên trong có bút chì, bút mực và cục tẩy; chữ PENCIL CASE thật to; bên dưới ghi hộp bút."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hộp bút là pencil case. Hộp để cất bút chì, bút mực, cả cục tẩy nữa."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Pencil case. Pencil case."
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Pencil case. Em nói được hai từ liền rồi!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "scene",
+        "what": "Chiếc cặp sách của Mai mở ra, bên trong thấy quyển sách, quyển vở; hộp bút nằm cạnh có cây bút mực nhô lên. Hai dòng chữ nhỏ A book in the schoolbag và A pen in the pencil case."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Mình nhìn vào cặp của Mai nhé. Trong cặp có sách, vở và hộp bút."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A book in the schoolbag. A pen in the pencil case."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "A book in the schoolbag. A pen in the pencil case."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "In nghĩa là ở trong. Một quyển sách ở trong cặp, một bút mực ở trong hộp bút."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: một cô giáo mặc áo dài mỉm cười đứng cạnh bảng đen, bên cạnh là một thầy giáo đeo kính; chữ TEACHER thật to; bên dưới ghi thầy giáo, cô giáo."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bây giờ là từ rất đặc biệt, teacher, nghĩa là thầy giáo hoặc cô giáo. Mình dùng một từ này cho cả thầy lẫn cô."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Teacher. Teacher."
+        },
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "Teacher. Em yêu cô giáo của em."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: một bông hoa hồng đỏ có cuống và hai chiếc lá xanh; chữ FLOWER thật to; bên dưới ghi bông hoa."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Và đây là bông hoa, flower. Ngày hai mươi tháng mười một, các bạn có thể tặng hoa cho thầy cô."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Flower. Flower."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Flower. Bông hoa này em vẽ tặng cô."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai cầm bông hoa đỏ đưa cho cô giáo trong lớp học, trên bảng có dòng chữ 20/11; hiện chữ A red flower for my teacher."
+      },
+      "parts": [
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A red flower for my teacher."
+        },
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "A red flower for my teacher."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "For nghĩa là dành cho, my teacher là cô giáo của em. Một bông hoa đỏ dành cho cô giáo của em."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Em sẽ tặng cô vào ngày hai mươi tháng mười một!"
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Một cây thước kẻ dài xanh lá hiện giữa màn hình cùng dấu chấm hỏi lớn; Huy và Mai đứng hai bên nhìn."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Giờ đến trò chơi đoán đồ vật. Các bạn nhìn hình, nghe Emma hỏi rồi đoán nhé. Hình đầu tiên là một cái thước dài."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "What is this?"
+        },
+        {
+          "who": "Mai",
+          "how": "lo lắng",
+          "text": "Em đoán là pen! Đúng không anh?"
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "compare",
+        "what": "Bên trái bút mực có dấu X đỏ, bên phải thước kẻ có dấu tích xanh; hiện chữ RULER."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Chưa đúng rồi em. Pen để viết chữ, còn cái này để đo và kẻ đường thẳng."
+        },
+        {
+          "who": "Mai",
+          "how": "ngạc nhiên",
+          "text": "À, em nhớ rồi! Là ruler!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Yes. It is a ruler."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Chiếc cặp sách màu cam to ở giữa màn hình, dấu chấm hỏi lớn bên trên; sau đó hiện chữ SCHOOLBAG."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hình tiếp theo là cái túi to đeo sau lưng."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "What is this?"
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Schoolbag!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Yes. It is a schoolbag."
+        },
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "Em đoán đúng rồi!"
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Quyển vở lò xo mở ra, có dòng chữ viết tay và cây bút chì nằm cạnh; dấu chấm hỏi lớn; sau đó hiện chữ NOTEBOOK."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Còn quyển này để các bạn viết bài mỗi ngày."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "What is this?"
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Notebook!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Yes. It is a notebook."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Bông hoa hồng đỏ đặt trên bàn giáo viên, dấu chấm hỏi lớn; sau đó hiện chữ FLOWER và trái tim nhỏ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hình cuối là món quà cho thầy cô."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "What is this?"
+        },
+        {
+          "who": "Mai",
+          "how": "mừng rỡ",
+          "text": "Flower!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Yes. It is a flower."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Các bạn có đoán đúng không nào?"
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai mở hộp bút màu tím trên bàn học; chữ lớn I have a pencil case; dưới ghi em có một hộp bút."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Giờ mình nói câu đầu tiên nhé. Các bạn nghe Emma đọc."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "I have a pencil case."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "I have a pencil case."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "I have nghĩa là em có hoặc mình có. Cả câu là Em có một hộp bút."
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai giơ cao một bút mực xanh ở tay trái và một thước kẻ ở tay phải; chữ lớn I have a pen and a ruler; dưới ghi em có một bút mực và một thước kẻ."
+      },
+      "parts": [
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "I have a pen and a ruler."
+        },
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "I have a pen and a ruler."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "And nghĩa là và. Em có một bút mực và một thước kẻ."
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai cúi chào cô giáo mặc áo dài, nở nụ cười; chữ lớn Thank you, teacher; dưới ghi cảm ơn thầy cô."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Câu tiếp theo để nói với thầy cô."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Thank you, teacher."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Thank you, teacher."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Nghĩa là Cảm ơn thầy cô ạ. Các bạn nhớ nói câu này thật to nhé."
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "scene",
+        "what": "Mai hai tay đưa bông hoa đỏ cho cô giáo, trên bảng có chữ 20/11; chữ lớn This flower is for you; dưới ghi bông hoa này dành cho thầy cô."
+      },
+      "parts": [
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "This flower is for you."
+        },
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "This flower is for you."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Nghĩa là Bông hoa này dành cho thầy cô. Khi tặng hoa, các bạn nói câu này với nụ cười nhé."
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Em sẽ nói với cô thật to ạ."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "count",
+        "what": "Mười thẻ từ lần lượt hiện thành hai hàng, mỗi thẻ có hình đồ vật, chữ tiếng Anh to và nghĩa tiếng Việt, sáng lên khi Emma đọc tới."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Mình ôn lại mười từ nào. Emma đọc, các bạn đọc theo nhé."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Pencil. Pen. Book. Notebook. Eraser. Ruler. Schoolbag. Pencil case. Teacher. Flower."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Các bạn giỏi quá!"
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ lớn hộp bút màu tím với chữ PENCIL CASE và nghĩa là hộp bút; Mai đứng cạnh giơ ngón tay cái."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "quyết tâm",
+          "text": "Từ khó nhất với em là pencil case, vì có hai từ ghép lại. Em đọc lại nhé. Pencil case!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Pencil case. Pencil case."
+        },
+        {
+          "who": "Mai",
+          "how": "tự hào",
+          "text": "Pencil case. Em đọc được rồi!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "host",
+        "what": "Huy và Mai vẫy tay chào; phía sau hiện các món quần áo nhỏ như áo, quần, mũ cùng chữ Clothes và nút đăng ký kênh."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Bài sau mình sẽ học về quần áo, tiếng Anh là Clothes. Nếu các bạn thích bài học này, hãy bấm đăng ký kênh để không bỏ lỡ bài mới nhé. Hẹn gặp lại các bạn!"
+        },
+        {
+          "who": "Mai",
+          "how": "vui vẻ",
+          "text": "Tạm biệt các bạn!"
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    3,
+    9,
+    14,
+    15,
+    28
+  ],
+  "thumbnail": "PENCIL, PEN, TEACHER!",
+  "description": "Bài học giúp bé học mười từ tiếng Anh về đồ dùng học tập như pencil, notebook, schoolbag, teacher và flower. Bé còn học cách nói lời cảm ơn và tặng hoa thầy cô bằng tiếng Anh, rất hợp cho Ngày Nhà giáo Việt Nam 20/11.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Emma",
+      "gender": "female",
+      "age": "adult",
+      "role": "the English voice of the word cards: reads every word and sentence slowly and clearly",
+      "villain": false
+    }
+  ],
+  "look": "",
+  "facts": []
+}

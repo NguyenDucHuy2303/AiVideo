@@ -1,7 +1,7 @@
 {
   "slug": "vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua",
   "topic": "Vì sao cầu vồng có bảy màu và luôn xuất hiện sau cơn mưa?",
-  "status": "review",
+  "status": "producing",
   "notes": [],
   "history": [
     {
@@ -11,9 +11,55 @@
     {
       "at": "2026-11-11T03:09:49.285Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-11T10:01:04.209Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (điểm 8.6/10)"
+    },
+    {
+      "at": "2026-11-11T15:44:58.803Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-11T16:22:21.117Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-11T16:22:21.286Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-11T16:57:01.708Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-11T17:08:24.366Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-12T03:41:30.313Z",
+      "status": "producing",
+      "info": "gộp kênh: câu mời đăng ký đổi thành kênh Huy Kể Chuyện, lồng tiếng lại, render lại tối nay"
     }
   ],
   "kind": "qa-vi",
   "summary": "Trẻ nào cũng từng thấy cầu vồng và tò mò về màu sắc; có thể làm thí nghiệm lăng kính đơn giản tại nhà, xem xong muốn thử ngay.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.6,
+    "why": "Điểm mạnh: mở bài \"nửa kia của cầu vồng trốn đâu\" rất cuốn, kiến thức đúng (khúc xạ, tán sắc, đỏ ngoài tím trong, Niu-tơn chọn bảy màu theo bảy nốt nhạc, góc mặt trời thấp, cầu vồng đôi, kỷ lục gần 9 tiếng ở Đài Loan), ví dụ gần gũi (xe đồ chơi, bát phở), có thí nghiệm tại nhà và lưu ý an toàn, chủ đề nhiều người tìm; điểm yếu: kịch bản quá dài và dày khái niệm (khúc xạ, tán sắc, phản xạ trong giọt nước, bảy màu, góc nhìn) nên có thể vượt 8 phút và hơi nặng với trẻ 6–8 tuổi, đoạn ống hút và các phần \"thêm một điều thú vị\" sau phần tóm tắt làm nhịp cuối bị loãng, và một số cảnh trừu tượng (đường đi tia sáng trong giọt mưa, góc nghiêng) sẽ khó dựng hơn.",
+    "hash": "69366c5516006410"
+  },
+  "autoPicked": true,
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "stage": "ready"
 }

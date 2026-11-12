@@ -1,0 +1,22 @@
+{
+  "issues": [
+    {
+      "scene": 1,
+      "quote": "Người ta kể rằng trong lăng mộ Ai Cập có hũ mật ong rất xưa mà vẫn ăn được đấy!",
+      "problem": "The sources only say that honey samples found at archaeological sites were still edible after thousands of years. They don't mention Egyptian tombs or a jar of honey. The tomb detail is unsupported.",
+      "fix": "Huy: Các nhà khảo cổ tìm thấy mật ong ở những nơi rất cổ xưa, và nó vẫn ăn được sau hàng nghìn năm đấy!"
+    },
+    {
+      "scene": 1,
+      "quote": "có thật là mật ong để hơn 3.000 năm mà vẫn ăn được không?",
+      "problem": "The sources only say \"after millennia\". The figure of 3,000 years isn't in them. The Vietnamese source also says honey lasts at most 2 years, and the English source says honey doesn't spoil when stored properly. The script doesn't say the sources disagree.",
+      "fix": "Mai: Anh Huy ơi, có thật là mật ong để hàng nghìn năm mà vẫn ăn được không ạ?"
+    },
+    {
+      "scene": 6,
+      "quote": "Mai: Wow, mật ong còn bền hơn cả lăng mộ cổ!",
+      "problem": "No source compares honey with tombs. The claim is false and misleading, because it says honey outlasts a stone building. The sources say honey keeps well only when properly stored.",
+      "fix": "Mai: Wow, mật ong cất đúng cách có thể để được rất, rất lâu!"
+    }
+  ]
+}

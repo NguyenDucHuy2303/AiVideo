@@ -1,0 +1,57 @@
+{
+  "castFile": "cast.json",
+  "duration": 4.07,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a blue seabed with rocks and corals",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.02,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 2.85,
+      "do": "talk",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "share": 0.62
+    }
+  ],
+  "mood": "playful",
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/f2099fd92f51.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

@@ -15,5 +15,10 @@
   ],
   "kind": "qa",
   "summary": "Children spot the Moon at night and wonder where it goes; watching the Moon orbit Earth with the Sun lighting half of it shows each phase simply.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.3,
+    "why": "Mạnh ở mở đầu gây tò mò (\"cái chuối\", \"ai cắn Mặt Trăng?\"), giải thích đúng khoa học, gỡ hiểu lầm bóng Trái Đất, có thí nghiệm đèn pin–quả bóng, chủ đề nhiều người tìm và dễ dựng hình; yếu ở chỗ hơi dài và nhiều thuật ngữ (terminator, tidal locking, gibbous, waxing/waning) có thể làm trẻ 6–12 tuổi rối, đoạn quỹ đạo/khóa thủy triều chen giữa hơi lan man, và lời thoại viết bằng tiếng Anh trong khi kênh là \"Hỏi Huy\" tiếng Việt.",
+    "hash": "d1201eb19135ef5e"
+  }
 }

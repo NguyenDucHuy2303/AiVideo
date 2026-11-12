@@ -1,0 +1,216 @@
+{
+  "narration": "Nước dâng lên ngập ruộng đồng, ngập đến sàn nhà. Dân làng dắt trâu, bế con, chạy lên đồi cao. Dân làng (hoảng hốt): \"Nước lên rồi! Chạy lên núi mau!\" Cậu bé (sợ hãi): \"Ông ơi, cháu sợ quá!\"",
+  "plan": {
+    "set": "mountain",
+    "time": "dusk",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "cau_be",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "call",
+        "thenFace": "surprised"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "cheer",
+      "then": "none"
+    },
+    "fx": [
+      "shake"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 10.633333333333333,
+  "time": "dusk",
+  "mood": "tense",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "cau_be",
+      "type": "human",
+      "look": {
+        "body": "child",
+        "outfit": {
+          "type": "dongson",
+          "color": "#c9a46a",
+          "trim": "#8a3a22",
+          "skirt": "#7a4a2a"
+        },
+        "hair": {
+          "style": "traidao",
+          "color": "#1a1210"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "bowl"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 520,
+      "scale": 0.8,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "cau_be",
+      "at": 0,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "cau_be",
+      "at": 5.32,
+      "do": "call",
+      "face": "surprised",
+      "talk": 1,
+      "move": {
+        "by": -560,
+        "ease": "in"
+      },
+      "dur": 5.313333333333333
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 0,
+      "do": "cheer"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "shake",
+      "at": 5.32,
+      "power": 0.5
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "cau_be"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.32,
+      "type": "full",
+      "on": [
+        "cau_be"
+      ],
+      "push": 0.06
+    }
+  ]
+}

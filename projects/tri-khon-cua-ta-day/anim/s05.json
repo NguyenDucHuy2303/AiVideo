@@ -1,0 +1,68 @@
+{
+  "narration": "Ở bìa rừng gần cánh đồng, có một con hổ đang nấp sau bụi rậm. Hổ là chúa sơn lâm, bộ lông vàng cam óng mượt. Ngày ấy, lông hổ chưa có một sọc vằn nào cả. Hổ (ngạc nhiên): \"Ơ kìa! Lạ thật, lạ thật!\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "center",
+        "enter": "none",
+        "act": "still",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 12.8,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "field",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ho",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#f0932b"
+      },
+      "x": 0,
+      "scale": 1.4,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ho",
+      "at": 0,
+      "do": "still",
+      "face": "surprised"
+    },
+    {
+      "actor": "ho",
+      "at": 6.4,
+      "do": "worry",
+      "face": "surprised"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ho"
+      ],
+      "push": 0.06
+    }
+  ]
+}

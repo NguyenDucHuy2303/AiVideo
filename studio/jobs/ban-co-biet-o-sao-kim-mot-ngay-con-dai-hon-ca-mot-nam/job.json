@@ -15,5 +15,10 @@
   ],
   "kind": "fact-vi",
   "summary": "Sao Kim tự quay quanh mình mất khoảng 243 ngày Trái Đất, còn quay quanh Mặt Trời chỉ khoảng 225 ngày (Wikipedia: Venus). Dễ minh họa bằng hai vòng tròn so sánh: một vòng quay quanh mình và một vòng quanh Mặt Trời. An toàn, bất ngờ và dễ nhớ.",
-  "by": "claude-sonnet"
+  "by": "claude-sonnet",
+  "score": {
+    "value": 7.2,
+    "why": "Mở đầu \"một ngày dài hơn một năm\" là câu hook rất cuốn, số liệu đúng (xoay 243 ngày, quay quanh Mặt Trời 225 ngày, ngày Mặt Trời ~117 ngày) và dễ dựng hình, nhưng kịch bản lặp ý nhiều (câu \"dài hơn một năm\" nhắc 3–4 lần), phần \"ngày\" và \"vòng xoay\" gây lẫn lộn (tựa nói \"ngày\" mà thoại lại nói \"vòng xoay\"), thiếu hình ảnh so sánh dễ hiểu và chưa nhắc sao Kim xoay ngược chiều hay vì sao nóng nhất, nên còn mỏng và chưa đủ sâu.",
+    "hash": "4d81aa09e8ed67f6"
+  }
 }

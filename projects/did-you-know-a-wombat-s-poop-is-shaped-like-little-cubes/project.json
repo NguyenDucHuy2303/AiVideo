@@ -1,0 +1,33 @@
+{
+  "engine": "kokoro",
+  "voice": "am_michael",
+  "speed": 0.92,
+  "imageGen": "off",
+  "onlineImages": false,
+  "profiles": [
+    "9x16"
+  ],
+  "channel": "Ask Huy",
+  "voices": {
+    "Huy": "am_liam",
+    "Mai": {
+      "voice": "af_nova",
+      "pitch": 3
+    }
+  },
+  "speakers": {
+    "Huy": [
+      "huy"
+    ],
+    "Mai": [
+      "mai"
+    ]
+  },
+  "brandId": "ask-huy",
+  "style": "hien_dai",
+  "thumbnail": {
+    "title": "",
+    "subtitle": "Ask Huy",
+    "at": 2.3
+  }
+}

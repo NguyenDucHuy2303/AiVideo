@@ -16,5 +16,10 @@
   "kind": "lịch sử",
   "era": "ngo_dinh_le",
   "summary": "Ngô Quyền cho cắm cọc gỗ đầu bịt sắt dưới lòng sông Bạch Đằng, nhử thuyền giặc Nam Hán vào lúc nước lên, đợi nước rút thì đánh tan, mở ra thời độc lập.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.3,
+    "why": "Mở đầu bằng câu hỏi bí ẩn rất cuốn, cốt truyện mưu kế (cọc ngầm, nhử giặc, nước triều) rõ ràng, trực quan, đúng sử liệu chính, bài học hay và chủ đề rất được tìm; điểm yếu là phần giữa dài với nhiều tên riêng (Dương Đình Nghệ, Kiều Công Tiễn, Lưu Hoằng Tháo, Tiêu Ích) và chính trị phức tạp với trẻ 4–10 tuổi, đoạn cuối về đền thờ và so sánh với năm 1288 làm chậm nhịp, còn vài chi tiết như Lưu Cung đóng quân ngoài cửa biển hay việc gả con gái cần đối chiếu lại tư liệu.",
+    "hash": "b3f3d8d9fcc59ff6"
+  }
 }

@@ -1,0 +1,80 @@
+{
+  "castFile": "cast.json",
+  "duration": 14.63,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 10.24,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "cheer",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><rect x=\"60\" y=\"60\" width=\"880\" height=\"480\" rx=\"30\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><text x=\"500\" y=\"120\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.5\">Câu đố số 1</text><icon name=\"woman in blue dress\" x=\"130\" y=\"150\" size=\"340\" data-in=\"1.5\"/><text class=\"pulse\" x=\"700\" y=\"460\" font-family=\"sans-serif\" font-size=\"48\" text-anchor=\"middle\" fill=\"#e53935\" data-in=\"4\">?</text><circle cx=\"700\" cy=\"300\" r=\"130\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"4\"/><text class=\"pulse\" x=\"700\" y=\"360\" font-family=\"sans-serif\" font-size=\"48\" text-anchor=\"middle\" fill=\"#e53935\" data-in=\"4.5\">?</text></svg>",
+    "style": "grid",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

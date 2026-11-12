@@ -16,5 +16,10 @@
   "kind": "lịch sử",
   "era": "ly",
   "summary": "Vua Lý Công Uẩn quyết định dời đô từ Hoa Lư ra thành Đại La; truyền thuyết rồng vàng bay lên, đặt tên là Thăng Long.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 7.4,
+    "why": "Điểm mạnh: chủ đề lớn, nhiều người tìm (Thăng Long, Hà Nội, 1010), mở đầu bằng câu hỏi \"vì sao có rồng\" gợi tò mò, mạch kể rõ từ tuổi thơ đến dời đô, có cảnh rồng vàng và đoàn thuyền rất dễ dựng, kết bài có bài học; điểm yếu: quá dài, đoạn giữa nhiều chuyện triều đình, chiếu chỉ và thoại hô vạn tuế dễ làm trẻ 4–10 tuổi chán, vài chi tiết lệch sử liệu (rồng vàng là truyền thuyết nhưng sự kiện này ghi lúc thuyền đến, Đào Cam Mộc là người đề cử còn \"Quan Thân vệ\" thì đúng, nhưng \"dìu lên làm vua\" và đoạn tên cầu Tràng Tiền, cầu Dền thì thiếu căn cứ), nên cần cắt gọn và kiểm tra lại tư liệu trước khi dựng.",
+    "hash": "0de1b05ddf015e49"
+  }
 }

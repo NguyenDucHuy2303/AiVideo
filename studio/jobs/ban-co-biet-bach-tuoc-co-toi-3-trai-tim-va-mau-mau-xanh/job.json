@@ -1,7 +1,7 @@
 {
   "slug": "ban-co-biet-bach-tuoc-co-toi-3-trai-tim-va-mau-mau-xanh",
   "topic": "Bạn có biết bạch tuộc có tới 3 trái tim và máu màu xanh?",
-  "status": "review",
+  "status": "producing",
   "notes": [],
   "history": [
     {
@@ -11,9 +11,46 @@
     {
       "at": "2026-11-11T03:31:30.870Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-11T10:01:51.429Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (điểm 7.2/10)"
+    },
+    {
+      "at": "2026-11-11T17:43:17.252Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-11T17:47:30.378Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-11T17:47:30.398Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-11T17:51:49.341Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-12T03:41:30.331Z",
+      "status": "producing",
+      "info": "gộp kênh: câu mời đăng ký đổi thành kênh Huy Kể Chuyện, lồng tiếng lại, render lại tối nay"
     }
   ],
   "kind": "fact-vi",
   "summary": "Sự thật kỳ lạ, dễ kiểm chứng trên Wikipedia (Octopus): 2 tim đưa máu qua mang, 1 tim nuôi cơ thể; máu xanh nhờ hemocyanin chứa đồng. Dễ vẽ: một chú bạch tuộc dễ thương với 3 trái tim và giọt máu xanh. Bọn trẻ rất thích kể lại.",
-  "by": "claude-sonnet"
+  "by": "claude-sonnet",
+  "score": {
+    "value": 7.2,
+    "why": "Điểm mạnh: câu mở \"3 trái tim, máu xanh\" rất hấp dẫn, thông tin đúng (2 tim mang, 1 tim cơ thể; hemocyanin chứa đồng), chủ đề phổ biến, dễ dựng hình; điểm yếu: giải thích hơi ngắn và còn thiếu ý (không nói hemocyanin chứa đồng, thiếu chi tiết \"vì sao\" cần 3 tim, máu chỉ xanh khi có oxy), lời thoại nhiều \"Huy (vui vẻ)\" lặp, thiếu câu hỏi tương tác và khoảnh khắc bất ngờ nên giữ chân chưa tối đa.",
+    "hash": "08d7bfb9670ebb19"
+  },
+  "autoPicked": true,
+  "shorts": [],
+  "stage": "ready"
 }

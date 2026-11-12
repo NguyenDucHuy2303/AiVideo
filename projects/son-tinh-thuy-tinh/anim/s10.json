@@ -1,0 +1,152 @@
+{
+  "narration": "Còn Thủy Tinh thì lặn khắp biển sâu, mà những con vật ấy lại sống trên rừng núi. Thủy Tinh (lo lắng): \"Voi chín ngà ở đâu? Gà chín cựa ở đâu? Biển rộng thế này, biết tìm chỗ nào đây?\"",
+  "plan": {
+    "set": "mountain",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "thuy_tinh",
+        "place": "center",
+        "enter": "none",
+        "act": "swim",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "sad"
+      },
+      {
+        "id": "son_tinh",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "van_lang",
+  "duration": 9.833333333333334,
+  "time": "night",
+  "mood": "tense",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "thuy_tinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#1f3f66",
+          "skirt": "#2a3a4a",
+          "trim": "#7fc4c8"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a24"
+        },
+        "tattoo": true,
+        "bracelets": true,
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "iris": "#2a4a6a"
+        }
+      },
+      "x": 0,
+      "scale": 1.15,
+      "facing": -1
+    },
+    {
+      "id": "son_tinh",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#3f7a4a",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": false,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "build": "average",
+        "skin": "#c98f5c",
+        "headwear": "feather_band",
+        "tattoo": true
+      },
+      "x": 520,
+      "scale": 1.05,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "thuy_tinh",
+      "at": 0,
+      "do": "swim",
+      "face": "worried"
+    },
+    {
+      "actor": "thuy_tinh",
+      "at": 4.92,
+      "do": "worry",
+      "face": "sad"
+    },
+    {
+      "actor": "son_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "thuy_tinh",
+        "son_tinh"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 3.54,
+      "type": "close",
+      "on": [
+        "thuy_tinh"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 6.69,
+      "type": "close",
+      "on": [
+        "son_tinh"
+      ],
+      "push": 0.05
+    }
+  ]
+}

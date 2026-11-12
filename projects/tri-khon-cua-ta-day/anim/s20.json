@@ -1,0 +1,117 @@
+{
+  "narration": "Trâu đứng bên bờ ruộng, thấy ông chúa sơn lâm hung hăng lúc nãy giờ cuống cuồng như thế, liền phì cười. Trâu cười mãi, cười mãi không dừng được. Trâu (cười): \"Ha ha ha! Ông Hổ ơi, giờ ông đã thấy trí khôn chưa?\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "none",
+        "act": "stretch",
+        "face": "laugh",
+        "then": "cheer",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "smoke"
+    ],
+    "objects": [
+      "fire_pit"
+    ],
+    "shot": "wide"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 12.233333333333333,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "field",
+    "objects": [
+      {
+        "type": "fire_pit",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "trau",
+      "type": "animal",
+      "look": {
+        "species": "buffalo",
+        "color": "#4a4e55"
+      },
+      "x": 540.8000000000001,
+      "scale": 1.3,
+      "facing": -1
+    },
+    {
+      "id": "ho",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#f0932b"
+      },
+      "x": -582.4,
+      "scale": 1.4,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "trau",
+      "at": 0,
+      "do": "stretch",
+      "face": "laugh"
+    },
+    {
+      "actor": "trau",
+      "at": 6.12,
+      "do": "cheer",
+      "face": "laugh"
+    },
+    {
+      "actor": "ho",
+      "at": 0,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "ho",
+      "at": 6.12,
+      "do": "worry",
+      "face": "worried"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "smoke",
+      "x": 1800,
+      "at": -2,
+      "dur": 14.233333333333333
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "trau",
+        "ho"
+      ],
+      "push": 0.06
+    }
+  ]
+}

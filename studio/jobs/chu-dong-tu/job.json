@@ -16,5 +16,10 @@
   "kind": "truyền thuyết",
   "era": "van_lang",
   "summary": "Chử Đồng Tử nghèo đến mức hai cha con chỉ có một chiếc khố. Khi cha mất, chàng nhường khố chôn cha, rồi ra sông kiếm sống. Một ngày, công chúa Tiên Dung đi thuyền du ngoạn qua đó, tình cờ gặp chàng và hai người nên duyên. Họ buôn bán, gặp tiên nhân Tử Vân Sơn truyền cho chiếc nón và cây gậy thần. Cả hai tu đạo, rồi bay lên trời giữa ánh sáng rực rỡ. Truyện ca ngợi lòng hiếu thảo và sự chân thật.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.4,
+    "why": "Điểm mạnh: câu mở đầu về hai cha con chung một chiếc khố rất hút trẻ, truyền thuyết nổi tiếng (Tứ bất tử) đúng tư liệu, mạch kể rõ ràng, nhiều cảnh dễ dựng (cháy nhà, chôn trong cát, thành mọc lên rồi bay lên trời) và bài học hiếu thảo, thật thà rõ ràng. Điểm yếu: truyện khá dài, đoạn giữa (đi buôn, gặp tiên ông, học đạo) hơi dàn trải, chi tiết liệm khố cho cha và cảnh chàng trần truồng nấp dưới cát cần xử lý khéo cho trẻ 4–10 tuổi, còn đoạn kết có phần liệt kê đền thờ, địa danh nặng so với trẻ nhỏ.",
+    "hash": "1e6c4a46e7ffa888"
+  }
 }

@@ -1,7 +1,7 @@
 {
   "slug": "tri-khon-cua-ta-day",
   "topic": "Trí khôn của ta đây",
-  "status": "review",
+  "status": "producing",
   "notes": [],
   "history": [
     {
@@ -11,6 +11,36 @@
     {
       "at": "2026-11-11T03:26:30.972Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-11T10:01:14.127Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (điểm 8.4/10)"
+    },
+    {
+      "at": "2026-11-11T17:08:24.424Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-11T17:28:52.048Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-11T17:28:52.203Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-11T17:30:32.872Z",
+      "status": "failed",
+      "info": "renderFrame failed at frame 151: TypeError: Cannot read properties of undefined (reading '0')\n    at file:///home/huynguyen/WataCreateVideo/src/animation/runtime/fx.js:119:29\n    at Array.forEach (<anonymous>)\n    at Object.render (file:///home/huynguyen/WataCreateVideo/src/animation/runtime/fx.js:2"
+    },
+    {
+      "at": "2026-11-12T03:06:32.147Z",
+      "status": "producing",
+      "info": "sửa lỗi hiệu ứng lấp lánh trên con vật (fx.js), render lại"
     }
   ],
   "kind": "ngụ ngôn",
@@ -28,5 +58,12 @@
       "why": "Truyện ngụ ngôn nhẹ nhàng về trâu, hổ và thiên nhiên làng quê hợp nét màu nước mềm, còn cuốn sách mở ra hợp với cổ tích ngụ ngôn.",
       "by": "brain"
     }
-  }
+  },
+  "score": {
+    "value": 8.4,
+    "why": "Mở bài bằng hai câu hỏi \"vì sao hổ có vằn, trâu nghe lời người\" rất cuốn trẻ, truyện dân gian Việt quen thuộc, nhiều người tìm, cốt truyện mạch lạc, nhiều cảnh dễ dựng (cày ruộng, trói hổ, đốt rơm), có bài học rõ; điểm yếu là hơi dài và nhiều đoạn thoại lặp, cảnh đốt hổ cần làm nhẹ nhàng cho trẻ 4 tuổi, và một số chi tiết thêm vào (Cu Tí, hổ nhảy suối, bơi giỏi, câu \"yếu trâu hơn khỏe bò\" bị gán ghép) lệch bản gốc dân gian.",
+    "hash": "a39a49fe25725226"
+  },
+  "autoPicked": true,
+  "stage": "ready"
 }

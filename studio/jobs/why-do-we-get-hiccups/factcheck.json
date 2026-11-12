@@ -1,0 +1,22 @@
+{
+  "issues": [
+    {
+      "scene": 19,
+      "quote": "Things like eating fast or swallowing air can make an air bubble in your belly, and that sets off the hiccup reflex.",
+      "problem": "This presents a theory as settled fact. The sources say only that hiccups often happen when an air bubble forms, and that the bubble triggering the reflex is a hypothesis. Scene 20 says scientists are not sure why we hiccup, so this overstates what is known.",
+      "fix": "Things like eating fast or swallowing air can make an air bubble in your belly, and scientists think that bubble may help set off the hiccup reflex."
+    },
+    {
+      "scene": 17,
+      "quote": "Tiny sensors in your stomach and around your diaphragm notice. They send a message up to a part of your brain that scientists call the hiccup center. Then the brain sends a message back down.",
+      "problem": "This is the 'burping reflex' hypothesis, but it is told as proven fact. The sources say the hypothesis suggests the bubble sets off these sensors. It is not settled.",
+      "fix": "Scientists think tiny sensors in your stomach and around your diaphragm may notice the bubble. They may send a message up to a part of your brain called the hiccup center. Then the brain sends a message back down. Jerk! Hic!"
+    },
+    {
+      "scene": 12,
+      "quote": "It all happens in about thirty-five thousandths of a second.",
+      "problem": "The source gives about 35 milliseconds as the time from the diaphragm jerk until the throat closes. It is not the time for the whole hiccup. Saying 'it all' is misleading.",
+      "fix": "The throat shuts about thirty-five thousandths of a second after the jerk. That is super, super fast."
+    }
+  ]
+}

@@ -15,5 +15,10 @@
   ],
   "kind": "qa",
   "summary": "Kids love cats and want to know what the mysterious sound means, with fun comparisons of happy, calm and hungry purrs.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.3,
+    "why": "Mạnh ở chủ đề được tìm nhiều, mở bài bằng tiếng \"động cơ\" lôi cuốn, cấu trúc bốn bước rõ ràng, thông tin khoa học trung thực (thừa nhận khoa học chưa chắc), có thí nghiệm an toàn và dễ dựng hình; yếu ở chỗ phần giải thích thanh quản và dây thanh hơi dài, nhiều từ khó với trẻ 6–12 tuổi, và kịch bản viết bằng tiếng Anh nên cần chuyển sang tiếng Việt.",
+    "hash": "c503f7cdb37297e0"
+  }
 }

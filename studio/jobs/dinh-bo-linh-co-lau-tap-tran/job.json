@@ -16,5 +16,10 @@
   "kind": "truyền thuyết",
   "era": "ngo_dinh_le",
   "summary": "Cậu bé chăn trâu Đinh Bộ Lĩnh lấy bông lau làm cờ, cùng lũ trẻ tập trận, lớn lên dẹp loạn mười hai sứ quân, lập nước Đại Cồ Việt.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.3,
+    "why": "Điểm mạnh: mở đầu gần gũi (trẻ chơi đánh trận), cốt truyện rõ từ cậu bé chăn trâu đến Đinh Tiên Hoàng, nhiều hình ảnh dễ dựng (cờ lau, rồng vàng, cầu gãy), thoại sinh động, bám truyền thuyết và địa danh Ninh Bình; điểm yếu: hơi dài, nửa sau (đánh sứ quân, lên ngôi, địa danh, lễ hội) thiên về liệt kê và thiếu kịch tính, có chi tiết khó (viên ngọc trong giỏ cá) và vài chỗ cần kiểm chứng (ngày sinh, chi tiết chú Dự, tên Đại Cồ Việt), nên nên cắt gọn phần cuối.",
+    "hash": "478215f0cdc0d7b6"
+  }
 }

@@ -1,0 +1,163 @@
+{
+  "title": "An octopus has 3 hearts and blue blood!",
+  "question": "Did you know octopuses have three hearts and blue blood?",
+  "answer": "An octopus has three hearts, and its blood is blue when it carries oxygen, because it has copper in it.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "A friendly cartoon octopus floats in a bright blue sea, with three small glowing hearts shown on its round body and a drop of blue blood beside it."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "surprised",
+          "text": "Did you know an octopus has three hearts and blue blood?"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "diagram",
+        "what": "A simple octopus body. Two small hearts sit next to two feathery gills, each with an arrow of blood going to the gill."
+      },
+      "parts": [
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "Three hearts? I only have one!"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Two hearts send blood to the gills. Gills are how an octopus breathes under water."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "arrows",
+        "what": "The same octopus. The big third heart in the middle sends arrows of blood out to all eight arms and the head."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "The third heart pumps blood to the rest of the body."
+        },
+        {
+          "who": "Mai",
+          "how": "joyfully",
+          "text": "Two hearts for the gills, one for everything else!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "compare",
+        "what": "Split picture. On the left, a child with a red blood drop marked with a small iron nail. On the right, an octopus with a blue blood drop marked with a copper coin."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "firmly",
+          "text": "Our blood has iron in it, so it looks red."
+        },
+        {
+          "who": "Mai",
+          "how": "surprised",
+          "text": "And the octopus?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Its blood has copper in it."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "zoom",
+        "what": "A close-up of an octopus blood vessel. Tiny round oxygen bubbles join copper dots, and the liquid turns bright blue."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "proudly",
+          "text": "When the copper holds oxygen, the blood turns blue."
+        },
+        {
+          "who": "Mai",
+          "how": "laughing",
+          "text": "Blue blood, like a sea superhero!"
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "host",
+        "what": "Huy and Mai wave happily next to a smiling octopus showing three hearts, with a Follow button popping up."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "joyfully",
+          "text": "Three hearts and blue blood. What a wow animal!"
+        },
+        {
+          "who": "Mai",
+          "how": "happily",
+          "text": "Follow Ask Huy for more wow facts!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Octopuses have three hearts. Two pump blood to the gills and the third pumps it to the rest of the body.",
+      "source": "Octopus (Simple English Wikipedia)"
+    },
+    {
+      "claim": "Hemocyanin is a protein that carries oxygen in some animals, including cephalopods such as octopuses. It contains two copper atoms.",
+      "source": "Hemocyanin (Wikipedia)"
+    },
+    {
+      "claim": "Oxygen turns hemocyanin from colorless to blue.",
+      "source": "Hemocyanin (Wikipedia)"
+    },
+    {
+      "claim": "Human blood is red because of hemoglobin, and blood is bright red when its hemoglobin carries oxygen. Hemoglobin holds iron.",
+      "source": "Blood (Wikipedia); Hemocyanin (Wikipedia)"
+    }
+  ],
+  "description": "Octopuses have three hearts and blue blood! Find out why in under a minute.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host: curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Mai",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old who asks, guesses and tries things",
+      "villain": false
+    }
+  ],
+  "look": "",
+  "shorts": [],
+  "thumbnail": ""
+}

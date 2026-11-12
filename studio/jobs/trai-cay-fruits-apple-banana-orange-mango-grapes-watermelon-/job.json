@@ -30,5 +30,10 @@
   ],
   "kind": "lesson",
   "summary": "Các con thấy trái cây mỗi ngày ở nhà và ngoài chợ, nên dễ nhớ từ và có thể luyện nói ngay trong bữa ăn.",
-  "by": "claude-sonnet"
+  "by": "claude-sonnet",
+  "score": {
+    "value": 7.4,
+    "why": "Điểm mạnh: chủ đề trái cây rất nhiều người tìm, bố cục rõ (học từ → trò đoán → mẫu câu → ôn tập), có tương tác và mẹo phát âm, hình ảnh dễ dựng; điểm yếu: mở đầu chậm, chỉ chào hỏi rồi giới thiệu thay vì có \"móc\" gây tò mò ngay câu đầu, bài khá dài với 9 từ cộng 6 mẫu câu nên dễ quá tải với trẻ 5–9 tuổi, và có lỗi nhỏ như phiên âm \"áp-pồ\", Mai nói \"Nho tím\" lặp, \"Quả này ruột đỏ\" ở câu đố chưa thể hiện được hình, cùng lúc Huy nói \"Gần đúng rồi\" khiến trẻ nhầm orange với chuối khó hiểu về hình.",
+    "hash": "3b9544c57eda98b5"
+  }
 }

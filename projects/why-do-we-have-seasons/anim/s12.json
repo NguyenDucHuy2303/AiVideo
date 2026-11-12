@@ -1,0 +1,66 @@
+{
+  "castFile": "cast.json",
+  "duration": 9.33,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 6.53,
+      "do": "talk",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><path d=\"M330 300 A170 170 0 0 1 670 300 Z\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"2\"/><path d=\"M330 300 A170 170 0 0 0 670 300 Z\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"5\"/><line x1=\"310\" y1=\"300\" x2=\"690\" y2=\"300\" stroke=\"#3a2a20\" stroke-width=\"6\" data-in=\"0.5\" class=\"draw\"/><text x=\"500\" y=\"90\" font-family=\"sans-serif\" font-size=\"42\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"3.5\">Northern Hemisphere</text><text x=\"500\" y=\"550\" font-family=\"sans-serif\" font-size=\"42\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"6\">Southern Hemisphere</text></svg>",
+    "style": "grid",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

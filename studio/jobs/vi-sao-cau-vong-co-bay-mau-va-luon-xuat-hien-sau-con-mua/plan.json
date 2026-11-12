@@ -548,7 +548,7 @@
       "beat": "next",
       "visual": {
         "kind": "scene",
-        "what": "Mai chỉ lên bầu trời xanh trong, có dấu hỏi to. Huy vẫy tay, bên cạnh là nút đăng ký kênh Hỏi Huy."
+        "what": "Mai chỉ lên bầu trời xanh trong, có dấu hỏi to. Huy vẫy tay, bên cạnh là nút đăng ký kênh Huy Kể Chuyện."
       },
       "parts": [
         {
@@ -559,7 +559,7 @@
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Câu hỏi hay! Mình sẽ tìm hiểu ở video sau. Các bạn nhớ bấm đăng ký kênh Hỏi Huy nhé. Hẹn gặp lại!"
+          "text": "Câu hỏi hay! Mình sẽ tìm hiểu ở video sau. Các bạn nhớ bấm đăng ký kênh Huy Kể Chuyện nhé. Hẹn gặp lại!"
         }
       ]
     }

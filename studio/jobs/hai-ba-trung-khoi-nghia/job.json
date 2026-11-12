@@ -16,5 +16,10 @@
   "kind": "lịch sử",
   "era": "bac_thuoc",
   "summary": "Trưng Trắc, Trưng Nhị ở Mê Linh phất cờ khởi nghĩa đánh đuổi Tô Định, được muôn dân hưởng ứng, Trưng Trắc lên ngôi vua. Kể theo hướng anh hùng, tinh thần phụ nữ Việt.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.4,
+    "why": "Điểm mạnh: chủ đề kinh điển, nhiều người tìm, mạch truyện đủ ý, đúng tư liệu (Mê Linh, Thi Sách, lời thề, Tô Định cạo râu tóc, 65 thành, Hát Môn), nhiều cảnh vui mắt dễ dựng, thông điệp tốt; điểm yếu: mở đầu bằng câu hỏi hơi chung chung, đoạn giữa nhiều bối cảnh/nhân vật tên khó nhớ với trẻ 4–10 tuổi, cảnh Thi Sách bị hại và kết thúc hy sinh cần xử lý nhẹ nhàng, kịch bản khá dài và phải bỏ qua chi tiết gây tranh cãi (lời thề bốn điều có nguồn gốc dân gian, Trưng Trắc làm vua sau khi mặc đẹp).",
+    "hash": "24539543ce6107d2"
+  }
 }

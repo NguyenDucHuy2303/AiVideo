@@ -1,0 +1,80 @@
+{
+  "castFile": "cast.json",
+  "duration": 7.97,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "mai",
+      "type": "human",
+      "look": "mai",
+      "x": -140,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 5.58,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "mai",
+      "at": 0,
+      "do": "cheer",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "mai"
+      ],
+      "dx": 0.33,
+      "share": 0.56,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0.3\" x=\"500\" y=\"80\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\">Poop is leftover food</text><icon data-in=\"0.8\" name=\"wombat\" x=\"60\" y=\"150\" size=\"400\"/><path data-in=\"2.2\" class=\"draw\" d=\"M170 420 q40 -70 80 0 t80 0 t80 0\" fill=\"none\" stroke=\"#e57373\" stroke-width=\"26\" stroke-linecap=\"round\"/><path data-in=\"2.2\" class=\"draw\" d=\"M170 420 q40 -70 80 0 t80 0 t80 0\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linecap=\"round\"/><line data-in=\"3\" x1=\"500\" y1=\"230\" x2=\"330\" y2=\"390\" stroke=\"#3a2a20\" stroke-width=\"5\"/><text data-in=\"3\" x=\"500\" y=\"220\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#2a2a40\">large intestine</text><path data-in=\"4.2\" class=\"float\" d=\"M600 300 q30 40 0 60 q-30 -20 0 -60z\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><path data-in=\"4.8\" class=\"float\" d=\"M700 370 q30 40 0 60 q-30 -20 0 -60z\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><path data-in=\"5.4\" class=\"float\" d=\"M580 430 q30 40 0 60 q-30 -20 0 -60z\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text data-in=\"5.6\" x=\"760\" y=\"500\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#4aa3e0\">water out!</text></svg>",
+    "style": "chalk",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

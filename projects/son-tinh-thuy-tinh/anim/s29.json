@@ -1,0 +1,107 @@
+{
+  "narration": "Ngày nay, núi Tản Viên được gọi là núi Ba Vì, ở Hà Nội. Ngọn núi vẫn xanh biếc, mây trắng bay quanh đỉnh núi quanh năm.",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "son_tinh",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "idle",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "rays"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 8.366666666666667,
+  "time": "day",
+  "mood": "majestic",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "son_tinh",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#3f7a4a",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": false,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "build": "average",
+        "skin": "#c98f5c",
+        "headwear": "feather_band",
+        "tattoo": true
+      },
+      "x": 0,
+      "scale": 1.05,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "son_tinh",
+      "at": 0,
+      "do": "heroic",
+      "face": "proud"
+    },
+    {
+      "actor": "son_tinh",
+      "at": 4.18,
+      "do": "idle",
+      "face": "happy"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 8.366666666666667,
+      "scale": 2.4
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "son_tinh"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 4.18,
+      "type": "close",
+      "on": [
+        "son_tinh"
+      ],
+      "push": 0.06
+    }
+  ]
+}
