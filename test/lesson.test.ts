@@ -9,11 +9,11 @@ const scene = (beat: string, parts: ReturnType<typeof say>[]): QAScene => ({ bea
 const filler = Array(30).fill("chữ").join(" ");
 const good = (): LessonPlan => ({
   title: "Học tiếng Anh: Con vật", question: "Con vật", answer: "cat, dog", thumbnail: "CAT!", description: "d", shorts: [], facts: [], look: "",
-  cast: [P.host, P.kid, TEACHER], words: Array.from({ length: 8 }, (_, i) => ({ en: `w${i}`, vi: `t${i}` })),
+  cast: [P.host, P.kid, P.little, TEACHER], words: Array.from({ length: 8 }, (_, i) => ({ en: `w${i}`, vi: `t${i}` })),
   scenes: [
     scene("hook", [say("Huy", filler)]),
-    ...Array.from({ length: 24 }, () => scene("word", [say("Huy", filler), say("Emma", "Cat. Cat."), say("Mai", "Cat!")])),
-    scene("practice", [say("Emma", "What is this?"), say("Mai", filler)]),
+    ...Array.from({ length: 24 }, () => scene("word", [say("Huy", filler), say("Emma", "Cat. Cat."), say("Bối", "Cat!"), say("Beo", "Cát!")])),
+    scene("practice", [say("Emma", "What is this?"), say("Beo", filler)]),
     scene("sentence", [say("Emma", "I have a cat."), say("Huy", filler)]),
     scene("recap", [say("Emma", "Cat, dog, fish.")]),
     scene("next", [say("Huy", filler)]),

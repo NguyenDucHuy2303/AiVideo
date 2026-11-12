@@ -23,7 +23,7 @@ Thời đại mới thì thêm một khối vào `eras.json`, gồm mô tả, nh
 
 ## Nhân vật (`runtime/human.js`, `runtime/horse.js`)
 
-- Dáng (`body`): `child` `man` `strong` `woman` `elder`
+- Dáng (`body`): `child` (bé khoảng 8 tuổi) `small` (bé khoảng 5 tuổi, đầu to hơn so với người) `man` `strong` `woman` `elder`
 - Trang phục (`outfit.type`):
   - Thời Văn Lang: `dongson` (áo chui đầu có dải hoa văn trống đồng; nữ mặc váy, nam đóng khố) và `plume` (lễ phục vua Hùng: áo đính đồng, váy viền lông chim).
   - Dùng chung: `armor` (giáp sắt), `enemy`, `loincloth`.
@@ -34,7 +34,7 @@ Thời đại mới thì thêm một khối vào `eras.json`, gồm mô tả, nh
 - Đạo cụ (`prop`, `props` để đổi giữa cảnh bằng `set.prop`): `iron_whip` `broken_whip` `bamboo` `spear` `bronze_axe` `shield` `horn` (tù và) `sword` `stick` `basket` `bowl` `scroll` (không dùng cho thời Văn Lang) `flag`
 - **Mảnh trang phục** (`runtime/garments.js`, mọi thời đại sau Văn Lang): `outfit: { type: "parts", top, inner, lower, belt }`
   - `top.cut`: `chui` · `canh` (áo cánh) · `tu_than` (áo tứ thân, mặc ngoài yếm) · `giao_linh` (cổ chéo) · `vien_linh` (cổ tròn, quan, vua) · `ngu_than` (thời Nguyễn) · `yem`; `length` waist…ankle (dài thì có vạt áo phủ chân, đung đưa theo bước); `sleeves` none/short/long/wide (tay thụng); `pattern` dongson/dragon/flowers/dots
-  - `inner.color` (yếm), `lower` skirt/pants/loincloth (váy, quần, khố), `belt` (thắt lưng bao, hai đầu buông)
+  - `inner.color` (yếm), `lower` skirt/pants/loincloth (váy, quần, khố; `pants` với `length: "knee"` là quần soóc, cẳng chân để trần), `belt` (thắt lưng bao, hai đầu buông)
   - Mũ, khăn: `khan_van` `khan_mo_qua` `khan_chit` `khan_xep` `non_quai_thao` `non_chop` `mu_canh_chuon` `binh_thien`
 - Ngựa: `kind: iron` (ngựa sắt bờm lửa) | `plain` (bờm lông ngắn dọc cổ)
 - Dáng người (`build`): `slim` `average` `heavy` (bụng phệ). Trong đám đông, mỗi người tự khác nhau một chút. Tay chân thuôn dần, bàn tay có ngón cái, cổ ngắn chắc, áo và váy có nếp gấp.

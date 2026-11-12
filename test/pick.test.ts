@@ -28,7 +28,7 @@ test("a presenter points in the middle of a scene, not the whole time", () => {
   const g = gestures("huy", { do: "point", face: "happy" }, 8);
   assert.deepEqual(g.map((a) => a.do), ["talk", "point", "talk"]);
   assert.deepEqual(gestures("huy", { do: "point", face: "happy" }, 2).map((a) => a.do), ["point"]);
-  assert.deepEqual(gestures("mai", { do: "cheer", face: "joy" }, 8).map((a) => a.do), ["cheer"]);
+  assert.deepEqual(gestures("boi", { do: "cheer", face: "joy" }, 8).map((a) => a.do), ["cheer"]);
 });
 
 test("each line finds topics its own way; old settings without it are inferred from the kinds", () => {

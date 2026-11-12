@@ -13,7 +13,7 @@ Kênh thứ hai **Ask Huy** (tiếng Anh, trẻ 6–12, mỗi video trả lời 
 - `src/studio/qa.ts`: kịch bản, soát sự thật, đề xuất câu hỏi.
 - `qaproduce.ts`: giọng, chỉ đạo cảnh, tranh nền, render.
 - `runtime/board.js`: bảng giải thích SVG.
-- Người dẫn là Huy, bé Mai hỏi.
+- Người dẫn là Huy (25 tuổi); em trai Hùng (21, phụ tá làm thí nghiệm, áo tím); bé Bối (gái, 8 tuổi) hỏi; em trai Beo (5 tuổi, dáng `body: "small"`) hay đoán ngây ngô. Cả bốn có mặt suốt video ở mọi chương trình hỏi đáp, Shorts và Học tiếng Anh (`helper`, `kid`, `little` trong `QAProfile`). Trước 12/11/2026 Bối tên là Mai (kịch bản cũ ghi "Mai" vẫn đọc được). Kokoro không đọc được dấu: `engines.ts` đọc "Bối" thành "Boy", "Hùng" thành "Hoong".
 
 Mỗi **dòng nội dung** khai báo trong `studio/settings.json` → `pick.lines`, gồm `kinds`, `perWeek` (số video mỗi tuần, sửa trên tab Đăng YouTube), `ahead`, `propose`.
 - Dịp lễ (`src/studio/occasions.ts`): bài hợp dịp sắp tới được làm trước, và được tự chọn từ 14 đến 2 ngày trước dịp.

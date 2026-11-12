@@ -210,7 +210,7 @@ const KOKORO_WORKER = path.join(path.dirname(fileURLToPath(import.meta.url)), "k
  * Vietnamese names Kokoro cannot read (it spells out "ố" letter by letter): written as they
  * are on screen, said through an English spelling of the same sound.
  */
-const KOKORO_SAY: [RegExp, string][] = [[/\bBối\b/gu, "Boy"], [/\bbối\b/gu, "boy"]];
+const KOKORO_SAY: [RegExp, string][] = [[/\bBối\b/gu, "Boy"], [/\bbối\b/gu, "boy"], [/\bHùng\b/gu, "Hoong"]];
 export const kokoroText = (text: string) => KOKORO_SAY.reduce((t, [re, say]) => t.replace(re, say), text);
 
 export const kokoro: TtsEngine = {
