@@ -383,23 +383,61 @@ export async function savePublishSettings(channel: string, change: { mode?: Mode
   return all;
 }
 
-// ── By hand: a folder per video for YouTube Studio ──────────────────────────────────────────
+// ── By hand: one folder per topic for YouTube Studio ───────────────────────────────────────
 
-export const EXPORT_DIR = () => process.env.WATA_EXPORT_DIR ?? path.join(process.env.HOME ?? "/tmp", "Videos", "Wata");
-const WHAT_VI: Record<What, string> = { long: "Video chính", en: "Bản tiếng Anh", short: "Short" };
+/** ~/youtube/<topic>/: the film, its Shorts, its English version, thumbnails, one sheet. */
+export const EXPORT_DIR = () => process.env.WATA_EXPORT_DIR ?? path.join(process.env.HOME ?? "/tmp", "youtube");
+const WHAT_VI: Record<What, string> = { long: "VIDEO DÀI", en: "BẢN TIẾNG ANH", short: "SHORT" };
 const CATEGORY_VI: Record<string, string> = { "1": "Phim và hoạt hình (Film & Animation)", "27": "Giáo dục (Education)" };
-const safe = (s: string) => s.replace(/[\/\\:*?"<>|#]/g, "").replace(/\s+/g, " ").trim().slice(0, 70).trim();
+const safe = (s: string) => s.replace(/[\/\\:*?"<>|#]/g, "").replace(/\s+/g, " ").trim().slice(0, 80).trim();
 const two = (n: number) => String(n).padStart(2, "0");
-const stamp = (d: Date) => `${d.getFullYear()}-${two(d.getMonth() + 1)}-${two(d.getDate())} ${two(d.getHours())}h${two(d.getMinutes())}`;
 const DAYS = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+const when = (at: Date) => `${two(at.getHours())}:${two(at.getMinutes())} ${DAYS[at.getDay()]} ${at.getDate()}/${at.getMonth() + 1}/${at.getFullYear()}`;
+/** Where a Short's description links to the film, until the film's link is known. */
+export const LINK_HERE = "[dán link video dài vào đây]";
 
-/** The text beside an exported video: everything to fill in on YouTube Studio's upload page. */
-export function uploadSheet(meta: Meta, cfg: ChannelCfg, what: What, at: Date, thumb: boolean): string {
+export interface Item { what: What; file: string; index?: number }
+const isFactJob = (job: Job) => job.kind === "fact" || job.kind === "fact-vi";
+/** Everything of a job that goes on YouTube, in upload order: the film, its Shorts, its English version. */
+export function allItems(job: Job, files: string[]): Item[] {
+  if (isFactJob(job)) return files.includes("video.mp4") ? [{ what: "short", file: "video.mp4", index: 0 }] : [];
+  const out: Item[] = [];
+  if (files.includes("video.mp4")) out.push({ what: "long", file: "video.mp4" });
+  (job.shorts ?? []).forEach((f, i) => out.push({ what: "short", file: f, index: i }));
+  if (files.includes("video.en.mp4")) out.push({ what: "en", file: "video.en.mp4" });
+  return out;
+}
+/** The names inside the topic folder. */
+export function fileNameOf(job: Job, item: Item): string {
+  if (item.what === "long") return "video-dai.mp4";
+  if (item.what === "en") return "video-tieng-anh.mp4";
+  return isFactJob(job) ? "short.mp4" : `short-${item.index! + 1}.mp4`;
+}
+const publishedOf = (job: Job, item: Item) => (item.what === "short" ? job.published?.shorts?.[item.index!] : job.published?.[item.what]) ?? undefined;
+const exportedOf = (job: Job, item: Item) => (item.what === "short" ? job.exported?.shorts?.[item.index!] : job.exported?.[item.what]) ?? undefined;
+const inExportDir = (dir?: string) => !!dir && (dir + path.sep).startsWith(EXPORT_DIR() + path.sep);
+
+/**
+ * A finished job whose folder should be made (or completed) now: approved, not held, its
+ * Shorts already cut (so the folder is whole at once), and some video of a manual channel not
+ * yet published nor laid out in ~/youtube.
+ */
+export function needsExport(job: Job, files: string[], settings: PublishSettings, lines: Line[]): boolean {
+  if (job.status !== "done" || job.publishHold || (!isFactJob(job) && job.shorts === undefined)) return false;
+  return allItems(job, files).some((item) => {
+    const cfg = settings[channelOf(job, item.what, lines)];
+    if (cfg?.mode !== "manual" || !(item.what === "short" ? cfg.shorts : cfg.long).length || publishedOf(job, item)) return false;
+    return !inExportDir(exportedOf(job, item)?.dir);
+  });
+}
+
+/** One video's part of the sheet: everything to fill in on YouTube Studio's upload page. */
+export function sheetSection(n: number, file: string, meta: Meta, cfg: ChannelCfg, what: What, at: Date, thumb: string | undefined, done?: Published): string {
   return [
+    `════════ ${n}. ${WHAT_VI[what]}: ${file} ════════`,
+    ...(done ? [`✔ ĐÃ ĐĂNG: ${done.url}`, ""] : []),
     `KÊNH: ${cfg.name}`,
-    `LOẠI: ${WHAT_VI[what]}`,
-    `GIỜ CÔNG KHAI: ${two(at.getHours())}:${two(at.getMinutes())} ${DAYS[at.getDay()]} ${at.getDate()}/${at.getMonth() + 1}/${at.getFullYear()}`,
-    `   (trong YouTube Studio: bước "Chế độ hiển thị" → "Lên lịch", chọn đúng giờ này)`,
+    `GIỜ CÔNG KHAI: ${when(at)}   (YouTube Studio: bước "Chế độ hiển thị" → "Lên lịch", chọn đúng giờ này)`,
     "",
     "TIÊU ĐỀ:", meta.title, "",
     "MÔ TẢ:", meta.description, "",
@@ -410,10 +448,8 @@ export function uploadSheet(meta: Meta, cfg: ChannelCfg, what: What, at: Date, t
     `- Danh mục: ${CATEGORY_VI[meta.categoryId] ?? meta.categoryId}`,
     ...(meta.playlist ? [`- Danh sách phát: ${meta.playlist} (tạo trong YouTube Studio nếu chưa có)`] : []),
     `- Ngôn ngữ video: ${meta.lang === "vi" ? "Tiếng Việt" : "Tiếng Anh (English)"}`,
-    ...(thumb ? ["- Hình thu nhỏ: anh-bia.jpg (trong thư mục này)"] : what === "short" ? ["- Short: không cần hình thu nhỏ"] : []),
-    "",
-    "ĐĂNG XONG: mở trang duyệt của studio, bài này, mục YouTube, dán link video vào ô \"Đã đăng\".",
-    "",
+    ...(thumb ? [`- Hình thu nhỏ: ${thumb}`] : what === "short" ? ["- Short: không cần hình thu nhỏ"] : []),
+    "", "",
   ].join("\n");
 }
 
@@ -423,40 +459,78 @@ async function place(from: string, to: string): Promise<void> {
   try { await fsp.link(from, to); } catch { await fsp.copyFile(from, to); }
 }
 
+/** The topic's folder: kept from before, else ~/youtube/<title>, "(2)"… if another topic has that name. */
+async function folderOf(job: Job, title: string): Promise<string> {
+  const before = [job.exported?.long, job.exported?.en, ...(job.exported?.shorts ?? [])].find((x) => x && inExportDir(x.dir))?.dir;
+  if (before) return before;
+  for (let n = 1; ; n++) {
+    const dir = path.join(EXPORT_DIR(), `${safe(title) || job.slug}${n > 1 ? ` (${n})` : ""}`);
+    const owner = await fsp.readFile(path.join(dir, ".studio"), "utf8").catch(() => undefined);
+    if (owner === undefined && !(await exists(dir))) return dir;
+    if (owner?.trim() === job.slug) return dir;
+  }
+}
+
 /**
- * Lay out what of a finished job is still to be published, each in its own folder, with a
- * publishing time from the channel's times (kept if it was laid out before). Channels that are
- * off, and auto channels (unless forced: the button), are skipped. Returns the folders.
+ * Lay a finished job out in one folder, ~/youtube/<topic>/: the film, every Short, the English
+ * version, the thumbnails, and dang-len-youtube.txt with every video's details. Each video not
+ * yet published gets a publishing time from its channel (kept if it had one; Shorts after the
+ * film). Videos of channels that are off, or auto (unless forced: the button), are left out.
+ * The sheet marks what is already published and fills the film's link into the Shorts once
+ * known. Returns the folder (undefined if there was nothing to lay out).
  */
-export async function exportJob(slug: string, jobs: Job[], settings: PublishSettings, lines: Line[], opts: { force?: boolean; now?: Date } = {}): Promise<string[]> {
+export async function exportJob(slug: string, jobs: Job[], settings: PublishSettings, lines: Line[], opts: { force?: boolean; now?: Date } = {}): Promise<string | undefined> {
   const job = await loadJob(slug), dir = jobDir(slug);
   const files = await fsp.readdir(dir).catch(() => [] as string[]);
-  const shortFiles = await fsp.readdir(path.join(dir, "shorts")).catch(() => [] as string[]);
-  const have = [...files, ...shortFiles.map((f) => `shorts/${f}`)];
-  const out: string[] = [];
-  for (const item of toPublish(job, have)) {
-    const channel = channelOf(job, item.what, lines), cfg = settings[channel];
-    if (!cfg || cfg.mode === "off" || (cfg.mode === "auto" && !opts.force)) continue;
-    const before = item.what === "short" ? job.exported?.shorts?.[item.index!] : job.exported?.[item.what];
-    const at = before ? new Date(before.publishAt) : nextSlot(cfg, item.what === "short" ? "short" : "long", takenTimes(jobs, channel), opts.now, item.what === "short" ? job.published?.long?.publishAt : undefined);
+  const items = allItems(job, files).filter((item) => {
+    const cfg = settings[channelOf(job, item.what, lines)];
+    return cfg && cfg.mode !== "off" && (cfg.mode === "manual" || opts.force || publishedOf(job, item));
+  });
+  if (!items.length) return undefined;
+  const plan = JSON.parse(await fsp.readFile(path.join(dir, "plan.json"), "utf8").catch(() => "{}"));
+  // (the topic's name: the title without its " | Ask Huy" series tail)
+  const folder = await folderOf(job, String(plan.title ?? job.topic).split(" | ")[0]!);
+  await fsp.mkdir(folder, { recursive: true });
+  await fsp.writeFile(path.join(folder, ".studio"), job.slug);
+  const taken: Record<string, string[]> = {};
+  const takenOn = (ch: string) => (taken[ch] ??= takenTimes(jobs.filter((j) => j.slug !== slug), ch));
+  const longAt = publishedOf(job, { what: "long", file: "" })?.publishAt;
+  let filmAt = longAt;
+  const sections: string[] = [], exported: NonNullable<Job["exported"]> = {};
+  for (const [n, item] of items.entries()) {
+    const channel = channelOf(job, item.what, lines), cfg = settings[channel]!, done = publishedOf(job, item);
+    const before = exportedOf(job, item);
+    const at = done ? new Date(done.publishAt) : before ? new Date(before.publishAt)
+      : nextSlot(cfg, item.what === "short" ? "short" : "long", takenOn(channel), opts.now, item.what === "short" && !isFactJob(job) ? filmAt : undefined);
     if (!at) continue;
-    const meta = await metaOf(job, item.what, cfg, item.what === "short" ? job.published?.long?.url : undefined);
-    const plan = JSON.parse(await fsp.readFile(path.join(dir, item.what === "en" && files.includes("plan.en.json") ? "plan.en.json" : "plan.json"), "utf8").catch(() => "{}"));
-    const name = `${stamp(at)} ${safe(String(plan.title ?? job.topic))}${item.what === "short" && job.kind !== "fact" && job.kind !== "fact-vi" ? ` - Short ${item.index! + 1}` : ""}`;
-    const folder = before?.dir ?? path.join(EXPORT_DIR(), safe(cfg.name), name);
-    await fsp.mkdir(folder, { recursive: true });
-    await place(path.join(dir, item.file), path.join(folder, "video.mp4"));
-    const jpg = path.join(dir, item.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg"), thumb = item.what !== "short" && (await exists(jpg));
-    if (thumb) await place(jpg, path.join(folder, "anh-bia.jpg"));
-    await fsp.writeFile(path.join(folder, "dang-len-youtube.txt"), uploadSheet(meta, cfg, item.what, at, thumb));
-    const fresh = await loadJob(slug), ex: Exported = { dir: folder, publishAt: at.toISOString(), channel, at: (opts.now ?? new Date()).toISOString() };
-    fresh.exported ??= {};
-    if (item.what === "short") { fresh.exported.shorts ??= []; fresh.exported.shorts[item.index!] = ex; } else fresh.exported[item.what] = ex;
-    await saveJob(fresh);
-    jobs = jobs.map((j) => (j.slug === slug ? fresh : j));
-    out.push(folder);
+    if (!done) takenOn(channel).push(at.toISOString());
+    if (item.what === "long") filmAt = at.toISOString();
+    const name = fileNameOf(job, item);
+    await place(path.join(dir, item.file), path.join(folder, name));
+    const jpg = item.what === "short" ? undefined : item.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg", thumb = jpg && files.includes(jpg) ? (item.what === "en" ? "anh-bia-tieng-anh.jpg" : "anh-bia.jpg") : undefined;
+    if (thumb) await place(path.join(dir, jpg!), path.join(folder, thumb));
+    const meta = await metaOf(job, item.what, cfg, item.what === "short" && !isFactJob(job) ? job.published?.long?.url ?? LINK_HERE : undefined);
+    sections.push(sheetSection(n + 1, name, meta, cfg, item.what, at, thumb, done));
+    if (!done) {
+      const ex: Exported = { dir: folder, publishAt: at.toISOString(), channel, at: (opts.now ?? new Date()).toISOString() };
+      if (item.what === "short") (exported.shorts ??= [])[item.index!] = ex; else exported[item.what] = ex;
+    }
   }
-  return out;
+  const head = [
+    `CHỦ ĐỀ: ${String(plan.title ?? job.topic).split(" | ")[0]}`,
+    "",
+    "Cách đăng:",
+    "1. Đăng VIDEO DÀI trước (mục 1), đặt lịch đúng giờ ghi bên dưới.",
+    "2. Mở trang duyệt của studio, bài này, mục YouTube: dán link video dài vào ô \"Đã đăng\".",
+    `   Studio tự điền link đó vào mô tả các Short trong tệp này (chỗ ${LINK_HERE}).`,
+    "3. Đăng từng Short theo giờ của nó, rồi dán link từng cái vào trang duyệt.",
+    "", "",
+  ].join("\n");
+  await fsp.writeFile(path.join(folder, "dang-len-youtube.txt"), head + sections.join(""));
+  const fresh = await loadJob(slug);
+  fresh.exported = exported;
+  await saveJob(fresh);
+  return folder;
 }
 
 /** The video id in a YouTube link (watch, youtu.be, shorts, Studio), or a bare id. */

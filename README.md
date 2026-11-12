@@ -339,12 +339,19 @@ Studio đăng lên **hai kênh** (gộp từ bốn kênh ngày 12/11/2026):
 
 Mỗi kênh có một chế độ, chọn ở tab **Đăng YouTube** của trang duyệt:
 
-- **Xuất tay** (mặc định): mỗi video bạn đã duyệt xong được studio xếp vào một thư mục trong `~/Videos/Wata/<tên kênh>/`, tên thư mục bắt đầu bằng giờ công khai. Trong đó có:
-  - `video.mp4` (liên kết cứng tới file của studio, không tốn thêm dung lượng);
-  - `anh-bia.jpg`;
-  - `dang-len-youtube.txt`: kênh, giờ công khai, tiêu đề, mô tả, thẻ, danh mục, ngôn ngữ, "dành cho trẻ em".
+- **Xuất tay** (mặc định): mỗi chủ đề bạn đã duyệt xong được studio gom vào **một thư mục** `~/youtube/<tên chủ đề>/`, sau khi đã cắt xong Shorts (cắt vào buổi tối), để tải về một lần là đủ:
 
-  Bạn tải lên bằng YouTube Studio và chọn **Lên lịch** đúng giờ ghi trong tệp. Sau đó dán link vào bài trên trang duyệt (mục YouTube, ô **Đã đăng**). Studio ghi nhận, rồi xuất Shorts của bài đó (mô tả có link tới video chính, giờ công khai sau video chính). Nút **📦 Xuất để đăng tay** trên mỗi bài và nút **Xuất tất cả bài chờ đăng** xuất ngay, không chờ studio.
+  ```
+  ~/youtube/Sơn Tinh Thủy Tinh/
+    video-dai.mp4         anh-bia.jpg
+    short-1.mp4  short-2.mp4  short-3.mp4
+    video-tieng-anh.mp4   anh-bia-tieng-anh.jpg   (khi có bản tiếng Anh: thêm vào sau)
+    dang-len-youtube.txt
+  ```
+
+  Video là liên kết cứng tới file của studio, không tốn thêm dung lượng. Tệp `dang-len-youtube.txt` có một mục cho mỗi video: kênh, giờ công khai, tiêu đề, mô tả, thẻ, danh mục, danh sách phát, ngôn ngữ, "dành cho trẻ em". Shorts "Bạn có biết?" chỉ có `short.mp4`.
+
+  Cách đăng: đăng video dài trước bằng YouTube Studio, chọn **Lên lịch** đúng giờ ghi trong tệp. Dán link của nó vào bài trên trang duyệt (mục YouTube, ô **Đã đăng**): studio tự điền link vào mô tả các Short trong tệp (chỗ `[dán link video dài vào đây]`) và đánh dấu video dài đã đăng. Rồi đăng từng Short theo giờ của nó và dán link từng cái. Nút **📦 Tải về để đăng** trên mỗi bài và nút **Tải về tất cả bài chờ đăng** gom ngay, không chờ studio.
 - **Tự đăng**: studio tự tải lên ở chế độ riêng tư kèm giờ công khai; đến giờ YouTube tự công khai. **Chỉ bật khi dự án Google đã qua audit** (xem dưới). Nửa giờ sau giờ công khai, studio kiểm tra video. Nếu video vẫn riêng tư (bị khóa), studio chuyển kênh về Xuất tay, xuất lại các video bị khóa để bạn đăng tay, và báo trên trang duyệt những video cần xóa trong YouTube Studio.
 - **Tắt**: không làm gì.
 

@@ -55,7 +55,7 @@ test("a Did-you-know Short is published as a Short, once", () => {
   assert.deepEqual(toPublish(job({ kind: "fact", published: { shorts: [s] } }), ["video.mp4"]), []);
 });
 
-import { dueCheck, normalise, takenTimes, uploadSheet, verdict, videoIdOf, type Published } from "../src/studio/publish.ts";
+import { allItems, dueCheck, fileNameOf, needsExport, normalise, sheetSection, takenTimes, verdict, videoIdOf, type Published } from "../src/studio/publish.ts";
 
 test("channel modes: old settings read as modes; only the two channels, manual by default", () => {
   const s = normalise({ "ask-huy": { enabled: true, category: "27" } as never, "huy-ke-chuyen": { enabled: false } as never, "hoi-huy": { mode: "off" } as never });
@@ -88,10 +88,35 @@ test("an auto upload is looked at half an hour after its hour, every 30 minutes,
   assert.equal(verdict(undefined), "gone");
 });
 
-test("the sheet beside an exported video, and its time kept from other videos", () => {
+test("one topic, one folder: the film, every Short, the English version, with plain names", () => {
+  const film = job({ kind: "qa", shorts: ["shorts/1.mp4", "shorts/2.mp4"] });
+  const items = allItems(film, ["video.mp4", "video.en.mp4", "plan.json"]);
+  assert.deepEqual(items.map((i) => fileNameOf(film, i)), ["video-dai.mp4", "short-1.mp4", "short-2.mp4", "video-tieng-anh.mp4"]);
+  const fact = job({ kind: "fact-vi" });
+  assert.deepEqual(allItems(fact, ["video.mp4"]).map((i) => fileNameOf(fact, i)), ["short.mp4"]);
+});
+
+test("a topic is laid out once its Shorts are cut, again only if something new is not laid out", () => {
+  const s = normalise({}), lines = PICK_DEFAULTS.lines, ex = { dir: "/nowhere/else", publishAt: "t", channel: "ask-huy", at: "t" };
+  assert.equal(needsExport(job({ kind: "qa" }), ["video.mp4"], s, lines), false); // (Shorts not cut yet)
+  assert.equal(needsExport(job({ kind: "qa", shorts: [] }), ["video.mp4"], s, lines), true);
+  assert.equal(needsExport(job({ kind: "qa", shorts: [], publishHold: true }), ["video.mp4"], s, lines), false);
+  assert.equal(needsExport(job({ kind: "qa", shorts: [], status: "video" }), ["video.mp4"], s, lines), false);
+  assert.equal(needsExport(job({ kind: "fact" }), ["video.mp4"], s, lines), true);
+  // (laid out elsewhere before, e.g. the old ~/Videos/Wata: laid out again in ~/youtube)
+  assert.equal(needsExport(job({ kind: "qa", shorts: [], exported: { long: ex } }), ["video.mp4"], s, lines), true);
+  const here = { ...ex, dir: `${process.env.WATA_EXPORT_DIR ?? `${process.env.HOME}/youtube`}/Why` };
+  assert.equal(needsExport(job({ kind: "qa", shorts: [], exported: { long: here } }), ["video.mp4"], s, lines), false);
+  assert.equal(needsExport(job({ kind: "qa", shorts: [], published: { long: { videoId: "a", url: "u", publishAt: "t", channel: "ask-huy", at: "t" } } }), ["video.mp4"], s, lines), false);
+  assert.equal(needsExport(job({ kind: "qa", shorts: [] }), ["video.mp4"], { ...s, "ask-huy": { ...s["ask-huy"]!, mode: "off" } }, lines), false);
+});
+
+test("each video's part of the sheet, and its time kept from other videos", () => {
   const cfg = { ...PUBLISH_DEFAULTS["ask-huy"]! };
-  const txt = uploadSheet({ title: "Why is the sky blue? | Ask Huy", description: "Light from the Sun…", tags: ["Ask Huy", "kids science"], categoryId: "27", lang: "en", playlist: "Ask Huy: Big Questions" }, cfg, "long", new Date(2026, 10, 13, 17, 0), true);
-  for (const want of ["KÊNH: Ask Huy", "17:00 Thứ Sáu 13/11/2026", "Why is the sky blue? | Ask Huy", "Ask Huy, kids science", "dành cho trẻ em", "Giáo dục", "Tiếng Anh", "anh-bia.jpg", "Danh sách phát: Ask Huy: Big Questions"]) assert.ok(txt.includes(want), want);
+  const txt = sheetSection(1, "video-dai.mp4", { title: "Why is the sky blue? | Ask Huy", description: "Light from the Sun…", tags: ["Ask Huy", "kids science"], categoryId: "27", lang: "en", playlist: "Ask Huy: Big Questions" }, cfg, "long", new Date(2026, 10, 13, 17, 0), "anh-bia.jpg");
+  for (const want of ["1. VIDEO DÀI: video-dai.mp4", "KÊNH: Ask Huy", "17:00 Thứ Sáu 13/11/2026", "Why is the sky blue? | Ask Huy", "Ask Huy, kids science", "dành cho trẻ em", "Giáo dục", "Tiếng Anh", "Hình thu nhỏ: anh-bia.jpg", "Danh sách phát: Ask Huy: Big Questions"]) assert.ok(txt.includes(want), want);
+  const done = sheetSection(2, "short-1.mp4", { title: "t", description: "d", tags: [], categoryId: "27", lang: "en" }, cfg, "short", new Date(2026, 10, 13, 19, 30), undefined, { videoId: "a", url: "https://youtube.com/shorts/a", publishAt: "t", channel: "ask-huy", at: "t" });
+  assert.ok(done.includes("✔ ĐÃ ĐĂNG: https://youtube.com/shorts/a"));
   const ex = { dir: "/x", publishAt: "2026-11-13T10:00:00.000Z", channel: "ask-huy", at: "t" };
   assert.deepEqual(takenTimes([job({ exported: { long: ex } })], "ask-huy"), [ex.publishAt]);
   assert.deepEqual(takenTimes([job({ exported: { long: ex } })], "huy-ke-chuyen"), []);

@@ -167,7 +167,7 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
     if (req.method === "POST" && (parts[1] === "export-all" || (parts[1] === "job" && parts[3] === "export" && SLUG.test(parts[2] ?? "")))) {
       const s = await scheduleSettings(), jobs = await listJobs(), dirs: string[] = [];
       const which = parts[1] === "export-all" ? jobs.filter((j) => j.status === "done" && !j.publishHold) : [await loadJob(parts[2]!)];
-      try { for (const j of which) dirs.push(...(await exportJob(j.slug, await listJobs(), s.publish, s.pick.lines, { force: true }))); }
+      try { for (const j of which) { const d = await exportJob(j.slug, await listJobs(), s.publish, s.pick.lines, { force: true }); if (d) dirs.push(d); } }
       catch (err) { return json(res, { error: (err as Error).message, dirs }, 400); }
       return json(res, { dirs, exportDir: EXPORT_DIR() });
     }
@@ -175,8 +175,13 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
     if (req.method === "POST" && parts[1] === "job" && parts[3] === "published" && SLUG.test(parts[2] ?? "")) {
       const b = await body(req) as unknown as { what: What; index?: number; url: string }, s = await scheduleSettings();
       if (!["long", "en", "short"].includes(b.what)) return json(res, { error: "loại video không hợp lệ" }, 400);
-      try { return json(res, { published: await markPublished(parts[2]!, b.what, b.index === undefined ? undefined : Number(b.index), String(b.url ?? ""), s.pick.lines) }); }
-      catch (err) { return json(res, { error: (err as Error).message }, 400); }
+      try {
+        const hadFolder = Object.keys((await loadJob(parts[2]!)).exported ?? {}).length > 0;
+        const published = await markPublished(parts[2]!, b.what, b.index === undefined ? undefined : Number(b.index), String(b.url ?? ""), s.pick.lines);
+        // The topic's sheet again: this video marked published, the film's link in the Shorts.
+        if (hadFolder) await exportJob(parts[2]!, await listJobs(), s.publish, s.pick.lines, { force: true });
+        return json(res, { published });
+      } catch (err) { return json(res, { error: (err as Error).message }, 400); }
     }
     if (req.method === "POST" && parts[1] === "job" && parts[3] === "hold" && SLUG.test(parts[2] ?? "")) {
       const job = await loadJob(parts[2]!), b = await body(req) as unknown as { hold: boolean };

@@ -192,16 +192,17 @@ async function show(slug) {
     const p = job.published || {}, ex = job.exported || {}, when = (x) => new Date(x.publishAt).toLocaleString("vi", { weekday: "short", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" });
     const item = (label, x) => x ? `<li>${label}: <a href="${esc(x.url)}" target="_blank">${esc(x.url)}</a> · công khai ${when(x)}${x.manual ? " · đăng tay" : x.checked ? " · ✔ đã công khai" : ""}</li>` : "";
     const list = [item("Video", p.long), item("Bản tiếng Anh", p.en), ...(p.shorts || []).map((x, i) => item(`Short ${i + 1}`, x))].join("");
-    // Laid out by hand, waiting for the user's upload: the folder, the time, a box for the link.
-    const waiting = [["long", "Video", ex.long], ["en", "Bản tiếng Anh", ex.en], ...(ex.shorts || []).map((x, i) => ["short", `Short ${i + 1}`, x, i])].filter((e) => e[2]);
-    const box = ([what, label, x, i]) => `<li><b>${label}</b> · công khai ${when(x)}<br><code style="user-select:all">${esc(x.dir)}</code>
+    // Laid out by hand in one folder (~/youtube/<topic>), waiting for the user's upload: the time, a box for the link.
+    const fact = job.kind === "fact" || job.kind === "fact-vi";
+    const waiting = [["long", "Video dài", "video-dai.mp4", ex.long], ...(ex.shorts || []).map((x, i) => ["short", fact ? "Short" : `Short ${i + 1}`, fact ? "short.mp4" : `short-${i + 1}.mp4`, x, i]), ["en", "Bản tiếng Anh", "video-tieng-anh.mp4", ex.en]].filter((e) => e[3]);
+    const box = ([what, label, file, x, i]) => `<li><b>${label}</b> <small>(${file})</small> · công khai ${when(x)}
       <br><input id="pub-${what}-${i ?? 0}" placeholder="Dán link YouTube sau khi đăng" style="width:60%"> <button class="fixb" onclick="markPublished('${what}', ${i ?? "undefined"})">✔ Đã đăng</button></li>`;
     h += `<section><h3>YouTube</h3>${list ? `<ul>${list}</ul>` : ""}
-      ${waiting.length ? `<p><b>Chờ anh đăng tay</b> (mở thư mục, làm theo tệp <code>dang-len-youtube.txt</code>):</p><ul>${waiting.map(box).join("")}</ul>` : ""}
-      ${!list && !waiting.length ? `<p class="meta">${job.publishHold ? "Đang hoãn đăng." : "Chưa xuất, chưa đăng. Kênh ở chế độ Xuất tay thì studio tự xuất trong ít phút; hoặc bấm nút dưới."}</p>` : ""}
+      ${waiting.length ? `<p><b>Chờ anh đăng tay.</b> Mọi video và ảnh bìa ở cùng một thư mục, làm theo tệp <code>dang-len-youtube.txt</code> trong đó:<br><code style="user-select:all">${esc(waiting[0][3].dir)}</code></p>${waiting.some((w) => w[0] === "short") && !p.long && !fact ? `<p class="meta">Đăng video dài trước và dán link của nó: studio tự điền link vào mô tả các Short trong tệp.</p>` : ""}<ul>${waiting.map(box).join("")}</ul>` : ""}
+      ${!list && !waiting.length ? `<p class="meta">${job.publishHold ? "Đang hoãn đăng." : job.shorts === undefined && !fact ? "Chưa tải về: studio chờ cắt xong Shorts (buổi tối) rồi gom cả video dài, Shorts và ảnh bìa vào một thư mục trong ~/youtube." : "Chưa tải về, chưa đăng. Studio tự gom vào ~/youtube trong ít phút; hoặc bấm nút dưới."}</p>` : ""}
       ${(job.lockedVideos || []).filter(Boolean).length ? `<div class="warn">YouTube khóa riêng tư các video studio tự tải lên (dự án Google chưa qua audit). Xóa chúng trong YouTube Studio: ${job.lockedVideos.filter(Boolean).map((x) => `<a href="https://studio.youtube.com/video/${esc(x.videoId)}/edit" target="_blank">${esc(x.videoId)}</a>`).join(", ")}. Bản để đăng tay đã được xuất lại.</div>` : ""}
       ${job.publishError ? `<div class="warn">Lần trước lỗi: ${esc(job.publishError)} (thử lại sau 1 giờ)</div>` : ""}
-      <p>${job.status === "done" && !job.publishHold ? `<button class="fixb" onclick="exportNow()">📦 Xuất để đăng tay</button> ` : ""}<button class="fixb" onclick="holdPublish(${!job.publishHold})">${job.publishHold ? "▶ Cho đăng" : "⏸ Hoãn đăng video này"}</button></p></section>`;
+      <p>${job.status === "done" && !job.publishHold ? `<button class="fixb" onclick="exportNow()">📦 Tải về để đăng (gom một thư mục)</button> ` : ""}<button class="fixb" onclick="holdPublish(${!job.publishHold})">${job.publishHold ? "▶ Cho đăng" : "⏸ Hoãn đăng video này"}</button></p></section>`;
   }
   if (has("video.en.mp4")) h += `<section><h3>English version</h3><video controls preload="metadata" src="/files/${slug}/video.en.mp4" ${has("thumbnail.en.jpg") ? `poster="/files/${slug}/thumbnail.en.jpg"` : ""}></video>
     <p class="dls">${dl(slug, "video.en.mp4", "Tải video tiếng Anh", `${slug}-en.mp4`)}${has("thumbnail.en.jpg") ? dl(slug, "thumbnail.en.jpg", "Tải ảnh bìa tiếng Anh", `${slug}-en.jpg`) : ""}</p></section>`;
@@ -279,10 +280,10 @@ async function showYoutube() {
   const ready = p.client;
   $("#detail").innerHTML = `<h2>Đăng YouTube</h2>
     <section><p>Mỗi kênh có ba chế độ:</p><ul>
-      <li><b>Xuất tay</b>: mỗi video bạn duyệt xong (tab "Xong") được xếp vào một thư mục trong <code>${esc(p.exportDir)}</code>: video, ảnh bìa, và tệp <code>dang-len-youtube.txt</code> có tiêu đề, mô tả, thẻ, cài đặt, giờ công khai. Bạn tải lên bằng YouTube Studio rồi dán link vào bài (ô "Đã đăng"). Shorts được xuất sau khi video chính có link.</li>
+      <li><b>Xuất tay</b>: mỗi chủ đề bạn duyệt xong (tab "Xong") được gom vào <b>một thư mục</b> <code>${esc(p.exportDir)}/&lt;tên chủ đề&gt;</code>: video dài, các Short, bản tiếng Anh (khi có), ảnh bìa, và tệp <code>dang-len-youtube.txt</code> có tiêu đề, mô tả, thẻ, cài đặt, giờ công khai của từng video. Bạn tải lên bằng YouTube Studio rồi dán link vào bài (ô "Đã đăng"); dán link video dài thì studio tự điền nó vào mô tả các Short.</li>
       <li><b>Tự đăng</b>: studio tự tải lên ở chế độ riêng tư kèm giờ công khai. <b>Chỉ bật khi dự án Google đã qua audit của YouTube</b> (README): chưa audit thì YouTube khóa video ở riêng tư; studio phát hiện, chuyển kênh về Xuất tay và xuất lại để bạn đăng tay.</li>
       <li><b>Tắt</b>: không làm gì.</li></ul>
-      <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="exportAll()">📦 Xuất tất cả bài chờ đăng</button></p>
+      <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="exportAll()">📦 Tải về tất cả bài chờ đăng</button></p>
     ${ready ? "" : `<div class="meta">Tự đăng cần <b>studio/secrets/client_secret.json</b> (README, mục "Đăng YouTube → Kết nối để tự đăng"). Xuất tay thì không cần.</div>`}</section>
     ${p.channels.map((c) => `<section><h3>${esc(c.name)} <small>(${c.lang === "vi" ? "tiếng Việt" : "tiếng Anh"})</small></h3>
       ${c.locked ? `<div class="warn">${esc(c.locked)}</div>` : ""}
@@ -311,12 +312,13 @@ async function savePublish(key) {
 }
 async function exportAll() {
   const r = await fetch("/api/export-all", { method: "POST" }).then((r) => r.json());
-  alert(r.error ? `Lỗi: ${r.error}` : r.dirs.length ? `Đã xuất ${r.dirs.length} video vào ${r.exportDir}:\n\n${r.dirs.join("\n")}` : "Không có video nào chờ đăng (chỉ video đã duyệt xong, chưa đăng, chưa xuất).");
+  alert(r.error ? `Lỗi: ${r.error}` : r.dirs.length ? `Đã gom ${r.dirs.length} chủ đề vào ${r.exportDir}:\n\n${r.dirs.join("\n")}` : "Không có bài nào chờ đăng (chỉ bài đã duyệt xong, còn video chưa đăng).");
 }
 async function exportNow() {
   const r = await fetch(`/api/job/${current}/export`, { method: "POST" }).then((r) => r.json());
   if (r.error) alert(`Lỗi: ${r.error}`);
-  else if (!r.dirs.length) alert("Không còn gì để xuất: đã xuất hoặc đã đăng hết (Shorts chờ video chính có link).");
+  else if (!r.dirs.length) alert("Không còn video nào để tải về: đã đăng hết.");
+  else alert(`Đã gom vào:\n${r.dirs[0]}`);
   await load(); show(current);
 }
 async function markPublished(what, index) {

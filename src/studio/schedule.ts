@@ -10,7 +10,7 @@
  */
 import { hasApiKey, hintsFor, refreshOwnStats, refreshPopular } from "./trends.ts";
 import { wasInterrupted } from "../utils/process.ts";
-import { channelOf, checkOne, dueCheck, exportJob, normalise, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings, type Published, type What } from "./publish.ts";
+import { channelOf, checkOne, dueCheck, exportJob, needsExport, normalise, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings, type Published, type What } from "./publish.ts";
 import { dailyPick, lineOf, PICK_DEFAULTS, proposerOf, type PickSettings } from "./pick.ts";
 import { isFact, isQA, proposeFacts, proposeQuestions } from "./qa.ts";
 import { proposeLessons } from "./lesson.ts";
@@ -104,15 +104,10 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   for (const j of jobs) {
     if (j.status !== "done" || j.publishHold || (j.publishRetryAt && new Date(j.publishRetryAt) > new Date())) continue;
     const files = await fs.readdir(jobDir(j.slug)).catch(() => [] as string[]);
-    const pending = toPublish(j, files).filter((item) => {
-      const ex = item.what === "short" ? j.exported?.shorts?.[item.index!] : j.exported?.[item.what];
-      const cfg = s.publish[channelOf(j, item.what, s.pick.lines)];
-      return !ex && cfg?.mode === "manual" && (item.what === "short" ? cfg.shorts : cfg.long).length > 0;
-    });
-    if (pending.length) return {
+    if (needsExport(j, files, s.publish, s.pick.lines)) return {
       what: "export", slug: j.slug,
       run: async () => {
-        try { for (const d of await exportJob(j.slug, jobs, s.publish, s.pick.lines)) say(j.slug)(`→ ${d}`); }
+        try { const d = await exportJob(j.slug, jobs, s.publish, s.pick.lines); if (d) say(j.slug)(`→ ${d}`); }
         catch (err) {
           const job = await loadJob(j.slug);
           job.publishError = `xuất để đăng tay: ${(err as Error).message.slice(0, 380)}`;
