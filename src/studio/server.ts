@@ -138,7 +138,8 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
       await saveJob(job);
       return json(res, { job: await setStatus(job, "producing", "bạn: render lại với phong cách / intro / outro mới") });
     }
-    if (req.method === "POST" && parts[1] === "job" && SLUG.test(parts[2] ?? "") && parts[3]) {
+    // The review buttons (approve, fix, reject, retry) only: export, published and hold have their own routes below.
+    if (req.method === "POST" && parts[1] === "job" && SLUG.test(parts[2] ?? "") && parts[3] && parts[3] in ACTIONS) {
       const job = await loadJob(parts[2]!), to = ACTIONS[parts[3]]?.[job.status];
       if (!to) return json(res, { error: `"${parts[3]}" không áp dụng khi đang "${job.status}"` }, 400);
       const { note } = await body(req);
