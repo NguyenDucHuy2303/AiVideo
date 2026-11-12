@@ -280,13 +280,15 @@ async function act(action) {
 /** The phone's QR code: the studio over the home Wi-Fi (phone.ts). */
 async function showPhone() {
   const p = await fetch("/api/phone").then((r) => r.json());
-  $("#phoneBox").innerHTML = p.qr ? `<h2 style="margin:0 0 6px">📱 Mở trên điện thoại</h2>
-    <p style="margin:0 0 10px;color:var(--muted)">Điện thoại bắt cùng Wi-Fi với máy này, mở camera quét mã. Quét một lần là điện thoại nhớ.</p>
-    <div style="width:260px;margin:0 auto">${p.qr}</div>
-    <p style="font-size:14px">Trên điện thoại: duyệt kịch bản, duyệt video, <b>tải video về máy</b>, chép lời đăng YouTube, TikTok, Facebook.</p>
-    <p style="font-size:12px;color:var(--muted)">Mã chứa khóa riêng: đừng gửi ảnh mã này cho người khác. Muốn khóa lại mọi điện thoại: xóa studio/secrets/phone-key.txt rồi khởi động lại studio.</p>
-    <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="$('#phone').style.display='none'">Đóng</button></p>`
-    : `<h2>Không thấy mạng nhà</h2><p>Máy tính chưa nối Wi-Fi hoặc mạng dây nên điện thoại chưa vào được.</p>`;
+  const qr = (svg) => `<div style="width:220px;margin:0 auto">${svg}</div>`;
+  $("#phoneBox").innerHTML = !p.qr ? `<h2>Không thấy mạng nhà</h2><p>Máy tính chưa nối Wi-Fi hoặc mạng dây nên điện thoại chưa vào được.</p>`
+    : `<h2 style="margin:0 0 6px">📱 Mở trên điện thoại</h2>
+    <p style="margin:0 0 12px;color:var(--muted)">Điện thoại bắt cùng Wi-Fi với máy này, quét bằng camera.</p>
+    ${p.caQr ? `<p style="margin:8px 0 4px"><b>Bước 1 · chỉ lần đầu</b>: cài chứng chỉ để iPhone lưu video thẳng vào Ảnh (mở bằng Safari, làm theo trang hướng dẫn)</p>${qr(p.caQr)}
+    <p style="margin:14px 0 4px"><b>Bước 2</b>: mở studio (điện thoại nhớ luôn, lần sau mở từ lịch sử Safari)</p>` : ""}${qr(p.qr)}
+    <p style="font-size:14px">Trên điện thoại: duyệt kịch bản, duyệt video, <b>lưu video vào Ảnh</b>, chép lời đăng YouTube, TikTok, Facebook.</p>
+    <p style="font-size:12px;color:var(--muted)">Mã bước 2 chứa khóa riêng: đừng gửi ảnh mã này cho người khác. Muốn khóa lại mọi điện thoại: xóa studio/secrets/phone-key.txt rồi khởi động lại studio.${p.caQr ? ` Điện thoại Android chưa cài chứng chỉ: dùng <code style="user-select:all">${esc(p.httpUrl)}</code>.` : ""}</p>
+    <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="$('#phone').style.display='none'">Đóng</button></p>`;
   $("#phone").style.display = "block";
 }
 function play(name) { const a = $("#audio"); a.src = `/voice/${encodeURIComponent(name)}`; a.play(); }

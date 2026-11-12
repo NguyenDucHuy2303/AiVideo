@@ -11,6 +11,7 @@
 import fs from "node:fs";
 import fsp from "node:fs/promises";
 import http from "node:http";
+import https from "node:https";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { ROOT } from "../config.ts";
@@ -21,14 +22,16 @@ import { artOf, validStyle, validTheme } from "./art.ts";
 import { costumeSheet } from "./design.ts";
 import { BRAND_DIR, BRAND_THEMES } from "../animation/brand/brand.ts";
 import { authUrl, EXPORT_DIR, exportJob, finishAuth, hasClient, markPublished, markSocial, publishSettings, savePublishSettings, socialPosts, token, type Mode, type What } from "./publish.ts";
-import { allowed, hostAllowed, isLoopback, keyCookie, keyMatches, phoneKey, phoneLink } from "./phone.ts";
+import { allowed, hostAllowed, isLoopback, keyCookie, keyMatches, lanAddress, phoneKey, phoneLink } from "./phone.ts";
+import { CA_NAME, caCert, ensureCerts } from "./tls.ts";
 import { PLATFORMS, type Platform } from "./social.ts";
 import { hasApiKey, seasonal } from "./trends.ts";
 import { styles } from "../animation/styles.ts";
 
 const UI = path.join(path.dirname(fileURLToPath(import.meta.url)), "ui.html");
 const PHONE = path.join(path.dirname(fileURLToPath(import.meta.url)), "phone.html");
-let PORT = 5175;
+let PORT = 5175, HTTPS_PORT = 5176;
+let secure: https.Server | undefined;
 const SAMPLES = path.join(ROOT, "vendor", "vieneu", "samples");
 const SLUG = /^[a-z0-9-]+$/;
 const STYLE_SAMPLES = path.join(ROOT, "assets", "styles");
@@ -82,10 +85,19 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
   const parts = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
   const local = isLoopback(req.socket.remoteAddress);
   if (!hostAllowed(req.headers.host)) { res.writeHead(403).end(); return; }
+  // The studio's certificate authority, for the phone to trust (public: no key needed).
+  if (req.method === "GET" && parts.length === 1 && parts[0] === "ca.crt") {
+    res.writeHead(200, { "Content-Type": "application/x-x509-ca-cert", "Content-Disposition": 'attachment; filename="wata-studio.crt"' }).end(await caCert());
+    return;
+  }
+  if (req.method === "GET" && parts.length === 1 && parts[0] === "ca") {
+    res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" }).end(caPage(lanAddress()));
+    return;
+  }
   // The phone's first visit, from the QR code: the key becomes a cookie, the link loses it.
   if (req.method === "GET" && parts[0] === "m" && url.searchParams.has("k")) {
     if (!(await keyMatches(url.searchParams.get("k")))) { res.writeHead(403, { "Content-Type": "text/html; charset=utf-8" }).end(LOCKED); return; }
-    res.writeHead(302, { "Set-Cookie": keyCookie(await phoneKey()), Location: "/m" }).end();
+    res.writeHead(302, { "Set-Cookie": keyCookie(await phoneKey(), !!(req.socket as { encrypted?: boolean }).encrypted), Location: "/m" }).end();
     return;
   }
   if (!(await allowed(req))) { res.writeHead(403, { "Content-Type": "text/html; charset=utf-8" }).end(LOCKED); return; }
@@ -172,7 +184,8 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
     // The phone: its link and QR code (shown on the computer only).
     if (req.method === "GET" && parts[1] === "phone") {
       if (!local) return json(res, { error: "chỉ xem trên máy tính" }, 403);
-      return json(res, await phoneLink(PORT));
+      await refreshCert();
+      return json(res, await phoneLink(PORT, secure ? HTTPS_PORT : undefined));
     }
     // TikTok and Facebook: every video's words, and the user's ticks.
     if (parts[1] === "job" && parts[3] === "social" && SLUG.test(parts[2] ?? "")) {
@@ -263,14 +276,48 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
 /** What a device without the key sees. */
 const LOCKED = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><body style="font-family:sans-serif;padding:30px;line-height:1.5"><h2>🔒 Studio Huy Kể Chuyện</h2><p>Mở trang studio trên máy tính, bấm <b>📱 Điện thoại</b> rồi quét mã QR bằng camera điện thoại.</p>`;
 
+/** How to make the phone trust the studio (once): the iPhone's steps, in its Vietnamese words. */
+function caPage(lan: string | undefined): string {
+  return `<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cài chứng chỉ studio</title><body style="font-family:system-ui,sans-serif;padding:18px 20px 40px;line-height:1.55;background:#fbf5e9;color:#2a160a;font-size:17px">
+<h2 style="color:#a3261c;margin-top:0">📱 Cho iPhone tin studio (làm một lần)</h2>
+<p>Để nút <b>Lưu vào Ảnh</b> chạy, iPhone cần tin chứng chỉ của studio. Chứng chỉ chỉ dùng được cho địa chỉ trong mạng nhà, không ảnh hưởng trang web nào khác.</p>
+<ol style="padding-left:22px">
+<li>Mở trang này bằng <b>Safari</b> (không dùng Chrome hay Zalo).</li>
+<li><a href="/ca.crt" style="display:inline-block;background:#2f7a3a;color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700">⬇ Tải chứng chỉ</a><br>iPhone hỏi “Trang web này đang cố tải xuống một hồ sơ cấu hình” → <b>Cho phép</b> → <b>Đóng</b>.</li>
+<li>Mở <b>Cài đặt</b>: dòng <b>Đã tải về hồ sơ</b> ngay dưới tên anh (hoặc Cài đặt chung → VPN &amp; Quản lý thiết bị) → <b>${CA_NAME}</b> → <b>Cài đặt</b> → nhập mật mã → <b>Cài đặt</b> → <b>Xong</b>.</li>
+<li><b>Cài đặt</b> → <b>Cài đặt chung</b> → <b>Giới thiệu</b> → kéo xuống cuối → <b>Cài đặt tin cậy chứng nhận</b> → bật <b>${CA_NAME}</b> → <b>Tiếp tục</b>.</li>
+<li>Quay lại máy tính, quét <b>mã QR thứ hai</b> (mở studio). Trang mở ra dạng <b>https://${lan ?? "…"}:${HTTPS_PORT}</b> là xong.</li>
+</ol>
+<p style="color:#7a6650;font-size:14px">Muốn gỡ: Cài đặt → Cài đặt chung → VPN &amp; Quản lý thiết bị → ${CA_NAME} → Xóa hồ sơ.</p>
+<script>window.renderFrame = () => {}; window.ready = Promise.resolve(); /* for screenshots */</script>`;
+}
+
+/** A new server certificate when the home address changed (DHCP) or the year ran out. */
+async function refreshCert(): Promise<void> {
+  if (!secure) return;
+  const c = await ensureCerts(lanAddress()).catch(() => undefined);
+  if (c?.made) secure.setSecureContext({ key: c.key, cert: c.cert });
+}
+
 /**
  * Listens on every address (the phone comes over the Wi-Fi) unless WATA_STUDIO_HOST says
- * otherwise (127.0.0.1: the computer only).
+ * otherwise (127.0.0.1: the computer only). HTTPS on port+1 for the phone (tls.ts), when
+ * openssl could make the certificates.
  */
-export function startServer(port = 5175): Promise<http.Server> {
-  PORT = port;
-  const server = http.createServer((req, res) => {
+export async function startServer(port = 5175): Promise<http.Server> {
+  PORT = port; HTTPS_PORT = port + 1;
+  const host = process.env.WATA_STUDIO_HOST ?? "0.0.0.0";
+  const handler = (req: http.IncomingMessage, res: http.ServerResponse) => {
     handle(req, res).catch((err) => json(res, { error: (err as Error).message }, 500));
-  });
-  return new Promise((resolve) => server.listen(port, process.env.WATA_STUDIO_HOST ?? "0.0.0.0", () => resolve(server)));
+  };
+  const server = http.createServer(handler);
+  try {
+    const c = await ensureCerts(lanAddress());
+    secure = https.createServer({ key: c.key, cert: c.cert }, handler);
+    secure.on("error", (err) => { console.error(`https: ${err.message}`); secure = undefined; });
+    secure.listen(HTTPS_PORT, host);
+    setInterval(() => void refreshCert(), 6 * 3600_000).unref();
+  } catch (err) { console.error(`https off: ${(err as Error).message}`); }
+  return new Promise((resolve) => server.listen(port, host, () => resolve(server)));
 }

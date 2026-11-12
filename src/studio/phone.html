@@ -98,6 +98,63 @@ function copy(i, what) {
   const ok = document.execCommand("copy"); ta.remove();
   ok ? done() : toast("Không chép được: giữ tay lên chữ để chép");
 }
+/**
+ * Saving to the phone. iPhone on the studio's https page: the files are fetched first, then the
+ * share sheet's "Save N Videos" puts them in Photos (iOS lets a page share only right after a
+ * tap: hence two taps). Elsewhere: plain downloads (iPhone without the certificate: into Files).
+ */
+const IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const CAN_SHARE = window.isSecureContext && !!navigator.canShare && IOS;
+const SAVES = [];
+const saveBtn = (list, what, big) => {
+  SAVES.push({ list, what, files: null });
+  const i = SAVES.length - 1;
+  const label = CAN_SHARE ? `📲 Lưu ${big ? "tất cả " : ""}vào Ảnh${big ? ` (${what})` : ""}` : `⬇ Tải ${big ? `tất cả (${what})` : what}`;
+  return `<button class="btn dl" id="save-${i}" style="${big ? "width:100%;font-size:17px;padding:14px" : ""}" onclick="save(${i}, this)">${label}</button>`;
+};
+async function save(i, btn) {
+  const s = SAVES[i];
+  if (!CAN_SHARE) {
+    // One download after another (the browser asks once to allow several).
+    for (const [k, f] of s.list.entries()) {
+      const a = document.createElement("a");
+      a.href = `${f.url}?dl=${encodeURIComponent(f.name)}`; a.download = f.name; document.body.appendChild(a); a.click(); a.remove();
+      if (k < s.list.length - 1) await new Promise((r) => setTimeout(r, 1500));
+    }
+    return toast(s.list.length > 1 ? `Đang tải ${s.list.length} tệp` : "Đang tải");
+  }
+  if (s.files) {
+    try { await navigator.share({ files: s.files }); toast("Xong"); }
+    catch (err) { if (err.name !== "AbortError") alert(`Không lưu được: ${err.message}. Thử lưu từng video.`); }
+    return;
+  }
+  if (btn.disabled) return;
+  btn.disabled = true;
+  try {
+    const files = [];
+    for (const [k, f] of s.list.entries()) {
+      const r = await fetch(f.url);
+      if (!r.ok) throw new Error(`${f.name}: ${r.status}`);
+      const size = Number(r.headers.get("content-length")) || 0, reader = r.body.getReader(), chunks = [];
+      let got = 0;
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        chunks.push(value); got += value.length;
+        btn.textContent = `Đang chuẩn bị${s.list.length > 1 ? ` ${k + 1}/${s.list.length}` : ""}… ${Math.round(got / 1e6)}/${Math.round(size / 1e6)} MB`;
+      }
+      files.push(new File(chunks, f.name, { type: f.name.endsWith(".jpg") ? "image/jpeg" : "video/mp4" }));
+    }
+    if (!navigator.canShare({ files })) throw new Error("iPhone không nhận các tệp này");
+    s.files = files;
+    btn.textContent = `✅ Bấm để lưu ${files.length > 1 ? `${files.length} mục ` : ""}vào Ảnh`;
+    btn.style.background = "#1f5fbf"; btn.style.borderColor = "#1f5fbf";
+    toast("Sẵn sàng: bấm nút lần nữa");
+  } catch (err) {
+    btn.textContent = "✘ Lỗi, bấm để thử lại";
+    alert(`Không tải được: ${err.message}`);
+  } finally { btn.disabled = false; }
+}
 const copyBtn = (text, label, what) => { CLIP.push(text); return `<button class="btn cp" onclick="copy(${CLIP.length - 1}, '${what}')">📋 ${label}</button>`; };
 
 async function load() {
@@ -169,12 +226,20 @@ async function drawPost(d) {
   const ytOf = (p) => p.what === "short" ? pub.shorts?.[p.index] : pub[p.what];
   let h = `<h2>${esc(d.plan?.title || job.topic)}</h2>${job.autoApproved ? `<div class="warn">Studio tự duyệt video này (anh chưa duyệt kịp). Xem lại trước khi đăng nhé.</div>` : ""}<p class="meta">Tải video về máy, chép lời đăng, đăng xong thì đánh dấu. Đăng video dài lên YouTube trước: dán link của nó, lời các Short tự có link.</p>`;
   if (!posts.length) h += `<div class="empty">Chưa có video để đăng.</div>`;
+  // Everything of the topic to keep on the phone: every video, the thumbnails (for YouTube).
+  const thumbs = [["thumbnail.jpg", "anh-bia.jpg"], ["thumbnail.en.jpg", "anh-bia-tieng-anh.jpg"]].filter(([f]) => d.files.includes(f) && posts.some((p) => p.what !== "short"));
+  const all = [...posts.map((p) => ({ url: `/files/${slug}/${p.file}`, name: `${slug}-${p.name}` })), ...thumbs.map(([f, n]) => ({ url: `/files/${slug}/${f}`, name: `${slug}-${n}` }))];
+  SAVES.length = 0;
+  if (posts.length) {
+    h += IOS && !CAN_SHARE ? `<div class="warn">Muốn lưu thẳng vào <b>Ảnh</b>: cài chứng chỉ studio một lần (mở <a href="http://${location.hostname}:5175/ca">trang hướng dẫn</a> bằng Safari), rồi mở studio bằng mã QR bước 2. Tạm thời video vào ứng dụng <b>Tệp</b>.</div>` : "";
+    h += `<div class="row">${saveBtn(all, `${posts.length} video${thumbs.length ? " + ảnh bìa" : ""}`, true)}</div>`;
+  }
   for (const p of posts) {
     const yt = ytOf(p), name = `${slug}-${p.name}`, vertical = p.what === "short";
     h += `<section><h3>${esc(p.label)} <small>· ${esc(p.account)}${p.publishAt ? ` · ${when(p.publishAt)}` : ""}</small></h3>
       <video class="${vertical ? "v" : ""}" controls playsinline preload="metadata" src="/files/${slug}/${p.file}" ${!vertical && d.files.includes(p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg") ? `poster="/files/${slug}/${p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg"}"` : ""}></video>
-      <div class="row"><a class="btn dl" href="/files/${slug}/${p.file}?dl=${encodeURIComponent(name)}" download="${esc(name)}">⬇ Tải video</a>
-        ${!vertical && d.files.includes(p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg") ? `<a class="btn dl" href="/files/${slug}/${p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg"}?dl=${encodeURIComponent(`${slug}-${p.what === "en" ? "anh-bia-en" : "anh-bia"}.jpg`)}" download>⬇ Ảnh bìa</a>` : ""}</div>
+      <div class="row">${saveBtn([{ url: `/files/${slug}/${p.file}`, name }], "video")}
+        ${!vertical && d.files.includes(p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg") ? saveBtn([{ url: `/files/${slug}/${p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg"}`, name: `${slug}-${p.what === "en" ? "anh-bia-tieng-anh" : "anh-bia"}.jpg` }], "ảnh bìa") : ""}</div>
       <div class="plat"><h4>▶ YouTube ${yt ? `<span class="tag done">✔ đã đăng</span>` : `<span class="tag">chờ</span>`}</h4>
         ${yt ? `<p><a href="${esc(yt.url)}">${esc(yt.url)}</a></p>` : `
         <div class="row">${copyBtn(p.youtube.title, "Tiêu đề", "tiêu đề")}${copyBtn(p.youtube.description, "Mô tả", "mô tả")}${copyBtn(p.youtube.tags.join(", "), "Thẻ", "thẻ")}</div>
@@ -190,7 +255,7 @@ async function drawPost(d) {
     }
     h += `</section>`;
   }
-  h += `<section><h3>Lưu ý khi đăng</h3><p>• TikTok và Facebook: bật nhãn <b>nội dung do AI tạo</b> (giọng đọc là giọng AI).</p><p>• Facebook: đăng lên <b>Trang</b> của kênh, Short đăng dạng Reel.</p><p>• Chrome hỏi “tải tệp không an toàn” thì chọn <b>Giữ lại</b>: video đi thẳng từ máy tính trong nhà, không qua mạng ngoài.</p></section>`;
+  h += `<section><h3>Lưu ý khi đăng</h3><p>• TikTok và Facebook: bật nhãn <b>nội dung do AI tạo</b> (giọng đọc là giọng AI).</p><p>• Facebook: đăng lên <b>Trang</b> của kênh, Short đăng dạng Reel.</p>${CAN_SHARE ? `<p>• Lưu vào Ảnh: bấm nút, chờ chuẩn bị xong (video lớn mất chút thời gian), bấm lần nữa rồi chọn <b>Lưu video</b>. Phim dài vài trăm MB: nên lưu riêng từng video nếu iPhone báo lỗi.</p>` : `<p>• Chrome hỏi “tải tệp không an toàn” thì chọn <b>Giữ lại</b>: video đi thẳng từ máy tính trong nhà, không qua mạng ngoài.</p>`}</section>`;
   $("#main").innerHTML = h;
 }
 

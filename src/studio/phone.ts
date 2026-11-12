@@ -75,15 +75,24 @@ export function hostAllowed(host: string | undefined, lan = lanAddress()): boole
   return name === "127.0.0.1" || name === "localhost" || name === "::1" || (!!lan && name === lan);
 }
 
-export const keyCookie = (key: string) => `${COOKIE}=${key}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${365 * 86400}`;
+export const keyCookie = (key: string, secure = false) => `${COOKIE}=${key}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${365 * 86400}${secure ? "; Secure" : ""}`;
 
-/** The link for the phone and its QR code (SVG). */
-export async function phoneLink(port: number): Promise<{ url?: string; ip?: string; qr?: string }> {
+const qrSvg = (text: string) => {
+  const q = qrcode(0, "M");
+  q.addData(text);
+  q.make();
+  return q.createSvgTag({ cellSize: 6, margin: 3, scalable: true });
+};
+
+/**
+ * The links for the phone and their QR codes (SVG): the studio (https when on, else http), and
+ * the page that installs the studio's certificate (http: before the phone trusts it).
+ */
+export async function phoneLink(port: number, httpsPort?: number): Promise<{ url?: string; ip?: string; qr?: string; caUrl?: string; caQr?: string; httpUrl?: string }> {
   const ip = lanAddress();
   if (!ip) return {};
-  const url = `http://${ip}:${port}/m?k=${await phoneKey()}`;
-  const q = qrcode(0, "M");
-  q.addData(url);
-  q.make();
-  return { url, ip, qr: q.createSvgTag({ cellSize: 6, margin: 3, scalable: true }) };
+  const key = await phoneKey(), httpUrl = `http://${ip}:${port}/m?k=${key}`;
+  const url = httpsPort ? `https://${ip}:${httpsPort}/m?k=${key}` : httpUrl;
+  const caUrl = httpsPort ? `http://${ip}:${port}/ca` : undefined;
+  return { url, ip, qr: qrSvg(url), httpUrl, ...(caUrl ? { caUrl, caQr: qrSvg(caUrl) } : {}) };
 }
