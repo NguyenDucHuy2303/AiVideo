@@ -3,10 +3,10 @@
  * (Kokoro), every scene directed by the brain into one of three layouts, then rendered by the
  * story renderer like the other films:
  *
- *   board  Huy (and Mai) on the left of the studio, an explainer picture on a card on the right:
+ *   board  Huy, Bối and Beo on the left of the studio, an explainer picture on a card on the right:
  *          an SVG the brain draws, its parts appearing in time with the words (runtime/board.js)
- *   host   Huy (and Mai) in the studio, talking to the viewer
- *   place  Huy and Mai somewhere else (a beach, a rooftop at sunset, Mars), painted once by FLUX
+ *   host   Huy (with Bối and Beo) in the studio, talking to the viewer
+ *   place  the three somewhere else (a beach, a rooftop at sunset, Mars), painted once by FLUX
  *
  *   node src/studio/qaproduce.ts <slug> prepare|render
  */
@@ -22,7 +22,7 @@ import { SIZES } from "../imagegen/sd.ts";
 import { boardIcons } from "../animation/icons.ts";
 import { styleOf } from "../animation/styles.ts";
 import { jobDir } from "./jobs.ts";
-import { isFact, profileOf, type QAPlan, type QAProfile } from "./qa.ts";
+import { isFact, OLD_KID, profileOf, type QAPlan, type QAProfile } from "./qa.ts";
 import { loadJob } from "./jobs.ts";
 
 export const qaProject = (slug: string) => path.join(ROOT, "projects", slug);
@@ -30,18 +30,23 @@ const STYLE = "hien_dai";
 /** The channel's home: one painting for every studio scene. */
 const STUDIO = "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights";
 
-/** Huy and Mai, always the same (the human rig: modern clothes made of parts). */
+/** Huy, Bối and Beo, always the same (the human rig: modern clothes made of parts). Bối wears
+ *  what Mai wore (the same girl, renamed 2026-11-12); Beo, her brother of 5, is smaller. */
 export const LOOKS = {
   huy: { body: "man", build: "slim", skin: "#e0a878", outfit: { type: "parts", top: { cut: "chui", color: "#2f7fd0", trim: "#1d5a9a", length: "hip", sleeves: "short" }, lower: { type: "pants", color: "#3b4a63", length: "ankle" } }, hair: { style: "short", color: "#1a1410" }, shoes: "#2f3440", face: { shape: "oval", eyes: "round", nose: "button", brows: "thick", iris: "#2b1a0e", eyeScale: 1.15 } },
-  mai: { body: "child", skin: "#f0c08e", outfit: { type: "parts", top: { cut: "chui", color: "#f4a62a", length: "hip", sleeves: "short" }, lower: { type: "skirt", color: "#d9435a", length: "knee" } }, hair: { style: "long", color: "#1a1410" }, shoes: "#e05a6e", face: { shape: "round", eyes: "round", nose: "button", brows: "thin", iris: "#2b1a0e" } },
+  boi: { body: "child", skin: "#f0c08e", outfit: { type: "parts", top: { cut: "chui", color: "#f4a62a", length: "hip", sleeves: "short" }, lower: { type: "skirt", color: "#d9435a", length: "knee" } }, hair: { style: "long", color: "#1a1410" }, shoes: "#e05a6e", face: { shape: "round", eyes: "round", nose: "button", brows: "thin", iris: "#2b1a0e" } },
+  beo: { body: "small", skin: "#eebb88", outfit: { type: "parts", top: { cut: "chui", color: "#4caf62", trim: "#2f8040", length: "hip", sleeves: "short" }, lower: { type: "pants", color: "#e2a93b", length: "knee" } }, hair: { style: "short", color: "#1a1410" }, shoes: "#3a6fc4", face: { shape: "round", eyes: "round", nose: "button", brows: "thin", iris: "#2b1a0e", eyeScale: 1.1 } },
 };
 /** Outfits for places that need them (space, the Moon, Mars…): the same faces, other clothes. */
 const SUIT = { type: "parts", top: { cut: "chui", color: "#f2f4f7", trim: "#9aa8b6", length: "hip", sleeves: "long" }, lower: { type: "pants", color: "#e6e9ee", length: "ankle" }, belt: { color: "#7d8b99", ends: false } };
 Object.assign(LOOKS, {
   huy_space: { ...LOOKS.huy, outfit: SUIT, headwear: "space_helmet", gloves: "#e9edf2", shoes: "#aeb9c4" },
   // Long hair is tied up inside the helmet.
-  mai_space: { ...LOOKS.mai, outfit: SUIT, headwear: "space_helmet", gloves: "#e9edf2", shoes: "#aeb9c4", hair: { style: "bun", color: "#1a1410" } },
+  boi_space: { ...LOOKS.boi, outfit: SUIT, headwear: "space_helmet", gloves: "#e9edf2", shoes: "#aeb9c4", hair: { style: "bun", color: "#1a1410" } },
+  beo_space: { ...LOOKS.beo, outfit: SUIT, headwear: "space_helmet", gloves: "#e9edf2", shoes: "#aeb9c4" },
 });
+// Scenes directed before the rename say "mai" (videos in the making then).
+Object.assign(LOOKS, { mai: LOOKS.boi, mai_space: (LOOKS as Record<string, unknown>).boi_space });
 /** Seen from the front: Huy talking to the viewer (host scenes). */
 for (const k of Object.keys(LOOKS) as (keyof typeof LOOKS)[]) (LOOKS as Record<string, unknown>)[`${k}_front`] = { ...LOOKS[k], view: "front" };
 const OUTFITS = ["everyday", "spacesuit"] as const;
@@ -62,19 +67,20 @@ const SCHEMA = {
           place: { type: "string" },
           time: { enum: ["day", "dawn", "dusk", "night"] },
           huy: WHO,
-          mai: { ...WHO, properties: { ...WHO.properties, show: { type: "boolean" } }, required: ["do", "face", "show"] },
+          boi: WHO,
+          beo: WHO,
           outfit: { enum: [...OUTFITS] },
           board: { type: "string" },
         },
-        required: ["index", "layout", "place", "time", "outfit", "huy", "mai", "board"],
+        required: ["index", "layout", "place", "time", "outfit", "huy", "boi", "beo", "board"],
       },
     },
   },
   required: ["scenes"],
 };
-interface Directed { index: number; layout: "board" | "host" | "place"; place: string; time: string; outfit?: (typeof OUTFITS)[number]; huy: { do: string; face: string }; mai: { do: string; face: string; show: boolean }; board: string }
+interface Directed { index: number; layout: "board" | "host" | "place"; place: string; time: string; outfit?: (typeof OUTFITS)[number]; huy: { do: string; face: string }; boi: { do: string; face: string }; beo: { do: string; face: string }; board: string }
 
-const system = (P: QAProfile) => `You direct the scenes of "${P.channel}"${P.lang === "vi" ? " (in Vietnamese)" : ""}, a 2D cartoon for children aged 6–12 that answers one question per video. Huy (the host, a young man) explains; Mai (8) asks and guesses. You also draw the explainer pictures, as SVG, in a clean, bright, friendly flat style: thick dark outlines (#3a2a20, stroke-width 4–6), flat fills, rounded shapes, big readable labels.`;
+const system = (P: QAProfile) => `You direct the scenes of "${P.channel}"${P.lang === "vi" ? " (in Vietnamese)" : ""}, a 2D cartoon for children aged 6–12 that answers one question per video. Huy (the host, a young man) explains; Bối (a girl of 8) asks and guesses; her little brother Beo (5) is always there with them, curious, and reacts. You also draw the explainer pictures, as SVG, in a clean, bright, friendly flat style: thick dark outlines (#3a2a20, stroke-width 4–6), flat fills, rounded shapes, big readable labels.`;
 
 const BOARD_RULES = [
   "Board SVG rules (layout board):",
@@ -93,10 +99,10 @@ function brief(P: QAProfile, plan: QAPlan, from: number, to: number, seconds: nu
   return [
     ...(kind === "lesson" ? ["An English lesson for Vietnamese children: a word card shows the picture, the English word big (it is what the child learns) and the Vietnamese meaning smaller under it. Emma is only a voice (the card's): never on screen."]
       : P.lang === "vi" ? ["All text on the boards is in Vietnamese (with its diacritics), short and simple."] : []),
-    "Choosing the layout: place only for a real place that can be painted (a park, a beach, a rooftop, Mars); anything imagined, impossible or abstract (\"Mai imagines the sky as a pinball machine\", inside a molecule) is a board picture instead.",
+    "Choosing the layout: place only for a real place that can be painted (a park, a beach, a rooftop, Mars); anything imagined, impossible or abstract (\"Bối imagines the sky as a pinball machine\", inside a molecule) is a board picture instead.",
     "Moves: point = at the board or at something in front; raise = pointing up at the sky or above; wave = hello or goodbye; cheer = delight; worry = puzzled.",
     "outfit: spacesuit in space, on the Moon or on another planet; everyday otherwise.",
-    `Direct scenes ${from + 1}–${to} of "${plan.title}". For each: layout (board for every scene whose visual is diagram, labels, arrows, map, compare, zoom, count or experiment; host when only the host talks to camera; place when the visual is somewhere else: then place = that place in a few words, e.g. "a sandy beach with gentle waves", the same words every time the same place comes back; for board and host, place = "studio"), time (of the place: day unless the visual says sunset/night/dawn), what Huy and Mai do and their faces (talk while speaking; point at the board when explaining it; Mai shows when she speaks or reacts), and the board SVG (empty string unless layout is board).`,
+    `Direct scenes ${from + 1}–${to} of "${plan.title}". For each: layout (board for every scene whose visual is diagram, labels, arrows, map, compare, zoom, count or experiment; host when only the host talks to camera; place when the visual is somewhere else: then place = that place in a few words, e.g. "a sandy beach with gentle waves", the same words every time the same place comes back; for board and host, place = "studio"), time (of the place: day unless the visual says sunset/night/dawn), what Huy, Bối and Beo do and their faces (all three are on screen in every scene; talk while speaking; point at the board when explaining it; the one not speaking listens and reacts: a happy, surprised or puzzled face, now and then a cheer or a worry), and the board SVG (empty string unless layout is board).`,
     "", BOARD_RULES, "",
     "Scenes (index, seconds, visual kind, visual note, lines):",
     ...plan.scenes.slice(from, to).map((s, k) => {
@@ -126,17 +132,20 @@ export function boardStyleOf(slug: string): (typeof BOARD_STYLES)[number] {
 
 /** The scene script for the player (anim/sNN.json). */
 function sceneOf(P: QAProfile, d: Directed, plan: QAPlan, i: number, seconds: number, style: (typeof BOARD_STYLES)[number] = "card", log: (s: string) => void = () => {}): Record<string, unknown> {
-  const speaks = new Set(plan.scenes[i]!.parts.map((p) => p.who));
-  const withMai = d.mai.show || speaks.has(P.kid.name);
   const suit = d.outfit === "spacesuit" ? "_space" : "";
-  // In host scenes Huy talks to the viewer, seen from the front; Mai (when there) still turns to him.
-  const cast: Record<string, unknown>[] = [{ id: "huy", type: "human", look: `huy${suit}${d.layout === "host" ? "_front" : ""}`, x: 0 }];
-  if (withMai) cast.push({ id: "mai", type: "human", look: `mai${suit}`, x: d.layout === "board" ? -140 : 250, facing: d.layout === "board" ? 1 : -1 });
-  const actions: Record<string, unknown>[] = gestures("huy", d.huy, seconds);
-  if (withMai) actions.push(...gestures("mai", d.mai, seconds));
-  const on = withMai ? ["huy", "mai"] : ["huy"];
-  const shot = d.layout === "board" ? { at: 0, type: "full", on, dx: 0.33, share: 0.56, gy: 0.9, push: 0.05 }
-    : d.layout === "host" ? { at: 0, type: withMai ? "full" : "medium", on, push: 0.06 }
+  const board = d.layout === "board";
+  // All three in every scene. Before the board they stand in a row on its left (Beo, Bối, Huy
+  // nearest the board), turned to it; elsewhere Huy is in the middle (from the front when he
+  // talks to the viewer), Bối on his right, Beo on his left, both turned to him.
+  const cast: Record<string, unknown>[] = [
+    { id: "huy", type: "human", look: `huy${suit}${d.layout === "host" ? "_front" : ""}`, x: 0 },
+    { id: "boi", type: "human", look: `boi${suit}`, x: board ? -130 : 250, facing: board ? 1 : -1 },
+    { id: "beo", type: "human", look: `beo${suit}`, x: board ? -260 : -230, facing: 1 },
+  ];
+  const actions: Record<string, unknown>[] = [...gestures("huy", d.huy, seconds), ...gestures("boi", d.boi, seconds), ...gestures("beo", d.beo, seconds)];
+  const on = ["huy", "boi", "beo"];
+  const shot = board ? { at: 0, type: "full", on, dx: 0.33, share: 0.5, gy: 0.9, push: 0.05 }
+    : d.layout === "host" ? { at: 0, type: "full", on, push: 0.06 }
     : { at: 0, type: "full", on, share: 0.62 };
   return {
     castFile: "cast.json", duration: Math.max(1, Math.round(seconds * 100) / 100), time: d.time, style: STYLE, styleLook: styleOf(STYLE).look,
@@ -163,7 +172,7 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
   await fs.writeFile(path.join(proj, "script.txt"), [plan.title, ...lines].join("\n") + "\n");
   await fs.writeFile(path.join(proj, "storyboard.json"), JSON.stringify({ title: plan.title, kind: "story", scenes: lines.map((narration) => ({ narration, chapter: plan.title, onScreen: {}, visual: { description: "studio", mood: "calm" }, camera: "ken_burns", transition: "cut" })) }, null, 2));
   const project = JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8"));
-  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers: { [P.host.name]: ["huy"], [P.kid.name]: ["mai"] }, brandId: P.brandId, style: STYLE, thumbnail: { title: plan.thumbnail, subtitle: P.channel } }, null, 2));
+  await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers: { [P.host.name]: ["huy"], [P.kid.name]: ["boi"], [P.little.name]: ["beo"], [OLD_KID]: ["boi", "mai"] }, brandId: P.brandId, style: STYLE, thumbnail: { title: plan.thumbnail, subtitle: P.channel } }, null, 2));
   await fs.writeFile(path.join(anim, "cast.json"), JSON.stringify(LOOKS, null, 2));
   if (!(await exists(path.join(proj, "timeline.json")))) {
     log("  voices");
@@ -171,7 +180,7 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
   }
   const timeline = JSON.parse(await fs.readFile(path.join(proj, "timeline.json"), "utf8"));
   const seconds: number[] = timeline.scenes.map((s: { durationFrames: number }) => s.durationFrames / timeline.fps);
-  // The thumbnail's picture: the opening scene (Huy and Mai, the question asked), not a board.
+  // The thumbnail's picture: the opening scene (the three, the question asked), not a board.
   const pj = JSON.parse(await fs.readFile(path.join(proj, "project.json"), "utf8"));
   pj.thumbnail = { ...pj.thumbnail, at: Math.round((seconds[0] ?? 4) * 0.6 * 100) / 100 };
   await fs.writeFile(path.join(proj, "project.json"), JSON.stringify(pj, null, 2));

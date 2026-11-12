@@ -11,7 +11,7 @@
  *          length:  waist · hip · knee · shin · ankle      sleeves: none · short · long · wide
  *          pattern: none · dongson · dragon (rồng, của vua) · flowers · dots
  *   inner: { color }                  the yếm under an open top (tu_than)
- *   lower: { type, color, length }    type: skirt (váy) · pants (quần) · loincloth (khố) · none
+ *   lower: { type, color, length }    type: skirt (váy) · pants (quần; length knee = shorts) · loincloth (khố) · none
  *   belt:  { color, ends }            thắt lưng; ends: true = tied, the ends hang in front
  *
  * Headwear (look.headwear): khan_mo_qua · khan_van · khan_xep · non_quai_thao · non_chop ·
@@ -33,7 +33,8 @@
     const coatL = ["knee", "shin", "ankle"].includes(top.length) && top.cut !== "yem" ? B.thigh * 0.5 + legLen * (LEN[top.length] - 0.05) : 0;
     return {
       pantsHex: pants || skin,
-      legHex: pants || skin,
+      // Shorts (pants to the knee): the shins are bare.
+      legHex: pants && lower.length !== "knee" ? pants : skin,
       feetHex: shade(skin, -0.1),
       sleeveHex: sleeves === "none" ? skin : color,
       foreHex: sleeves === "long" || sleeves === "wide" ? color : skin,
@@ -106,7 +107,7 @@
         // (seen from the front: the neck opening in the middle, the skin showing in it)
         if (look.view === "front") {
           const nd = `M ${f2(2 - w * 0.22)} ${f2(-T - 1)} Q 2 ${f2(-T * 0.72)} ${f2(2 + w * 0.22)} ${f2(-T - 1)}`;
-          if (look.body !== "child") el("path", { d: nd + " Z", fill: S.mat(shade(skin, -0.1)) }, t);
+          if (look.body !== "child" && look.body !== "small") el("path", { d: nd + " Z", fill: S.mat(shade(skin, -0.1)) }, t);
           el("path", { d: nd, stroke: trim, "stroke-width": 5, fill: "none" }, t);
         } else el("path", { d: `M ${f2(-w * 0.18)} ${f2(-T - 1)} Q 4 ${f2(-T * 0.72)} ${f2(w * 0.26)} ${f2(-T - 1)}`, stroke: trim, "stroke-width": 5, fill: "none" }, t);
         break;

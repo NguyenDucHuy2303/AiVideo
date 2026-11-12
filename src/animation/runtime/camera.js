@@ -44,7 +44,10 @@
       // Close-ups fill the short side of the frame, so they work in 16:9 and 9:16 alike.
       const z = ((Math.min(W, H) * 0.5) / size) * push;
       const lift = !shot.part || shot.part === "head" ? H * 0.06 : 0;
-      return { x: part[0] + (facing * lead * W) / z + ((shot.dx || 0) * W) / z, y: part[1] + (lift + (shot.dy || 0) * H) / z, z };
+      let x = part[0] + (facing * lead * W) / z + ((shot.dx || 0) * W) / z;
+      // Someone else's head half in at the edge of a close-up reads as a mistake.
+      x += cleared(shot, ctx, S, [ids[0]], 0.2);
+      return { x, y: part[1] + (lift + (shot.dy || 0) * H) / z, z };
     }
     // Everything the shot is on must fit: the union of their boxes, sized a little late.
     const sized = ids.map((id) => ctx.pointsAt(id, Math.max(shot.at, t - (shot.sizeLag ?? 0.5))));
@@ -67,7 +70,44 @@
     // Off the ground (flying): rise with the subject; followY < 1 lets it drift up the frame.
     const top = Math.min(...place.map((p) => p.box[1])), bottom = Math.max(...place.map((p) => p.box[3]));
     if ((shot.follow || shot.type === "track") && bottom < -40) y = Math.min(y, lerp(y, (top + bottom) / 2, shot.followY ?? 1));
-    return { x: cx + leadPx / z + ((shot.dx || 0) * W) / z, y, z };
+    const x = cx + leadPx / z + ((shot.dx || 0) * W) / z;
+    // (people at the sides, not in the shot: all in or all out, never cut through the head)
+    return { x: x + cleared(shot, ctx, S, ids, 0.1), y, z };
+  }
+
+  /**
+   * The edge clearing of a shot, worked out once from where everyone is when it starts and kept
+   * for the whole shot: a camera that jumped whenever someone crossed the edge would look broken.
+   */
+  function cleared(shot, ctx, S, keep, share) {
+    if (shot._clear === undefined) {
+      shot._clear = 0;
+      const c = frame(shot, shot.at, ctx, S);
+      shot._clear = clearEdges(c.x - shot._clear, c.z, ctx, shot.at, keep, S.W, share);
+    }
+    return shot._clear;
+  }
+
+  /**
+   * How far to move the camera (at most `share` of the frame) so that no head is cut by the
+   * left or right edge: each one goes all out, or all in with a margin, whichever is the
+   * smaller move. The people the shot is on are not moved out.
+   */
+  function clearEdges(x, z, ctx, t, keep, W, share) {
+    if (!ctx.heads) return 0;
+    const max = (W * share) / z;
+    let shift = 0;
+    for (const h of ctx.heads(t)) {
+      if (!h.seen) continue;
+      const sx = (h.head[0] - x) * z + W / 2, r = h.r * z * 1.25;
+      for (const edge of [0, W]) {
+        if (Math.abs(sx - edge) >= r) continue;
+        const out = edge === 0 ? -(sx + r) : W - (sx - r), inn = edge === 0 ? r - sx + W * 0.02 : W - r - sx - W * 0.02;
+        const want = keep.includes(h.id) || Math.abs(inn) < Math.abs(out) ? inn : out;
+        if (Math.abs(want / z) <= max && Math.abs(want) > Math.abs(shift * z)) shift = -want / z;
+      }
+    }
+    return shift;
   }
 
   /** The camera at time t from a list of shots (sorted by `at`). */

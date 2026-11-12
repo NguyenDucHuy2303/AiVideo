@@ -16,8 +16,9 @@ import { jobDir, loadJob, saveJob } from "./jobs.ts";
 import { toScript, type Part } from "./write.ts";
 
 /**
- * The question channels: one profile per language, the same two regulars (Huy explains, Mai
- * asks). "qa": Ask Huy, English (chosen 2026-11-10); "qa-vi": Hỏi Huy, Vietnamese.
+ * The question channels: one profile per language, the same three regulars (Huy explains, Bối
+ * asks, her little brother Beo guesses; Mai until 2026-11-12). "qa": Ask Huy, English (chosen
+ * 2026-11-10); "qa-vi": Hỏi Huy, Vietnamese.
  */
 export interface QAProfile {
   kind: "qa" | "qa-vi";
@@ -30,6 +31,8 @@ export interface QAProfile {
   brandId: string;
   host: CastMember;
   kid: CastMember;
+  /** The kid's little brother (5), on screen the whole video. */
+  little: CastMember;
   engine: "kokoro" | "vieneu";
   narrator: string;
   /** A calm pace for children (Kokoro at 1.0 is quick: ~200 words a minute). */
@@ -40,13 +43,16 @@ export interface QAProfile {
   write: string;
 }
 const HOST: CastMember = { name: "Huy", gender: "male", age: "young", role: "the host: curious, warm, a little funny; explains", villain: false };
-const KID: CastMember = { name: "Mai", gender: "female", age: "child", role: "an 8-year-old who asks, guesses and tries things", villain: false };
+const KID: CastMember = { name: "Bối", gender: "female", age: "child", role: "an 8-year-old girl who asks, guesses and tries things", villain: false };
+const LITTLE: CastMember = { name: "Beo", gender: "male", age: "child", role: "Bối's 5-year-old little brother: curious, makes funny innocent guesses", villain: false };
+/** The kid's name before 2026-11-12: scripts written then still say it (read as Bối). */
+export const OLD_KID = "Mai";
 export const PROFILES: Record<QAProfile["kind"], QAProfile> = {
-  qa: { kind: "qa", lang: "en", channel: "Ask Huy", home: "Ask Huy", brandId: "ask-huy", host: HOST, kid: KID, engine: "kokoro", narrator: "am_michael", speed: 0.92,
+  qa: { kind: "qa", lang: "en", channel: "Ask Huy", home: "Ask Huy", brandId: "ask-huy", host: HOST, kid: KID, little: LITTLE, engine: "kokoro", narrator: "am_michael", speed: 0.92,
     how: "happily, joyfully, laughing, surprised, worried, firmly, proudly, sadly, scared, tired", write: "Write every line in simple, natural English." },
-  "qa-vi": { kind: "qa-vi", lang: "vi", channel: "Hỏi Huy", home: "Huy Kể Chuyện", brandId: "hoi-huy", host: HOST, kid: KID, engine: "vieneu", narrator: "Minh Đức", speed: 1.0,
+  "qa-vi": { kind: "qa-vi", lang: "vi", channel: "Hỏi Huy", home: "Huy Kể Chuyện", brandId: "hoi-huy", host: HOST, kid: KID, little: LITTLE, engine: "vieneu", narrator: "Minh Đức", speed: 1.0,
     how: "vui vẻ, mừng rỡ, cười, ngạc nhiên, lo lắng, quyết tâm, tự hào, buồn rầu, sợ hãi, mệt",
-    write: "Write every line in natural, warm Vietnamese for Vietnamese children (Huy calls the viewers \"các bạn\", Mai calls Huy \"anh Huy\"); explain in Vietnamese words, give the English or scientific word only when it helps. Examples and comparisons from Vietnamese children's life (a rice field, a motorbike, a bowl of phở). The checks below count words as written syllables." },
+    write: "Write every line in natural, warm Vietnamese for Vietnamese children (Huy calls the viewers \"các bạn\"; Bối and Beo call Huy \"anh Huy\"; Beo calls Bối \"chị Bối\", Bối calls him \"Beo\" or \"em\"); explain in Vietnamese words, give the English or scientific word only when it helps. Examples and comparisons from Vietnamese children's life (a rice field, a motorbike, a bowl of phở). The checks below count words as written syllables." },
 };
 /** "Did you know?" Shorts (writeFact): the same channels, one fact in under a minute, made 9:16. */
 export const isFact = (kind?: string) => kind === "fact" || kind === "fact-vi";
@@ -109,7 +115,7 @@ const SCENES_SCHEMA = { type: "object", properties: { scenes: { type: "array", i
 export const whatIs = (P: QAProfile) => (P.home === P.channel ? `"${P.channel}", an animated YouTube channel` : `"${P.channel}", an animated series of the YouTube channel "${P.home}"`);
 /** Inviting to subscribe names the YouTube channel, not the series (children search for it). */
 const subscribeRule = (P: QAProfile) => `- When inviting the viewers to subscribe or follow (in words or in a picture), name the YouTube channel "${P.home}"${P.home === P.channel ? "" : `, never "${P.channel}" (the series)`}.`;
-const system = (P: QAProfile) => `You write scripts for ${whatIs(P)} for children aged 6–12 that answers one question per video (5–8 minutes). The host ${P.host.name} explains; ${P.kid.name}, 8, asks, guesses and tries things. ${P.write}
+const system = (P: QAProfile) => `You write scripts for ${whatIs(P)} for children aged 6–12 that answers one question per video (5–8 minutes). The host ${P.host.name} explains; ${P.kid.name}, an 8-year-old girl, asks, guesses and tries things; her little brother ${P.little.name}, 5, is there the whole time: curious, he says funny innocent guesses and little reactions (short lines, never mocked). ${P.write}
 
 Rules:
 - Correct above all: every claim must be supported by the sources given or be basic, settled school knowledge. Numbers rounded and said with "about". If the sources disagree or science is unsure, say so simply ("scientists think…").
@@ -126,14 +132,14 @@ function prompt(P: QAProfile, question: string, sources: Source[], notes: string
     "",
     "Beats, in order (each scene has a beat):",
     "- hook (1–2 scenes): the question asked in a fun way and one surprising teaser; then the host says what we will find out today.",
-    `- guess (1–3 scenes): ${QA.kid.name} says the common wrong idea (or a few); the host takes it seriously, then says why it is not the whole story.`,
+    `- guess (1–3 scenes): ${QA.kid.name} says the common wrong idea (or a few), ${QA.little.name} often a funny one; the host takes it seriously, then says why it is not the whole story.`,
     "- step (12–24 scenes): the answer in 3–4 steps, each building on the last; step = 1, 2, 3, 4. Each step ends with a one-line takeaway.",
     "- imagine (2–4 scenes): \"imagine if…\" or a safe try-at-home check.",
     "- recap (1–2 scenes): the answer in one or two sentences, then one fun fact.",
     "- next (1 scene): tease another question for next time, invite to subscribe.",
     "",
     "Length: 28–40 scenes, about 1,050–1,400 words in all (5–8 minutes at a calm pace for children).",
-    `Parts: narration by the host to the viewer: who = "${QA.host.name}" too (he is on screen), how = "" or a word from the list. Dialogue: who = "${QA.host.name}" or "${QA.kid.name}" (only these two speak). how chosen from: ${HOW}. No quotation marks inside text, no colons inside text.`,
+    `Parts: narration by the host to the viewer: who = "${QA.host.name}" too (he is on screen), how = "" or a word from the list. Dialogue: who = "${QA.host.name}", "${QA.kid.name}" or "${QA.little.name}" (only these three speak; ${QA.little.name} speaks in short lines, in about one scene out of four). how chosen from: ${HOW}. No quotation marks inside text, no colons inside text.`,
     "visual: kind = the kind of picture (host: the host talking to camera; scene: characters in a place; diagram: a simple labelled drawing of how it works; labels: an object with its parts named; arrows: movement or flow; map; compare: sizes or amounts side by side; zoom: going inside something small; count: numbers, a timeline; experiment), what = exactly what to draw, in one or two sentences. At most a third of the scenes may be host.",
     "facts: every factual claim in the script with the title of the source that supports it.",
     "shorts: the scene numbers (1-based) that make a 45–60 second Short on their own: the question, the core answer, the fun fact, about 120–160 words.",
@@ -226,7 +232,7 @@ export async function writeQA(slug: string, log: (s: string) => void = console.l
   const previous = job.status === "rewrite" && (await fs.stat(prevFile).catch(() => null)) ? await fs.readFile(prevFile, "utf8") : undefined;
   const ask = { job: slug, system: system(P) };
   const { data, by } = await think<Omit<QAPlan, "cast" | "look">>({ ...ask, schema: SCHEMA, step: previous ? "qa-rewrite" : "qa-write", model: "opus", effort: "medium", prompt: prompt(P, job.topic, sources, previous ? notes : [], previous) }, log);
-  let plan: QAPlan = { ...data, cast: [P.host, P.kid], look: "" };
+  let plan: QAPlan = { ...data, cast: [P.host, P.kid, P.little], look: "" };
 
   // The fact check: a second reader with only the sources and the script.
   const { data: fc } = await think<{ issues: { scene: number; quote: string; problem: string; fix: string }[] }>({ ...ask, schema: CHECK_SCHEMA, step: "qa-factcheck", model: "sonnet", effort: "medium", prompt: [
@@ -342,13 +348,13 @@ export async function writeFact(slug: string, log: (s: string) => void = console
   const { data, by } = await think<Omit<QAPlan, "cast" | "look" | "shorts" | "thumbnail">>({ ...ask, schema: FACT_SCHEMA, step: "fact-write", model: "sonnet", effort: "medium", prompt: [
     `Write a YouTube Short (40–55 seconds, vertical) that tells one surprising, true fact for children: "${job.topic}"`,
     "Beats: hook (1 scene: the fact as a question, \"Did you know…?\" or its equivalent, said with wonder), step (3–6 scenes: why it is true, one simple picture each), recap (1 scene: a wow line and an invitation to follow the channel for more).",
-    `About 100–140 words in all. Speakers: ${P.host.name} and ${P.kid.name} only; how chosen from: ${P.how}. No quotation marks or colons inside text.`,
+    `About 100–140 words in all. Speakers: ${P.host.name}, ${P.kid.name} and ${P.little.name} only (${P.little.name} one or two short lines); how chosen from: ${P.how}. No quotation marks or colons inside text.`,
     "visual: kind and what to draw, as for the long videos (host, scene, diagram, labels, arrows, map, compare, zoom, count, experiment); most scenes show the fact, not the host.",
     "title: the fact as a short, catchy line (under 60 characters). question: the fact as a question. answer: the fact in one sentence. facts: each claim with its source title. description: one or two sentences.",
     ...(notes.length ? ["", "Notes to follow:", ...notes.map((n) => `- ${n}`)] : []),
     "", "Sources:", ...sources.map((s) => `### ${s.title} (${s.url})\n${s.text}`),
   ].join("\n") }, log);
-  let plan: QAPlan = { ...data, cast: [P.host, P.kid], look: "", shorts: [], thumbnail: "" };
+  let plan: QAPlan = { ...data, cast: [P.host, P.kid, P.little], look: "", shorts: [], thumbnail: "" };
   const { data: fc } = await think<{ issues: { scene: number; quote: string; problem: string; fix: string }[] }>({ ...ask, schema: CHECK_SCHEMA, step: "fact-check", model: "sonnet", prompt: [
     "Fact-check this children's Short against the sources: list every statement that is wrong, unsupported, misleading or unsafe, quoted exactly, with the corrected sentence. An empty list is a fine answer.",
     "", ...plan.scenes.map((s, i) => `${i + 1}: ${s.parts.map((p) => `${p.who}: ${p.text}`).join(" ")}`),

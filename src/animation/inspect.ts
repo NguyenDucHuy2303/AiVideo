@@ -31,6 +31,8 @@ export interface ActorSample {
   box?: Box;
   /** What the hand holds (shown), and its box on screen. */
   prop?: string; propBox?: Box;
+  /** Share of the face the prop covers, and of the mouth (0–1). */
+  cover?: number; mouthCover?: number;
   opacity: number;
   /** The motion playing (WA.motions). */
   act?: string;
@@ -66,9 +68,27 @@ const MEASURE = (fps: number) => `(() => {
       if (pts.box) { const [x0, y0] = map(pts.box[0], pts.box[1]), [x1, y1] = map(pts.box[2], pts.box[3]); a.box = [Math.min(x0, x1), Math.min(y0, y1), Math.max(x0, x1), Math.max(y0, y1)]; }
       if (A.kind === "human") {
         a.head = map(pts.head[0], pts.head[1]); a.r = pts.headR * z;
+        // The face as drawn (face.js: centre and radius in the head's own frame), when there is one.
+        const F = A.rig.face;
+        if (F && F.mouth && F.o) {
+          const M = F.mouth.parentNode.getScreenCTM(), k = Math.hypot(M.a, M.b);
+          a.head = [M.a * F.o.cx + M.c * F.o.cy + M.e, M.b * F.o.cx + M.d * F.o.cy + M.f]; a.r = F.o.R * k;
+        }
         a.armF = p.armF; a.armB = p.armB; a.lean = p.lean || 0; a.headTilt = p.headTilt || 0; a.dy = p.dy || 0;
         const shown = p.prop !== undefined ? p.prop : A.rig.activeProp;
-        if (shown && A.rig.props[shown]) { a.prop = shown; a.propBox = rect(A.rig.props[shown]); }
+        if (shown && A.rig.props[shown]) {
+          a.prop = shown; a.propBox = rect(A.rig.props[shown]);
+          // How much of the face the prop's shapes really cover: a grid over the face, each point
+          // tested against every shape's own (rotated) box.
+          const leaves = [...A.rig.props[shown].querySelectorAll("path,rect,circle,ellipse,polygon,polyline,line")].map((n) => { try { return { b: n.getBBox(), inv: n.getScreenCTM().inverse() }; } catch (e) { return null; } }).filter((x) => x && x.b.width * x.b.height > 0);
+          const hit = (x, y) => leaves.some(({ b, inv }) => { const u = inv.a * x + inv.c * y + inv.e, v = inv.b * x + inv.d * y + inv.f; return u >= b.x && u <= b.x + b.width && v >= b.y && v <= b.y + b.height; });
+          let n = 0, c = 0;
+          for (let i = -3; i <= 3; i++) for (let j = -3; j <= 3; j++) { if (i * i + j * j > 9) continue; n++; if (hit(a.head[0] + (i / 3) * a.r * 0.8, a.head[1] + (j / 3) * a.r * 0.8)) c++; }
+          a.cover = c / n;
+          const mb = F && F.mouthLine ? F.mouthLine.getBoundingClientRect() : null;
+          if (mb && mb.width) { const mx = (mb.left + mb.right) / 2, my = (mb.top + mb.bottom) / 2, w = Math.max(6, mb.width / 2);
+            a.mouthCover = [[0, 0], [-w, 0], [w, 0], [0, -w * 0.5], [0, w * 0.5]].filter(([dx, dy]) => hit(mx + dx, my + dy)).length / 5; }
+        }
       }
       row.actors[id] = a;
     }
@@ -102,6 +122,7 @@ function runs(samples: Sample[], on: (s: Sample, i: number) => boolean, min: num
 
 /** Motions a person does standing (runtime/acting.js STANDING); lying ones. */
 const STANDING = new Set(["idle", "still", "talk", "point", "give", "raise", "heroic", "wave", "worry", "hold_bowl"]);
+// (sitting, kneeling, bowing count as still too: acting.js gives them life)
 const LYING = new Set(["fall", "lie"]);
 
 export const LIMITS = { held: 2.5, still: 5, propFace: 0.25, headCut: 0.35, overlap: 0.35, speakerSeen: 0.3 };
@@ -146,6 +167,7 @@ export function issuesOf(name: string, scene: { speech?: { actor: string; from: 
     const covered = (s: Sample, part: "face" | "mouth") => {
       const a = A(s);
       if (!face(a) || !a.propBox) return 0;
+      if (a.cover !== undefined) return part === "face" ? a.cover : a.mouthCover ?? 0;
       const c: [number, number] = part === "face" ? a.head! : [a.head![0], a.head![1] + a.r! * 0.4], r = part === "face" ? a.r! * 0.8 : a.r! * 0.3;
       return area(inter(a.propBox, circleBox(c, r))) / area(circleBox(c, r));
     };
@@ -155,8 +177,10 @@ export function issuesOf(name: string, scene: { speech?: { actor: string; from: 
     for (const [from, to] of runs(samples, (s) => {
       const a = A(s);
       if (!seen(a) || !a.head || a.r! < H * 0.04) return false;
-      const b = circleBox(a.head, a.r!);
-      return 1 - area(inter(b, frame)) / area(b) > LIMITS.headCut;
+      // Half a head at the edge; or no head at all while the body fills much of the frame (a
+      // headless torso). A head wholly out with a hand or a shoulder in is a normal framing.
+      const b = circleBox(a.head, a.r!), shown = area(inter(b, frame)) / area(b);
+      return (shown > 0.05 && 1 - shown > LIMITS.headCut) || (shown <= 0.05 && area(inter(a.box!, frame)) > 0.15 * W * H);
     }, 0.5, step)) issues.push({ scene: name, kind: "head-cut", from, to, actor: id });
     // Faces on top of each other.
     for (const other of ids.filter((o) => o > id)) {

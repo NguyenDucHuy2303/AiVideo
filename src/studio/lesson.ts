@@ -1,12 +1,12 @@
 /**
  * "Học tiếng Anh cùng Huy": English for Vietnamese children (about 5–9), one theme per video
  * (animals at home, colours, school things, greetings…), made by the question pipeline
- * (qaproduce.ts: boards, presenters, paintings). Huy teaches in Vietnamese (VieNeu), Mai repeats
- * and tries, and an English voice, Emma (Kokoro, slow), reads every word and sentence as a
+ * (qaproduce.ts: boards, presenters, paintings). Huy teaches in Vietnamese (VieNeu), Bối repeats
+ * and tries (her little brother Beo too, with funny slips), and an English voice, Emma (Kokoro, slow), reads every word and sentence as a
  * model: she is the voice of the word cards, not on screen.
  *
  * Beats: hook (the theme), word (8–10 words: picture, the English word, the Vietnamese meaning;
- * Emma reads it twice, Mai repeats), practice (a quiz: a picture, "What is this?", a pause, the
+ * Emma reads it twice, Bối repeats), practice (a quiz: a picture, "What is this?", a pause, the
  * answer), sentence (one or two simple sentences with the words), recap, next.
  */
 import fs from "node:fs/promises";
@@ -69,20 +69,20 @@ export async function writeLesson(slug: string, log: (s: string) => void = conso
   const notes = job.notes.filter((n) => n.on === "script").map((n) => n.text);
   const prevFile = path.join(dir, "script.txt");
   const previous = job.status === "rewrite" && (await fs.stat(prevFile).catch(() => null)) ? await fs.readFile(prevFile, "utf8") : undefined;
-  const system = `You write "Học tiếng Anh cùng Huy", an animated series of the YouTube channel "${P.home}" that teaches English to Vietnamese children aged 5–9. When Huy invites the viewers to subscribe, he names the channel "${P.home}". Huy (a young man) teaches in warm, simple Vietnamese; Mai (8) repeats, tries and sometimes makes a funny mistake; Emma is the English voice of the word cards: she says only English, slowly and clearly. Correct, natural English (American spelling), words a child can use, no slang. Vietnamese forms of address: Huy is a young man, like a big brother: he calls the viewers "các bạn" and Mai "em", and himself "anh" or "mình"; Mai calls him "anh Huy" and herself "em" (never "con"); nobody calls the viewers "con".`;
+  const system = `You write "Học tiếng Anh cùng Huy", an animated series of the YouTube channel "${P.home}" that teaches English to Vietnamese children aged 5–9. When Huy invites the viewers to subscribe, he names the channel "${P.home}". Huy (a young man) teaches in warm, simple Vietnamese; Bối (a girl of 8) repeats, tries and sometimes makes a funny mistake; her little brother Beo (5) is always there too: he repeats after her, in short lines, now and then a cute slip that Bối or Huy gently fixes; Emma is the English voice of the word cards: she says only English, slowly and clearly. Correct, natural English (American spelling), words a child can use, no slang. Vietnamese forms of address: Huy is a young man, like a big brother: he calls the viewers "các bạn", Bối and Beo "em", and himself "anh" or "mình"; Bối and Beo call him "anh Huy" and themselves "em" (never "con"); Beo calls his sister "chị Bối", she calls him "Beo" or "em"; nobody calls the viewers "con".`;
   const { data, by } = await think<Omit<LessonPlan, "cast" | "look" | "facts">>({ job: slug, system, schema: SCHEMA, step: previous ? "lesson-rewrite" : "lesson-write", model: "sonnet", effort: "medium", prompt: [
     `Write the lesson: "${job.topic}"${job.summary ? ` (${job.summary})` : ""}.`,
     "",
     "Beats, in order:",
-    "- hook (1–2 scenes): Huy greets the viewers (\"Chào các bạn!\") and says what we learn today; Mai is excited.",
-    "- word (one scene per word, 8–10 words): Huy says the Vietnamese meaning and a tiny tip; Emma says the word twice (\"Cat. Cat.\"); Mai repeats it; sometimes Emma reads a two-to-four-word phrase with it (\"A small cat.\").",
-    "- practice (3–5 scenes): a quiz: Huy asks in Vietnamese or Emma asks \"What is this?\", Mai guesses (once wrongly and fixes it), Emma says the answer.",
-    "- sentence (2–4 scenes): one or two simple sentences with the words (\"I have a cat.\"), Emma reads, Mai repeats, Huy explains the meaning.",
-    "- recap (1–2 scenes): Emma reads all the words once more, Mai repeats the hardest one.",
+    "- hook (1–2 scenes): Huy greets the viewers (\"Chào các bạn!\") and says what we learn today; Bối and Beo are excited.",
+    "- word (one scene per word, 8–10 words): Huy says the Vietnamese meaning and a tiny tip; Emma says the word twice (\"Cat. Cat.\"); Bối repeats it (Beo too in some scenes); sometimes Emma reads a two-to-four-word phrase with it (\"A small cat.\").",
+    "- practice (3–5 scenes): a quiz: Huy asks in Vietnamese or Emma asks \"What is this?\", Bối or Beo guesses (once wrongly and fixes it), Emma says the answer.",
+    "- sentence (2–4 scenes): one or two simple sentences with the words (\"I have a cat.\"), Emma reads, Bối repeats, Huy explains the meaning.",
+    "- recap (1–2 scenes): Emma reads all the words once more, Bối repeats the hardest one, Beo his favourite.",
     "- next (1 scene): Huy says the next theme and asks to subscribe to the channel.",
     "",
     "Length: 28–40 scenes, about 900–1,250 words in all (Vietnamese syllables and English words count alike).",
-    `Parts: who = "Huy", "Mai" or "Emma" (only these). how for Huy and Mai chosen from: ${P.how} (or empty); Emma's how is empty. Emma says ONLY English; Huy and Mai speak Vietnamese and may say the English word they are learning. No quotation marks and no colons inside text.`,
+    `Parts: who = "Huy", "Bối", "Beo" or "Emma" (only these). how for Huy, Bối and Beo chosen from: ${P.how} (or empty); Emma's how is empty. Emma says ONLY English; Huy, Bối and Beo speak Vietnamese and may say the English word they are learning. No quotation marks and no colons inside text.`,
     "visual: kind (labels for a word card: the picture with the English word and the Vietnamese meaning under it; compare, count or scene when they fit; host for Huy talking) and what to draw exactly (for word cards: the object, the word in big letters, the meaning).",
     "words: the words taught, each { en, vi }.",
     "question: the theme as a short title in Vietnamese (\"Con vật trong nhà\"). answer: the words taught, listed. title: \"Học tiếng Anh: <theme> | <3–4 English words>\" or similar, under 80 characters.",
@@ -91,7 +91,7 @@ export async function writeLesson(slug: string, log: (s: string) => void = conso
     ...(previous ? ["", "The previous version (rewrite following the notes):", previous] : []),
     ...(notes.length ? ["", "Notes to fix:", ...notes.map((n) => `- ${n}`)] : []),
   ].join("\n") }, log);
-  const plan: LessonPlan = { ...data, scenes: data.scenes.map((s) => ({ ...s, beat: s.beat as QAScene["beat"] })), cast: [P.host, P.kid, TEACHER], look: "", facts: [] };
+  const plan: LessonPlan = { ...data, scenes: data.scenes.map((s) => ({ ...s, beat: s.beat as QAScene["beat"] })), cast: [P.host, P.kid, P.little, TEACHER], look: "", facts: [] };
 
   // The English checked by a second reader: spelling, meaning, grammar, what a child can say.
   const { data: check } = await think<{ issues: { scene: number; quote: string; problem: string; fix: string }[] }>({ job: slug, system, step: "lesson-check", model: "sonnet",
@@ -103,7 +103,7 @@ export async function writeLesson(slug: string, log: (s: string) => void = conso
   if (toFix.length) {
     const { data: fixed } = await think<{ scenes: { index: number; parts: Part[] }[] }>({ job: slug, system, step: "lesson-fix", model: "sonnet",
       schema: { type: "object", properties: { scenes: { type: "array", items: { type: "object", properties: { index: { type: "number" }, parts: { type: "array", items: PART } }, required: ["index", "parts"] } } }, required: ["scenes"] },
-      prompt: ["Fix these scenes (Emma speaks only English; Huy and Mai Vietnamese), keep everything else; return them with their index.", ...check.issues.map((x) => `- scene ${x.scene}: "${x.quote}" — ${x.problem} → ${x.fix}`), ...checkLesson(plan).filter((p) => /^Scene/.test(p)).map((p) => `- ${p}`), "", JSON.stringify(toFix.map((i) => ({ index: i + 1, parts: plan.scenes[i]!.parts })))].join("\n") }, log);
+      prompt: ["Fix these scenes (Emma speaks only English; Huy, Bối and Beo Vietnamese), keep everything else; return them with their index.", ...check.issues.map((x) => `- scene ${x.scene}: "${x.quote}" — ${x.problem} → ${x.fix}`), ...checkLesson(plan).filter((p) => /^Scene/.test(p)).map((p) => `- ${p}`), "", JSON.stringify(toFix.map((i) => ({ index: i + 1, parts: plan.scenes[i]!.parts })))].join("\n") }, log);
     for (const sc of fixed.scenes) if (plan.scenes[sc.index - 1]) plan.scenes[sc.index - 1]!.parts = sc.parts;
   }
   const problems = checkLesson(plan);
@@ -111,7 +111,7 @@ export async function writeLesson(slug: string, log: (s: string) => void = conso
   await fs.writeFile(path.join(dir, "plan.json"), JSON.stringify(plan, null, 2));
   await fs.writeFile(path.join(dir, "script.txt"), toScript(plan));
   await fs.writeFile(path.join(dir, "project.json"), JSON.stringify({ engine: P.engine, voice: P.narrator, speed: P.speed, imageGen: "off", onlineImages: false, profiles: ["16x9"], channel: P.channel,
-    voices: { ...castVoices([P.host, P.kid], P.narrator), [TEACHER.name]: TEACHER_VOICE } }, null, 2));
+    voices: { ...castVoices([P.host, P.kid, P.little], P.narrator), [TEACHER.name]: TEACHER_VOICE } }, null, 2));
   job = await loadJob(slug);
   job.by = by;
   await saveJob(job);

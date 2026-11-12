@@ -3,7 +3,7 @@
  * a prop. The rig is root (hips) → legs and torso → head and arms; WA.motions makes poses.
  *
  *   look = {
- *     body: "child" | "man" | "strong" | "woman" | "elder",
+ *     body: "child" (about 8) | "small" (about 5) | "man" | "strong" | "woman" | "elder",
  *     skin, outfit: { type, color, trim, skirt, sash }:
  *       tunic · robe · armor · dress · loincloth · enemy (any era)
  *       dongson   Văn Lang: a short pull-over top with a Đông Sơn pattern band; women add a long
@@ -21,6 +21,8 @@
 
   const BODIES = {
     child: { thigh: 46, shin: 44, legW: 24, upper: 40, fore: 36, armW: 19, torsoH: 96, torsoW: 76, headR: 54, round: true },
+    // A little one (about 5): some 85% of a child's height, the head bigger for the body.
+    small: { thigh: 36, shin: 35, legW: 21, upper: 32, fore: 29, armW: 17, torsoH: 80, torsoW: 66, headR: 50, round: true },
     man: { thigh: 64, shin: 60, legW: 29, upper: 55, fore: 51, armW: 24, torsoH: 126, torsoW: 92, headR: 42 },
     strong: { thigh: 68, shin: 64, legW: 33, upper: 60, fore: 56, armW: 28, torsoH: 136, torsoW: 108, headR: 41 },
     woman: { thigh: 60, shin: 56, legW: 25, upper: 50, fore: 47, armW: 20, torsoH: 116, torsoW: 80, headR: 40 },
@@ -33,7 +35,7 @@
     const shapeOf = look.build || (look.body === "man" ? ["average", "average", "slim", "heavy"][seed % 4] : "average");
     const build = { slim: [0.86, 0.9, 0], heavy: [1.28, 1.15, 0.22] }[shapeOf] || [1, 1, 0];
     B.torsoW *= build[0]; B.legW *= build[1]; B.armW *= build[1]; B.belly = build[2];
-    const skin = look.skin || (look.body === "child" ? "#f3c590" : "#e8b27c");
+    const skin = look.skin || (look.body === "child" || look.body === "small" ? "#f3c590" : "#e8b27c");
     const outfit = look.outfit || { type: "tunic", color: "#8a5a2a" };
     // look.view "front": the presenters talk to the viewer (everyone else stays three-quarter).
     const P = { root: g(parent), B, look, S, seed, sway: [], sleeves: [], front: look.view === "front" };
@@ -285,7 +287,7 @@
     if (look.face) return look.face;
     const r = WA.core.rand(seed + 17), pick = (a) => a[Math.floor(r() * a.length)];
     switch (look.body) {
-      case "child": return { shape: "round", eyes: "round", nose: "button", brows: "thin" };
+      case "child": case "small": return { shape: "round", eyes: "round", nose: "button", brows: "thin" };
       case "woman": return { shape: "oval", eyes: "almond", nose: pick(["button", "long"]), brows: "thin" };
       case "elder": return { shape: "oval", eyes: "droopy", nose: pick(["long", "round"]), brows: "bushy", wrinkles: true };
       case "strong": return { shape: "square", eyes: "almond", nose: "long", brows: "thick" };

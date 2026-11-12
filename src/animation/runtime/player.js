@@ -27,6 +27,40 @@
   const BLEND = 0.25;
   const RIDING = new Set(["ride", "ride_swing", "land"]);
 
+  /**
+   * People the script stands on the same spot (two "left" in a plan: the boy and the god both at
+   * -520) would be drawn on top of each other: spread them apart where they stand, keeping their
+   * order and the middle of the group. Riders, someone appearing out of another (a transformation,
+   * invisible at first) and anyone moving at a speed are left alone.
+   */
+  function spread(scene) {
+    const acts = scene.actions || [];
+    const stand = [];
+    for (const c of scene.cast || []) {
+      if (c.type === "horse" || c.x === undefined || (c.opacity ?? 1) < 0.5) continue;
+      const mine = acts.filter((a) => a.actor === c.id);
+      if (mine.some((a) => a.onto || a.move?.speed !== undefined || a.move?.by !== undefined)) continue;
+      const to = mine.find((a) => a.move?.to !== undefined);
+      stand.push({ c, to, home: to ? to.move.to : c.x, s: c.scale ?? 1 });
+    }
+    stand.sort((a, b) => a.home - b.home);
+    for (let i = 0; i < stand.length; ) {
+      // A cluster: everyone within a body's width of the one before.
+      let j = i + 1;
+      while (j < stand.length && stand[j].home - stand[j - 1].home < 120 * Math.max(stand[j].s, stand[j - 1].s)) j++;
+      if (j - i > 1) {
+        const group = stand.slice(i, j), gap = 340 * Math.max(...group.map((g) => g.s));
+        const mid = group.reduce((n, g) => n + g.home, 0) / group.length;
+        group.forEach((g, k) => {
+          const dx = mid + (k - (group.length - 1) / 2) * gap - g.home;
+          g.c.x += dx;
+          if (g.to) g.to.move = { ...g.to.move, to: g.to.move.to + dx };
+        });
+      }
+      i = j;
+    }
+  }
+
   function create(container, scene, W, H) {
     const S = WA.stage.createStage(container, W, H, scene.time || "day");
     S.flat = !!scene.styleLook?.flat;
@@ -37,6 +71,7 @@
     const objects = WA.scenery.build(S, scene.set?.name || "village", { ...(scene.set || {}), painted: !!scene.backdrop }) || [];
     // A painted backdrop (backdrops.ts): the capture waits until it is loaded.
     const ready = scene.backdrop ? S.setBackdrop(scene.backdrop.src, scene.backdrop.size) : Promise.resolve();
+    spread(scene);
     const actors = {};
     const shadowLayer = S.layer("shadows"), actorLayer = S.layer("actors");
     for (const c of scene.cast || []) {
@@ -236,7 +271,7 @@
       if (A.kind === "human" && WA.acting && !riding) {
         const speaking = line && line.actor === id;
         out = WA.acting.apply(out, {
-          t, clip, cur, seed: A.seed, events: A.events, rest: lib.idle(t, ctx(cur)), holding: !!(props.prop ?? A.rig.activeProp),
+          t, clip, cur, seed: A.seed, events: A.events, rest: lib.idle(t, ctx(cur)), holding: !!(props.prop ?? A.rig.activeProp), prop: props.prop ?? A.rig.activeProp,
           speech: speaking ? { k: clip - line.from, env: line.env, beats: line.beats || [] } : null,
           listen: listening ? line : null,
         });
@@ -251,7 +286,10 @@
       return pts;
     }
     const speedOf = (id, t) => (pointsAt(id, t + 0.05).feet[0] - pointsAt(id, t - 0.05).feet[0]) / 0.1;
-    const ctx = { pointsAt, speedOf };
+    /** Every person's head at t (the camera keeps a close-up clear of half-heads). */
+    const people = Object.keys(actors).filter((id) => actors[id].kind === "human");
+    const heads = (t) => people.map((id) => { const p = pointsAt(id, t), o = poseAt(id, t).opacity ?? 1; return { id, head: p.head, r: p.headR, seen: o > 0.5 }; });
+    const ctx = { pointsAt, speedOf, heads };
 
     /**
      * How a person is moving at t, for the parts that follow through (hair, sleeves, skirts):

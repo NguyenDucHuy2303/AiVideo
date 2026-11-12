@@ -18,7 +18,11 @@
   const sin = Math.sin;
 
   /** Seconds a gesture is held before the arms come back to rest. */
-  const GESTURE = { point: 1.5, give: 1.8, raise: 1.9, heroic: 2.6, wave: 2.4 };
+  const GESTURE = { point: 1.5, give: 1.8, raise: 1.9, heroic: 2.2, wave: 2.4 };
+  /** Still poses of the whole body, kept but breathing (sitting, kneeling, a bow). */
+  const QUIET = new Set(["sit", "kneel", "bow", "crouch"]);
+  /** Motions that bring the front hand to the face. */
+  const HAND_TO_FACE = new Set(["call", "eat"]);
   /** Motions a person does standing (the rest of the acting applies to them). */
   const STANDING = new Set(["idle", "still", "talk", "point", "give", "raise", "heroic", "wave", "worry", "hold_bowl"]);
   /** Motions that leave the front hand free for talking gestures. */
@@ -66,6 +70,28 @@
    */
   function apply(pose, ctx) {
     const name = ctx.cur.do || "idle";
+    // 0. Props: a hand that goes to the mouth (calling out, eating) while it holds something
+    // would put the thing across the face. The horn (tù và) is raised forward, and lowered to
+    // speak; anything else is held low in front.
+    if (ctx.holding && HAND_TO_FACE.has(name) && !pose.seated) {
+      pose = { ...pose };
+      if (ctx.prop === "horn" && !ctx.speech) pose.armF = [100 + 3 * sin(ctx.t * 1.9 + ctx.seed), 22];
+      else pose.armF = [26 + 3 * sin(ctx.t * 1.3 + ctx.seed), 42];
+    }
+    // Sitting, kneeling, bowing: only the head and a little sway (the arms are part of the pose).
+    if (QUIET.has(name) && !pose.seated && Math.abs(pose.rot || 0) <= 30) {
+      const q = { ...pose };
+      q.headTilt = (q.headTilt || 0) + 2 * sin(ctx.t * 0.35 + ctx.seed * 3);
+      q.lean = (q.lean || 0) + 1.2 * sin(ctx.t * 0.4 + ctx.seed);
+      for (const e of ctx.events) {
+        if (ctx.t < e.at || ctx.t > e.at + e.dur || e.kind === "settle") continue;
+        const b = bump(ctx.t, e.at, e.dur) * e.size;
+        q.headTilt += e.kind === "nod" ? 6 * b : e.kind === "tilt" ? 5 * e.sign * b : 0;
+        if (e.kind === "shift") q.lean += 2 * e.sign * b;
+      }
+      if (ctx.speech) { const env = ctx.speech.env || [], i = Math.floor(ctx.speech.k * 30); q.headTilt += 4 * clamp(((env[i] || 0) - (env[Math.max(0, i - 8)] || 0)) * 3); }
+      return q;
+    }
     if (!STANDING.has(name) || pose.seated || Math.abs(pose.rot || 0) > 30) return pose;
     const out = { ...pose }, t = ctx.t, s = ctx.seed;
     const add = (k, v) => { out[k] = (out[k] || 0) + v; };
