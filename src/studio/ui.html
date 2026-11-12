@@ -25,7 +25,11 @@
   .job b { display: block; font-size: 16px; }
   .job small { color: var(--muted); }
   .st { display: inline-block; font-size: 12px; border-radius: 6px; padding: 1px 7px; margin-top: 5px; background: #eee3cc; }
-  .st.review, .st.video { background: #ffe1a8; } .st.failed { background: #f6c8c0; } .st.done { background: #cfe8cf; } .st.producing, .st.approved { background: #d8e4f4; }
+  .st.review { background: #ffe1a8; } .st.video { background: #d9ccf5; color: #3d2a7a; font-weight: 600; }
+  nav .t-video .n { background: #6a4fc0; }
+  .step { border-radius: 10px; padding: 10px 14px; margin: 0 0 12px; font-size: 14px; border-left: 6px solid; }
+  .step b { font-size: 16px; display: block; margin-bottom: 2px; }
+  .step.review { background: #fff4dc; border-color: #e0a030; } .step.video { background: #efe9fc; border-color: #6a4fc0; } .st.failed { background: #f6c8c0; } .st.done { background: #cfe8cf; } .st.producing, .st.approved { background: #d8e4f4; }
   #detail { overflow-y: auto; padding: 20px 28px 60px; }
   #detail h2 { margin: 0 0 4px; font-size: 26px; color: var(--red); }
   .meta { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
@@ -87,7 +91,8 @@
 <audio id="audio"></audio>
 <script>
 const TABS = [
-  ["wait", "Chờ bạn duyệt", ["review", "video"]],
+  ["script", "📝 Duyệt kịch bản", ["review"]],
+  ["video", "🎬 Duyệt video", ["video"]],
   ["work", "Đang làm", ["writing", "rewrite", "approved", "producing", "fix"]],
   ["done", "Xong", ["done"]],
   ["off", "Bỏ / Lỗi", ["rejected", "failed"]],
@@ -96,7 +101,7 @@ const TABS = [
 ];
 const STATUS = { writing: "đang viết", review: "chờ duyệt kịch bản", rewrite: "đang viết lại", approved: "đã duyệt, chờ làm", producing: "đang làm video", video: "chờ duyệt video", fix: "chờ sửa video", done: "xong", rejected: "đã bỏ", failed: "lỗi" };
 const TASK = { write: "viết kịch bản", prepare: "chuẩn bị video", render: "render video", shorts: "cắt Shorts", english: "chuẩn bị bản tiếng Anh", "english-render": "render bản tiếng Anh", topics: "đề xuất chủ đề" };
-let tab = "wait", jobs = [], current = null, sched = null, ART = null;
+let tab = null, jobs = [], current = null, sched = null, ART = null;
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const fmt = (n) => Number(n || 0).toLocaleString("vi");
@@ -105,6 +110,8 @@ const ago = (t) => { const m = Math.round((Date.now() - new Date(t)) / 60000); r
 async function load() {
   const r = await fetch("/api/jobs").then((r) => r.json());
   jobs = r.jobs; sched = r.scheduler;
+  // First open: the videos waiting (the last step, the most urgent), else the scripts.
+  tab ||= jobs.some((j) => j.status === "video") ? "video" : "script";
   const t = await fetch("/api/tokens").then((r) => r.json());
   const pct = Math.min(100, (t.today / t.settings.perDayTokens) * 100);
   $("#tok").innerHTML = t.settings.paused ? `⏸ Claude đang tạm dừng · <a href="#" style="color:#ffd27a" onclick="setPaused(false);return false">Tiếp tục tự động</a>`
@@ -117,7 +124,7 @@ async function load() {
 function drawTabs() {
   $("#tabs").innerHTML = TABS.map(([k, label, sts]) => {
     const n = jobs.filter((j) => sts.includes(j.status)).length;
-    return `<button class="${k === tab ? "on" : ""}" onclick="tab='${k}';current=null;load();${k === "tokens" ? "showTokens()" : k === "youtube" ? "showYoutube()" : ""}">${label}${n ? `<span class="n">${n}</span>` : ""}</button>`;
+    return `<button class="${k === tab ? "on" : ""} t-${k}" onclick="tab='${k}';current=null;load();${k === "tokens" ? "showTokens()" : k === "youtube" ? "showYoutube()" : ""}">${label}${n ? `<span class="n">${n}</span>` : ""}</button>`;
   }).join("");
 }
 
@@ -149,7 +156,10 @@ async function show(slug) {
   const last = job.history.at(-1);
   // A question for the English question channel (qa.ts): no era, costumes or art yet.
   const qa = ["qa", "qa-vi", "fact", "fact-vi", "lesson"].includes(job.kind);
-  let h = `<h2>${esc(plan?.title || job.topic)}</h2>
+  // Which step this is, plain to see before anything else.
+  const step = job.status === "review" ? `<div class="step review"><b>📝 Bước 1/2 · Duyệt kịch bản</b>Đọc kịch bản${qa ? "" : ", xem nhân vật và trang phục"}. Duyệt thì studio làm giọng, tranh nền và render video (ngoài giờ hành chính), rồi video quay lại đây ở tab “Duyệt video”.</div>`
+    : job.status === "video" ? `<div class="step video"><b>🎬 Bước 2/2 · Duyệt video</b>Xem video thành phẩm. Duyệt thì studio ${job.kind?.startsWith("fact") ? "" : `cắt Shorts${qa ? "" : ", làm bản tiếng Anh"} và `}đưa vào hàng đăng YouTube.</div>` : "";
+  let h = `${step}<h2>${esc(plan?.title || job.topic)}</h2>
     <div class="meta">${qa ? `Kênh hỏi–đáp (tiếng Anh) · ${esc(project?.channel || "")}` : `${esc(job.kind || "")} · thời đại ${esc(job.era || "?")}`} · ${STATUS[job.status]} · viết bởi ${esc(job.by || "?")} · ${fmt(used)} token</div>`;
   if (canReview || job.status === "failed" || job.status === "rejected") {
     h += `<div class="actions">
