@@ -1,0 +1,78 @@
+{
+  "narration": "Các bạn nhỏ ạ, từ câu chuyện này, ông bà ta có câu thành ngữ ếch ngồi đáy giếng. Ai hiểu biết ít mà lại hay khoe khoang, người ta vẫn nhắc như vậy cho đến tận bây giờ. Năm 2005, các cô chú làm phim còn dựa vào truyện này để làm phim Giấc mơ của Ếch Xanh, bộ phim hoạt hình 3D đầu tiên của Việt Nam. Phim khép lại bằng câu Đi thì biết đó biết đây, ở lì một chỗ biết ngày nào khôn.",
+  "plan": {
+    "set": "field",
+    "time": "dusk",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "point",
+        "thenFace": "proud"
+      }
+    ],
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 25.566666666666666,
+  "time": "dusk",
+  "mood": "majestic",
+  "set": {
+    "name": "field",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "ech",
+      "at": 12.78,
+      "do": "point",
+      "face": "proud"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "sparkle",
+      "on": "ech",
+      "at": 7.67,
+      "dur": 15.34
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ech"
+      ],
+      "push": 0.06
+    }
+  ]
+}

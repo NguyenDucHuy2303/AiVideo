@@ -1,0 +1,173 @@
+{
+  "narration": "Ngựa vội dừng lại, chỉ cách Ếch có một chút xíu. Ngựa (lo lắng): \"Suýt nữa thì tớ giẫm phải cậu rồi. Sao cậu lại ngồi giữa đường thế?\" Ếch (sợ hãi): \"Ta... ta là chúa tể mà.\" Ngựa (cười): \"Ha ha, chúa tể gì mà bé tí thế!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ngua",
+        "place": "right",
+        "enter": "none",
+        "act": "still",
+        "face": "worried",
+        "then": "none",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "ech",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "worried"
+      },
+      {
+        "id": "cau_be_chan_trau",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "smoke"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 11.133333333333333,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ngua",
+      "type": "horse",
+      "look": {
+        "kind": "plain",
+        "color": "#8b5a2b",
+        "mane": "#1a1a1a",
+        "saddle": false
+      },
+      "x": 520,
+      "scale": 1.1,
+      "facing": -1
+    },
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": -520,
+      "scale": 0.7,
+      "facing": 1
+    },
+    {
+      "id": "cau_be_chan_trau",
+      "type": "human",
+      "look": {
+        "body": "child",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#8d6e63",
+            "trim": "#5d4037",
+            "length": "waist",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#5d4037",
+            "length": "knee"
+          }
+        },
+        "hair": {
+          "style": "traidao",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "bamboo"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "eyeScale": 1.15
+        }
+      },
+      "x": -520,
+      "scale": 0.8,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ngua",
+      "at": 0,
+      "do": "stand",
+      "face": "worried"
+    },
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "worry",
+      "face": "sad"
+    },
+    {
+      "actor": "ech",
+      "at": 5.57,
+      "do": "talk",
+      "face": "worried",
+      "talk": 1
+    },
+    {
+      "actor": "cau_be_chan_trau",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "smoke",
+      "x": 1800,
+      "at": -2,
+      "dur": 13.133333333333333
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ngua",
+        "ech",
+        "cau_be_chan_trau"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.57,
+      "type": "close",
+      "on": [
+        "cau_be_chan_trau"
+      ],
+      "push": 0.06
+    }
+  ]
+}

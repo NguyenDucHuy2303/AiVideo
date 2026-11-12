@@ -10,8 +10,13 @@
   "channel": "Hỏi Huy",
   "voices": {
     "Huy": "Thiện Minh",
-    "Mai": {
+    "Hùng": "Thanh Bình",
+    "Bối": {
       "voice": "Ngọc Linh",
+      "pitch": 4
+    },
+    "Beo": {
+      "voice": "Mai Anh",
       "pitch": 4
     },
     "Emma": {

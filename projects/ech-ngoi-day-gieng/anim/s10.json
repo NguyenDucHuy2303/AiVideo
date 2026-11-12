@@ -1,0 +1,127 @@
+{
+  "narration": "Nước mưa đổ xuống giếng mỗi lúc một nhiều. Mặt nước dâng lên, dâng lên mãi. Ếch (hoảng hốt): \"Nước dâng cao quá! Ta bị đẩy lên rồi!\" Cua (lo lắng): \"Ếch ơi, cẩn thận nhé!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "run",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "worried"
+      },
+      {
+        "id": "cua",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "shake"
+    ],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 9.666666666666666,
+  "time": "day",
+  "mood": "battle",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "stone",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    },
+    {
+      "id": "cua",
+      "type": "animal",
+      "look": {
+        "species": "turtle",
+        "color": "#c8743a"
+      },
+      "x": -520,
+      "scale": 0.55,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "run",
+      "face": "surprised",
+      "move": {
+        "by": 420,
+        "ease": "linear"
+      },
+      "dur": 9.666666666666666
+    },
+    {
+      "actor": "ech",
+      "at": 4.83,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "cua",
+      "at": 0,
+      "do": "call",
+      "face": "worried",
+      "talk": 1,
+      "move": {
+        "by": 330,
+        "ease": "linear"
+      },
+      "dur": 9.666666666666666
+    },
+    {
+      "actor": "cua",
+      "at": 4.83,
+      "do": "worry",
+      "face": "worried"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "shake",
+      "at": 4.83,
+      "power": 0.5
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ech",
+        "cua"
+      ],
+      "push": 0.06
+    }
+  ]
+}

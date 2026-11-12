@@ -1,8 +1,14 @@
 {
   "slug": "why-does-the-moon-change-shape",
   "topic": "Why does the Moon change shape?",
-  "status": "review",
-  "notes": [],
+  "status": "rewrite",
+  "notes": [
+    {
+      "at": "2026-11-12T09:59:06.272Z",
+      "text": "Đổi dàn nhân vật: Mai nay tên là Bối (bé gái 8 tuổi, vẫn hỏi và đoán). Thêm Hùng (21 tuổi, em trai Huy, phụ tá: bày và làm thí nghiệm, đưa đồ vật, thỉnh thoảng hậu đậu vui vẻ) và Beo (5 tuổi, em trai Bối, tò mò, đoán ngây ngô bằng câu ngắn). Cả bốn có mặt suốt video. Giữ nguyên nội dung, kiến thức và độ dài; chỉ thêm lời cho Hùng và Beo ở những chỗ hợp lý.",
+      "on": "script"
+    }
+  ],
   "history": [
     {
       "at": "2026-11-10T09:09:06.262Z",
@@ -11,6 +17,16 @@
     {
       "at": "2026-11-10T09:14:08.127Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-12T09:59:06.275Z",
+      "status": "rewrite",
+      "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-12T10:39:11.311Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 93750 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
     }
   ],
   "kind": "qa",
@@ -20,5 +36,6 @@
     "value": 8.3,
     "why": "Mạnh ở mở đầu gây tò mò (\"cái chuối\", \"ai cắn Mặt Trăng?\"), giải thích đúng khoa học, gỡ hiểu lầm bóng Trái Đất, có thí nghiệm đèn pin–quả bóng, chủ đề nhiều người tìm và dễ dựng hình; yếu ở chỗ hơi dài và nhiều thuật ngữ (terminator, tidal locking, gibbous, waxing/waning) có thể làm trẻ 6–12 tuổi rối, đoạn quỹ đạo/khóa thủy triều chen giữa hơi lan man, và lời thoại viết bằng tiếng Anh trong khi kênh là \"Hỏi Huy\" tiếng Việt.",
     "hash": "d1201eb19135ef5e"
-  }
+  },
+  "retryAt": "2026-11-12T11:09:11.310Z"
 }

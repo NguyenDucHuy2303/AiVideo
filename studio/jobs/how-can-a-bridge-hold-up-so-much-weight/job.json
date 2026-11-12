@@ -1,8 +1,14 @@
 {
   "slug": "how-can-a-bridge-hold-up-so-much-weight",
   "topic": "How can a bridge hold up so much weight?",
-  "status": "review",
-  "notes": [],
+  "status": "rewrite",
+  "notes": [
+    {
+      "at": "2026-11-12T09:59:06.236Z",
+      "text": "Đổi dàn nhân vật: Mai nay tên là Bối (bé gái 8 tuổi, vẫn hỏi và đoán). Thêm Hùng (21 tuổi, em trai Huy, phụ tá: bày và làm thí nghiệm, đưa đồ vật, thỉnh thoảng hậu đậu vui vẻ) và Beo (5 tuổi, em trai Bối, tò mò, đoán ngây ngô bằng câu ngắn). Cả bốn có mặt suốt video. Giữ nguyên nội dung, kiến thức và độ dài; chỉ thêm lời cho Hùng và Beo ở những chỗ hợp lý.",
+      "on": "script"
+    }
+  ],
   "history": [
     {
       "at": "2026-11-10T07:57:23.394Z",
@@ -11,6 +17,16 @@
     {
       "at": "2026-11-10T08:05:47.643Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-12T09:59:06.265Z",
+      "status": "rewrite",
+      "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-12T10:37:20.945Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"how-can-a-bridge-hold-up-so-much-weight\" has spent 85309 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
     }
   ],
   "kind": "qa",
@@ -19,5 +35,6 @@
     "value": 8.3,
     "why": "Điểm mạnh: mở đầu bằng xe tải nặng hơn con voi và cây cầu đá Hy Lạp 3.300 năm tuổi, kiến thức chính xác (nén/kéo, vòm, giàn tam giác, cầu Triệu Châu), có thí nghiệm tờ giấy và ruler dễ dựng hình, chủ đề nhiều người tìm; điểm yếu: quá dày đặc (4 ý chính cùng hàng loạt thuật ngữ như compression, tension, keystone, abutment, cantilever, truss) nên dễ làm trẻ 6–8 tuổi quá tải, và phần liệt kê 5 loại cầu hơi lướt, nên nên cắt gọn trước khi dựng.",
     "hash": "ad4c71fbc26fa1dd"
-  }
+  },
+  "retryAt": "2026-11-12T11:07:20.944Z"
 }

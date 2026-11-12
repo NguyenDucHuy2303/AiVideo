@@ -1,0 +1,53 @@
+{
+  "engine": "vieneu",
+  "voice": "Minh Đức",
+  "speed": 1,
+  "imageGen": "off",
+  "onlineImages": false,
+  "profiles": [
+    "16x9"
+  ],
+  "channel": "Hỏi Huy",
+  "voices": {
+    "Huy": "Thiện Minh",
+    "Hùng": "Thanh Bình",
+    "Bối": {
+      "voice": "Ngọc Linh",
+      "pitch": 4
+    },
+    "Beo": {
+      "voice": "Mai Anh",
+      "pitch": 4
+    },
+    "Emma": {
+      "voice": "af_heart",
+      "engine": "kokoro",
+      "speed": 0.85
+    }
+  },
+  "speakers": {
+    "Huy": [
+      "huy"
+    ],
+    "Hùng": [
+      "hung"
+    ],
+    "Bối": [
+      "boi"
+    ],
+    "Beo": [
+      "beo"
+    ],
+    "Mai": [
+      "boi",
+      "mai"
+    ]
+  },
+  "brandId": "hoi-huy",
+  "style": "hien_dai",
+  "thumbnail": {
+    "title": "PENCIL, RULER, TEACHER!",
+    "subtitle": "Hỏi Huy",
+    "at": 6.28
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "narration": "Tiếng kêu dội vào thành giếng, vang lên ồm ồm ộp ộp nghe rất oai. Ếch (tự hào): \"Nghe chưa? Tiếng của ta vang khắp cả trời đất!\" Cua (lo lắng): \"Ếch ơi, đó là tại thành giếng dội lại tiếng thôi mà.\" Ếch (quát): \"Không phải! Đó là vì ta giỏi nhất!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "call",
+        "thenFace": "angry"
+      },
+      {
+        "id": "cua",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 13.066666666666666,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "stone",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    },
+    {
+      "id": "cua",
+      "type": "animal",
+      "look": {
+        "species": "turtle",
+        "color": "#c8743a"
+      },
+      "x": -520,
+      "scale": 0.55,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "heroic",
+      "face": "proud"
+    },
+    {
+      "actor": "ech",
+      "at": 6.53,
+      "do": "call",
+      "face": "angry",
+      "talk": 1,
+      "move": {
+        "by": 489.99999999999994,
+        "ease": "in"
+      },
+      "dur": 6.536666666666666
+    },
+    {
+      "actor": "cua",
+      "at": 0,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "cua",
+      "at": 6.53,
+      "do": "worry",
+      "face": "worried"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ech",
+        "cua"
+      ],
+      "push": 0.06
+    }
+  ]
+}

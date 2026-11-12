@@ -1,0 +1,105 @@
+{
+  "narration": "Ngựa (tự hào): \"Tớ vừa chạy một mạch từ đê sông về đến cổng làng. Ngoài kia còn có chợ, có sông, có bao nhiêu làng khác nữa đấy.\" Ếch (ngạc nhiên): \"Thật sao? Thế gian lại rộng đến thế cơ à?\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ngua",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "proud",
+        "then": "point",
+        "thenFace": "proud"
+      },
+      {
+        "id": "ech",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 8.8,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ngua",
+      "type": "horse",
+      "look": {
+        "kind": "plain",
+        "color": "#8b5a2b",
+        "mane": "#1a1a1a",
+        "saddle": false
+      },
+      "x": 520,
+      "scale": 1.1,
+      "facing": -1
+    },
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": -520,
+      "scale": 0.7,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ngua",
+      "at": 0,
+      "do": "stand",
+      "face": "proud",
+      "talk": 1
+    },
+    {
+      "actor": "ngua",
+      "at": 4.4,
+      "do": "stand",
+      "face": "proud"
+    },
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "worry",
+      "face": "surprised"
+    },
+    {
+      "actor": "ech",
+      "at": 4.4,
+      "do": "talk",
+      "face": "surprised",
+      "talk": 1
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ngua",
+        "ech"
+      ],
+      "push": 0.06
+    }
+  ]
+}

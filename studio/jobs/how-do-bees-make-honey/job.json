@@ -1,7 +1,7 @@
 {
   "slug": "how-do-bees-make-honey",
   "topic": "How do bees make honey?",
-  "status": "video",
+  "status": "done",
   "notes": [
     {
       "at": "2026-11-11T01:38:20.239Z",
@@ -121,6 +121,11 @@
       "at": "2026-11-11T15:31:28.922Z",
       "status": "video",
       "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-12T06:52:18.585Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 12 giờ, kiểm tra máy đạt (410 giây, không đen màn, đứng hình hay im lặng)"
     }
   ],
   "kind": "qa",
@@ -131,5 +136,13 @@
     "hash": "ab852b80f6087633"
   },
   "autoPicked": true,
-  "retryAt": "2026-11-10T12:02:44.019Z"
+  "retryAt": "2026-11-10T12:02:44.019Z",
+  "autoCheck": {
+    "at": "2026-11-12T06:52:18.584Z",
+    "mtimeMs": 1794405630714.3044,
+    "ok": true,
+    "problems": [],
+    "seconds": 410
+  },
+  "autoApproved": "2026-11-12T06:52:18.584Z"
 }

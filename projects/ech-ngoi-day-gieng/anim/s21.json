@@ -1,0 +1,171 @@
+{
+  "narration": "Bác Trâu (vui vẻ): \"Nào, cháu trèo lên lưng bác, bác dẫn cháu ra đồng mà xem.\" Ếch nhảy phốc lên lưng bác Trâu. Kiến bò lên sừng bác, còn Ngựa thì đi bên cạnh.",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_trau",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "hop",
+        "face": "joy",
+        "then": "ride",
+        "thenFace": "happy"
+      },
+      {
+        "id": "kien",
+        "place": "center",
+        "enter": "none",
+        "act": "walk",
+        "face": "happy",
+        "then": "ride",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ngua",
+        "place": "right",
+        "enter": "none",
+        "act": "still",
+        "face": "happy",
+        "then": "none",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 8.933333333333334,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "field",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "bac_trau",
+      "type": "animal",
+      "look": {
+        "species": "buffalo",
+        "color": "#4a4f55"
+      },
+      "x": 0,
+      "scale": 1.4,
+      "facing": -1
+    },
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "scale": 1.1,
+      "facing": -1
+    },
+    {
+      "id": "kien",
+      "type": "animal",
+      "look": {
+        "species": "ant",
+        "color": "#8b3a2a"
+      },
+      "scale": 1.1,
+      "facing": -1
+    },
+    {
+      "id": "ngua",
+      "type": "horse",
+      "look": {
+        "kind": "plain",
+        "color": "#8b5a2b",
+        "mane": "#1a1a1a",
+        "saddle": false
+      },
+      "x": 520,
+      "scale": 1.1,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "bac_trau",
+      "at": 0,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "bac_trau",
+      "at": 4.47,
+      "do": "walk",
+      "face": "happy",
+      "move": {
+        "by": -979.9999999999999,
+        "ease": "in"
+      },
+      "dur": 4.463333333333334
+    },
+    {
+      "actor": "ech",
+      "at": -0.1,
+      "do": "leap",
+      "onto": "ngua",
+      "dur": 0.01,
+      "arc": 0
+    },
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "ride",
+      "face": "joy"
+    },
+    {
+      "actor": "kien",
+      "at": -0.1,
+      "do": "leap",
+      "onto": "ngua",
+      "dur": 0.01,
+      "arc": 0
+    },
+    {
+      "actor": "kien",
+      "at": 0,
+      "do": "ride",
+      "face": "happy"
+    },
+    {
+      "actor": "ngua",
+      "at": 0,
+      "do": "stand",
+      "face": "happy"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "bac_trau",
+        "ech",
+        "kien",
+        "ngua"
+      ],
+      "push": 0.06
+    }
+  ]
+}

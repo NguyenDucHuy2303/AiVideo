@@ -1,0 +1,141 @@
+{
+  "narration": "Ếch quay sang Kiến và Ngựa. Ếch (buồn rầu): \"Lúc nãy tớ vô lễ quá. Các bạn tha lỗi cho tớ nhé.\" Kiến (cười): \"Không sao đâu, mình là bạn mà!\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "bow",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "kien",
+        "place": "left",
+        "enter": "none",
+        "act": "wave",
+        "face": "laugh",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ngua",
+        "place": "right",
+        "enter": "none",
+        "act": "still",
+        "face": "happy",
+        "then": "none",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 7.3,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "field",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    },
+    {
+      "id": "kien",
+      "type": "animal",
+      "look": {
+        "species": "ant",
+        "color": "#8b3a2a"
+      },
+      "x": -520,
+      "scale": 0.45,
+      "facing": 1
+    },
+    {
+      "id": "ngua",
+      "type": "horse",
+      "look": {
+        "kind": "plain",
+        "color": "#8b5a2b",
+        "mane": "#1a1a1a",
+        "saddle": false
+      },
+      "x": 520,
+      "scale": 1.1,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "bow",
+      "face": "sad"
+    },
+    {
+      "actor": "ech",
+      "at": 3.65,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "kien",
+      "at": 0,
+      "do": "wave",
+      "face": "laugh"
+    },
+    {
+      "actor": "kien",
+      "at": 3.65,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "ngua",
+      "at": 0,
+      "do": "stand",
+      "face": "happy"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "sparkle",
+      "on": "ech",
+      "at": 2.19,
+      "dur": 4.38
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ech",
+        "kien",
+        "ngua"
+      ],
+      "push": 0.06
+    }
+  ]
+}

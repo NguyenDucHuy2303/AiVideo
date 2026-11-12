@@ -1,8 +1,14 @@
 {
   "slug": "why-do-cats-purr",
   "topic": "Why do cats purr?",
-  "status": "review",
-  "notes": [],
+  "status": "rewrite",
+  "notes": [
+    {
+      "at": "2026-11-12T09:59:06.278Z",
+      "text": "Đổi dàn nhân vật: Mai nay tên là Bối (bé gái 8 tuổi, vẫn hỏi và đoán). Thêm Hùng (21 tuổi, em trai Huy, phụ tá: bày và làm thí nghiệm, đưa đồ vật, thỉnh thoảng hậu đậu vui vẻ) và Beo (5 tuổi, em trai Bối, tò mò, đoán ngây ngô bằng câu ngắn). Cả bốn có mặt suốt video. Giữ nguyên nội dung, kiến thức và độ dài; chỉ thêm lời cho Hùng và Beo ở những chỗ hợp lý.",
+      "on": "script"
+    }
+  ],
   "history": [
     {
       "at": "2026-11-10T09:09:06.264Z",
@@ -11,6 +17,16 @@
     {
       "at": "2026-11-10T09:16:32.269Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-12T09:59:06.280Z",
+      "status": "rewrite",
+      "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-12T10:40:54.596Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-cats-purr\" has spent 93063 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
     }
   ],
   "kind": "qa",
@@ -20,5 +36,6 @@
     "value": 8.3,
     "why": "Mạnh ở chủ đề được tìm nhiều, mở bài bằng tiếng \"động cơ\" lôi cuốn, cấu trúc bốn bước rõ ràng, thông tin khoa học trung thực (thừa nhận khoa học chưa chắc), có thí nghiệm an toàn và dễ dựng hình; yếu ở chỗ phần giải thích thanh quản và dây thanh hơi dài, nhiều từ khó với trẻ 6–12 tuổi, và kịch bản viết bằng tiếng Anh nên cần chuyển sang tiếng Việt.",
     "hash": "c503f7cdb37297e0"
-  }
+  },
+  "retryAt": "2026-11-12T11:10:54.595Z"
 }

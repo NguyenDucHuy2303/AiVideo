@@ -1,0 +1,1005 @@
+[
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "point",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "nong_dan",
+        "place": "left",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "neutral",
+        "then": "idle",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "dawn",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "call",
+        "face": "happy",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "cua",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      },
+      {
+        "id": "nhai_ben",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "hop",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "call",
+        "thenFace": "angry"
+      },
+      {
+        "id": "cua",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "point",
+        "face": "laugh",
+        "then": "talk",
+        "thenFace": "laugh"
+      }
+    ],
+    "fx": [
+      "rays"
+    ],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "call",
+        "thenFace": "proud"
+      },
+      {
+        "id": "cua",
+        "place": "left",
+        "enter": "none",
+        "act": "bow",
+        "face": "worried",
+        "then": "bow",
+        "thenFace": "worried"
+      }
+    ],
+    "crowd": {
+      "id": "nhai_ben",
+      "count": 3,
+      "act": "worry",
+      "then": "still"
+    },
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "cua",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      },
+      {
+        "id": "ech",
+        "place": "right",
+        "enter": "none",
+        "act": "call",
+        "face": "angry",
+        "then": "call",
+        "thenFace": "angry"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "eat",
+        "face": "proud",
+        "then": "lie",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [
+      "shake",
+      "flash"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "run",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "worried"
+      },
+      {
+        "id": "cua",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "shake"
+    ],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "fall",
+        "face": "surprised",
+        "then": "sit",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [
+      "pop"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "hop",
+        "face": "proud",
+        "then": "hop",
+        "thenFace": "proud"
+      }
+    ],
+    "fx": [
+      "rays"
+    ],
+    "objects": [],
+    "shot": "track"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "angry",
+        "then": "call",
+        "thenFace": "angry"
+      },
+      {
+        "id": "kien",
+        "place": "right",
+        "enter": "from_right",
+        "act": "carry",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "rice"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "kien",
+        "place": "right",
+        "enter": "none",
+        "act": "point",
+        "face": "laugh",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "rice"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "laugh",
+        "then": "idle",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "kien",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "wave",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "ngua",
+        "place": "right",
+        "enter": "from_right",
+        "act": "run",
+        "face": "shout",
+        "then": "call",
+        "thenFace": "shout"
+      },
+      {
+        "id": "ech",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [
+      "shake",
+      "smoke"
+    ],
+    "objects": [],
+    "shot": "track"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ngua",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "talk",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "ech",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "smoke"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ngua",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "proud",
+        "then": "point",
+        "thenFace": "proud"
+      },
+      {
+        "id": "ech",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_trau",
+        "place": "center",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "cau_be_chan_trau",
+        "place": "center",
+        "enter": "from_left",
+        "act": "sit",
+        "face": "happy",
+        "then": "sit",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ech",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "worried",
+        "then": "idle",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      },
+      {
+        "id": "bac_trau",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "laugh",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_trau",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "hop",
+        "face": "joy",
+        "then": "ride",
+        "thenFace": "happy"
+      },
+      {
+        "id": "kien",
+        "place": "center",
+        "enter": "none",
+        "act": "walk",
+        "face": "happy",
+        "then": "ride",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ngua",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "ride",
+        "face": "surprised",
+        "then": "cheer",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "bac_trau",
+        "place": "left",
+        "enter": "none",
+        "act": "walk",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "rays"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "sky",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "left",
+        "enter": "none",
+        "act": "point",
+        "face": "surprised",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "kien",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "laugh",
+        "then": "cheer",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "rays",
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "bow",
+        "face": "sad",
+        "then": "worry",
+        "thenFace": "sad"
+      },
+      {
+        "id": "bac_trau",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_trau",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "proud"
+      },
+      {
+        "id": "ech",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "sad",
+        "then": "idle",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "glow"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "bow",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "kien",
+        "place": "left",
+        "enter": "none",
+        "act": "wave",
+        "face": "laugh",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ngua",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "bow",
+        "face": "determined",
+        "then": "talk",
+        "thenFace": "determined"
+      },
+      {
+        "id": "bac_trau",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ngua",
+        "place": "left",
+        "enter": "none",
+        "act": "cheer",
+        "face": "joy",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "kien",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "cheer",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "from_left",
+        "act": "hop",
+        "face": "joy",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "ngua",
+        "place": "right",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      }
+    ],
+    "crowd": {
+      "id": "phu_nu_cho",
+      "count": 3,
+      "act": "walk",
+      "then": "walk"
+    },
+    "fx": [],
+    "objects": [],
+    "shot": "track"
+  },
+  {
+    "set": "village",
+    "time": "dusk",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "right",
+        "enter": "from_right",
+        "act": "hop",
+        "face": "happy",
+        "then": "call",
+        "thenFace": "happy"
+      },
+      {
+        "id": "cua",
+        "place": "left",
+        "enter": "none",
+        "act": "cheer",
+        "face": "joy",
+        "then": "talk",
+        "thenFace": "joy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "dusk",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "bac_trau",
+        "place": "center",
+        "enter": "none",
+        "act": "walk",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "ride",
+        "face": "happy",
+        "then": "bow",
+        "thenFace": "joy"
+      }
+    ],
+    "fx": [
+      "rays",
+      "glow"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "point",
+        "thenFace": "proud"
+      }
+    ],
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_trau",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "bow",
+        "face": "happy",
+        "then": "bow",
+        "thenFace": "joy"
+      },
+      {
+        "id": "cau_be_chan_trau",
+        "place": "left",
+        "enter": "none",
+        "act": "wave",
+        "face": "happy",
+        "then": "wave",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "glow"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "wave",
+        "face": "joy",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "kien",
+        "place": "left",
+        "enter": "none",
+        "act": "wave",
+        "face": "happy",
+        "then": "cheer",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ngua",
+        "place": "right",
+        "enter": "none",
+        "act": "wave",
+        "face": "happy",
+        "then": "cheer",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "wide"
+  }
+]

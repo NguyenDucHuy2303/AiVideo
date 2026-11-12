@@ -1,0 +1,69 @@
+{
+  "narration": "Ngày qua ngày, Ếch chỉ ăn, ngủ, kêu ồm ộp và khoe khoang. Chú chẳng chịu nghe ai, cũng chẳng muốn biết thêm điều gì mới.",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "eat",
+        "face": "proud",
+        "then": "none",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "wide"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 8.3,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "stone",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "eat",
+      "face": "proud"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "ech"
+      ],
+      "push": 0.06
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "narration": "Ếch (ngạc nhiên): \"Thóc là cái gì? Trong giếng của ta không có thứ ấy.\" Kiến (cười): \"Thóc ở ngoài đồng kia kìa. Cả cánh đồng lúa vàng óng, rộng mênh mông!\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "kien",
+        "place": "right",
+        "enter": "none",
+        "act": "point",
+        "face": "laugh",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "rice"
+    ],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 6.9,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "field",
+    "objects": [
+      {
+        "type": "rice",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": -520,
+      "scale": 0.7,
+      "facing": 1
+    },
+    {
+      "id": "kien",
+      "type": "animal",
+      "look": {
+        "species": "ant",
+        "color": "#8b3a2a"
+      },
+      "x": 520,
+      "scale": 0.45,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised",
+      "talk": 1
+    },
+    {
+      "actor": "ech",
+      "at": 3.45,
+      "do": "worry",
+      "face": "surprised"
+    },
+    {
+      "actor": "kien",
+      "at": 0,
+      "do": "point",
+      "face": "laugh"
+    },
+    {
+      "actor": "kien",
+      "at": 3.45,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ech",
+        "kien"
+      ],
+      "push": 0.06
+    }
+  ]
+}

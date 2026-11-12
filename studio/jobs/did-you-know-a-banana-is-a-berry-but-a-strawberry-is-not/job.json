@@ -1,8 +1,14 @@
 {
   "slug": "did-you-know-a-banana-is-a-berry-but-a-strawberry-is-not",
   "topic": "Did you know a banana is a berry, but a strawberry is not?",
-  "status": "review",
-  "notes": [],
+  "status": "rewrite",
+  "notes": [
+    {
+      "at": "2026-11-12T09:59:06.301Z",
+      "text": "Đổi dàn nhân vật: Mai nay tên là Bối (bé gái 8 tuổi, vẫn hỏi và đoán). Thêm Hùng (21 tuổi, em trai Huy, phụ tá: bày và làm thí nghiệm, đưa đồ vật, thỉnh thoảng hậu đậu vui vẻ) và Beo (5 tuổi, em trai Bối, tò mò, đoán ngây ngô bằng câu ngắn). Cả bốn có mặt suốt video. Giữ nguyên nội dung, kiến thức và độ dài; chỉ thêm lời cho Hùng và Beo ở những chỗ hợp lý.",
+      "on": "script"
+    }
+  ],
   "history": [
     {
       "at": "2026-11-11T03:28:51.997Z",
@@ -11,6 +17,11 @@
     {
       "at": "2026-11-11T03:30:07.912Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-12T09:59:06.302Z",
+      "status": "rewrite",
+      "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
     }
   ],
   "kind": "fact",

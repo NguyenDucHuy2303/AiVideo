@@ -1,12 +1,17 @@
 {
   "slug": "trai-cay-fruits-apple-banana-orange-mango-grapes-watermelon-",
   "topic": "Trái cây (Fruits): apple, banana, orange, mango, grapes, watermelon, pineapple, strawberry, coconut",
-  "status": "review",
+  "status": "rewrite",
   "notes": [
     {
       "at": "2026-11-11T06:53:10.324Z",
       "on": "script",
       "text": "Xưng hô: Huy là anh trai trẻ, gọi người xem là \"các bạn\", gọi Mai là \"em\"; Mai gọi \"anh Huy\" và xưng \"em\" (không xưng \"con\"); không ai gọi người xem là \"con\". Giữ nguyên phần còn lại."
+    },
+    {
+      "at": "2026-11-12T09:59:06.307Z",
+      "text": "Đổi dàn nhân vật: Mai nay tên là Bối (bé gái 8 tuổi, vẫn hỏi và đoán). Thêm Hùng (21 tuổi, em trai Huy, phụ tá: bày và làm thí nghiệm, đưa đồ vật, thỉnh thoảng hậu đậu vui vẻ) và Beo (5 tuổi, em trai Bối, tò mò, đoán ngây ngô bằng câu ngắn). Cả bốn có mặt suốt video. Giữ nguyên nội dung, kiến thức và độ dài; chỉ thêm lời cho Hùng và Beo ở những chỗ hợp lý.",
+      "on": "script"
     }
   ],
   "history": [
@@ -26,6 +31,11 @@
     {
       "at": "2026-11-11T06:54:21.287Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-12T09:59:06.308Z",
+      "status": "rewrite",
+      "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
     }
   ],
   "kind": "lesson",

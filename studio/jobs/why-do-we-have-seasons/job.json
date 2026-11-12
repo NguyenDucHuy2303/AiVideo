@@ -1,7 +1,7 @@
 {
   "slug": "why-do-we-have-seasons",
   "topic": "Why do we have seasons?",
-  "status": "video",
+  "status": "done",
   "notes": [],
   "history": [
     {
@@ -40,6 +40,11 @@
       "at": "2026-11-11T15:44:58.768Z",
       "status": "video",
       "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-12T06:52:40.083Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 12 giờ, kiểm tra máy đạt (389 giây, không đen màn, đứng hình hay im lặng)"
     }
   ],
   "kind": "qa",
@@ -50,5 +55,13 @@
     "why": "Mạnh ở mở đầu bằng nghịch lý \"Trái Đất gần Mặt Trời nhất vào tháng 1 mà vẫn là mùa đông\", sửa đúng hiểu lầm phổ biến, số liệu chính xác (940 triệu km, 23 độ, 98 độ của Sao Thiên Vương, 30 km/s), có thí nghiệm đèn pin và quả bóng quanh đèn dễ dựng hình, chủ đề nhiều người tìm; yếu ở chỗ dồn quá nhiều khái niệm (bán cầu, chí tuyến, phân điểm, đêm cực, mặt trời nửa đêm, Sao Thiên Vương) nên hơi dài và nặng với trẻ 6–7 tuổi, phần cuối hơi lan man.",
     "hash": "9f55080716ad4f11"
   },
-  "autoPicked": true
+  "autoPicked": true,
+  "autoCheck": {
+    "at": "2026-11-12T06:52:40.081Z",
+    "mtimeMs": 1794408134219.3792,
+    "ok": true,
+    "problems": [],
+    "seconds": 389
+  },
+  "autoApproved": "2026-11-12T06:52:40.081Z"
 }

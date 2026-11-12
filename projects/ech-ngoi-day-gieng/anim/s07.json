@@ -1,0 +1,121 @@
+{
+  "narration": "Cua (lo lắng): \"Nhưng chị Chim Sẻ bay ngang qua có kể, ngoài kia còn rộng lắm cơ.\" Ếch (tức giận): \"Chuyện bịa! Ngoài cái giếng này chẳng còn gì hết!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "cua",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      },
+      {
+        "id": "ech",
+        "place": "right",
+        "enter": "none",
+        "act": "call",
+        "face": "angry",
+        "then": "call",
+        "thenFace": "angry"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 7.033333333333333,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "stone",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "cua",
+      "type": "animal",
+      "look": {
+        "species": "turtle",
+        "color": "#c8743a"
+      },
+      "x": -520,
+      "scale": 0.55,
+      "facing": 1
+    },
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 520,
+      "scale": 0.7,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "cua",
+      "at": 0,
+      "do": "talk",
+      "face": "worried",
+      "talk": 1
+    },
+    {
+      "actor": "cua",
+      "at": 3.52,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "call",
+      "face": "angry",
+      "talk": 1,
+      "move": {
+        "by": -420,
+        "ease": "linear"
+      },
+      "dur": 7.033333333333333
+    },
+    {
+      "actor": "ech",
+      "at": 3.52,
+      "do": "call",
+      "face": "angry",
+      "talk": 1,
+      "move": {
+        "by": -489.99999999999994,
+        "ease": "in"
+      },
+      "dur": 3.513333333333333
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "cua",
+        "ech"
+      ],
+      "push": 0.06
+    }
+  ]
+}
