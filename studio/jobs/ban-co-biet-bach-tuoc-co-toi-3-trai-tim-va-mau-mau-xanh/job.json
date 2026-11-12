@@ -1,8 +1,14 @@
 {
   "slug": "ban-co-biet-bach-tuoc-co-toi-3-trai-tim-va-mau-mau-xanh",
   "topic": "Bạn có biết bạch tuộc có tới 3 trái tim và máu màu xanh?",
-  "status": "producing",
-  "notes": [],
+  "status": "rewrite",
+  "notes": [
+    {
+      "at": "2026-11-12T10:05:14.837Z",
+      "text": "Đổi dàn nhân vật: Mai nay tên là Bối (bé gái 8 tuổi, vẫn hỏi và đoán). Thêm Hùng (21 tuổi, em trai Huy, phụ tá: bày và làm thí nghiệm, đưa đồ vật, thỉnh thoảng hậu đậu vui vẻ) và Beo (5 tuổi, em trai Bối, tò mò, đoán ngây ngô bằng câu ngắn). Cả bốn có mặt suốt video. Giữ nguyên nội dung, kiến thức và độ dài; chỉ thêm lời cho Hùng và Beo ở những chỗ hợp lý.",
+      "on": "script"
+    }
+  ],
   "history": [
     {
       "at": "2026-11-11T03:30:51.371Z",
@@ -40,6 +46,11 @@
       "at": "2026-11-12T03:41:30.331Z",
       "status": "producing",
       "info": "gộp kênh: câu mời đăng ký đổi thành kênh Huy Kể Chuyện, lồng tiếng lại, render lại tối nay"
+    },
+    {
+      "at": "2026-11-12T10:05:14.838Z",
+      "status": "rewrite",
+      "info": "đổi dàn nhân vật: Bối, Hùng, Beo (chưa render bản mới)"
     }
   ],
   "kind": "fact-vi",
@@ -51,6 +62,5 @@
     "hash": "08d7bfb9670ebb19"
   },
   "autoPicked": true,
-  "shorts": [],
-  "stage": "ready"
+  "shorts": []
 }

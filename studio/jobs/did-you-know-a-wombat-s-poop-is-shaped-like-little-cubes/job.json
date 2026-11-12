@@ -1,8 +1,14 @@
 {
   "slug": "did-you-know-a-wombat-s-poop-is-shaped-like-little-cubes",
   "topic": "Did you know a wombat's poop is shaped like little cubes?",
-  "status": "producing",
-  "notes": [],
+  "status": "rewrite",
+  "notes": [
+    {
+      "at": "2026-11-12T10:05:14.813Z",
+      "text": "Đổi dàn nhân vật: Mai nay tên là Bối (bé gái 8 tuổi, vẫn hỏi và đoán). Thêm Hùng (21 tuổi, em trai Huy, phụ tá: bày và làm thí nghiệm, đưa đồ vật, thỉnh thoảng hậu đậu vui vẻ) và Beo (5 tuổi, em trai Bối, tò mò, đoán ngây ngô bằng câu ngắn). Cả bốn có mặt suốt video. Giữ nguyên nội dung, kiến thức và độ dài; chỉ thêm lời cho Hùng và Beo ở những chỗ hợp lý.",
+      "on": "script"
+    }
+  ],
   "history": [
     {
       "at": "2026-11-11T03:28:51.995Z",
@@ -40,6 +46,11 @@
       "at": "2026-11-12T06:36:35.645Z",
       "status": "producing",
       "info": "phụ đề Shorts to hơn, trong vùng an toàn TikTok: render lại"
+    },
+    {
+      "at": "2026-11-12T10:05:14.832Z",
+      "status": "rewrite",
+      "info": "đổi dàn nhân vật: Bối, Hùng, Beo (chưa render bản mới)"
     }
   ],
   "kind": "fact",
@@ -51,6 +62,5 @@
     "hash": "c61cda0b1c53f7d7"
   },
   "autoPicked": true,
-  "shorts": [],
-  "stage": "ready"
+  "shorts": []
 }

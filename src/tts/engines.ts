@@ -206,23 +206,16 @@ export const KOKORO_DEFAULT_VOICE = "af_heart";
 const KOKORO_PYTHON = path.join(KOKORO_DIR, "venv", "bin", "python");
 const KOKORO_WORKER = path.join(path.dirname(fileURLToPath(import.meta.url)), "kokoro_worker.py");
 
-/**
- * Vietnamese names Kokoro cannot read (it spells out "ố" letter by letter): written as they
- * are on screen, said through an English spelling of the same sound.
- */
-const KOKORO_SAY: [RegExp, string][] = [[/\bBối\b/gu, "Boy"], [/\bbối\b/gu, "boy"], [/\bHùng\b/gu, "Hoong"]];
-export const kokoroText = (text: string) => KOKORO_SAY.reduce((t, [re, say]) => t.replace(re, say), text);
-
 export const kokoro: TtsEngine = {
   id: "kokoro",
   async fingerprint(opts) {
     if (!(await exists(KOKORO_PYTHON))) throw new Error(`Kokoro is not installed (${KOKORO_DIR}). Run: bash scripts/setup-kokoro.sh`);
-    return `kokoro:v1.0:${opts.voice}:${opts.speed}${opts.pitch ? `:p${opts.pitch}r48` : ""}`;
+    return `kokoro:v1.0:names1:${opts.voice}:${opts.speed}${opts.pitch ? `:p${opts.pitch}r48` : ""}`;
   },
   async synthesize(text, outWav, opts) {
     const raw = `${outWav}.raw.wav`;
     try {
-      await workerRequest(pyWorker("Kokoro", KOKORO_PYTHON, KOKORO_WORKER), "Kokoro", kokoroText(text), opts.voice, raw);
+      await workerRequest(pyWorker("Kokoro", KOKORO_PYTHON, KOKORO_WORKER), "Kokoro", text, opts.voice, raw);
       const af = voiceFilters(opts.speed, opts.pitch);
       await run(FFMPEG, ["-hide_banner", "-nostdin", "-y", "-v", "error", "-i", raw, ...(af.length ? ["-af", af.join(",")] : []), "-ar", "48000", "-ac", "1", outWav], { timeoutMs: TIMEOUT_MS });
     } finally {
