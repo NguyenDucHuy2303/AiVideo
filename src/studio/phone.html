@@ -17,7 +17,8 @@
   nav button b { font-size: 22px; line-height: 1; }
   nav button.on { color: var(--red); font-weight: 700; }
   nav .n { background: var(--bronze); color: #fff; border-radius: 999px; font-size: 11px; padding: 0 6px; margin-left: 3px; }
-  main { padding: 12px; }
+  main { padding: 12px; max-width: 760px; margin: 0 auto; }
+  @media (min-width: 800px) { nav { left: 50%; transform: translateX(-50%); max-width: 760px; } .bar { max-width: 760px; left: 50%; transform: translateX(-50%); } video.v { height: 50vh; } }
   .job { background: var(--card); border: 1.5px solid var(--line); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; }
   .job b { display: block; font-size: 17px; }
   small, .meta { color: var(--muted); font-size: 13px; }
