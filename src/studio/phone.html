@@ -72,8 +72,11 @@
 const TABS = [
   ["script", "📝", "Kịch bản", (j) => j.status === "review"],
   ["video", "🎬", "Video", (j) => j.status === "video"],
-  ["post", "📤", "Đăng", (j) => j.status === "done" && !j.publishHold],
+  ["post", "📤", "Chờ đăng", (j) => j.status === "done" && !j.publishHold && j.post?.stage !== "all"],
+  ["posted", "✔", "Đã đăng", (j) => j.status === "done" && j.post?.stage === "all"],
 ];
+const STAGE = { preparing: ["⏳ đang chuẩn bị Shorts", "#eee3cc"], ready: ["🆕 sẵn sàng đăng", "#ffe1a8"], downloaded: ["⬇ đã tải, chưa đăng", "#d8e4f4"], partial: ["◐ đăng dở", "#e6d9f7"], all: ["✔ đã đăng hết", "#cfe8cf"] };
+const stageOf = (p) => p ? `<br><span class="tag" style="background:${STAGE[p.stage][1]}">${STAGE[p.stage][0]}</span>${p.stage !== "preparing" ? ` <small>YT ${p.by.youtube[0]}/${p.by.youtube[1]} · TikTok ${p.by.tiktok[0]}/${p.by.tiktok[1]} · FB ${p.by.facebook[0]}/${p.by.facebook[1]}</small>` : ""}` : "";
 const KIND = { qa: "Ask Huy · hỏi–đáp", "qa-vi": "Hỏi Huy · hỏi–đáp", lesson: "Học tiếng Anh cùng Huy", fact: "Short Did you know?", "fact-vi": "Short Bạn có biết?" };
 const QA = ["qa", "qa-vi", "fact", "fact-vi", "lesson"];
 let tab = localStorage.tab || "script", jobs = [], current = null, REVIEW_HOURS = 12;
@@ -122,10 +125,11 @@ async function save(i, btn) {
       a.href = `${f.url}?dl=${encodeURIComponent(f.name)}`; a.download = f.name; document.body.appendChild(a); a.click(); a.remove();
       if (k < s.list.length - 1) await new Promise((r) => setTimeout(r, 1500));
     }
-    return toast(s.list.length > 1 ? `Đang tải ${s.list.length} tệp` : "Đang tải");
+    toast(s.list.length > 1 ? `Đang tải ${s.list.length} tệp` : "Đang tải");
+    return setTimeout(() => refresh(), 2500);
   }
   if (s.files) {
-    try { await navigator.share({ files: s.files }); toast("Xong"); }
+    try { await navigator.share({ files: s.files }); toast("Xong"); refresh(); }
     catch (err) { if (err.name !== "AbortError") alert(`Không lưu được: ${err.message}. Thử lưu từng video.`); }
     return;
   }
@@ -134,7 +138,7 @@ async function save(i, btn) {
   try {
     const files = [];
     for (const [k, f] of s.list.entries()) {
-      const r = await fetch(f.url);
+      const r = await fetch(`${f.url}?dl=${encodeURIComponent(f.name)}`);
       if (!r.ok) throw new Error(`${f.name}: ${r.status}`);
       const size = Number(r.headers.get("content-length")) || 0, reader = r.body.getReader(), chunks = [];
       let got = 0;
@@ -165,15 +169,15 @@ async function load() {
   if (!current) drawList();
 }
 function drawTabs() {
-  $("#tabs").innerHTML = TABS.map(([k, icon, label, f]) => { const n = jobs.filter(f).length; return `<button class="${k === tab ? "on" : ""}" onclick="go('${k}')"><b>${icon}</b><span>${label}${n ? `<span class="n">${n}</span>` : ""}</span></button>`; }).join("");
+  $("#tabs").innerHTML = TABS.map(([k, icon, label, f]) => { const n = k === "posted" ? 0 : jobs.filter(f).length; return `<button class="${k === tab ? "on" : ""}" onclick="go('${k}')"><b>${icon}</b><span>${label}${n ? `<span class="n">${n}</span>` : ""}</span></button>`; }).join("");
 }
 function go(k) { tab = localStorage.tab = k; home(); }
 function home() { current = null; $("#back").style.display = "none"; $("#title").textContent = "Huy Kể Chuyện · Studio"; history.replaceState(null, "", "/m"); drawTabs(); drawList(); scrollTo(0, 0); }
 function drawList() {
   const t = TABS.find((x) => x[0] === tab), list = jobs.filter(t[3]);
-  const hint = { script: "Kịch bản chờ anh duyệt. Duyệt xong studio làm giọng, tranh nền và render buổi tối.", video: `Video đã render, chờ anh xem và duyệt.${REVIEW_HOURS ? ` Quá ${REVIEW_HOURS} giờ chưa duyệt thì studio kiểm tra máy móc rồi tự duyệt.` : ""}`, post: "Bài đã duyệt xong: tải video về máy, chép lời đăng cho YouTube, TikTok, Facebook." }[tab];
+  const hint = { script: "Kịch bản chờ anh duyệt. Duyệt xong studio làm giọng, tranh nền và render buổi tối.", video: `Video đã render, chờ anh xem và duyệt.${REVIEW_HOURS ? ` Quá ${REVIEW_HOURS} giờ chưa duyệt thì studio kiểm tra máy móc rồi tự duyệt.` : ""}`, post: "Bài đã duyệt xong, chưa đăng đủ: tải video về máy, chép lời đăng cho YouTube, TikTok, Facebook, đăng xong thì đánh dấu.", posted: "Bài đã đăng đủ YouTube, TikTok và Facebook." }[tab];
   $("#main").innerHTML = `<p class="meta">${hint}</p>` + (list.length ? list.map((j) => `<div class="job" onclick="open_('${j.slug}')">
-    <b>${esc(j.topic)}</b><small>${esc(KIND[j.kind] || `${j.kind || ""} · ${j.era || ""}`)}${j.score ? ` · ${j.score.value}/10` : ""}${j.autoApproved ? " · studio tự duyệt" : ""}${j.status === "video" && j.autoCheck && !j.autoCheck.ok ? " · ⚠ cần anh xem" : ""}</small></div>`).join("") : `<div class="empty">Không có gì chờ ở đây.</div>`);
+    <b>${esc(j.topic)}</b><small>${esc(KIND[j.kind] || `${j.kind || ""} · ${j.era || ""}`)}${j.score ? ` · ${j.score.value}/10` : ""}${j.autoApproved ? " · studio tự duyệt" : ""}${j.status === "video" && j.autoCheck && !j.autoCheck.ok ? " · ⚠ cần anh xem" : ""}</small>${stageOf(j.post)}</div>`).join("") : `<div class="empty">Không có gì chờ ở đây.</div>`);
 }
 
 async function open_(slug) {
@@ -237,7 +241,7 @@ async function drawPost(d) {
   }
   for (const p of posts) {
     const yt = ytOf(p), name = `${slug}-${p.name}`, vertical = p.what === "short";
-    h += `<section><h3>${esc(p.label)} <small>· ${esc(p.account)}${p.publishAt ? ` · ${when(p.publishAt)}` : ""}</small></h3>
+    h += `<section><h3>${esc(p.label)} <small>· ${esc(p.account)}${p.publishAt ? ` · ${when(p.publishAt)}` : ""}</small> ${job.downloaded?.[p.file] ? `<span class="tag done">⬇ đã tải</span>` : ""}</h3>
       <video class="${vertical ? "v" : ""}" controls playsinline preload="metadata" src="/files/${slug}/${p.file}" ${!vertical && d.files.includes(p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg") ? `poster="/files/${slug}/${p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg"}"` : ""}></video>
       <div class="row">${saveBtn([{ url: `/files/${slug}/${p.file}`, name }], "video")}
         ${!vertical && d.files.includes(p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg") ? saveBtn([{ url: `/files/${slug}/${p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg"}`, name: `${slug}-${p.what === "en" ? "anh-bia-tieng-anh" : "anh-bia"}.jpg` }], "ảnh bìa") : ""}</div>
@@ -280,7 +284,10 @@ async function socialDone(platform, what, index, done) {
   const r = await api(`/api/job/${current}/social`, { platform, what, index, done });
   if (r.error) return alert(r.error);
   toast(done ? "Đã đánh dấu" : "Đã bỏ đánh dấu");
+  refresh();
 }
+/** The lists' counts and this topic's tags again, keeping the place on the page. */
+async function refresh() { const y = scrollY; await load(); if (current) { await open_(current); scrollTo(0, y); } }
 
 window.renderFrame = () => {};
 window.ready = new Promise((r) => setTimeout(r, 2500)); // for screenshots

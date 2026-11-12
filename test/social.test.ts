@@ -73,3 +73,25 @@ test("phone: only this computer's own names as Host; loopback is the computer", 
   assert.ok(!hostAllowed(undefined, "192.168.1.9"));
   assert.ok(isLoopback("::ffff:127.0.0.1") && isLoopback("127.0.0.1") && !isLoopback("192.168.1.20"));
 });
+
+import { postState } from "../src/studio/publish.ts";
+import type { Job } from "../src/studio/jobs.ts";
+
+test("post stage: preparing, ready, downloaded, partly posted, posted everywhere", () => {
+  const files = ["video.mp4", "thumbnail.jpg"];
+  const base: Job = { slug: "x", topic: "x", kind: "truyền thuyết", status: "done", notes: [], history: [] };
+  assert.equal(postState({ ...base, status: "video" }, files), undefined);
+  assert.equal(postState(base, files)!.stage, "preparing", "Shorts not cut yet");
+  const job: Job = { ...base, shorts: ["shorts/1.mp4"] };
+  const s0 = postState(job, files)!;
+  assert.equal(s0.stage, "ready");
+  // film: YouTube + Facebook; Short: YouTube + TikTok + Facebook
+  assert.deepEqual(s0.by, { youtube: [0, 2], tiktok: [0, 1], facebook: [0, 2] });
+  assert.equal(postState({ ...job, downloaded: { "shorts/1.mp4": "t" } }, files)!.stage, "downloaded");
+  const pub = { videoId: "abcdefghijk", url: "u", publishAt: "t", channel: "huy-ke-chuyen", at: "t" };
+  assert.equal(postState({ ...job, published: { long: pub } }, files)!.stage, "partial");
+  const all: Job = { ...job, published: { long: pub, shorts: [pub] }, social: { "tiktok:short:0": "t", "facebook:short:0": "t", "facebook:long:0": "t" } };
+  const s = postState(all, files)!;
+  assert.equal(s.stage, "all");
+  assert.equal(s.posted, s.slots);
+});

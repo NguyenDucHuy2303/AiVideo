@@ -98,7 +98,8 @@ const TABS = [
   ["script", "📝 Duyệt kịch bản", ["review"]],
   ["video", "🎬 Duyệt video", ["video"]],
   ["work", "Đang làm", ["writing", "rewrite", "approved", "producing", "fix"]],
-  ["done", "Xong", ["done"]],
+  ["done", "📤 Chờ đăng", ["done"], (j) => j.post?.stage !== "all"],
+  ["posted", "✔ Đã đăng hết", ["done"], (j) => j.post?.stage === "all"],
   ["off", "Bỏ / Lỗi", ["rejected", "failed"]],
   ["tokens", "Token", []],
   ["youtube", "Đăng YouTube", []],
@@ -125,23 +126,30 @@ async function load() {
   drawTabs(); drawList();
 }
 
+/** Is a job listed under a tab: its status, and for finished ones where its posting stands. */
+const inTab = (j, t) => t[2].includes(j.status) && (!t[3] || t[3](j));
+/** Where a finished topic's posting stands (publish.ts postState), as a badge and counts. */
+const STAGE = { preparing: ["⏳ đang chuẩn bị Shorts", "#eee3cc"], ready: ["🆕 sẵn sàng đăng", "#ffe1a8"], downloaded: ["⬇ đã tải về, chưa đăng", "#d8e4f4"], partial: ["◐ đăng dở", "#e6d9f7"], all: ["✔ đã đăng hết", "#cfe8cf"] };
+const postBadge = (p) => p ? `<span class="st" style="background:${STAGE[p.stage][1]}">${STAGE[p.stage][0]}</span>` : "";
+const postCounts = (p) => p && p.stage !== "preparing" ? `<small>YouTube ${p.by.youtube[0]}/${p.by.youtube[1]} · TikTok ${p.by.tiktok[0]}/${p.by.tiktok[1]} · Facebook ${p.by.facebook[0]}/${p.by.facebook[1]}${p.downloaded ? ` · đã tải ${p.downloaded}/${p.items}` : ""}</small>` : "";
+
 function drawTabs() {
-  $("#tabs").innerHTML = TABS.map(([k, label, sts]) => {
-    const n = jobs.filter((j) => sts.includes(j.status)).length;
+  $("#tabs").innerHTML = TABS.map(([k, label, sts, more]) => {
+    const n = k === "posted" ? 0 : jobs.filter((j) => inTab(j, [k, label, sts, more])).length;
     return `<button class="${k === tab ? "on" : ""} t-${k}" onclick="tab='${k}';current=null;load();${k === "tokens" ? "showTokens()" : k === "youtube" ? "showYoutube()" : ""}">${label}${n ? `<span class="n">${n}</span>` : ""}</button>`;
   }).join("");
 }
 
 function drawList() {
-  const sts = TABS.find((t) => t[0] === tab)[2];
+  const t = TABS.find((x) => x[0] === tab);
   if (tab === "tokens" || tab === "youtube") { $("#list").innerHTML = ""; return; }
-  const list = jobs.filter((j) => sts.includes(j.status));
+  const list = jobs.filter((j) => inTab(j, t));
   $("#list").innerHTML = list.length ? list.map((j) => `
     <div class="job ${current === j.slug ? "on" : ""}" onclick="show('${j.slug}')">
       <b>${esc(j.topic)}</b>
       <small>${j.kind === "qa" ? "hỏi–đáp (tiếng Anh)" : j.kind === "qa-vi" ? "hỏi–đáp (tiếng Việt)" : j.kind === "lesson" ? "Học tiếng Anh cùng Huy" : j.kind === "fact" ? "Short Did you know? (Ask Huy)" : j.kind === "fact-vi" ? "Short Bạn có biết? (Hỏi Huy)" : `${esc(j.kind || "")} · ${esc(j.era || "")}`} · ${fmt(j.tokens)} token${j.score ? ` · ${j.score.value}/10` : ""}${j.autoPicked ? " · tự chọn" : ""}${j.autoApproved ? " · studio tự duyệt video" : ""}${j.status === "video" && j.autoCheck && !j.autoCheck.ok ? " · ⚠ kiểm tra máy chưa đạt" : ""}</small><br>
-      <span class="st ${j.status}">${STATUS[j.status] || j.status}</span>
-      <small> ${ago(j.history.at(-1).at)}</small>
+      ${j.post ? `${postBadge(j.post)}<br>${postCounts(j.post)}` : `<span class="st ${j.status}">${STATUS[j.status] || j.status}</span>
+      <small> ${ago(j.history.at(-1).at)}</small>`}
     </div>`).join("") : `<div class="empty">Trống.</div>`;
 }
 
@@ -181,6 +189,20 @@ async function show(slug) {
   if (job.autoApproved) h += `<div class="meta">✔ <b>Studio tự duyệt video</b> lúc ${new Date(job.autoApproved).toLocaleString("vi")} (anh chưa duyệt kịp, kiểm tra máy đạt). Chưa ưng thì bấm “Hoãn đăng” ở mục YouTube.</div>`;
   if (job.error) h += `<div class="warn">Lỗi: ${esc(job.error)}</div>`;
   else if (last?.info && /vấn đề/.test(last.info)) h += `<div class="warn">${esc(last.info)}</div>`;
+  if (job.status === "done") {
+    // Every video of the topic: downloaded, and posted where (the ticks work here too).
+    const { posts } = await fetch(`/api/job/${slug}/social`).then((r) => r.json());
+    const pub = job.published || {}, yt = (p) => p.what === "short" ? pub.shorts?.[p.index] : pub[p.what];
+    const st = jobs.find((j) => j.slug === slug)?.post;
+    const cell = (p, pl) => !p.text[pl] ? `<td style="color:#bbb">—</td>`
+      : `<td><label style="cursor:pointer"><input type="checkbox" ${p.done[pl] ? "checked" : ""} onchange="socialDone('${pl}', '${p.what}', ${p.index ?? "undefined"}, this.checked)"> ${p.done[pl] ? "✔ đã đăng" : "chưa"}</label></td>`;
+    if (posts.length) h += `<section><h3>Đã tải, đã đăng ở đâu ${postBadge(st)}</h3><table>
+      <tr><th>Video</th><th>Đã tải về</th><th>YouTube</th><th>TikTok</th><th>Facebook</th></tr>
+      ${posts.map((p) => `<tr><td><b>${esc(p.label)}</b><br><small>${esc(p.name)}</small></td>
+        <td>${job.downloaded?.[p.file] ? `✔ ${new Date(job.downloaded[p.file]).toLocaleString("vi", { day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" })}` : "<small>chưa (lấy trong thư mục ~/youtube cũng được)</small>"}</td>
+        <td>${yt(p) ? `<a href="${esc(yt(p).url)}" target="_blank">✔ đã đăng</a>` : "chưa <small>(dán link ở mục YouTube)</small>"}</td>${cell(p, "tiktok")}${cell(p, "facebook")}</tr>`).join("")}</table>
+      <p class="meta">Đủ dấu ✔ ở mọi ô thì bài chuyển sang tab “✔ Đã đăng hết”.</p></section>`;
+  }
   if (!qa) h += await artSection(job, d.art, d.redrawing);
   if (qa && plan) {
     const fc = has("factcheck.json") ? await fetch(`/files/${slug}/factcheck.json`).then((r) => r.json()).catch(() => null) : null;
@@ -348,6 +370,11 @@ async function markPublished(what, index) {
   if (r.error) return alert(r.error);
   await load(); show(current);
 }
+async function socialDone(platform, what, index, done) {
+  const r = await fetch(`/api/job/${current}/social`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ platform, what, index, done }) }).then((r) => r.json());
+  if (r.error) return alert(r.error);
+  const y = $("#detail").scrollTop; await load(); await show(current); $("#detail").scrollTop = y;
+}
 async function holdPublish(hold) {
   await fetch(`/api/job/${current}/hold`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ hold }) });
   show(current);
@@ -387,7 +414,7 @@ async function saveCaps() {
   if (r.error) return alert(r.error);
   await load(); showTokens();
 }
-load().then(() => { if (location.hash === "#youtube" || location.hash === "#tokens") { tab = location.hash.slice(1); drawTabs(); $("#list").innerHTML = ""; return tab === "youtube" ? showYoutube() : showTokens(); } const slug = decodeURIComponent(location.hash.slice(1)); if (slug && jobs.some((j) => j.slug === slug)) { const j = jobs.find((x) => x.slug === slug); tab = (TABS.find((t) => t[2].includes(j.status)) || TABS[0])[0]; drawTabs(); show(slug); } });
+load().then(() => { if (location.hash === "#youtube" || location.hash === "#tokens") { tab = location.hash.slice(1); drawTabs(); $("#list").innerHTML = ""; return tab === "youtube" ? showYoutube() : showTokens(); } const slug = decodeURIComponent(location.hash.slice(1)); if (slug && jobs.some((j) => j.slug === slug)) { const j = jobs.find((x) => x.slug === slug); tab = (TABS.find((t) => inTab(j, t)) || TABS[0])[0]; drawTabs(); show(slug); } });
 setInterval(() => { load(); }, 15000);
 </script>
 </body>

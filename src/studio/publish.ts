@@ -598,6 +598,37 @@ export function socialSheet(title: string, posts: SocialPost[]): string {
   return head.join("\n") + body.join("");
 }
 
+/**
+ * Where a finished topic stands, for the lists: still being prepared (Shorts not cut), ready to
+ * post, downloaded, partly posted, or posted everywhere (YouTube, plus TikTok and Facebook for
+ * the platforms each video goes to). Counts per platform: [posted, to post].
+ */
+export type PostStage = "preparing" | "ready" | "downloaded" | "partial" | "all";
+export interface PostState { stage: PostStage; items: number; downloaded: number; posted: number; slots: number; by: Record<"youtube" | Platform, [number, number]> }
+export function postState(job: Job, files: string[]): PostState | undefined {
+  if (job.status !== "done") return undefined;
+  const items = allItems(job, files);
+  const by: PostState["by"] = { youtube: [0, 0], tiktok: [0, 0], facebook: [0, 0] };
+  let downloaded = 0;
+  for (const item of items) {
+    by.youtube[1]++;
+    if (publishedOf(job, item)) by.youtube[0]++;
+    for (const p of platformsOf(item.what)) { by[p][1]++; if (job.social?.[socialKey(p, item.what, item.index)]) by[p][0]++; }
+    if (job.downloaded?.[item.file]) downloaded++;
+  }
+  const slots = by.youtube[1] + by.tiktok[1] + by.facebook[1], posted = by.youtube[0] + by.tiktok[0] + by.facebook[0];
+  const stage: PostStage = !items.length || (!isFactJob(job) && job.shorts === undefined) ? "preparing"
+    : posted >= slots ? "all" : posted > 0 ? "partial" : downloaded > 0 ? "downloaded" : "ready";
+  return { stage, items: items.length, downloaded, posted, slots, by };
+}
+
+/** A file of the job was downloaded from the studio's pages. */
+export async function markDownloaded(slug: string, file: string): Promise<void> {
+  const job = await loadJob(slug);
+  (job.downloaded ??= {})[file] = new Date().toISOString();
+  await saveJob(job);
+}
+
 /** The user posted (or un-posted) a video on TikTok / Facebook. */
 export async function markSocial(slug: string, platform: Platform, what: What, index: number | undefined, done: boolean): Promise<Job> {
   const job = await loadJob(slug), key = socialKey(platform, what, index);

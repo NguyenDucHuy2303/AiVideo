@@ -21,7 +21,7 @@ import { schedulerState, settings as scheduleSettings } from "./schedule.ts";
 import { artOf, validStyle, validTheme } from "./art.ts";
 import { costumeSheet } from "./design.ts";
 import { BRAND_DIR, BRAND_THEMES } from "../animation/brand/brand.ts";
-import { authUrl, EXPORT_DIR, exportJob, finishAuth, hasClient, markPublished, markSocial, publishSettings, savePublishSettings, socialPosts, token, type Mode, type What } from "./publish.ts";
+import { authUrl, EXPORT_DIR, exportJob, finishAuth, hasClient, markDownloaded, markPublished, markSocial, postState, publishSettings, savePublishSettings, socialPosts, token, type Mode, type What } from "./publish.ts";
 import { allowed, hostAllowed, isLoopback, keyCookie, keyMatches, lanAddress, phoneKey, phoneLink } from "./phone.ts";
 import { CA_NAME, caCert, ensureCerts } from "./tls.ts";
 import { PLATFORMS, type Platform } from "./social.ts";
@@ -121,7 +121,10 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
   if (parts[0] === "api") {
     if (req.method === "GET" && parts[1] === "jobs") {
       const all = await ledger();
-      const jobs = (await listJobs()).map((j) => ({ ...j, tokens: all.filter((e) => e.job === j.slug).reduce((n, e) => n + weigh(e), 0) }));
+      const jobs = await Promise.all((await listJobs()).map(async (j) => ({
+        ...j, tokens: all.filter((e) => e.job === j.slug).reduce((n, e) => n + weigh(e), 0),
+        post: j.status === "done" ? postState(j, await fsp.readdir(jobDir(j.slug)).catch(() => [] as string[])) : undefined,
+      })));
       return json(res, { jobs, scheduler: await schedulerState(), reviewHours: (await scheduleSettings()).review.videoHours });
     }
     if (req.method === "GET" && parts.length === 3 && parts[1] === "job" && SLUG.test(parts[2] ?? "")) {
@@ -260,6 +263,8 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
   if (req.method === "GET" && parts[0] === "files" && SLUG.test(parts[1] ?? "") && parts.slice(2).every((x) => NAME.test(x) && x !== ".." && x !== ".")
     && (parts.length === 3 || (parts.length === 4 && parts[2] === "shorts"))) {
     const dl = url.searchParams.get("dl");
+    // A download (the pages ask with ?dl=): remembered, once per request start (not each range).
+    if (dl && !/bytes=[1-9]/.test(req.headers.range ?? "")) await markDownloaded(parts[1]!, parts.slice(2).join("/")).catch(() => {});
     return sendFile(req, res, path.join(jobDir(parts[1]!), ...parts.slice(2)), dl && NAME.test(dl.replace(/[^\x20-\x7e]/g, "_").replace(/ /g, "_")) ? dl.slice(0, 120) : undefined);
   }
   // Style samples and intro/outro previews.

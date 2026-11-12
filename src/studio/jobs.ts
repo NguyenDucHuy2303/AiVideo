@@ -55,6 +55,8 @@ export interface Job {
   lockedVideos?: import("./publish.ts").Published[];
   /** Posted by hand on TikTok / Facebook ("tiktok:short:0" → when the user marked it). */
   social?: Record<string, string>;
+  /** Files downloaded to a phone or laptop from the studio's pages (file → when). */
+  downloaded?: Record<string, string>;
   /** Views and likes of its published videos (trends.ts), by video id. */
   stats?: Record<string, { views: number; likes: number; at: string }>;
   /** The user held it back from publishing. */
