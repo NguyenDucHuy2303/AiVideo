@@ -39,7 +39,7 @@ export async function translateJob(slug: string, log: (s: string) => void = cons
     `- Exactly the same number of scenes, and in each scene the same parts in the same order (the pictures are already made for them).`,
     `- Narration parts: who = "" and how = "". Dialogue parts: who = the speaker's English name (the same everywhere, from "names"), how = one of: ${HOW}.`,
     `- No quotation marks and no colons in the text.`,
-    `- The first scene greets the viewers as "Huy Tells Tales"; the last asks them to subscribe to Huy Tells Tales.`,
+    `- The first scene greets the viewers to "Huy Tells Tales" (the series); the last asks them to subscribe to the channel Ask Huy (the YouTube channel it is on, not the series).`,
     `- names: every speaker's Vietnamese name and the English one used.`,
     "",
     JSON.stringify({ title: plan.title, scenes: plan.scenes }),

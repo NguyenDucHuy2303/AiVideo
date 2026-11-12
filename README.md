@@ -328,7 +328,16 @@ Layout của từng tỷ lệ (vùng an toàn, cỡ chữ, vị trí) nằm ở 
 
 ## Đăng YouTube
 
-Mỗi kênh (Huy Kể Chuyện, Huy Tells Tales, Ask Huy, Hỏi Huy) có một chế độ, chọn ở tab **Đăng YouTube** của trang duyệt:
+Studio đăng lên **hai kênh** (gộp từ bốn kênh ngày 12/11/2026):
+
+| Kênh | Nội dung | Danh sách phát |
+|---|---|---|
+| **Huy Kể Chuyện** (tiếng Việt) | truyện cổ tích, truyền thuyết, lịch sử, ngụ ngôn; hỏi–đáp tiếng Việt; học tiếng Anh; Shorts "Bạn có biết?" | Truyện cổ tích Việt Nam · Truyền thuyết Việt Nam · Lịch sử Việt Nam cho bé · Truyện ngụ ngôn · Hỏi Huy · Học tiếng Anh cùng Huy · Bạn có biết? (Shorts) |
+| **Ask Huy** (tiếng Anh) | hỏi–đáp tiếng Anh; Shorts "Did you know?"; bản tiếng Anh của truyện (loạt Huy Tells Tales) | Ask Huy: Big Questions · Did You Know? (Shorts) · Huy Tells Tales: Vietnamese Folk Tales |
+
+"Hỏi Huy" và "Huy Tells Tales" giờ là chuyên mục, không phải kênh riêng: video vẫn chào bằng tên chuyên mục và giữ intro riêng, nhưng lời mời đăng ký và outro nêu tên kênh thật. Danh mục YouTube chọn theo từng video: truyện là Phim và hoạt hình, hỏi–đáp và học tiếng Anh là Giáo dục.
+
+Mỗi kênh có một chế độ, chọn ở tab **Đăng YouTube** của trang duyệt:
 
 - **Xuất tay** (mặc định): mỗi video bạn đã duyệt xong được studio xếp vào một thư mục trong `~/Videos/Wata/<tên kênh>/`, tên thư mục bắt đầu bằng giờ công khai. Trong đó có:
   - `video.mp4` (liên kết cứng tới file của studio, không tốn thêm dung lượng);
@@ -339,7 +348,7 @@ Mỗi kênh (Huy Kể Chuyện, Huy Tells Tales, Ask Huy, Hỏi Huy) có một c
 - **Tự đăng**: studio tự tải lên ở chế độ riêng tư kèm giờ công khai; đến giờ YouTube tự công khai. **Chỉ bật khi dự án Google đã qua audit** (xem dưới). Nửa giờ sau giờ công khai, studio kiểm tra video. Nếu video vẫn riêng tư (bị khóa), studio chuyển kênh về Xuất tay, xuất lại các video bị khóa để bạn đăng tay, và báo trên trang duyệt những video cần xóa trong YouTube Studio.
 - **Tắt**: không làm gì.
 
-Không cần bốn email: một tài khoản Google tạo được nhiều kênh. Vào YouTube, chọn ảnh đại diện → **Cài đặt** → **Thêm hoặc quản lý kênh** → **Tạo kênh**. Mỗi kênh là một tài khoản thương hiệu (Brand Account), có tên và logo riêng.
+Hai kênh tạo chung một tài khoản Google, không cần hai email. Một số điện thoại xác minh được hai kênh mỗi năm, vừa đủ. Vào YouTube, chọn ảnh đại diện → **Cài đặt** → **Thêm hoặc quản lý kênh** → **Tạo kênh**. Mỗi kênh là một tài khoản thương hiệu (Brand Account), có tên và logo riêng.
 
 ### Kết nối để tự đăng
 
@@ -357,7 +366,7 @@ Xuất tay không cần bước nào dưới đây. Tự đăng cần làm các 
    - Tải file JSON về, đổi tên thành `client_secret.json`.
    - Đặt vào `studio/secrets/client_secret.json`. Thư mục này không đưa lên git.
 5. Mở trang duyệt ở tab **Đăng YouTube** (<http://127.0.0.1:5175/#youtube>):
-   - Bấm **Kết nối kênh** cho từng kênh: Huy Kể Chuyện, Huy Tells Tales, Ask Huy.
+   - Bấm **Kết nối kênh** cho từng kênh: Huy Kể Chuyện, Ask Huy. (Kết nối trước ngày 12/11/2026 thì kết nối lại: studio cần thêm quyền quản lý danh sách phát.)
    - Đăng nhập Google và chọn đúng kênh. Nếu kênh là tài khoản thương hiệu (Brand Account), Google sẽ hỏi bạn chọn kênh nào.
 6. Bật **Tự động đăng lên kênh này** và chỉnh giờ công khai nếu muốn.
 7. Tạo API key để studio xem xu hướng (không bắt buộc):
@@ -382,8 +391,8 @@ Nộp đơn tại **YouTube API Services – Audit and Quota Extension Form** (t
 Gợi ý nội dung trả lời (sửa cho đúng thông tin của bạn):
 
 - **Tên và mục đích ứng dụng:** "Wata Studio" là công cụ nội bộ chạy trên máy cá nhân của chủ kênh, chỉ để đăng video hoạt hình thiếu nhi do chính chủ kênh sản xuất lên các kênh của mình. Không có người dùng nào khác, không cung cấp cho bên thứ ba.
-- **Kênh sử dụng:** Huy Kể Chuyện, Huy Tells Tales, Ask Huy, Hỏi Huy, cùng thuộc một tài khoản Google của chủ kênh (điền link các kênh).
-- **API dùng:** `videos.insert` (tải video lên ở chế độ riêng tư với `publishAt`, `selfDeclaredMadeForKids: true`), `thumbnails.set`, `videos.list` (kiểm tra trạng thái video của chính mình), `channels.list` (`mine=true`, lấy tên kênh khi kết nối), `search.list` / `videos.list` bằng API key (xem xu hướng video thiếu nhi để gợi ý chủ đề).
+- **Kênh sử dụng:** Huy Kể Chuyện và Ask Huy, cùng thuộc một tài khoản Google của chủ kênh (điền link các kênh).
+- **API dùng:** `videos.insert` (tải video lên ở chế độ riêng tư với `publishAt`, `selfDeclaredMadeForKids: true`), `thumbnails.set`, `playlists.list` / `playlists.insert` / `playlistItems.insert` (xếp video vào danh sách phát theo loạt), `videos.list` (kiểm tra trạng thái video của chính mình), `channels.list` (`mine=true`, lấy tên kênh khi kết nối), `search.list` / `videos.list` bằng API key (xem xu hướng video thiếu nhi để gợi ý chủ đề).
 - **Dữ liệu người dùng:** chỉ lưu refresh token của các kênh của chủ kênh trên máy cá nhân (`studio/secrets/`, không đưa lên mạng). Không thu thập, không chia sẻ dữ liệu của người dùng YouTube khác.
 - **Tần suất:** khoảng 1 video dài và 1–3 Shorts mỗi ngày cho mỗi kênh. Hạn mức mặc định là đủ.
 - **Tuân thủ:** mọi video được khai "dành cho trẻ em" (COPPA), có tiêu đề, mô tả và nguồn tư liệu do chủ kênh duyệt trước khi đăng; người xem không đăng nhập hay cấp quyền gì cho ứng dụng.

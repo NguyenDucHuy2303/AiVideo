@@ -22,7 +22,11 @@ import { toScript, type Part } from "./write.ts";
 export interface QAProfile {
   kind: "qa" | "qa-vi";
   lang: "en" | "vi";
+  /** The series' name (said in the greeting, on the thumbnail). */
   channel: string;
+  /** The YouTube channel it is published on (said when inviting to subscribe): since 2026-11-12
+   *  two channels, Huy Kể Chuyện (Vietnamese) and Ask Huy (English); Hỏi Huy is a series of the first. */
+  home: string;
   brandId: string;
   host: CastMember;
   kid: CastMember;
@@ -38,9 +42,9 @@ export interface QAProfile {
 const HOST: CastMember = { name: "Huy", gender: "male", age: "young", role: "the host: curious, warm, a little funny; explains", villain: false };
 const KID: CastMember = { name: "Mai", gender: "female", age: "child", role: "an 8-year-old who asks, guesses and tries things", villain: false };
 export const PROFILES: Record<QAProfile["kind"], QAProfile> = {
-  qa: { kind: "qa", lang: "en", channel: "Ask Huy", brandId: "ask-huy", host: HOST, kid: KID, engine: "kokoro", narrator: "am_michael", speed: 0.92,
+  qa: { kind: "qa", lang: "en", channel: "Ask Huy", home: "Ask Huy", brandId: "ask-huy", host: HOST, kid: KID, engine: "kokoro", narrator: "am_michael", speed: 0.92,
     how: "happily, joyfully, laughing, surprised, worried, firmly, proudly, sadly, scared, tired", write: "Write every line in simple, natural English." },
-  "qa-vi": { kind: "qa-vi", lang: "vi", channel: "Hỏi Huy", brandId: "hoi-huy", host: HOST, kid: KID, engine: "vieneu", narrator: "Minh Đức", speed: 1.0,
+  "qa-vi": { kind: "qa-vi", lang: "vi", channel: "Hỏi Huy", home: "Huy Kể Chuyện", brandId: "hoi-huy", host: HOST, kid: KID, engine: "vieneu", narrator: "Minh Đức", speed: 1.0,
     how: "vui vẻ, mừng rỡ, cười, ngạc nhiên, lo lắng, quyết tâm, tự hào, buồn rầu, sợ hãi, mệt",
     write: "Write every line in natural, warm Vietnamese for Vietnamese children (Huy calls the viewers \"các bạn\", Mai calls Huy \"anh Huy\"); explain in Vietnamese words, give the English or scientific word only when it helps. Examples and comparisons from Vietnamese children's life (a rice field, a motorbike, a bowl of phở). The checks below count words as written syllables." },
 };
@@ -101,14 +105,19 @@ const CHECK_SCHEMA = {
 };
 const SCENES_SCHEMA = { type: "object", properties: { scenes: { type: "array", items: { type: "object", properties: { index: { type: "number" }, parts: { type: "array", items: PART } }, required: ["index", "parts"] } } }, required: ["scenes"] };
 
-const system = (P: QAProfile) => `You write scripts for "${P.channel}", an animated YouTube channel for children aged 6–12 that answers one question per video (5–8 minutes). The host ${P.host.name} explains; ${P.kid.name}, 8, asks, guesses and tries things. ${P.write}
+/** "Ask Huy", an animated YouTube channel / "Hỏi Huy", a series of the YouTube channel "Huy Kể Chuyện". */
+export const whatIs = (P: QAProfile) => (P.home === P.channel ? `"${P.channel}", an animated YouTube channel` : `"${P.channel}", an animated series of the YouTube channel "${P.home}"`);
+/** Inviting to subscribe names the YouTube channel, not the series (children search for it). */
+const subscribeRule = (P: QAProfile) => `- When inviting the viewers to subscribe or follow (in words or in a picture), name the YouTube channel "${P.home}"${P.home === P.channel ? "" : `, never "${P.channel}" (the series)`}.`;
+const system = (P: QAProfile) => `You write scripts for ${whatIs(P)} for children aged 6–12 that answers one question per video (5–8 minutes). The host ${P.host.name} explains; ${P.kid.name}, 8, asks, guesses and tries things. ${P.write}
 
 Rules:
 - Correct above all: every claim must be supported by the sources given or be basic, settled school knowledge. Numbers rounded and said with "about". If the sources disagree or science is unsure, say so simply ("scientists think…").
 - Simple words, short sentences, one idea at a time; explain any hard word the moment it appears; comparisons from a child's life (a football pitch, a school bus, a grain of rice).
 - Warm and funny, never mocking a wrong guess: guessing is how scientists start.
 - Safe: nothing dangerous to copy, no fire or chemicals at home, no medical advice; no gore or frightening detail.
-- Every scene is one picture that can be drawn as a simple 2D explainer cartoon.`;
+- Every scene is one picture that can be drawn as a simple 2D explainer cartoon.
+${subscribeRule(P)}`;
 
 function prompt(P: QAProfile, question: string, sources: Source[], notes: string[], previous?: string): string {
   const QA = P, HOW = P.how;
@@ -265,7 +274,7 @@ export async function proposeQuestions(count: number, made: { topic: string; are
   const per = Object.fromEntries(AREAS.map((a) => [a, made.filter((m) => m.area === a).length]));
   const { data } = await think<{ questions: Question[] }>({
     job: `topics-${kind}`, step: "propose-questions", model: "sonnet",
-    system: `You plan the videos of "${P.channel}", an animated YouTube channel that answers one question per video for children aged 6–12${P.lang === "vi" ? ", in Vietnamese, for Vietnamese children" : ""}.`,
+    system: `You plan the videos of ${whatIs(P)} that answers one question per video for children aged 6–12${P.lang === "vi" ? ", in Vietnamese, for Vietnamese children" : ""}.`,
     schema: { type: "object", properties: { questions: { type: "array", items: { type: "object", properties: { question: { type: "string" }, area: { enum: [...AREAS] }, why: { type: "string" } }, required: ["question", "area", "why"] } } }, required: ["questions"] },
     prompt: [
       `Propose ${count} questions for the next videos.`,
@@ -371,7 +380,7 @@ export async function proposeFacts(count: number, made: { topic: string }[], log
   const P = profileOf(kind);
   const { data } = await think<{ questions: Question[] }>({
     job: `topics-${kind}`, step: "propose-facts", model: "sonnet",
-    system: `You plan the "Did you know?" Shorts of "${P.channel}", an animated YouTube channel for children aged 6–12${P.lang === "vi" ? ", in Vietnamese" : ""}.`,
+    system: `You plan the "Did you know?" Shorts of ${whatIs(P)} for children aged 6–12${P.lang === "vi" ? ", in Vietnamese" : ""}.`,
     schema: { type: "object", properties: { questions: { type: "array", items: { type: "object", properties: { question: { type: "string" }, area: { enum: [...AREAS] }, why: { type: "string" } }, required: ["question", "area", "why"] } } }, required: ["questions"] },
     prompt: [
       `Propose ${count} facts for the next Shorts. question = the fact as a short headline${P.lang === "vi" ? " in Vietnamese (\"Bạn có biết…?\")" : " (\"Did you know…?\")"}.`,

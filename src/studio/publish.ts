@@ -12,8 +12,12 @@
  *           videos out to be uploaded by hand.
  * The film first, then its Shorts (linking to it) and its English version (English channel).
  *
- * Channels are keyed like the content lines (settings "pick.lines": ask-huy, huy-ke-chuyen);
- * the English versions of stories go to "huy-tells-tales". Secrets stay in studio/secrets/
+ * Two channels (since 2026-11-12): "huy-ke-chuyen" takes everything in Vietnamese (stories,
+ * the Hỏi Huy questions, the English lessons, "Bạn có biết?" Shorts), "ask-huy" everything in
+ * English (the Ask Huy questions, "Did you know?" Shorts, the English versions of the stories,
+ * as the series Huy Tells Tales). Each video goes into a playlist of its series. The older
+ * channel keys (hoi-huy, huy-tells-tales) are read as the channel they were merged into.
+ * Secrets stay in studio/secrets/
  * (git-ignored): client_secret.json (an OAuth "Desktop app" client from Google Cloud) and
  * youtube-<channel>.json (each channel's refresh token).
  *
@@ -32,13 +36,12 @@ import { lineOf, type Line } from "./pick.ts";
 
 export const SECRETS = path.join(STUDIO_DIR, "secrets");
 const CLIENT = path.join(SECRETS, "client_secret.json");
-const SCOPES = ["https://www.googleapis.com/auth/youtube.upload", "https://www.googleapis.com/auth/youtube.readonly"];
+// (youtube: playlists — find, create, add to; youtube.upload alone cannot)
+const SCOPES = ["https://www.googleapis.com/auth/youtube.upload", "https://www.googleapis.com/auth/youtube"];
 
 export interface ChannelCfg {
   name: string;
   lang: "vi" | "en";
-  /** YouTube category: 1 Film & Animation, 27 Education. */
-  category: string;
   /** Local times for full videos (one a day each) and for Shorts. */
   long: string[];
   shorts: string[];
@@ -51,11 +54,12 @@ export type Mode = "off" | "manual" | "auto";
 export const modeOf = (cfg?: Partial<ChannelCfg> & { enabled?: boolean }): Mode => cfg?.mode ?? (cfg?.enabled ? "auto" : "manual");
 export type PublishSettings = Record<string, ChannelCfg>;
 export const PUBLISH_DEFAULTS: PublishSettings = {
-  "huy-ke-chuyen": { name: "Huy Kể Chuyện", lang: "vi", category: "1", long: ["18:00"], shorts: ["11:30", "16:30", "20:30"], mode: "manual" },
-  "huy-tells-tales": { name: "Huy Tells Tales", lang: "en", category: "1", long: ["19:00"], shorts: [], mode: "manual" },
-  "ask-huy": { name: "Ask Huy", lang: "en", category: "27", long: ["17:00"], shorts: ["12:00", "15:00", "19:30"], mode: "manual" },
-  "hoi-huy": { name: "Hỏi Huy", lang: "vi", category: "27", long: ["17:30"], shorts: ["12:30", "19:00"], mode: "manual" },
+  // (four lines a day in Vietnamese: stories, fables, questions, lessons; each with Shorts)
+  "huy-ke-chuyen": { name: "Huy Kể Chuyện", lang: "vi", long: ["08:00", "16:00", "18:00", "19:30"], shorts: ["07:30", "10:30", "12:30", "15:30", "17:30", "20:30"], mode: "manual" },
+  "ask-huy": { name: "Ask Huy", lang: "en", long: ["17:00", "19:00"], shorts: ["09:00", "12:00", "15:00", "19:30"], mode: "manual" },
 };
+/** Channels merged into another (2026-11-12). */
+export const MERGED: Record<string, string> = { "hoi-huy": "huy-ke-chuyen", "huy-tells-tales": "ask-huy" };
 
 export interface Published {
   videoId: string; url: string; publishAt: string; channel: string; at: string;
@@ -70,15 +74,32 @@ export type What = "long" | "short" | "en";
 
 /** Which channel a job's video goes to. */
 export function channelOf(job: Job, what: What, lines: Line[]): string {
-  if (what === "en") return "huy-tells-tales";
-  const line = lineOf(job, lines);
-  return line?.channel ?? line?.id ?? "huy-ke-chuyen";
+  if (what === "en") return "ask-huy";
+  const line = lineOf(job, lines), ch = line?.channel ?? line?.id ?? "huy-ke-chuyen";
+  return MERGED[ch] ?? ch;
+}
+
+const isStory = (job: Job) => !["qa", "qa-vi", "fact", "fact-vi", "lesson"].includes(job.kind ?? "");
+/** YouTube category of a video: stories 1 (Film & Animation), questions and lessons 27 (Education). */
+export const categoryOf = (job: Job) => (isStory(job) ? "1" : "27");
+/** The playlist (series) a video goes into, on its channel; none for a film's Shorts. */
+export function seriesOf(job: Job, what: What): string | undefined {
+  if (what === "en") return "Huy Tells Tales: Vietnamese Folk Tales";
+  switch (job.kind) {
+    case "qa": return what === "short" ? undefined : "Ask Huy: Big Questions";
+    case "qa-vi": return what === "short" ? undefined : "Hỏi Huy";
+    case "fact": return "Did You Know? (Shorts)";
+    case "fact-vi": return "Bạn có biết? (Shorts)";
+    case "lesson": return what === "short" ? undefined : "Học tiếng Anh cùng Huy";
+  }
+  if (what === "short") return undefined;
+  return { "truyền thuyết": "Truyền thuyết Việt Nam", "lịch sử": "Lịch sử Việt Nam cho bé", "ngụ ngôn": "Truyện ngụ ngôn" }[job.kind ?? ""] ?? "Truyện cổ tích Việt Nam";
 }
 
 // ── OAuth (installed app, loopback redirect, PKCE) ──────────────────────────────────────────
 
 interface Client { client_id: string; client_secret: string }
-interface Token { refresh_token: string; access_token?: string; expiry?: number; channelId?: string; channelTitle?: string }
+interface Token { refresh_token: string; access_token?: string; expiry?: number; channelId?: string; channelTitle?: string; playlists?: Record<string, string> }
 
 async function client(): Promise<Client | undefined> {
   if (!(await exists(CLIENT))) return undefined;
@@ -147,7 +168,7 @@ async function api(url: string, access: string, init: RequestInit = {}): Promise
 
 // ── What a video says about itself ──────────────────────────────────────────────────────────
 
-export interface Meta { title: string; description: string; tags: string[]; categoryId: string; lang: string }
+export interface Meta { title: string; description: string; tags: string[]; categoryId: string; lang: string; playlist?: string }
 const cut = (s: string, n: number) => (s.length <= n ? s : `${s.slice(0, n - 1).trimEnd()}…`);
 /** Tags within YouTube's 500 characters. */
 function tagsOf(list: string[]): string[] {
@@ -162,50 +183,54 @@ function tagsOf(list: string[]): string[] {
 
 /** Title, description and tags from the job's plan, sources and summary (no brain needed). */
 export async function metaOf(job: Job, what: What, cfg: ChannelCfg, longUrl?: string): Promise<Meta> {
+  return { ...(await metaText(job, what, cfg, longUrl)), categoryId: categoryOf(job), playlist: seriesOf(job, what) };
+}
+async function metaText(job: Job, what: What, cfg: ChannelCfg, longUrl?: string): Promise<Omit<Meta, "categoryId" | "playlist">> {
   const dir = jobDir(job.slug);
   const read = async (f: string) => ((await exists(path.join(dir, f))) ? JSON.parse(await fsp.readFile(path.join(dir, f), "utf8")) : undefined);
   const sources = ((await read("sources.json")) ?? []) as { title: string; url: string }[];
-  const qa = job.kind === "qa" || job.kind === "qa-vi";
+  const qa = ["qa", "qa-vi", "fact", "fact-vi"].includes(job.kind ?? "");
+  const series = job.kind === "qa-vi" || job.kind === "fact-vi" ? "Hỏi Huy" : "Ask Huy";
   const plan = what === "en" ? (await read("plan.en.json")) ?? (await read("plan.json")) : await read("plan.json");
   const title0 = String(plan?.title ?? job.topic);
   const watch = longUrl ? (cfg.lang === "vi" ? `Xem trọn video: ${longUrl}\n\n` : `Watch the full video: ${longUrl}\n\n`) : "";
   if (job.kind === "lesson") {
     const wordsTaught = ((plan?.words ?? []) as { en: string; vi: string }[]).map((w) => `${w.en} (${w.vi})`).join(", ");
     return {
-      title: cut(what === "short" ? `${title0} #Shorts` : title0, 100), categoryId: "27", lang: "vi",
+      title: cut(what === "short" ? `${title0} #Shorts` : title0, 100), lang: "vi",
       description: cut(`${watch}${plan?.description ?? ""}\n\n${wordsTaught ? `Từ vựng trong bài: ${wordsTaught}\n\n` : ""}Học tiếng Anh cùng Huy: mỗi bài một chủ đề, từ vựng có hình, giọng đọc mẫu chậm và rõ cho các bé.\n\n#HocTiengAnh #TiengAnhChoBe #HocTiengAnhCungHuy`, 5000),
       tags: tagsOf(["học tiếng Anh", "tiếng Anh cho bé", "tiếng Anh trẻ em", "từ vựng tiếng Anh", "Học tiếng Anh cùng Huy", String(plan?.question ?? job.topic), ...((plan?.words ?? []) as { en: string }[]).map((w) => w.en)]),
     };
   }
-  if (qa && cfg.lang === "vi") {
+  if (qa && (job.kind === "qa-vi" || job.kind === "fact-vi")) {
     const question = String(plan?.question ?? job.topic);
-    const base = what === "short" ? `${cut(question, 88)} #Shorts` : title0.includes(cfg.name) ? title0 : `${title0} | ${cfg.name}`;
+    const base = what === "short" ? `${cut(question, 88)} #Shorts` : title0.includes(series) ? title0 : `${title0} | ${series}`;
     return {
-      title: cut(base, 100), categoryId: cfg.category, lang: "vi",
-      description: cut(`${watch}${plan?.description ?? ""}\n\n${plan?.answer ? `Trả lời ngắn: ${plan.answer}\n\n` : ""}${sources.length ? `Nguồn tư liệu:\n${sources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Hỏi Huy: mỗi video trả lời một câu hỏi lớn cho các bạn nhỏ hay tò mò.\n\n#HoiHuy #KhoaHocThieuNhi #HocMaChoi`, 5000),
+      title: cut(base, 100), lang: "vi",
+      description: cut(`${watch}${plan?.description ?? ""}\n\n${plan?.answer ? `Trả lời ngắn: ${plan.answer}\n\n` : ""}${sources.length ? `Nguồn tư liệu:\n${sources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Hỏi Huy (kênh Huy Kể Chuyện): mỗi video trả lời một câu hỏi lớn cho các bạn nhỏ hay tò mò.\n\n#HoiHuy #KhoaHocThieuNhi #HocMaChoi`, 5000),
       tags: tagsOf(["Hỏi Huy", "khoa học thiếu nhi", "giải đáp thắc mắc", "phim hoạt hình giáo dục", question]),
     };
   }
   if (qa) {
     const question = String(plan?.question ?? job.topic);
-    const base = what === "short" ? `${cut(question, 88)} #Shorts` : title0.includes(cfg.name) ? title0 : `${title0} | ${cfg.name}`;
+    const base = what === "short" ? `${cut(question, 88)} #Shorts` : title0.includes(series) ? title0 : `${title0} | ${series}`;
     return {
-      title: cut(base, 100), categoryId: cfg.category, lang: "en",
+      title: cut(base, 100), lang: "en",
       description: cut(`${watch}${plan?.description ?? ""}\n\n${plan?.answer ? `The short answer: ${plan.answer}\n\n` : ""}${sources.length ? `Sources:\n${sources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Ask Huy answers one big question for curious kids in every video. New questions every week!\n\n#AskHuy #KidsScience #LearningForKids`, 5000),
       tags: tagsOf(["Ask Huy", "kids science", "science for kids", "learning for kids", "educational cartoon", question, ...String(job.topic).toLowerCase().replace(/[?!.]/g, "").split(/\s+/).filter((w) => w.length > 3)]),
     };
   }
   if (what === "en") {
     return {
-      title: cut(`${title0} | Vietnamese Folk Tale for Kids`, 100), categoryId: cfg.category, lang: "en",
-      description: cut(`${watch}A Vietnamese ${job.kind === "lịch sử" ? "history story" : "folk tale"} told as a cartoon for children.\n\n${sources.length ? `Sources (Vietnamese Wikipedia):\n${sources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Huy Tells Tales: Vietnamese folk tales and history for kids.\n\n#HuyTellsTales #VietnameseFolkTales #KidsStories`, 5000),
+      title: cut(`${title0} | Vietnamese Folk Tale for Kids`, 100), lang: "en",
+      description: cut(`${watch}A Vietnamese ${job.kind === "lịch sử" ? "history story" : "folk tale"} told as a cartoon for children.\n\n${sources.length ? `Sources (Vietnamese Wikipedia):\n${sources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Huy Tells Tales: Vietnamese folk tales and history for kids, on the Ask Huy channel.\n\n#HuyTellsTales #VietnameseFolkTales #KidsStories`, 5000),
       tags: tagsOf(["Huy Tells Tales", "Vietnamese folk tale", "stories for kids", "kids cartoon", "Vietnam", title0]),
     };
   }
   const kind = job.kind ?? "truyện cổ tích";
   const base = what === "short" ? `${cut(title0, 85)} #Shorts` : `${title0} | ${kind[0]!.toUpperCase()}${kind.slice(1)} Việt Nam | ${cfg.name}`;
   return {
-    title: cut(base, 100), categoryId: cfg.category, lang: "vi",
+    title: cut(base, 100), lang: "vi",
     description: cut(`${watch}${job.summary ?? ""}\n\n${sources.length ? `Nguồn tư liệu:\n${sources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Huy Kể Chuyện: truyện cổ tích, truyền thuyết và lịch sử Việt Nam cho bé, kể bằng phim hoạt hình.\n\n#HuyKeChuyen #TruyenCoTich #TruyenThieuNhi`, 5000),
     tags: tagsOf(["Huy Kể Chuyện", "truyện cổ tích", "truyện thiếu nhi", "phim hoạt hình", kind, title0, "Việt Nam"]),
   };
@@ -263,6 +288,27 @@ async function setThumbnail(channel: string, videoId: string, jpg: string, log: 
   }
 }
 
+/** Put a video into the channel's playlist of that name (made public if it is new); a failure is noted, not fatal. */
+async function addToPlaylist(channel: string, videoId: string, title: string, log: (s: string) => void): Promise<void> {
+  try {
+    const t = (await token(channel))!, access = await accessToken(channel);
+    let id = t.playlists?.[title];
+    if (!id) {
+      const mine = await api("https://www.googleapis.com/youtube/v3/playlists?part=snippet&mine=true&maxResults=50", access) as { items?: { id: string; snippet: { title: string } }[] };
+      id = mine.items?.find((p) => p.snippet.title === title)?.id;
+      if (!id) {
+        const made = await api("https://www.googleapis.com/youtube/v3/playlists?part=snippet,status", access, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ snippet: { title }, status: { privacyStatus: "public" } }) }) as { id: string };
+        id = made.id;
+        log(`  + danh sách phát mới: ${title}`);
+      }
+      await saveToken(channel, { ...((await token(channel))!), playlists: { ...(t.playlists ?? {}), [title]: id } });
+    }
+    await api("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet", access, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ snippet: { playlistId: id, resourceId: { kind: "youtube#video", videoId } } }) });
+  } catch (err) {
+    log(`  ⚠ danh sách phát "${title}": ${(err as Error).message.slice(0, 160)} (kết nối lại kênh nếu thiếu quyền)`);
+  }
+}
+
 /** What of a finished job is still to be published, in order: the film, its English version, its Shorts. */
 export function toPublish(job: Job, files: string[]): { what: What; file: string; index?: number }[] {
   if (job.status !== "done" || job.publishHold) return [];
@@ -292,6 +338,7 @@ export async function publishOne(slug: string, item: { what: What; file: string;
   const videoId = await upload(channel, path.join(jobDir(slug), item.file), meta, at);
   const jpg = path.join(jobDir(slug), item.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg");
   if (item.what !== "short" && (await exists(jpg))) await setThumbnail(channel, videoId, jpg, log);
+  if (meta.playlist) await addToPlaylist(channel, videoId, meta.playlist, log);
   const done: Published = { videoId, url: item.what === "short" ? `https://youtube.com/shorts/${videoId}` : `https://youtu.be/${videoId}`, publishAt: at.toISOString(), channel, at: new Date().toISOString() };
   const fresh = await loadJob(slug);
   fresh.published ??= {};
@@ -310,9 +357,10 @@ const SETTINGS = path.join(STUDIO_DIR, "settings.json");
 /** The channels' settings, old ones ("enabled") read as modes. */
 export function normalise(raw?: Record<string, Partial<ChannelCfg> & { enabled?: boolean }>): PublishSettings {
   const out: PublishSettings = {};
-  for (const [k, c] of Object.entries({ ...PUBLISH_DEFAULTS, ...(raw ?? {}) })) {
-    const { enabled: _, ...rest } = c as ChannelCfg & { enabled?: boolean };
-    out[k] = { ...PUBLISH_DEFAULTS[k], ...rest, mode: modeOf(c) } as ChannelCfg;
+  for (const [k, def] of Object.entries(PUBLISH_DEFAULTS)) {
+    const c = { ...def, ...(raw?.[k] ?? {}) } as ChannelCfg & { enabled?: boolean; category?: string };
+    const { enabled: _, category: __, ...rest } = c;
+    out[k] = { ...rest, mode: modeOf(raw?.[k] ?? def) };
   }
   return out;
 }
@@ -360,6 +408,7 @@ export function uploadSheet(meta: Meta, cfg: ChannelCfg, what: What, at: Date, t
     "- Đối tượng người xem: Có, nội dung này dành cho trẻ em",
     "- Nội dung có sự thay đổi (altered content): Không (phim hoạt hình, không giả người thật)",
     `- Danh mục: ${CATEGORY_VI[meta.categoryId] ?? meta.categoryId}`,
+    ...(meta.playlist ? [`- Danh sách phát: ${meta.playlist} (tạo trong YouTube Studio nếu chưa có)`] : []),
     `- Ngôn ngữ video: ${meta.lang === "vi" ? "Tiếng Việt" : "Tiếng Anh (English)"}`,
     ...(thumb ? ["- Hình thu nhỏ: anh-bia.jpg (trong thư mục này)"] : what === "short" ? ["- Short: không cần hình thu nhỏ"] : []),
     "",

@@ -44,4 +44,8 @@ test("question and fact kinds share the pipeline; the language follows the kind"
   assert.equal(profileOf("fact-vi").lang, "vi");
   assert.equal(profileOf("fact").channel, "Ask Huy");
   assert.equal(profileOf("qa-vi").channel, "Hỏi Huy");
+  // (Hỏi Huy is a series of Huy Kể Chuyện: inviting to subscribe names that channel)
+  assert.equal(profileOf("qa-vi").home, "Huy Kể Chuyện");
+  assert.equal(profileOf("fact-vi").home, "Huy Kể Chuyện");
+  assert.equal(profileOf("qa").home, "Ask Huy");
 });

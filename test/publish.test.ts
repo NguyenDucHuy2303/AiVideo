@@ -1,16 +1,33 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { channelOf, nextSlot, PUBLISH_DEFAULTS, toPublish } from "../src/studio/publish.ts";
+import { categoryOf, channelOf, nextSlot, PUBLISH_DEFAULTS, seriesOf, toPublish } from "../src/studio/publish.ts";
 import { PICK_DEFAULTS } from "../src/studio/pick.ts";
 import type { Job } from "../src/studio/jobs.ts";
 
 const job = (extra: Partial<Job> = {}): Job => ({ slug: "x", topic: "x", status: "done", notes: [], history: [{ at: "2026-11-10T01:00:00Z", status: "writing" }], ...extra });
 
-test("a story goes to Huy Kể Chuyện, its English version to Huy Tells Tales, a question to Ask Huy", () => {
+test("two channels: everything Vietnamese on Huy Kể Chuyện, everything English on Ask Huy", () => {
   const lines = PICK_DEFAULTS.lines;
   assert.equal(channelOf(job({ kind: "truyền thuyết" }), "long", lines), "huy-ke-chuyen");
-  assert.equal(channelOf(job({ kind: "truyền thuyết" }), "en", lines), "huy-tells-tales");
+  assert.equal(channelOf(job({ kind: "truyền thuyết" }), "en", lines), "ask-huy");
   assert.equal(channelOf(job({ kind: "qa" }), "short", lines), "ask-huy");
+  assert.equal(channelOf(job({ kind: "fact" }), "short", lines), "ask-huy");
+  for (const kind of ["qa-vi", "fact-vi", "lesson", "ngụ ngôn", "lịch sử"]) assert.equal(channelOf(job({ kind }), "long", lines), "huy-ke-chuyen", kind);
+  // (older settings still naming the merged channels)
+  const old = lines.map((l) => (l.id === "hoc-tieng-anh" ? { ...l, channel: "hoi-huy" } : l));
+  assert.equal(channelOf(job({ kind: "lesson" }), "long", old), "huy-ke-chuyen");
+});
+
+test("each video's category and playlist come from its series", () => {
+  assert.equal(categoryOf(job({ kind: "truyền thuyết" })), "1");
+  assert.equal(categoryOf(job({ kind: "qa-vi" })), "27");
+  assert.equal(categoryOf(job({ kind: "lesson" })), "27");
+  assert.equal(seriesOf(job({ kind: "truyền thuyết" }), "long"), "Truyền thuyết Việt Nam");
+  assert.equal(seriesOf(job({ kind: "truyền thuyết" }), "en"), "Huy Tells Tales: Vietnamese Folk Tales");
+  assert.equal(seriesOf(job({ kind: "truyền thuyết" }), "short"), undefined);
+  assert.equal(seriesOf(job({ kind: "qa-vi" }), "long"), "Hỏi Huy");
+  assert.equal(seriesOf(job({ kind: "fact-vi" }), "short"), "Bạn có biết? (Shorts)");
+  assert.equal(seriesOf(job({ kind: "lesson" }), "long"), "Học tiếng Anh cùng Huy");
 });
 
 test("the next publishing time: at least two hours ahead, never one already taken", () => {
@@ -40,13 +57,14 @@ test("a Did-you-know Short is published as a Short, once", () => {
 
 import { dueCheck, normalise, takenTimes, uploadSheet, verdict, videoIdOf, type Published } from "../src/studio/publish.ts";
 
-test("channel modes: old settings read as modes, every channel manual by default", () => {
-  const s = normalise({ "ask-huy": { enabled: true } as never, "huy-ke-chuyen": { enabled: false } as never, "hoi-huy": { mode: "off" } as never });
+test("channel modes: old settings read as modes; only the two channels, manual by default", () => {
+  const s = normalise({ "ask-huy": { enabled: true, category: "27" } as never, "huy-ke-chuyen": { enabled: false } as never, "hoi-huy": { mode: "off" } as never });
   assert.equal(s["ask-huy"]!.mode, "auto");
   assert.equal(s["huy-ke-chuyen"]!.mode, "manual");
-  assert.equal(s["hoi-huy"]!.mode, "off");
-  assert.equal(s["huy-tells-tales"]!.mode, "manual");
+  assert.deepEqual(Object.keys(s).sort(), ["ask-huy", "huy-ke-chuyen"]);
+  assert.equal(normalise({})["ask-huy"]!.mode, "manual");
   assert.equal("enabled" in s["ask-huy"]!, false);
+  assert.equal("category" in s["ask-huy"]!, false);
   assert.deepEqual(s["ask-huy"]!.long, PUBLISH_DEFAULTS["ask-huy"]!.long);
 });
 
@@ -72,11 +90,11 @@ test("an auto upload is looked at half an hour after its hour, every 30 minutes,
 
 test("the sheet beside an exported video, and its time kept from other videos", () => {
   const cfg = { ...PUBLISH_DEFAULTS["ask-huy"]! };
-  const txt = uploadSheet({ title: "Why is the sky blue? | Ask Huy", description: "Light from the Sun…", tags: ["Ask Huy", "kids science"], categoryId: "27", lang: "en" }, cfg, "long", new Date(2026, 10, 13, 17, 0), true);
-  for (const want of ["KÊNH: Ask Huy", "17:00 Thứ Sáu 13/11/2026", "Why is the sky blue? | Ask Huy", "Ask Huy, kids science", "dành cho trẻ em", "Giáo dục", "Tiếng Anh", "anh-bia.jpg"]) assert.ok(txt.includes(want), want);
+  const txt = uploadSheet({ title: "Why is the sky blue? | Ask Huy", description: "Light from the Sun…", tags: ["Ask Huy", "kids science"], categoryId: "27", lang: "en", playlist: "Ask Huy: Big Questions" }, cfg, "long", new Date(2026, 10, 13, 17, 0), true);
+  for (const want of ["KÊNH: Ask Huy", "17:00 Thứ Sáu 13/11/2026", "Why is the sky blue? | Ask Huy", "Ask Huy, kids science", "dành cho trẻ em", "Giáo dục", "Tiếng Anh", "anh-bia.jpg", "Danh sách phát: Ask Huy: Big Questions"]) assert.ok(txt.includes(want), want);
   const ex = { dir: "/x", publishAt: "2026-11-13T10:00:00.000Z", channel: "ask-huy", at: "t" };
   assert.deepEqual(takenTimes([job({ exported: { long: ex } })], "ask-huy"), [ex.publishAt]);
-  assert.deepEqual(takenTimes([job({ exported: { long: ex } })], "hoi-huy"), []);
+  assert.deepEqual(takenTimes([job({ exported: { long: ex } })], "huy-ke-chuyen"), []);
 });
 
 test("a Short goes public after its film, never before", () => {

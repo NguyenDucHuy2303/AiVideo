@@ -1,6 +1,9 @@
 # CLAUDE.md — Wata Video Studio
 
-Phần mềm chạy trên máy, tự làm phim hoạt hình thiếu nhi tiếng Việt cho kênh **Huy Kể Chuyện** (tiếng Anh: **Huy Tells Tales**). Chủ kênh là Nguyễn Đức Huy.
+Phần mềm chạy trên máy, tự làm phim hoạt hình thiếu nhi. Chủ kênh là Nguyễn Đức Huy. Từ 12/11/2026 chỉ còn **hai kênh YouTube**:
+- **Huy Kể Chuyện** (tiếng Việt): truyện, lịch sử, ngụ ngôn, chuyên mục Hỏi Huy, Học tiếng Anh, Shorts "Bạn có biết?".
+- **Ask Huy** (tiếng Anh): hỏi–đáp, Shorts "Did you know?", bản tiếng Anh của truyện (chuyên mục Huy Tells Tales).
+- Lời mời đăng ký luôn nêu tên kênh thật, không nêu tên chuyên mục (`home` trong `src/studio/qa.ts`). Đăng video: `src/studio/publish.ts` (Xuất tay vào `~/Videos/Wata` hoặc Tự đăng khi đã qua audit).
 
 Luồng chính: chủ đề → tư liệu → kịch bản có lời thoại → nhân vật và bảng trang phục → **người dùng duyệt** → giọng, chỉ đạo cảnh, tranh nền → render → **người dùng duyệt video** → bản tiếng Anh và Shorts.
 

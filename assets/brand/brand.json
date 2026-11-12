@@ -11,14 +11,15 @@
   "languages": {
     "en": {
       "name": "Huy Tells Tales",
-      "tagline": "Vietnamese folk tales & history for kids",
+      "tagline": "Vietnamese folk tales on Ask Huy",
       "texts": {
         "thanks": "Thanks for watching!",
         "subscribe": "SUBSCRIBE",
         "subscribed": "SUBSCRIBED",
-        "watchFull": "Watch the whole story on",
-        "follow": "Don't forget to subscribe!"
-      }
+        "watchFull": "Watch the whole story on Ask Huy",
+        "follow": "Subscribe to Ask Huy!"
+      },
+      "channel": "Ask Huy"
     }
   }
 }
