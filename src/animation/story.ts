@@ -20,7 +20,7 @@ import { AUDIO_SAMPLE_RATE, FFMPEG, FONTS_DIR, ROOT } from "../config.ts";
 import { exists, slugify } from "../utils/fs.ts";
 import { run } from "../utils/process.ts";
 import { capture } from "./capture.ts";
-import { brandClip, brandStills, loadBrand, thumbnail } from "./brand/brand.ts";
+import { brandClip, brandStills, loadBrand, thumbnail, type Brand } from "./brand/brand.ts";
 import { withBackdrop } from "./backdrops.ts";
 import { loadScene } from "./render.ts";
 
@@ -88,6 +88,34 @@ const stamp = (s: number) => {
 };
 
 interface Cue { text: string; from: number; to: number; who?: string; mood?: string }
+
+const STRONG = /determined|shout|angry|surprised|proud|happy|laugh/;
+
+/**
+ * Moments for the thumbnails, `n` of them, at least 8 s (or an eighth of the film) apart, out
+ * of the `avoid` spans (explainer boards): the given one first, then one per character, those
+ * who speak most first (the leads), each at their best line (a strong face, then the longest:
+ * a big, telling close-up); then any line; failing lines, points through the film.
+ */
+export function thumbMoments(dialogue: Cue[], total: number, o: { at?: number; avoid?: [number, number][]; n?: number } = {}): number[] {
+  const n = o.n ?? 3, gap = Math.max(8, total / 8), mid = (c: Cue) => (c.from + c.to) / 2, len = (c: Cue) => c.to - c.from;
+  const off = (t: number) => (o.avoid ?? []).some(([a, b]) => t >= a && t < b);
+  const best = (a: Cue, b: Cue) => Number(STRONG.test(b.mood ?? "")) - Number(STRONG.test(a.mood ?? "")) || len(b) - len(a);
+  const lines = dialogue.filter((c) => !off(mid(c))).sort(best);
+  const time = new Map<string | undefined, number>();
+  for (const c of dialogue) time.set(c.who, (time.get(c.who) ?? 0) + len(c));
+  const leads = [...time.keys()].sort((a, b) => time.get(b)! - time.get(a)!);
+  // (the given moment too must not be a board: a question's opening scene sometimes has one)
+  const picked: { t: number; who?: string }[] = o.at !== undefined && !off(o.at) ? [{ t: o.at }] : [];
+  const far = (t: number) => picked.every((p) => Math.abs(p.t - t) >= gap);
+  for (const who of leads) {
+    const c = picked.length < n ? lines.find((c) => c.who === who && far(mid(c))) : undefined;
+    if (c) picked.push({ t: mid(c), who });
+  }
+  for (const c of lines) if (picked.length < n && far(mid(c))) picked.push({ t: mid(c), who: c.who });
+  for (const f of [0.6, 0.35, 0.8, 0.2, 0.5]) if (picked.length < n && far(total * f) && !off(total * f)) picked.push({ t: total * f });
+  return picked.map((p) => Math.round(Math.max(0, Math.min(total - 0.5, p.t)) * 100) / 100);
+}
 
 /** Captions from the timed cues: the narrator in white, characters' lines in warm yellow. */
 export function subtitles(cues: Cue[], cards: { at: number; title: string; no: number }[], W: number, H: number): string {
@@ -372,16 +400,53 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
     "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-crf", "19", "-preset", "medium", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-t", length.toFixed(3), "-movflags", "+faststart", out,
   ], { timeoutMs: 20 * 60_000 });
   if (brand && !opts.short) {
-    // project.json "thumbnail": { "at": seconds into the story, "title", "subtitle" }.
-    const th = project.thumbnail ?? {};
-    // Default: the close-up on the longest strong line (a big, telling face), else 60 % in.
-    const strong = dialogue.filter((c) => /determined|shout|angry|surprised|proud|happy|laugh/.test(c.mood ?? "")).sort((a, b) => (b.to - b.from) - (a.to - a.from))[0];
-    const at = Math.min(total - 0.5, th.at ?? (strong ? (strong.from + strong.to) / 2 : total * 0.6));
-    const jpg = out.replace(/\.mp4$/, "_thumbnail.jpg");
-    await thumbnail(brand, picture, at, th.title ?? storyboard.title ?? path.basename(dir), th.subtitle ?? brand.tagline, jpg);
-    log(`  thumbnail: ${path.relative(dir, jpg)}`);
+    const sceneAt = (i: number) => durations.slice(0, i).reduce((a, b) => a + b, 0);
+    const boards = scripts.filter((sc) => sc.scene.board).map((sc) => [sceneAt(sc.covers[0]!), sceneAt(sc.covers.at(-1)! + 1)] as [number, number]);
+    for (const jpg of await writeThumbnails(brand, picture, out, dialogue, total, boards, project.thumbnail ?? {}, storyboard.title ?? path.basename(dir))) log(`  thumbnail: ${path.relative(dir, jpg)}`);
   }
   return out;
+}
+
+/**
+ * Three thumbnails from three moments (the user picks one; a weak click rate, another), next to
+ * the film: _thumbnail.jpg (project.json "thumbnail": { "at", "title", "subtitle" }; without
+ * "at", the close-up on the longest strong line), _thumbnail-2.jpg, _thumbnail-3.jpg.
+ */
+async function writeThumbnails(brand: Brand, picture: string, out: string, dialogue: Cue[], total: number, boards: [number, number][], th: { at?: number; title?: string; subtitle?: string }, title: string): Promise<string[]> {
+  const made: string[] = [];
+  for (const [k, at] of thumbMoments(dialogue, total, { at: th.at, avoid: boards }).entries()) {
+    const jpg = out.replace(/\.mp4$/, k ? `_thumbnail-${k + 1}.jpg` : "_thumbnail.jpg");
+    await thumbnail(brand, picture, at, th.title ?? title, th.subtitle ?? brand.tagline, jpg);
+    made.push(jpg);
+  }
+  return made;
+}
+
+/**
+ * The three thumbnails again for a film already rendered, from its picture without captions
+ * (kept in build/anim/16x9-work): for films made when there was one. Returns the files.
+ */
+export async function remakeThumbnails(projectDir: string, lang?: string): Promise<string[]> {
+  const dir = path.resolve(projectDir);
+  const storyboard = JSON.parse(await fs.readFile(path.join(dir, "storyboard.json"), "utf8"));
+  const timeline = JSON.parse(await fs.readFile(path.join(dir, "timeline.json"), "utf8"));
+  const project = (await exists(path.join(dir, "project.json"))) ? JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8")) : {};
+  const brand = await loadBrand(lang, project.brandId);
+  const picture = path.join(dir, "build", "anim", "16x9-work", "picture.mp4");
+  if (!brand || !(await exists(picture))) return [];
+  const durations: number[] = timeline.scenes.map((s: { durationFrames: number }) => s.durationFrames / timeline.fps);
+  const sceneAt = (i: number) => durations.slice(0, i).reduce((a, b) => a + b, 0);
+  const cues: Cue[] = [];
+  timeline.scenes.forEach((sc: { captionCues?: { text: string; startFrame: number; endFrame: number; who?: string; mood?: string }[] }, i: number) => {
+    for (const c of sc.captionCues ?? []) cues.push({ text: c.text, from: sceneAt(i) + c.startFrame / timeline.fps, to: sceneAt(i) + c.endFrame / timeline.fps, who: c.who, mood: c.mood });
+  });
+  const boards: [number, number][] = [];
+  for (const f of (await fs.readdir(path.join(dir, "anim"))).filter((f) => f.endsWith(".json"))) {
+    const cov = covers(f.slice(0, -5));
+    if (cov && JSON.parse(await fs.readFile(path.join(dir, "anim", f), "utf8")).board) boards.push([sceneAt(cov[0]!), sceneAt(cov.at(-1)! + 1)]);
+  }
+  const out = path.join(dir, "out", `${slugify(storyboard.title || path.basename(dir))}-hoat-hinh_16x9.mp4`);
+  return writeThumbnails(brand, picture, out, cues.filter((c) => c.who), sceneAt(durations.length), boards, project.thumbnail ?? {}, storyboard.title ?? path.basename(dir));
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {

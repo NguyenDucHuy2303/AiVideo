@@ -9,6 +9,7 @@
  * so the user can approve several at once and the nights never run dry.
  */
 import { hasApiKey, hintsFor, refreshOwnStats, refreshPopular } from "./trends.ts";
+import { jobOccasion } from "./occasions.ts";
 import { wasInterrupted } from "../utils/process.ts";
 import { channelOf, checkOne, dueCheck, exportJob, needsExport, normalise, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings, type Published, type What } from "./publish.ts";
 import { dailyPick, lineOf, PICK_DEFAULTS, proposerOf, type PickSettings } from "./pick.ts";
@@ -51,6 +52,18 @@ export async function settings(): Promise<ScheduleSettings> {
   return s;
 }
 
+/** A content line's videos a week (0–21; the review page). */
+export async function saveLineWeek(id: string, perWeek: number): Promise<ScheduleSettings> {
+  if (!Number.isFinite(perWeek) || perWeek < 0 || perWeek > 21) throw new Error("số video mỗi tuần: từ 0 đến 21");
+  const s = await settings(), raw = JSON.parse(await fs.readFile(SETTINGS, "utf8"));
+  const line = s.pick.lines.find((l) => l.id === id);
+  if (!line) throw new Error(`không có dòng "${id}"`);
+  line.perWeek = Math.round(perWeek * 2) / 2;
+  raw.pick = s.pick;
+  await fs.writeFile(SETTINGS, JSON.stringify(raw, null, 2));
+  return s;
+}
+
 const minutes = (hhmm: string) => { const [h, m] = hhmm.split(":").map(Number); return h! * 60 + m!; };
 
 export function isOffice(at: Date, s: ScheduleSettings): boolean {
@@ -82,7 +95,9 @@ async function log(line: string): Promise<void> {
 async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<{ what: string; slug?: string; run: () => Promise<unknown> } | undefined> {
   const known = await eras();
   // Jobs waiting for Claude to come back are left alone until their time.
-  const first = (f: (j: Job) => boolean) => jobs.find((j) => (!j.retryAt || new Date(j.retryAt) <= new Date()) && f(j));
+  // A job for a coming occasion (Christmas, Tết…) goes before the others, the soonest first.
+  const soon = new Map(jobs.map((j) => [j.slug, jobOccasion(j)?.left ?? 999]));
+  const first = (f: (j: Job) => boolean) => jobs.filter((j) => (!j.retryAt || new Date(j.retryAt) <= new Date()) && f(j)).sort((a, b) => soon.get(a.slug)! - soon.get(b.slug)!)[0];
   const say = (slug: string) => (l: string) => void log(`[${slug}] ${l.trim()}`);
   const ready = first((j) => j.status === "producing" && j.stage === "ready");
   if (!office && ready) return { what: "render", slug: ready.slug, run: () => render(ready.slug, say(ready.slug)) };

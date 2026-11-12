@@ -14,12 +14,18 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { think } from "../brain/claude.ts";
 import { jobDir, loadJob, saveJob, setStatus, type Job } from "./jobs.ts";
+import { jobOccasion } from "./occasions.ts";
 
 export interface Line {
   id: string;
   name: string;
   kinds?: string[];
   perDay: number;
+  /**
+   * Videos a week (the review page sets it): the pick then approves at most this many in any
+   * seven days, spread out (3 a week: every two or three days). Without it: perDay × 7.
+   */
+  perWeek?: number;
   /** Scripts kept written ahead, waiting for review (default: settings scriptsAhead). */
   ahead?: number;
   /** How new topics are found when the line runs low: stories, animal fables, or questions (qa.ts). */
@@ -75,32 +81,69 @@ export async function scoreJob(slug: string, log: (s: string) => void = () => {}
   return fresh.score;
 }
 
+/** A line's videos a week. */
+export const weekly = (l: Line) => l.perWeek ?? l.perDay * 7;
+
 /**
- * The pick for today, line by line: scripts waiting for review are scored (once) and the best
- * are approved up to the line's videos per day. Returns what was approved.
+ * How many scripts a line still needs approved today: no more than its share of a day, no more
+ * than its week allows (the last seven days, today included), and with fewer than one a day,
+ * not before its turn (3 a week: two days after the last one).
  */
-export async function dailyPick(jobs: Job[], s: PickSettings, log: (s: string) => void): Promise<string[]> {
+export function needToday(line: Line, mine: Job[], now = new Date()): number {
+  const week = weekly(line);
+  if (week <= 0) return 0;
+  const today = day(now), start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 6).getTime();
+  // Each job counts once, on the day it was (last) approved.
+  const days = mine.map((j) => [...j.history].reverse().find((h) => h.status === "approved")?.at).filter((at): at is string => !!at);
+  const inWeek = days.filter((at) => new Date(at).getTime() >= start).length;
+  const onDay = days.filter((at) => day(at) === today).length;
+  let need = Math.min(Math.ceil(week / 7) - onDay, Math.round(week) - inWeek);
+  if (week < 7 && need > 0) {
+    const before = days.filter((at) => day(at) < today).sort().at(-1);
+    const gap = Math.floor(7 / week);
+    if (before && (new Date(today).getTime() - new Date(day(before)).getTime()) / 86_400_000 < gap) need = 0;
+  }
+  return Math.max(0, need);
+}
+
+/** Days before an occasion within which its script is approved even beyond the line's share. */
+export const URGENT_DAYS = 14;
+
+/**
+ * The pick for today, line by line. A script for a coming occasion (Christmas, Tết…: trends.ts)
+ * goes first, two to fourteen days ahead even if the line has had its share (one a day); then
+ * the scripts waiting for review are scored (once) and the best approved up to the line's need.
+ * Returns what was approved.
+ */
+export async function dailyPick(jobs: Job[], s: PickSettings, log: (s: string) => void, now = new Date()): Promise<string[]> {
   const picked: string[] = [];
   for (const line of s.lines) {
     const mine = jobs.filter((j) => lineOf(j, s.lines) === line);
-    const need = line.perDay - mine.filter((j) => approvedToday(j)).length;
-    if (need <= 0) continue;
+    let need = needToday(line, mine, now);
     const waiting = mine.filter((j) => j.status === "review" && !j.retryAt);
+    const urgent = waiting.map((job) => ({ job, o: jobOccasion(job, now) }))
+      .filter((x) => x.o && x.o.left >= 2 && x.o.left <= URGENT_DAYS).sort((a, b) => a.o!.left - b.o!.left)[0];
+    if (need <= 0 && !urgent) continue;
     if (!waiting.length) { log(`  ${line.name}: không có kịch bản chờ duyệt`); continue; }
-    // A script that cannot be scored (Claude at its limit, the job's budget spent) still counts:
-    // it comes after the scored ones, so the line never goes without its videos.
-    const scored: { job: Job; score: number }[] = [];
-    for (const j of waiting) {
-      try { scored.push({ job: j, score: (await scoreJob(j.slug, log)).value }); }
-      catch (err) { scored.push({ job: j, score: 0 }); log(`  ${j.slug}: chưa chấm được (${(err as Error).message.slice(0, 80)})`); }
+    const chosen: { job: Job; why: string }[] = [];
+    if (urgent) { chosen.push({ job: urgent.job, why: `cho dịp ${urgent.o!.short}, còn ${urgent.o!.left} ngày` }); need -= 1; }
+    if (need > 0) {
+      // A script that cannot be scored (Claude at its limit, the job's budget spent) still counts:
+      // it comes after the scored ones, so the line never goes without its videos.
+      const scored: { job: Job; score: number }[] = [];
+      for (const j of waiting.filter((j) => j !== urgent?.job)) {
+        try { scored.push({ job: j, score: (await scoreJob(j.slug, log)).value }); }
+        catch (err) { scored.push({ job: j, score: 0 }); log(`  ${j.slug}: chưa chấm được (${(err as Error).message.slice(0, 80)})`); }
+      }
+      // Coming occasions first, then the best; equal scores (or none): the one waiting longest.
+      const soon = (j: Job) => jobOccasion(j, now)?.left ?? 999;
+      scored.sort((a, b) => soon(a.job) - soon(b.job) || b.score - a.score || a.job.history[0]!.at.localeCompare(b.job.history[0]!.at));
+      for (const { job, score } of scored.slice(0, need)) chosen.push({ job, why: score ? `điểm ${score}/10` : "chưa chấm được điểm, chờ lâu nhất" });
     }
-    // Best first; equal scores (or none): the one waiting longest.
-    scored.sort((a, b) => b.score - a.score || a.job.history[0]!.at.localeCompare(b.job.history[0]!.at));
-    for (const { job, score } of scored.slice(0, need)) {
+    for (const { job, why } of chosen) {
       const j = await loadJob(job.slug);
       if (j.status !== "review") continue;
       j.autoPicked = true;
-      const why = score ? `điểm ${score}/10` : "chưa chấm được điểm, chờ lâu nhất";
       await setStatus(j, "approved", `tự chọn lúc ${s.at} (${why})`);
       picked.push(j.slug);
       log(`  ${line.name}: tự chọn ${j.slug} (${why})`);

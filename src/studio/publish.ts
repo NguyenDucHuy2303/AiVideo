@@ -433,7 +433,10 @@ export function needsExport(job: Job, files: string[], settings: PublishSettings
 }
 
 /** One video's part of the sheet: everything to fill in on YouTube Studio's upload page. */
-export function sheetSection(n: number, file: string, meta: Meta, cfg: ChannelCfg, what: What, at: Date, thumb: string | undefined, done?: Published): string {
+/** The other thumbnails of a film's main one ("thumbnail.jpg" → thumbnail-2.jpg, -3; "thumbnail.en.jpg" → thumbnail-2.en.jpg…). */
+export const thumbVariants = (jpg: string, files: string[]) => [2, 3].map((k) => jpg.replace(/^thumbnail/, `thumbnail-${k}`)).filter((f) => files.includes(f));
+
+export function sheetSection(n: number, file: string, meta: Meta, cfg: ChannelCfg, what: What, at: Date, thumb: string | undefined, done?: Published, moreThumbs: string[] = []): string {
   return [
     `════════ ${n}. ${WHAT_VI[what]}: ${file} ════════`,
     ...(done ? [`✔ ĐÃ ĐĂNG: ${done.url}`, ""] : []),
@@ -450,6 +453,8 @@ export function sheetSection(n: number, file: string, meta: Meta, cfg: ChannelCf
     ...(meta.playlist ? [`- Danh sách phát: ${meta.playlist} (tạo trong YouTube Studio nếu chưa có)`] : []),
     `- Ngôn ngữ video: ${meta.lang === "vi" ? "Tiếng Việt" : "Tiếng Anh (English)"}`,
     ...(thumb ? [`- Hình thu nhỏ: ${thumb}`] : what === "short" ? ["- Short: không cần hình thu nhỏ"] : []),
+    // (YouTube's A/B test of thumbnails is closed to videos made for kids: changed by hand instead)
+    ...(thumb && moreThumbs.length ? [`  Có thêm ${moreThumbs.join(", ")}: chọn ảnh anh thấy hút mắt nhất. Sau 3–4 ngày xem "Tỷ lệ nhấp" (CTR) ở YouTube Studio → Số liệu phân tích → Phạm vi tiếp cận; thấp hơn các video khác của kênh thì đổi sang ảnh khác.`] : []),
     "", "",
   ].join("\n");
 }
@@ -509,9 +514,11 @@ export async function exportJob(slug: string, jobs: Job[], settings: PublishSett
     const name = fileNameOf(job, item);
     await place(path.join(dir, item.file), path.join(folder, name));
     const jpg = item.what === "short" ? undefined : item.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg", thumb = jpg && files.includes(jpg) ? (item.what === "en" ? "anh-bia-tieng-anh.jpg" : "anh-bia.jpg") : undefined;
-    if (thumb) await place(path.join(dir, jpg!), path.join(folder, thumb));
+    // The other two pictures (thumbnail-2.jpg, -3): to choose from, or to change to later.
+    const more = thumb ? thumbVariants(jpg!, files).map((f, k) => [f, thumb.replace(/\.jpg$/, `-${k + 2}.jpg`)] as const) : [];
+    if (thumb) for (const [from, to] of [[jpg!, thumb] as const, ...more]) await place(path.join(dir, from), path.join(folder, to));
     const meta = await metaOf(job, item.what, cfg, item.what === "short" && !isFactJob(job) ? job.published?.long?.url ?? LINK_HERE : undefined);
-    sections.push(sheetSection(n + 1, name, meta, cfg, item.what, at, thumb, done));
+    sections.push(sheetSection(n + 1, name, meta, cfg, item.what, at, thumb, done, more.map((m) => m[1])));
     if (!done) {
       const ex: Exported = { dir: folder, publishAt: at.toISOString(), channel, at: (opts.now ?? new Date()).toISOString() };
       if (item.what === "short") (exported.shorts ??= [])[item.index!] = ex; else exported[item.what] = ex;

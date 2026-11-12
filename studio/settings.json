@@ -23,7 +23,8 @@
         ],
         "perDay": 1,
         "ahead": 3,
-        "propose": "questions"
+        "propose": "questions",
+        "perWeek": 4
       },
       {
         "id": "hoi-huy",
@@ -34,7 +35,8 @@
         "perDay": 1,
         "ahead": 2,
         "propose": "questions",
-        "channel": "huy-ke-chuyen"
+        "channel": "huy-ke-chuyen",
+        "perWeek": 2
       },
       {
         "id": "ngu-ngon",
@@ -45,7 +47,8 @@
         "perDay": 1,
         "ahead": 2,
         "propose": "fables",
-        "channel": "huy-ke-chuyen"
+        "channel": "huy-ke-chuyen",
+        "perWeek": 2
       },
       {
         "id": "ask-huy-shorts",
@@ -56,7 +59,8 @@
         "perDay": 1,
         "ahead": 3,
         "propose": "facts",
-        "channel": "ask-huy"
+        "channel": "ask-huy",
+        "perWeek": 3
       },
       {
         "id": "hoc-tieng-anh",
@@ -67,7 +71,8 @@
         "perDay": 1,
         "ahead": 2,
         "propose": "lessons",
-        "channel": "huy-ke-chuyen"
+        "channel": "huy-ke-chuyen",
+        "perWeek": 1
       },
       {
         "id": "hoi-huy-shorts",
@@ -78,14 +83,16 @@
         "perDay": 1,
         "ahead": 2,
         "propose": "facts",
-        "channel": "huy-ke-chuyen"
+        "channel": "huy-ke-chuyen",
+        "perWeek": 3
       },
       {
         "id": "huy-ke-chuyen",
         "name": "Huy Kể Chuyện (truyện, lịch sử)",
         "perDay": 1,
         "ahead": 3,
-        "propose": "stories"
+        "propose": "stories",
+        "perWeek": 2
       }
     ]
   },
@@ -124,6 +131,9 @@
       ],
       "mode": "manual"
     }
+  },
+  "review": {
+    "videoHours": 12
   },
   "perJobTokens": 80000,
   "perDayTokens": 1000000,

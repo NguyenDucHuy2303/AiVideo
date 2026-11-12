@@ -95,3 +95,25 @@ test("post stage: preparing, ready, downloaded, partly posted, posted everywhere
   assert.equal(s.stage, "all");
   assert.equal(s.posted, s.slots);
 });
+
+import { thumbMoments } from "../src/animation/story.ts";
+import { thumbVariants } from "../src/studio/publish.ts";
+
+test("thumbnails: three moments apart, one per character (the leads first, a strong face), never on a board", () => {
+  const c = (from: number, to: number, who: string, mood?: string) => ({ text: "x", from, to, who, mood });
+  const lines = [c(10, 12, "A", "angry"), c(12, 16, "A", "shout"), c(40, 43, "B", "happy"), c(70, 75, "C"), c(100, 104, "B", "surprised")];
+  // B speaks most (7 s): its longest strong line; then A (6 s), then C
+  assert.deepEqual(thumbMoments(lines, 120), [102, 14, 72.5]);
+  // the given moment first; A's line at 14 is too near it (15 s apart at least in a 2-minute film)
+  assert.deepEqual(thumbMoments(lines, 120, { at: 3 }), [3, 102, 72.5]);
+  // B's line at 100–104 sits on a board: not used
+  assert.deepEqual(thumbMoments(lines, 120, { at: 3, avoid: [[95, 110]] }), [3, 41.5, 72.5]);
+  assert.equal(thumbMoments([], 60).length, 3, "no lines: points through the film");
+  assert.deepEqual(thumbMoments(lines, 120, { at: 3, avoid: [[0, 5]] }), [102, 14, 72.5], "the given moment on a board: dropped");
+});
+
+test("thumbnail variants: -2 and -3 beside the main one, English too", () => {
+  const files = ["thumbnail.jpg", "thumbnail-2.jpg", "thumbnail-3.jpg", "thumbnail.en.jpg", "thumbnail-2.en.jpg"];
+  assert.deepEqual(thumbVariants("thumbnail.jpg", files), ["thumbnail-2.jpg", "thumbnail-3.jpg"]);
+  assert.deepEqual(thumbVariants("thumbnail.en.jpg", files), ["thumbnail-2.en.jpg"]);
+});

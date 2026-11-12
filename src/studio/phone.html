@@ -76,6 +76,9 @@ const TABS = [
   ["posted", "✔", "Đã đăng", (j) => j.status === "done" && j.post?.stage === "all"],
 ];
 const STAGE = { preparing: ["⏳ đang chuẩn bị Shorts", "#eee3cc"], ready: ["🆕 sẵn sàng đăng", "#ffe1a8"], downloaded: ["⬇ đã tải, chưa đăng", "#d8e4f4"], partial: ["◐ đăng dở", "#e6d9f7"], all: ["✔ đã đăng hết", "#cfe8cf"] };
+/** A coming occasion the topic is for (Noel, Tết…): reviewed and posted before its day. */
+const occOf = (j) => { const o = j.occasion; if (!o) return ""; const d = o.date.split("-").reverse().slice(0, 2).join("/");
+  return `<br><span class="tag" style="background:#ffd6cc">${o.icon} ${esc(o.short)} ${d} · ${o.left ? `còn ${o.left} ngày` : "hôm nay"}${j.status === "review" ? ", duyệt sớm" : j.status === "done" ? ", đăng trước ngày này" : ""}</span>`; };
 const stageOf = (p) => p ? `<br><span class="tag" style="background:${STAGE[p.stage][1]}">${STAGE[p.stage][0]}</span>${p.stage !== "preparing" ? ` <small>YT ${p.by.youtube[0]}/${p.by.youtube[1]} · TikTok ${p.by.tiktok[0]}/${p.by.tiktok[1]} · FB ${p.by.facebook[0]}/${p.by.facebook[1]}</small>` : ""}` : "";
 const KIND = { qa: "Ask Huy · hỏi–đáp", "qa-vi": "Hỏi Huy · hỏi–đáp", lesson: "Học tiếng Anh cùng Huy", fact: "Short Did you know?", "fact-vi": "Short Bạn có biết?" };
 const QA = ["qa", "qa-vi", "fact", "fact-vi", "lesson"];
@@ -174,10 +177,10 @@ function drawTabs() {
 function go(k) { tab = localStorage.tab = k; home(); }
 function home() { current = null; $("#back").style.display = "none"; $("#title").textContent = "Huy Kể Chuyện · Studio"; history.replaceState(null, "", "/m"); drawTabs(); drawList(); scrollTo(0, 0); }
 function drawList() {
-  const t = TABS.find((x) => x[0] === tab), list = jobs.filter(t[3]);
+  const t = TABS.find((x) => x[0] === tab), list = jobs.filter(t[3]).sort((a, b) => (a.occasion?.left ?? 999) - (b.occasion?.left ?? 999));
   const hint = { script: "Kịch bản chờ anh duyệt. Duyệt xong studio làm giọng, tranh nền và render buổi tối.", video: `Video đã render, chờ anh xem và duyệt.${REVIEW_HOURS ? ` Quá ${REVIEW_HOURS} giờ chưa duyệt thì studio kiểm tra máy móc rồi tự duyệt.` : ""}`, post: "Bài đã duyệt xong, chưa đăng đủ: tải video về máy, chép lời đăng cho YouTube, TikTok, Facebook, đăng xong thì đánh dấu.", posted: "Bài đã đăng đủ YouTube, TikTok và Facebook." }[tab];
   $("#main").innerHTML = `<p class="meta">${hint}</p>` + (list.length ? list.map((j) => `<div class="job" onclick="open_('${j.slug}')">
-    <b>${esc(j.topic)}</b><small>${esc(KIND[j.kind] || `${j.kind || ""} · ${j.era || ""}`)}${j.score ? ` · ${j.score.value}/10` : ""}${j.autoApproved ? " · studio tự duyệt" : ""}${j.status === "video" && j.autoCheck && !j.autoCheck.ok ? " · ⚠ cần anh xem" : ""}</small>${stageOf(j.post)}</div>`).join("") : `<div class="empty">Không có gì chờ ở đây.</div>`);
+    <b>${esc(j.topic)}</b><small>${esc(KIND[j.kind] || `${j.kind || ""} · ${j.era || ""}`)}${j.score ? ` · ${j.score.value}/10` : ""}${j.autoApproved ? " · studio tự duyệt" : ""}${j.status === "video" && j.autoCheck && !j.autoCheck.ok ? " · ⚠ cần anh xem" : ""}</small>${occOf(j)}${stageOf(j.post)}</div>`).join("") : `<div class="empty">Không có gì chờ ở đây.</div>`);
 }
 
 async function open_(slug) {
@@ -232,7 +235,7 @@ async function drawPost(d) {
   let h = `<h2>${esc(d.plan?.title || job.topic)}</h2>${job.autoApproved ? `<div class="warn">Studio tự duyệt video này (anh chưa duyệt kịp). Xem lại trước khi đăng nhé.</div>` : ""}<p class="meta">Tải video về máy, chép lời đăng, đăng xong thì đánh dấu. Đăng video dài lên YouTube trước: dán link của nó, lời các Short tự có link.</p>`;
   if (!posts.length) h += `<div class="empty">Chưa có video để đăng.</div>`;
   // Everything of the topic to keep on the phone: every video, the thumbnails (for YouTube).
-  const thumbs = [["thumbnail.jpg", "anh-bia.jpg"], ["thumbnail.en.jpg", "anh-bia-tieng-anh.jpg"]].filter(([f]) => d.files.includes(f) && posts.some((p) => p.what !== "short"));
+  const thumbs = [["thumbnail.jpg", "anh-bia.jpg"], ["thumbnail-2.jpg", "anh-bia-2.jpg"], ["thumbnail-3.jpg", "anh-bia-3.jpg"], ["thumbnail.en.jpg", "anh-bia-tieng-anh.jpg"], ["thumbnail-2.en.jpg", "anh-bia-tieng-anh-2.jpg"], ["thumbnail-3.en.jpg", "anh-bia-tieng-anh-3.jpg"]].filter(([f]) => d.files.includes(f) && posts.some((p) => p.what !== "short"));
   const all = [...posts.map((p) => ({ url: `/files/${slug}/${p.file}`, name: `${slug}-${p.name}` })), ...thumbs.map(([f, n]) => ({ url: `/files/${slug}/${f}`, name: `${slug}-${n}` }))];
   SAVES.length = 0;
   if (posts.length) {
@@ -244,7 +247,8 @@ async function drawPost(d) {
     h += `<section><h3>${esc(p.label)} <small>· ${esc(p.account)}${p.publishAt ? ` · ${when(p.publishAt)}` : ""}</small> ${job.downloaded?.[p.file] ? `<span class="tag done">⬇ đã tải</span>` : ""}</h3>
       <video class="${vertical ? "v" : ""}" controls playsinline preload="metadata" src="/files/${slug}/${p.file}" ${!vertical && d.files.includes(p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg") ? `poster="/files/${slug}/${p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg"}"` : ""}></video>
       <div class="row">${saveBtn([{ url: `/files/${slug}/${p.file}`, name }], "video")}
-        ${!vertical && d.files.includes(p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg") ? saveBtn([{ url: `/files/${slug}/${p.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg"}`, name: `${slug}-${p.what === "en" ? "anh-bia-tieng-anh" : "anh-bia"}.jpg` }], "ảnh bìa") : ""}</div>
+        ${(() => { const en = p.what === "en" ? ".en" : "", jpgs = vertical ? [] : ["", "-2", "-3"].map((k) => `thumbnail${k}${en}.jpg`).filter((f) => d.files.includes(f));
+          return jpgs.length ? saveBtn(jpgs.map((f, i) => ({ url: `/files/${slug}/${f}`, name: `${slug}-${en ? "anh-bia-tieng-anh" : "anh-bia"}${i ? `-${i + 1}` : ""}.jpg` })), jpgs.length > 1 ? `${jpgs.length} ảnh bìa` : "ảnh bìa") : ""; })()}</div>
       <div class="plat"><h4>▶ YouTube ${yt ? `<span class="tag done">✔ đã đăng</span>` : `<span class="tag">chờ</span>`}</h4>
         ${yt ? `<p><a href="${esc(yt.url)}">${esc(yt.url)}</a></p>` : `
         <div class="row">${copyBtn(p.youtube.title, "Tiêu đề", "tiêu đề")}${copyBtn(p.youtube.description, "Mô tả", "mô tả")}${copyBtn(p.youtube.tags.join(", "), "Thẻ", "thẻ")}</div>

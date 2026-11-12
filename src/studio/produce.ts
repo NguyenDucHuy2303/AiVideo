@@ -176,11 +176,11 @@ export async function render(slug: string, log: (s: string) => void = console.lo
       out = await renderStory(projectOf(slug), { onLog: log });
     }
     const dir = jobDir(slug);
-    for (const [from, to] of [[out, "video.mp4"], [out.replace(/\.mp4$/, "_thumbnail.jpg"), "thumbnail.jpg"]] as const) {
-      // A film without the channel's brand (Ask Huy for now) has no thumbnail: nothing to link.
-      if (!(await exists(from))) continue;
+    for (const [from, to] of [[out, "video.mp4"], ...[1, 2, 3].map((k) => [out.replace(/\.mp4$/, `_thumbnail${k > 1 ? `-${k}` : ""}.jpg`), `thumbnail${k > 1 ? `-${k}` : ""}.jpg`] as const)] as const) {
+      // A film without the channel's brand has no thumbnail (and none left from before).
       const target = path.join(dir, to);
       await fs.rm(target, { force: true });
+      if (!(await exists(from))) continue;
       await fs.link(from, target).catch(() => fs.copyFile(from, target));
     }
     job = await loadJob(slug);

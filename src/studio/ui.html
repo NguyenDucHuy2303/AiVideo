@@ -133,6 +133,10 @@ const STAGE = { preparing: ["⏳ đang chuẩn bị Shorts", "#eee3cc"], ready: 
 const postBadge = (p) => p ? `<span class="st" style="background:${STAGE[p.stage][1]}">${STAGE[p.stage][0]}</span>` : "";
 const postCounts = (p) => p && p.stage !== "preparing" ? `<small>YouTube ${p.by.youtube[0]}/${p.by.youtube[1]} · TikTok ${p.by.tiktok[0]}/${p.by.tiktok[1]} · Facebook ${p.by.facebook[0]}/${p.by.facebook[1]}${p.downloaded ? ` · đã tải ${p.downloaded}/${p.items}` : ""}</small>` : "";
 
+/** A coming occasion the topic is for (trends.ts): the review and the posting before its day. */
+const occBadge = (j) => { const o = j.occasion; if (!o) return ""; const d = o.date.split("-").reverse().slice(0, 2).join("/");
+  return `<span class="st" style="background:#ffd6cc" title="Chủ đề hợp dịp ${esc(o.short)} (${d}): studio làm trước các bài khác">${o.icon} ${esc(o.short)} ${d} · ${o.left ? `còn ${o.left} ngày` : "hôm nay"}${j.status === "review" ? ", duyệt sớm" : j.status === "done" ? ", đăng trước ngày này" : ""}</span> `; };
+
 function drawTabs() {
   $("#tabs").innerHTML = TABS.map(([k, label, sts, more]) => {
     const n = k === "posted" ? 0 : jobs.filter((j) => inTab(j, [k, label, sts, more])).length;
@@ -143,14 +147,23 @@ function drawTabs() {
 function drawList() {
   const t = TABS.find((x) => x[0] === tab);
   if (tab === "tokens" || tab === "youtube") { $("#list").innerHTML = ""; return; }
-  const list = jobs.filter((j) => inTab(j, t));
+  // Topics for a coming occasion first, the soonest first.
+  const list = jobs.filter((j) => inTab(j, t)).sort((a, b) => (a.occasion?.left ?? 999) - (b.occasion?.left ?? 999));
   $("#list").innerHTML = list.length ? list.map((j) => `
     <div class="job ${current === j.slug ? "on" : ""}" onclick="show('${j.slug}')">
       <b>${esc(j.topic)}</b>
       <small>${j.kind === "qa" ? "hỏi–đáp (tiếng Anh)" : j.kind === "qa-vi" ? "hỏi–đáp (tiếng Việt)" : j.kind === "lesson" ? "Học tiếng Anh cùng Huy" : j.kind === "fact" ? "Short Did you know? (Ask Huy)" : j.kind === "fact-vi" ? "Short Bạn có biết? (Hỏi Huy)" : `${esc(j.kind || "")} · ${esc(j.era || "")}`} · ${fmt(j.tokens)} token${j.score ? ` · ${j.score.value}/10` : ""}${j.autoPicked ? " · tự chọn" : ""}${j.autoApproved ? " · studio tự duyệt video" : ""}${j.status === "video" && j.autoCheck && !j.autoCheck.ok ? " · ⚠ kiểm tra máy chưa đạt" : ""}</small><br>
-      ${j.post ? `${postBadge(j.post)}<br>${postCounts(j.post)}` : `<span class="st ${j.status}">${STATUS[j.status] || j.status}</span>
+      ${occBadge(j)}${j.post ? `${postBadge(j.post)}<br>${postCounts(j.post)}` : `<span class="st ${j.status}">${STATUS[j.status] || j.status}</span>
       <small> ${ago(j.history.at(-1).at)}</small>`}
     </div>`).join("") : `<div class="empty">Trống.</div>`;
+}
+
+/** A film's thumbnails (thumbnail.jpg, -2, -3; ".en" for the English one): to choose from, or to change to later. */
+function thumbsOf(slug, has, en) {
+  const files = ["", "-2", "-3"].map((k) => `thumbnail${k}${en}.jpg`).filter(has);
+  if (!files.length) return "";
+  return `<p><b>Ảnh bìa</b>${files.length > 1 ? ` · ${files.length} ảnh từ ${files.length} khoảnh khắc: đăng ảnh anh thấy hút mắt nhất; sau 3–4 ngày, tỷ lệ nhấp (CTR) thấp thì đổi ảnh khác (video cho trẻ em không dùng được thử A/B của YouTube)` : ""}</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">${files.map((f, i) => `<div style="flex:1;min-width:200px;max-width:32%"><img style="width:100%;border-radius:10px;cursor:zoom-in" src="/files/${slug}/${f}" onclick="zoom(this.src)"><br>${dl(slug, f, `Ảnh ${i + 1}`, `${slug}${en ? "-en" : ""}${i ? `-${i + 1}` : ""}.jpg`)}</div>`).join("")}</div>`;
 }
 
 /** A download button for a file of the job (named after the job, ready to upload). */
@@ -214,8 +227,8 @@ async function show(slug) {
     if (fc) h += `<section><h3>Soát sự thật · ${fc.issues.length ? `${fc.issues.length} chỗ đã sửa` : "không có chỗ sai"}</h3>${fc.issues.length ? `<ul>${fc.issues.map((x) => `<li><b>Cảnh ${x.scene}</b>: <s>${esc(x.quote)}</s><br><small>${esc(x.problem)}</small><br>→ ${esc(x.fix)}</li>`).join("")}</ul>` : ""}</section>`;
   }
   if (has("video.mp4")) h += `<section><h3>Video</h3><video controls preload="metadata" src="/files/${slug}/video.mp4" ${has("thumbnail.jpg") ? `poster="/files/${slug}/thumbnail.jpg"` : ""}></video>
-    <p class="dls">${dl(slug, "video.mp4", "Tải video", `${slug}.mp4`)}${has("thumbnail.jpg") ? dl(slug, "thumbnail.jpg", "Tải ảnh bìa", `${slug}.jpg`) : ""}</p>
-    ${has("thumbnail.jpg") ? `<p><b>Thumbnail</b></p><img style="width:50%;border-radius:10px" src="/files/${slug}/thumbnail.jpg">` : ""}</section>`;
+    <p class="dls">${dl(slug, "video.mp4", "Tải video", `${slug}.mp4`)}</p>
+    ${thumbsOf(slug, has, "")}</section>`;
   if (job.status === "done" || job.published || job.exported) {
     const p = job.published || {}, ex = job.exported || {}, when = (x) => new Date(x.publishAt).toLocaleString("vi", { weekday: "short", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" });
     const item = (label, x) => x ? `<li>${label}: <a href="${esc(x.url)}" target="_blank">${esc(x.url)}</a> · công khai ${when(x)}${x.manual ? " · đăng tay" : x.checked ? " · ✔ đã công khai" : ""}</li>` : "";
@@ -233,7 +246,8 @@ async function show(slug) {
       <p>${job.status === "done" && !job.publishHold ? `<button class="fixb" onclick="exportNow()">📦 Tải về để đăng (gom một thư mục)</button> ` : ""}<button class="fixb" onclick="holdPublish(${!job.publishHold})">${job.publishHold ? "▶ Cho đăng" : "⏸ Hoãn đăng video này"}</button></p></section>`;
   }
   if (has("video.en.mp4")) h += `<section><h3>English version</h3><video controls preload="metadata" src="/files/${slug}/video.en.mp4" ${has("thumbnail.en.jpg") ? `poster="/files/${slug}/thumbnail.en.jpg"` : ""}></video>
-    <p class="dls">${dl(slug, "video.en.mp4", "Tải video tiếng Anh", `${slug}-en.mp4`)}${has("thumbnail.en.jpg") ? dl(slug, "thumbnail.en.jpg", "Tải ảnh bìa tiếng Anh", `${slug}-en.jpg`) : ""}</p></section>`;
+    <p class="dls">${dl(slug, "video.en.mp4", "Tải video tiếng Anh", `${slug}-en.mp4`)}</p>
+    ${thumbsOf(slug, has, ".en")}</section>`;
   else if (job.english) h += `<section><h3>English version</h3><div class="meta">${job.english === "ready" ? "Giọng tiếng Anh xong, render tối nay" : esc(job.english)}</div></section>`;
   if (job.shorts?.length) h += `<section><h3>Shorts (Reels, TikTok) · ${job.shorts.length} clip</h3><div style="display:flex;gap:14px;flex-wrap:wrap">${job.shorts.map((f, i) => `<div><video controls preload="metadata" style="width:240px;border-radius:12px" src="/files/${slug}/${f}"></video><br>${dl(slug, f, `Tải short ${i + 1}`, `${slug}-short-${i + 1}.mp4`)}</div>`).join("")}</div></section>`;
   if (has("costumes.png")) h += `<section class="sheet"><h3>Bảng trang phục</h3><img src="/files/${slug}/costumes.png?${Date.now()}" onclick="zoom(this.src)"></section>`;
@@ -322,12 +336,12 @@ async function showYoutube() {
   const ready = p.client;
   $("#detail").innerHTML = `<h2>Đăng YouTube</h2>
     <section><p>Mỗi kênh có ba chế độ:</p><ul>
-      <li><b>Xuất tay</b>: mỗi chủ đề bạn duyệt xong (tab "Xong") được gom vào <b>một thư mục</b> <code>${esc(p.exportDir)}/&lt;tên chủ đề&gt;</code>: video dài, các Short, bản tiếng Anh (khi có), ảnh bìa, và tệp <code>dang-len-youtube.txt</code> có tiêu đề, mô tả, thẻ, cài đặt, giờ công khai của từng video. Bạn tải lên bằng YouTube Studio rồi dán link vào bài (ô "Đã đăng"); dán link video dài thì studio tự điền nó vào mô tả các Short.</li>
+      <li><b>Xuất tay</b>: mỗi chủ đề bạn duyệt xong (tab "Chờ đăng") được gom vào <b>một thư mục</b> <code>${esc(p.exportDir)}/&lt;tên chủ đề&gt;</code>: video dài, các Short, bản tiếng Anh (khi có), ảnh bìa, và tệp <code>dang-len-youtube.txt</code> có tiêu đề, mô tả, thẻ, cài đặt, giờ công khai của từng video. Bạn tải lên bằng YouTube Studio rồi dán link vào bài (ô "Đã đăng"); dán link video dài thì studio tự điền nó vào mô tả các Short.</li>
       <li><b>Tự đăng</b>: studio tự tải lên ở chế độ riêng tư kèm giờ công khai. <b>Chỉ bật khi dự án Google đã qua audit của YouTube</b> (README): chưa audit thì YouTube khóa video ở riêng tư; studio phát hiện, chuyển kênh về Xuất tay và xuất lại để bạn đăng tay.</li>
       <li><b>Tắt</b>: không làm gì.</li></ul>
       <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="exportAll()">📦 Tải về tất cả bài chờ đăng</button></p>
     ${ready ? "" : `<div class="meta">Tự đăng cần <b>studio/secrets/client_secret.json</b> (README, mục "Đăng YouTube → Kết nối để tự đăng"). Xuất tay thì không cần.</div>`}</section>
-    ${p.channels.map((c) => `<section><h3>${esc(c.name)} <small>(${c.lang === "vi" ? "tiếng Việt" : "tiếng Anh"})</small></h3>
+    ${await linesSection()}${p.channels.map((c) => `<section><h3>${esc(c.name)} <small>(${c.lang === "vi" ? "tiếng Việt" : "tiếng Anh"})</small></h3>
       ${c.locked ? `<div class="warn">${esc(c.locked)}</div>` : ""}
       <p>${c.connected ? `✔ Đã kết nối: <b>${esc(c.channelTitle || "")}</b>` : "Chưa kết nối (chỉ cần cho Tự đăng)"}
         ${ready ? `<a class="dl" style="margin-left:10px" href="/oauth/start?channel=${encodeURIComponent(c.key)}">${c.connected ? "Kết nối lại" : "Kết nối kênh"}</a>` : ""}</p>
@@ -335,6 +349,21 @@ async function showYoutube() {
       <table><tr><td>Giờ công khai video chính</td><td><input id="long-${c.key}" value="${esc(c.long.join(", "))}"></td></tr>
       <tr><td>Giờ công khai Shorts</td><td><input id="shorts-${c.key}" value="${esc(c.shorts.join(", "))}"></td></tr></table>
       <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="savePublish('${c.key}')">Lưu</button></p></section>`).join("")}${await trendsSection()}`;
+}
+/** How many videos a week each content line makes (the 17:00 pick keeps to it). */
+async function linesSection() {
+  const { lines } = await fetch("/api/lines").then((r) => r.json());
+  const sum = (ch) => lines.filter((l) => (l.channel === "ask-huy") === (ch === "ask-huy")).reduce((n, l) => n + l.perWeek, 0);
+  return `<section><h3>Số video mỗi tuần</h3>
+    <p>Lúc 17:00 mỗi ngày, nếu bạn chưa duyệt đủ, studio tự chọn kịch bản điểm cao nhất, nhưng không quá số này trong 7 ngày và rải đều (3/tuần: hai, ba ngày một bài). Bài bạn tự duyệt cũng được tính. Chủ đề cho dịp lễ sắp tới (Noel, Tết…) được ưu tiên và không chờ lượt. Mỗi video dài còn được cắt thêm 3 Shorts.</p>
+    <table><tr><th>Dòng nội dung</th><th>Kênh</th><th>Video/tuần</th><th>Kịch bản đang chờ duyệt</th></tr>
+    ${lines.map((l) => `<tr><td>${esc(l.name)}</td><td>${l.channel === "ask-huy" ? "Ask Huy" : "Huy Kể Chuyện"}</td><td><input id="week-${l.id}" type="number" min="0" max="21" step="0.5" value="${l.perWeek}" style="width:70px" onchange="saveWeek('${l.id}')"></td><td>${l.waiting}</td></tr>`).join("")}
+    <tr><td colspan="4" class="meta">Tổng mỗi tuần: Huy Kể Chuyện ${sum("huy-ke-chuyen")} video · Ask Huy ${sum("ask-huy")} video (chưa kể Shorts cắt ra và bản tiếng Anh của truyện).</td></tr></table></section>`;
+}
+async function saveWeek(id) {
+  const r = await fetch("/api/lines", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, perWeek: Number($(`#week-${id}`).value) }) }).then((r) => r.json());
+  if (r.error) alert(r.error);
+  showYoutube();
 }
 async function trendsSection() {
   const t = await fetch("/api/trends").then((r) => r.json());

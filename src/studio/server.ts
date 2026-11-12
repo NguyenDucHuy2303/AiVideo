@@ -17,7 +17,8 @@ import { fileURLToPath } from "node:url";
 import { ROOT } from "../config.ts";
 import { brainSettings, ledger, saveBrainSettings, spent, weigh } from "../brain/claude.ts";
 import { jobDir, listJobs, loadJob, saveJob, setStatus, type JobStatus } from "./jobs.ts";
-import { schedulerState, settings as scheduleSettings } from "./schedule.ts";
+import { saveLineWeek, schedulerState, settings as scheduleSettings } from "./schedule.ts";
+import { lineOf, weekly } from "./pick.ts";
 import { artOf, validStyle, validTheme } from "./art.ts";
 import { costumeSheet } from "./design.ts";
 import { BRAND_DIR, BRAND_THEMES } from "../animation/brand/brand.ts";
@@ -25,7 +26,7 @@ import { authUrl, EXPORT_DIR, exportJob, finishAuth, hasClient, markDownloaded, 
 import { allowed, hostAllowed, isLoopback, keyCookie, keyMatches, lanAddress, phoneKey, phoneLink } from "./phone.ts";
 import { CA_NAME, caCert, ensureCerts } from "./tls.ts";
 import { PLATFORMS, type Platform } from "./social.ts";
-import { hasApiKey, seasonal } from "./trends.ts";
+import { hasApiKey, jobOccasion, seasonal } from "./trends.ts";
 import { styles } from "../animation/styles.ts";
 
 const UI = path.join(path.dirname(fileURLToPath(import.meta.url)), "ui.html");
@@ -124,6 +125,7 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
       const jobs = await Promise.all((await listJobs()).map(async (j) => ({
         ...j, tokens: all.filter((e) => e.job === j.slug).reduce((n, e) => n + weigh(e), 0),
         post: j.status === "done" ? postState(j, await fsp.readdir(jobDir(j.slug)).catch(() => [] as string[])) : undefined,
+        occasion: j.status === "rejected" ? undefined : jobOccasion(j),
       })));
       return json(res, { jobs, scheduler: await schedulerState(), reviewHours: (await scheduleSettings()).review.videoHours });
     }
@@ -200,6 +202,15 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
       const s = await scheduleSettings(), job = await loadJob(parts[2]!);
       const files = await fsp.readdir(jobDir(job.slug)).catch(() => [] as string[]);
       return json(res, { posts: await socialPosts(job, files, s.publish, s.pick.lines) });
+    }
+    // Content lines: videos a week each (the pick, pick.ts).
+    if (parts[1] === "lines") {
+      if (req.method === "POST") {
+        const b = await body(req) as unknown as { id: string; perWeek: number };
+        try { await saveLineWeek(String(b.id), Number(b.perWeek)); } catch (err) { return json(res, { error: (err as Error).message }, 400); }
+      }
+      const s = await scheduleSettings(), jobs = await listJobs();
+      return json(res, { lines: s.pick.lines.map((l) => ({ id: l.id, name: l.name, perWeek: weekly(l), channel: l.channel ?? l.id, waiting: jobs.filter((j) => j.status === "review" && lineOf(j, s.pick.lines) === l).length })) });
     }
     if (req.method === "GET" && parts[1] === "trends") {
       const raw = await readJson(path.join(ROOT, "studio", "trends.json")) as { popular?: unknown; day?: string } | undefined;

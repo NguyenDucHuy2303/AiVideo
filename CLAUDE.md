@@ -15,7 +15,8 @@ Kênh thứ hai **Ask Huy** (tiếng Anh, trẻ 6–12, mỗi video trả lời 
 - `runtime/board.js`: bảng giải thích SVG.
 - Người dẫn là Huy, bé Mai hỏi.
 
-Mỗi **dòng nội dung** khai báo trong `studio/settings.json` → `pick.lines`, gồm `kinds`, `perDay`, `ahead`, `propose`.
+Mỗi **dòng nội dung** khai báo trong `studio/settings.json` → `pick.lines`, gồm `kinds`, `perWeek` (số video mỗi tuần, sửa trên tab Đăng YouTube), `ahead`, `propose`.
+- Dịp lễ (`src/studio/occasions.ts`): bài hợp dịp sắp tới được làm trước, và được tự chọn từ 14 đến 2 ngày trước dịp.
 - Studio tự tìm chủ đề khi sắp hết kịch bản.
 - 17:00 tự chọn kịch bản điểm cao nhất nếu người dùng chưa chọn đủ (`src/studio/pick.ts`).
 - Video chờ duyệt quá `review.videoHours` (12) giờ: kiểm tra máy móc rồi tự duyệt (`src/studio/autoreview.ts`, không tốn token).

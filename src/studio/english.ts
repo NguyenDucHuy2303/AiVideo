@@ -95,9 +95,10 @@ export async function renderEnglish(slug: string, log: (s: string) => void = con
   if (!project) await syncArt(await loadJob(slug), englishProject(slug));
   const out = await renderStory(project ?? englishProject(slug), { lang: "en", onLog: log });
   if (project) return out;
-  for (const [from, to] of [[out, "video.en.mp4"], [out.replace(/\.mp4$/, "_thumbnail.jpg"), "thumbnail.en.jpg"]] as const) {
+  for (const [from, to] of [[out, "video.en.mp4"], ...[1, 2, 3].map((k) => [out.replace(/\.mp4$/, `_thumbnail${k > 1 ? `-${k}` : ""}.jpg`), `thumbnail${k > 1 ? `-${k}` : ""}.en.jpg`] as const)] as const) {
     const target = path.join(jobDir(slug), to);
     await fs.rm(target, { force: true });
+    if (!(await exists(from))) continue;
     await fs.link(from, target).catch(() => fs.copyFile(from, target));
   }
   return out;
