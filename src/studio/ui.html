@@ -92,6 +92,8 @@
 <div class="zoom" id="phone" onclick="this.style.display='none'" style="cursor:default"><div onclick="event.stopPropagation()" style="background:#fffdf8;max-width:440px;margin:60px auto;border-radius:16px;padding:22px 26px;text-align:center" id="phoneBox"></div></div>
 <audio id="audio"></audio>
 <script>
+// A phone opening this page goes to its own (/m): the buttons here work on the computer's folders (?full stays).
+if (matchMedia("(max-width: 700px)").matches && !location.search.includes("full")) location.replace("/m" + location.hash);
 const TABS = [
   ["script", "📝 Duyệt kịch bản", ["review"]],
   ["video", "🎬 Duyệt video", ["video"]],
