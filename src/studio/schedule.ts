@@ -22,6 +22,7 @@ import { listJobs, newJob, jobDir, type Job } from "./jobs.ts";
 import { prepare, render, shorts, writeJob } from "./produce.ts";
 import { prepareEnglish, renderEnglish } from "./english.ts";
 import { loadJob, saveJob, setStatus } from "./jobs.ts";
+import { autoApprove, dueAutoApprove, needsCheck } from "./autoreview.ts";
 import { proposeTopics, eras } from "./topics.ts";
 
 const STATE = path.join(STUDIO_DIR, "scheduler.json");
@@ -38,13 +39,15 @@ export interface ScheduleSettings {
   pick: PickSettings;
   /** YouTube channels (publish.ts): times, on/off. */
   publish: PublishSettings;
+  /** A video not reviewed after this many hours is approved by the studio if its machine check passes (0: never). */
+  review: { videoHours: number };
 }
-const DEFAULTS: ScheduleSettings = { office: { days: [1, 2, 3, 4, 5], start: "08:00", end: "18:00" }, scriptsAhead: 6, officeThreads: 2, pick: PICK_DEFAULTS, publish: PUBLISH_DEFAULTS };
+const DEFAULTS: ScheduleSettings = { office: { days: [1, 2, 3, 4, 5], start: "08:00", end: "18:00" }, scriptsAhead: 6, officeThreads: 2, pick: PICK_DEFAULTS, publish: PUBLISH_DEFAULTS, review: { videoHours: 12 } };
 
 export async function settings(): Promise<ScheduleSettings> {
   const raw = (await exists(SETTINGS)) ? JSON.parse(await fs.readFile(SETTINGS, "utf8")) : {};
-  const s = { ...DEFAULTS, ...raw, publish: normalise(raw.publish) };
-  if (!raw.office || !raw.pick || !raw.publish) await fs.writeFile(SETTINGS, JSON.stringify(s, null, 2));
+  const s = { ...DEFAULTS, ...raw, publish: normalise(raw.publish), review: { ...DEFAULTS.review, ...raw.review } };
+  if (!raw.office || !raw.pick || !raw.publish || !raw.review) await fs.writeFile(SETTINGS, JSON.stringify(s, null, 2));
   return s;
 }
 
@@ -88,6 +91,11 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   // The English version of an approved film: voices by day, the film at night.
   const enFilm = first((j) => j.status === "done" && j.english === "ready");
   if (!office && enFilm) return { what: "english-render", slug: enFilm.slug, run: () => english(enFilm.slug, "render", say(enFilm.slug)) };
+  // Videos the user has not reviewed in time: checked by machine (one low-priority ffmpeg pass,
+  // under a minute), then approved (autoreview.ts). Any hour.
+  for (const j of jobs) {
+    if (dueAutoApprove(j, s.review.videoHours) && (await needsCheck(j))) return { what: "auto-review", slug: j.slug, run: () => autoApprove(j.slug, s.review.videoHours, say(j.slug)) };
+  }
   // Publishing (light: network and files only, any hour). First, auto uploads whose hour has
   // passed: really public, or locked private (then the channel goes back to manual).
   for (const j of jobs) {

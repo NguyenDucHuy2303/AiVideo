@@ -20,6 +20,7 @@ bash scripts/install-studio-service.sh     # chạy nền thường trực (tự
 - **Lịch**: giờ hành chính (T2–T6, 8:00–18:00) chỉ làm việc nhẹ, ưu tiên thấp; ngoài giờ và cuối tuần render. Luôn giữ sẵn 6 kịch bản chờ duyệt. Sửa trong `studio/settings.json`.
 - **Bộ não**: Claude (qua Claude Code, gói của bạn) cho việc cần suy nghĩ; mỗi lần gọi ghi vào `studio/ledger.jsonl`; quá trần thì chuyển sang Ollama (`gemma3:12b` nếu đã tải); tạm dừng thì việc cần Claude đứng chờ.
 - **Phong cách, intro, outro**: khi thiết kế nhân vật, bộ não gợi ý phong cách vẽ (7 kiểu: hiện đại, Đông Hồ, sơn mài, lụa, màu nước, sáp màu, cắt giấy) và bộ intro/outro (6 kiểu), kèm lý do. Trên trang duyệt, mỗi phong cách có ảnh mẫu, mỗi intro/outro có video xem trước; ★ là gợi ý, bấm để đổi. Đổi phong cách thì bảng trang phục tự vẽ lại; video đã xong thì có nút **Render lại** (chạy buổi tối, không tốn token).
+- **Tự duyệt video**: video chờ anh duyệt quá 12 giờ (`studio/settings.json` → `review.videoHours`, 0 là tắt) thì studio kiểm tra máy móc, không tốn token: khung hình, có tiếng, độ dài, không đen màn ≥ 2 giây, không đứng hình ≥ 10 giây, không im lặng ≥ 5 giây. Đạt thì studio tự duyệt (ghi “studio tự duyệt” trên trang). Không đạt thì để lại cho anh, kèm lỗi tìm thấy. Kịch bản thì 17:00 studio tự chọn bài điểm cao nhất như trước.
 - **Quy trình một video**: viết → (thời đại mới nếu cần) → nhân vật, bảng trang phục → **bạn duyệt** → giọng, chỉ đạo cảnh, tranh nền (ban ngày) → render (ban đêm) → **bạn duyệt video** (ghi chú sửa thì làm lại cảnh đó) → xong.
 
 Lệnh lẻ (thử từng bước):

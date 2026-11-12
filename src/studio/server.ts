@@ -110,7 +110,7 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
     if (req.method === "GET" && parts[1] === "jobs") {
       const all = await ledger();
       const jobs = (await listJobs()).map((j) => ({ ...j, tokens: all.filter((e) => e.job === j.slug).reduce((n, e) => n + weigh(e), 0) }));
-      return json(res, { jobs, scheduler: await schedulerState() });
+      return json(res, { jobs, scheduler: await schedulerState(), reviewHours: (await scheduleSettings()).review.videoHours });
     }
     if (req.method === "GET" && parts.length === 3 && parts[1] === "job" && SLUG.test(parts[2] ?? "")) {
       const slug = parts[2]!, dir = jobDir(slug);

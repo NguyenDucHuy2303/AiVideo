@@ -75,7 +75,7 @@ const TABS = [
 ];
 const KIND = { qa: "Ask Huy · hỏi–đáp", "qa-vi": "Hỏi Huy · hỏi–đáp", lesson: "Học tiếng Anh cùng Huy", fact: "Short Did you know?", "fact-vi": "Short Bạn có biết?" };
 const QA = ["qa", "qa-vi", "fact", "fact-vi", "lesson"];
-let tab = localStorage.tab || "script", jobs = [], current = null;
+let tab = localStorage.tab || "script", jobs = [], current = null, REVIEW_HOURS = 12;
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const when = (t) => new Date(t).toLocaleString("vi", { weekday: "short", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" });
@@ -102,7 +102,7 @@ const copyBtn = (text, label, what) => { CLIP.push(text); return `<button class=
 
 async function load() {
   const r = await api("/api/jobs");
-  jobs = r.jobs;
+  jobs = r.jobs; REVIEW_HOURS = r.reviewHours ?? REVIEW_HOURS;
   drawTabs();
   if (!current) drawList();
 }
@@ -113,9 +113,9 @@ function go(k) { tab = localStorage.tab = k; home(); }
 function home() { current = null; $("#back").style.display = "none"; $("#title").textContent = "Huy Kể Chuyện · Studio"; history.replaceState(null, "", "/m"); drawTabs(); drawList(); scrollTo(0, 0); }
 function drawList() {
   const t = TABS.find((x) => x[0] === tab), list = jobs.filter(t[3]);
-  const hint = { script: "Kịch bản chờ anh duyệt. Duyệt xong studio làm giọng, tranh nền và render buổi tối.", video: "Video đã render, chờ anh xem và duyệt.", post: "Bài đã duyệt xong: tải video về máy, chép lời đăng cho YouTube, TikTok, Facebook." }[tab];
+  const hint = { script: "Kịch bản chờ anh duyệt. Duyệt xong studio làm giọng, tranh nền và render buổi tối.", video: `Video đã render, chờ anh xem và duyệt.${REVIEW_HOURS ? ` Quá ${REVIEW_HOURS} giờ chưa duyệt thì studio kiểm tra máy móc rồi tự duyệt.` : ""}`, post: "Bài đã duyệt xong: tải video về máy, chép lời đăng cho YouTube, TikTok, Facebook." }[tab];
   $("#main").innerHTML = `<p class="meta">${hint}</p>` + (list.length ? list.map((j) => `<div class="job" onclick="open_('${j.slug}')">
-    <b>${esc(j.topic)}</b><small>${esc(KIND[j.kind] || `${j.kind || ""} · ${j.era || ""}`)}${j.score ? ` · ${j.score.value}/10` : ""}</small></div>`).join("") : `<div class="empty">Không có gì chờ ở đây.</div>`);
+    <b>${esc(j.topic)}</b><small>${esc(KIND[j.kind] || `${j.kind || ""} · ${j.era || ""}`)}${j.score ? ` · ${j.score.value}/10` : ""}${j.autoApproved ? " · studio tự duyệt" : ""}${j.status === "video" && j.autoCheck && !j.autoCheck.ok ? " · ⚠ cần anh xem" : ""}</small></div>`).join("") : `<div class="empty">Không có gì chờ ở đây.</div>`);
 }
 
 async function open_(slug) {
@@ -157,6 +157,7 @@ function drawVideo(d) {
   const { job, plan } = d, has = (f) => d.files.includes(f);
   let h = `<div class="step v">🎬 <b>Duyệt video</b>: xem hết rồi bấm Duyệt ở dưới.</div><h2>${esc(plan?.title || job.topic)}</h2>`;
   if (has("video.mp4")) h += `<section><video class="${job.kind?.startsWith("fact") ? "v" : ""}" controls playsinline preload="metadata" src="/files/${job.slug}/video.mp4" ${has("thumbnail.jpg") ? `poster="/files/${job.slug}/thumbnail.jpg"` : ""}></video></section>`;
+  if (job.autoCheck && !job.autoCheck.ok) h += `<div class="warn">Studio chưa tự duyệt được: ${esc(job.autoCheck.problems.join("; "))}.</div>`;
   if (job.notes?.length) h += `<section><h3>Góp ý trước</h3>${job.notes.map((n) => `<p>• ${esc(n.text)}</p>`).join("")}</section>`;
   $("#main").innerHTML = h + reviewBar(job);
 }
@@ -166,7 +167,7 @@ async function drawPost(d) {
   const { posts } = await api(`/api/job/${slug}/social`);
   const pub = job.published || {}, ex = job.exported || {};
   const ytOf = (p) => p.what === "short" ? pub.shorts?.[p.index] : pub[p.what];
-  let h = `<h2>${esc(d.plan?.title || job.topic)}</h2><p class="meta">Tải video về máy, chép lời đăng, đăng xong thì đánh dấu. Đăng video dài lên YouTube trước: dán link của nó, lời các Short tự có link.</p>`;
+  let h = `<h2>${esc(d.plan?.title || job.topic)}</h2>${job.autoApproved ? `<div class="warn">Studio tự duyệt video này (anh chưa duyệt kịp). Xem lại trước khi đăng nhé.</div>` : ""}<p class="meta">Tải video về máy, chép lời đăng, đăng xong thì đánh dấu. Đăng video dài lên YouTube trước: dán link của nó, lời các Short tự có link.</p>`;
   if (!posts.length) h += `<div class="empty">Chưa có video để đăng.</div>`;
   for (const p of posts) {
     const yt = ytOf(p), name = `${slug}-${p.name}`, vertical = p.what === "short";

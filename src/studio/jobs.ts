@@ -43,6 +43,10 @@ export interface Job {
   score?: { value: number; why: string; hash: string };
   /** Approved by the daily pick (the user had not chosen by the cut-off time). */
   autoPicked?: boolean;
+  /** Approved by the studio (autoreview.ts): the user had not reviewed the video in time. */
+  autoApproved?: string;
+  /** The machine check of the video before that approval (autoreview.ts). */
+  autoCheck?: import("./autoreview.ts").VideoCheck;
   /** On YouTube (publish.ts): the film, its English version, its Shorts. */
   published?: { long?: import("./publish.ts").Published; en?: import("./publish.ts").Published; shorts?: import("./publish.ts").Published[] };
   /** Laid out in ~/Videos/Wata for upload by hand (publish.ts), not yet marked published. */
