@@ -102,6 +102,7 @@ const TABS = [
   ["posted", "✔ Đã đăng hết", ["done"], (j) => j.post?.stage === "all"],
   ["off", "Bỏ / Lỗi", ["rejected", "failed"]],
   ["tokens", "Token", []],
+  ["calendar", "📅 Lịch đăng", []],
   ["youtube", "Đăng YouTube", []],
 ];
 const INSPECT_VI = { held: "giữ tay cứng", still: "đứng im", "prop-face": "đồ che mặt", "talk-covered": "nói khi bị che miệng", "head-cut": "khung cắt đầu", "faces-overlap": "mặt chồng nhau", "speaker-off": "người nói ngoài hình" };
@@ -141,13 +142,13 @@ const occBadge = (j) => { const o = j.occasion; if (!o) return ""; const d = o.d
 function drawTabs() {
   $("#tabs").innerHTML = TABS.map(([k, label, sts, more]) => {
     const n = k === "posted" ? 0 : jobs.filter((j) => inTab(j, [k, label, sts, more])).length;
-    return `<button class="${k === tab ? "on" : ""} t-${k}" onclick="tab='${k}';current=null;load();${k === "tokens" ? "showTokens()" : k === "youtube" ? "showYoutube()" : ""}">${label}${n ? `<span class="n">${n}</span>` : ""}</button>`;
+    return `<button class="${k === tab ? "on" : ""} t-${k}" onclick="tab='${k}';current=null;load();${k === "tokens" ? "showTokens()" : k === "youtube" ? "showYoutube()" : k === "calendar" ? "showCalendar()" : ""}">${label}${n ? `<span class="n">${n}</span>` : ""}</button>`;
   }).join("");
 }
 
 function drawList() {
   const t = TABS.find((x) => x[0] === tab);
-  if (tab === "tokens" || tab === "youtube") { $("#list").innerHTML = ""; return; }
+  if (tab === "tokens" || tab === "youtube" || tab === "calendar") { $("#list").innerHTML = ""; return; }
   // Topics for a coming occasion first, the soonest first.
   const list = jobs.filter((j) => inTab(j, t)).sort((a, b) => (a.occasion?.left ?? 999) - (b.occasion?.left ?? 999));
   $("#list").innerHTML = list.length ? list.map((j) => `
@@ -333,6 +334,45 @@ function play(name) { const a = $("#audio"); a.src = `/voice/${encodeURIComponen
 function zoom(src) { $("#zoomImg").src = src; $("#zoom").style.display = "block"; }
 
 /** The YouTube channels: connect (Google sign-in), turn on, publishing times. */
+/** The posting calendar: 7 days, every video by its YouTube time; today first, late ones on top. */
+const CAL_DAYS = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+const calDay = (d) => `${CAL_DAYS[d.getDay()]} ${d.getDate()}/${d.getMonth() + 1}`;
+const calTime = (d) => d.toTimeString().slice(0, 5);
+function calRow(e) {
+  const at = new Date(e.at), soc = Object.entries(e.social);
+  const yt = e.url ? `<a href="${esc(e.url)}" target="_blank">✔ YouTube</a>` : e.late ? `<b style="color:#b3261e">✘ YouTube (quá giờ)</b>` : "○ YouTube";
+  const others = soc.map(([p, done]) => `${done ? "✔" : "○"} ${p === "tiktok" ? "TikTok" : "Facebook"}`).join(" · ");
+  const all = e.url && soc.every(([, d]) => d);
+  return `<tr style="${all ? "opacity:.55" : ""}"><td style="width:13%"><b>${calTime(at)}</b>${e.late ? `<br><small>${calDay(at)}</small>` : ""}</td><td style="width:15%">${esc(e.channelName)}</td><td style="width:13%">${esc(e.label)}</td>
+    <td style="width:34%"><a href="#${e.slug}" onclick="openFromCalendar('${e.slug}');return false">${esc(e.folder)}</a><br><small class="meta">${esc(e.file)}</small></td>
+    <td>${yt}<br><small>${others}</small></td></tr>`;
+}
+/** A topic of the calendar opened in the tab it belongs to. */
+function openFromCalendar(slug) {
+  const j = jobs.find((x) => x.slug === slug);
+  if (!j) return;
+  tab = (TABS.find((t) => inTab(j, t)) || TABS[0])[0];
+  drawTabs(); show(slug);
+}
+async function showCalendar() {
+  const c = await fetch("/api/calendar?days=7").then((r) => r.json()), now = new Date();
+  const todayKey = now.toDateString(), late = c.entries.filter((e) => e.late), rest = c.entries.filter((e) => !e.late);
+  const today = rest.filter((e) => new Date(e.at).toDateString() === todayKey && !(e.url && Object.values(e.social).every(Boolean)));
+  const d = c.drive;
+  const drive = d.ready
+    ? `<p class="meta">☁ Google Drive: mỗi chủ đề được chép lên thư mục <b>Wata</b> (kèm tệp <b>Lich dang.txt</b>), xóa khỏi Drive ${c.keepDays} ngày sau khi đăng hết.${d.busy ? ` Đang chép: <b>${esc(d.busy)}</b>.` : ""}${d.lastPush ? ` Lần chép gần nhất: ${ago(d.lastPush)}.` : ""}</p>${d.lastError ? `<div class="warn">Drive lỗi: ${esc(d.lastError)}</div>` : ""}`
+    : `<div class="warn">Chưa kết nối Google Drive: video chỉ nằm trên máy ở nhà. Cách kết nối: README, mục “Google Drive”.</div>`;
+  let h = `<h2>Lịch đăng</h2>${drive}
+    <section><h3>Hôm nay cần đăng${today.length ? ` · ${today.length}` : ""}</h3>${today.length ? `<table style="table-layout:fixed">${today.map(calRow).join("")}</table>` : `<p class="meta">Hôm nay không còn gì phải đăng.</p>`}</section>`;
+  if (late.length) h += `<section><h3 style="color:#b3261e">Đã quá giờ, chưa đăng YouTube · ${late.length}</h3><table style="table-layout:fixed">${late.map(calRow).join("")}</table></section>`;
+  const days = [];
+  for (const e of rest) { const k = new Date(e.at).toDateString(); if (k === todayKey) continue; (days.at(-1)?.[0] === k ? days.at(-1)[1] : (days.push([k, []]), days.at(-1)[1])).push(e); }
+  h += days.length ? days.map(([k, es]) => `<section><h3>${calDay(new Date(k))}</h3><table style="table-layout:fixed">${es.map(calRow).join("")}</table></section>`).join("")
+    : `<section><p class="meta">Chưa có video nào xếp lịch cho những ngày tới. Video được xếp giờ khi studio duyệt xong và gom vào thư mục đăng.</p></section>`;
+  h += `<p class="meta">Giờ đăng theo khung giờ của từng kênh (tab Đăng YouTube). TikTok và Facebook: đăng cùng giờ với YouTube.</p>`;
+  $("#detail").innerHTML = h;
+}
+
 async function showYoutube() {
   const p = await fetch("/api/publish").then((r) => r.json());
   const ready = p.client;
@@ -445,7 +485,7 @@ async function saveCaps() {
   if (r.error) return alert(r.error);
   await load(); showTokens();
 }
-load().then(() => { if (location.hash === "#youtube" || location.hash === "#tokens") { tab = location.hash.slice(1); drawTabs(); $("#list").innerHTML = ""; return tab === "youtube" ? showYoutube() : showTokens(); } const slug = decodeURIComponent(location.hash.slice(1)); if (slug && jobs.some((j) => j.slug === slug)) { const j = jobs.find((x) => x.slug === slug); tab = (TABS.find((t) => inTab(j, t)) || TABS[0])[0]; drawTabs(); show(slug); } });
+load().then(() => { if (["#youtube", "#tokens", "#calendar"].includes(location.hash)) { tab = location.hash.slice(1); drawTabs(); $("#list").innerHTML = ""; return tab === "youtube" ? showYoutube() : tab === "calendar" ? showCalendar() : showTokens(); } const slug = decodeURIComponent(location.hash.slice(1)); if (slug && jobs.some((j) => j.slug === slug)) { const j = jobs.find((x) => x.slug === slug); tab = (TABS.find((t) => inTab(j, t)) || TABS[0])[0]; drawTabs(); show(slug); } });
 setInterval(() => { load(); }, 15000);
 </script>
 </body>

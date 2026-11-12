@@ -22,6 +22,8 @@ import { lineOf, weekly } from "./pick.ts";
 import { artOf, validStyle, validTheme } from "./art.ts";
 import { costumeSheet } from "./design.ts";
 import { BRAND_DIR, BRAND_THEMES } from "../animation/brand/brand.ts";
+import { calendar } from "./calendar.ts";
+import { driveReady, driveState, KEEP_DAYS } from "./drive.ts";
 import { authUrl, EXPORT_DIR, exportJob, finishAuth, hasClient, markDownloaded, markPublished, markSocial, postState, publishSettings, savePublishSettings, socialPosts, token, type Mode, type What } from "./publish.ts";
 import { allowed, hostAllowed, isLoopback, keyCookie, keyMatches, lanAddress, phoneKey, phoneLink } from "./phone.ts";
 import { CA_NAME, caCert, ensureCerts } from "./tls.ts";
@@ -215,6 +217,11 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
     if (req.method === "GET" && parts[1] === "trends") {
       const raw = await readJson(path.join(ROOT, "studio", "trends.json")) as { popular?: unknown; day?: string } | undefined;
       return json(res, { hasKey: await hasApiKey(), seasonal: { vi: seasonal("vi"), en: seasonal("en") }, popular: raw?.popular ?? {}, day: raw?.day });
+    }
+    // The posting calendar (calendar.ts) and Google Drive's state (drive.ts).
+    if (req.method === "GET" && parts[1] === "calendar") {
+      const days = Math.min(31, Math.max(1, Number(url.searchParams.get("days")) || 7));
+      return json(res, { entries: calendar(await listJobs(), await publishSettings(), { days }), drive: { ...driveState, ready: await driveReady() }, keepDays: KEEP_DAYS });
     }
     if (parts[1] === "publish") {
       if (req.method === "POST") {

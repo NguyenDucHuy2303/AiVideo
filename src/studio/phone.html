@@ -74,6 +74,7 @@ const TABS = [
   ["video", "🎬", "Video", (j) => j.status === "video"],
   ["post", "📤", "Chờ đăng", (j) => j.status === "done" && !j.publishHold && j.post?.stage !== "all"],
   ["posted", "✔", "Đã đăng", (j) => j.status === "done" && j.post?.stage === "all"],
+  ["cal", "📅", "Lịch", () => false],
 ];
 const STAGE = { preparing: ["⏳ đang chuẩn bị Shorts", "#eee3cc"], ready: ["🆕 sẵn sàng đăng", "#ffe1a8"], downloaded: ["⬇ đã tải, chưa đăng", "#d8e4f4"], partial: ["◐ đăng dở", "#e6d9f7"], all: ["✔ đã đăng hết", "#cfe8cf"] };
 /** A coming occasion the topic is for (Noel, Tết…): reviewed and posted before its day. */
@@ -177,10 +178,39 @@ function drawTabs() {
 function go(k) { tab = localStorage.tab = k; home(); }
 function home() { current = null; $("#back").style.display = "none"; $("#title").textContent = "Huy Kể Chuyện · Studio"; history.replaceState(null, "", "/m"); drawTabs(); drawList(); scrollTo(0, 0); }
 function drawList() {
+  if (tab === "cal") return drawCalendar();
   const t = TABS.find((x) => x[0] === tab), list = jobs.filter(t[3]).sort((a, b) => (a.occasion?.left ?? 999) - (b.occasion?.left ?? 999));
   const hint = { script: "Kịch bản chờ anh duyệt. Duyệt xong studio làm giọng, tranh nền và render buổi tối.", video: `Video đã render, chờ anh xem và duyệt.${REVIEW_HOURS ? ` Quá ${REVIEW_HOURS} giờ chưa duyệt thì studio kiểm tra máy móc rồi tự duyệt.` : ""}`, post: "Bài đã duyệt xong, chưa đăng đủ: tải video về máy, chép lời đăng cho YouTube, TikTok, Facebook, đăng xong thì đánh dấu.", posted: "Bài đã đăng đủ YouTube, TikTok và Facebook." }[tab];
   $("#main").innerHTML = `<p class="meta">${hint}</p>` + (list.length ? list.map((j) => `<div class="job" onclick="open_('${j.slug}')">
     <b>${esc(j.topic)}</b><small>${esc(KIND[j.kind] || `${j.kind || ""} · ${j.era || ""}`)}${j.score ? ` · ${j.score.value}/10` : ""}${j.autoApproved ? " · studio tự duyệt" : ""}${j.status === "video" && j.autoCheck && !j.autoCheck.ok ? " · ⚠ cần anh xem" : ""}</small>${occOf(j)}${stageOf(j.post)}</div>`).join("") : `<div class="empty">Không có gì chờ ở đây.</div>`);
+}
+
+/** The posting calendar (/api/calendar): what to post today, late ones, the next days. */
+const CAL_DAYS = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+async function drawCalendar() {
+  const c = await api("/api/calendar?days=7"), now = new Date(), today = now.toDateString();
+  const day = (d) => `${CAL_DAYS[d.getDay()]} ${d.getDate()}/${d.getMonth() + 1}`;
+  const doneAll = (e) => e.url && Object.values(e.social).every(Boolean);
+  const row = (e) => {
+    const at = new Date(e.at), todo = [e.url ? "" : "YouTube", ...Object.entries(e.social).filter(([, d]) => !d).map(([p]) => p === "tiktok" ? "TikTok" : "Facebook")].filter(Boolean);
+    return `<div class="job" onclick="open_('${e.slug}')" style="${doneAll(e) ? "opacity:.5" : ""}">
+      <b>${at.toTimeString().slice(0, 5)} · ${esc(e.label)}</b><small style="display:block">${esc(e.channelName)} · ${esc(e.folder)}</small>
+      <small style="display:block">${todo.length ? `${e.late ? "⚠ quá giờ · " : ""}còn: ${todo.join(", ")}` : "✔ đã đăng hết"}</small></div>`;
+  };
+  const late = c.entries.filter((e) => e.late), rest = c.entries.filter((e) => !e.late);
+  const now_ = rest.filter((e) => new Date(e.at).toDateString() === today && !doneAll(e));
+  let h = c.drive.ready ? `<p class="meta">☁ Video có trên Google Drive, thư mục <b>Wata</b> (cùng tên chủ đề), kèm tệp <b>Lich dang.txt</b>.</p>`
+    : `<p class="meta">Chưa kết nối Google Drive: video chỉ tải được ở nhà.</p>`;
+  h += `<h3>Hôm nay cần đăng</h3>` + (now_.length ? now_.map(row).join("") : `<p class="meta">Hôm nay không còn gì phải đăng.</p>`);
+  if (late.length) h += `<h3>⚠ Quá giờ, chưa đăng</h3>` + late.map(row).join("");
+  let d0 = "";
+  for (const e of rest) {
+    const k = new Date(e.at).toDateString();
+    if (k === today) continue;
+    if (k !== d0) { h += `<h3>${day(new Date(e.at))}</h3>`; d0 = k; }
+    h += row(e);
+  }
+  $("#main").innerHTML = h;
 }
 
 async function open_(slug) {
@@ -295,7 +325,8 @@ async function refresh() { const y = scrollY; await load(); if (current) { await
 
 window.renderFrame = () => {};
 window.ready = new Promise((r) => setTimeout(r, 2500)); // for screenshots
-load().then(() => { const slug = decodeURIComponent(location.hash.slice(1)); if (slug && jobs.some((j) => j.slug === slug)) open_(slug); });
+// (/m#lich: straight to the calendar, to bookmark)
+load().then(() => { const slug = decodeURIComponent(location.hash.slice(1)); if (slug === "lich") go("cal"); else if (slug && jobs.some((j) => j.slug === slug)) open_(slug); });
 setInterval(() => { if (!current) load(); }, 30000);
 </script>
 </body>

@@ -22,6 +22,7 @@ import { STUDIO_DIR, brainSettings } from "../brain/claude.ts";
 import { listJobs, newJob, jobDir, type Job } from "./jobs.ts";
 import { prepare, render, shorts, writeJob } from "./produce.ts";
 import { prepareEnglish, renderEnglish } from "./english.ts";
+import { startDrive } from "./drive.ts";
 import { loadJob, saveJob, setStatus } from "./jobs.ts";
 import { autoApprove, dueAutoApprove, needsCheck } from "./autoreview.ts";
 import { proposeTopics, eras } from "./topics.ts";
@@ -234,6 +235,8 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
 /** Run forever (the studio service). */
 export async function runScheduler(): Promise<never> {
   await log(`scheduler started (pid ${process.pid})`);
+  // Google Drive beside the tasks (drive.ts): uploads never hold up a render.
+  startDrive((l) => void log(l));
   for (;;) {
     // Stopping (SIGTERM: the children are killed, the process exits in 3 s): start nothing more,
     // or every task fails at once and the loop spins through the job list until the exit.

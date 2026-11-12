@@ -367,6 +367,34 @@ Mỗi kênh có một chế độ, chọn ở tab **Đăng YouTube** của trang
 
 Hai kênh tạo chung một tài khoản Google, không cần hai email. Một số điện thoại xác minh được hai kênh mỗi năm, vừa đủ. Vào YouTube, chọn ảnh đại diện → **Cài đặt** → **Thêm hoặc quản lý kênh** → **Tạo kênh**. Mỗi kênh là một tài khoản thương hiệu (Brand Account), có tên và logo riêng.
 
+### Lịch đăng và Google Drive
+
+Tab **📅 Lịch đăng** của trang duyệt (và tab **📅 Lịch** trên điện thoại, `/m`) liệt kê 7 ngày tới:
+- Mỗi video: giờ YouTube, kênh, thư mục và tên tệp.
+- Đã đăng ở đâu (YouTube, TikTok, Facebook).
+- Phần **Hôm nay cần đăng** ở đầu, và các video đã quá giờ mà chưa lên YouTube.
+
+Giờ đăng lấy theo khung giờ từng kênh (tab Đăng YouTube). Từ 12/11/2026 mỗi kênh một video dài mỗi ngày:
+- Huy Kể Chuyện: video dài 19:30; Shorts 7:30, 12:00, 17:00.
+- Ask Huy: video dài 19:00; Shorts 9:00, 15:00.
+
+**Google Drive** (`src/studio/drive.ts`, rclone, MIT) giúp lấy video ở bất cứ đâu:
+- Mỗi thư mục chủ đề trong `~/youtube/` được chép lên Drive vào thư mục **Wata/<tên chủ đề>**.
+- Tệp **Wata/Lich dang.txt** là lịch đăng 7 ngày tới dạng chữ, đọc được trên điện thoại.
+- Chủ đề đã đăng hết (YouTube, TikTok, Facebook) bị xóa khỏi Drive sau 7 ngày. Bản trên máy vẫn còn.
+- Việc chép chạy riêng mỗi 5 phút, không làm chậm render.
+- rclone dùng quyền `drive.file`: chỉ thấy những gì chính nó tạo ra, không đọc được các tệp khác trên Drive của bạn.
+
+Kết nối một lần, trên máy chạy studio (cần trình duyệt):
+
+```bash
+vendor/rclone/rclone config create wata drive scope=drive.file --config studio/secrets/rclone.conf
+```
+
+Lệnh mở trình duyệt; bạn đăng nhập Google rồi bấm **Cho phép**. Trong vòng 5 phút studio bắt đầu chép (không cần khởi động lại). Chưa có rclone thì tải bản Linux amd64 từ <https://rclone.org/downloads/> vào `vendor/rclone/rclone`.
+
+Drive miễn phí có 15 GB. Mỗi chủ đề khoảng 90–500 MB.
+
 ### Kết nối để tự đăng
 
 Xuất tay không cần bước nào dưới đây. Tự đăng cần làm các bước sau **một lần**.

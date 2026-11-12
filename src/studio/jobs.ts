@@ -59,6 +59,9 @@ export interface Job {
   social?: Record<string, string>;
   /** Files downloaded to a phone or laptop from the studio's pages (file → when). */
   downloaded?: Record<string, string>;
+  /** The topic folder on Google Drive (drive.ts): its name, the newest file's time when it was
+   *  last copied up, when; removed a week after everything was posted. */
+  drive?: { folder: string; mtime: number; at: string; removed?: string };
   /** Views and likes of its published videos (trends.ts), by video id. */
   stats?: Record<string, { views: number; likes: number; at: string }>;
   /** The user held it back from publishing. */
