@@ -45,6 +45,10 @@ export interface Job {
   autoPicked?: boolean;
   /** On YouTube (publish.ts): the film, its English version, its Shorts. */
   published?: { long?: import("./publish.ts").Published; en?: import("./publish.ts").Published; shorts?: import("./publish.ts").Published[] };
+  /** Laid out in ~/Videos/Wata for upload by hand (publish.ts), not yet marked published. */
+  exported?: { long?: import("./publish.ts").Exported; en?: import("./publish.ts").Exported; shorts?: import("./publish.ts").Exported[] };
+  /** Auto uploads YouTube kept locked private (an API project not audited): to delete by hand. */
+  lockedVideos?: import("./publish.ts").Published[];
   /** Views and likes of its published videos (trends.ts), by video id. */
   stats?: Record<string, { views: number; likes: number; at: string }>;
   /** The user held it back from publishing. */

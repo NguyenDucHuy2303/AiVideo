@@ -1,9 +1,16 @@
 /**
- * Publishing to YouTube (Data API v3, no library: plain fetch). A video the user approved
- * ("done") is uploaded by the studio as private with a publish time (publishAt): YouTube makes
- * it public at that hour. Then its Shorts (linking to the full video) and its English version
- * (to the English channel), as they become ready. Every channel is off until the user connects
- * it (OAuth, once, on the review page) and turns it on.
+ * Publishing to YouTube (Data API v3, no library: plain fetch). Each channel has a mode:
+ *   off     nothing is published
+ *   manual  (the default) every video the user approved ("done") is laid out in a folder of
+ *           ~/Videos/Wata/<channel>/ — the film, its thumbnail, and a text with the title,
+ *           description, tags, settings and a publishing time — for the user to upload in
+ *           YouTube Studio; then the user pastes the link back (markPublished)
+ *   auto    the studio uploads it as private with a publish time (publishAt): YouTube makes it
+ *           public at that hour. Videos uploaded through an API project that has not passed
+ *           YouTube's audit stay locked private: after the hour the studio checks, and if the
+ *           video is still private it turns the channel back to manual and lays the locked
+ *           videos out to be uploaded by hand.
+ * The film first, then its Shorts (linking to it) and its English version (English channel).
  *
  * Channels are keyed like the content lines (settings "pick.lines": ask-huy, huy-ke-chuyen);
  * the English versions of stories go to "huy-tells-tales". Secrets stay in studio/secrets/
@@ -35,17 +42,30 @@ export interface ChannelCfg {
   /** Local times for full videos (one a day each) and for Shorts. */
   long: string[];
   shorts: string[];
-  enabled: boolean;
+  mode: Mode;
+  /** Why the studio turned the channel from auto back to manual (a locked video). */
+  locked?: string;
 }
+export type Mode = "off" | "manual" | "auto";
+/** Settings written before the modes had "enabled": on meant auto, off now means manual. */
+export const modeOf = (cfg?: Partial<ChannelCfg> & { enabled?: boolean }): Mode => cfg?.mode ?? (cfg?.enabled ? "auto" : "manual");
 export type PublishSettings = Record<string, ChannelCfg>;
 export const PUBLISH_DEFAULTS: PublishSettings = {
-  "huy-ke-chuyen": { name: "Huy Kể Chuyện", lang: "vi", category: "1", long: ["18:00"], shorts: ["11:30", "16:30", "20:30"], enabled: false },
-  "huy-tells-tales": { name: "Huy Tells Tales", lang: "en", category: "1", long: ["19:00"], shorts: [], enabled: false },
-  "ask-huy": { name: "Ask Huy", lang: "en", category: "27", long: ["17:00"], shorts: ["12:00", "15:00", "19:30"], enabled: false },
-  "hoi-huy": { name: "Hỏi Huy", lang: "vi", category: "27", long: ["17:30"], shorts: ["12:30", "19:00"], enabled: false },
+  "huy-ke-chuyen": { name: "Huy Kể Chuyện", lang: "vi", category: "1", long: ["18:00"], shorts: ["11:30", "16:30", "20:30"], mode: "manual" },
+  "huy-tells-tales": { name: "Huy Tells Tales", lang: "en", category: "1", long: ["19:00"], shorts: [], mode: "manual" },
+  "ask-huy": { name: "Ask Huy", lang: "en", category: "27", long: ["17:00"], shorts: ["12:00", "15:00", "19:30"], mode: "manual" },
+  "hoi-huy": { name: "Hỏi Huy", lang: "vi", category: "27", long: ["17:30"], shorts: ["12:30", "19:00"], mode: "manual" },
 };
 
-export interface Published { videoId: string; url: string; publishAt: string; channel: string; at: string }
+export interface Published {
+  videoId: string; url: string; publishAt: string; channel: string; at: string;
+  /** Uploaded by the user from an exported folder (not by the studio). */
+  manual?: boolean;
+  /** Seen public after its hour (auto uploads), and when it was last looked at. */
+  checked?: string; lastCheck?: string;
+}
+/** A video laid out for upload by hand: where, and the time it was given. */
+export interface Exported { dir: string; publishAt: string; channel: string; at: string }
 export type What = "long" | "short" | "en";
 
 /** Which channel a job's video goes to. */
@@ -81,7 +101,7 @@ const b64url = (b: Buffer) => b.toString("base64").replace(/\+/g, "-").replace(/
 /** The Google sign-in page for connecting a channel (the user picks the channel there). */
 export async function authUrl(channel: string, redirect: string): Promise<string> {
   const c = await client();
-  if (!c) throw new Error("chưa có studio/secrets/client_secret.json (xem README: Kết nối YouTube)");
+  if (!c) throw new Error("chưa có studio/secrets/client_secret.json (xem README: Đăng YouTube → Kết nối để tự đăng)");
   const state = b64url(randomBytes(16)), verifier = b64url(randomBytes(32));
   pending.set(state, { channel, verifier, redirect });
   const q = new URLSearchParams({
@@ -195,12 +215,13 @@ export async function metaOf(job: Job, what: What, cfg: ChannelCfg, longUrl?: st
 
 /**
  * The next free publishing time of a channel for a kind of video: the first of its times, at
- * least two hours from now, not yet taken by another video of that channel.
+ * least two hours from now (and after `after`: a Short after its film is public), not yet
+ * taken by another video of that channel.
  */
-export function nextSlot(cfg: ChannelCfg, kind: "long" | "short", taken: string[], now = new Date()): Date | undefined {
+export function nextSlot(cfg: ChannelCfg, kind: "long" | "short", taken: string[], now = new Date(), after?: string): Date | undefined {
   const times = kind === "short" ? cfg.shorts : cfg.long, used = new Set(taken.map((t) => new Date(t).getTime()));
   if (!times.length) return undefined;
-  const earliest = now.getTime() + 2 * 3600_000;
+  const earliest = Math.max(now.getTime() + 2 * 3600_000, after ? new Date(after).getTime() + 60_000 : 0);
   for (let d = 0; d < 120; d++) {
     for (const hhmm of [...times].sort()) {
       const [h, m] = hhmm.split(":").map(Number);
@@ -256,14 +277,15 @@ export function toPublish(job: Job, files: string[]): { what: What; file: string
 
 /** Every publish time already taken on a channel (all jobs). */
 export function takenTimes(jobs: Job[], channel: string): string[] {
-  return jobs.flatMap((j) => [j.published?.long, j.published?.en, ...(j.published?.shorts ?? [])]).filter((x): x is Published => !!x && x.channel === channel).map((x) => x.publishAt);
+  const all = (j: Job) => [j.published?.long, j.published?.en, ...(j.published?.shorts ?? []), j.exported?.long, j.exported?.en, ...(j.exported?.shorts ?? [])];
+  return jobs.flatMap(all).filter((x): x is Published | Exported => !!x && x.channel === channel).map((x) => x.publishAt);
 }
 
 /** Publish one item of a job (the scheduler calls this once per item). */
 export async function publishOne(slug: string, item: { what: What; file: string; index?: number }, jobs: Job[], settings: PublishSettings, lines: Line[], log: (s: string) => void): Promise<Published> {
   const job = await loadJob(slug), channel = channelOf(job, item.what, lines), cfg = settings[channel];
   if (!cfg) throw new Error(`không có kênh "${channel}" trong cài đặt đăng`);
-  const at = nextSlot(cfg, item.what === "short" ? "short" : "long", takenTimes(jobs, channel));
+  const at = nextSlot(cfg, item.what === "short" ? "short" : "long", takenTimes(jobs, channel), new Date(), item.what === "short" ? job.published?.long?.publishAt : undefined);
   if (!at) throw new Error(`kênh ${cfg.name} không có giờ đăng cho ${item.what}`);
   const meta = await metaOf(job, item.what, cfg, item.what === "short" ? job.published?.long?.url : undefined);
   log(`  upload ${item.file} → ${cfg.name}, công khai lúc ${at.toLocaleString("vi")}`);
@@ -285,20 +307,180 @@ export async function publishOne(slug: string, item: { what: What; file: string;
 // ── Settings (studio/settings.json "publish") ───────────────────────────────────────────────
 
 const SETTINGS = path.join(STUDIO_DIR, "settings.json");
+/** The channels' settings, old ones ("enabled") read as modes. */
+export function normalise(raw?: Record<string, Partial<ChannelCfg> & { enabled?: boolean }>): PublishSettings {
+  const out: PublishSettings = {};
+  for (const [k, c] of Object.entries({ ...PUBLISH_DEFAULTS, ...(raw ?? {}) })) {
+    const { enabled: _, ...rest } = c as ChannelCfg & { enabled?: boolean };
+    out[k] = { ...PUBLISH_DEFAULTS[k], ...rest, mode: modeOf(c) } as ChannelCfg;
+  }
+  return out;
+}
 export async function publishSettings(): Promise<PublishSettings> {
   const raw = (await exists(SETTINGS)) ? JSON.parse(await fsp.readFile(SETTINGS, "utf8")) : {};
-  return { ...PUBLISH_DEFAULTS, ...(raw.publish ?? {}) };
+  return normalise(raw.publish);
 }
 const HHMM = /^([01]\d|2[0-3]):[0-5]\d$/;
 /** Change a channel's settings from the review page (on/off, times). */
-export async function savePublishSettings(channel: string, change: { enabled?: boolean; long?: string[]; shorts?: string[] }): Promise<PublishSettings> {
+export async function savePublishSettings(channel: string, change: { mode?: Mode; long?: string[]; shorts?: string[]; locked?: string | null }): Promise<PublishSettings> {
   const raw = (await exists(SETTINGS)) ? JSON.parse(await fsp.readFile(SETTINGS, "utf8")) : {};
-  const all: PublishSettings = { ...PUBLISH_DEFAULTS, ...(raw.publish ?? {}) };
+  const all = normalise(raw.publish);
   const cfg = all[channel];
   if (!cfg) throw new Error(`không có kênh "${channel}"`);
-  if (typeof change.enabled === "boolean") cfg.enabled = change.enabled;
+  if (change.mode && ["off", "manual", "auto"].includes(change.mode)) { cfg.mode = change.mode; if (change.mode === "auto") delete cfg.locked; }
+  if (change.locked) cfg.locked = change.locked;
   for (const k of ["long", "shorts"] as const) if (Array.isArray(change[k])) cfg[k] = change[k]!.map((x) => String(x).trim()).filter((x) => HHMM.test(x));
   raw.publish = all;
   await fsp.writeFile(SETTINGS, JSON.stringify(raw, null, 2));
   return all;
+}
+
+// ── By hand: a folder per video for YouTube Studio ──────────────────────────────────────────
+
+export const EXPORT_DIR = () => process.env.WATA_EXPORT_DIR ?? path.join(process.env.HOME ?? "/tmp", "Videos", "Wata");
+const WHAT_VI: Record<What, string> = { long: "Video chính", en: "Bản tiếng Anh", short: "Short" };
+const CATEGORY_VI: Record<string, string> = { "1": "Phim và hoạt hình (Film & Animation)", "27": "Giáo dục (Education)" };
+const safe = (s: string) => s.replace(/[\/\\:*?"<>|#]/g, "").replace(/\s+/g, " ").trim().slice(0, 70).trim();
+const two = (n: number) => String(n).padStart(2, "0");
+const stamp = (d: Date) => `${d.getFullYear()}-${two(d.getMonth() + 1)}-${two(d.getDate())} ${two(d.getHours())}h${two(d.getMinutes())}`;
+const DAYS = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+
+/** The text beside an exported video: everything to fill in on YouTube Studio's upload page. */
+export function uploadSheet(meta: Meta, cfg: ChannelCfg, what: What, at: Date, thumb: boolean): string {
+  return [
+    `KÊNH: ${cfg.name}`,
+    `LOẠI: ${WHAT_VI[what]}`,
+    `GIỜ CÔNG KHAI: ${two(at.getHours())}:${two(at.getMinutes())} ${DAYS[at.getDay()]} ${at.getDate()}/${at.getMonth() + 1}/${at.getFullYear()}`,
+    `   (trong YouTube Studio: bước "Chế độ hiển thị" → "Lên lịch", chọn đúng giờ này)`,
+    "",
+    "TIÊU ĐỀ:", meta.title, "",
+    "MÔ TẢ:", meta.description, "",
+    "THẺ (dán vào ô Thẻ, ở mục Hiện thêm):", meta.tags.join(", "), "",
+    "CÀI ĐẶT:",
+    "- Đối tượng người xem: Có, nội dung này dành cho trẻ em",
+    "- Nội dung có sự thay đổi (altered content): Không (phim hoạt hình, không giả người thật)",
+    `- Danh mục: ${CATEGORY_VI[meta.categoryId] ?? meta.categoryId}`,
+    `- Ngôn ngữ video: ${meta.lang === "vi" ? "Tiếng Việt" : "Tiếng Anh (English)"}`,
+    ...(thumb ? ["- Hình thu nhỏ: anh-bia.jpg (trong thư mục này)"] : what === "short" ? ["- Short: không cần hình thu nhỏ"] : []),
+    "",
+    "ĐĂNG XONG: mở trang duyệt của studio, bài này, mục YouTube, dán link video vào ô \"Đã đăng\".",
+    "",
+  ].join("\n");
+}
+
+/** A hard link (same disk: no copy), else a copy. */
+async function place(from: string, to: string): Promise<void> {
+  await fsp.rm(to, { force: true });
+  try { await fsp.link(from, to); } catch { await fsp.copyFile(from, to); }
+}
+
+/**
+ * Lay out what of a finished job is still to be published, each in its own folder, with a
+ * publishing time from the channel's times (kept if it was laid out before). Channels that are
+ * off, and auto channels (unless forced: the button), are skipped. Returns the folders.
+ */
+export async function exportJob(slug: string, jobs: Job[], settings: PublishSettings, lines: Line[], opts: { force?: boolean; now?: Date } = {}): Promise<string[]> {
+  const job = await loadJob(slug), dir = jobDir(slug);
+  const files = await fsp.readdir(dir).catch(() => [] as string[]);
+  const shortFiles = await fsp.readdir(path.join(dir, "shorts")).catch(() => [] as string[]);
+  const have = [...files, ...shortFiles.map((f) => `shorts/${f}`)];
+  const out: string[] = [];
+  for (const item of toPublish(job, have)) {
+    const channel = channelOf(job, item.what, lines), cfg = settings[channel];
+    if (!cfg || cfg.mode === "off" || (cfg.mode === "auto" && !opts.force)) continue;
+    const before = item.what === "short" ? job.exported?.shorts?.[item.index!] : job.exported?.[item.what];
+    const at = before ? new Date(before.publishAt) : nextSlot(cfg, item.what === "short" ? "short" : "long", takenTimes(jobs, channel), opts.now, item.what === "short" ? job.published?.long?.publishAt : undefined);
+    if (!at) continue;
+    const meta = await metaOf(job, item.what, cfg, item.what === "short" ? job.published?.long?.url : undefined);
+    const plan = JSON.parse(await fsp.readFile(path.join(dir, item.what === "en" && files.includes("plan.en.json") ? "plan.en.json" : "plan.json"), "utf8").catch(() => "{}"));
+    const name = `${stamp(at)} ${safe(String(plan.title ?? job.topic))}${item.what === "short" && job.kind !== "fact" && job.kind !== "fact-vi" ? ` - Short ${item.index! + 1}` : ""}`;
+    const folder = before?.dir ?? path.join(EXPORT_DIR(), safe(cfg.name), name);
+    await fsp.mkdir(folder, { recursive: true });
+    await place(path.join(dir, item.file), path.join(folder, "video.mp4"));
+    const jpg = path.join(dir, item.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg"), thumb = item.what !== "short" && (await exists(jpg));
+    if (thumb) await place(jpg, path.join(folder, "anh-bia.jpg"));
+    await fsp.writeFile(path.join(folder, "dang-len-youtube.txt"), uploadSheet(meta, cfg, item.what, at, thumb));
+    const fresh = await loadJob(slug), ex: Exported = { dir: folder, publishAt: at.toISOString(), channel, at: (opts.now ?? new Date()).toISOString() };
+    fresh.exported ??= {};
+    if (item.what === "short") { fresh.exported.shorts ??= []; fresh.exported.shorts[item.index!] = ex; } else fresh.exported[item.what] = ex;
+    await saveJob(fresh);
+    jobs = jobs.map((j) => (j.slug === slug ? fresh : j));
+    out.push(folder);
+  }
+  return out;
+}
+
+/** The video id in a YouTube link (watch, youtu.be, shorts, Studio), or a bare id. */
+export function videoIdOf(link: string): string | undefined {
+  const s = link.trim();
+  const m = s.match(/(?:youtu\.be\/|[?&]v=|\/shorts\/|\/video\/|\/live\/|\/embed\/)([\w-]{11})(?![\w-])/) ?? s.match(/^([\w-]{11})$/);
+  return m?.[1];
+}
+
+/** The user uploaded an exported video: keep its link (and drop the exported entry). */
+export async function markPublished(slug: string, what: What, index: number | undefined, link: string, lines: Line[]): Promise<Published> {
+  const job = await loadJob(slug), id = videoIdOf(link);
+  if (!id) throw new Error("Không đọc được mã video trong link này");
+  const ex = what === "short" ? job.exported?.shorts?.[index ?? 0] : job.exported?.[what];
+  const done: Published = {
+    videoId: id, url: what === "short" ? `https://youtube.com/shorts/${id}` : `https://youtu.be/${id}`,
+    publishAt: ex?.publishAt ?? new Date().toISOString(), channel: ex?.channel ?? channelOf(job, what, lines), at: new Date().toISOString(), manual: true,
+  };
+  job.published ??= {};
+  if (what === "short") { job.published.shorts ??= []; job.published.shorts[index ?? 0] = done; if (job.exported?.shorts) delete job.exported.shorts[index ?? 0]; }
+  else { job.published[what] = done; if (job.exported) delete job.exported[what]; }
+  await saveJob(job);
+  return done;
+}
+
+// ── Auto: was it really made public? ───────────────────────────────────────────────────────
+
+/** An auto upload to look at now: its hour passed half an hour ago, not seen public, not looked at in 30 min. */
+export function dueCheck(p: Published | undefined, now = new Date()): boolean {
+  if (!p || p.manual || p.checked) return false;
+  if (new Date(p.publishAt).getTime() + 30 * 60_000 > now.getTime()) return false;
+  return !p.lastCheck || new Date(p.lastCheck).getTime() + 30 * 60_000 <= now.getTime();
+}
+
+/** What a video's status says once its hour has passed. */
+export function verdict(status: { privacyStatus?: string; uploadStatus?: string; failureReason?: string; rejectionReason?: string } | undefined): "public" | "locked" | "failed" | "gone" {
+  if (!status) return "gone";
+  if (status.uploadStatus === "rejected" || status.uploadStatus === "failed") return "failed";
+  return status.privacyStatus === "public" || status.privacyStatus === "unlisted" ? "public" : "locked";
+}
+
+const LOCKED = "Video tải lên bằng API vẫn riêng tư sau giờ công khai: dự án Google chưa qua audit của YouTube nên video bị khóa. Kênh đã chuyển về Xuất tay. Xóa video bị khóa trong YouTube Studio rồi đăng tay bản đã xuất.";
+
+/**
+ * Look at one auto upload whose hour has passed. Public: noted. Still private: the channel goes
+ * back to manual and every auto upload of it not yet seen public is taken off the job (to be
+ * laid out again by hand). Returns what was found.
+ */
+export async function checkOne(slug: string, what: What, index: number | undefined, log: (s: string) => void): Promise<string> {
+  const job = await loadJob(slug), p = what === "short" ? job.published?.shorts?.[index ?? 0] : job.published?.[what];
+  if (!p) return "none";
+  const r = await api(`https://www.googleapis.com/youtube/v3/videos?part=status&id=${p.videoId}`, await accessToken(p.channel)) as { items?: { status: Parameters<typeof verdict>[0] }[] };
+  const v = verdict(r.items?.[0]?.status), now = new Date().toISOString();
+  if (v === "public") { p.checked = now; await saveJob(job); log(`  ✔ đã công khai: ${p.url}`); return v; }
+  p.lastCheck = now;
+  await saveJob(job);
+  if (v === "failed" || v === "gone") { log(`  ⚠ ${p.url}: ${v === "gone" ? "không còn trên YouTube" : "YouTube từ chối video"}`); return v; }
+  log(`  ✘ ${p.url} vẫn riêng tư sau giờ công khai: video bị khóa (dự án chưa qua audit)`);
+  await savePublishSettings(p.channel, { mode: "manual", locked: `${LOCKED} (${new Date().toLocaleString("vi")}, ${p.url})` });
+  await unpublishLocked(p.channel);
+  return v;
+}
+
+/** Take a locked channel's unconfirmed auto uploads off their jobs (kept in lockedVideos). */
+async function unpublishLocked(channel: string): Promise<void> {
+  const { listJobs } = await import("./jobs.ts");
+  for (const j of await listJobs()) {
+    const p = j.published;
+    if (!p) continue;
+    const bad = (x?: Published) => !!x && x.channel === channel && !x.manual && !x.checked;
+    let changed = false;
+    for (const k of ["long", "en"] as const) if (bad(p[k])) { (j.lockedVideos ??= []).push(p[k]!); delete p[k]; changed = true; }
+    if (p.shorts?.some(bad)) { p.shorts = p.shorts.map((x) => { if (bad(x)) { (j.lockedVideos ??= []).push(x); changed = true; return undefined; } return x; }) as Published[]; changed = true; }
+    if (changed) await saveJob(j);
+  }
 }

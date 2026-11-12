@@ -13,11 +13,11 @@ import { fileURLToPath } from "node:url";
 import { ROOT } from "../config.ts";
 import { brainSettings, ledger, saveBrainSettings, spent, weigh } from "../brain/claude.ts";
 import { jobDir, listJobs, loadJob, saveJob, setStatus, type JobStatus } from "./jobs.ts";
-import { schedulerState } from "./schedule.ts";
+import { schedulerState, settings as scheduleSettings } from "./schedule.ts";
 import { artOf, validStyle, validTheme } from "./art.ts";
 import { costumeSheet } from "./design.ts";
 import { BRAND_DIR, BRAND_THEMES } from "../animation/brand/brand.ts";
-import { authUrl, finishAuth, hasClient, publishSettings, savePublishSettings, token } from "./publish.ts";
+import { authUrl, EXPORT_DIR, exportJob, finishAuth, hasClient, markPublished, publishSettings, savePublishSettings, token, type Mode, type What } from "./publish.ts";
 import { hasApiKey, seasonal } from "./trends.ts";
 import { styles } from "../animation/styles.ts";
 
@@ -155,12 +155,27 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
     }
     if (parts[1] === "publish") {
       if (req.method === "POST") {
-        const b = await body(req) as unknown as { channel: string; enabled?: boolean; long?: string[]; shorts?: string[] };
+        const b = await body(req) as unknown as { channel: string; mode?: Mode; long?: string[]; shorts?: string[] };
         try { await savePublishSettings(b.channel, b); } catch (err) { return json(res, { error: (err as Error).message }, 400); }
       }
       const cfg = await publishSettings();
       const channels = await Promise.all(Object.entries(cfg).map(async ([key, c]) => { const t = await token(key); return { key, ...c, connected: !!t, channelTitle: t?.channelTitle }; }));
-      return json(res, { client: await hasClient(), channels });
+      return json(res, { client: await hasClient(), channels, exportDir: EXPORT_DIR() });
+    }
+    // By hand: lay a job's videos out now (any mode but off), or every approved job's.
+    if (req.method === "POST" && (parts[1] === "export-all" || (parts[1] === "job" && parts[3] === "export" && SLUG.test(parts[2] ?? "")))) {
+      const s = await scheduleSettings(), jobs = await listJobs(), dirs: string[] = [];
+      const which = parts[1] === "export-all" ? jobs.filter((j) => j.status === "done" && !j.publishHold) : [await loadJob(parts[2]!)];
+      try { for (const j of which) dirs.push(...(await exportJob(j.slug, await listJobs(), s.publish, s.pick.lines, { force: true }))); }
+      catch (err) { return json(res, { error: (err as Error).message, dirs }, 400); }
+      return json(res, { dirs, exportDir: EXPORT_DIR() });
+    }
+    // The user uploaded an exported video: its link.
+    if (req.method === "POST" && parts[1] === "job" && parts[3] === "published" && SLUG.test(parts[2] ?? "")) {
+      const b = await body(req) as unknown as { what: What; index?: number; url: string }, s = await scheduleSettings();
+      if (!["long", "en", "short"].includes(b.what)) return json(res, { error: "loại video không hợp lệ" }, 400);
+      try { return json(res, { published: await markPublished(parts[2]!, b.what, b.index === undefined ? undefined : Number(b.index), String(b.url ?? ""), s.pick.lines) }); }
+      catch (err) { return json(res, { error: (err as Error).message }, 400); }
     }
     if (req.method === "POST" && parts[1] === "job" && parts[3] === "hold" && SLUG.test(parts[2] ?? "")) {
       const job = await loadJob(parts[2]!), b = await body(req) as unknown as { hold: boolean };

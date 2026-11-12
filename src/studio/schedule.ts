@@ -10,7 +10,7 @@
  */
 import { hasApiKey, hintsFor, refreshOwnStats, refreshPopular } from "./trends.ts";
 import { wasInterrupted } from "../utils/process.ts";
-import { channelOf, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings } from "./publish.ts";
+import { channelOf, checkOne, dueCheck, exportJob, normalise, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings, type Published, type What } from "./publish.ts";
 import { dailyPick, lineOf, PICK_DEFAULTS, proposerOf, type PickSettings } from "./pick.ts";
 import { isFact, isQA, proposeFacts, proposeQuestions } from "./qa.ts";
 import { proposeLessons } from "./lesson.ts";
@@ -41,9 +41,9 @@ export interface ScheduleSettings {
 }
 const DEFAULTS: ScheduleSettings = { office: { days: [1, 2, 3, 4, 5], start: "08:00", end: "18:00" }, scriptsAhead: 6, officeThreads: 2, pick: PICK_DEFAULTS, publish: PUBLISH_DEFAULTS };
 
-async function settings(): Promise<ScheduleSettings> {
+export async function settings(): Promise<ScheduleSettings> {
   const raw = (await exists(SETTINGS)) ? JSON.parse(await fs.readFile(SETTINGS, "utf8")) : {};
-  const s = { ...DEFAULTS, ...raw, publish: { ...PUBLISH_DEFAULTS, ...(raw.publish ?? {}) } };
+  const s = { ...DEFAULTS, ...raw, publish: normalise(raw.publish) };
   if (!raw.office || !raw.pick || !raw.publish) await fs.writeFile(SETTINGS, JSON.stringify(s, null, 2));
   return s;
 }
@@ -88,14 +88,49 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   // The English version of an approved film: voices by day, the film at night.
   const enFilm = first((j) => j.status === "done" && j.english === "ready");
   if (!office && enFilm) return { what: "english-render", slug: enFilm.slug, run: () => english(enFilm.slug, "render", say(enFilm.slug)) };
-  // Publishing (light: network only, any hour): the next item of a finished job whose channel
-  // is connected and turned on.
+  // Publishing (light: network and files only, any hour). First, auto uploads whose hour has
+  // passed: really public, or locked private (then the channel goes back to manual).
+  for (const j of jobs) {
+    const p = j.published;
+    if (!p) continue;
+    const due: { what: What; index?: number; pub: Published }[] = [];
+    for (const k of ["long", "en"] as const) if (dueCheck(p[k])) due.push({ what: k, pub: p[k]! });
+    (p.shorts ?? []).forEach((x, i) => { if (x && dueCheck(x)) due.push({ what: "short", index: i, pub: x }); });
+    const d = due[0];
+    if (d && (await token(d.pub.channel))) return { what: `publish-check ${d.what}`, slug: j.slug, run: () => checkOne(j.slug, d.what, d.index, say(j.slug)) };
+  }
+  // Manual channels: lay out every approved video not yet laid out (~/Videos/Wata). A failure
+  // waits an hour (else the same job would be picked again at every tick).
+  for (const j of jobs) {
+    if (j.status !== "done" || j.publishHold || (j.publishRetryAt && new Date(j.publishRetryAt) > new Date())) continue;
+    const files = await fs.readdir(jobDir(j.slug)).catch(() => [] as string[]);
+    const pending = toPublish(j, files).filter((item) => {
+      const ex = item.what === "short" ? j.exported?.shorts?.[item.index!] : j.exported?.[item.what];
+      const cfg = s.publish[channelOf(j, item.what, s.pick.lines)];
+      return !ex && cfg?.mode === "manual" && (item.what === "short" ? cfg.shorts : cfg.long).length > 0;
+    });
+    if (pending.length) return {
+      what: "export", slug: j.slug,
+      run: async () => {
+        try { for (const d of await exportJob(j.slug, jobs, s.publish, s.pick.lines)) say(j.slug)(`→ ${d}`); }
+        catch (err) {
+          const job = await loadJob(j.slug);
+          job.publishError = `xuất để đăng tay: ${(err as Error).message.slice(0, 380)}`;
+          job.publishRetryAt = new Date(Date.now() + 60 * 60_000).toISOString();
+          await saveJob(job);
+          throw err;
+        }
+      },
+    };
+  }
+  // Auto channels: the next item of a finished job, if the channel is connected.
   for (const j of jobs) {
     if (j.publishRetryAt && new Date(j.publishRetryAt) > new Date()) continue;
     const files = await fs.readdir(jobDir(j.slug)).catch(() => [] as string[]);
     for (const item of toPublish(j, files)) {
       const ch = channelOf(j, item.what, s.pick.lines);
-      if (!s.publish[ch]?.enabled || !(await token(ch))) continue;
+      const ex = item.what === "short" ? j.exported?.shorts?.[item.index!] : j.exported?.[item.what];
+      if (ex || s.publish[ch]?.mode !== "auto" || !(await token(ch))) continue; // (laid out by hand: the user uploads it)
       return {
         what: `publish ${item.what}`, slug: j.slug,
         run: async () => {

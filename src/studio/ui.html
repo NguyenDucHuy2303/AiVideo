@@ -188,12 +188,20 @@ async function show(slug) {
   if (has("video.mp4")) h += `<section><h3>Video</h3><video controls preload="metadata" src="/files/${slug}/video.mp4" ${has("thumbnail.jpg") ? `poster="/files/${slug}/thumbnail.jpg"` : ""}></video>
     <p class="dls">${dl(slug, "video.mp4", "Tải video", `${slug}.mp4`)}${has("thumbnail.jpg") ? dl(slug, "thumbnail.jpg", "Tải ảnh bìa", `${slug}.jpg`) : ""}</p>
     ${has("thumbnail.jpg") ? `<p><b>Thumbnail</b></p><img style="width:50%;border-radius:10px" src="/files/${slug}/thumbnail.jpg">` : ""}</section>`;
-  if (job.status === "done" || job.published) {
-    const p = job.published || {}, item = (label, x) => x ? `<li>${label}: <a href="${esc(x.url)}" target="_blank">${esc(x.url)}</a> · công khai ${new Date(x.publishAt).toLocaleString("vi")}</li>` : "";
+  if (job.status === "done" || job.published || job.exported) {
+    const p = job.published || {}, ex = job.exported || {}, when = (x) => new Date(x.publishAt).toLocaleString("vi", { weekday: "short", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" });
+    const item = (label, x) => x ? `<li>${label}: <a href="${esc(x.url)}" target="_blank">${esc(x.url)}</a> · công khai ${when(x)}${x.manual ? " · đăng tay" : x.checked ? " · ✔ đã công khai" : ""}</li>` : "";
     const list = [item("Video", p.long), item("Bản tiếng Anh", p.en), ...(p.shorts || []).map((x, i) => item(`Short ${i + 1}`, x))].join("");
-    h += `<section><h3>YouTube</h3>${list ? `<ul>${list}</ul>` : `<p class="meta">${job.publishHold ? "Đang hoãn đăng." : "Sẽ được đăng khi kênh đã kết nối và bật (tab Đăng YouTube)."}</p>`}
-      ${job.publishError ? `<div class="warn">Lần đăng trước lỗi: ${esc(job.publishError)} (thử lại sau 1 giờ)</div>` : ""}
-      <p><button class="fixb" onclick="holdPublish(${!job.publishHold})">${job.publishHold ? "▶ Cho đăng" : "⏸ Hoãn đăng video này"}</button></p></section>`;
+    // Laid out by hand, waiting for the user's upload: the folder, the time, a box for the link.
+    const waiting = [["long", "Video", ex.long], ["en", "Bản tiếng Anh", ex.en], ...(ex.shorts || []).map((x, i) => ["short", `Short ${i + 1}`, x, i])].filter((e) => e[2]);
+    const box = ([what, label, x, i]) => `<li><b>${label}</b> · công khai ${when(x)}<br><code style="user-select:all">${esc(x.dir)}</code>
+      <br><input id="pub-${what}-${i ?? 0}" placeholder="Dán link YouTube sau khi đăng" style="width:60%"> <button class="fixb" onclick="markPublished('${what}', ${i ?? "undefined"})">✔ Đã đăng</button></li>`;
+    h += `<section><h3>YouTube</h3>${list ? `<ul>${list}</ul>` : ""}
+      ${waiting.length ? `<p><b>Chờ anh đăng tay</b> (mở thư mục, làm theo tệp <code>dang-len-youtube.txt</code>):</p><ul>${waiting.map(box).join("")}</ul>` : ""}
+      ${!list && !waiting.length ? `<p class="meta">${job.publishHold ? "Đang hoãn đăng." : "Chưa xuất, chưa đăng. Kênh ở chế độ Xuất tay thì studio tự xuất trong ít phút; hoặc bấm nút dưới."}</p>` : ""}
+      ${(job.lockedVideos || []).filter(Boolean).length ? `<div class="warn">YouTube khóa riêng tư các video studio tự tải lên (dự án Google chưa qua audit). Xóa chúng trong YouTube Studio: ${job.lockedVideos.filter(Boolean).map((x) => `<a href="https://studio.youtube.com/video/${esc(x.videoId)}/edit" target="_blank">${esc(x.videoId)}</a>`).join(", ")}. Bản để đăng tay đã được xuất lại.</div>` : ""}
+      ${job.publishError ? `<div class="warn">Lần trước lỗi: ${esc(job.publishError)} (thử lại sau 1 giờ)</div>` : ""}
+      <p>${job.status === "done" && !job.publishHold ? `<button class="fixb" onclick="exportNow()">📦 Xuất để đăng tay</button> ` : ""}<button class="fixb" onclick="holdPublish(${!job.publishHold})">${job.publishHold ? "▶ Cho đăng" : "⏸ Hoãn đăng video này"}</button></p></section>`;
   }
   if (has("video.en.mp4")) h += `<section><h3>English version</h3><video controls preload="metadata" src="/files/${slug}/video.en.mp4" ${has("thumbnail.en.jpg") ? `poster="/files/${slug}/thumbnail.en.jpg"` : ""}></video>
     <p class="dls">${dl(slug, "video.en.mp4", "Tải video tiếng Anh", `${slug}-en.mp4`)}${has("thumbnail.en.jpg") ? dl(slug, "thumbnail.en.jpg", "Tải ảnh bìa tiếng Anh", `${slug}-en.jpg`) : ""}</p></section>`;
@@ -270,12 +278,17 @@ async function showYoutube() {
   const p = await fetch("/api/publish").then((r) => r.json());
   const ready = p.client;
   $("#detail").innerHTML = `<h2>Đăng YouTube</h2>
-    <section><p>Video bạn duyệt xong (tab "Xong") được studio tải lên kênh ở chế độ riêng tư, kèm giờ công khai: đến giờ YouTube tự công khai. Ảnh bìa, tiêu đề, mô tả có nguồn tư liệu, thẻ, "dành cho trẻ em" được điền sẵn. Shorts đăng sau video chính (kèm link), bản tiếng Anh lên kênh tiếng Anh.</p>
-    ${ready ? "" : `<div class="warn">Chưa có <b>studio/secrets/client_secret.json</b>. Làm theo README, mục "Kết nối YouTube" (tạo dự án Google Cloud, bật YouTube Data API v3, tạo OAuth client loại Desktop, tải file JSON về đặt vào đó), rồi tải lại trang này.</div>`}</section>
+    <section><p>Mỗi kênh có ba chế độ:</p><ul>
+      <li><b>Xuất tay</b>: mỗi video bạn duyệt xong (tab "Xong") được xếp vào một thư mục trong <code>${esc(p.exportDir)}</code>: video, ảnh bìa, và tệp <code>dang-len-youtube.txt</code> có tiêu đề, mô tả, thẻ, cài đặt, giờ công khai. Bạn tải lên bằng YouTube Studio rồi dán link vào bài (ô "Đã đăng"). Shorts được xuất sau khi video chính có link.</li>
+      <li><b>Tự đăng</b>: studio tự tải lên ở chế độ riêng tư kèm giờ công khai. <b>Chỉ bật khi dự án Google đã qua audit của YouTube</b> (README): chưa audit thì YouTube khóa video ở riêng tư; studio phát hiện, chuyển kênh về Xuất tay và xuất lại để bạn đăng tay.</li>
+      <li><b>Tắt</b>: không làm gì.</li></ul>
+      <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="exportAll()">📦 Xuất tất cả bài chờ đăng</button></p>
+    ${ready ? "" : `<div class="meta">Tự đăng cần <b>studio/secrets/client_secret.json</b> (README, mục "Đăng YouTube → Kết nối để tự đăng"). Xuất tay thì không cần.</div>`}</section>
     ${p.channels.map((c) => `<section><h3>${esc(c.name)} <small>(${c.lang === "vi" ? "tiếng Việt" : "tiếng Anh"})</small></h3>
-      <p>${c.connected ? `✔ Đã kết nối: <b>${esc(c.channelTitle || "")}</b>` : "Chưa kết nối"}
+      ${c.locked ? `<div class="warn">${esc(c.locked)}</div>` : ""}
+      <p>${c.connected ? `✔ Đã kết nối: <b>${esc(c.channelTitle || "")}</b>` : "Chưa kết nối (chỉ cần cho Tự đăng)"}
         ${ready ? `<a class="dl" style="margin-left:10px" href="/oauth/start?channel=${encodeURIComponent(c.key)}">${c.connected ? "Kết nối lại" : "Kết nối kênh"}</a>` : ""}</p>
-      <p><label><input type="checkbox" id="on-${c.key}" ${c.enabled ? "checked" : ""} ${c.connected ? "" : "disabled"}> Tự động đăng lên kênh này</label></p>
+      <p>Chế độ: <select id="mode-${c.key}">${[["manual", "Xuất tay"], ["auto", "Tự đăng"], ["off", "Tắt"]].map(([v, l]) => `<option value="${v}" ${c.mode === v ? "selected" : ""} ${v === "auto" && !c.connected ? "disabled" : ""}>${l}${v === "auto" && !c.connected ? " (cần kết nối kênh)" : ""}</option>`).join("")}</select></p>
       <table><tr><td>Giờ công khai video chính</td><td><input id="long-${c.key}" value="${esc(c.long.join(", "))}"></td></tr>
       <tr><td>Giờ công khai Shorts</td><td><input id="shorts-${c.key}" value="${esc(c.shorts.join(", "))}"></td></tr></table>
       <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="savePublish('${c.key}')">Lưu</button></p></section>`).join("")}${await trendsSection()}`;
@@ -286,12 +299,32 @@ async function trendsSection() {
   return `<section><h3>Xu hướng (gợi ý cho bộ đề xuất chủ đề)</h3>
     <p><b>Dịp sắp tới (3 tuần):</b> ${[...t.seasonal.vi, ...t.seasonal.en.filter((x) => !/Vietnam/.test(x))].map(esc).join(" · ") || "chưa có"}</p>
     ${t.hasKey ? (pop.length ? pop.map(([line, list]) => `<p><b>${esc(line)}</b>: ${list.slice(0, 5).map((v) => `${esc(v.title)} <small>(${v.views.toLocaleString("vi")})</small>`).join(" · ")}</p>`).join("") + `<p class="meta">Cập nhật ${esc(t.day || "")}</p>` : `<p class="meta">Có API key, sẽ cập nhật trong lượt chạy tới.</p>`)
-      : `<div class="warn">Chưa có <b>studio/secrets/youtube_api_key.txt</b>: chưa xem được video đang hot và lượt xem của kênh mình (README, mục "Kết nối YouTube", bước API key). Lịch mùa lễ vẫn chạy.</div>`}</section>`;
+      : `<div class="warn">Chưa có <b>studio/secrets/youtube_api_key.txt</b>: chưa xem được video đang hot và lượt xem của kênh mình (README, mục "Đăng YouTube", bước API key). Lịch mùa lễ vẫn chạy.</div>`}</section>`;
 }
 async function savePublish(key) {
   const split = (v) => v.split(/[,\s]+/).filter(Boolean);
-  await fetch("/api/publish", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ channel: key, enabled: $(`#on-${key}`).checked, long: split($(`#long-${key}`).value), shorts: split($(`#shorts-${key}`).value) }) });
+  const mode = $(`#mode-${key}`).value;
+  if (mode === "auto" && !confirm("Chỉ bật Tự đăng khi dự án Google đã qua audit của YouTube. Chưa audit thì video bị khóa ở chế độ riêng tư. Bật?")) return;
+  const r = await fetch("/api/publish", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ channel: key, mode, long: split($(`#long-${key}`).value), shorts: split($(`#shorts-${key}`).value) }) }).then((r) => r.json());
+  if (r.error) alert(r.error);
   showYoutube();
+}
+async function exportAll() {
+  const r = await fetch("/api/export-all", { method: "POST" }).then((r) => r.json());
+  alert(r.error ? `Lỗi: ${r.error}` : r.dirs.length ? `Đã xuất ${r.dirs.length} video vào ${r.exportDir}:\n\n${r.dirs.join("\n")}` : "Không có video nào chờ đăng (chỉ video đã duyệt xong, chưa đăng, chưa xuất).");
+}
+async function exportNow() {
+  const r = await fetch(`/api/job/${current}/export`, { method: "POST" }).then((r) => r.json());
+  if (r.error) alert(`Lỗi: ${r.error}`);
+  else if (!r.dirs.length) alert("Không còn gì để xuất: đã xuất hoặc đã đăng hết (Shorts chờ video chính có link).");
+  await load(); show(current);
+}
+async function markPublished(what, index) {
+  const url = $(`#pub-${what}-${index ?? 0}`).value.trim();
+  if (!url) return alert("Dán link YouTube của video vừa đăng");
+  const r = await fetch(`/api/job/${current}/published`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ what, index, url }) }).then((r) => r.json());
+  if (r.error) return alert(r.error);
+  await load(); show(current);
 }
 async function holdPublish(hold) {
   await fetch(`/api/job/${current}/hold`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ hold }) });

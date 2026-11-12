@@ -326,9 +326,24 @@ npm run wata -- render fixtures/demo/timeline.json      # → fixtures/demo/out/
 
 Layout của từng tỷ lệ (vùng an toàn, cỡ chữ, vị trí) nằm ở `src/layouts/index.ts`.
 
-## Kết nối YouTube (tự đăng video)
+## Đăng YouTube
 
-Studio tự đăng video bạn đã duyệt xong. Video được tải lên ở chế độ riêng tư, kèm giờ công khai; đến giờ YouTube tự công khai. Bạn chỉ cần làm các bước dưới đây **một lần**.
+Mỗi kênh (Huy Kể Chuyện, Huy Tells Tales, Ask Huy, Hỏi Huy) có một chế độ, chọn ở tab **Đăng YouTube** của trang duyệt:
+
+- **Xuất tay** (mặc định): mỗi video bạn đã duyệt xong được studio xếp vào một thư mục trong `~/Videos/Wata/<tên kênh>/`, tên thư mục bắt đầu bằng giờ công khai. Trong đó có:
+  - `video.mp4` (liên kết cứng tới file của studio, không tốn thêm dung lượng);
+  - `anh-bia.jpg`;
+  - `dang-len-youtube.txt`: kênh, giờ công khai, tiêu đề, mô tả, thẻ, danh mục, ngôn ngữ, "dành cho trẻ em".
+
+  Bạn tải lên bằng YouTube Studio và chọn **Lên lịch** đúng giờ ghi trong tệp. Sau đó dán link vào bài trên trang duyệt (mục YouTube, ô **Đã đăng**). Studio ghi nhận, rồi xuất Shorts của bài đó (mô tả có link tới video chính, giờ công khai sau video chính). Nút **📦 Xuất để đăng tay** trên mỗi bài và nút **Xuất tất cả bài chờ đăng** xuất ngay, không chờ studio.
+- **Tự đăng**: studio tự tải lên ở chế độ riêng tư kèm giờ công khai; đến giờ YouTube tự công khai. **Chỉ bật khi dự án Google đã qua audit** (xem dưới). Nửa giờ sau giờ công khai, studio kiểm tra video. Nếu video vẫn riêng tư (bị khóa), studio chuyển kênh về Xuất tay, xuất lại các video bị khóa để bạn đăng tay, và báo trên trang duyệt những video cần xóa trong YouTube Studio.
+- **Tắt**: không làm gì.
+
+Không cần bốn email: một tài khoản Google tạo được nhiều kênh. Vào YouTube, chọn ảnh đại diện → **Cài đặt** → **Thêm hoặc quản lý kênh** → **Tạo kênh**. Mỗi kênh là một tài khoản thương hiệu (Brand Account), có tên và logo riêng.
+
+### Kết nối để tự đăng
+
+Xuất tay không cần bước nào dưới đây. Tự đăng cần làm các bước sau **một lần**.
 
 1. Vào <https://console.cloud.google.com/> và tạo một dự án mới, ví dụ "Wata Studio".
 2. Vào **APIs & Services → Library**, tìm **YouTube Data API v3**, bấm **Enable**.
@@ -357,3 +372,20 @@ Muốn đặt ảnh bìa riêng, kênh phải được xác minh số điện th
 Mọi video đều được khai **dành cho trẻ em** (Made for Kids). YouTube bắt buộc khai như vậy với nội dung thiếu nhi (luật COPPA).
 
 Hạn mức của Google: mỗi ngày tối đa 100 lần tải lên. Mỗi lần đặt ảnh bìa tốn 50 trong 10.000 điểm/ngày, nên dư sức cho studio.
+
+### Audit của YouTube (bắt buộc trước khi bật Tự đăng)
+
+Video tải lên qua API từ một dự án Google Cloud **chưa qua audit** bị YouTube khóa ở chế độ riêng tư. Video bị khóa không công khai được, cũng không kháng nghị được, phải xóa đi và đăng lại. Audit khác với bước "xác minh ứng dụng" của màn hình đồng ý OAuth: không xác minh ứng dụng thì vẫn dùng được, nhưng không qua audit thì video bị khóa.
+
+Nộp đơn tại **YouTube API Services – Audit and Quota Extension Form** (tìm đúng tên này trong trang trợ giúp của YouTube API Services; đăng nhập bằng tài khoản Google sở hữu dự án). Thời gian chờ có thể vài tuần. Trong lúc chờ, để các kênh ở Xuất tay.
+
+Gợi ý nội dung trả lời (sửa cho đúng thông tin của bạn):
+
+- **Tên và mục đích ứng dụng:** "Wata Studio" là công cụ nội bộ chạy trên máy cá nhân của chủ kênh, chỉ để đăng video hoạt hình thiếu nhi do chính chủ kênh sản xuất lên các kênh của mình. Không có người dùng nào khác, không cung cấp cho bên thứ ba.
+- **Kênh sử dụng:** Huy Kể Chuyện, Huy Tells Tales, Ask Huy, Hỏi Huy, cùng thuộc một tài khoản Google của chủ kênh (điền link các kênh).
+- **API dùng:** `videos.insert` (tải video lên ở chế độ riêng tư với `publishAt`, `selfDeclaredMadeForKids: true`), `thumbnails.set`, `videos.list` (kiểm tra trạng thái video của chính mình), `channels.list` (`mine=true`, lấy tên kênh khi kết nối), `search.list` / `videos.list` bằng API key (xem xu hướng video thiếu nhi để gợi ý chủ đề).
+- **Dữ liệu người dùng:** chỉ lưu refresh token của các kênh của chủ kênh trên máy cá nhân (`studio/secrets/`, không đưa lên mạng). Không thu thập, không chia sẻ dữ liệu của người dùng YouTube khác.
+- **Tần suất:** khoảng 1 video dài và 1–3 Shorts mỗi ngày cho mỗi kênh. Hạn mức mặc định là đủ.
+- **Tuân thủ:** mọi video được khai "dành cho trẻ em" (COPPA), có tiêu đề, mô tả và nguồn tư liệu do chủ kênh duyệt trước khi đăng; người xem không đăng nhập hay cấp quyền gì cho ứng dụng.
+
+Google có thể yêu cầu thêm chính sách quyền riêng tư (một trang web ngắn nói rõ các điểm trên) hoặc video quay màn hình quy trình kết nối và đăng. Khi có kết quả audit, bật **Tự đăng** cho từng kênh trên trang duyệt.
