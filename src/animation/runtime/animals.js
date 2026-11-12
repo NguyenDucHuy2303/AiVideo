@@ -211,6 +211,7 @@
       seat: [p.x + seat[0] * s * f, y0 + (by + seat[1]) * s], mouth: [p.x + (headX + 50) * s * f, y0 + (headY + 20) * s], mouthAngle: f > 0 ? 0 : Math.PI,
       head: [p.x + headX * s * f, y0 + headY * s], headR: 45 * s, hooves: [[p.x - bw * 0.34 * s * f, y0], [p.x + bw * 0.34 * s * f, y0]],
       top: y0 + (headY - 90) * s, height: A.height * s, feet: [p.x, y0],
+      hips: [p.x, y0 + by * s], // (the middle of the body: where effects on the animal are centred)
       box: [Math.min(p.x - back * s * f, p.x + front * s * f), y0 + (headY - 100) * s, Math.max(p.x - back * s * f, p.x + front * s * f), y0],
     };
   }

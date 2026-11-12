@@ -177,6 +177,7 @@
     return {
       head, headR: 30 * s, mouth: head, mouthAngle: f > 0 ? 0 : Math.PI, feet: [p.x, p.y ?? 0], hooves: [[p.x, p.y ?? 0]],
       top: y0 - A.height * s, height: A.height * s, seat: [p.x, y0 - A.height * 0.6 * s],
+      hips: [p.x, y0 - A.height * 0.45 * s], // (the middle of the body, for effects)
       box: [p.x - (bw * 0.6) * s, y0 - A.height * s, p.x + (bw * 0.7) * s, y0],
     };
   }

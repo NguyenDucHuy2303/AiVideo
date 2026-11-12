@@ -98,6 +98,7 @@
       seat: world(SEAT[0], SEAT[1]), mouth, mouthAngle: f > 0 ? pitch : Math.PI - pitch,
       head: world(NECK[0] + HEAD[0] + 40, NECK[1] + HEAD[1]), hooves: [[p.x - 112 * s * f, 0], [p.x + 102 * s * f, 0]],
       top: (p.y ?? 0) + (BODY_Y - 240) * s, height: 420 * s, feet: [p.x, p.y ?? 0],
+      hips: world(0, 0), // (the middle of the body: where effects on the horse are centred)
       // Tail (a flame for the iron horse) to nose, ears to hooves.
       box: [Math.min(p.x - (Hh.iron ? 300 : 260) * s * f, p.x + 285 * s * f), (p.y ?? 0) + (BODY_Y + (p.bob || 0) - 250) * s, Math.max(p.x - (Hh.iron ? 300 : 260) * s * f, p.x + 285 * s * f), p.y ?? 0],
     };
