@@ -47,6 +47,8 @@ export interface Job {
   autoApproved?: string;
   /** The machine check of the video before that approval (autoreview.ts). */
   autoCheck?: import("./autoreview.ts").VideoCheck;
+  /** The naturalness check of the film (animation/inspect.ts): mistakes a minute, by kind. */
+  inspect?: { at: string; perMinute: number; byKind: Record<string, { count: number; seconds: number }> };
   /** On YouTube (publish.ts): the film, its English version, its Shorts. */
   published?: { long?: import("./publish.ts").Published; en?: import("./publish.ts").Published; shorts?: import("./publish.ts").Published[] };
   /** Laid out in ~/Videos/Wata for upload by hand (publish.ts), not yet marked published. */

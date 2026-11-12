@@ -8,7 +8,7 @@
  * A note on the video ("fix") re-directs the scenes with the note and renders again; only the
  * scenes that changed are drawn again.
  */
-import { isFact, isQA, writeFact, writeQA } from "./qa.ts";
+import { isFact, isQA, profileOf, writeFact, writeQA } from "./qa.ts";
 import { writeLesson } from "./lesson.ts";
 import { prepareQA, renderQA } from "./qaproduce.ts";
 import fs from "node:fs/promises";
@@ -21,6 +21,7 @@ import { animate } from "../animation/compile/animate.ts";
 import { withBackdrop } from "../animation/backdrops.ts";
 import { loadScene } from "../animation/render.ts";
 import { renderStory } from "../animation/story.ts";
+import { inspectFilm } from "../animation/inspect.ts";
 import { costumeSheet, designCast, type Designed } from "./design.ts";
 import { jobDir, loadJob, saveJob, setStatus, type Job, type JobStatus } from "./jobs.ts";
 import { writeScript, type Plan } from "./write.ts";
@@ -183,7 +184,16 @@ export async function render(slug: string, log: (s: string) => void = console.lo
       if (!(await exists(from))) continue;
       await fs.link(from, target).catch(() => fs.copyFile(from, target));
     }
+    // The naturalness check (inspect.ts: half a minute, no tokens), shown on the review page.
+    let inspect: Job["inspect"];
+    try {
+      const qa = isQA((await loadJob(slug)).kind), kind = (await loadJob(slug)).kind;
+      const r = await inspectFilm(projectOf(slug), { lang: qa && profileOf(kind).lang === "en" ? "en" : undefined, vertical: isFact(kind) });
+      inspect = { at: new Date().toISOString(), perMinute: r.perMinute, byKind: r.byKind as NonNullable<Job["inspect"]>["byKind"] };
+      log(`  soi tự nhiên: ${r.perMinute} lỗi/phút`);
+    } catch (err) { log(`  soi tự nhiên: không chạy được (${(err as Error).message.slice(0, 120)})`); }
     job = await loadJob(slug);
+    if (inspect) job.inspect = inspect;
     delete job.stage;
     delete job.shorts; // the film changed: its shorts are cut again
     if (isFact(job.kind)) job.shorts = []; // a Short itself: nothing to cut from it

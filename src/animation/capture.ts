@@ -171,3 +171,48 @@ export async function still(opts: { page: string; width: number; height: number;
     await fs.rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
   }
 }
+
+/**
+ * One headless Chrome for many pages: `open(page, params)` loads a page (window.params set, its
+ * window.ready awaited), `evaluate(expr)` runs an expression there (promises awaited) and returns
+ * its value as JSON. For measuring scenes rather than filming them (inspect.ts).
+ */
+export async function withPage<T>(width: number, height: number, fn: (page: { open: (page: string, params?: unknown) => Promise<void>; evaluate: <R>(expr: string) => Promise<R> }) => Promise<T>): Promise<T> {
+  const profile = await fs.mkdtemp(path.join(os.tmpdir(), "wata-chrome-"));
+  const { chrome, url } = await launch(width, height, profile);
+  try {
+    const ws = new WebSocket(url);
+    await new Promise((resolve, reject) => {
+      ws.addEventListener("open", resolve, { once: true });
+      ws.addEventListener("error", () => reject(new Error("cannot connect to Chrome")), { once: true });
+    });
+    const cdp = new Cdp(ws);
+    const { targetId } = await cdp.send("Target.createTarget", { url: "about:blank" });
+    const { sessionId } = await cdp.send("Target.attachToTarget", { targetId, flatten: true });
+    const s = (method: string, params: object = {}) => cdp.send(method, params, sessionId);
+    await s("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: false });
+    await s("Page.enable");
+    let script: string | undefined;
+    const evaluate = async <R>(expression: string): Promise<R> => {
+      const r = await s("Runtime.evaluate", { expression, awaitPromise: true, returnByValue: true });
+      if (r.exceptionDetails) throw new Error(r.exceptionDetails.exception?.description ?? r.exceptionDetails.text);
+      return r.result.value as R;
+    };
+    const open = async (page: string, params?: unknown) => {
+      if (script) await s("Page.removeScriptToEvaluateOnNewDocument", { identifier: script });
+      script = (await s("Page.addScriptToEvaluateOnNewDocument", { source: `window.params = ${JSON.stringify(params ?? {})};` })).identifier;
+      const loaded = cdp.once("Page.loadEventFired");
+      await s("Page.navigate", { url: /^https?:/.test(page) ? page : pathToFileURL(path.resolve(page)).href });
+      await loaded;
+      await evaluate("Promise.resolve(window.ready).then(() => true)");
+    };
+    const out = await fn({ open, evaluate });
+    ws.close();
+    return out;
+  } finally {
+    const exited = new Promise((r) => (chrome.exitCode !== null ? r(null) : chrome.once("exit", r)));
+    chrome.kill("SIGKILL");
+    await exited;
+    await fs.rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+  }
+}

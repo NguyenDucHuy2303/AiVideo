@@ -55,8 +55,10 @@
     // (148°, not straight up: in the side view the hand then shows above the brow instead of
     // vanishing behind the head)
     raise: (τ, c) => ({ legF: [10, -4], legB: [-12, -4], armF: [lerp(40, 148, EASE.backOut(τ / 0.5)), 8], armB: [-20, 60], headTilt: -10, face: c.face || "shout" }),
-    point: (τ, c) => ({ ...human.idle(τ, c), armF: [lerp(10, 86, EASE.out(τ / 0.4)), 4], headTilt: -2, face: c.face || "determined" }),
-    talk: (τ, c) => ({ ...human.idle(τ, c), armF: [30 + 18 * sin(τ * 2.6), 50 + 20 * sin(τ * 3.1)], talk: 1, face: c.face || "neutral" }),
+    // (the elbow a little bent: a straight arm reads as a stick; acting.js brings it down after a beat)
+    point: (τ, c) => ({ ...human.idle(τ, c), armF: [lerp(10, 82, EASE.out(τ / 0.4)), lerp(14, 16, EASE.out(τ / 0.4))], headTilt: -2, face: c.face || "determined" }),
+    // Talking: the hands move with the phrases (acting.js), not on a loop.
+    talk: (τ, c) => ({ ...human.idle(τ, c), armF: [16, 26], talk: 1, face: c.face || "neutral" }),
     // The upper arm forward and up, the forearm upright and waving: the hand is in front of the
     // face at head height, seen in the side view (raised behind the head it was hidden).
     wave: (τ, c) => ({ ...human.idle(τ, c), armF: [82, 64 + 13 * sin(τ * 10)], face: c.face || "happy" }),

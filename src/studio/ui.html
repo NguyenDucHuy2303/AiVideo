@@ -104,6 +104,7 @@ const TABS = [
   ["tokens", "Token", []],
   ["youtube", "Đăng YouTube", []],
 ];
+const INSPECT_VI = { held: "giữ tay cứng", still: "đứng im", "prop-face": "đồ che mặt", "talk-covered": "nói khi bị che miệng", "head-cut": "khung cắt đầu", "faces-overlap": "mặt chồng nhau", "speaker-off": "người nói ngoài hình" };
 const STATUS = { writing: "đang viết", review: "chờ duyệt kịch bản", rewrite: "đang viết lại", approved: "đã duyệt, chờ làm", producing: "đang làm video", video: "chờ duyệt video", fix: "chờ sửa video", done: "xong", rejected: "đã bỏ", failed: "lỗi" };
 const TASK = { write: "viết kịch bản", prepare: "chuẩn bị video", render: "render video", shorts: "cắt Shorts", english: "chuẩn bị bản tiếng Anh", "english-render": "render bản tiếng Anh", topics: "đề xuất chủ đề", "auto-review": "kiểm tra để tự duyệt video" };
 let tab = null, jobs = [], current = null, sched = null, ART = null, REVIEW_HOURS = 12;
@@ -198,6 +199,7 @@ async function show(slug) {
     </div>`;
   }
   if (job.score) h += `<div class="meta">Điểm của bộ não: <b>${job.score.value}/10</b> — ${esc(job.score.why)}${job.autoPicked ? " · <b>studio tự chọn</b> (bạn chưa chọn trước giờ chốt)" : ""}</div>`;
+  if (job.inspect) h += `<div class="meta">Máy soi độ tự nhiên: <b>${job.inspect.perMinute} lỗi/phút</b>${Object.keys(job.inspect.byKind).length ? ` · ${Object.entries(job.inspect.byKind).map(([k, v]) => `${INSPECT_VI[k] || k} ${v.count}`).join(" · ")}` : " · không thấy lỗi"}</div>`;
   if (job.status === "video" && job.autoCheck && !job.autoCheck.ok) h += `<div class="warn">Studio chưa tự duyệt được video này, kiểm tra máy thấy: ${esc(job.autoCheck.problems.join("; "))}. Anh xem giúp.</div>`;
   if (job.autoApproved) h += `<div class="meta">✔ <b>Studio tự duyệt video</b> lúc ${new Date(job.autoApproved).toLocaleString("vi")} (anh chưa duyệt kịp, kiểm tra máy đạt). Chưa ưng thì bấm “Hoãn đăng” ở mục YouTube.</div>`;
   if (job.error) h += `<div class="warn">Lỗi: ${esc(job.error)}</div>`;

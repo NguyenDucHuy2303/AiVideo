@@ -194,6 +194,8 @@ export interface StoryOptions {
   /** Intro, logo, outro and thumbnail of the channel (default: on when assets/brand/brand.json exists). */
   brand?: boolean;
   onLog?: (s: string) => void;
+  /** Called with the scenes as they will be filmed (speech, shots and timing in place); "stop": no film (inspect.ts). */
+  onScenes?: (scenes: { name: string; scene: Record<string, unknown> }[]) => Promise<"stop" | void>;
 }
 
 export async function renderStory(projectDir: string, opts: StoryOptions = {}): Promise<string> {
@@ -310,6 +312,7 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
     }
   }
 
+  if (opts.onScenes && (await opts.onScenes(scripts.map((s) => ({ name: s.name, scene: s.scene })))) === "stop") return "";
   // Pictures, cached by script + runtime.
   const cache = path.join(dir, "build", "anim", shape);
   await fs.mkdir(cache, { recursive: true });

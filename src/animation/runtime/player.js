@@ -48,9 +48,13 @@
       const rig = kind === "horse" ? WA.horse.build(S, actorLayer, c.look || {}) : kind === "critter" ? WA.critters.build(S, actorLayer, c.look || {}) : kind === "animal" ? WA.animal.build(S, actorLayer, c.look || {}) : WA.human.build(S, actorLayer, c.look || {}, seed);
       const shadow = WA.core.el("ellipse", { fill: "url(#shadow)", rx: 0, ry: 0 }, shadowLayer);
       const acts = (scene.actions || []).filter((a) => a.actor === c.id).sort((a, b) => a.at - b.at);
-      actors[c.id] = { c, rig, shadow, acts, horse: kind !== "human", kind, R: kind === "critter" ? WA.critters : kind === "animal" ? WA.animal : kind === "horse" ? WA.horse : WA.human, mats: S.matScope.list, flip: false };
+      // The little things a person does, planned once for the scene (acting.js).
+      const events = kind === "human" && WA.acting ? WA.acting.plan(seed, (scene.duration || 10) * (scene.timeScale ?? 1)) : [];
+      actors[c.id] = { c, rig, shadow, acts, seed, events, horse: kind !== "human", kind, R: kind === "critter" ? WA.critters : kind === "animal" ? WA.animal : kind === "horse" ? WA.horse : WA.human, mats: S.matScope.list, flip: false };
       S.matScope = null;
     }
+    // Talking gestures within each spoken line (clip time), fixed by the speaker.
+    if (WA.acting) for (const sp of scene.speech || []) if (actors[sp.actor]) sp.beats = WA.acting.beats(actors[sp.actor].seed, sp.from, sp.to);
     // Running and galloping kick up dust by themselves.
     const fx = [...(scene.fx || [])];
     for (const a of scene.actions || []) {
@@ -209,7 +213,7 @@
           x = s.seat[0]; y = s.seat[1] + (y - (A.c.y ?? 0)); pose.seated = true;
         }
       }
-      const out = { ...pose, x, y, scale: props.scale, opacity: props.opacity, facing: props.facing };
+      let out = { ...pose, x, y, scale: props.scale, opacity: props.opacity, facing: props.facing };
       // Speech (from story.ts): the speaker's mouth follows the loudness of the real voice and
       // the vowels of the words; everyone else turns their eyes to the speaker.
       const clip = t / (scene.timeScale ?? 1);
@@ -229,6 +233,14 @@
         out.face = { ...base, gaze: [ahead ? 0.8 : -0.9, -0.05] };
       }
       if (props.prop !== undefined) out.prop = props.prop;
+      if (A.kind === "human" && WA.acting && !riding) {
+        const speaking = line && line.actor === id;
+        out = WA.acting.apply(out, {
+          t, clip, cur, seed: A.seed, events: A.events, rest: lib.idle(t, ctx(cur)), holding: !!(props.prop ?? A.rig.activeProp),
+          speech: speaking ? { k: clip - line.from, env: line.env, beats: line.beats || [] } : null,
+          listen: listening ? line : null,
+        });
+      }
       memo.set(key, out);
       return out;
     }
@@ -303,7 +315,7 @@
       const g = scene.grade;
       if (g) S.grade.setAttribute("opacity", f2(lerp(g.from ?? 0.06, g.to ?? 0.06, seg(t, g.at ?? 0, (g.at ?? 0) + (g.dur ?? 1)))));
     }
-    return { S, renderFrame, poseAt, pointsAt, duration: scene.duration, ready };
+    return { S, renderFrame, poseAt, pointsAt, duration: scene.duration, ready, actors, actorLayer };
   }
 
   WA.player = { create };

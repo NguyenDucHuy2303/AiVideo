@@ -19,6 +19,7 @@
 <script src="runtime/animals.js"></script>
 <script src="runtime/critters.js"></script>
 <script src="runtime/motions.js"></script>
+<script src="runtime/acting.js"></script>
 <script src="runtime/fx.js"></script>
 <script src="runtime/camera.js"></script>
 <script src="runtime/style.js"></script>
@@ -31,6 +32,7 @@
   const scene = P.scene || window.SCENE;
   const player = WA.player.create(document.body, scene, P.width || 1920, P.height || 1080);
   window.renderFrame = player.renderFrame;
+  window.player = player; // (inspect.ts measures poses through it)
   window.ready = player.ready;
   player.renderFrame(P.startAt || 0);
   if (!P.scene) {
