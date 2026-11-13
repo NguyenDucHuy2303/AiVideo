@@ -61,11 +61,95 @@
       "at": "2026-11-12T10:35:27.121Z",
       "status": "producing",
       "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-12T13:10:01.312Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-12T13:50:21.505Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-12T16:51:15.279Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-12T20:18:28.459Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (368 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-13T02:31:03.131Z",
+      "status": "done",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-13T02:33:33.663Z",
+      "status": "producing",
+      "info": "render lại: hình cục tẩy, hộp bút, cặp sách trên bảng (thư mục đăng tự cập nhật)"
     }
   ],
   "kind": "lesson",
   "summary": "Từ vựng gần gũi, dễ vẽ, bé dùng ngay hằng ngày ở trường, lại hợp mùa 20/11 (còn 8 ngày) để bé nói với thầy cô: pencil (bút chì), pen (bút mực), book (quyển sách), notebook (quyển vở), eraser (cục tẩy), ruler (thước kẻ), schoolbag (cặp sách), pencil case (hộp bút), teacher (thầy/cô giáo), flower (bông hoa tặng thầy cô).",
   "by": "claude-sonnet",
   "autoPicked": true,
+  "inspect": {
+    "at": "2026-11-12T13:50:21.502Z",
+    "perMinute": 0.7,
+    "byKind": {
+      "still": {
+        "count": 1,
+        "seconds": 5.3
+      },
+      "head-cut": {
+        "count": 3,
+        "seconds": 3.5
+      }
+    }
+  },
+  "autoCheck": {
+    "at": "2026-11-12T20:18:28.458Z",
+    "mtimeMs": 1794491413544.723,
+    "ok": true,
+    "problems": [],
+    "seconds": 368
+  },
+  "autoApproved": "2026-11-12T20:18:28.458Z",
+  "exported": {
+    "long": {
+      "dir": "/home/huynguyen/youtube/Học tiếng Anh Đồ dùng học tập",
+      "publishAt": "2026-11-17T12:30:00.000Z",
+      "channel": "huy-ke-chuyen",
+      "at": "2026-11-13T02:31:03.174Z"
+    },
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/Học tiếng Anh Đồ dùng học tập",
+        "publishAt": "2026-11-18T00:30:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T02:31:03.175Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Học tiếng Anh Đồ dùng học tập",
+        "publishAt": "2026-11-18T05:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T02:31:03.175Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Học tiếng Anh Đồ dùng học tập",
+        "publishAt": "2026-11-18T10:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T02:31:03.176Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "Học tiếng Anh Đồ dùng học tập",
+    "mtime": 1794537063182.185,
+    "at": "2026-11-13T02:31:30.837Z"
+  },
   "stage": "ready"
 }

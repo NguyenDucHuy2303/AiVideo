@@ -85,17 +85,26 @@
         "boi",
         "beo"
       ],
-      "dx": 0.33,
-      "share": 0.44,
+      "share": 0.5,
       "gy": 0.9,
-      "push": 0.05
+      "push": 0.05,
+      "region": [
+        0.02,
+        0.36
+      ]
     }
   ],
   "mood": "playful",
   "board": {
     "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><icon name=\"pencil case\" x=\"330\" y=\"50\" size=\"340\" data-in=\"1\"/><text x=\"500\" y=\"450\" font-family=\"sans-serif\" font-size=\"48\" font-weight=\"bold\" fill=\"#2a2a40\" text-anchor=\"middle\" data-in=\"4\">I have a pencil case.</text><text x=\"500\" y=\"520\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#2a2a40\" text-anchor=\"middle\" data-in=\"8.5\">Em có một hộp bút.</text></svg>",
     "style": "card",
-    "icons": {}
+    "icons": {
+      "pencil case": {
+        "body": "<rect x=\"8\" y=\"5\" width=\"3\" height=\"9\" rx=\"1\" fill=\"#ffb300\"/><path d=\"M8 5l1.5-2.5L11 5z\" fill=\"#5d4037\"/><rect x=\"13.5\" y=\"4\" width=\"3\" height=\"10\" rx=\"1\" fill=\"#43a047\"/><path d=\"M13.5 4l1.5-2.5L16.5 4z\" fill=\"#5d4037\"/><rect x=\"19\" y=\"6\" width=\"3\" height=\"8\" rx=\"1\" fill=\"#e53935\"/><path d=\"M19 6l1.5-2.5L22 6z\" fill=\"#5d4037\"/><rect x=\"3\" y=\"11\" width=\"26\" height=\"15\" rx=\"6\" fill=\"#7e57c2\"/><rect x=\"3\" y=\"11\" width=\"26\" height=\"5\" rx=\"2.5\" fill=\"#9575cd\"/><path d=\"M5.5 14h21\" stroke=\"#ffd54f\" stroke-width=\"1.6\" stroke-dasharray=\"1.6 1.2\"/><circle cx=\"24\" cy=\"14\" r=\"1.8\" fill=\"#ffd54f\"/><path d=\"M24 15.5v4\" stroke=\"#ffd54f\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>",
+        "width": 32,
+        "height": 32
+      }
+    }
   },
   "speakerShots": false,
   "backdrop": {

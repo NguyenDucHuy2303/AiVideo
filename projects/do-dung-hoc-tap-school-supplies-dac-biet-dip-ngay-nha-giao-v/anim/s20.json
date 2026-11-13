@@ -73,17 +73,26 @@
         "boi",
         "beo"
       ],
-      "dx": 0.33,
-      "share": 0.44,
+      "share": 0.5,
       "gy": 0.9,
-      "push": 0.05
+      "push": 0.05,
+      "region": [
+        0.02,
+        0.36
+      ]
     }
   ],
   "mood": "playful",
   "board": {
     "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><icon name=\"eraser\" x=\"110\" y=\"80\" size=\"340\" data-in=\"0.3\"/><text x=\"740\" y=\"300\" font-family=\"sans-serif\" font-size=\"48\" font-weight=\"bold\" fill=\"#e53935\" text-anchor=\"middle\" class=\"pulse\" data-in=\"4.5\">?</text><text x=\"280\" y=\"500\" font-family=\"sans-serif\" font-size=\"48\" font-weight=\"bold\" fill=\"#2a2a40\" text-anchor=\"middle\" data-in=\"6.5\">eraser</text><text x=\"280\" y=\"550\" font-family=\"sans-serif\" font-size=\"30\" fill=\"#2a2a40\" text-anchor=\"middle\" data-in=\"7\">cục tẩy</text></svg>",
     "style": "card",
-    "icons": {}
+    "icons": {
+      "eraser": {
+        "body": "<g transform=\"rotate(-18 16 16)\"><rect x=\"4\" y=\"11\" width=\"24\" height=\"11\" rx=\"2.5\" fill=\"#f48fb1\"/><rect x=\"4\" y=\"11\" width=\"10\" height=\"11\" rx=\"2.5\" fill=\"#4fc3f7\"/><rect x=\"11\" y=\"11\" width=\"3\" height=\"11\" fill=\"#4fc3f7\"/><rect x=\"4\" y=\"19\" width=\"24\" height=\"3\" rx=\"1.5\" fill=\"#000\" opacity=\".12\"/><rect x=\"6\" y=\"13\" width=\"5\" height=\"1.6\" rx=\".8\" fill=\"#fff\" opacity=\".7\"/></g>",
+        "width": 32,
+        "height": 32
+      }
+    }
   },
   "speakerShots": false,
   "backdrop": {

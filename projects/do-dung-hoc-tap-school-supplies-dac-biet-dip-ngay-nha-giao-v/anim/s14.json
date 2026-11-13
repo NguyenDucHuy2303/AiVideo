@@ -85,10 +85,13 @@
         "boi",
         "beo"
       ],
-      "dx": 0.33,
-      "share": 0.44,
+      "share": 0.5,
       "gy": 0.9,
-      "push": 0.05
+      "push": 0.05,
+      "region": [
+        0.02,
+        0.36
+      ]
     }
   ],
   "mood": "playful",
