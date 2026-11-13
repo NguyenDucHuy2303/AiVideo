@@ -42,6 +42,9 @@ test("the next publishing time: at least two hours ahead, never one already take
   // An English version of a story: its own hour (not the Vietnamese film's), the long ones without it.
   assert.equal(nextSlot({ ...cfg, english: ["08:30"] }, "en", [], now)!.getHours(), 8);
   assert.equal(nextSlot({ ...cfg, english: undefined }, "en", [], now)!.getTime(), first.getTime());
+  // ...on a day without a main film when there is one (12/11 has its film at 18:00: the 13th).
+  const en = nextSlot({ ...cfg, english: ["08:30"] }, "en", [first.toISOString()], now)!;
+  assert.deepEqual([en.getDate(), en.getHours()], [13, 8]);
 });
 
 test("only approved films are published: the film first, its Shorts after it, nothing while held", () => {

@@ -265,12 +265,19 @@ async function metaText(job: Job, what: What, cfg: ChannelCfg, longUrl?: string,
 /**
  * The next free publishing time of a channel for a kind of video: the first of its times, at
  * least two hours from now (and after `after`: a Short after its film is public), not yet
- * taken by another video of that channel.
+ * taken by another video of that channel. A story's English version (`en`) goes, within the
+ * next two weeks, to a day with no main film of the channel yet (the days stay even: one or
+ * two main films a day, never a pile); only if every such day is full, to the first free time.
  */
 export function nextSlot(cfg: ChannelCfg, kind: "long" | "short" | "en", taken: string[], now = new Date(), after?: string): Date | undefined {
   const times = kind === "short" ? cfg.shorts : kind === "en" && cfg.english?.length ? cfg.english : cfg.long, used = new Set(taken.map((t) => new Date(t).getTime()));
   if (!times.length) return undefined;
   const earliest = Math.max(now.getTime() + 2 * 3600_000, after ? new Date(after).getTime() + 60_000 : 0);
+  const at0 = (d: number, hhmm: string) => { const [h, m] = hhmm.split(":").map(Number); return new Date(now.getFullYear(), now.getMonth(), now.getDate() + d, h, m, 0, 0); };
+  if (kind === "en") for (let d = 0; d < 14; d++) {
+    if (cfg.long.some((t) => used.has(at0(d, t).getTime()))) continue; // (that day has its main film)
+    for (const hhmm of [...times].sort()) { const at = at0(d, hhmm); if (at.getTime() >= earliest && !used.has(at.getTime())) return at; }
+  }
   for (let d = 0; d < 120; d++) {
     for (const hhmm of [...times].sort()) {
       const [h, m] = hhmm.split(":").map(Number);
