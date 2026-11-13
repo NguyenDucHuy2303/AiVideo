@@ -1,7 +1,7 @@
 {
   "slug": "did-you-know-a-wombat-s-poop-is-shaped-like-little-cubes",
   "topic": "Did you know a wombat's poop is shaped like little cubes?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T10:05:14.813Z",
@@ -51,6 +51,15 @@
       "at": "2026-11-12T10:05:14.832Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo (chưa render bản mới)"
+    },
+    {
+      "at": "2026-11-12T10:53:47.045Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: Claude Code failed on fact-write: You've hit your 5-hour limit · resets 6:40pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work wait"
+    },
+    {
+      "at": "2026-11-13T01:45:13.507Z",
+      "status": "review"
     }
   ],
   "kind": "fact",
@@ -62,5 +71,6 @@
     "hash": "c61cda0b1c53f7d7"
   },
   "autoPicked": true,
-  "shorts": []
+  "shorts": [],
+  "retryAt": "2026-11-12T11:23:47.044Z"
 }

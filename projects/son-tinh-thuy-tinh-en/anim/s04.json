@@ -1,0 +1,202 @@
+{
+  "narration": "Ít lâu sau, có hai chàng trai đến kinh đô cầu hôn. Một chàng từ phía núi đi xuống, một chàng từ phía biển đi lên. Dân làng (sửng sốt): \"Kìa! Hai chàng trai khôi ngô quá! Trông họ chẳng giống người thường chút nào!\"",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "su_gia",
+        "place": "center",
+        "enter": "none",
+        "act": "call",
+        "face": "shout",
+        "then": "none",
+        "thenFace": "shout"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "cheer",
+      "then": "none"
+    },
+    "fx": [],
+    "objects": [],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 11.3,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "su_gia",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "outfit": {
+          "type": "dongson",
+          "color": "#b8863a",
+          "skirt": "#5a4a32",
+          "trim": "#8a3a22"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "headwear": "feather_band",
+        "bracelets": true,
+        "prop": {
+          "type": "horn"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick",
+          "mustache": "thin"
+        }
+      },
+      "x": 0,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "dan_lang_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "su_gia",
+      "at": 0,
+      "do": "call",
+      "face": "shout",
+      "talk": 1,
+      "move": {
+        "by": 600,
+        "ease": "linear"
+      },
+      "dur": 11.3
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 0,
+      "do": "cheer"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "su_gia"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.65,
+      "type": "full",
+      "on": [
+        "su_gia"
+      ],
+      "push": 0.06
+    }
+  ]
+}

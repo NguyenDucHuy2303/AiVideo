@@ -1,7 +1,7 @@
 {
   "slug": "ech-ngoi-day-gieng",
   "topic": "Ếch ngồi đáy giếng",
-  "status": "producing",
+  "status": "done",
   "notes": [],
   "history": [
     {
@@ -36,6 +36,35 @@
       "at": "2026-11-12T10:06:47.748Z",
       "status": "producing",
       "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-12T11:00:16.010Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-12T13:10:01.297Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-12T16:36:32.107Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-12T20:18:07.296Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (374 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-12T20:21:49.040Z",
+      "status": "done",
+      "info": "bản tiếng Anh: giọng xong"
+    },
+    {
+      "at": "2026-11-12T22:59:42.764Z",
+      "status": "done",
+      "info": "bản tiếng Anh: xong"
     }
   ],
   "kind": "ngụ ngôn",
@@ -55,5 +84,67 @@
     }
   },
   "autoPicked": true,
-  "stage": "ready"
+  "inspect": {
+    "at": "2026-11-12T13:10:01.296Z",
+    "perMinute": 7.6,
+    "byKind": {
+      "speaker-off": {
+        "count": 46,
+        "seconds": 142.1
+      }
+    }
+  },
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "autoCheck": {
+    "at": "2026-11-12T20:18:07.295Z",
+    "mtimeMs": 1794488986326.691,
+    "ok": true,
+    "problems": [],
+    "seconds": 374
+  },
+  "autoApproved": "2026-11-12T20:18:07.295Z",
+  "exported": {
+    "long": {
+      "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
+      "publishAt": "2026-11-16T12:30:00.000Z",
+      "channel": "huy-ke-chuyen",
+      "at": "2026-11-13T03:46:22.654Z"
+    },
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
+        "publishAt": "2026-11-17T00:30:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T03:46:22.659Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
+        "publishAt": "2026-11-17T05:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T03:46:22.662Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
+        "publishAt": "2026-11-17T10:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T03:46:22.666Z"
+      }
+    ],
+    "en": {
+      "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
+      "publishAt": "2026-11-16T12:00:00.000Z",
+      "channel": "ask-huy",
+      "at": "2026-11-13T03:46:22.668Z"
+    }
+  },
+  "english": "done",
+  "drive": {
+    "folder": "Ếch Ngồi Đáy Giếng",
+    "mtime": 1794541582673.9731,
+    "at": "2026-11-13T03:48:38.757Z"
+  }
 }

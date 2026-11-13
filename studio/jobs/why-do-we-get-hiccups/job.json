@@ -22,9 +22,35 @@
       "at": "2026-11-12T09:59:06.310Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-13T01:50:49.839Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T02:20:56.581Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T02:51:03.769Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T03:21:08.133Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T03:51:20.258Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
     }
   ],
   "kind": "qa",
   "summary": "Every child has had hiccups and found them funny and puzzling, and the video shows the diaphragm and the 'hic' sound with a simple animated body diagram and ends with fun, safe tricks people try.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "retryAt": "2026-11-13T04:21:20.257Z"
 }

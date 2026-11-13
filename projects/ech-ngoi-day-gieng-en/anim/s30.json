@@ -1,0 +1,128 @@
+{
+  "narration": "Ếch ngồi trên lưng bác Trâu, nhìn hoàng hôn đỏ rực trên cánh đồng. Ếch (vui vẻ): \"Cảm ơn bác Trâu. Bác chính là người thầy đầu tiên của cháu!\"",
+  "plan": {
+    "set": "field",
+    "time": "dusk",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "bac_trau",
+        "place": "center",
+        "enter": "none",
+        "act": "walk",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "ride",
+        "face": "happy",
+        "then": "bow",
+        "thenFace": "joy"
+      }
+    ],
+    "fx": [
+      "rays",
+      "glow"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 7.5,
+  "time": "dusk",
+  "mood": "majestic",
+  "set": {
+    "name": "field",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "bac_trau",
+      "type": "animal",
+      "look": {
+        "species": "buffalo",
+        "color": "#4a4f55"
+      },
+      "x": 0,
+      "scale": 1.4,
+      "facing": 1
+    },
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "bac_trau",
+      "at": 0,
+      "do": "walk",
+      "face": "happy",
+      "move": {
+        "by": 840,
+        "ease": "linear"
+      },
+      "dur": 7.5
+    },
+    {
+      "actor": "bac_trau",
+      "at": 3.75,
+      "do": "walk",
+      "face": "happy",
+      "move": {
+        "by": 979.9999999999999,
+        "ease": "in"
+      },
+      "dur": 3.75
+    },
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "ride",
+      "face": "happy"
+    },
+    {
+      "actor": "ech",
+      "at": 3.75,
+      "do": "bow",
+      "face": "joy"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 7.5,
+      "scale": 2.4
+    },
+    {
+      "fx": "glow",
+      "on": "bac_trau",
+      "at": 2.25,
+      "dur": 4.5
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "bac_trau",
+        "ech"
+      ],
+      "push": 0.06
+    }
+  ]
+}

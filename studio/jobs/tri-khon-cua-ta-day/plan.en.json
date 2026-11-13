@@ -1,0 +1,556 @@
+{
+  "title": "Here Is My Wisdom",
+  "scenes": [
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Hello, my little friends! Do you know why the tiger has striped fur, with black stripes running all over his body? And why is the big, strong buffalo so gentle and obedient to small people?"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Today, Huy Tells Tales will tell you a fable called Here Is My Wisdom."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Long ago, in a village by the Red River, there were green bamboo hedges all around, a banyan tree, a village well, and little houses with thatched roofs and mud walls. In the village lived a kind, hardworking farmer."
+        },
+        {
+          "who": "The Farmer",
+          "how": "happily",
+          "text": "Wake up, Buffalo! Today you and I will plow the field by the dike."
+        },
+        {
+          "who": "Buffalo",
+          "how": "happily",
+          "text": "Nghe o! Yes, I am coming right now, Uncle."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The farmer carried his wooden plow on his shoulder and led the buffalo through the village gate. It was early morning, and dew still sparkled on the tips of the grass."
+        },
+        {
+          "who": "The Farmer",
+          "how": "joyfully",
+          "text": "The weather is so cool today. Plowing will be lovely!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "At the field, the farmer hitched the plow to the buffalo's shoulders. The buffalo pulled the plow along, and rows of brown earth turned over, straight as arrows."
+        },
+        {
+          "who": "The Farmer",
+          "how": "shouting",
+          "text": "Go on! Hup, hup! Turn left, Buffalo!"
+        },
+        {
+          "who": "Buffalo",
+          "how": "happily",
+          "text": "Nghe o! I am turning now!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "At the edge of the forest near the field, a tiger was hiding behind a bush. The tiger was the lord of the forest, with smooth, golden-orange fur. In those days, the tiger had not a single stripe."
+        },
+        {
+          "who": "Tiger",
+          "how": "surprised",
+          "text": "Oh my! How strange, how strange!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The tiger rubbed his eyes and stared. The buffalo was many times bigger than the farmer, with strong, curved horns. Yet when the farmer said go, he went, and when the farmer said turn, he turned."
+        },
+        {
+          "who": "Tiger",
+          "how": "surprised",
+          "text": "Such a huge buffalo, and he obeys a tiny human? I must find out why!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The sun climbed high. The farmer took the plow off the buffalo so he could rest. Then he sat under a big tree by the edge of the field and ate the rice ball he had brought. The buffalo slowly nibbled the grass."
+        },
+        {
+          "who": "The Farmer",
+          "how": "happily",
+          "text": "Eat plenty of grass, Buffalo. This afternoon we will finish the plowing."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The tiger tiptoed out of the bush and came close to where the buffalo was eating. The buffalo looked up with a start."
+        },
+        {
+          "who": "Buffalo",
+          "how": "scared",
+          "text": "Mr. Tiger! What are you doing here?"
+        },
+        {
+          "who": "Tiger",
+          "how": "laughing",
+          "text": "Do not be afraid. Today I will not catch you. I only want to ask you something."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Tiger",
+          "how": "surprised",
+          "text": "Buffalo, you are so big and so strong. Why do you let that small human boss you around?"
+        },
+        {
+          "who": "Buffalo",
+          "how": "proudly",
+          "text": "Mr. Tiger, the man is small, but he has wisdom."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Tiger",
+          "how": "surprised",
+          "text": "Wisdom? What is wisdom? Is it big? Does it have sharp teeth and claws like mine?"
+        },
+        {
+          "who": "Buffalo",
+          "how": "worried",
+          "text": "I do not know what it looks like. If you want to know, please ask the farmer."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The tiger thought to himself that if he had wisdom too, the whole forest and the whole field would fear him. So he walked straight to the tree."
+        },
+        {
+          "who": "Tiger",
+          "how": "joyfully",
+          "text": "Hey, human! You have wisdom, do you not? Bring it here and show me!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The farmer was startled. But he stayed calm and quickly thought of a plan."
+        },
+        {
+          "who": "The Farmer",
+          "how": "happily",
+          "text": "Hello, Mr. Tiger. I do have wisdom, but I left it at home."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Tiger",
+          "how": "angrily",
+          "text": "At home? Then go and get it right now and show me! I want to see it this minute!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "The tiger roared and lashed his tail, insisting on seeing it no matter what."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The farmer scratched his head, pretending to be unsure."
+        },
+        {
+          "who": "The Farmer",
+          "how": "worried",
+          "text": "I can go home, of course. But once I am gone, what if you stay here and eat my buffalo?"
+        },
+        {
+          "who": "Tiger",
+          "how": "worried",
+          "text": "I, I will not eat him!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "The Farmer",
+          "how": "firmly",
+          "text": "Then let me tie you to this tree so it is safe. Only then can I go and get my wisdom without worry."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "The tiger was so eager to see wisdom that he nodded right away."
+        },
+        {
+          "who": "Tiger",
+          "how": "shouting",
+          "text": "Fine! Tie me up, and hurry!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The farmer took a thick rope and wound it around and around, very tightly, tying the tiger to the tree. The tiger stood still and even stretched out his neck, waiting."
+        },
+        {
+          "who": "Tiger",
+          "how": "joyfully",
+          "text": "Be quick! I am waiting to see your wisdom!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The farmer hurried back to the village. Soon he returned, carrying a shoulder pole with two baskets full of golden dry straw."
+        },
+        {
+          "who": "Tiger",
+          "how": "surprised",
+          "text": "Oh, is your wisdom this pile of straw? It does not look special at all!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The farmer did not answer. He piled the straw around the tree and set it on fire. The dry straw caught fire quickly, and thick smoke rose into the air."
+        },
+        {
+          "who": "The Farmer",
+          "how": "firmly",
+          "text": "Here is my wisdom! Here is my wisdom!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The fire was blazing hot. The tiger struggled in a panic and roared and roared."
+        },
+        {
+          "who": "Tiger",
+          "how": "scared",
+          "text": "It is too hot, too hot! Let me go! I know what wisdom is now!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The buffalo stood at the edge of the field. He saw the proud lord of the forest, who had been so fierce a moment ago, now flailing in a panic, and he burst out laughing. He laughed and laughed and could not stop."
+        },
+        {
+          "who": "Buffalo",
+          "how": "laughing",
+          "text": "Ha ha ha! Mr. Tiger, do you see wisdom now?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The buffalo laughed so hard that he rolled on the ground, bumped his head on a rock, and lost his upper front teeth. People of old say that is why buffaloes have no front teeth on top to this day."
+        },
+        {
+          "who": "Buffalo",
+          "how": "surprised",
+          "text": "Ouch! My teeth! Oh well, next time I will never laugh at others again."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "The fire burned through the rope. The tiger pulled hard and broke free. He ran headlong into the deep forest without daring to look back."
+        },
+        {
+          "who": "Tiger",
+          "how": "scared",
+          "text": "The wisdom of humans is frightening! I will never look down on humans again!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "In the forest, the tiger, who was a good swimmer, jumped into a stream to cool off. Looking at his reflection in the water, he saw that his golden fur had been scorched into long black stripes all over his body."
+        },
+        {
+          "who": "Tiger",
+          "how": "crying",
+          "text": "Oh, my beautiful fur! Now it is all striped!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Those black stripes never went away. From then on, tigers have had striped fur, and whenever they hear a human voice, they hide far away."
+        },
+        {
+          "who": "Tiger",
+          "how": "sadly",
+          "text": "So being big and strong does not always mean being clever. I must remember this lesson forever."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Back at the field, the farmer put out the fire with wet soil and then patted the buffalo's head."
+        },
+        {
+          "who": "The Farmer",
+          "how": "laughing",
+          "text": "Buffalo, did you see? Without claws or fangs, we still beat Mr. Tiger."
+        },
+        {
+          "who": "Buffalo",
+          "how": "joyfully",
+          "text": "You are so clever! I love you even more, Uncle."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "In the evening, the farmer finished plowing the field and led the buffalo back to the village. Cu Ti, a boy with a little topknot who often herded buffaloes at the edge of the village, ran out and greeted him with arms folded politely."
+        },
+        {
+          "who": "Cu Ti",
+          "how": "happily",
+          "text": "Hello, Uncle! Why do you smell so much like smoke?"
+        },
+        {
+          "who": "The Farmer",
+          "how": "laughing",
+          "text": "I just taught Mr. Tiger a lesson, Ti."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "That night, by the light of an oil lamp, the whole village sat on straw mats and listened to the farmer tell his story. Everyone laughed out loud."
+        },
+        {
+          "who": "Cu Ti",
+          "how": "surprised",
+          "text": "Such a big tiger lost to you, Uncle? So wisdom is stronger than claws and fangs!"
+        },
+        {
+          "who": "The Farmer",
+          "how": "happily",
+          "text": "That is right, my boy. If you work hard to learn and think, everyone can have wisdom."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Today, in the fields of northern Vietnam, you can still see buffaloes plowing patiently. A buffalo pulls a plow better than a cow, especially in deep, muddy fields, so our grandparents have a saying that a weak buffalo is better than a strong cow."
+        },
+        {
+          "who": "Cu Ti",
+          "how": "proudly",
+          "text": "The buffalo is the farmer's friend, everyone!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "As for the tiger, he still has dark stripes on his orange-red fur and a white belly, and he is still called the lord of the forest. Today there are very few tigers left in the forests, so let us all work together to protect this precious animal."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "My little friends, this story teaches us that wisdom is better than strength. Study hard, think carefully, never be proud and look down on others, and never laugh at someone when bad luck happens to them."
+        },
+        {
+          "who": "The Farmer",
+          "how": "happily",
+          "text": "Children, remember to study hard so you will have lots of wisdom!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "If you liked this story, please subscribe to the channel Ask Huy to hear many more wonderful tales. See you next time!"
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "name": "The Farmer",
+      "gender": "male",
+      "age": "adult",
+      "role": "Người nông dân hiền lành, thông minh, dùng trí khôn trói Hổ và đốt rơm dạy Hổ một bài học",
+      "villain": false
+    },
+    {
+      "name": "Tiger",
+      "gender": "male",
+      "age": "adult",
+      "role": "Chúa sơn lâm kiêu căng, ỷ sức mạnh, muốn có trí khôn, cuối cùng bị cháy xém lông thành vằn",
+      "villain": true
+    },
+    {
+      "name": "Buffalo",
+      "gender": "male",
+      "age": "adult",
+      "role": "Con trâu kéo cày to khỏe, ngoan ngoãn, nói với Hổ rằng con người có trí khôn",
+      "villain": false
+    },
+    {
+      "name": "Cu Ti",
+      "gender": "male",
+      "age": "child",
+      "role": "Cậu bé chăn trâu trong xóm, nghe bác nông dân kể chuyện và rút ra bài học",
+      "villain": false
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Hổ ngạc nhiên khi thấy con trâu to khỏe lại nghe lời bác nông dân nhỏ bé, bèn hỏi trâu vì sao",
+      "source": "Tóm tắt truyện (đề bài)"
+    },
+    {
+      "claim": "Trâu trả lời là nhờ con người có trí khôn, nhưng trí khôn để ở nhà",
+      "source": "Tóm tắt truyện (đề bài)"
+    },
+    {
+      "claim": "Hổ nằng nặc đòi xem trí khôn, bác nông dân trói Hổ vào gốc cây",
+      "source": "Tóm tắt truyện (đề bài)"
+    },
+    {
+      "claim": "Bác nông dân châm lửa đốt rơm cho Hổ biết thế nào là trí khôn; Hổ cháy xém lông, vằn vện từ đó",
+      "source": "Tóm tắt truyện (đề bài)"
+    },
+    {
+      "claim": "Trâu cười quá, va đầu vào đá, rụng hàm răng trên (chi tiết của bản kể dân gian quen thuộc, không có trong tư liệu được cung cấp)",
+      "source": "Bản kể dân gian phổ biến (ngoài tư liệu)"
+    },
+    {
+      "claim": "Trâu kéo cày khỏe hơn bò, nhất là ở ruộng sâu, nên Việt Nam có câu tục ngữ yếu trâu hơn khỏe bò",
+      "source": "Trâu"
+    },
+    {
+      "claim": "Trâu có hai sừng cứng, được nuôi để lấy sức cày ruộng",
+      "source": "Trâu"
+    },
+    {
+      "claim": "Hổ dễ nhận ra nhờ các sọc vằn sẫm màu trên bộ lông đỏ cam với phần bụng trắng, được mệnh danh là chúa sơn lâm",
+      "source": "Hổ"
+    },
+    {
+      "claim": "Hổ bơi giỏi, hay tắm ở ao, hồ, sông; thức ăn của hổ có cả trâu",
+      "source": "Hổ"
+    },
+    {
+      "claim": "Hổ hoang dã ngày nay còn rất ít, được xếp vào loài có nguy cơ tuyệt chủng",
+      "source": "Hổ"
+    }
+  ],
+  "look": "Làng quê đồng bằng sông Hồng thế kỷ XVII–XIX. BÁC NÔNG DÂN: đàn ông trung niên, da rám nắng, áo cánh ngắn màu nâu, quần ống rộng xắn gối, khăn chít đầu màu nâu (lúc ra đồng có thể đội nón lá), đi chân đất; vác cày gỗ, cầm roi tre nhỏ, cảnh sau gánh đôi quang gánh đầy rơm vàng; mang nắm cơm gói lá chuối. TRÂU: trâu đầm Việt Nam màu xám đen, sừng cong hình lưỡi liềm, mắt hiền, có ách gỗ và thừng mũi khi kéo cày; sau cảnh cười thì thấy rõ không còn răng hàm trên (vẽ hài hước, không đau đớn). HỔ: hổ lớn, mặt kiêu căng kiểu hoạt hình đáng yêu; nửa đầu truyện lông vàng cam trơn bóng, bụng trắng, KHÔNG có sọc; sau đám lửa có các vằn đen dài khắp mình như hổ ngày nay; không vẽ vết bỏng hay thương tích, chỉ có khói và vài sợi lông xém. CU TÍ: bé trai khoảng 7 tuổi, đầu cạo để chỏm, áo cánh ngắn nâu nhạt, quần lửng, chân đất; khoanh tay cúi đầu khi chào người lớn. BỐI CẢNH: lũy tre xanh, cổng làng, cây đa, giếng nước, nhà tranh vách đất sân đất; ruộng nước chân đê với luống đất nâu vừa cày; một gốc cây to bên bờ ruộng (nơi trói Hổ bằng thừng gai); bìa rừng có bụi rậm; suối trong rừng. Đám lửa rơm vẽ cách điệu, nhiều khói, an toàn với trẻ em. Cảnh tối: trong nhà tranh có đèn dầu, chiếu cói, nồi đất, chum vại; dân làng mặc áo cánh nâu, phụ nữ áo tứ thân nâu ngoài yếm, váy đen dài, khăn mỏ quạ; cụ già ngồi chỗ trên. Không có đồ hiện đại, không ngô, ớt, không nhà rường kiểu Huế.",
+  "names": [
+    {
+      "vi": "Bác nông dân",
+      "en": "The Farmer"
+    },
+    {
+      "vi": "Trâu",
+      "en": "Buffalo"
+    },
+    {
+      "vi": "Hổ",
+      "en": "Tiger"
+    },
+    {
+      "vi": "Cu Tí",
+      "en": "Cu Ti"
+    }
+  ]
+}

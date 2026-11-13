@@ -1,19 +1,24 @@
 {
-  "title": "Ở sao Kim, một ngày dài hơn một năm!",
+  "title": "Ở sao Kim, một ngày dài hơn cả một năm!",
   "question": "Bạn có biết ở sao Kim, một ngày còn dài hơn cả một năm?",
-  "answer": "Sao Kim xoay một vòng quanh mình mất khoảng 243 ngày Trái Đất, còn đi một vòng quanh Mặt Trời chỉ khoảng 225 ngày, nên một vòng xoay dài hơn một năm.",
+  "answer": "Sao Kim tự quay một vòng mất khoảng 243 ngày Trái Đất, còn đi hết một vòng quanh Mặt Trời chỉ khoảng 225 ngày, nên một vòng quay dài hơn một năm.",
   "scenes": [
     {
       "beat": "hook",
       "visual": {
         "kind": "scene",
-        "what": "Sao Kim vàng nhạt, to, tươi cười, nổi giữa vũ trụ tím sao lấp lánh. Hai dấu hỏi to bay quanh, một tấm lịch và một chiếc đồng hồ nhỏ nằm cạnh hành tinh."
+        "what": "Sao Kim sáng vàng giữa nền vũ trụ, bên cạnh một chiếc đồng hồ và một tờ lịch; Huy, Hùng, Bối và Beo nhìn lên đầy ngạc nhiên."
       },
       "parts": [
         {
           "who": "Huy",
-          "how": "mừng rỡ",
-          "text": "Bạn có biết không? Ở sao Kim, một vòng tự xoay quanh mình còn dài hơn cả một năm!"
+          "how": "ngạc nhiên",
+          "text": "Bạn có biết ở sao Kim, một vòng tự quay dài hơn cả một năm?"
+        },
+        {
+          "who": "Beo",
+          "how": "ngạc nhiên",
+          "text": "Hả? Sao lạ vậy?"
         }
       ]
     },
@@ -22,18 +27,18 @@
       "step": 1,
       "visual": {
         "kind": "diagram",
-        "what": "Mặt Trời vàng ở giữa, sao Kim nhỏ đi trên đường tròn quanh nó, một mũi tên cong chạy hết một vòng. Bên cạnh có tấm lịch ghi 225 ngày. Mai đứng một góc, đầu có dấu hỏi."
+        "what": "Mặt Trời ở giữa, Trái Đất đi một vòng quanh theo đường tròn; Hùng cầm quả địa cầu nhỏ đi quanh một cái đèn bàn, hơi loạng choạng."
       },
       "parts": [
         {
-          "who": "Mai",
-          "how": "ngạc nhiên",
-          "text": "Hả? Sao lại thế ạ?"
-        },
-        {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Một năm là thời gian đi hết một vòng quanh Mặt Trời. Sao Kim mất khoảng hai trăm hai mươi lăm ngày Trái Đất."
+          "text": "Một năm là một vòng đi quanh Mặt Trời. Trái Đất mất khoảng 365 ngày."
+        },
+        {
+          "who": "Hùng",
+          "how": "cười",
+          "text": "Em đi một vòng quanh đèn nè!"
         }
       ]
     },
@@ -42,13 +47,13 @@
       "step": 2,
       "visual": {
         "kind": "compare",
-        "what": "Bên trái, bánh xe đạp bị kẹt quay rất chậm, từng chút một. Bên phải, sao Kim cũng xoay chậm quanh trục, có mũi tên cong nhỏ. Một con ốc sên đứng nhìn."
+        "what": "Hai đường quỹ đạo quanh Mặt Trời: sao Kim ở vòng trong nhỏ hơn, có nhãn khoảng 225 ngày; Trái Đất ở vòng ngoài, nhãn khoảng 365 ngày."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Nhưng nó tự xoay quanh mình rất chậm, như bánh xe đạp bị kẹt."
+          "text": "Sao Kim đi nhanh hơn. Một năm ở đó chỉ khoảng 225 ngày Trái Đất."
         }
       ]
     },
@@ -56,19 +61,19 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "compare",
-        "what": "Hai cột so sánh. Cột ngắn màu cam ghi một năm, khoảng 225 ngày. Cột dài hơn màu vàng ghi một vòng xoay, khoảng 243 ngày. Sao Kim nhỏ đứng trên đỉnh cột dài."
+        "kind": "zoom",
+        "what": "Sao Kim tự quay rất chậm quanh trục, có mũi tên vòng và nhãn khoảng 243 ngày; bên cạnh là thanh so sánh 243 dài hơn 225."
       },
       "parts": [
         {
           "who": "Huy",
-          "how": "ngạc nhiên",
-          "text": "Xoay một vòng mất khoảng hai trăm bốn mươi ba ngày Trái Đất!"
+          "how": "vui vẻ",
+          "text": "Một vòng tự quay của sao Kim mất khoảng 243 ngày Trái Đất. Sao Kim quay rất chậm."
         },
         {
-          "who": "Mai",
-          "how": "cười",
-          "text": "Lâu hơn cả một năm luôn!"
+          "who": "Bối",
+          "how": "ngạc nhiên",
+          "text": "243 lớn hơn 225! Vòng quay còn dài hơn cả một năm!"
         }
       ]
     },
@@ -76,73 +81,88 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "scene",
-        "what": "Mặt Trời nhỏ mọc phía chân trời sao Kim cam khô cằn, một tấm lịch lớn lật chậm ghi khoảng 117 ngày giữa hai lần mặt trời mọc. Một em bé phi hành gia vẫy tay."
+        "kind": "arrows",
+        "what": "Sao Kim quay ngược chiều với Trái Đất; hình Mặt Trời mọc trên chân trời sao Kim, mũi tên chỉ từ lần mọc này đến lần mọc sau, nhãn khoảng 117 ngày; Hùng quay tròn chóng mặt ở góc."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Vậy một vòng xoay dài hơn một năm. Còn từ lúc Mặt Trời mọc đến lần mọc sau thì khoảng một trăm mười bảy ngày."
+          "text": "Nhưng nó quay ngược, nên từ lúc Mặt Trời mọc đến lần mọc sau chỉ khoảng 117 ngày."
+        },
+        {
+          "who": "Hùng",
+          "how": "mệt",
+          "text": "Em chóng mặt quá!"
         }
       ]
     },
     {
       "beat": "recap",
       "visual": {
-        "kind": "host",
-        "what": "Huy và Mai đứng trước sao Kim vàng, Mai giơ hai tay lên, Huy chỉ vào nút theo dõi có hình chuông bên dưới."
+        "kind": "scene",
+        "what": "Sao Kim lấp lánh, bốn nhân vật vẫy tay trước biểu tượng kênh Huy Kể Chuyện với nút theo dõi."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Huy",
           "how": "mừng rỡ",
-          "text": "Wow, một vòng xoay của sao Kim dài hơn cả một năm!"
+          "text": "Quá lạ đúng không? Theo dõi kênh Huy Kể Chuyện để biết thêm nhé!"
         },
         {
-          "who": "Huy",
+          "who": "Beo",
           "how": "vui vẻ",
-          "text": "Theo dõi Hỏi Huy để biết thêm điều lạ nhé!"
+          "text": "Theo dõi nha!"
         }
       ]
     }
   ],
   "facts": [
     {
-      "claim": "Sao Kim tự quay quanh mình một vòng mất khoảng 243 ngày Trái Đất.",
+      "claim": "Sao Kim tự quay quanh trục với chu kỳ khoảng 243 ngày Trái Đất.",
       "source": "Sao Kim (Wikipedia tiếng Việt)"
     },
     {
-      "claim": "Một năm trên sao Kim, tức một vòng quanh Mặt Trời, dài khoảng 224,7 ngày Trái Đất.",
+      "claim": "Một năm trên sao Kim dài khoảng 224,7 ngày Trái Đất, ngắn hơn một vòng tự quay.",
       "source": "Venus (Wikipedia)"
     },
     {
-      "claim": "Một ngày Mặt Trời trên sao Kim, từ lần mọc này đến lần mọc sau, dài khoảng 117 ngày Trái Đất, bằng khoảng một nửa năm sao Kim.",
+      "claim": "Sao Kim quay ngược chiều rất chậm, nên một ngày Mặt Trời (từ lần mọc đến lần mọc sau) dài khoảng 117 ngày Trái Đất, bằng nửa năm sao Kim.",
       "source": "Venus (Wikipedia)"
     },
     {
-      "claim": "Sao Kim quay quanh trục rất chậm.",
-      "source": "Venus (Wikipedia)"
-    },
-    {
-      "claim": "Một năm là thời gian một hành tinh đi hết một vòng quanh Mặt Trời.",
-      "source": "Kiến thức phổ thông"
+      "claim": "Một ngày trên Trái Đất trung bình là 24 giờ, và một năm có khoảng 365 ngày.",
+      "source": "Day (Wikipedia)"
     }
   ],
-  "description": "Sao Kim xoay quanh mình chậm đến mức một vòng xoay dài hơn cả một năm của nó. Xem Huy và Mai giải thích trong chưa đầy một phút!",
+  "description": "Trên sao Kim, một vòng tự quay mất khoảng 243 ngày Trái Đất, dài hơn một năm chỉ khoảng 225 ngày. Cùng Huy, Hùng, Bối và Beo khám phá điều kỳ lạ này nhé!",
   "cast": [
     {
       "name": "Huy",
       "gender": "male",
       "age": "young",
-      "role": "the host: curious, warm, a little funny; explains",
+      "role": "the host (25): curious, warm, a little funny; explains",
       "villain": false
     },
     {
-      "name": "Mai",
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
       "gender": "female",
       "age": "child",
-      "role": "an 8-year-old who asks, guesses and tries things",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
       "villain": false
     }
   ],

@@ -1,0 +1,102 @@
+{
+  "narration": "Lửa nóng hừng hực, Hổ cuống quýt vùng vẫy, gầm rống ầm ĩ. Hổ (hoảng hốt): \"Nóng quá, nóng quá! Thả ta ra! Ta biết trí khôn rồi!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "center",
+        "enter": "none",
+        "act": "run",
+        "face": "shout",
+        "then": "fall",
+        "thenFace": "shout"
+      }
+    ],
+    "fx": [
+      "fire",
+      "smoke",
+      "shake"
+    ],
+    "objects": [
+      "fire_pit"
+    ],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 7.5,
+  "time": "day",
+  "mood": "battle",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "fire_pit",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "ho",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#f0932b"
+      },
+      "x": 0,
+      "scale": 1.4,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ho",
+      "at": 0,
+      "do": "run",
+      "face": "shout",
+      "move": {
+        "by": 840,
+        "ease": "linear"
+      },
+      "dur": 7.5
+    },
+    {
+      "actor": "ho",
+      "at": 3.75,
+      "do": "fall",
+      "face": "shout"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "impact",
+      "on": "ho",
+      "at": 4.1,
+      "power": 0.3
+    },
+    {
+      "fx": "smoke",
+      "x": 1800,
+      "at": -2,
+      "dur": 9.5
+    },
+    {
+      "fx": "shake",
+      "at": 3.75,
+      "power": 0.5
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ho"
+      ],
+      "push": 0.06
+    }
+  ]
+}

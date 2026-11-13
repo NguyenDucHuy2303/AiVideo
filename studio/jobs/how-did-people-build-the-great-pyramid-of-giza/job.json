@@ -1,7 +1,7 @@
 {
   "slug": "how-did-people-build-the-great-pyramid-of-giza",
   "topic": "How did people build the Great Pyramid of Giza?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.283Z",
@@ -22,6 +22,10 @@
       "at": "2026-11-12T09:59:06.286Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-12T10:42:42.416Z",
+      "status": "review"
     }
   ],
   "kind": "qa",

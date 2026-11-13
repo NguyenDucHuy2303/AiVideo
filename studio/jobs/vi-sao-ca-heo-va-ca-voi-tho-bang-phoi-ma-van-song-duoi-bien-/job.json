@@ -22,6 +22,41 @@
       "at": "2026-11-12T09:59:06.295Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-12T10:49:29.924Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: Claude Code failed on qa-rewrite: You've hit your 5-hour limit · resets 6:40pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work wait"
+    },
+    {
+      "at": "2026-11-13T01:42:26.654Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T02:12:53.224Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T02:43:02.439Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T03:13:06.985Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T03:43:12.512Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T04:13:23.400Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
     }
   ],
   "kind": "qa-vi",
@@ -31,5 +66,6 @@
     "value": 8.4,
     "why": "Mở bài hay (cá heo không phải cá), kiến thức chính xác, giải thích theo từng bước có nhắc lại và có thí nghiệm đếm nhịp thở an toàn, chủ đề được nhiều người tìm và dễ dựng hình; điểm yếu là kịch bản khá dài và dày (bốn bước, nhiều số liệu, đoạn cá mập voi và đoạn bong bóng cá hơi lan man) nên dễ vượt 8 phút và làm trẻ 6–7 tuổi mất tập trung.",
     "hash": "a54ac58cd25f9372"
-  }
+  },
+  "retryAt": "2026-11-13T04:43:23.400Z"
 }

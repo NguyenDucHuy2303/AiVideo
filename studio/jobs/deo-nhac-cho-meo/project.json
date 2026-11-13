@@ -1,0 +1,29 @@
+{
+  "engine": "vieneu",
+  "voice": "Minh Đức",
+  "speed": 1.1,
+  "imageGen": "off",
+  "onlineImages": false,
+  "era": "co_tich_lang_que",
+  "profiles": [
+    "16x9"
+  ],
+  "voices": {
+    "Chuột Cụ": {
+      "voice": "Quốc Tuấn",
+      "pitch": -1
+    },
+    "Chuột Nhắt": "Thiện Minh",
+    "Chuột Béo": "Thanh Bình",
+    "Chuột Xám": "Hải Đăng",
+    "Chuột Mẹ": "Ngọc Huyền",
+    "Chuột Út": {
+      "voice": "Ngọc Linh",
+      "pitch": 4
+    },
+    "Mèo Mướp": {
+      "voice": "Đoan Trang",
+      "pitch": -1
+    }
+  }
+}

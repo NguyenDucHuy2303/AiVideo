@@ -1,19 +1,24 @@
 {
   "title": "Bạch tuộc có 3 trái tim và máu màu xanh!",
   "question": "Bạn có biết bạch tuộc có tới 3 trái tim và máu màu xanh?",
-  "answer": "Bạch tuộc có ba trái tim, và máu của nó màu xanh vì chứa chất hemocyanin chở oxy.",
+  "answer": "Bạch tuộc có 3 trái tim, và máu của nó màu xanh vì chứa chất hemocyanin chở oxy.",
   "scenes": [
     {
       "beat": "hook",
       "visual": {
         "kind": "scene",
-        "what": "Một chú bạch tuộc đáng yêu dưới đáy biển xanh, ba trái tim nhỏ phát sáng trong thân và vài giọt máu xanh lấp lánh quanh nó. Mai đứng bên cạnh, mắt tròn xoe."
+        "what": "A cheerful orange octopus floats under the sea with three glowing red hearts and blue blood swirling inside its body. Huy, Hùng, Bối and Beo watch from the corner of the picture, eyes wide."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Huy",
           "how": "ngạc nhiên",
-          "text": "Các bạn ơi, bạn có biết bạch tuộc có tới ba trái tim và máu màu xanh không?"
+          "text": "Các bạn có biết bạch tuộc có tới ba trái tim và máu màu xanh không?"
+        },
+        {
+          "who": "Beo",
+          "how": "ngạc nhiên",
+          "text": "Máu xanh hả? Như siêu nhân hả?"
         }
       ]
     },
@@ -21,14 +26,19 @@
       "beat": "step",
       "step": 1,
       "visual": {
-        "kind": "scene",
-        "what": "Bạch tuộc ngồi trên một tảng đá dưới đáy biển, tám cái tay dài cuộn vòng, Huy chỉ vào và đếm từng cái tay."
+        "kind": "diagram",
+        "what": "Cutaway of an octopus. Two small hearts, each beside one gill, glow and pulse. Small arrows show water going in and blood moving through the gills."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Thật đó Mai! Bạch tuộc sống dưới đáy biển, có tám cái tay dài."
+          "text": "Hai trái tim bơm máu qua hai lá mang, nơi bạch tuộc lấy oxy từ nước."
+        },
+        {
+          "who": "Bối",
+          "how": "ngạc nhiên",
+          "text": "Còn trái tim thứ ba thì sao ạ?"
         }
       ]
     },
@@ -36,19 +46,19 @@
       "beat": "step",
       "step": 2,
       "visual": {
-        "kind": "diagram",
-        "what": "Hình bạch tuộc nhìn xuyên thân. Hai trái tim nhỏ nằm cạnh hai cái mang, một trái tim to hơn ở giữa. Các mũi tên màu xanh chạy từ tim đi khắp thân và tay."
+        "kind": "count",
+        "what": "The octopus body with a bigger third heart in the middle. Arrows spread from it to all eight arms. A counter pops up 1, 2, 3 above the three hearts. Hùng holds a small chest-shaped heart sign with the number 1 beside a human drawing."
       },
       "parts": [
         {
           "who": "Huy",
-          "how": "vui vẻ",
-          "text": "Bên trong người nó có ba trái tim. Hai trái tim bơm máu qua mang, là nơi lấy oxy từ nước."
-        },
-        {
-          "who": "Huy",
           "how": "mừng rỡ",
           "text": "Trái tim thứ ba bơm máu đi khắp cơ thể."
+        },
+        {
+          "who": "Hùng",
+          "how": "cười",
+          "text": "Ba trái tim luôn! Tim em chỉ có một thôi."
         }
       ]
     },
@@ -56,14 +66,24 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "scene",
-        "what": "Mai gãi đầu, trên đầu hiện dấu hỏi lớn, bên cạnh là một giọt máu màu xanh biển lớn."
+        "kind": "experiment",
+        "what": "On a table, Hùng pours a drop of blue paint water into a clear glass of water to show the blue colour, and tips it over a little by accident, making a small funny splash. Huy points at the blue drop."
       },
       "parts": [
         {
-          "who": "Mai",
-          "how": "ngạc nhiên",
-          "text": "Ồ, mỗi trái tim làm một việc riêng! Thế sao máu lại màu xanh hả anh?"
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Máu bạch tuộc có một chất đặc biệt, làm máu thành màu xanh."
+        },
+        {
+          "who": "Hùng",
+          "how": "sợ hãi",
+          "text": "Ôi, đổ rồi!"
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Còn máu của mình màu đỏ vì sao ạ?"
         }
       ]
     },
@@ -71,88 +91,83 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "zoom",
-        "what": "Phóng to một giọt máu xanh. Bên trong có những hạt nhỏ gắn nhãn hemocyanin đang chở các bong bóng oxy đi."
-      },
-      "parts": [
-        {
-          "who": "Huy",
-          "how": "vui vẻ",
-          "text": "Máu bạch tuộc chở oxy bằng một chất tên là hemocyanin. Chất này làm máu có màu xanh."
-        }
-      ]
-    },
-    {
-      "beat": "step",
-      "step": 5,
-      "visual": {
         "kind": "compare",
-        "what": "Hai giọt máu cạnh nhau. Bên trái là giọt đỏ cạnh hình một bạn nhỏ, bên phải là giọt xanh cạnh hình bạch tuộc."
+        "what": "Split picture. Left, a drop of blue octopus blood. Right, a drop of red human blood with tiny round red blood cells carrying a small iron-colored dot each. Labels say bạch tuộc and người."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Còn máu của chúng ta chở oxy bằng chất giàu sắt, nên có màu đỏ."
+          "text": "Máu người đỏ vì có sắt trong hồng cầu."
         }
       ]
     },
     {
       "beat": "recap",
       "visual": {
-        "kind": "host",
-        "what": "Huy và Mai vẫy tay chào, phía sau là bạch tuộc dễ thương giơ tám cái tay, ba trái tim hiện trên đầu nó."
+        "kind": "scene",
+        "what": "The octopus waves happily with three hearts floating above it. Huy, Hùng, Bối and Beo wave to the viewers. A subscribe button with the text Huy Kể Chuyện appears at the bottom."
       },
       "parts": [
         {
-          "who": "Mai",
-          "how": "mừng rỡ",
-          "text": "Ba trái tim và máu xanh, tuyệt quá!"
+          "who": "Huy",
+          "how": "tự hào",
+          "text": "Ba trái tim, máu màu xanh, bạch tuộc đúng là siêu thật! Theo dõi kênh Huy Kể Chuyện để biết thêm nhé!"
         },
         {
-          "who": "Huy",
-          "how": "vui vẻ",
-          "text": "Theo dõi kênh Huy Kể Chuyện để biết thêm nhiều điều lạ nhé!"
+          "who": "Beo",
+          "how": "mừng rỡ",
+          "text": "Em thích bạch tuộc!"
         }
       ]
     }
   ],
   "facts": [
     {
-      "claim": "Bạch tuộc có 3 trái tim. Hai trái tim bơm máu qua hai mang, trái tim thứ ba bơm máu đi khắp thân thể.",
+      "claim": "Bạch tuộc có 3 trái tim. Hai trái tim bơm máu qua hai mang, trái tim thứ ba bơm máu đi khắp cơ thể.",
       "source": "Bạch tuộc (Wikipedia tiếng Việt)"
     },
     {
-      "claim": "Máu bạch tuộc chứa hemocyanin chở oxy, hòa tan trong huyết tương, và tạo ra màu xanh cho máu.",
+      "claim": "Máu bạch tuộc chứa protein hemocyanin chở oxy, được hòa tan trong huyết tương và tạo ra màu xanh cho máu.",
       "source": "Bạch tuộc (Wikipedia tiếng Việt)"
     },
     {
-      "claim": "Máu của động vật có xương sống chở oxy bằng huyết cầu giàu sắt.",
+      "claim": "Máu của động vật có xương sống chứa huyết cầu giàu sắt, nên khác với máu bạch tuộc.",
       "source": "Bạch tuộc (Wikipedia tiếng Việt)"
     },
     {
-      "claim": "Bạch tuộc có 8 cánh tay và sống dưới đáy biển.",
-      "source": "Bạch tuộc (Wikipedia tiếng Việt)"
-    },
-    {
-      "claim": "Bạch tuộc đưa nước qua mang để lấy oxy.",
+      "claim": "Bạch tuộc đưa nước qua mang và có mạch máu quấn bên trong mang.",
       "source": "Bạch tuộc (Wikipedia tiếng Việt)"
     }
   ],
-  "description": "Bạch tuộc có ba trái tim và máu màu xanh! Cùng Huy và Mai xem mỗi trái tim làm việc gì và vì sao máu lại xanh nhé.",
+  "description": "Bạch tuộc có tới 3 trái tim và máu màu xanh! Cùng Huy, Hùng, Bối và Beo khám phá vì sao trong 50 giây.",
   "cast": [
     {
       "name": "Huy",
       "gender": "male",
       "age": "young",
-      "role": "the host: curious, warm, a little funny; explains",
+      "role": "the host (25): curious, warm, a little funny; explains",
       "villain": false
     },
     {
-      "name": "Mai",
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
       "gender": "female",
       "age": "child",
-      "role": "an 8-year-old who asks, guesses and tries things",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
       "villain": false
     }
   ],

@@ -1,0 +1,86 @@
+{
+  "narration": "Ếch ngước nhìn lên. Qua miệng giếng tròn, chú chỉ thấy một khoảng trời xanh nho nhỏ. Ếch (cười): \"Bầu trời chỉ bé bằng cái vung thôi. Ta nhìn thấy hết cả trời rồi!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "point",
+        "face": "laugh",
+        "then": "talk",
+        "thenFace": "laugh"
+      }
+    ],
+    "fx": [
+      "rays"
+    ],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 9.633333333333333,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "stone",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "point",
+      "face": "laugh"
+    },
+    {
+      "actor": "ech",
+      "at": 4.82,
+      "do": "talk",
+      "face": "laugh",
+      "talk": 1
+    }
+  ],
+  "fx": [
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 9.633333333333333,
+      "scale": 2.4
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ech"
+      ],
+      "push": 0.06
+    }
+  ]
+}

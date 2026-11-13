@@ -1,0 +1,929 @@
+{
+  "title": "Học tiếng Anh: Con vật trong nhà | Dog, Cat, Duck",
+  "question": "Con vật trong nhà",
+  "answer": "dog (con chó), cat (con mèo), bird (con chim), fish (con cá), chicken (con gà), duck (con vịt), pig (con heo), cow (con bò), rabbit (con thỏ), mouse (con chuột)",
+  "words": [
+    {
+      "en": "dog",
+      "vi": "con chó"
+    },
+    {
+      "en": "cat",
+      "vi": "con mèo"
+    },
+    {
+      "en": "bird",
+      "vi": "con chim"
+    },
+    {
+      "en": "fish",
+      "vi": "con cá"
+    },
+    {
+      "en": "chicken",
+      "vi": "con gà"
+    },
+    {
+      "en": "duck",
+      "vi": "con vịt"
+    },
+    {
+      "en": "pig",
+      "vi": "con heo"
+    },
+    {
+      "en": "cow",
+      "vi": "con bò"
+    },
+    {
+      "en": "rabbit",
+      "vi": "con thỏ"
+    },
+    {
+      "en": "mouse",
+      "vi": "con chuột"
+    }
+  ],
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy đứng trong sân nhà có hàng rào gỗ, vẫy tay chào, phía sau thấp thoáng chuồng gà và ao nhỏ"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Chào các bạn! Mình là Huy đây. Hôm nay chúng mình sẽ học tên các con vật trong nhà và ngoài sân bằng tiếng Anh. Có bạn chó, bạn mèo, bạn gà, bạn vịt và còn nhiều bạn nữa đó. Các bạn sẵn sàng chưa nào?"
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Bối và Beo nhảy lên mừng rỡ trong sân, Hùng dắt một chú chó nhỏ chạy tới, chú chó liếm mặt Hùng"
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "mừng rỡ",
+          "text": "Em sẵn sàng rồi ạ! Em thích con vật lắm, nhà em có một bạn mèo nhỏ xíu."
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Em cũng thích! Em muốn nghe tiếng kêu của các bạn ấy nữa!"
+        },
+        {
+          "who": "Hùng",
+          "how": "cười",
+          "text": "Anh Huy ơi, em dắt các bạn thú tới rồi đây! Ối, bạn chó liếm mặt em rồi, nhột quá!"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Vậy mình bắt đầu thôi nào!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: hình một chú chó vàng đang vẫy đuôi, chữ DOG thật to, bên dưới là con chó"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Từ đầu tiên là con chó. Chó là người bạn trung thành, luôn giữ nhà giúp mình đó."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Dog. Dog."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Dog. Chó ạ, em nhớ rồi."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A big dog."
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Dog! Dog!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "scene",
+        "what": "Chú chó ngồi sủa, hiện chữ WOOF WOOF to có bong bóng lời nói, Hùng đứng cạnh bịt tai cười"
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "vui vẻ",
+          "text": "Chó sủa gâu gâu, còn trong tiếng Anh là woof woof đó các bạn."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Woof, woof."
+        },
+        {
+          "who": "Beo",
+          "how": "mừng rỡ",
+          "text": "Woof woof! Gâu gâu!"
+        },
+        {
+          "who": "Bối",
+          "how": "cười",
+          "text": "Em sủa cũng được này, woof woof!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: hình một chú mèo nhỏ màu cam ngồi trên ghế, chữ CAT thật to, bên dưới là con mèo"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Tiếp theo là con mèo. Chữ cat chỉ có ba chữ cái thôi, đọc ngắn là két."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Cat. Cat."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Cat. Mèo nhà em tên là Mướp."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A small cat."
+        },
+        {
+          "who": "Bối",
+          "how": "tự hào",
+          "text": "A small cat. Một chú mèo nhỏ."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "scene",
+        "what": "Chú mèo cam kêu, hiện chữ MEOW MEOW to, Beo bắt chước đưa hai tay làm tai mèo"
+      },
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Mèo kêu meo meo. Meo meo!"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Đúng rồi Beo. Tiếng Anh là meow, nghe giống hệt tiếng Việt mình nhỉ."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Meow. Meow."
+        },
+        {
+          "who": "Beo",
+          "how": "mừng rỡ",
+          "text": "Meow! Em là mèo con!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: hình chú chim xanh đậu trên cành, chữ BIRD thật to, bên dưới là con chim"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Con chim, bird. Chim có đôi cánh và bay trên bầu trời. Các bạn nhớ đọc là bớt nhé."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Bird. Bird."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Bird."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A blue bird."
+        },
+        {
+          "who": "Bối",
+          "how": "cười",
+          "text": "A blue bird. Chú chim xanh ạ."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: hình chú cá đỏ bơi trong bể kính có bong bóng, chữ FISH thật to, bên dưới là con cá"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Con cá, fish. Cá bơi lội trong bể nước, trông thật đẹp."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Fish. Fish."
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Fish. Cá!"
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Fish, đọc là phít đó Beo."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A red fish."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: hình con gà trống nâu có mào đỏ đang gáy, chữ CHICKEN thật to, bên dưới là con gà"
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "vui vẻ",
+          "text": "Anh có con gà đây, chicken. Chữ này hơi dài, đọc là chích-kừn. Ái, gà mổ tay anh rồi!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Chicken. Chicken."
+        },
+        {
+          "who": "Bối",
+          "how": "quyết tâm",
+          "text": "Chicken. Chữ này hơi khó, nhưng em đọc được."
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Chicken. Gà!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: hình chú vịt vàng bơi trên ao xanh, chữ DUCK thật to, bên dưới là con vịt"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Con vịt, duck. Vịt thích bơi ở ao và đi lạch bạch trên bờ."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Duck. Duck."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Duck."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A yellow duck."
+        },
+        {
+          "who": "Beo",
+          "how": "cười",
+          "text": "A yellow duck! Vịt vàng!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "scene",
+        "what": "Chú vịt vàng há mỏ kêu, hiện chữ QUACK QUACK to, Bối và Beo chụm tay làm mỏ vịt"
+      },
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Vịt kêu quạc quạc."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Quack. Quack."
+        },
+        {
+          "who": "Bối",
+          "how": "cười",
+          "text": "Quack quack! Tiếng Anh là quack đó Beo."
+        },
+        {
+          "who": "Beo",
+          "how": "mừng rỡ",
+          "text": "Quack quack! Em là vịt con!"
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: hình chú heo hồng tròn trịa với cái mũi to, chữ PIG thật to, bên dưới là con heo"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Con heo, hay con lợn, trong tiếng Anh là pig. Chữ này ngắn thôi, đọc là pích."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Pig. Pig."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Pig."
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Pig. Heo ạ."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A fat pig."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: hình con bò sữa đốm đen trắng đứng trên đồng cỏ, chữ COW thật to, bên dưới là con bò"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Con bò, cow. Bò cho chúng mình sữa thơm ngon để uống mỗi ngày."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Cow. Cow."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Cow."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A brown cow."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "A brown cow. Một con bò nâu."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "scene",
+        "what": "Con bò ngẩng đầu kêu, hiện chữ MOO MOO to, Hùng và Beo cùng làm sừng bằng hai ngón tay"
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "vui vẻ",
+          "text": "Bò kêu ò ò, còn tiếng Anh là moo đó."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Moo. Moo."
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Moo! Em kêu giống bò chưa anh Hùng?"
+        },
+        {
+          "who": "Hùng",
+          "how": "cười",
+          "text": "Giống lắm! Bò thật cũng phải ngạc nhiên."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: hình chú thỏ trắng tai dài ôm củ cà rốt, chữ RABBIT thật to, bên dưới là con thỏ"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Con thỏ, rabbit. Thỏ có đôi tai dài và rất thích ăn cà rốt."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Rabbit. Rabbit."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Rabbit. Em thích thỏ lắm."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A white rabbit."
+        }
+      ]
+    },
+    {
+      "beat": "word",
+      "visual": {
+        "kind": "labels",
+        "what": "Thẻ từ: hình chú chuột nhắt xám nhỏ xíu cầm miếng phô mai, chữ MOUSE thật to, bên dưới là con chuột"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Từ cuối cùng là con chuột, mouse. Chuột nhỏ xíu và chạy rất nhanh."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Mouse. Mouse."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Mouse."
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Mouse. Chuột!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A tiny mouse."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Hùng giơ tấm bảng có hình con thỏ trắng tai dài, dấu chấm hỏi lớn bên cạnh"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Bây giờ là phần đố vui. Hùng sẽ cho các bạn xem hình."
+        },
+        {
+          "who": "Hùng",
+          "how": "vui vẻ",
+          "text": "Đây là con gì nào? Emma hỏi nhé."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "What is this?"
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Là mouse ạ!"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Chưa đúng rồi, em nhìn đôi tai dài này xem."
+        },
+        {
+          "who": "Bối",
+          "how": "ngạc nhiên",
+          "text": "À, là rabbit! Em nhầm rồi."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "It is a rabbit."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Hình chú vịt vàng đang bơi trên ao, dấu chấm hỏi lớn bên cạnh"
+      },
+      "parts": [
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "What is this?"
+        },
+        {
+          "who": "Beo",
+          "how": "mừng rỡ",
+          "text": "Quạc quạc! Là duck!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "It is a duck."
+        },
+        {
+          "who": "Huy",
+          "how": "tự hào",
+          "text": "Beo giỏi quá!"
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Hình con bò đứng sau bụi cỏ chỉ lộ cái đuôi, hiện chữ MOO MOO, dấu chấm hỏi"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Bây giờ các bạn nghe tiếng kêu rồi đoán nhé."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Moo. Moo. What is it?"
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Là cow ạ!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "It is a cow."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "scene",
+        "what": "Hình chú heo hồng lăn trong vũng bùn, bùn bắn tung tóe, dấu chấm hỏi"
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "vui vẻ",
+          "text": "Bạn này thích lăn trong bùn lắm. Ôi, bùn bắn vào áo anh rồi!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "What is this?"
+        },
+        {
+          "who": "Beo",
+          "how": "mừng rỡ",
+          "text": "Pig! Là heo!"
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Yes. It is a pig."
+        }
+      ]
+    },
+    {
+      "beat": "practice",
+      "visual": {
+        "kind": "count",
+        "what": "Ba chú chim nhỏ đậu trên dây, hiện số 1, 2, 3 lần lượt khi đếm"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Câu cuối nhé. Có mấy con chim đậu trên dây?"
+        },
+        {
+          "who": "Bối",
+          "how": "quyết tâm",
+          "text": "Ba con ạ. Em đếm một, hai, ba."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Three birds."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Three birds! Ba chú chim."
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "scene",
+        "what": "Bối ôm chú mèo cam, chữ I HAVE A CAT hiện dưới hình"
+      },
+      "parts": [
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "I have a cat."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "I have a cat."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Câu này nghĩa là Em có một con mèo. Chữ have nghĩa là có. Các bạn cứ thay từ cat bằng con vật khác là nói được ngay."
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "scene",
+        "what": "Beo đứng cạnh chú chó vàng, chữ I HAVE A DOG hiện dưới hình"
+      },
+      "parts": [
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "I have a dog."
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "I hap a dog!"
+        },
+        {
+          "who": "Bối",
+          "how": "cười",
+          "text": "Là have, đọc là hép, Beo ơi. Đọc lại nhé."
+        },
+        {
+          "who": "Beo",
+          "how": "quyết tâm",
+          "text": "I have a dog! Em có một con chó!"
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "scene",
+        "what": "Chú vịt vàng đang bơi trên ao, chữ A DUCK CAN SWIM hiện dưới hình"
+      },
+      "parts": [
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "A duck can swim."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "A duck can swim."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Nghĩa là Vịt biết bơi. Chữ can nghĩa là biết, là có thể làm được."
+        }
+      ]
+    },
+    {
+      "beat": "sentence",
+      "visual": {
+        "kind": "scene",
+        "what": "Hùng ôm chú thỏ trắng, chữ I LIKE THE RABBIT hiện dưới hình"
+      },
+      "parts": [
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "I like the rabbit."
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "I like the rabbit."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Nghĩa là Em thích chú thỏ. Chữ like nghĩa là thích."
+        },
+        {
+          "who": "Hùng",
+          "how": "tự hào",
+          "text": "Anh cũng thích thỏ lắm đó!"
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "labels",
+        "what": "Năm thẻ từ xếp thành hàng gồm dog, cat, bird, fish, chicken, mỗi thẻ có hình và nghĩa tiếng Việt"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Cuối cùng, chúng mình cùng ôn lại tất cả các từ nhé."
+        },
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Dog. Cat. Bird. Fish. Chicken."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "labels",
+        "what": "Năm thẻ từ xếp thành hàng gồm duck, pig, cow, rabbit, mouse, mỗi thẻ có hình và nghĩa tiếng Việt"
+      },
+      "parts": [
+        {
+          "who": "Emma",
+          "how": "",
+          "text": "Duck. Pig. Cow. Rabbit. Mouse."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Bối ơi, từ nào khó nhất với em?"
+        },
+        {
+          "who": "Bối",
+          "how": "quyết tâm",
+          "text": "Chicken ạ, dài nhất. Chicken, chicken."
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Còn Beo thích con vật nào nhất?"
+        },
+        {
+          "who": "Beo",
+          "how": "mừng rỡ",
+          "text": "Em thích rabbit nhất! Rabbit!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "host",
+        "what": "Huy vẫy tay trong sân, phía sau có giỏ trái cây đầy màu sắc và logo Huy Kể Chuyện"
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Cảm ơn các bạn đã học cùng chúng mình. Bài sau mình sẽ học về trái cây ngon lành, như apple, banana và nhiều bạn nữa. Các bạn nhớ đăng ký kênh Huy Kể Chuyện để không bỏ lỡ nhé. Hẹn gặp lại!"
+        },
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Goodbye các bạn!"
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Goodbye! Woof woof!"
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    3,
+    5,
+    10,
+    13,
+    28
+  ],
+  "thumbnail": "DOG, CAT, DUCK!",
+  "description": "Bài học giúp bé gọi tên 10 con vật quen thuộc trong nhà và ngoài sân bằng tiếng Anh, kèm tiếng kêu vui để bé bắt chước. Bé còn luyện được những câu đơn giản như I have a cat, phù hợp cho trẻ từ 5 đến 9 tuổi.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host (25): curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
+      "villain": false
+    },
+    {
+      "name": "Emma",
+      "gender": "female",
+      "age": "adult",
+      "role": "the English voice of the word cards: reads every word and sentence slowly and clearly",
+      "villain": false
+    }
+  ],
+  "look": "",
+  "facts": []
+}

@@ -1,0 +1,387 @@
+{
+  "narration": "Ếch khoanh tay, cúi đầu thật ngoan. Ếch (quyết tâm): \"Thưa bác Trâu, thưa các bạn, xin hãy dẫn cháu đi khắp nơi để cháu học hỏi ạ!\" Ngựa (hớn hở): \"Được thôi! Mai tớ đưa cậu ra chợ quê!\" Kiến (vui vẻ): \"Còn tớ sẽ chỉ cho cậu cách tìm thóc!\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "bow",
+        "face": "determined",
+        "then": "talk",
+        "thenFace": "determined"
+      },
+      {
+        "id": "bac_trau",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ngua",
+        "place": "left",
+        "enter": "none",
+        "act": "still",
+        "face": "joy",
+        "then": "none",
+        "thenFace": "joy"
+      },
+      {
+        "id": "kien",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "cheer",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium",
+    "crowd": {
+      "id": "phu_nu_cho",
+      "count": 4,
+      "act": "idle",
+      "then": "none"
+    }
+  },
+  "era": "co_tich_lang_que",
+  "duration": 11.633333333333333,
+  "time": "day",
+  "mood": "majestic",
+  "set": {
+    "name": "field",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    },
+    {
+      "id": "bac_trau",
+      "type": "animal",
+      "look": {
+        "species": "buffalo",
+        "color": "#4a4f55"
+      },
+      "x": 582.4,
+      "scale": 1.4,
+      "facing": -1
+    },
+    {
+      "id": "ngua",
+      "type": "horse",
+      "look": {
+        "kind": "plain",
+        "color": "#8b5a2b",
+        "mane": "#1a1a1a",
+        "saddle": false
+      },
+      "x": -520,
+      "scale": 1.1,
+      "facing": 1
+    },
+    {
+      "id": "kien",
+      "type": "animal",
+      "look": {
+        "species": "ant",
+        "color": "#8b3a2a"
+      },
+      "x": -520,
+      "scale": 0.45,
+      "facing": 1
+    },
+    {
+      "id": "phu_nu_cho_1",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "tu_than",
+            "color": "#8b5a2b",
+            "trim": "#5a3a20",
+            "length": "knee",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "inner": {
+            "color": "#c8a46e"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1a1a1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b8e23",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "nonla",
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "phu_nu_cho_2",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "tu_than",
+            "color": "#8b5a2b",
+            "trim": "#5a3a20",
+            "length": "knee",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "inner": {
+            "color": "#c8a46e"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1a1a1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b8e23",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "nonla",
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "phu_nu_cho_3",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "tu_than",
+            "color": "#8b5a2b",
+            "trim": "#5a3a20",
+            "length": "knee",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "inner": {
+            "color": "#c8a46e"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1a1a1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b8e23",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "nonla",
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "phu_nu_cho_4",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "tu_than",
+            "color": "#8b5a2b",
+            "trim": "#5a3a20",
+            "length": "knee",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "inner": {
+            "color": "#c8a46e"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1a1a1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b8e23",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "nonla",
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1860,
+      "scale": 1.02,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "bow",
+      "face": "determined"
+    },
+    {
+      "actor": "ech",
+      "at": 5.82,
+      "do": "talk",
+      "face": "determined",
+      "talk": 1
+    },
+    {
+      "actor": "bac_trau",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "bac_trau",
+      "at": 5.82,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "ngua",
+      "at": 0,
+      "do": "stand",
+      "face": "joy"
+    },
+    {
+      "actor": "kien",
+      "at": 0,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "kien",
+      "at": 5.82,
+      "do": "cheer",
+      "face": "happy"
+    },
+    {
+      "actor": "phu_nu_cho_1",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "phu_nu_cho_2",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "phu_nu_cho_3",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "phu_nu_cho_4",
+      "at": 0,
+      "do": "idle"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ech",
+        "bac_trau",
+        "ngua",
+        "kien"
+      ],
+      "push": 0.06
+    }
+  ]
+}

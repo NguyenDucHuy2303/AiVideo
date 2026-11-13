@@ -1,0 +1,10 @@
+{
+  "issues": [
+    {
+      "scene": 17,
+      "quote": "Gần đúng rồi, nhưng em nhìn đôi tai dài này xem.",
+      "problem": "Mouse is not close to the answer rabbit. Saying \"gần đúng\" (almost right) is misleading for a child, because the answer is simply wrong.",
+      "fix": "Huy: Chưa đúng rồi, em nhìn đôi tai dài này xem."
+    }
+  ]
+}

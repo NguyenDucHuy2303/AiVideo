@@ -1,0 +1,625 @@
+{
+  "title": "Đeo nhạc cho mèo",
+  "scenes": [
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, nếu ngày nào cũng có một con mèo to rình bắt mình, các bạn sẽ làm gì nào? Có cách nào biết mèo sắp đến để chạy trốn kịp không nhỉ?"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Hôm nay, Huy Kể Chuyện sẽ kể cho các bạn nghe truyện ngụ ngôn Đeo nhạc cho mèo."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngày xưa, ở một xóm nhỏ ven đê, sau lũy tre xanh, có một nếp nhà tranh vách đất. Dưới gầm chạn bát, sau mấy chum gạo, có cả một họ nhà chuột sinh sống."
+        },
+        {
+          "who": "Chuột Út",
+          "how": "vui vẻ",
+          "text": "Mẹ ơi, hôm nay mình ăn gì ạ?"
+        },
+        {
+          "who": "Chuột Mẹ",
+          "how": "cười",
+          "text": "Lát nữa mẹ con mình ra sân nhặt mấy hạt thóc rơi nhé."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Nhưng trong nhà ấy còn có cô Mèo Mướp. Cô có bộ lông vằn, đôi mắt sáng, và cái đuôi dài ve vẩy."
+        },
+        {
+          "who": "Mèo Mướp",
+          "how": "cười",
+          "text": "Meo meo, tối nay ta lại đi dạo một vòng quanh bếp xem sao."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Mèo đi nhẹ lắm, vì móng vuốt thu gọn vào trong đệm chân. Mèo lại hay đi rình lúc chiều tối, mắt nhìn rõ cả trong bóng đêm. Nhiều khi chuột chưa nghe thấy gì thì mèo đã ở ngay sau lưng."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Một đêm, Chuột Béo lén mò ra chỗ nồi cơm nguội. Bỗng một cái bóng vằn vện lao vụt tới."
+        },
+        {
+          "who": "Chuột Béo",
+          "how": "hoảng hốt",
+          "text": "Ối, mèo! Chạy mau!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Chuột Béo lăn tròn vào khe vách, thoát được trong gang tấc."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Hôm sau, Chuột Út ra chơi gần rổ rá thì suýt bị Mèo Mướp vồ trúng. May mà Chuột Mẹ kéo con vào hang kịp."
+        },
+        {
+          "who": "Chuột Út",
+          "how": "khóc",
+          "text": "Mẹ ơi, con sợ lắm!"
+        },
+        {
+          "who": "Chuột Mẹ",
+          "how": "lo lắng",
+          "text": "Không sao rồi, con ngoan. Có mẹ đây."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đêm nào cũng thế, cả họ nhà chuột sống trong nơm nớp lo âu. Chuột Cụ râu bạc ngồi nhìn con cháu mà buồn lòng."
+        },
+        {
+          "who": "Chuột Cụ",
+          "how": "thở dài",
+          "text": "Cứ thế này thì cả nhà ta chẳng ai dám ra khỏi hang mất."
+        },
+        {
+          "who": "Chuột Xám",
+          "how": "lo lắng",
+          "text": "Hôm qua cháu cũng suýt bị vồ ở chân cối giã gạo đấy ạ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Cụ",
+          "how": "dõng dạc",
+          "text": "Đêm mai, cả nhà họp dưới gầm chạn. Phải tìm cho ra kế chống mèo!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Tin truyền đi khắp các ngóc ngách, từ hang dưới chân lu đến khe vách sau bếp."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đêm sau, họ nhà chuột kéo đến đông đủ. Chuột Cụ ngồi chỗ trên, trên một mẩu chiếu cói rách. Con cháu ngồi quanh theo thứ bậc."
+        },
+        {
+          "who": "Chuột Nhắt",
+          "how": "vui vẻ",
+          "text": "Cháu chào cụ ạ."
+        },
+        {
+          "who": "Chuột Cụ",
+          "how": "cười",
+          "text": "Ừ, ngồi xuống đi cháu."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Cụ",
+          "how": "dõng dạc",
+          "text": "Mèo Mướp rình bắt chúng ta mãi. Ai có kế gì hay thì cứ nói ra cho cả nhà cùng nghe."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Cả đàn chuột xì xào bàn tán."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Béo",
+          "how": "hớn hở",
+          "text": "Hay ta đào hang thật sâu, trốn luôn dưới đất cho mèo khỏi tìm thấy?"
+        },
+        {
+          "who": "Chuột Mẹ",
+          "how": "ngạc nhiên",
+          "text": "Thế lấy gì mà ăn hả anh Béo? Thóc gạo đều ở trên này cả."
+        },
+        {
+          "who": "Chuột Béo",
+          "how": "thở dài",
+          "text": "Ờ nhỉ, thế thì đói lắm."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Xám",
+          "how": "hô to",
+          "text": "Hay cả nhà cùng xông ra đánh mèo!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Nói xong, chân Chuột Xám run lẩy bẩy. Cả nhà nhìn nhau lắc đầu."
+        },
+        {
+          "who": "Chuột Cụ",
+          "how": "thở dài",
+          "text": "Mèo to gấp mấy chục lần chúng ta, đánh sao lại được hả cháu."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Đúng lúc ấy, chú Chuột Nhắt nhỏ nhất bỗng giơ tay lên, mắt sáng rỡ."
+        },
+        {
+          "who": "Chuột Nhắt",
+          "how": "hớn hở",
+          "text": "Cháu có kế rồi ạ!"
+        },
+        {
+          "who": "Chuột Cụ",
+          "how": "ngạc nhiên",
+          "text": "Nói đi cháu, cả nhà đang nghe đây."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Nhắt",
+          "how": "vui vẻ",
+          "text": "Hôm trước cháu thấy con trâu nhà bác nông dân đeo một chiếc nhạc đồng. Trâu đi đến đâu, nhạc kêu leng keng đến đấy."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Cả đàn chuột dỏng tai lên nghe."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Nhắt",
+          "how": "tự hào",
+          "text": "Thế thì ta buộc một chiếc nhạc vào cổ mèo! Mèo đi đâu, nhạc kêu đó. Nghe tiếng leng keng là ta chạy kịp ngay!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Cả gầm chạn rộn lên tiếng vỗ tay. Mấy chú chuột con nhảy cẫng lên vui sướng."
+        },
+        {
+          "who": "Chuột Út",
+          "how": "hô to",
+          "text": "Hay quá! Hay quá!"
+        },
+        {
+          "who": "Chuột Béo",
+          "how": "cười",
+          "text": "Từ nay ta tha hồ ăn no ngủ kỹ rồi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Mẹ",
+          "how": "mừng rỡ",
+          "text": "Thế là con cháu mình được sống yên ổn rồi."
+        },
+        {
+          "who": "Chuột Xám",
+          "how": "tự hào",
+          "text": "Đúng là cháu nhà họ Chuột có khác, thông minh thật!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Út",
+          "how": "hớn hở",
+          "text": "Con thấy một chiếc nhạc nhỏ rơi ngoài chuồng trâu đấy ạ!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Thế là mấy chú chuột chạy ra, hì hục kéo chiếc nhạc về. Chiếc nhạc kêu leng keng suốt dọc đường."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Chiếc nhạc được đặt ngay giữa gầm chạn. Chuột Cụ giơ tay lên, cả nhà im lặng chờ."
+        },
+        {
+          "who": "Chuột Cụ",
+          "how": "dõng dạc",
+          "text": "Kế thì hay lắm, nhạc cũng có rồi. Nhưng bây giờ, ai sẽ đi đeo nhạc vào cổ mèo?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Cả gầm chạn bỗng im phăng phắc. Chỉ còn nghe tiếng dế kêu ngoài sân. Con này nhìn con kia, chẳng ai nói câu nào."
+        },
+        {
+          "who": "Chuột Út",
+          "how": "lo lắng",
+          "text": "Mẹ ơi, sao mọi người im thế ạ?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Cụ",
+          "how": "vui vẻ",
+          "text": "Chuột Béo, cháu to khỏe nhất nhà. Cháu đi nhé?"
+        },
+        {
+          "who": "Chuột Béo",
+          "how": "hoảng hốt",
+          "text": "Ối, cháu béo quá, chạy chậm lắm cụ ơi. Mèo vồ cháu trước mất!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Béo",
+          "how": "mệt",
+          "text": "Ui da, tự dưng cháu đau bụng quá. Cháu xin phép về trước ạ!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Nói rồi Chuột Béo ôm bụng, lủi nhanh vào khe vách."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Cụ",
+          "how": "thở dài",
+          "text": "Thế còn mẹ con cái Út?"
+        },
+        {
+          "who": "Chuột Mẹ",
+          "how": "lo lắng",
+          "text": "Cháu còn phải trông con nhỏ, cháu đi sao được ạ."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Chuột Mẹ dắt Chuột Út lùi dần vào bóng tối sau chân chum."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Cụ",
+          "how": "ngạc nhiên",
+          "text": "Chuột Xám, cháu vừa bảo xông ra đánh mèo cơ mà?"
+        },
+        {
+          "who": "Chuột Xám",
+          "how": "sợ hãi",
+          "text": "Dạ, cháu phải đi canh cửa hang ạ. Cửa hang không ai canh thì nguy lắm!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Chuột Xám vừa nói vừa chạy biến. Những chú chuột khác cũng lần lượt tìm cớ lủi mất."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Cụ",
+          "how": "buồn rầu",
+          "text": "Còn cháu, Chuột Nhắt, người nghĩ ra kế hay nhất?"
+        },
+        {
+          "who": "Chuột Nhắt",
+          "how": "sợ hãi",
+          "text": "Dạ, cháu chỉ giỏi nghĩ thôi ạ. Cháu bé tí thế này, với không tới cổ mèo đâu."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Rồi Chuột Nhắt cũng cúi đầu, rón rén chui vào khe vách."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Gầm chạn giờ chỉ còn Chuột Cụ ngồi một mình bên chiếc nhạc đồng."
+        },
+        {
+          "who": "Chuột Cụ",
+          "how": "thở dài",
+          "text": "Nhạc ở đây, kế hay ở đây, mà chẳng ai dám làm."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Trên đống rơm góc bếp, Mèo Mướp vươn vai, vểnh tai lên nghe ngóng."
+        },
+        {
+          "who": "Mèo Mướp",
+          "how": "ngạc nhiên",
+          "text": "Meo, dưới gầm chạn có tiếng gì thế nhỉ?"
+        },
+        {
+          "who": "Chuột Cụ",
+          "how": "hoảng hốt",
+          "text": "Mèo đến! Mèo đến!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Chuột Cụ vội chui tọt vào hang. Chiếc nhạc nằm lăn lóc giữa nền đất."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Mèo Mướp đi tới, lấy chân khều khều chiếc nhạc. Chiếc nhạc kêu leng keng rồi lăn vào xó bếp."
+        },
+        {
+          "who": "Mèo Mướp",
+          "how": "cười",
+          "text": "Bọn chuột lại bày trò gì đây? Thôi, ta đi ngủ tiếp vậy."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Sáng hôm sau, mặt trời lên sau lũy tre. Chuột Cụ gọi con cháu lại quanh mình."
+        },
+        {
+          "who": "Chuột Út",
+          "how": "buồn rầu",
+          "text": "Ông ơi, thế là kế của anh Nhắt không dùng được ạ?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Cụ",
+          "how": "thở dài",
+          "text": "Các cháu ạ, nói thì dễ, làm mới khó."
+        },
+        {
+          "who": "Chuột Cụ",
+          "how": "dõng dạc",
+          "text": "Kế hay đến mấy mà chẳng ai làm được thì cũng bằng không."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Chuột Nhắt",
+          "how": "buồn rầu",
+          "text": "Cháu hiểu rồi ạ. Lần sau cháu sẽ nghĩ những kế mà mình làm được."
+        },
+        {
+          "who": "Chuột Béo",
+          "how": "buồn rầu",
+          "text": "Cháu cũng xin lỗi cụ, vì hôm qua đã viện cớ đau bụng ạ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Từ đó, câu chuyện của họ nhà chuột được ông bà kể cho con cháu nghe. Ngày nay, khi ai bày ra một kế nghe thì hay mà chẳng ai làm nổi, người ta vẫn bảo đó là chuyện đeo nhạc cho mèo."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Cũng giống như Thầy bói xem voi hay Đẽo cày giữa đường, bài học của truyện đã thành một câu nói quen thuộc."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, có ý hay là rất tốt. Nhưng điều quan trọng hơn là mình dám làm, và chỉ hứa những gì mình làm được nhé."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Nếu thích truyện hôm nay, các bạn hãy nhờ bố mẹ đăng ký kênh Huy Kể Chuyện để nghe thêm thật nhiều truyện hay nhé. Hẹn gặp lại các bạn!"
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "name": "Chuột Cụ",
+      "gender": "male",
+      "age": "elder",
+      "role": "Cụ chuột già râu bạc, đứng đầu họ nhà chuột, triệu tập cuộc họp và rút ra bài học",
+      "villain": false
+    },
+    {
+      "name": "Chuột Nhắt",
+      "gender": "male",
+      "age": "young",
+      "role": "Chú chuột nhỏ nhanh trí, nghĩ ra kế đeo nhạc cho mèo nhưng không dám làm",
+      "villain": false
+    },
+    {
+      "name": "Chuột Béo",
+      "gender": "male",
+      "age": "adult",
+      "role": "Chú chuột béo tham ăn, viện cớ đau bụng để lủi đi",
+      "villain": false
+    },
+    {
+      "name": "Chuột Xám",
+      "gender": "male",
+      "age": "adult",
+      "role": "Chú chuột nói to đòi đánh mèo nhưng lại tìm cớ đi canh cửa hang",
+      "villain": false
+    },
+    {
+      "name": "Chuột Mẹ",
+      "gender": "female",
+      "age": "adult",
+      "role": "Chuột mẹ hiền lành, thương con, viện cớ trông con nhỏ",
+      "villain": false
+    },
+    {
+      "name": "Chuột Út",
+      "gender": "female",
+      "age": "child",
+      "role": "Chuột con ngây thơ, hay hỏi, tìm thấy chiếc nhạc",
+      "villain": false
+    },
+    {
+      "name": "Mèo Mướp",
+      "gender": "female",
+      "age": "adult",
+      "role": "Cô mèo lông vằn trong nhà, hay rình bắt chuột",
+      "villain": true
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Cả đàn chuột trong một xóm quê luôn bị mèo rình bắt, Chuột Cụ họp cả nhà bàn kế chống mèo",
+      "source": "Tóm tắt truyện (đề bài)"
+    },
+    {
+      "claim": "Một chú chuột nhắt nghĩ ra kế buộc nhạc vào cổ mèo để nghe tiếng nhạc mà chạy trốn, cả đàn vỗ tay khen hay",
+      "source": "Tóm tắt truyện (đề bài)"
+    },
+    {
+      "claim": "Khi Chuột Cụ hỏi ai dám đi đeo nhạc, ai cũng im lặng rồi lần lượt tìm cớ lủi mất",
+      "source": "Tóm tắt truyện (đề bài)"
+    },
+    {
+      "claim": "Bài học: nói thì dễ, làm mới khó, kế hay mà không làm được thì cũng bằng không",
+      "source": "Tóm tắt truyện (đề bài)"
+    },
+    {
+      "claim": "Mèo sống gần người, được nuôi để săn vật gây hại, ví dụ như chuột",
+      "source": "Mèo"
+    },
+    {
+      "claim": "Mèo có vuốt thu lại được trong đệm ngón nên đi nhẹ nhàng rình mồi, chân sau đặt lên dấu chân trước để giảm tiếng động",
+      "source": "Mèo"
+    },
+    {
+      "claim": "Mèo hiếu động lúc mặt trời lặn, nhìn tốt trong bóng tối hơn người, và ngủ nhiều",
+      "source": "Mèo"
+    },
+    {
+      "claim": "Mèo vểnh tai về phía có tiếng động để nghe ngóng",
+      "source": "Mèo"
+    },
+    {
+      "claim": "Truyện ngụ ngôn dùng hình tượng loài vật để nói về thói xấu của con người, gồm phần kể chuyện và bài học đạo đức",
+      "source": "Ngụ ngôn"
+    },
+    {
+      "claim": "Bài học ngụ ngôn thường đúc kết thành thành ngữ, như Thầy bói xem voi, Đẽo cày giữa đường là ngụ ngôn dân gian Việt Nam",
+      "source": "Ngụ ngôn"
+    },
+    {
+      "claim": "Aesop được xem là tác giả nhiều truyện ngụ ngôn nổi tiếng có loài vật biết nói và mang tính cách con người",
+      "source": "Aisopos"
+    }
+  ],
+  "look": "Bối cảnh: một nếp nhà tranh vách đất ở xóm quê ven đê vùng đồng bằng sông Hồng, có lũy tre xanh bao quanh, sân đất, chuồng trâu nhỏ cạnh nhà. Trong bếp có chạn bát bằng gỗ mộc, chum vại và lu gốm nâu, nồi đất trên kiềng, rổ rá, thúng mủng, cối giã gạo bằng gỗ, đống rơm góc bếp, đèn dầu leo lét trên vách. Dưới gầm chạn là nơi họp của họ nhà chuột, trải một mẩu chiếu cói rách. Chiếc nhạc là quả nhạc đồng tròn nhỏ có quai, loại đeo cổ trâu, màu vàng đồng xỉn. Nhân vật là thú nhân hóa đơn giản, dễ thương, không mặc đồ hiện đại. Chuột Cụ: chuột lông xám bạc, râu dài trắng, lưng hơi còng, chống một que tre nhỏ, đội khăn xếp nhỏ màu đen và khoác áo dài ngũ thân màu the thâm. Chuột Nhắt: chuột nhỏ lông nâu nhạt, mắt to tròn, mặc áo cánh nâu ngắn. Chuột Béo: chuột tròn trịa lông nâu sẫm, áo cánh nâu căng bụng, khăn chít đầu. Chuột Xám: chuột lông xám, dáng gầy cao, áo cánh nâu, quần xắn gối. Chuột Mẹ: chuột lông nâu mềm, mặc áo tứ thân nâu ngoài yếm, váy đen dài, khăn mỏ quạ nhỏ, kín đáo. Chuột Út: chuột con nhỏ xíu, tóc để chỏm, mặc yếm có áo cánh ngắn ngoài. Mèo Mướp: mèo nhà lông mướp vằn xám nâu, mắt vàng sáng, không mặc quần áo, dáng tinh nghịch chứ không quá dữ tợn; khi rình thì mắt sáng trong bóng tối. Cảnh đêm dùng ánh đèn dầu vàng ấm và ánh trăng qua khe vách; cảnh sáng có nắng lên sau lũy tre. Không vẽ cảnh mèo bắt được chuột, chỉ vẽ chuột chạy thoát."
+}

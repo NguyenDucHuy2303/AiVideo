@@ -27,6 +27,36 @@
       "at": "2026-11-12T10:39:11.311Z",
       "status": "rewrite",
       "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 93750 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T01:36:23.427Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 93750 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T02:06:52.216Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 93750 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T02:37:01.507Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 93750 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T03:07:06.042Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 93750 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T03:37:07.865Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 93750 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T04:07:22.425Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 93750 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
     }
   ],
   "kind": "qa",
@@ -37,5 +67,5 @@
     "why": "Mạnh ở mở đầu gây tò mò (\"cái chuối\", \"ai cắn Mặt Trăng?\"), giải thích đúng khoa học, gỡ hiểu lầm bóng Trái Đất, có thí nghiệm đèn pin–quả bóng, chủ đề nhiều người tìm và dễ dựng hình; yếu ở chỗ hơi dài và nhiều thuật ngữ (terminator, tidal locking, gibbous, waxing/waning) có thể làm trẻ 6–12 tuổi rối, đoạn quỹ đạo/khóa thủy triều chen giữa hơi lan man, và lời thoại viết bằng tiếng Anh trong khi kênh là \"Hỏi Huy\" tiếng Việt.",
     "hash": "d1201eb19135ef5e"
   },
-  "retryAt": "2026-11-12T11:09:11.310Z"
+  "retryAt": "2026-11-13T04:37:22.425Z"
 }

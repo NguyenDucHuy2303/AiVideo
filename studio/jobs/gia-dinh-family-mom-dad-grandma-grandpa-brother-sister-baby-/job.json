@@ -60,6 +60,11 @@
       "at": "2026-11-12T06:52:59.012Z",
       "status": "done",
       "info": "studio tự duyệt: anh chưa duyệt sau 12 giờ, kiểm tra máy đạt (328 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-12T18:32:23.316Z",
+      "status": "done",
+      "info": "3 shorts"
     }
   ],
   "kind": "lesson",
@@ -78,5 +83,43 @@
     "problems": [],
     "seconds": 328
   },
-  "autoApproved": "2026-11-12T06:52:59.011Z"
+  "autoApproved": "2026-11-12T06:52:59.011Z",
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "exported": {
+    "long": {
+      "dir": "/home/huynguyen/youtube/Học tiếng Anh Gia đình",
+      "publishAt": "2026-11-15T12:30:00.000Z",
+      "channel": "huy-ke-chuyen",
+      "at": "2026-11-13T03:46:22.629Z"
+    },
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/Học tiếng Anh Gia đình",
+        "publishAt": "2026-11-16T00:30:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T03:46:22.631Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Học tiếng Anh Gia đình",
+        "publishAt": "2026-11-16T05:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T03:46:22.632Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Học tiếng Anh Gia đình",
+        "publishAt": "2026-11-16T10:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T03:46:22.633Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "Học tiếng Anh Gia đình",
+    "mtime": 1794541582635.9731,
+    "at": "2026-11-13T03:48:35.353Z"
+  }
 }

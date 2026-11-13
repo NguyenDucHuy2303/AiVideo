@@ -1,7 +1,7 @@
 {
   "slug": "tri-khon-cua-ta-day",
   "topic": "Trí khôn của ta đây",
-  "status": "producing",
+  "status": "done",
   "notes": [],
   "history": [
     {
@@ -41,6 +41,30 @@
       "at": "2026-11-12T03:06:32.147Z",
       "status": "producing",
       "info": "sửa lỗi hiệu ứng lấp lánh trên con vật (fx.js), render lại"
+    },
+    {
+      "at": "2026-11-12T13:50:21.563Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-12T15:54:44.357Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-12T18:20:10.508Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-12T20:17:35.798Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (373 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-12T23:03:09.037Z",
+      "status": "done",
+      "info": "bản tiếng Anh: giọng xong"
     }
   ],
   "kind": "ngụ ngôn",
@@ -65,5 +89,69 @@
     "hash": "a39a49fe25725226"
   },
   "autoPicked": true,
-  "stage": "ready"
+  "inspect": {
+    "at": "2026-11-12T15:54:44.356Z",
+    "perMinute": 4.6,
+    "byKind": {
+      "head-cut": {
+        "count": 3,
+        "seconds": 9.8
+      },
+      "speaker-off": {
+        "count": 23,
+        "seconds": 73.9
+      },
+      "still": {
+        "count": 2,
+        "seconds": 13.8
+      }
+    }
+  },
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "autoCheck": {
+    "at": "2026-11-12T20:17:35.797Z",
+    "mtimeMs": 1794498868619.896,
+    "ok": true,
+    "problems": [],
+    "seconds": 373
+  },
+  "autoApproved": "2026-11-12T20:17:35.797Z",
+  "exported": {
+    "long": {
+      "dir": "/home/huynguyen/youtube/Trí khôn của ta đây",
+      "publishAt": "2026-11-14T12:30:00.000Z",
+      "channel": "huy-ke-chuyen",
+      "at": "2026-11-13T03:46:22.595Z"
+    },
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/Trí khôn của ta đây",
+        "publishAt": "2026-11-15T00:30:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T03:46:22.597Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Trí khôn của ta đây",
+        "publishAt": "2026-11-15T05:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T03:46:22.598Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Trí khôn của ta đây",
+        "publishAt": "2026-11-15T10:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T03:46:22.599Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "Trí khôn của ta đây",
+    "mtime": 1794541582613.9731,
+    "at": "2026-11-13T03:47:55.474Z"
+  },
+  "english": "ready"
 }

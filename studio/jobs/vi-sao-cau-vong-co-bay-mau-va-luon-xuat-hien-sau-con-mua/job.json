@@ -56,6 +56,41 @@
       "at": "2026-11-12T10:05:14.842Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo (chưa render bản mới)"
+    },
+    {
+      "at": "2026-11-12T10:47:21.363Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: Claude Code failed on qa-rewrite: You've hit your 5-hour limit · resets 6:40pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work wait"
+    },
+    {
+      "at": "2026-11-13T01:40:11.293Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 104319 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T02:10:22.736Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 104319 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T02:40:32.066Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 104319 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T03:10:36.671Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 104319 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T03:40:50.811Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 104319 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T04:10:53.026Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 104319 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
     }
   ],
   "kind": "qa-vi",
@@ -71,5 +106,6 @@
     "shorts/1.mp4",
     "shorts/2.mp4",
     "shorts/3.mp4"
-  ]
+  ],
+  "retryAt": "2026-11-13T04:40:53.025Z"
 }

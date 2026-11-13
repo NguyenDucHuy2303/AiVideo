@@ -50,6 +50,16 @@
       "at": "2026-11-12T06:56:52.644Z",
       "status": "done",
       "info": "bản tiếng Anh: giọng xong"
+    },
+    {
+      "at": "2026-11-12T17:14:37.920Z",
+      "status": "done",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-12T20:17:01.233Z",
+      "status": "done",
+      "info": "bản tiếng Anh: xong"
     }
   ],
   "kind": "truyền thuyết",
@@ -70,5 +80,53 @@
     "seconds": 390
   },
   "autoApproved": "2026-11-12T06:51:56.595Z",
-  "english": "ready"
+  "english": "done",
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "exported": {
+    "long": {
+      "dir": "/home/huynguyen/youtube/Sơn Tinh – Thủy Tinh",
+      "publishAt": "2026-11-13T12:30:00.000Z",
+      "channel": "huy-ke-chuyen",
+      "at": "2026-11-13T03:46:22.514Z"
+    },
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/Sơn Tinh – Thủy Tinh",
+        "publishAt": "2026-11-14T00:30:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T03:46:22.516Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Sơn Tinh – Thủy Tinh",
+        "publishAt": "2026-11-14T05:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T03:46:22.517Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Sơn Tinh – Thủy Tinh",
+        "publishAt": "2026-11-14T10:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-13T03:46:22.519Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "Sơn Tinh – Thủy Tinh",
+    "mtime": 1794541582530.9734,
+    "at": "2026-11-13T03:46:52.959Z"
+  },
+  "published": {
+    "en": {
+      "videoId": "uDZZYe6wJz4",
+      "url": "https://youtu.be/uDZZYe6wJz4",
+      "publishAt": "2026-11-13T12:00:00.000Z",
+      "channel": "ask-huy",
+      "at": "2026-11-13T03:43:04.456Z",
+      "manual": true
+    }
+  }
 }

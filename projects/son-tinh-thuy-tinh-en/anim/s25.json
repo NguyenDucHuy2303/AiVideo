@@ -1,0 +1,256 @@
+{
+  "narration": "Nhưng Thủy Tinh không quên mối hận. Năm nào cũng vậy, cứ đến mùa mưa, Thủy Tinh lại dâng nước đánh Sơn Tinh. Cậu bé (ngạc nhiên): \"Ông ơi, sao năm nào cũng mưa to, nước lớn thế ạ?\" Ông lão (thở dài): \"Đấy là Thủy Tinh lại đến đánh Sơn Tinh đấy cháu ạ.\"",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "cau_be",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "surprised",
+        "then": "idle",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "ong_lao",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "worried",
+        "then": "point",
+        "thenFace": "worried"
+      },
+      {
+        "id": "son_tinh",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "thuy_tinh",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "van_lang",
+  "duration": 12.533333333333333,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "cau_be",
+      "type": "human",
+      "look": {
+        "body": "child",
+        "outfit": {
+          "type": "dongson",
+          "color": "#c9a46a",
+          "trim": "#8a3a22",
+          "skirt": "#7a4a2a"
+        },
+        "hair": {
+          "style": "traidao",
+          "color": "#1a1210"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "bowl"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": -520,
+      "scale": 0.8,
+      "facing": 1
+    },
+    {
+      "id": "ong_lao",
+      "type": "human",
+      "look": {
+        "body": "elder",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#8a6a42",
+          "skirt": "#5a4a32",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#9a948a"
+        },
+        "beard": "#ece8e0",
+        "prop": {
+          "type": "bamboo"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "droopy",
+          "nose": "long",
+          "brows": "bushy",
+          "wrinkles": true
+        }
+      },
+      "x": 520,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "son_tinh",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#3f7a4a",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": false,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "build": "average",
+        "skin": "#c98f5c",
+        "headwear": "feather_band",
+        "tattoo": true
+      },
+      "x": -520,
+      "scale": 1.05,
+      "facing": 1
+    },
+    {
+      "id": "thuy_tinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#1f3f66",
+          "skirt": "#2a3a4a",
+          "trim": "#7fc4c8"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a24"
+        },
+        "tattoo": true,
+        "bracelets": true,
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "iris": "#2a4a6a"
+        }
+      },
+      "x": 520,
+      "scale": 1.15,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "cau_be",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised",
+      "talk": 1
+    },
+    {
+      "actor": "cau_be",
+      "at": 6.27,
+      "do": "idle",
+      "face": "surprised"
+    },
+    {
+      "actor": "ong_lao",
+      "at": 0,
+      "do": "talk",
+      "face": "worried",
+      "talk": 1
+    },
+    {
+      "actor": "ong_lao",
+      "at": 6.27,
+      "do": "point",
+      "face": "worried"
+    },
+    {
+      "actor": "son_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "thuy_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "cau_be",
+        "ong_lao",
+        "son_tinh",
+        "thuy_tinh"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 4.51,
+      "type": "close",
+      "on": [
+        "cau_be"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 8.52,
+      "type": "close",
+      "on": [
+        "ong_lao"
+      ],
+      "push": 0.05
+    }
+  ]
+}

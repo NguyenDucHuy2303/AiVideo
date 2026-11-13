@@ -1,0 +1,265 @@
+{
+  "narration": "Ông cha ta kể chuyện Sơn Tinh, Thủy Tinh để giải thích vì sao hằng năm có mùa mưa lũ. Câu chuyện cũng ca ngợi người Việt xưa đồng lòng chống lũ, giữ gìn ruộng đồng, làng xóm.",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "son_tinh",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "thuy_tinh",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "idle",
+      "then": "raise"
+    },
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  "era": "van_lang",
+  "duration": 11.3,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "field",
+    "objects": [
+      {
+        "type": "mat",
+        "x": 260
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "son_tinh",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#3f7a4a",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": false,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "build": "average",
+        "skin": "#c98f5c",
+        "headwear": "feather_band",
+        "tattoo": true
+      },
+      "x": -520,
+      "scale": 1.05,
+      "facing": 1
+    },
+    {
+      "id": "thuy_tinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#1f3f66",
+          "skirt": "#2a3a4a",
+          "trim": "#7fc4c8"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a24"
+        },
+        "tattoo": true,
+        "bracelets": true,
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "iris": "#2a4a6a"
+        }
+      },
+      "x": 520,
+      "scale": 1.15,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "son_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "thuy_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 5.65,
+      "do": "raise"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 6,
+      "do": "raise"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 6.35,
+      "do": "raise"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "son_tinh",
+        "thuy_tinh"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.65,
+      "type": "full",
+      "on": [
+        "son_tinh"
+      ],
+      "push": 0.06
+    }
+  ]
+}

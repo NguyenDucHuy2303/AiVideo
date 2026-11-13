@@ -45,7 +45,7 @@
       "beat": "hook",
       "visual": {
         "kind": "host",
-        "what": "Huy đứng trước một chiếc bàn có giỏ trái cây đầy màu sắc, vẫy tay chào người xem"
+        "what": "Huy đứng cạnh bàn bếp sáng sủa, Bối và Beo hai bên vẫy tay, giỏ trái cây nhiều màu phía sau"
       },
       "parts": [
         {
@@ -54,9 +54,14 @@
           "text": "Chào các bạn! Mình là Huy đây. Hôm nay chúng mình sẽ cùng học tiếng Anh về các loại trái cây. Các bạn thấy trái cây mỗi ngày ở nhà và ngoài chợ đúng không nào?"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "mừng rỡ",
           "text": "Chào anh Huy! Chào các bạn! Em thích ăn trái cây lắm. Hôm nay mình học bao nhiêu từ vậy anh?"
+        },
+        {
+          "who": "Beo",
+          "how": "mừng rỡ",
+          "text": "Em cũng thích ăn! Chào các bạn!"
         }
       ]
     },
@@ -64,13 +69,23 @@
       "beat": "hook",
       "visual": {
         "kind": "scene",
-        "what": "Một giỏ trái cây thật to có đủ chín loại quả, chữ FRUITS thật lớn ở trên, bên dưới ghi trái cây"
+        "what": "Hùng bê giỏ trái cây thật to đặt lên bàn, một quả cam lăn ra mép bàn; chữ FRUIT thật to"
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Hôm nay mình học chín từ thôi. Nào, cùng nhìn giỏ trái cây thật to này nhé. Trong tiếng Anh, trái cây là fruit."
+          "text": "Hôm nay mình học chín từ thôi. Hùng ơi, mang giỏ trái cây ra đây nào."
+        },
+        {
+          "who": "Hùng",
+          "how": "lo lắng",
+          "text": "Giỏ nặng quá anh ơi! Ối, suýt rơi quả cam rồi!"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Nhẹ tay thôi em. Các bạn ơi, trái cây trong tiếng Anh là fruit."
         },
         {
           "who": "Emma",
@@ -78,9 +93,14 @@
           "text": "Fruit. Fruit."
         },
         {
-          "who": "Mai",
-          "how": "mừng rỡ",
-          "text": "Fruit. Fruit. Oa, nhiều quá! Em muốn nói tiếng Anh ngay thôi!"
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Fruit. Fruit. Oa, nhiều quá!"
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Fruit! Em muốn ăn ngay thôi!"
         }
       ]
     },
@@ -88,7 +108,7 @@
       "beat": "word",
       "visual": {
         "kind": "labels",
-        "what": "Một quả táo đỏ bóng có cuống và lá, chữ APPLE thật to, bên dưới ghi quả táo"
+        "what": "Quả táo đỏ bóng, chữ APPLE thật to, bên dưới ghi quả táo"
       },
       "parts": [
         {
@@ -102,7 +122,7 @@
           "text": "Apple. Apple."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "vui vẻ",
           "text": "Apple. Apple. Quả táo!"
         },
@@ -112,7 +132,7 @@
           "text": "A red apple."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "cười",
           "text": "A red apple. Táo đỏ!"
         }
@@ -122,7 +142,7 @@
       "beat": "word",
       "visual": {
         "kind": "labels",
-        "what": "Một quả chuối vàng cong cong, chữ BANANA thật to, bên dưới ghi quả chuối"
+        "what": "Nải chuối vàng, chữ BANANA thật to, bên dưới ghi quả chuối"
       },
       "parts": [
         {
@@ -136,9 +156,14 @@
           "text": "Banana. Banana."
         },
         {
-          "who": "Mai",
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Ba-na! Ba-na!"
+        },
+        {
+          "who": "Bối",
           "how": "cười",
-          "text": "Banana. Banana. Nghe vui tai quá!"
+          "text": "Còn thiếu một chữ na nữa đó Beo. Banana. Banana. Nghe vui tai quá!"
         },
         {
           "who": "Emma",
@@ -146,7 +171,7 @@
           "text": "A yellow banana."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "vui vẻ",
           "text": "A yellow banana. Chuối vàng!"
         }
@@ -156,7 +181,7 @@
       "beat": "word",
       "visual": {
         "kind": "labels",
-        "what": "Một quả cam tròn màu cam sáng có lá xanh, chữ ORANGE thật to, bên dưới ghi quả cam, màu cam"
+        "what": "Quả cam tròn màu cam, chữ ORANGE thật to, bên dưới ghi quả cam, màu cam"
       },
       "parts": [
         {
@@ -170,7 +195,7 @@
           "text": "Orange. Orange."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "ngạc nhiên",
           "text": "Orange. Orange. Một từ mà có hai nghĩa, quả cam và màu cam!"
         },
@@ -180,7 +205,7 @@
           "text": "A round orange."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "vui vẻ",
           "text": "A round orange. Cam tròn!"
         }
@@ -190,7 +215,7 @@
       "beat": "word",
       "visual": {
         "kind": "labels",
-        "what": "Một quả xoài chín vàng đỏ có cuống, chữ MANGO thật to, bên dưới ghi quả xoài"
+        "what": "Quả xoài chín vàng, chữ MANGO thật to, bên dưới ghi quả xoài"
       },
       "parts": [
         {
@@ -204,7 +229,7 @@
           "text": "Mango. Mango."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "mừng rỡ",
           "text": "Mango. Mango. Em thích xoài chín lắm!"
         },
@@ -214,9 +239,14 @@
           "text": "A sweet mango."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "vui vẻ",
           "text": "A sweet mango. Xoài ngọt!"
+        },
+        {
+          "who": "Beo",
+          "how": "mừng rỡ",
+          "text": "Sweet mango! Xoài ngọt!"
         }
       ]
     },
@@ -224,7 +254,7 @@
       "beat": "word",
       "visual": {
         "kind": "labels",
-        "what": "Một chùm nho tím có vài chiếc lá, chữ GRAPES thật to, bên dưới ghi nho"
+        "what": "Chùm nho tím, chữ GRAPES thật to, bên dưới ghi nho"
       },
       "parts": [
         {
@@ -238,7 +268,7 @@
           "text": "Grapes. Grapes."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "vui vẻ",
           "text": "Grapes. Grapes. Nho tím!"
         },
@@ -248,7 +278,7 @@
           "text": "Purple grapes."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "cười",
           "text": "Purple grapes. Nho tím mát lạnh!"
         }
@@ -258,7 +288,7 @@
       "beat": "word",
       "visual": {
         "kind": "labels",
-        "what": "Một miếng dưa hấu lớn ruột đỏ có hạt đen, vỏ xanh, chữ WATERMELON thật to, bên dưới ghi dưa hấu"
+        "what": "Miếng dưa hấu ruột đỏ hạt đen, chữ WATERMELON thật to, bên dưới ghi dưa hấu; chữ water và melon hai màu khác nhau"
       },
       "parts": [
         {
@@ -267,12 +297,17 @@
           "text": "Watermelon là dưa hấu. Từ này dài nhưng dễ nhớ. Water là nước, melon là dưa. Dưa hấu có thật nhiều nước mà."
         },
         {
+          "who": "Hùng",
+          "how": "vui vẻ",
+          "text": "Để em cắt cho mọi người xem nhé. Nước chảy ra nhiều thật!"
+        },
+        {
           "who": "Emma",
           "how": "",
           "text": "Watermelon. Watermelon."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "quyết tâm",
           "text": "Wa-ter-me-lon. Watermelon!"
         },
@@ -282,7 +317,7 @@
           "text": "A big watermelon."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "tự hào",
           "text": "A big watermelon. Dưa hấu to!"
         }
@@ -292,7 +327,7 @@
       "beat": "word",
       "visual": {
         "kind": "labels",
-        "what": "Một quả dứa vàng có vương miện lá xanh, chữ PINEAPPLE thật to, bên dưới ghi quả dứa, quả thơm"
+        "what": "Quả dứa có tán lá xanh, chữ PINEAPPLE thật to, bên dưới ghi quả dứa; hình cây thông nhỏ cộng quả táo nhỏ"
       },
       "parts": [
         {
@@ -306,7 +341,7 @@
           "text": "Pineapple. Pineapple."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "ngạc nhiên",
           "text": "Pineapple. Pineapple. Có chữ apple trong đó nữa!"
         },
@@ -316,7 +351,7 @@
           "text": "A juicy pineapple."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "vui vẻ",
           "text": "A juicy pineapple. Dứa nhiều nước!"
         }
@@ -326,7 +361,7 @@
       "beat": "word",
       "visual": {
         "kind": "labels",
-        "what": "Một quả dâu tây đỏ có chấm nhỏ và lá xanh, chữ STRAWBERRY thật to, bên dưới ghi dâu tây"
+        "what": "Quả dâu tây đỏ có hạt nhỏ, chữ STRAWBERRY thật to với hai chữ rr nổi bật, bên dưới ghi dâu tây"
       },
       "parts": [
         {
@@ -340,7 +375,7 @@
           "text": "Strawberry. Strawberry."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "lo lắng",
           "text": "Strawberry. Strawberry. Từ này hơi khó anh ơi!"
         },
@@ -350,9 +385,14 @@
           "text": "A red strawberry."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "quyết tâm",
           "text": "A red strawberry. Dâu tây đỏ!"
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Dâu tây đỏ! Em thích!"
         }
       ]
     },
@@ -360,7 +400,7 @@
       "beat": "word",
       "visual": {
         "kind": "labels",
-        "what": "Một quả dừa xanh có ống hút và một nửa quả dừa nâu, chữ COCONUT thật to, bên dưới ghi quả dừa"
+        "what": "Quả dừa có ống hút, chữ COCONUT thật to, bên dưới ghi quả dừa"
       },
       "parts": [
         {
@@ -374,7 +414,7 @@
           "text": "Coconut. Coconut."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "vui vẻ",
           "text": "Coconut. Coconut. Em nhớ rồi, quả dừa!"
         },
@@ -384,7 +424,7 @@
           "text": "Coconut water."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "cười",
           "text": "Coconut water. Nước dừa!"
         }
@@ -394,18 +434,23 @@
       "beat": "practice",
       "visual": {
         "kind": "host",
-        "what": "Huy đứng cạnh Mai, phía sau là dấu hỏi lớn và các thẻ trái cây úp xuống"
+        "what": "Huy và Hùng đứng cạnh bàn trái cây, Bối và Beo giơ tay sẵn sàng chơi đoán"
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Giỏi lắm! Bây giờ mình chơi trò đoán nhé. Emma sẽ hỏi, và Mai sẽ trả lời bằng tiếng Anh. Các bạn cũng đoán cùng Mai nha."
+          "text": "Giỏi lắm! Bây giờ mình chơi trò đoán nhé. Emma sẽ hỏi, và Bối sẽ trả lời bằng tiếng Anh. Các bạn cũng đoán cùng Bối nha."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "quyết tâm",
           "text": "Em sẵn sàng rồi ạ!"
+        },
+        {
+          "who": "Hùng",
+          "how": "vui vẻ",
+          "text": "Còn em lo giấu trái cây sau tấm vải. Đừng ai nhìn trộm nhé!"
         }
       ]
     },
@@ -413,7 +458,7 @@
       "beat": "practice",
       "visual": {
         "kind": "scene",
-        "what": "Một quả chuối vàng cong cong hiện lên giữa màn hình, có dấu hỏi lớn bên cạnh"
+        "what": "Hùng kéo tấm vải để lộ quả chuối cong màu vàng, dấu hỏi to"
       },
       "parts": [
         {
@@ -422,7 +467,7 @@
           "text": "What is this?"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "vui vẻ",
           "text": "Em biết rồi! Đây là orange!"
         },
@@ -432,7 +477,7 @@
           "text": "Gần đúng rồi, nhưng orange là quả cam tròn tròn. Quả cong cong màu vàng này là gì nhỉ?"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "ngạc nhiên",
           "text": "Ôi, em nhầm rồi! Đây là banana, quả chuối!"
         },
@@ -447,7 +492,7 @@
       "beat": "practice",
       "visual": {
         "kind": "scene",
-        "what": "Một miếng dưa hấu lớn ruột đỏ nhiều nước, có dấu hỏi lớn bên cạnh"
+        "what": "Hùng bê miếng dưa hấu to ruột đỏ, dấu hỏi to"
       },
       "parts": [
         {
@@ -456,7 +501,7 @@
           "text": "What is this?"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "mừng rỡ",
           "text": "Quả này to, ruột đỏ, nhiều nước. Là watermelon!"
         },
@@ -464,6 +509,11 @@
           "who": "Emma",
           "how": "",
           "text": "Yes. It is a watermelon."
+        },
+        {
+          "who": "Beo",
+          "how": "mừng rỡ",
+          "text": "Chị Bối giỏi quá!"
         }
       ]
     },
@@ -471,13 +521,13 @@
       "beat": "practice",
       "visual": {
         "kind": "count",
-        "what": "Năm quả nho tím hiện lần lượt, mỗi quả có một con số từ 1 đến 5"
+        "what": "Năm quả nho tím hiện lần lượt với số 1 đến 5"
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Giờ mình đếm nho nhé. Emma đếm, Mai đếm theo."
+          "text": "Giờ mình đếm nho nhé. Emma đếm, Bối đếm theo."
         },
         {
           "who": "Emma",
@@ -485,9 +535,14 @@
           "text": "How many grapes? One, two, three, four, five."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "tự hào",
           "text": "One, two, three, four, five. Có năm quả nho. Five grapes!"
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "One, two, ba, bốn, năm!"
         }
       ]
     },
@@ -495,7 +550,7 @@
       "beat": "practice",
       "visual": {
         "kind": "compare",
-        "what": "Bên trái quả táo đỏ ghi APPLE, bên phải quả dứa ghi PINEAPPLE, chữ apple được tô sáng ở cả hai từ"
+        "what": "Bên trái quả táo, bên phải quả dứa, chữ apple nổi bật trong chữ pineapple"
       },
       "parts": [
         {
@@ -509,7 +564,7 @@
           "text": "Apple. Pineapple."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "cười",
           "text": "Apple. Pineapple. Giống mà khác nhau, vui ghê!"
         }
@@ -519,7 +574,7 @@
       "beat": "practice",
       "visual": {
         "kind": "scene",
-        "what": "Một quả dừa xanh có ống hút, dấu hỏi lớn bên cạnh"
+        "what": "Hùng cầm quả dừa có ống hút, dấu hỏi to"
       },
       "parts": [
         {
@@ -528,7 +583,7 @@
           "text": "What is this?"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "vui vẻ",
           "text": "Có ống hút, uống nước mát. Là coconut!"
         },
@@ -536,6 +591,16 @@
           "who": "Emma",
           "how": "",
           "text": "Yes. It is a coconut."
+        },
+        {
+          "who": "Hùng",
+          "how": "ngạc nhiên",
+          "text": "Ơ, ống hút của em đâu rồi? Beo cầm hả?"
+        },
+        {
+          "who": "Beo",
+          "how": "cười",
+          "text": "Em uống thử thôi mà!"
         }
       ]
     },
@@ -543,7 +608,7 @@
       "beat": "practice",
       "visual": {
         "kind": "scene",
-        "what": "Một quả dâu tây đỏ, dấu hỏi lớn bên cạnh, Huy và Mai đứng hai bên"
+        "what": "Quả dâu tây đỏ to trên đĩa, dấu hỏi to"
       },
       "parts": [
         {
@@ -552,7 +617,7 @@
           "text": "What is this?"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "quyết tâm",
           "text": "Có hai chữ r đứng cạnh nhau... Strawberry! Dâu tây!"
         },
@@ -564,7 +629,7 @@
         {
           "who": "Huy",
           "how": "tự hào",
-          "text": "Mai giỏi quá! Các bạn đoán đúng hết không nào?"
+          "text": "Bối giỏi quá! Các bạn đoán đúng hết không nào?"
         }
       ]
     },
@@ -572,7 +637,7 @@
       "beat": "sentence",
       "visual": {
         "kind": "labels",
-        "what": "Một quả táo đỏ, câu I like apples hiện thật to, bên dưới ghi mình thích táo"
+        "what": "Quả táo cạnh trái tim, câu I like apples thật to, bên dưới ghi em thích táo"
       },
       "parts": [
         {
@@ -586,7 +651,7 @@
           "text": "I like apples."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "vui vẻ",
           "text": "I like apples. Em thích táo!"
         }
@@ -596,7 +661,7 @@
       "beat": "sentence",
       "visual": {
         "kind": "labels",
-        "what": "Một nải chuối vàng, câu I like bananas hiện thật to, bên dưới ghi mình thích chuối"
+        "what": "Quả chuối cạnh trái tim, câu I like bananas, từ cuối đổi màu, bên dưới ghi em thích chuối"
       },
       "parts": [
         {
@@ -610,9 +675,14 @@
           "text": "I like bananas."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "cười",
           "text": "I like bananas. Em thích chuối!"
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "I like bananas! Em thích chuối nhất!"
         }
       ]
     },
@@ -620,7 +690,7 @@
       "beat": "sentence",
       "visual": {
         "kind": "labels",
-        "what": "Một quả cam, câu I eat an orange hiện thật to, chữ an được tô màu, bên dưới ghi mình ăn một quả cam"
+        "what": "Bạn nhỏ ăn quả cam, câu I eat an orange thật to, chữ an nổi bật, bên dưới ghi mình ăn một quả cam"
       },
       "parts": [
         {
@@ -634,7 +704,7 @@
           "text": "I eat an orange."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "quyết tâm",
           "text": "I eat an orange. An orange, an orange. Em nhớ rồi!"
         }
@@ -644,7 +714,7 @@
       "beat": "sentence",
       "visual": {
         "kind": "labels",
-        "what": "Một quả xoài chín, câu I want a mango hiện thật to, bên dưới ghi mình muốn một quả xoài"
+        "what": "Quả xoài và bóng suy nghĩ, câu I want a mango thật to, bên dưới ghi em muốn một quả xoài"
       },
       "parts": [
         {
@@ -658,9 +728,14 @@
           "text": "I want a mango."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "mừng rỡ",
           "text": "I want a mango. Em muốn một quả xoài!"
+        },
+        {
+          "who": "Hùng",
+          "how": "cười",
+          "text": "Đây, xoài của em đây. Ơ, sao mềm nhũn thế này, em ngồi lên nó rồi!"
         }
       ]
     },
@@ -668,7 +743,7 @@
       "beat": "sentence",
       "visual": {
         "kind": "labels",
-        "what": "Một chùm nho tím, câu Grapes are sweet hiện thật to, chữ are được tô màu, bên dưới ghi nho ngọt"
+        "what": "Chùm nho tím và biểu tượng ngọt, câu Grapes are sweet thật to, bên dưới ghi nho ngọt"
       },
       "parts": [
         {
@@ -682,7 +757,7 @@
           "text": "Grapes are sweet."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "cười",
           "text": "Grapes are sweet. Nho ngọt quá!"
         }
@@ -692,13 +767,13 @@
       "beat": "sentence",
       "visual": {
         "kind": "host",
-        "what": "Huy mỉm cười đưa tay mời Mai, bên cạnh là một quả dưa hấu to"
+        "what": "Huy mỉm cười hỏi Bối, bên cạnh là quả dưa hấu to"
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Giờ Mai thử tự nói một câu nhé. Em muốn nói là em có một quả dưa hấu to."
+          "text": "Giờ Bối thử tự nói một câu nhé. Em muốn nói là em có một quả dưa hấu to."
         }
       ]
     },
@@ -706,11 +781,11 @@
       "beat": "sentence",
       "visual": {
         "kind": "labels",
-        "what": "Mai ôm một quả dưa hấu to, câu I have a big watermelon hiện thật to, bên dưới ghi mình có một quả dưa hấu to"
+        "what": "Bối ôm quả dưa hấu to, câu I have a big watermelon thật to, bên dưới ghi em có một quả dưa hấu to"
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "quyết tâm",
           "text": "Để em thử. I have a big watermelon!"
         },
@@ -722,7 +797,7 @@
         {
           "who": "Huy",
           "how": "tự hào",
-          "text": "Đúng rồi! Have là có. Mai nói tiếng Anh giỏi lắm!"
+          "text": "Đúng rồi! Have là có. Bối nói tiếng Anh giỏi lắm!"
         }
       ]
     },
@@ -730,7 +805,7 @@
       "beat": "recap",
       "visual": {
         "kind": "labels",
-        "what": "Chín thẻ trái cây xếp thành lưới ba hàng ba cột, mỗi thẻ có hình, chữ tiếng Anh và nghĩa tiếng Việt"
+        "what": "Chín thẻ từ xếp lưới ba nhân ba, mỗi thẻ có hình trái cây, chữ tiếng Anh và nghĩa tiếng Việt"
       },
       "parts": [
         {
@@ -748,12 +823,12 @@
     {
       "beat": "recap",
       "visual": {
-        "kind": "labels",
-        "what": "Thẻ dâu tây phóng to ở giữa với chữ STRAWBERRY thật to, các thẻ khác mờ phía sau"
+        "kind": "scene",
+        "what": "Bối và Beo cầm dâu tây và chuối, Huy và Hùng đứng sau vỗ tay"
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "quyết tâm",
           "text": "Em thấy strawberry khó nhất. Để em đọc lại. Strawberry. Strawberry. Em đọc được rồi!"
         },
@@ -763,9 +838,14 @@
           "text": "Strawberry. Very good."
         },
         {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Em thích nhất banana! Banana, banana!"
+        },
+        {
           "who": "Huy",
           "how": "tự hào",
-          "text": "Giỏi lắm Mai! Các bạn nhớ ăn trái cây và nói tên bằng tiếng Anh trong bữa ăn nhé."
+          "text": "Giỏi lắm hai em! Các bạn nhớ ăn trái cây và nói tên bằng tiếng Anh trong bữa ăn nhé."
         }
       ]
     },
@@ -773,18 +853,28 @@
       "beat": "next",
       "visual": {
         "kind": "host",
-        "what": "Huy vẫy tay chào, phía sau là hình trang trại có bò, gà và heo, nút đăng ký kênh hiện lên"
+        "what": "Huy vẫy tay cùng Hùng, Bối và Beo; hình nông trại với bò, gà, heo hiện ở góc"
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Bài sau mình sẽ học về các con vật ở nông trại. Các bạn nhớ bấm đăng ký kênh để không bỏ lỡ nhé. Hẹn gặp lại các bạn!"
+          "text": "Bài sau mình sẽ học về các con vật ở nông trại. Các bạn nhớ bấm đăng ký kênh Huy Kể Chuyện để không bỏ lỡ nhé. Hẹn gặp lại các bạn!"
         },
         {
-          "who": "Mai",
+          "who": "Hùng",
+          "how": "vui vẻ",
+          "text": "Hẹn gặp lại các bạn nha!"
+        },
+        {
+          "who": "Bối",
           "how": "vui vẻ",
           "text": "Tạm biệt các bạn!"
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Tạm biệt!"
         },
         {
           "who": "Emma",
@@ -798,24 +888,37 @@
     3,
     4,
     8,
-    10,
-    29
+    28
   ],
   "thumbnail": "APPLE, BANANA, MANGO!",
-  "description": "Bài học giúp bé học chín từ tiếng Anh về trái cây như apple, banana, mango, strawberry qua hình ảnh vui nhộn, trò đoán và những câu đơn giản. Ba mẹ có thể cho bé luyện nói ngay trong bữa ăn hoặc khi đi chợ để nhớ từ lâu hơn.",
+  "description": "Bài học giúp bé 5–9 tuổi nhớ chín từ tiếng Anh về trái cây như apple, banana, mango, watermelon qua hình ảnh, trò đoán và những câu đơn giản. Ba mẹ có thể cùng bé luyện nói ngay trong bữa ăn bằng cách gọi tên từng loại trái cây bằng tiếng Anh.",
   "cast": [
     {
       "name": "Huy",
       "gender": "male",
       "age": "young",
-      "role": "the host: curious, warm, a little funny; explains",
+      "role": "the host (25): curious, warm, a little funny; explains",
       "villain": false
     },
     {
-      "name": "Mai",
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
       "gender": "female",
       "age": "child",
-      "role": "an 8-year-old who asks, guesses and tries things",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
       "villain": false
     },
     {

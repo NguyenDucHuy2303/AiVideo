@@ -3735,38 +3735,53 @@
     "shorts/2.mp4",
     "shorts/3.mp4"
   ],
-  "exported": {
-    "long": {
-      "dir": "/home/huynguyen/youtube/Why Is the Sky Blue",
-      "publishAt": "2026-11-12T10:00:00.000Z",
-      "channel": "ask-huy",
-      "at": "2026-11-12T09:14:45.816Z"
-    },
-    "shorts": [
-      {
-        "dir": "/home/huynguyen/youtube/Why Is the Sky Blue",
-        "publishAt": "2026-11-12T12:30:00.000Z",
-        "channel": "ask-huy",
-        "at": "2026-11-12T09:14:45.818Z"
-      },
-      {
-        "dir": "/home/huynguyen/youtube/Why Is the Sky Blue",
-        "publishAt": "2026-11-13T02:00:00.000Z",
-        "channel": "ask-huy",
-        "at": "2026-11-12T09:14:45.820Z"
-      },
-      {
-        "dir": "/home/huynguyen/youtube/Why Is the Sky Blue",
-        "publishAt": "2026-11-13T05:00:00.000Z",
-        "channel": "ask-huy",
-        "at": "2026-11-12T09:14:45.824Z"
-      }
-    ]
-  },
+  "exported": {},
   "publishHold": false,
   "drive": {
     "folder": "Why Is the Sky Blue",
-    "mtime": 1794474885839.7773,
-    "at": "2026-11-12T10:26:41.687Z"
+    "mtime": 1794539121815.81,
+    "at": "2026-11-13T03:09:52.545Z"
+  },
+  "published": {
+    "long": {
+      "videoId": "nexuchR4yLc",
+      "url": "https://youtu.be/nexuchR4yLc",
+      "publishAt": "2026-11-12T10:00:00.000Z",
+      "channel": "ask-huy",
+      "at": "2026-11-13T03:04:40.772Z",
+      "manual": true
+    },
+    "shorts": [
+      {
+        "videoId": "ZmTAIZxr_Ds",
+        "url": "https://youtube.com/shorts/ZmTAIZxr_Ds",
+        "publishAt": "2026-11-12T12:30:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-13T03:05:09.363Z",
+        "manual": true
+      },
+      {
+        "videoId": "bZz3oPGpDc0",
+        "url": "https://youtube.com/shorts/bZz3oPGpDc0",
+        "publishAt": "2026-11-13T02:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-13T03:05:17.142Z",
+        "manual": true
+      },
+      {
+        "videoId": "QwMgcth1MuQ",
+        "url": "https://youtube.com/shorts/QwMgcth1MuQ",
+        "publishAt": "2026-11-13T05:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-13T03:05:21.765Z",
+        "manual": true
+      }
+    ]
+  },
+  "social": {
+    "tiktok:short:0": "2026-11-13T03:07:56.536Z",
+    "tiktok:short:1": "2026-11-13T03:07:57.829Z",
+    "tiktok:short:2": "2026-11-13T03:10:48.097Z",
+    "facebook:long:0": "2026-11-13T03:13:38.677Z"
   }
 }

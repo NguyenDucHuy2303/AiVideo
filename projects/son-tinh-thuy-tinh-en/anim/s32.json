@@ -1,0 +1,351 @@
+{
+  "narration": "Các bạn nhỏ ơi, hãy biết giữ lời hứa như vua Hùng, chớ nóng giận như Thủy Tinh, và biết đoàn kết như dân làng đắp đê. Cùng nhau góp sức thì khó khăn nào cũng vượt qua. Nếu các bạn thích câu chuyện này, hãy đăng ký kênh Huy Kể Chuyện để nghe thêm thật nhiều truyện hay nhé. Hẹn gặp lại các bạn!",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "vua_hung",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "idle",
+        "thenFace": "happy"
+      },
+      {
+        "id": "son_tinh",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "thuy_tinh",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "carry",
+      "then": "give"
+    },
+    "fx": [
+      "sparkle",
+      "pop"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 17.766666666666666,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "banner",
+        "x": 1500,
+        "color": "#3a1a1a"
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "vua_hung",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "plume",
+          "color": "#8a3a22",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "headwear": "feather",
+        "beard": "#2a1a12",
+        "bracelets": true,
+        "earrings": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick",
+          "mustache": "thick"
+        }
+      },
+      "x": 0,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "son_tinh",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#3f7a4a",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": false,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "build": "average",
+        "skin": "#c98f5c",
+        "headwear": "feather_band",
+        "tattoo": true
+      },
+      "x": 520,
+      "scale": 1.05,
+      "facing": -1
+    },
+    {
+      "id": "thuy_tinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#1f3f66",
+          "skirt": "#2a3a4a",
+          "trim": "#7fc4c8"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a24"
+        },
+        "tattoo": true,
+        "bracelets": true,
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "iris": "#2a4a6a"
+        }
+      },
+      "x": -520,
+      "scale": 1.15,
+      "facing": 1
+    },
+    {
+      "id": "dan_lang_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "vua_hung",
+      "at": 0,
+      "do": "heroic",
+      "face": "proud"
+    },
+    {
+      "actor": "vua_hung",
+      "at": 8.88,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "son_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "thuy_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 0,
+      "do": "carry",
+      "move": {
+        "by": -500,
+        "ease": "linear"
+      },
+      "dur": 17.766666666666666
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 8.88,
+      "do": "give"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 0,
+      "do": "carry",
+      "move": {
+        "by": -500,
+        "ease": "linear"
+      },
+      "dur": 17.766666666666666
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 9.23,
+      "do": "give"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 0,
+      "do": "carry",
+      "move": {
+        "by": -500,
+        "ease": "linear"
+      },
+      "dur": 17.766666666666666
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 9.58,
+      "do": "give"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "sparkle",
+      "on": "vua_hung",
+      "at": 5.329999999999999,
+      "dur": 10.659999999999998
+    },
+    {
+      "fx": "pop",
+      "on": "vua_hung",
+      "at": 8.88,
+      "dur": 10.659999999999998
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "vua_hung",
+        "son_tinh",
+        "thuy_tinh"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 8.88,
+      "type": "full",
+      "on": [
+        "vua_hung"
+      ],
+      "push": 0.06
+    }
+  ]
+}

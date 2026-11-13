@@ -1,24 +1,24 @@
 {
-  "title": "Mật ong để 3.000 năm vẫn ăn được?",
-  "question": "Bạn có biết mật ong gần như không bao giờ hỏng, đến mức người ta tìm thấy hũ mật ong hơn 3.000 năm tuổi trong lăng mộ Ai Cập mà vẫn ăn được không?",
-  "answer": "Mật ong rất ít nước, rất ngọt và hơi chua nên vi khuẩn khó sống, vì vậy mật ong cất kín có thể để cực lâu mà không hỏng.",
+  "title": "Mật ong để hơn 3.000 năm vẫn không hỏng?",
+  "question": "Bạn có biết mật ong gần như không bao giờ bị hỏng, người ta còn tìm thấy hũ mật hơn 3.000 năm tuổi trong lăng mộ Ai Cập mà vẫn ăn được?",
+  "answer": "Mật ong có rất ít nước, rất nhiều đường và hơi chua nên vi khuẩn khó sống trong đó, vì vậy mật được giữ kín đúng cách gần như không bị hỏng.",
   "scenes": [
     {
       "beat": "hook",
       "visual": {
         "kind": "scene",
-        "what": "Trong lăng mộ Ai Cập tối mờ, một hũ đất nung cổ đựng mật ong vàng óng sáng lên giữa những bức tranh tường. Mai đứng bên cạnh, mắt tròn xoe."
+        "what": "Trong một lăng mộ Ai Cập tối, đèn pin chiếu vào một hũ đất cổ đầy mật vàng óng. Bốn bạn nhỏ Huy, Hùng, Bối, Beo đứng quanh nhìn, mắt tròn xoe."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Huy",
           "how": "ngạc nhiên",
-          "text": "Anh Huy ơi, có thật là mật ong để hàng nghìn năm mà vẫn ăn được không ạ?"
+          "text": "Các bạn có biết không? Mật ong gần như không bao giờ hỏng! Người ta tìm thấy mật ong trong các di tích khảo cổ đã hàng nghìn năm tuổi, mà vẫn ăn được!"
         },
         {
-          "who": "Huy",
-          "how": "mừng rỡ",
-          "text": "Các nhà khảo cổ tìm thấy mật ong ở những nơi rất cổ xưa, và nó vẫn ăn được sau hàng nghìn năm đấy!"
+          "who": "Beo",
+          "how": "ngạc nhiên",
+          "text": "Già hơn cả ông em!"
         }
       ]
     },
@@ -26,24 +26,19 @@
       "beat": "step",
       "step": 1,
       "visual": {
-        "kind": "compare",
-        "what": "Hai chiếc cốc cạnh nhau. Cốc nước đường loãng và cốc mật ong đặc, kèm vòng tròn nhỏ ghi khoảng 17 phần trăm nước ở mật ong."
+        "kind": "zoom",
+        "what": "Giọt mật vàng phóng to, bên trong chỉ có vài giọt nước li ti; mấy con vi khuẩn hoạt hình nhỏ xíu le lưỡi, nhìn quanh khô khốc."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Bí mật đầu tiên là mật ong rất ít nước, chỉ khoảng 17 phần trăm thôi."
+          "text": "Mật ong có rất ít nước. Vi khuẩn làm hỏng đồ ăn cần nước, nên phần lớn chúng không sống nổi trong mật ong."
         },
         {
-          "who": "Mai",
-          "how": "ngạc nhiên",
-          "text": "Ít nước thì sao ạ?"
-        },
-        {
-          "who": "Huy",
-          "how": "vui vẻ",
-          "text": "Vi khuẩn cần nước để lớn lên. Không có nước, chúng đói bụng!"
+          "who": "Bối",
+          "how": "cười",
+          "text": "Chúng khát quá hả anh?"
         }
       ]
     },
@@ -51,14 +46,19 @@
       "beat": "step",
       "step": 2,
       "visual": {
-        "kind": "scene",
-        "what": "Trong tổ ong hình sáu cạnh, ong thợ quạt cánh trên các ngăn mật, hơi nước bay lên thành làn khói nhỏ. Một ngăn đã được đậy nắp sáp."
+        "kind": "experiment",
+        "what": "Hùng dùng thìa nhấc mật đặc quánh lên, mật chảy chậm xuống và dính đầy tay Hùng. Bên cạnh có biểu tượng viên đường và giọt chua nhẹ."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Mật hoa lúc đầu loãng. Ong thợ quạt cánh cho nước bay bớt, rồi đậy nắp tổ lại."
+          "text": "Mật còn rất nhiều đường và hơi chua nữa."
+        },
+        {
+          "who": "Hùng",
+          "how": "cười",
+          "text": "Ôi, mật dính tay em rồi!"
         }
       ]
     },
@@ -66,19 +66,19 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "zoom",
-        "what": "Phóng to một giọt mật ong đặc. Mấy con vi khuẩn tí hon mặt nhăn nhó bị kẹt trong giọt mật, không nhúc nhích được."
+        "kind": "scene",
+        "what": "Trong tổ ong có nhiều ô sáu cạnh, ong thợ vỗ cánh quạt cho hơi nước bay lên, một ô đã được đậy kín bằng nắp sáp."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Mật ong còn rất ngọt, đặc và hơi chua. Nhiều vi khuẩn không sống nổi ở đó."
+          "text": "Ong thợ còn quạt cánh cho nước bay bớt, rồi đậy kín nắp sáp."
         },
         {
-          "who": "Mai",
-          "how": "cười",
-          "text": "Như bị kẹt trong keo ngọt vậy!"
+          "who": "Beo",
+          "how": "mừng rỡ",
+          "text": "Ong giỏi quá!"
         }
       ]
     },
@@ -86,19 +86,14 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "scene",
-        "what": "Một hũ mật ong đậy kín nắp đặt trên kệ bếp, bên cạnh là biển báo nhỏ vẽ hình em bé dưới một tuổi gạch chéo cạnh thìa mật ong."
+        "kind": "compare",
+        "what": "Bên trái hũ mật cổ đậy kín nằm trong lăng mộ, bên phải hũ mật ở nhà có nhãn ghi hạn dùng. Huy chỉ vào nhãn."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "vui vẻ",
-          "text": "Nhưng phải đậy kín nắp, đừng để nước lọt vào nhé."
-        },
-        {
-          "who": "Huy",
-          "how": "lo lắng",
-          "text": "Và nhớ là em bé dưới một tuổi không được ăn mật ong."
+          "text": "Nhờ vậy, mật giữ kín đúng cách để được rất lâu. Mật ở nhà vẫn có hạn dùng, xem nhãn nhé! Và em bé dưới một tuổi thì không được ăn mật ong đâu."
         }
       ]
     },
@@ -106,62 +101,72 @@
       "beat": "recap",
       "visual": {
         "kind": "host",
-        "what": "Huy và Mai vẫy tay trước hũ mật ong vàng lấp lánh, có nút theo dõi kênh hiện lên."
+        "what": "Huy vẫy tay cùng Hùng, Bối, Beo trước logo trống đồng Đông Sơn và chữ Huy Kể Chuyện, nút theo dõi nhấp nháy."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Huy",
           "how": "mừng rỡ",
-          "text": "Wow, mật ong cất đúng cách có thể để được rất, rất lâu!"
+          "text": "Thật tuyệt vời! Hãy theo dõi kênh Huy Kể Chuyện để biết thêm nhiều điều bất ngờ nhé!"
         },
         {
-          "who": "Huy",
+          "who": "Bối",
           "how": "vui vẻ",
-          "text": "Theo dõi Hỏi Huy để biết thêm điều thú vị nhé!"
+          "text": "Em sẽ theo dõi!"
         }
       ]
     }
   ],
   "facts": [
     {
-      "claim": "Mật ong có hàm lượng nước khoảng 17 đến 18 phần trăm, trong khi mật hoa có khoảng 70 đến 80 phần trăm nước.",
-      "source": "Honey (Wikipedia tiếng Anh); Mật ong (Wikipedia tiếng Việt)"
-    },
-    {
-      "claim": "Ong thợ dùng cánh quạt cho nước trong mật bay hơi, rồi niêm phong ngăn tổ.",
-      "source": "Mật ong (Wikipedia tiếng Việt)"
-    },
-    {
-      "claim": "Vì nhiều đường và có độ chua, nhiều vi sinh vật không phát triển được trong mật ong. Nếu cất đúng cách, mật ong không bị hỏng.",
+      "claim": "Mật ong có nhiều đường và độ chua (axit) cao nên nhiều vi sinh vật không phát triển được; nếu bảo quản đúng cách thì mật không bị hỏng, và các mẫu mật tìm thấy ở nơi khảo cổ vẫn ăn được sau hàng nghìn năm.",
       "source": "Honey (Wikipedia tiếng Anh)"
     },
     {
-      "claim": "Các mẫu mật ong tìm thấy trong các di chỉ khảo cổ vẫn ăn được sau hàng nghìn năm. Chi tiết hũ mật hơn 3.000 năm trong lăng mộ Ai Cập là câu chuyện thường được kể, nguồn đã cho chỉ nói chung là hàng nghìn năm, nên lời thoại dùng chữ người ta kể rằng.",
-      "source": "Honey (Wikipedia tiếng Anh)"
-    },
-    {
-      "claim": "Trẻ dưới một tuổi không nên ăn mật ong vì có thể có bào tử vi khuẩn botulinum.",
+      "claim": "Phần lớn vi sinh vật không sống trong mật ong vì mật có hoạt tính nước thấp.",
       "source": "Mật ong (Wikipedia tiếng Việt)"
     },
     {
-      "claim": "Lưu ý nguồn tiếng Việt cho rằng mật ong chỉ dùng được tối đa khoảng 2 năm, còn nguồn tiếng Anh nói mật cất đúng cách không hỏng. Hai nguồn không thống nhất, video theo nguồn tiếng Anh kèm điều kiện cất kín.",
-      "source": "Mật ong (Wikipedia tiếng Việt); Honey (Wikipedia tiếng Anh)"
+      "claim": "Ong thợ dùng cánh quạt cho bay hơi nước trong mật, rồi niêm phong tổ lại khi mật đủ đặc.",
+      "source": "Mật ong (Wikipedia tiếng Việt)"
+    },
+    {
+      "claim": "Mật hoa có khoảng 70 đến 80 phần trăm nước, còn mật ong thành phẩm chỉ khoảng 18 phần trăm.",
+      "source": "Honey (Wikipedia tiếng Anh)"
+    },
+    {
+      "claim": "Mật ong ở nhà vẫn có hạn sử dụng ghi trên nhãn, nên cần xem nhãn.",
+      "source": "Mật ong (Wikipedia tiếng Việt)"
     }
   ],
-  "description": "Vì sao hũ mật ong trong lăng mộ Ai Cập vẫn ăn được sau hàng nghìn năm? Huy và Mai khám phá bí mật của mật ong chỉ trong một phút.",
+  "description": "Vì sao hũ mật ong trong lăng mộ Ai Cập hơn 3.000 năm tuổi vẫn có thể ăn được? Cùng Huy, Hùng, Bối và Beo tìm hiểu bí mật nước, đường và nắp sáp của loài ong!",
   "cast": [
     {
       "name": "Huy",
       "gender": "male",
       "age": "young",
-      "role": "the host: curious, warm, a little funny; explains",
+      "role": "the host (25): curious, warm, a little funny; explains",
       "villain": false
     },
     {
-      "name": "Mai",
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
       "gender": "female",
       "age": "child",
-      "role": "an 8-year-old who asks, guesses and tries things",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
       "villain": false
     }
   ],

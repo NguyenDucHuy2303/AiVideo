@@ -1,0 +1,128 @@
+[
+  {
+    "id": "chuot_cu",
+    "name": "Chuột Cụ",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#b9b9c2"
+    },
+    "scale": 0.95,
+    "group": false,
+    "speaks": [
+      "Chuột Cụ"
+    ],
+    "role": "Cụ chuột già đứng đầu họ nhà chuột: lông xám bạc, râu trắng; thư viện chỉ cho màu lông nên khăn xếp đen, áo ngũ thân the thâm và que tre để phần nền/hậu kỳ",
+    "designed": true
+  },
+  {
+    "id": "chuot_nhat",
+    "name": "Chuột Nhắt",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#cdb08a"
+    },
+    "scale": 0.7,
+    "group": false,
+    "speaks": [
+      "Chuột Nhắt"
+    ],
+    "role": "Chú chuột nhỏ nhanh trí, lông nâu nhạt, mắt to tròn, nghĩ ra kế đeo nhạc",
+    "designed": true
+  },
+  {
+    "id": "chuot_beo",
+    "name": "Chuột Béo",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#6a4630"
+    },
+    "scale": 1.15,
+    "group": false,
+    "speaks": [
+      "Chuột Béo"
+    ],
+    "role": "Chú chuột tròn trịa lông nâu sẫm, tham ăn, hay viện cớ đau bụng",
+    "designed": true
+  },
+  {
+    "id": "chuot_xam",
+    "name": "Chuột Xám",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#8c8c90"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Chuột Xám"
+    ],
+    "role": "Chú chuột lông xám, dáng gầy cao, nói to nhưng nhát, hay tìm cớ chuồn",
+    "designed": true
+  },
+  {
+    "id": "chuot_me",
+    "name": "Chuột Mẹ",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#9b7452"
+    },
+    "scale": 0.9,
+    "group": false,
+    "speaks": [
+      "Chuột Mẹ"
+    ],
+    "role": "Chuột mẹ hiền lành lông nâu mềm, thương con, luôn che chở chuột Út",
+    "designed": true
+  },
+  {
+    "id": "chuot_ut",
+    "name": "Chuột Út",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#d6b98f"
+    },
+    "scale": 0.6,
+    "group": false,
+    "speaks": [
+      "Chuột Út"
+    ],
+    "role": "Chuột con bé xíu ngây thơ, hay hỏi, tìm thấy chiếc nhạc",
+    "designed": true
+  },
+  {
+    "id": "meo_muop",
+    "name": "Mèo Mướp",
+    "kind": "animal",
+    "look": {
+      "species": "cat",
+      "color": "#8b7a60"
+    },
+    "scale": 1.5,
+    "group": false,
+    "speaks": [
+      "Mèo Mướp"
+    ],
+    "role": "Cô mèo mướp vằn xám nâu, mắt vàng sáng, tinh nghịch hay rình chuột; chỉ chuột chạy thoát, không cảnh bắt chuột",
+    "designed": true
+  },
+  {
+    "id": "ho_nha_chuot",
+    "name": "Họ nhà chuột",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#9a8b7c"
+    },
+    "scale": 0.85,
+    "group": true,
+    "speaks": [],
+    "role": "Đàn chuột con cháu dự họp dưới gầm chạn, xì xào, vỗ tay, rồi lần lượt lủi mất",
+    "designed": true
+  }
+]

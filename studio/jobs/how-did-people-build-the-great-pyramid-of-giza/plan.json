@@ -1,24 +1,29 @@
 {
   "title": "How Did People Build the Great Pyramid of Giza?",
   "question": "How did people build the Great Pyramid of Giza?",
-  "answer": "About 4,500 years ago, thousands of paid, skilled Egyptian workers cut the stone blocks with copper tools, hard stones and sand. They carried the blocks by boat on the Nile and dragged them over land on wooden sledges. Then they got them up the pyramid with ramps and levers. The work took about 20 years. Scientists still don't agree on exactly what the ramps looked like.",
+  "answer": "Thousands of paid, skilled workers cut the stones with copper tools, hard stones and sand. They moved the stones by boat and on sledges, then got them up with ramps and levers. It took about 20 years. Scientists still don't agree on exactly what the ramps looked like.",
   "scenes": [
     {
       "beat": "hook",
       "visual": {
         "kind": "scene",
-        "what": "Huy and a tiny Mai stand in the sandy desert at the foot of the Great Pyramid, craning their necks to look up at the top. A small sun shines in a blue sky."
+        "what": "Huy, Hùng, Bối and little Beo stand in the bright studio in front of a huge picture of the Great Pyramid in the desert. Bối points up with wide eyes, and Beo is on tiptoe."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "Huy, this pyramid is gigantic! How did people build it without trucks or cranes?"
         },
         {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "Maybe a giant built it!"
+        },
+        {
           "who": "Huy",
           "how": "happily",
-          "text": "Great question, Mai. Here is a surprise. It was built more than 4,500 years ago, and it has about 2,300,000 stone blocks!"
+          "text": "Great question, Bối. Here is a surprise. It was built more than 4,500 years ago, and it has about 2,300,000 stone blocks!"
         }
       ]
     },
@@ -26,13 +31,18 @@
       "beat": "hook",
       "visual": {
         "kind": "host",
-        "what": "Huy talks to camera with the pyramid behind him. Four round icons pop up beside him, one at a time: a chisel, a boat, a ramp and a crowd of workers."
+        "what": "Huy talks to the camera. Behind him, Hùng sits in a cardboard box painted like a time machine, and its paper dial falls off."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Today we find out how the Egyptians cut the stones, moved them, lifted them up, and who did all that hard work. Let's go back in time!"
+        },
+        {
+          "who": "Hùng",
+          "how": "laughing",
+          "text": "Time machine ready! Oops, the dial fell off. We'll just pretend."
         }
       ]
     },
@@ -40,18 +50,23 @@
       "beat": "guess",
       "visual": {
         "kind": "scene",
-        "what": "Mai with a thought bubble showing sad-looking slaves pulling a big block while a bossy man points. Huy listens and nods kindly."
+        "what": "Bối has a thought bubble with a crowd of sad, tired workers. Beo has a thought bubble with a hundred little toy robots carrying blocks."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "firmly",
           "text": "I know! Slaves built it. Lots of them, forced to work."
         },
         {
+          "who": "Beo",
+          "how": "proudly",
+          "text": "I think a hundred robots did it!"
+        },
+        {
           "who": "Huy",
           "how": "happily",
-          "text": "That's a very sensible guess. Even the ancient Greeks believed it, long after the pyramid was built."
+          "text": "Good guesses, both of you. Robots weren't invented yet, Beo. But Bối, your guess is very sensible. Even the ancient Greeks believed it, long after the pyramid was built."
         }
       ]
     },
@@ -59,7 +74,7 @@
       "beat": "guess",
       "visual": {
         "kind": "scene",
-        "what": "Archaeologists with brushes and hats gently dig in the sand near the pyramid and uncover simple stone graves. A small sign says 1990."
+        "what": "Archaeologists with brushes kneel in the sand near the pyramid, gently uncovering simple stone graves. A sign says 1990."
       },
       "parts": [
         {
@@ -68,7 +83,7 @@
           "text": "But in 1990, archaeologists found the workers' graves near the pyramid. Archaeologists are scientists who dig up clues from the past. The clues show the builders were workers who got paid. Some worked as a kind of tax, which means paying the king with work instead of money."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "So they were builders with a real job?"
         },
@@ -84,7 +99,7 @@
       "beat": "step",
       "visual": {
         "kind": "map",
-        "what": "A simple map of Egypt with the blue river Nile running from bottom to top. Dots are labelled Giza, Tura across the river from Giza, and Aswan far to the south."
+        "what": "A simple map of Egypt with the river Nile. Giza is marked with a pyramid, Tura across the river with white stone, and Aswan far to the south with pink granite. A small crown labelled Khufu sits by the pyramid."
       },
       "parts": [
         {
@@ -98,8 +113,8 @@
       "step": 1,
       "beat": "step",
       "visual": {
-        "kind": "scene",
-        "what": "A sunny stone quarry with tall pale rock walls. Workers tap copper chisels with wooden mallets to cut out a square block."
+        "kind": "labels",
+        "what": "A copper chisel, a copper drill and a copper saw, each labelled, next to a limestone wall in a quarry. Hùng holds up a toy chisel."
       },
       "parts": [
         {
@@ -108,7 +123,7 @@
           "text": "A place where people cut stone out of the ground is called a quarry. Workers cut the limestone with copper tools, like chisels, drills and saws."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "Copper? Isn't copper quite soft?"
         },
@@ -123,12 +138,12 @@
       "step": 1,
       "beat": "step",
       "visual": {
-        "kind": "zoom",
-        "what": "A close-up of a copper saw blade on a granite block, with tiny sand grains under the blade and arrows showing the saw moving back and forth."
+        "kind": "diagram",
+        "what": "A worker saws a granite block, with tiny sand grains drawn under the blade and an arrow saying sand does the scratching. In a corner, Hùng rubs a pebble with sandpaper, looking tired."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "worried",
           "text": "What about the super hard granite?"
         },
@@ -136,6 +151,11 @@
           "who": "Huy",
           "how": "",
           "text": "Copper alone can't cut granite. So workers pounded it with an even harder stone, and sawed it with sand under the blade. The tiny sand grains did the scratching. It took a very long time!"
+        },
+        {
+          "who": "Hùng",
+          "how": "tired",
+          "text": "I rubbed this pebble with sandpaper for a whole minute. Look, one tiny scratch!"
         }
       ]
     },
@@ -144,7 +164,7 @@
       "beat": "step",
       "visual": {
         "kind": "compare",
-        "what": "A limestone block labelled about 2.5 tonnes next to a smaller family car. Mai stands between them for size."
+        "what": "A big limestone block on one side of a balance and a family car on the other. The block side is lower, labelled about 2.5 tonnes."
       },
       "parts": [
         {
@@ -153,9 +173,14 @@
           "text": "Most blocks weighed about 2.5 tonnes. That's heavier than a family car! A few giant granite blocks were much heavier."
         },
         {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "Heavier than our car?"
+        },
+        {
           "who": "Huy",
           "how": "proudly",
-          "text": "Step one takeaway. Copper tools, hard stones and sand turned rock into blocks."
+          "text": "Yes, Beo! Step one takeaway. Copper tools, hard stones and sand turned rock into blocks."
         }
       ]
     },
@@ -164,7 +189,7 @@
       "beat": "step",
       "visual": {
         "kind": "scene",
-        "what": "Inside a rocky cave, Mai holds an old papyrus scroll covered in Egyptian writing while Huy points at it."
+        "what": "Explorers with torches in a cave find old rolled-up papyrus pages. A sign says Wadi al-Jarf, 2013, and the pages are labelled Diary of Merer."
       },
       "parts": [
         {
@@ -173,7 +198,7 @@
           "text": "How do we know how the stones travelled? In 2013, scientists found old writings in a cave in Egypt. They are the diary of an official named Merer, written more than 4,500 years ago."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "laughing",
           "text": "Does it say what he had for lunch?"
         },
@@ -189,13 +214,18 @@
       "beat": "step",
       "visual": {
         "kind": "arrows",
-        "what": "The Nile map again, with little wooden boats carrying blocks and arrows showing them sailing from Tura over to Giza."
+        "what": "Wooden boats carrying white blocks float along the blue river Nile, with an arrow from Tura to Giza. A tiny truck with a cross shows there were no trucks."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Boats were the trucks of ancient Egypt, and the river Nile was the big road. A heavy block is much easier to move floating on water than dragged across the desert."
+        },
+        {
+          "who": "Beo",
+          "how": "happily",
+          "text": "A boat for rocks!"
         }
       ]
     },
@@ -204,13 +234,18 @@
       "beat": "step",
       "visual": {
         "kind": "diagram",
-        "what": "A block on a wooden sledge, pulled by a line of workers with ropes. One worker pours water from a jar onto the sand in front. Labels say sledge, rope and water."
+        "what": "A block on a wooden sledge, labelled sledge, ropes and wet sand. A team pulls the ropes while one worker pours water in front. Hùng holds up a small wooden toy sled."
       },
       "parts": [
         {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "I brought a sled! It's a toy one, though."
+        },
+        {
           "who": "Huy",
           "how": "",
-          "text": "On land, blocks rode on a sledge. A sledge is a wooden sled, like a snow sled but with no snow. Teams pulled it with ropes. Scientists think water was poured in front to help it slide."
+          "text": "Perfect, Hùng. On land, blocks rode on a sledge. A sledge is a wooden sled, like a snow sled but with no snow. Teams pulled it with ropes. Scientists think water was poured in front to help it slide."
         }
       ]
     },
@@ -219,11 +254,11 @@
       "beat": "step",
       "visual": {
         "kind": "count",
-        "what": "Eight little worker icons in a row holding a rope tied to a block labelled about 2,750 kg, with a big number 8 above them."
+        "what": "Eight cartoon workers in a row pull one block on a sledge, each numbered 1 to 8. Next to them, Bối poses in a football shirt."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "",
           "text": "How many people did it take to pull one block?"
         },
@@ -233,7 +268,7 @@
           "text": "One expert worked out that about eight workers could move a block of about 2,750 kilograms on a sledge, if the track was made slippery."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "proudly",
           "text": "Only eight? My football team could do that!"
         },
@@ -248,8 +283,8 @@
       "step": 2,
       "beat": "step",
       "visual": {
-        "kind": "scene",
-        "what": "A busy riverside. Boats unload blocks onto the bank, and sledges carry them away toward a half-built pyramid."
+        "kind": "host",
+        "what": "Huy talks to the camera next to a small picture of a boat and a sledge with a tick beside each."
       },
       "parts": [
         {
@@ -264,7 +299,7 @@
       "beat": "step",
       "visual": {
         "kind": "compare",
-        "what": "The new pyramid labelled about 146 metres stands beside a football pitch stood up on its end, which is clearly shorter."
+        "what": "The new pyramid, labelled about 146 metres, stands next to a football pitch stood up on its end. The pyramid is taller."
       },
       "parts": [
         {
@@ -273,7 +308,7 @@
           "text": "Now for the hardest part. When it was new, the pyramid was about 146 metres tall. That's taller than a football pitch is long, if you stood the pitch on its end!"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "worried",
           "text": "So how do you get a heavy block all the way up there?"
         }
@@ -284,13 +319,23 @@
       "beat": "step",
       "visual": {
         "kind": "diagram",
-        "what": "A half-built pyramid with a sloping path of mud and stones leaning against it. A sledge with a block is being pulled up the path. A label says ramp."
+        "what": "A simple ramp leaning against the side of a half-built pyramid, labelled ramp. A team drags a sledge up it. Beo looks at it with a big smile."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Most experts think the answer starts with ramps. A ramp is a sloping path, like a slide you walk up. Builders dragged the sledges up ramps to the higher layers. Remains of small ramps have been found at the Great Pyramid."
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "A slide! Can I slide down it?"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "These slides were only for stones, Beo."
         }
       ]
     },
@@ -298,14 +343,19 @@
       "step": 3,
       "beat": "step",
       "visual": {
-        "kind": "labels",
-        "what": "A worker pushes down on the end of a long wooden pole. The other end tips up the edge of a block. Labels say lever, push down, block lifts."
+        "kind": "experiment",
+        "what": "Hùng puts a ruler over a pencil and presses one end down to lift a book on the other end. The book tips over and lands on his foot, and he laughs."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Ramps were probably helped by levers. A lever is a long, strong pole. Push down on one end, and the other end lifts something heavy a little bit. Lever, nudge, lever again, and the block slowly creeps into place."
+        },
+        {
+          "who": "Hùng",
+          "how": "laughing",
+          "text": "Look, I pushed down and the book went up! And then it went down. On my foot."
         }
       ]
     },
@@ -314,11 +364,11 @@
       "beat": "step",
       "visual": {
         "kind": "compare",
-        "what": "Three small pyramid drawings side by side. One has a giant straight ramp with a red X over it, one has a zigzag ramp up one face, and one has a ramp spiralling round the outside, both with question marks."
+        "what": "Three small pyramids side by side. One has a huge straight ramp with a red cross, one has a zigzag ramp, and one has a ramp spiralling around the outside, each with a question mark."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "",
           "text": "So what did the ramp look like?"
         },
@@ -334,7 +384,7 @@
       "beat": "step",
       "visual": {
         "kind": "diagram",
-        "what": "A cut-open pyramid showing a ramp spiralling up inside its walls, plus a short ramp outside near the bottom. A small label says one idea."
+        "what": "A see-through pyramid showing a ramp spiralling up inside, plus a short ramp outside at the bottom for big blocks. A label says Jean-Pierre Houdin's idea."
       },
       "parts": [
         {
@@ -343,7 +393,7 @@
           "text": "A French architect called Jean-Pierre Houdin has another idea. He thinks a ramp spiralled up inside the pyramid, plus a ramp outside for the big blocks lower down."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "A ramp hidden inside? That's sneaky!"
         },
@@ -359,7 +409,7 @@
       "beat": "step",
       "visual": {
         "kind": "host",
-        "what": "Huy talks to camera, holding a toy ramp in one hand and a big question mark sign in the other."
+        "what": "Huy talks to the camera next to a ramp and a lever drawing, with a big question mark over the ramp."
       },
       "parts": [
         {
@@ -374,7 +424,7 @@
       "beat": "step",
       "visual": {
         "kind": "diagram",
-        "what": "Flat desert ground with long straight trenches full of water. Workers mark the water line on the trench walls with little sticks. A label says the water is flat."
+        "what": "Long trenches dug in the ground and filled with still water, with workers marking a straight line at the water's edge. A label says still water lies flat."
       },
       "parts": [
         {
@@ -383,9 +433,14 @@
           "text": "Before the first block, the ground had to be really flat. Some experts think workers dug long trenches and filled them with water. Still water lies flat, so they could mark a level line."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "happily",
           "text": "Like my bathwater when I stop splashing!"
+        },
+        {
+          "who": "Beo",
+          "how": "laughing",
+          "text": "I never stop splashing!"
         }
       ]
     },
@@ -393,8 +448,8 @@
       "step": 4,
       "beat": "step",
       "visual": {
-        "kind": "scene",
-        "what": "A busy workers' camp of simple huts near the half-built pyramid. Groups of workers cut, drag and measure stones."
+        "kind": "count",
+        "what": "A crowd of little workers labelled about 20,000 workers next to a calendar showing about 20 years. Behind them are rows of tents by the pyramid."
       },
       "parts": [
         {
@@ -408,8 +463,8 @@
       "step": 4,
       "beat": "step",
       "visual": {
-        "kind": "labels",
-        "what": "A wall of rough, uneven blocks with the gaps filled. Labels say rough block, rubble and gypsum plaster."
+        "kind": "zoom",
+        "what": "Zooming into the inside of the pyramid. Rough blocks with gaps between them, and the gaps filled with small broken stones and white plaster, labelled rubble and gypsum."
       },
       "parts": [
         {
@@ -424,7 +479,7 @@
       "beat": "step",
       "visual": {
         "kind": "compare",
-        "what": "On the left, the new pyramid covered in smooth white stones. On the right, the pyramid today with its rough stepped blocks and just a few white stones left at the bottom."
+        "what": "On the left, the pyramid long ago, covered in smooth shining white stones. On the right, the pyramid today with its rough steps and a few white stones left at the bottom."
       },
       "parts": [
         {
@@ -433,9 +488,14 @@
           "text": "Last came the outside. Smooth white stones covered the whole pyramid. Most of them are gone now, but you can still see some around the bottom."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "joyfully",
           "text": "So it used to be a giant smooth white triangle!"
+        },
+        {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "Like a big snow mountain!"
         }
       ]
     },
@@ -443,8 +503,8 @@
       "step": 4,
       "beat": "step",
       "visual": {
-        "kind": "scene",
-        "what": "A planner in Egyptian clothes unrolls a papyrus plan of the pyramid in front of a group of workers."
+        "kind": "host",
+        "what": "Huy talks to the camera. A small picture behind him shows a man named Hemiunu holding a plan on papyrus."
       },
       "parts": [
         {
@@ -463,7 +523,7 @@
       "beat": "imagine",
       "visual": {
         "kind": "count",
-        "what": "A counter showing 2,300,000 blocks, then an arrow to about 300 blocks a day, then a clock showing one block about every 2 minutes."
+        "what": "A big clock and a counter showing about 300 blocks a day. Hùng hurries to stack toy blocks while Bối flops on a cushion."
       },
       "parts": [
         {
@@ -472,7 +532,12 @@
           "text": "Imagine if you had to place 2,300,000 blocks in 20 years. That's about 300 blocks every single day. If you worked ten hours a day, you'd need to place a block about every two minutes!"
         },
         {
-          "who": "Mai",
+          "who": "Hùng",
+          "how": "laughing",
+          "text": "I'll try with toy blocks. One, two... oh no, my tower fell!"
+        },
+        {
+          "who": "Bối",
           "how": "tired",
           "text": "I'm tired just hearing that."
         }
@@ -482,18 +547,42 @@
       "beat": "imagine",
       "visual": {
         "kind": "experiment",
-        "what": "Mai in a sandbox with a grown-up, pulling a small box of pebbles on a string. One side of the sand is dry and the other is darker and damp."
+        "what": "In a sandbox, Hùng has a small box full of pebbles with a string tied on. He pulls it over dry sand while a grown-up watches."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Want to test the sledge idea? In a sandbox, with a grown-up, put some pebbles in a small box and tie on a string. Pull it over dry sand. Then sprinkle a little water on the sand and pull again."
+          "text": "Want to test the sledge idea? Hùng will show you."
         },
         {
-          "who": "Mai",
+          "who": "Hùng",
+          "how": "happily",
+          "text": "In a sandbox, with a grown-up, put some pebbles in a small box and tie on a string. Pull it over dry sand. Feel how hard it is."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Hùng sprinkles a little water from a small cup onto the sand in front of the box. Bối holds the string ready, and Beo watches closely."
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Then sprinkle a little water on the sand and pull again."
+        },
+        {
+          "who": "Bối",
           "how": "happily",
           "text": "Will it feel easier or harder? I'm going to find out!"
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Me too! I pull!"
         },
         {
           "who": "Huy",
@@ -505,8 +594,8 @@
     {
       "beat": "recap",
       "visual": {
-        "kind": "scene",
-        "what": "Huy and Mai sit on a big stone block in front of the pyramid at sunset, with little icons floating above them: a chisel, a boat, a sledge and a ramp."
+        "kind": "arrows",
+        "what": "Four small pictures joined by arrows. Copper tools cutting stone, a boat on the Nile, a sledge on sand, and blocks going up a ramp to a finished pyramid."
       },
       "parts": [
         {
@@ -520,7 +609,7 @@
       "beat": "recap",
       "visual": {
         "kind": "count",
-        "what": "A long timeline bar labelled over 3,800 years, with the pyramid at the start wearing a little crown that says tallest."
+        "what": "A long timeline with the Great Pyramid as the tallest building at the start. A banner over it says tallest for over 3,800 years."
       },
       "parts": [
         {
@@ -529,7 +618,7 @@
           "text": "Here's a fun fact. The Great Pyramid was the tallest building in the world for over 3,800 years!"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "Nobody built anything taller for 3,800 years? Wow!"
         }
@@ -538,8 +627,8 @@
     {
       "beat": "next",
       "visual": {
-        "kind": "host",
-        "what": "Huy waves to camera holding a papyrus plant in one hand and a sheet of papyrus paper in the other, with Mai peeking in beside him. A subscribe button glows."
+        "kind": "scene",
+        "what": "All four wave goodbye in the studio. Hùng holds up a papyrus plant, and a big button on screen says Subscribe to Ask Huy."
       },
       "parts": [
         {
@@ -548,109 +637,118 @@
           "text": "Next time, how did the ancient Egyptians make paper from a plant?"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "joyfully",
           "text": "Paper from a plant? I have to know!"
         },
         {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "Paper grows?"
+        },
+        {
           "who": "Huy",
           "how": "happily",
-          "text": "Subscribe so you don't miss it. Bye for now!"
+          "text": "Subscribe to Ask Huy so you don't miss it. Bye for now!"
         }
       ]
     }
   ],
   "facts": [
     {
-      "claim": "The Great Pyramid was built more than 4,500 years ago by the Ancient Egyptians.",
+      "claim": "The Great Pyramid was built more than 4,500 years ago.",
       "source": "Great Pyramid of Giza"
     },
     {
-      "claim": "Its core has about 2,300,000 blocks of limestone and granite.",
+      "claim": "The pyramid's core is about 2,300,000 blocks of limestone and granite.",
       "source": "Great Pyramid of Giza"
     },
     {
-      "claim": "The ancient Greeks, many years later, believed the pyramids were built by slaves.",
+      "claim": "The ancient Greeks, long after it was built, believed the pyramids were built by slaves.",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "Workers' graves were found near the pyramid in 1990, and they show the builders were paid workers, not slaves.",
+      "claim": "Workers' graves found near the pyramid in 1990 show the builders were paid workers, not slaves.",
       "source": "Great Pyramid of Giza"
     },
     {
-      "claim": "Some workers worked for a salary and some as a form of tax payment (corvée), and they camped near the pyramids.",
+      "claim": "Some workers worked for a salary and some as a form of tax payment.",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "The pyramid was built for the pharaoh Khufu, perhaps by his vizier Hemiunu.",
+      "claim": "The pyramid was built for the pharaoh Khufu.",
       "source": "Great Pyramid of Giza"
     },
     {
-      "claim": "Locally quarried limestone was used for the main body, better limestone from Tura for the outer casing, and granite from near Aswan for some parts.",
+      "claim": "Local limestone was used for the body, fine limestone from Tura for the casing, and granite from near Aswan.",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "Workers probably cut softer stone like limestone with copper chisels, drills and saws.",
+      "claim": "Stone was cut with copper chisels, drills and saws; the copper was arsenical copper, harder than plain copper and made harder by hammering.",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "The copper they used had another material mixed in (arsenical copper), which made it more effective, and hammering made it harder.",
+      "claim": "Granite could not be cut with copper alone and was pounded with dolerite and sawn with sand as an abrasive.",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "Granite can't be cut with copper tools alone, so it was pounded with harder stone (dolerite) and sawed with the help of sand.",
+      "claim": "Most blocks weighed about 2.5 tonnes; some were much heavier.",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "Most blocks weighed about 2.5 tonnes, and some blocks were much heavier.",
+      "claim": "The diary of Merer, found in 2013 in a cave at Wadi al-Jarf and written more than 4,500 years ago, describes moving limestone from Tura to Giza by boat.",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "Merer's diary, written more than 4,500 years ago and found in a cave in 2013, describes taking limestone blocks from Tura to Giza by boat.",
+      "claim": "Blocks were moved on sledges, likely made slippery with water.",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "Blocks were moved on sledges that were probably made slippery with water.",
+      "claim": "About eight workers could move a 2,750 kg block on a lubricated sledge (Denys Stocks' estimate).",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "One expert, Denys Stocks, estimated that about eight workers could move a slippery-tracked block of about 2,750 kg.",
-      "source": "Construction of the Egyptian pyramids"
-    },
-    {
-      "claim": "When it was new, the pyramid was about 146.5 metres tall.",
+      "claim": "The pyramid was about 146.5 metres tall when built.",
       "source": "Great Pyramid of Giza"
     },
     {
-      "claim": "Most Egyptologists think ramps are the most likely way the blocks were raised, with help from levers, and remains of ramps have been found at the Great Pyramid.",
+      "claim": "Most Egyptologists think ramps were used, helped by levers; remains of small ramps have been found at the Great Pyramid.",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "The Egyptians used simple machines such as the ramp and the lever.",
+      "claim": "Egyptians used simple machines such as the ramp and the lever.",
       "source": "Ancient Egyptian technology"
     },
     {
-      "claim": "Scientists disagree about the kind of ramp. A single large straight ramp is widely rejected, and zigzag and spiral ramps have been suggested.",
+      "claim": "Scientists disagree about the ramp shape; a giant straight ramp is widely rejected; zigzag and spiral ramps have been proposed.",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "Jean-Pierre Houdin, a French architect, suggests a ramp that spirals up inside the pyramid, plus an outside ramp for the bigger blocks lower down.",
+      "claim": "Jean-Pierre Houdin proposed an internal spiral ramp plus an external ramp for bigger blocks lower down.",
       "source": "Giza Necropolis"
     },
     {
-      "claim": "The foundation may have been levelled using trenches filled with water.",
+      "claim": "The foundation may have been levelled using water-filled trenches.",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "Building it is thought to have taken about 20,000 workers and about 20 years.",
+      "claim": "Construction is thought to have taken about 20,000 workers and about 20 years.",
       "source": "Giza Necropolis"
     },
     {
-      "claim": "The core stones were roughly cut, and the gaps were filled with gypsum and rubble.",
+      "claim": "Workers were skilled and camped near the pyramids.",
       "source": "Construction of the Egyptian pyramids"
     },
     {
-      "claim": "The pyramid was once covered in smooth white stones, and some can still be seen around the base.",
+      "claim": "Core stones were roughly cut and gaps were filled with gypsum and rubble.",
+      "source": "Construction of the Egyptian pyramids"
+    },
+    {
+      "claim": "The pyramid was covered by smooth white stones; some can still be seen around the base.",
+      "source": "Great Pyramid of Giza"
+    },
+    {
+      "claim": "It may have been built by Khufu's vizier Hemiunu.",
       "source": "Great Pyramid of Giza"
     },
     {
@@ -658,36 +756,45 @@
       "source": "Great Pyramid of Giza"
     },
     {
-      "claim": "Egyptian paper (papyrus) was made from the papyrus plant.",
+      "claim": "Egyptians made paper from the papyrus plant.",
       "source": "Ancient Egyptian technology"
-    },
-    {
-      "claim": "A football pitch is about 100 metres long, and a family car weighs less than 2.5 tonnes.",
-      "source": "Basic school knowledge"
     }
   ],
   "shorts": [
     1,
-    15,
-    16,
+    4,
     28,
     29
   ],
-  "thumbnail": "How Was THIS Built?",
-  "description": "How did people build the Great Pyramid of Giza more than 4,500 years ago, without trucks or cranes? Huy and Mai follow the stones from the quarry to the top. They look at copper tools, boats on the Nile, sledges, ramps and levers, and meet the paid workers who really built it. Archaeologists still argue about some of this, and the video says which parts are still a mystery. There's also a safe sandbox experiment kids can try with a grown-up.",
+  "thumbnail": "How Did They Build This?",
+  "description": "How did people build the Great Pyramid of Giza more than 4,500 years ago, without trucks or cranes? Join Huy, Hùng, Bối and Beo to learn how paid, skilled workers cut stone with copper tools and sand, moved it by boat and sledge, and lifted it with ramps and levers. There's also a safe sandbox test to try with a grown-up. For curious kids aged 6–12, based on what archaeologists know today, including the parts that are still a mystery.",
   "cast": [
     {
       "name": "Huy",
       "gender": "male",
       "age": "young",
-      "role": "the host: curious, warm, a little funny; explains",
+      "role": "the host (25): curious, warm, a little funny; explains",
       "villain": false
     },
     {
-      "name": "Mai",
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
       "gender": "female",
       "age": "child",
-      "role": "an 8-year-old who asks, guesses and tries things",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
       "villain": false
     }
   ],

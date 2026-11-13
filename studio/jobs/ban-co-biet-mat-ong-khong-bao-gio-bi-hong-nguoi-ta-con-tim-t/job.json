@@ -1,7 +1,7 @@
 {
   "slug": "ban-co-biet-mat-ong-khong-bao-gio-bi-hong-nguoi-ta-con-tim-t",
   "topic": "Bạn có biết mật ong không bao giờ bị hỏng, người ta còn tìm thấy hũ mật ong trong lăng mộ Ai Cập hơn 3.000 năm tuổi mà vẫn ăn được?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.313Z",
@@ -23,6 +23,10 @@
       "at": "2026-11-12T09:59:06.313Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-13T01:52:13.404Z",
+      "status": "review"
     }
   ],
   "kind": "fact-vi",

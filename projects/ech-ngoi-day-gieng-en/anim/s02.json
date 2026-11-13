@@ -1,0 +1,70 @@
+{
+  "narration": "Ngày xửa ngày xưa, ở một làng quê bên sông Hồng, có lũy tre xanh bao quanh, có cây đa to và mái đình cong cong. Ở góc làng có một chiếc giếng cũ, thành giếng phủ đầy rêu xanh. Đã lâu lắm rồi, ít ai còn ra đây múc nước.",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "none",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "wide"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 14.866666666666667,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "stone",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "ech"
+      ],
+      "push": 0.06
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "narration": "Thủy Tinh hô mưa, gọi gió. Trời tối sầm lại. Sấm chớp ầm ầm, mưa trút xuống như thác đổ. Thủy Tinh (quát): \"Gió ơi, thổi đi! Mưa ơi, đổ xuống! Nước ơi, dâng lên!\"",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "thuy_tinh",
+        "place": "center",
+        "enter": "none",
+        "act": "raise",
+        "face": "shout",
+        "then": "call",
+        "thenFace": "angry"
+      },
+      {
+        "id": "son_tinh",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "flash",
+      "shake"
+    ],
+    "objects": [],
+    "shot": "full"
+  },
+  "era": "van_lang",
+  "duration": 10,
+  "time": "day",
+  "mood": "battle",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "thuy_tinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#1f3f66",
+          "skirt": "#2a3a4a",
+          "trim": "#7fc4c8"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a24"
+        },
+        "tattoo": true,
+        "bracelets": true,
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "iris": "#2a4a6a"
+        }
+      },
+      "x": 0,
+      "scale": 1.15,
+      "facing": -1
+    },
+    {
+      "id": "son_tinh",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#3f7a4a",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": false,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "build": "average",
+        "skin": "#c98f5c",
+        "headwear": "feather_band",
+        "tattoo": true
+      },
+      "x": 520,
+      "scale": 1.05,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "thuy_tinh",
+      "at": 0,
+      "do": "raise",
+      "face": "shout"
+    },
+    {
+      "actor": "thuy_tinh",
+      "at": 5,
+      "do": "call",
+      "face": "angry",
+      "talk": 1,
+      "move": {
+        "by": -804.9999999999999,
+        "ease": "in"
+      },
+      "dur": 5
+    },
+    {
+      "actor": "son_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "flash",
+      "at": 5,
+      "power": 0.5
+    },
+    {
+      "fx": "shake",
+      "at": 5,
+      "power": 0.5
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "thuy_tinh",
+        "son_tinh"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 3.6,
+      "type": "close",
+      "on": [
+        "thuy_tinh"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 6.8,
+      "type": "close",
+      "on": [
+        "son_tinh"
+      ],
+      "push": 0.05
+    }
+  ]
+}

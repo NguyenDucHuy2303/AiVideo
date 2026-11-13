@@ -1,0 +1,184 @@
+{
+  "narration": "Dưới đáy giếng có một chú Ếch con sống cùng bạn Cua, mấy chú Ốc và vài bạn nhái bén. Sáng nào Ếch cũng nhảy lên hòn đá giữa giếng và cất tiếng thật to. Ếch (vui vẻ): \"Ồm ộp! Ồm ộp! Sáng nay ta lại dậy sớm nhất giếng rồi!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "call",
+        "face": "happy",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "cua",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium",
+    "crowd": {
+      "id": "nhai_ben",
+      "count": 4,
+      "act": "idle",
+      "then": "none"
+    }
+  },
+  "era": "co_tich_lang_que",
+  "duration": 13.333333333333334,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "stone",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    },
+    {
+      "id": "cua",
+      "type": "animal",
+      "look": {
+        "species": "turtle",
+        "color": "#c8743a"
+      },
+      "x": -520,
+      "scale": 0.55,
+      "facing": 1
+    },
+    {
+      "id": "nhai_ben_1",
+      "type": "human",
+      "look": {
+        "species": "frog",
+        "color": "#a8d98a"
+      },
+      "x": 900,
+      "scale": 0.475,
+      "facing": -1
+    },
+    {
+      "id": "nhai_ben_2",
+      "type": "human",
+      "look": {
+        "species": "frog",
+        "color": "#a8d98a"
+      },
+      "x": 1220,
+      "scale": 0.51,
+      "facing": -1
+    },
+    {
+      "id": "nhai_ben_3",
+      "type": "human",
+      "look": {
+        "species": "frog",
+        "color": "#a8d98a"
+      },
+      "x": 1540,
+      "scale": 0.475,
+      "facing": -1
+    },
+    {
+      "id": "nhai_ben_4",
+      "type": "human",
+      "look": {
+        "species": "frog",
+        "color": "#a8d98a"
+      },
+      "x": 1860,
+      "scale": 0.51,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "call",
+      "face": "happy",
+      "talk": 1,
+      "move": {
+        "by": 420,
+        "ease": "linear"
+      },
+      "dur": 13.333333333333334
+    },
+    {
+      "actor": "ech",
+      "at": 6.67,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "cua",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "cua",
+      "at": 6.67,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "nhai_ben_1",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "nhai_ben_2",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "nhai_ben_3",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "nhai_ben_4",
+      "at": 0,
+      "do": "idle"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ech",
+        "cua"
+      ],
+      "push": 0.06
+    }
+  ]
+}

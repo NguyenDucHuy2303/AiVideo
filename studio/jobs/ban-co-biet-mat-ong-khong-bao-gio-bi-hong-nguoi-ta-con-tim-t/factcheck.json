@@ -2,21 +2,21 @@
   "issues": [
     {
       "scene": 1,
-      "quote": "Người ta kể rằng trong lăng mộ Ai Cập có hũ mật ong rất xưa mà vẫn ăn được đấy!",
-      "problem": "The sources only say that honey samples found at archaeological sites were still edible after thousands of years. They don't mention Egyptian tombs or a jar of honey. The tomb detail is unsupported.",
-      "fix": "Huy: Các nhà khảo cổ tìm thấy mật ong ở những nơi rất cổ xưa, và nó vẫn ăn được sau hàng nghìn năm đấy!"
+      "quote": "Người ta tìm thấy hũ mật hơn ba nghìn năm tuổi trong lăng mộ Ai Cập, mà vẫn ăn được!",
+      "problem": "The sources only say that honey found at archaeological sites was still edible after thousands of years. They do not mention an Egyptian tomb, a jar, or an age of over 3,000 years.",
+      "fix": "Người ta tìm thấy mật ong trong các di tích khảo cổ đã hàng nghìn năm tuổi, mà vẫn ăn được!"
     },
     {
-      "scene": 1,
-      "quote": "có thật là mật ong để hơn 3.000 năm mà vẫn ăn được không?",
-      "problem": "The sources only say \"after millennia\". The figure of 3,000 years isn't in them. The Vietnamese source also says honey lasts at most 2 years, and the English source says honey doesn't spoil when stored properly. The script doesn't say the sources disagree.",
-      "fix": "Mai: Anh Huy ơi, có thật là mật ong để hàng nghìn năm mà vẫn ăn được không ạ?"
+      "scene": 2,
+      "quote": "Vi khuẩn làm hỏng đồ ăn cần nước, nên chúng không sống nổi.",
+      "problem": "This overstates the source. It says most microorganisms cannot grow in honey. Honey often holds dormant bacterial spores.",
+      "fix": "Vi khuẩn làm hỏng đồ ăn cần nước, nên phần lớn chúng không sống nổi trong mật ong."
     },
     {
-      "scene": 6,
-      "quote": "Mai: Wow, mật ong còn bền hơn cả lăng mộ cổ!",
-      "problem": "No source compares honey with tombs. The claim is false and misleading, because it says honey outlasts a stone building. The sources say honey keeps well only when properly stored.",
-      "fix": "Mai: Wow, mật ong cất đúng cách có thể để được rất, rất lâu!"
+      "scene": 5,
+      "quote": "Mật ở nhà vẫn có hạn dùng, xem nhãn nhé!",
+      "problem": "There is a safety gap. Honey can carry botulinum spores, and the source says babies under 1 year should not have honey. The Short says honey is edible and never mentions this.",
+      "fix": "Mật ở nhà vẫn có hạn dùng, xem nhãn nhé! Và em bé dưới một tuổi thì không được ăn mật ong đâu."
     }
   ]
 }

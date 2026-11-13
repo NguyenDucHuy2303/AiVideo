@@ -1,7 +1,7 @@
 {
   "slug": "ban-co-biet-bach-tuoc-co-toi-3-trai-tim-va-mau-mau-xanh",
   "topic": "Bạn có biết bạch tuộc có tới 3 trái tim và máu màu xanh?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T10:05:14.837Z",
@@ -51,6 +51,15 @@
       "at": "2026-11-12T10:05:14.838Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo (chưa render bản mới)"
+    },
+    {
+      "at": "2026-11-12T11:00:15.997Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: Claude Code failed on fact-write: You've hit your 5-hour limit · resets 6:40pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work wait"
+    },
+    {
+      "at": "2026-11-13T01:47:06.607Z",
+      "status": "review"
     }
   ],
   "kind": "fact-vi",
@@ -62,5 +71,6 @@
     "hash": "08d7bfb9670ebb19"
   },
   "autoPicked": true,
-  "shorts": []
+  "shorts": [],
+  "retryAt": "2026-11-12T11:30:15.997Z"
 }

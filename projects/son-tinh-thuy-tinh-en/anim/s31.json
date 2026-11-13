@@ -1,0 +1,347 @@
+{
+  "narration": "Ở Sơn Tây, Hà Nội, có đền Và. Cứ đến rằm tháng Giêng, các làng quanh vùng lại rộn ràng về mở hội, tưởng nhớ vị thần núi đã che chở cho dân.",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "son_tinh",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 6,
+      "act": "cheer",
+      "then": "bow"
+    },
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "banner",
+      "fire_pit"
+    ],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 9.7,
+  "time": "day",
+  "mood": "majestic",
+  "set": {
+    "name": "mountain",
+    "objects": [
+      {
+        "type": "banner",
+        "x": 1500,
+        "color": "#3a1a1a"
+      },
+      {
+        "type": "fire_pit",
+        "x": 520
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "son_tinh",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#3f7a4a",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": false,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "build": "average",
+        "skin": "#c98f5c",
+        "headwear": "feather_band",
+        "tattoo": true
+      },
+      "x": -520,
+      "scale": 1.05,
+      "facing": 1
+    },
+    {
+      "id": "dan_lang_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_4",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 1860,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_5",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 2180,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_6",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ]
+      },
+      "x": 2500,
+      "scale": 1.02,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "son_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 4.85,
+      "do": "bow"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 5.2,
+      "do": "bow"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 5.55,
+      "do": "bow"
+    },
+    {
+      "actor": "dan_lang_4",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_4",
+      "at": 5.9,
+      "do": "bow"
+    },
+    {
+      "actor": "dan_lang_5",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_5",
+      "at": 6.25,
+      "do": "bow"
+    },
+    {
+      "actor": "dan_lang_6",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_6",
+      "at": 6.6,
+      "do": "bow"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "sparkle",
+      "on": "son_tinh",
+      "at": 2.9099999999999997,
+      "dur": 5.819999999999999
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "son_tinh"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 4.85,
+      "type": "full",
+      "on": [
+        "son_tinh"
+      ],
+      "push": 0.06
+    }
+  ]
+}

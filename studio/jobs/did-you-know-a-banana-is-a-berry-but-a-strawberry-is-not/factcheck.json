@@ -1,10 +1,10 @@
 {
   "issues": [
     {
-      "scene": 5,
-      "quote": "Yes! That is why it is not a true berry.",
-      "problem": "Misleading. The sources say the strawberry is not a berry because its fleshy red part comes from the receptacle, not the ovary. The 'seeds' on the outside are really tiny fruits (achenes), as scene 6 says. So 'seeds on the outside' is not the true reason, and scene 5 contradicts scene 6.",
-      "fix": "Yes! They look like seeds on the outside. But the real reason is that the red part does not grow from the ovary."
+      "scene": 3,
+      "quote": "A banana grows from part of a flower, and it is soft all the way through.",
+      "problem": "Misleading. A banana has a peel that is not soft or eaten. Only the flesh inside is soft. The source describes a protective peel with strings under it. The sentence could also be unclear about why this makes it a berry.",
+      "fix": "A banana grows from part of a flower, and the part we eat is soft flesh inside its peel."
     }
   ]
 }

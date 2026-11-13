@@ -1,3 +1,10 @@
 {
-  "issues": []
+  "issues": [
+    {
+      "scene": 4,
+      "quote": "Many people think the animals were a safe test.",
+      "problem": "The sources never say why animals went first or that they were a safe test. \"Many people think\" is invented support, and \"safe\" is misleading because nobody knew yet whether a flight was safe. The sources only mention some concern about the effects of flight.",
+      "fix": "Nobody had flown in a balloon before, and people were not sure what flying high would do to a living thing. So the animals went first to find out."
+    }
+  ]
 }

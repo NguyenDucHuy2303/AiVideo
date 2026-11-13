@@ -1,0 +1,78 @@
+{
+  "narration": "Mưa tạnh. Ếch ngó quanh, thấy trời hôm nay to hơn hẳn. Nhưng chú vẫn chưa chịu tin. Ếch (tự hào): \"Hừ, chắc tại mưa làm trời phình to ra thôi. Ta vẫn là chúa tể!\" Thế là Ếch nghênh ngang nhảy ra giữa đường làng.",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "hop",
+        "face": "proud",
+        "then": "hop",
+        "thenFace": "proud"
+      }
+    ],
+    "fx": [
+      "rays"
+    ],
+    "objects": [],
+    "shot": "track"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 13.5,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "hop",
+      "face": "proud"
+    },
+    {
+      "actor": "ech",
+      "at": 6.75,
+      "do": "hop",
+      "face": "proud"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 13.5,
+      "scale": 2.4
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": [
+        "ech"
+      ],
+      "push": 0.06
+    }
+  ]
+}

@@ -22,6 +22,41 @@
       "at": "2026-11-12T09:59:06.297Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-12T10:49:29.968Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T01:42:26.720Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T02:12:53.251Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T02:43:02.479Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T03:13:07.024Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T03:43:12.544Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T04:13:23.426Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
     }
   ],
   "kind": "qa-vi",
@@ -31,5 +66,6 @@
     "value": 8.2,
     "why": "Mở đầu cuốn (\"bản đồ vẫn lớn thêm mỗi năm\"), bố cục bốn bước rõ, có thí nghiệm cát và mẹo \"sông Chín Rồng\", chủ đề phổ biến và dễ dựng bằng bản đồ; nhưng nhiều số liệu dày đặc (đặc biệt \"13 lần phù sa\", chiều dài Mê Kông, mốc \"hơn ba trăm năm\" với Lào) còn lỏng hoặc cần kiểm chứng, nói Cửu Long \"vẫn bồi thêm\" bỏ qua thực tế sạt lở/sụt lún, và phần đi dọc chữ S hơi giống liệt kê địa lý nên dễ chùng ở giữa.",
     "hash": "eb164fc5ec66029e"
-  }
+  },
+  "retryAt": "2026-11-13T04:43:23.426Z"
 }

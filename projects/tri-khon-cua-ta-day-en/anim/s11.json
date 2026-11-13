@@ -1,0 +1,79 @@
+{
+  "narration": "Hổ nghĩ bụng, nếu mình có thêm trí khôn thì cả khu rừng, cả cánh đồng này đều phải sợ mình. Hổ liền đi thẳng tới gốc cây. Hổ (hớn hở): \"Hỡi con người kia! Ngươi có trí khôn phải không? Đưa ra đây cho ta xem nào!\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "walk",
+        "face": "happy",
+        "then": "call",
+        "thenFace": "joy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 11.833333333333334,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "field",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ho",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#f0932b"
+      },
+      "x": -582.4,
+      "scale": 1.4,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ho",
+      "at": 0,
+      "do": "walk",
+      "face": "happy",
+      "move": {
+        "by": 840,
+        "ease": "linear"
+      },
+      "dur": 11.833333333333334
+    },
+    {
+      "actor": "ho",
+      "at": 5.92,
+      "do": "call",
+      "face": "joy",
+      "talk": 1,
+      "move": {
+        "by": 979.9999999999999,
+        "ease": "in"
+      },
+      "dur": 5.913333333333334
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ho"
+      ],
+      "push": 0.06
+    }
+  ]
+}

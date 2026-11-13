@@ -1,0 +1,44 @@
+{
+  "engine": "kokoro",
+  "voice": "bm_fable",
+  "speed": 1,
+  "imageGen": "off",
+  "onlineImages": false,
+  "era": "co_tich_lang_que",
+  "profiles": [
+    "16x9"
+  ],
+  "voices": {
+    "The Farmer": "am_michael",
+    "Tiger": "am_onyx",
+    "Buffalo": "bm_george",
+    "Cu Ti": {
+      "voice": "af_sky",
+      "pitch": 3
+    }
+  },
+  "speakers": {
+    "The Farmer": [
+      "bac_nong_dan"
+    ],
+    "Buffalo": [
+      "trau"
+    ],
+    "Tiger": [
+      "ho",
+      "ho_van"
+    ],
+    "Cu Ti": [
+      "cu_ti"
+    ]
+  },
+  "thumbnail": {
+    "title": "Here Is My Wisdom",
+    "subtitle": "Vietnamese Folk Tales"
+  },
+  "style": "mau_nuoc",
+  "brand": {
+    "intro": "sach_truyen",
+    "outro": "sach_truyen"
+  }
+}

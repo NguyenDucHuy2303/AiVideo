@@ -1,7 +1,7 @@
 {
   "slug": "how-does-an-airplane-stay-up-in-the-sky",
   "topic": "How does an airplane stay up in the sky?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.288Z",
@@ -22,6 +22,15 @@
       "at": "2026-11-12T09:59:06.291Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-12T10:45:12.782Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: Claude Code failed on qa-rewrite: You've hit your 5-hour limit · resets 6:40pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work wait"
+    },
+    {
+      "at": "2026-11-13T01:38:11.259Z",
+      "status": "review"
     }
   ],
   "kind": "qa",
@@ -31,5 +40,6 @@
     "value": 8.4,
     "why": "Chủ đề rất nhiều người tìm, mở đầu cuốn hút bằng câu hỏi và \"người giúp đỡ vô hình\", cấu trúc bốn lực, bốn ý chốt, thí nghiệm máy bay giấy và fun fact xe đua rất dễ dựng và đúng khoa học (có thừa nhận hai cách giải thích lực nâng); điểm yếu là hơi dài, nhiều khái niệm (lực, chất lưu, áp suất, Bernoulli) dễ làm trẻ 6–8 tuổi quá tải ở đoạn giữa, và thiếu cảnh gây bất ngờ mạnh hơn ở phần đầu.",
     "hash": "75030d6830eb15bc"
-  }
+  },
+  "retryAt": "2026-11-12T11:15:12.781Z"
 }

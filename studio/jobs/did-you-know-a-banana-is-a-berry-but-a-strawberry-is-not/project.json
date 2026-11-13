@@ -10,8 +10,13 @@
   "channel": "Ask Huy",
   "voices": {
     "Huy": "am_liam",
-    "Mai": {
+    "Hùng": "am_eric",
+    "Bối": {
       "voice": "af_nova",
+      "pitch": 3
+    },
+    "Beo": {
+      "voice": "af_sky",
       "pitch": 3
     }
   }

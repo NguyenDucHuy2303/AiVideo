@@ -1,0 +1,210 @@
+{
+  "narration": "Bác Trâu đã đưa Ếch ra khỏi khoảng trời bé bằng cái vung. Thầy cô của các bạn cũng vậy, ngày ngày mở ra cho các bạn cả một bầu trời kiến thức. Ngày Nhà giáo Việt Nam 20 tháng 11 sắp đến, các bạn nhớ khoanh tay cảm ơn thầy cô nhé.",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "bac_trau",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "bow",
+        "face": "happy",
+        "then": "bow",
+        "thenFace": "joy"
+      },
+      {
+        "id": "cau_be_chan_trau",
+        "place": "left",
+        "enter": "none",
+        "act": "wave",
+        "face": "happy",
+        "then": "wave",
+        "thenFace": "happy"
+      },
+      {
+        "id": "kien",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "glow"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 14.666666666666666,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "bac_trau",
+      "type": "animal",
+      "look": {
+        "species": "buffalo",
+        "color": "#4a4f55"
+      },
+      "x": 582.4,
+      "scale": 1.4,
+      "facing": -1
+    },
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": -1
+    },
+    {
+      "id": "cau_be_chan_trau",
+      "type": "human",
+      "look": {
+        "body": "child",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#8d6e63",
+            "trim": "#5d4037",
+            "length": "waist",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#5d4037",
+            "length": "knee"
+          }
+        },
+        "hair": {
+          "style": "traidao",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "bamboo"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "eyeScale": 1.15
+        }
+      },
+      "x": -520,
+      "scale": 0.8,
+      "facing": 1
+    },
+    {
+      "id": "kien",
+      "type": "animal",
+      "look": {
+        "species": "ant",
+        "color": "#8b3a2a"
+      },
+      "x": 520,
+      "scale": 0.45,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "bac_trau",
+      "at": 0,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "bac_trau",
+      "at": 7.33,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "bow",
+      "face": "happy"
+    },
+    {
+      "actor": "ech",
+      "at": 7.33,
+      "do": "bow",
+      "face": "joy"
+    },
+    {
+      "actor": "cau_be_chan_trau",
+      "at": 0,
+      "do": "wave",
+      "face": "happy"
+    },
+    {
+      "actor": "cau_be_chan_trau",
+      "at": 7.33,
+      "do": "wave",
+      "face": "happy"
+    },
+    {
+      "actor": "kien",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "glow",
+      "on": "bac_trau",
+      "at": 4.3999999999999995,
+      "dur": 8.799999999999999
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "bac_trau",
+        "ech",
+        "cau_be_chan_trau",
+        "kien"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 7.33,
+      "type": "close",
+      "on": [
+        "cau_be_chan_trau"
+      ],
+      "push": 0.06
+    }
+  ]
+}

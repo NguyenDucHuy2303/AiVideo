@@ -1,0 +1,32 @@
+{
+  "slug": "deo-nhac-cho-meo",
+  "topic": "Đeo nhạc cho mèo",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-13T01:52:22.032Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-13T01:54:47.800Z",
+      "status": "review"
+    }
+  ],
+  "kind": "ngụ ngôn",
+  "era": "co_tich_lang_que",
+  "summary": "Cả đàn chuột trong một xóm nhà quê luôn bị mèo rình bắt. Chuột cụ họp cả nhà bàn kế, và một chú chuột nhắt nghĩ ra cách buộc chiếc nhạc vào cổ mèo, để nghe tiếng nhạc là biết đường chạy trốn. Cả đàn vỗ tay khen hay. Nhưng khi chuột cụ hỏi ai dám đi đeo nhạc, ai cũng im lặng, rồi lần lượt tìm cớ lủi mất. Cuối cùng chuột cụ rút ra bài học: nói thì dễ, làm mới khó, kế hay mà không làm được thì cũng bằng không.",
+  "by": "claude-opus",
+  "art": {
+    "style": "mau_nuoc",
+    "intro": "sach_truyen",
+    "outro": "sach_truyen",
+    "suggest": {
+      "style": "mau_nuoc",
+      "intro": "sach_truyen",
+      "outro": "sach_truyen",
+      "why": "Đây là truyện ngụ ngôn nhẹ nhàng toàn thú vật nhân hóa dành cho bé nhỏ nên hợp nét màu nước dịu, và cuốn sách mở ra mở đầu hợp lối kể ngụ ngôn.",
+      "by": "brain"
+    }
+  }
+}

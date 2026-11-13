@@ -1,7 +1,7 @@
 {
   "slug": "did-you-know-octopuses-have-three-hearts-and-blue-blood",
   "topic": "Did you know octopuses have three hearts and blue blood?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.311Z",
@@ -22,6 +22,10 @@
       "at": "2026-11-12T09:59:06.311Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-13T01:51:16.830Z",
+      "status": "review"
     }
   ],
   "kind": "fact",

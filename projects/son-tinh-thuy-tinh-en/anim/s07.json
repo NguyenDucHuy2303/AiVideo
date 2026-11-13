@@ -1,0 +1,220 @@
+{
+  "narration": "Cả hai chàng đều tài giỏi, đều có phép lạ. Vua Hùng ngồi trong nhà sàn lớn, suy nghĩ mãi. Vua Hùng (lo lắng): \"Hai chàng đều xứng đáng cả. Ta biết chọn người nào đây?\" Lạc hầu (dõng dạc): \"Thưa đức vua, xin vua hãy ra một điều kiện. Ai làm được trước thì người ấy được chọn.\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "vua_hung",
+        "place": "center",
+        "enter": "none",
+        "act": "sit",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      },
+      {
+        "id": "lac_hau",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "determined",
+        "then": "point",
+        "thenFace": "determined"
+      },
+      {
+        "id": "lac_tuong",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  "era": "van_lang",
+  "duration": 14.233333333333333,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "mat",
+        "x": 260
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "vua_hung",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "plume",
+          "color": "#8a3a22",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "headwear": "feather",
+        "beard": "#2a1a12",
+        "bracelets": true,
+        "earrings": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick",
+          "mustache": "thick"
+        }
+      },
+      "x": 0,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "lac_hau",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "outfit": {
+          "type": "dongson",
+          "color": "#7a5430",
+          "skirt": "#4a3a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "headwear": "feather_band",
+        "bracelets": true,
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "long",
+          "brows": "thick",
+          "mustache": "thin",
+          "wrinkles": true
+        }
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "lac_tuong",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "skin": "#c99060",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "headwear": "feather_band",
+        "bracelets": true,
+        "prop": {
+          "type": "bronze_axe"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "round",
+          "brows": "bushy",
+          "mustache": "thick"
+        },
+        "build": "heavy",
+        "props": [
+          {
+            "type": "shield"
+          }
+        ]
+      },
+      "x": -520,
+      "scale": 1.1,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "vua_hung",
+      "at": 0,
+      "do": "sit",
+      "face": "worried"
+    },
+    {
+      "actor": "vua_hung",
+      "at": 7.12,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "lac_hau",
+      "at": 0,
+      "do": "talk",
+      "face": "determined",
+      "talk": 1
+    },
+    {
+      "actor": "lac_hau",
+      "at": 7.12,
+      "do": "point",
+      "face": "determined"
+    },
+    {
+      "actor": "lac_tuong",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "vua_hung",
+        "lac_hau",
+        "lac_tuong"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.12,
+      "type": "close",
+      "on": [
+        "vua_hung"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 9.68,
+      "type": "close",
+      "on": [
+        "lac_hau"
+      ],
+      "push": 0.05
+    }
+  ]
+}

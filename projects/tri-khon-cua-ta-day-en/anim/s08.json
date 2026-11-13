@@ -1,0 +1,113 @@
+{
+  "narration": "Hổ rón rén bước ra khỏi bụi rậm, lại gần chỗ trâu đang gặm cỏ. Trâu giật mình ngẩng lên. Trâu (sợ hãi): \"Ông, ông Hổ! Ông đến đây làm gì ạ?\" Hổ (cười): \"Đừng sợ, hôm nay ta không bắt ngươi đâu. Ta chỉ muốn hỏi một chuyện thôi.\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "trau",
+        "place": "right",
+        "enter": "none",
+        "act": "eat",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 12.2,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "field",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ho",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#f0932b"
+      },
+      "x": -2482.4,
+      "scale": 1.4,
+      "facing": 1
+    },
+    {
+      "id": "trau",
+      "type": "animal",
+      "look": {
+        "species": "buffalo",
+        "color": "#4a4e55"
+      },
+      "x": 540.8000000000001,
+      "scale": 1.3,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ho",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": -582.4,
+        "ease": "out"
+      },
+      "dur": 5.49,
+      "face": "happy"
+    },
+    {
+      "actor": "ho",
+      "at": 5.49,
+      "do": "still",
+      "face": "happy"
+    },
+    {
+      "actor": "ho",
+      "at": 6.1,
+      "do": "talk",
+      "face": "laugh",
+      "talk": 1
+    },
+    {
+      "actor": "trau",
+      "at": 0,
+      "do": "eat",
+      "face": "worried"
+    },
+    {
+      "actor": "trau",
+      "at": 6.1,
+      "do": "worry",
+      "face": "worried"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ho",
+        "trau"
+      ],
+      "push": 0.06
+    }
+  ]
+}

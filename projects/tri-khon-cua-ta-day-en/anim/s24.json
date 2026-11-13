@@ -1,0 +1,95 @@
+{
+  "narration": "Những vằn đen ấy không bao giờ mất đi nữa. Từ đó, loài hổ mang bộ lông vằn vện, và hễ nghe tiếng người là lẩn thật xa. Hổ (thở dài): \"Thì ra to khỏe chưa chắc đã giỏi. Ta phải nhớ bài học này mãi mãi.\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ho_van",
+        "place": "center",
+        "enter": "none",
+        "act": "sit",
+        "face": "sad",
+        "then": "worry",
+        "thenFace": "sad"
+      },
+      {
+        "id": "ho",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 11.6,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "field",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ho_van",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#e8742a"
+      },
+      "x": 0,
+      "scale": 1.4,
+      "facing": -1
+    },
+    {
+      "id": "ho",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#f0932b"
+      },
+      "x": 582.4,
+      "scale": 1.4,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ho_van",
+      "at": 0,
+      "do": "sit",
+      "face": "sad"
+    },
+    {
+      "actor": "ho_van",
+      "at": 5.8,
+      "do": "worry",
+      "face": "sad"
+    },
+    {
+      "actor": "ho",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ho_van",
+        "ho"
+      ],
+      "push": 0.06
+    }
+  ]
+}

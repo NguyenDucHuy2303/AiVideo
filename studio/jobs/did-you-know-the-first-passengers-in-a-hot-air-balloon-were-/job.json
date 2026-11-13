@@ -1,7 +1,7 @@
 {
   "slug": "did-you-know-the-first-passengers-in-a-hot-air-balloon-were-",
   "topic": "Did you know the first passengers in a hot-air balloon were a sheep, a duck and a rooster?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.304Z",
@@ -22,6 +22,15 @@
       "at": "2026-11-12T09:59:06.305Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-12T10:58:03.294Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: Claude Code failed on fact-write: You've hit your 5-hour limit · resets 6:40pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work wait"
+    },
+    {
+      "at": "2026-11-13T01:46:29.107Z",
+      "status": "review"
     }
   ],
   "kind": "fact",
@@ -31,5 +40,6 @@
     "value": 7.2,
     "why": "Câu mở đầu rất hấp dẫn (cừu, vịt, gà trống lên khinh khí cầu), ngắn gọn, vui, hợp trẻ 6–12 tuổi và hợp làm Shorts, nhưng \"bay khoảng 480 mét\" là sai/gây hiểu nhầm (480 m là độ cao, quãng bay khoảng 3 km, kéo dài ~8 phút), lại thiếu ý quan trọng là vì sao thử với động vật trước (kiểm tra an toàn), và \"vài tuần sau\" thực ra là hai tháng (21/11/1783).",
     "hash": "8a91c02dcdcea36b"
-  }
+  },
+  "retryAt": "2026-11-12T11:28:03.293Z"
 }

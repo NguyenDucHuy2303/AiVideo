@@ -1,0 +1,285 @@
+{
+  "narration": "Sáng sớm hôm sau, trời còn mờ sương, Sơn Tinh đã dẫn đoàn lễ vật đến trước nhà vua. Trống đồng vang lên tùng tùng. Vua Hùng (hớn hở): \"Sơn Tinh đến trước, sính lễ lại đầy đủ. Ta giữ lời, gả Mị Nương cho chàng.\" Sơn Tinh (mừng rỡ): \"Con xin cảm tạ đức vua!\"",
+  "plan": {
+    "set": "village",
+    "time": "dawn",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "son_tinh",
+        "place": "left",
+        "enter": "from_left",
+        "act": "march",
+        "face": "happy",
+        "then": "bow",
+        "thenFace": "joy"
+      },
+      {
+        "id": "vua_hung",
+        "place": "right",
+        "enter": "none",
+        "act": "cheer",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "thuy_tinh",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "mi_nuong",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "rays"
+    ],
+    "objects": [
+      "rice",
+      "bowls"
+    ],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 13.666666666666666,
+  "time": "dawn",
+  "mood": "majestic",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "rice",
+        "x": 300
+      },
+      {
+        "type": "bowls",
+        "x": 520
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "son_tinh",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#3f7a4a",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": false,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "build": "average",
+        "skin": "#c98f5c",
+        "headwear": "feather_band",
+        "tattoo": true
+      },
+      "x": -2420,
+      "scale": 1.05,
+      "facing": 1
+    },
+    {
+      "id": "vua_hung",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "plume",
+          "color": "#8a3a22",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "headwear": "feather",
+        "beard": "#2a1a12",
+        "bracelets": true,
+        "earrings": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick",
+          "mustache": "thick"
+        }
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "thuy_tinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#1f3f66",
+          "skirt": "#2a3a4a",
+          "trim": "#7fc4c8"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a24"
+        },
+        "tattoo": true,
+        "bracelets": true,
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "iris": "#2a4a6a"
+        }
+      },
+      "x": -520,
+      "scale": 1.15,
+      "facing": 1
+    },
+    {
+      "id": "mi_nuong",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f0e2c0",
+          "skirt": "#2a3f6a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1210"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 520,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "son_tinh",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "to": -520,
+        "ease": "out"
+      },
+      "dur": 6.15,
+      "face": "happy"
+    },
+    {
+      "actor": "son_tinh",
+      "at": 6.15,
+      "do": "still",
+      "face": "happy"
+    },
+    {
+      "actor": "son_tinh",
+      "at": 6.83,
+      "do": "bow",
+      "face": "joy"
+    },
+    {
+      "actor": "vua_hung",
+      "at": 0,
+      "do": "cheer",
+      "face": "happy"
+    },
+    {
+      "actor": "vua_hung",
+      "at": 6.83,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "thuy_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "mi_nuong",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 13.666666666666666,
+      "scale": 2.4
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "son_tinh",
+        "vua_hung",
+        "thuy_tinh",
+        "mi_nuong"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 4.92,
+      "type": "close",
+      "on": [
+        "son_tinh"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 9.29,
+      "type": "close",
+      "on": [
+        "vua_hung"
+      ],
+      "push": 0.05
+    }
+  ]
+}

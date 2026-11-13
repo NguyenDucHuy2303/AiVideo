@@ -1,0 +1,82 @@
+{
+  "narration": "Rồi một hôm, mây đen kéo về kín trời. Sấm ì ầm, mưa trút xuống ào ào, lũy tre nghiêng ngả. Ếch (ngạc nhiên): \"Ơ, mưa gì mà to thế này!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [
+      "shake",
+      "flash"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 8.8,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "worry",
+      "face": "surprised"
+    },
+    {
+      "actor": "ech",
+      "at": 4.4,
+      "do": "worry",
+      "face": "surprised"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "shake",
+      "at": 4.4,
+      "power": 0.5
+    },
+    {
+      "fx": "flash",
+      "at": 4.4,
+      "power": 0.5
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "ech"
+      ],
+      "push": 0.06
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "narration": "Vào tới rừng, Hổ vốn bơi giỏi, nhảy ùm xuống suối cho mát. Nhìn bóng mình dưới nước, Hổ thấy bộ lông vàng óng đã bị lửa xém thành những vằn đen dài khắp mình. Hổ (khóc): \"Ôi, bộ lông đẹp của ta! Giờ vằn vện hết cả rồi!\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ho_van",
+        "place": "center",
+        "enter": "none",
+        "act": "swim",
+        "face": "sad",
+        "then": "worry",
+        "thenFace": "sad"
+      },
+      {
+        "id": "ho",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "pop"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 12.833333333333334,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "field",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ho_van",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#e8742a"
+      },
+      "x": 0,
+      "scale": 1.4,
+      "facing": -1
+    },
+    {
+      "id": "ho",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#f0932b"
+      },
+      "x": 582.4,
+      "scale": 1.4,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ho_van",
+      "at": 0,
+      "do": "swim",
+      "face": "sad"
+    },
+    {
+      "actor": "ho_van",
+      "at": 6.42,
+      "do": "worry",
+      "face": "sad"
+    },
+    {
+      "actor": "ho",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "pop",
+      "on": "ho_van",
+      "at": 6.42,
+      "dur": 7.7
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ho_van",
+        "ho"
+      ],
+      "push": 0.06
+    }
+  ]
+}

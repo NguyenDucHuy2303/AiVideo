@@ -1,19 +1,25 @@
 {
-  "title": "An octopus has 3 hearts and blue blood!",
+  "title": "An Octopus Has 3 Hearts and Blue Blood!",
   "question": "Did you know octopuses have three hearts and blue blood?",
-  "answer": "An octopus has three hearts, and its blood is blue when it carries oxygen, because it has copper in it.",
+  "answer": "An octopus has three hearts, and its blood is blue because it uses copper to carry oxygen.",
+  "description": "An octopus has three hearts and blue blood! Find out what each heart does and why the blood is blue, in under a minute.",
   "scenes": [
     {
       "beat": "hook",
       "visual": {
         "kind": "scene",
-        "what": "A friendly cartoon octopus floats in a bright blue sea, with three small glowing hearts shown on its round body and a drop of blue blood beside it."
+        "what": "A friendly octopus floats on a coral reef. Three small glowing hearts pop up on its body, and a drop of blue blood shines beside it."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "surprised",
           "text": "Did you know an octopus has three hearts and blue blood?"
+        },
+        {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "Three hearts? I only have one!"
         }
       ]
     },
@@ -22,18 +28,13 @@
       "step": 1,
       "visual": {
         "kind": "diagram",
-        "what": "A simple octopus body. Two small hearts sit next to two feathery gills, each with an arrow of blood going to the gill."
+        "what": "Cutaway cartoon of an octopus. Two hearts sit beside the gills, with arrows from each heart into the gills. Water bubbles flow past the gills."
       },
       "parts": [
         {
-          "who": "Mai",
-          "how": "surprised",
-          "text": "Three hearts? I only have one!"
-        },
-        {
           "who": "Huy",
           "how": "happily",
-          "text": "Two hearts send blood to the gills. Gills are how an octopus breathes under water."
+          "text": "Two hearts send blood to the gills. Gills are how an octopus takes oxygen from the water."
         }
       ]
     },
@@ -42,18 +43,18 @@
       "step": 2,
       "visual": {
         "kind": "arrows",
-        "what": "The same octopus. The big third heart in the middle sends arrows of blood out to all eight arms and the head."
+        "what": "Same octopus. The third, bigger heart in the middle pumps blood with arrows out to the head and all eight arms."
       },
       "parts": [
         {
           "who": "Huy",
-          "how": "happily",
+          "how": "proudly",
           "text": "The third heart pumps blood to the rest of the body."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "joyfully",
-          "text": "Two hearts for the gills, one for everything else!"
+          "text": "So every heart has its own job!"
         }
       ]
     },
@@ -62,23 +63,13 @@
       "step": 3,
       "visual": {
         "kind": "compare",
-        "what": "Split picture. On the left, a child with a red blood drop marked with a small iron nail. On the right, an octopus with a blue blood drop marked with a copper coin."
+        "what": "Split picture. Left, a child's arm with red blood and a little iron nail icon. Right, an octopus arm with blue blood and a copper coin icon."
       },
       "parts": [
         {
           "who": "Huy",
-          "how": "firmly",
-          "text": "Our blood has iron in it, so it looks red."
-        },
-        {
-          "who": "Mai",
-          "how": "surprised",
-          "text": "And the octopus?"
-        },
-        {
-          "who": "Huy",
           "how": "happily",
-          "text": "Its blood has copper in it."
+          "text": "Your blood is red because it carries oxygen with iron."
         }
       ]
     },
@@ -87,73 +78,91 @@
       "step": 4,
       "visual": {
         "kind": "zoom",
-        "what": "A close-up of an octopus blood vessel. Tiny round oxygen bubbles join copper dots, and the liquid turns bright blue."
+        "what": "Zoom into a blue drop of octopus blood. Tiny orange copper dots hold small bubbles of oxygen. Hùng holds a copper coin and drops it with a clink."
       },
       "parts": [
         {
           "who": "Huy",
-          "how": "proudly",
-          "text": "When the copper holds oxygen, the blood turns blue."
+          "how": "firmly",
+          "text": "Octopus blood uses copper instead. Copper makes the blood blue when it carries oxygen."
         },
         {
-          "who": "Mai",
-          "how": "laughing",
-          "text": "Blue blood, like a sea superhero!"
+          "who": "Hùng",
+          "how": "worried",
+          "text": "Oops, I dropped my copper coin!"
+        },
+        {
+          "who": "Beo",
+          "how": "happily",
+          "text": "But it is orange, not blue!"
         }
       ]
     },
     {
       "beat": "recap",
       "visual": {
-        "kind": "host",
-        "what": "Huy and Mai wave happily next to a smiling octopus showing three hearts, with a Follow button popping up."
+        "kind": "scene",
+        "what": "Huy, Hùng, Bối and Beo wave beside the octopus. A big heart count of three and a blue drop float above. A Follow Ask Huy button pulses."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "joyfully",
-          "text": "Three hearts and blue blood. What a wow animal!"
+          "text": "Three hearts and blue blood. Wow! Follow Ask Huy for more amazing facts!"
         },
         {
-          "who": "Mai",
-          "how": "happily",
-          "text": "Follow Ask Huy for more wow facts!"
+          "who": "Bối",
+          "how": "laughing",
+          "text": "See you soon!"
         }
       ]
     }
   ],
   "facts": [
     {
-      "claim": "Octopuses have three hearts. Two pump blood to the gills and the third pumps it to the rest of the body.",
+      "claim": "Octopuses have three hearts. Two pump blood to the gills, and the third pumps it to the rest of the body.",
       "source": "Octopus (Simple English Wikipedia)"
     },
     {
-      "claim": "Hemocyanin is a protein that carries oxygen in some animals, including cephalopods such as octopuses. It contains two copper atoms.",
+      "claim": "Octopus blood carries oxygen with hemocyanin, a protein that contains copper. It turns blue when it holds oxygen.",
       "source": "Hemocyanin (Wikipedia)"
     },
     {
-      "claim": "Oxygen turns hemocyanin from colorless to blue.",
-      "source": "Hemocyanin (Wikipedia)"
+      "claim": "Human blood is red because of hemoglobin, which carries oxygen and contains iron.",
+      "source": "Blood (Wikipedia)"
     },
     {
-      "claim": "Human blood is red because of hemoglobin, and blood is bright red when its hemoglobin carries oxygen. Hemoglobin holds iron.",
-      "source": "Blood (Wikipedia); Hemocyanin (Wikipedia)"
+      "claim": "Hemocyanin was first found in Octopus vulgaris in 1878.",
+      "source": "Hemocyanin (Wikipedia)"
     }
   ],
-  "description": "Octopuses have three hearts and blue blood! Find out why in under a minute.",
   "cast": [
     {
       "name": "Huy",
       "gender": "male",
       "age": "young",
-      "role": "the host: curious, warm, a little funny; explains",
+      "role": "the host (25): curious, warm, a little funny; explains",
       "villain": false
     },
     {
-      "name": "Mai",
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
       "gender": "female",
       "age": "child",
-      "role": "an 8-year-old who asks, guesses and tries things",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
       "villain": false
     }
   ],

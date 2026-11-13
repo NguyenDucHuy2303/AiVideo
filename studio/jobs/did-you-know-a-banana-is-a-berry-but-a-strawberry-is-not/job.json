@@ -1,7 +1,7 @@
 {
   "slug": "did-you-know-a-banana-is-a-berry-but-a-strawberry-is-not",
   "topic": "Did you know a banana is a berry, but a strawberry is not?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.301Z",
@@ -22,6 +22,15 @@
       "at": "2026-11-12T09:59:06.302Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-12T10:55:55.171Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: Claude Code failed on fact-write: You've hit your 5-hour limit · resets 6:40pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work wait"
+    },
+    {
+      "at": "2026-11-13T01:45:50.175Z",
+      "status": "review"
     }
   ],
   "kind": "fact",
@@ -31,5 +40,6 @@
     "value": 7.5,
     "why": "Mở đầu gây tò mò mạnh, chủ đề được nhiều người tìm, kiến thức đúng và dễ dựng minh họa (chuối, dâu, hạt), nhưng giải thích hơi lặp ở đoạn dâu tây, câu \"red part does not grow from the ovary\" còn khó hiểu với trẻ 6–12 tuổi, thiếu ví dụ bất ngờ thêm (như dưa hấu, bí là quả mọng) và lời thoại chưa viết bằng tiếng Việt như kênh yêu cầu.",
     "hash": "02046b73d9915369"
-  }
+  },
+  "retryAt": "2026-11-12T11:25:55.171Z"
 }

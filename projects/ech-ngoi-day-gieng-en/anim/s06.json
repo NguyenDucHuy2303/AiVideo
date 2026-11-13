@@ -1,0 +1,114 @@
+{
+  "narration": "Ếch ưỡn ngực, phồng má, nhìn xuống các bạn nhỏ quanh mình. Ếch (dõng dạc): \"Ta là chúa tể của cả thế gian này! Cua, Ốc, mau cúi chào ta đi!\" Cua (sợ hãi): \"Vâng, vâng, chào chúa tể ạ.\" Mấy chú Ốc sợ quá, rụt cả đầu vào vỏ.",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "call",
+        "thenFace": "proud"
+      },
+      {
+        "id": "cua",
+        "place": "left",
+        "enter": "none",
+        "act": "bow",
+        "face": "worried",
+        "then": "bow",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 12.833333333333334,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "stone",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 0,
+      "scale": 0.7,
+      "facing": 1
+    },
+    {
+      "id": "cua",
+      "type": "animal",
+      "look": {
+        "species": "turtle",
+        "color": "#c8743a"
+      },
+      "x": -520,
+      "scale": 0.55,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "heroic",
+      "face": "proud"
+    },
+    {
+      "actor": "ech",
+      "at": 6.42,
+      "do": "call",
+      "face": "proud",
+      "talk": 1,
+      "move": {
+        "by": 489.99999999999994,
+        "ease": "in"
+      },
+      "dur": 6.413333333333334
+    },
+    {
+      "actor": "cua",
+      "at": 0,
+      "do": "bow",
+      "face": "worried"
+    },
+    {
+      "actor": "cua",
+      "at": 6.42,
+      "do": "bow",
+      "face": "worried"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ech",
+        "cua"
+      ],
+      "push": 0.06
+    }
+  ]
+}

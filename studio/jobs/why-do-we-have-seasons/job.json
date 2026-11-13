@@ -45,6 +45,11 @@
       "at": "2026-11-12T06:52:40.083Z",
       "status": "done",
       "info": "studio tự duyệt: anh chưa duyệt sau 12 giờ, kiểm tra máy đạt (389 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-12T17:42:09.220Z",
+      "status": "done",
+      "info": "3 shorts"
     }
   ],
   "kind": "qa",
@@ -63,5 +68,43 @@
     "problems": [],
     "seconds": 389
   },
-  "autoApproved": "2026-11-12T06:52:40.081Z"
+  "autoApproved": "2026-11-12T06:52:40.081Z",
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "exported": {
+    "long": {
+      "dir": "/home/huynguyen/youtube/Why Do We Have Seasons",
+      "publishAt": "2026-11-15T12:00:00.000Z",
+      "channel": "ask-huy",
+      "at": "2026-11-13T03:46:22.566Z"
+    },
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/Why Do We Have Seasons",
+        "publishAt": "2026-11-16T08:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-13T03:46:22.566Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Why Do We Have Seasons",
+        "publishAt": "2026-11-17T02:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-13T03:46:22.567Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Why Do We Have Seasons",
+        "publishAt": "2026-11-17T08:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-13T03:46:22.568Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "Why Do We Have Seasons",
+    "mtime": 1794541582570.9734,
+    "at": "2026-11-13T03:47:52.274Z"
+  }
 }

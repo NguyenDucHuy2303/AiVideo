@@ -1,19 +1,24 @@
 {
-  "title": "The first balloon riders were a sheep, duck and rooster!",
+  "title": "The first balloon riders were a sheep, a duck and a rooster!",
   "question": "Did you know the first passengers in a hot-air balloon were a sheep, a duck and a rooster?",
-  "answer": "The first passengers to fly in a hot-air balloon, in France in 1783, were a sheep, a duck and a rooster.",
+  "answer": "On 19 September 1783, the first passengers in a hot-air balloon were a sheep, a duck and a rooster.",
   "scenes": [
     {
       "beat": "hook",
       "visual": {
         "kind": "scene",
-        "what": "A big colourful balloon floats in a blue sky. In its basket a fluffy sheep, a duck and a rooster look out happily. Big question mark in the sky."
+        "what": "A big colourful hot-air balloon floats in a blue sky. Below it a basket holds a fluffy sheep, a white duck and a red rooster, all peeking over the edge."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "surprised",
-          "text": "Did you know the first passengers in a hot-air balloon were a sheep, a duck and a rooster?"
+          "text": "Did you know the very first passengers in a hot-air balloon were a sheep, a duck and a rooster?"
+        },
+        {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "A sheep? In the sky?"
         }
       ]
     },
@@ -22,13 +27,13 @@
       "step": 1,
       "visual": {
         "kind": "scene",
-        "what": "Two old-fashioned French brothers in 1700s clothes stand beside a giant sky-blue balloon on the ground. A small sign reads France, 1783."
+        "what": "France in 1783. Two men in old-fashioned clothes, the Montgolfier brothers, stand proudly next to a huge blue and gold balloon. A small calendar page reads 1783."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "happily",
-          "text": "In 1783, two brothers in France built a giant balloon."
+          "text": "It happened in France, in 1783. Two brothers, the Montgolfiers, built a huge balloon."
         }
       ]
     },
@@ -37,18 +42,18 @@
       "step": 2,
       "visual": {
         "kind": "diagram",
-        "what": "Cross-section of a balloon. Cold air dots packed close outside, hot air dots spread out inside. Red arrows point up from the balloon."
+        "what": "Cutaway of a balloon. Small orange flames under the opening warm the air inside. Red dots inside the balloon are spread far apart, blue dots outside are close together. Arrows point up."
       },
       "parts": [
         {
-          "who": "Mai",
-          "how": "surprised",
-          "text": "But how does a balloon float?"
+          "who": "Huy",
+          "how": "happily",
+          "text": "Warm air inside lifted it. Hot air is lighter than cold air, so it rises."
         },
         {
-          "who": "Huy",
-          "how": "firmly",
-          "text": "Hot air is lighter than cold air, so it rises."
+          "who": "Bối",
+          "how": "joyfully",
+          "text": "Like a bubble going up in a pot of water!"
         }
       ]
     },
@@ -57,18 +62,23 @@
       "step": 3,
       "visual": {
         "kind": "scene",
-        "what": "A king and queen in fancy clothes watch from a crowd as the balloon lifts. The sheep, duck and rooster stand in a wicker basket. Calendar shows 19 September."
+        "what": "A wicker basket on the grass. Hùng carries the sheep, the duck on his head and the rooster under his arm, looking a bit flustered, with feathers flying."
       },
       "parts": [
         {
-          "who": "Huy",
-          "how": "happily",
-          "text": "On 19 September, a king and queen watched. The sheep, the duck and the rooster rode in a basket."
+          "who": "Bối",
+          "how": "surprised",
+          "text": "But why animals first?"
         },
         {
-          "who": "Mai",
+          "who": "Huy",
+          "how": "firmly",
+          "text": "Nobody had flown in a balloon before. People were not sure what flying high would do to a living thing. So the animals went first to find out."
+        },
+        {
+          "who": "Hùng",
           "how": "laughing",
-          "text": "A rooster in the sky!"
+          "text": "Oops! The duck is sitting on my head!"
         }
       ]
     },
@@ -76,14 +86,19 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "compare",
-        "what": "A balloon flight path drawn as a line over football pitches, about four and a half pitches long. Label says about 480 metres."
+        "kind": "scene",
+        "what": "The balloon rises over a crowd. A king and queen in fancy clothes wave from the ground. A ruler-style line shows about 480 metres of flight."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "proudly",
-          "text": "They flew about 480 metres. That is more than four football pitches."
+          "text": "On 19 September 1783, the balloon rose for the king and queen. It flew about 480 metres."
+        },
+        {
+          "who": "Beo",
+          "how": "happily",
+          "text": "Did the rooster go cock-a-doodle-doo?"
         }
       ]
     },
@@ -92,72 +107,86 @@
       "step": 5,
       "visual": {
         "kind": "scene",
-        "what": "A balloon tied to the ground by a rope with a person in the basket, then a free balloon floating away. Calendar pages flip."
+        "what": "A calendar flipping from September to November. A second balloon floats freely with two men waving from the basket."
       },
       "parts": [
         {
           "who": "Huy",
-          "how": "happily",
-          "text": "Weeks later, people flew too. But the animals went first!"
+          "how": "joyfully",
+          "text": "Soon after, people flew too. On 21 November 1783, two men took the first free flight."
         }
       ]
     },
     {
       "beat": "recap",
       "visual": {
-        "kind": "host",
-        "what": "Huy and Mai wave at the camera with the three animals peeking out of a small balloon basket behind them. Follow button pops up."
+        "kind": "scene",
+        "what": "All four friends, Huy, Hùng, Bối and Beo, wave beside the balloon basket with the sheep, duck and rooster. A big Subscribe button with the words Ask Huy glows above them."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Huy",
           "how": "joyfully",
-          "text": "Wow, animals flew first!"
+          "text": "So a sheep, a duck and a rooster were the first balloon riders! Follow Ask Huy for more wow facts!"
         },
         {
-          "who": "Huy",
+          "who": "Bối",
           "how": "happily",
-          "text": "Follow Ask Huy for more surprising facts!"
+          "text": "See you soon!"
         }
       ]
     }
   ],
   "facts": [
     {
-      "claim": "The first passenger flight in a hot air balloon was on 19 September 1783 and carried a sheep, a duck and a rooster.",
+      "claim": "The first passenger flight in a hot-air balloon was on 19 September 1783 and carried a sheep, a duck and a rooster.",
       "source": "Balloon (aeronautics)"
     },
     {
-      "claim": "The balloon was built by the Montgolfier brothers and shown to King Louis XVI and Queen Marie Antoinette. The flight went about 480 metres.",
+      "claim": "The balloon was made by the Montgolfier brothers, and the animals flew for about 480 metres in front of the French king and queen.",
       "source": "Hot air balloon"
     },
     {
-      "claim": "The Montgolfier brothers were from Annonay, France.",
-      "source": "Montgolfier brothers"
-    },
-    {
-      "claim": "Hot air is lighter than the same amount of cold air, so it rises and lifts the balloon.",
+      "claim": "Hot air is lighter (less dense) than cold air, so it rises, like a bubble of air in a pot of water.",
       "source": "Hot air balloon"
     },
     {
-      "claim": "The first flight carrying a person was on 15 October 1783 with the balloon tied to the ground. The first free flight was on 21 November 1783.",
+      "claim": "The first flight carrying a person was on 15 October 1783 on a rope, and the first free flight was on 21 November 1783 with two men.",
       "source": "Hot air balloon"
+    },
+    {
+      "claim": "Many people think the animals were sent first as a safe test before people (a common historical explanation, not stated in the sources).",
+      "source": "Basic history knowledge"
     }
   ],
-  "description": "Before any person flew free in a balloon, a sheep, a duck and a rooster took the first ride in France in 1783. Find out how it floated and who watched!",
+  "description": "In 1783, before any person rode in a free balloon, a sheep, a duck and a rooster went up first. Learn why hot air rises and how the first flight went.",
   "cast": [
     {
       "name": "Huy",
       "gender": "male",
       "age": "young",
-      "role": "the host: curious, warm, a little funny; explains",
+      "role": "the host (25): curious, warm, a little funny; explains",
       "villain": false
     },
     {
-      "name": "Mai",
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
       "gender": "female",
       "age": "child",
-      "role": "an 8-year-old who asks, guesses and tries things",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
       "villain": false
     }
   ],

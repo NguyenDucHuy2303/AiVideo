@@ -1,0 +1,277 @@
+{
+  "narration": "Những ngày sau, Ếch theo các bạn đi khắp nơi. Chú ra chợ quê đông vui, ghé ao làng trong mát, ngắm sân đình, rồi lên tận đê sông lộng gió. Ếch (hớn hở): \"Hôm nay mình lại biết thêm một điều mới!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "center",
+        "enter": "from_left",
+        "act": "hop",
+        "face": "joy",
+        "then": "cheer",
+        "thenFace": "joy"
+      }
+    ],
+    "crowd": {
+      "id": "phu_nu_cho",
+      "count": 3,
+      "act": "walk",
+      "then": "walk"
+    },
+    "fx": [],
+    "objects": [],
+    "shot": "track"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 11.933333333333334,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": -1900,
+      "scale": 0.7,
+      "facing": 1
+    },
+    {
+      "id": "phu_nu_cho_1",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "tu_than",
+            "color": "#8b5a2b",
+            "trim": "#5a3a20",
+            "length": "knee",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "inner": {
+            "color": "#c8a46e"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1a1a1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b8e23",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "nonla",
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "phu_nu_cho_2",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "tu_than",
+            "color": "#8b5a2b",
+            "trim": "#5a3a20",
+            "length": "knee",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "inner": {
+            "color": "#c8a46e"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1a1a1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b8e23",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "nonla",
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "phu_nu_cho_3",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "tu_than",
+            "color": "#8b5a2b",
+            "trim": "#5a3a20",
+            "length": "knee",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "inner": {
+            "color": "#c8a46e"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1a1a1a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b8e23",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "nonla",
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": 0,
+        "ease": "out"
+      },
+      "dur": 5.37,
+      "face": "joy"
+    },
+    {
+      "actor": "ech",
+      "at": 5.37,
+      "do": "hop",
+      "face": "joy"
+    },
+    {
+      "actor": "ech",
+      "at": 5.97,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "phu_nu_cho_1",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "by": -500,
+        "ease": "linear"
+      },
+      "dur": 11.933333333333334
+    },
+    {
+      "actor": "phu_nu_cho_1",
+      "at": 5.97,
+      "do": "walk"
+    },
+    {
+      "actor": "phu_nu_cho_2",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "by": -500,
+        "ease": "linear"
+      },
+      "dur": 11.933333333333334
+    },
+    {
+      "actor": "phu_nu_cho_2",
+      "at": 6.32,
+      "do": "walk"
+    },
+    {
+      "actor": "phu_nu_cho_3",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "by": -500,
+        "ease": "linear"
+      },
+      "dur": 11.933333333333334
+    },
+    {
+      "actor": "phu_nu_cho_3",
+      "at": 6.67,
+      "do": "walk"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": [
+        "ech"
+      ],
+      "push": 0.06
+    }
+  ]
+}

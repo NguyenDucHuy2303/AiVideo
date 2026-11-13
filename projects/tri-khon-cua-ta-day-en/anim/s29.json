@@ -1,0 +1,112 @@
+{
+  "narration": "Còn hổ thì vẫn mang những sọc vằn sẫm màu trên bộ lông đỏ cam, bụng trắng, và vẫn được gọi là chúa sơn lâm. Ngày nay hổ còn rất ít trong rừng, nên chúng ta cùng nhau bảo vệ loài vật quý này nhé.",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "ho_van",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "idle",
+        "thenFace": "proud"
+      },
+      {
+        "id": "ho",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "rays",
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 12.066666666666666,
+  "time": "day",
+  "mood": "majestic",
+  "set": {
+    "name": "field",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ho_van",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#e8742a"
+      },
+      "x": 0,
+      "scale": 1.4,
+      "facing": -1
+    },
+    {
+      "id": "ho",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#f0932b"
+      },
+      "x": 582.4,
+      "scale": 1.4,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ho_van",
+      "at": 0,
+      "do": "heroic",
+      "face": "proud"
+    },
+    {
+      "actor": "ho_van",
+      "at": 6.03,
+      "do": "idle",
+      "face": "proud"
+    },
+    {
+      "actor": "ho",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 12.066666666666666,
+      "scale": 2.4
+    },
+    {
+      "fx": "sparkle",
+      "on": "ho_van",
+      "at": 3.6199999999999997,
+      "dur": 7.239999999999999
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "ho_van",
+        "ho"
+      ],
+      "push": 0.06
+    }
+  ]
+}

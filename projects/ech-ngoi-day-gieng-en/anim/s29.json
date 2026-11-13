@@ -1,0 +1,126 @@
+{
+  "narration": "Một chiều, Ếch quay về bên miệng giếng cũ, nhìn xuống gọi bạn. Ếch (vui vẻ): \"Cua ơi, ngoài này rộng lắm! Trước đây tớ sai rồi, cho tớ xin lỗi nhé!\" Cua (mừng rỡ): \"Hay quá! Ếch kể cho tớ nghe với!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ech",
+        "place": "right",
+        "enter": "from_right",
+        "act": "hop",
+        "face": "happy",
+        "then": "call",
+        "thenFace": "happy"
+      },
+      {
+        "id": "cua",
+        "place": "left",
+        "enter": "none",
+        "act": "cheer",
+        "face": "joy",
+        "then": "talk",
+        "thenFace": "joy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 10.766666666666667,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "stone",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "ech",
+      "type": "animal",
+      "look": {
+        "species": "frog",
+        "color": "#5fae4a"
+      },
+      "x": 2420,
+      "scale": 0.7,
+      "facing": -1
+    },
+    {
+      "id": "cua",
+      "type": "animal",
+      "look": {
+        "species": "turtle",
+        "color": "#c8743a"
+      },
+      "x": -520,
+      "scale": 0.55,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ech",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": 520,
+        "ease": "out"
+      },
+      "dur": 4.85,
+      "face": "happy"
+    },
+    {
+      "actor": "ech",
+      "at": 4.85,
+      "do": "hop",
+      "face": "happy"
+    },
+    {
+      "actor": "ech",
+      "at": 5.38,
+      "do": "call",
+      "face": "happy",
+      "talk": 1,
+      "move": {
+        "by": -489.99999999999994,
+        "ease": "in"
+      },
+      "dur": 5.386666666666668
+    },
+    {
+      "actor": "cua",
+      "at": 0,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "cua",
+      "at": 5.38,
+      "do": "talk",
+      "face": "joy",
+      "talk": 1
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ech",
+        "cua"
+      ],
+      "push": 0.06
+    }
+  ]
+}

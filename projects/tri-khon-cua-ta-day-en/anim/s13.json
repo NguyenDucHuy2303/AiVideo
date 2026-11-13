@@ -1,0 +1,88 @@
+{
+  "narration": "Hổ (tức giận): \"Ở nhà à? Vậy ngươi về lấy ngay cho ta xem! Ta muốn xem ngay bây giờ!\" Hổ gầm lên, quẫy đuôi, nằng nặc đòi xem cho bằng được.",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ho",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "angry",
+        "then": "call",
+        "thenFace": "angry"
+      }
+    ],
+    "fx": [
+      "shake"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 7.733333333333333,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "ho",
+      "type": "animal",
+      "look": {
+        "species": "tiger",
+        "color": "#f0932b"
+      },
+      "x": -582.4,
+      "scale": 1.4,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "ho",
+      "at": 0,
+      "do": "call",
+      "face": "angry",
+      "talk": 1,
+      "move": {
+        "by": 840,
+        "ease": "linear"
+      },
+      "dur": 7.733333333333333
+    },
+    {
+      "actor": "ho",
+      "at": 3.87,
+      "do": "call",
+      "face": "angry",
+      "talk": 1,
+      "move": {
+        "by": 979.9999999999999,
+        "ease": "in"
+      },
+      "dur": 3.8633333333333333
+    }
+  ],
+  "fx": [
+    {
+      "fx": "shake",
+      "at": 3.87,
+      "power": 0.5
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "ho"
+      ],
+      "push": 0.06
+    }
+  ]
+}

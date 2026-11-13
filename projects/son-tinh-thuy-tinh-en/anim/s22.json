@@ -1,0 +1,359 @@
+{
+  "narration": "Hai bên đánh nhau ròng rã mấy tháng trời. Cuối cùng, Thủy Tinh sức cùng lực kiệt. Thủy Tinh (mệt): \"Ta không đánh nổi nữa rồi!\" Quân thủy tộc (hoảng hốt): \"Rút lui! Rút về biển thôi!\"",
+  "plan": {
+    "set": "mountain",
+    "time": "night",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "thuy_tinh",
+        "place": "left",
+        "enter": "none",
+        "act": "fall",
+        "face": "sad",
+        "then": "kneel",
+        "thenFace": "sad"
+      },
+      {
+        "id": "son_tinh",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "crowd": {
+      "id": "thuy_toc",
+      "count": 5,
+      "act": "fall",
+      "then": "run"
+    },
+    "fx": [
+      "smoke"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 9.1,
+  "time": "night",
+  "mood": "battle",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "thuy_tinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#1f3f66",
+          "skirt": "#2a3a4a",
+          "trim": "#7fc4c8"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a24"
+        },
+        "tattoo": true,
+        "bracelets": true,
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "iris": "#2a4a6a"
+        }
+      },
+      "x": -520,
+      "scale": 1.15,
+      "facing": 1
+    },
+    {
+      "id": "son_tinh",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "outfit": {
+          "type": "dongson",
+          "color": "#3f7a4a",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "cape": false,
+        "bracelets": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "build": "average",
+        "skin": "#c98f5c",
+        "headwear": "feather_band",
+        "tattoo": true
+      },
+      "x": 520,
+      "scale": 1.05,
+      "facing": -1
+    },
+    {
+      "id": "thuy_toc_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#6fa8a0",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#2a5a70",
+          "trim": "#e8d8b0",
+          "color": "#2f6f86"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "headwear": "feather_band",
+        "bracelets": true,
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 900,
+      "scale": 0.9025,
+      "facing": -1
+    },
+    {
+      "id": "thuy_toc_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#6fa8a0",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#2a5a70",
+          "trim": "#e8d8b0",
+          "color": "#2f6f86"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "headwear": "feather_band",
+        "bracelets": true,
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 1220,
+      "scale": 0.969,
+      "facing": -1
+    },
+    {
+      "id": "thuy_toc_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#6fa8a0",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#2a5a70",
+          "trim": "#e8d8b0",
+          "color": "#2f6f86"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "headwear": "feather_band",
+        "bracelets": true,
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 1540,
+      "scale": 0.9025,
+      "facing": -1
+    },
+    {
+      "id": "thuy_toc_4",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#6fa8a0",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#2a5a70",
+          "trim": "#e8d8b0",
+          "color": "#2f6f86"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "headwear": "feather_band",
+        "bracelets": true,
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 1860,
+      "scale": 0.969,
+      "facing": -1
+    },
+    {
+      "id": "thuy_toc_5",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#6fa8a0",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#2a5a70",
+          "trim": "#e8d8b0",
+          "color": "#2f6f86"
+        },
+        "bareChest": true,
+        "tattoo": true,
+        "headwear": "feather_band",
+        "bracelets": true,
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 2180,
+      "scale": 0.9025,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "thuy_tinh",
+      "at": 0,
+      "do": "fall",
+      "face": "sad"
+    },
+    {
+      "actor": "thuy_tinh",
+      "at": 4.55,
+      "do": "kneel",
+      "face": "sad"
+    },
+    {
+      "actor": "son_tinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "thuy_toc_1",
+      "at": 0,
+      "do": "fall"
+    },
+    {
+      "actor": "thuy_toc_1",
+      "at": 4.55,
+      "do": "run"
+    },
+    {
+      "actor": "thuy_toc_2",
+      "at": 0,
+      "do": "fall"
+    },
+    {
+      "actor": "thuy_toc_2",
+      "at": 4.9,
+      "do": "run"
+    },
+    {
+      "actor": "thuy_toc_3",
+      "at": 0,
+      "do": "fall"
+    },
+    {
+      "actor": "thuy_toc_3",
+      "at": 5.25,
+      "do": "run"
+    },
+    {
+      "actor": "thuy_toc_4",
+      "at": 0,
+      "do": "fall"
+    },
+    {
+      "actor": "thuy_toc_4",
+      "at": 5.6,
+      "do": "run"
+    },
+    {
+      "actor": "thuy_toc_5",
+      "at": 0,
+      "do": "fall"
+    },
+    {
+      "actor": "thuy_toc_5",
+      "at": 5.95,
+      "do": "run"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "smoke",
+      "x": 1800,
+      "at": -2,
+      "dur": 11.1
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "thuy_tinh",
+        "son_tinh"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 4.55,
+      "type": "full",
+      "on": [
+        "thuy_tinh"
+      ],
+      "push": 0.06
+    }
+  ]
+}

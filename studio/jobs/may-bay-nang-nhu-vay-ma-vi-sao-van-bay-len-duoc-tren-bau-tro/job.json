@@ -22,6 +22,36 @@
       "at": "2026-11-12T09:59:06.300Z",
       "status": "rewrite",
       "info": "đổi dàn nhân vật: Bối, Hùng, Beo"
+    },
+    {
+      "at": "2026-11-12T10:51:38.327Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: Claude Code failed on qa-rewrite: You've hit your 5-hour limit · resets 6:40pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work wait"
+    },
+    {
+      "at": "2026-11-13T01:44:38.735Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T02:14:55.856Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T02:45:02.823Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T03:15:07.282Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T03:45:12.763Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
     }
   ],
   "kind": "qa-vi",
@@ -31,5 +61,6 @@
     "value": 8.4,
     "why": "Điểm mạnh: mở đầu bằng câu hỏi gần gũi và so sánh \"hàng trăm xe máy\", chủ đề rất nhiều người tìm, giải thích đúng (có lưu ý lực nâng phức tạp, tránh lỗi \"đường đi dài hơn\"), có bốn bước ghi nhớ, thí nghiệm máy bay giấy và nhiều cảnh dễ dựng; điểm yếu: hơi dài và nặng khái niệm (áp suất, góc tấn, bốn lực, cánh tà, đuôi) nên dễ loãng với trẻ 6–12 tuổi, và có vài chỗ nhỏ chưa chặt (giải thích áp suất chưa liên kết rõ, lời \"nặng hàng nghìn xe máy\" hơi mơ hồ).",
     "hash": "3e419dace58485f4"
-  }
+  },
+  "retryAt": "2026-11-13T04:15:12.762Z"
 }
