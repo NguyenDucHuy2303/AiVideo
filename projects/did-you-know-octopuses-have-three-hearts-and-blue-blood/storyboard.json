@@ -1,0 +1,72 @@
+{
+  "title": "An Octopus Has 3 Hearts and Blue Blood!",
+  "kind": "story",
+  "scenes": [
+    {
+      "narration": "Huy (surprised): \"Did you know an octopus has three hearts and blue blood?\" Beo (surprised): \"Three hearts? I only have one!\"",
+      "chapter": "An Octopus Has 3 Hearts and Blue Blood!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (happily): \"Two hearts send blood to the gills. Gills are how an octopus takes oxygen from the water.\"",
+      "chapter": "An Octopus Has 3 Hearts and Blue Blood!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (proudly): \"The third heart pumps blood to the rest of the body.\" Bối (joyfully): \"So every heart has its own job!\"",
+      "chapter": "An Octopus Has 3 Hearts and Blue Blood!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (happily): \"Your blood is red because it carries oxygen with iron.\"",
+      "chapter": "An Octopus Has 3 Hearts and Blue Blood!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (firmly): \"Octopus blood uses copper instead. Copper makes the blood blue when it carries oxygen.\" Hùng (worried): \"Oops, I dropped my copper coin!\" Beo (happily): \"But it is orange, not blue!\"",
+      "chapter": "An Octopus Has 3 Hearts and Blue Blood!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (joyfully): \"Three hearts and blue blood. Wow! Follow Ask Huy for more amazing facts!\" Bối (laughing): \"See you soon!\"",
+      "chapter": "An Octopus Has 3 Hearts and Blue Blood!",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "castFile": "cast.json",
+  "duration": 5.23,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "inside a busy beehive with hexagon honeycomb cells",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -250,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": 240,
+      "facing": -1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": 415,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 1.31,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 3.66,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "cheer",
+      "face": "joy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "share": 0.62
+    }
+  ],
+  "mood": "playful"
+}

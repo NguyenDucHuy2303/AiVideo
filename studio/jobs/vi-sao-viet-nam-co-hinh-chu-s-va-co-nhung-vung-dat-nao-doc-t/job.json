@@ -57,6 +57,51 @@
       "at": "2026-11-13T04:13:23.426Z",
       "status": "rewrite",
       "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T04:43:27.158Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T05:13:30.710Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T05:43:34.186Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T06:13:37.324Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T06:43:40.549Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T07:14:03.388Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T07:44:26.264Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T09:19:56.640Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 81274 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and"
+    },
+    {
+      "at": "2026-11-13T10:01:36.819Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 120000 write tokens; gemma3:12b is not installed, so the work waits a"
     }
   ],
   "kind": "qa-vi",
@@ -67,5 +112,5 @@
     "why": "Mở đầu cuốn (\"bản đồ vẫn lớn thêm mỗi năm\"), bố cục bốn bước rõ, có thí nghiệm cát và mẹo \"sông Chín Rồng\", chủ đề phổ biến và dễ dựng bằng bản đồ; nhưng nhiều số liệu dày đặc (đặc biệt \"13 lần phù sa\", chiều dài Mê Kông, mốc \"hơn ba trăm năm\" với Lào) còn lỏng hoặc cần kiểm chứng, nói Cửu Long \"vẫn bồi thêm\" bỏ qua thực tế sạt lở/sụt lún, và phần đi dọc chữ S hơi giống liệt kê địa lý nên dễ chùng ở giữa.",
     "hash": "eb164fc5ec66029e"
   },
-  "retryAt": "2026-11-13T04:43:23.426Z"
+  "retryAt": "2026-11-13T10:31:36.818Z"
 }

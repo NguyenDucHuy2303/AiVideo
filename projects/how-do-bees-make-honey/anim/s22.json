@@ -1,6 +1,6 @@
 {
   "castFile": "cast.json",
-  "duration": 20.63,
+  "duration": 18.7,
   "time": "day",
   "style": "hien_dai",
   "styleLook": {},
@@ -16,10 +16,24 @@
       "x": 0
     },
     {
-      "id": "mai",
+      "id": "hung",
       "type": "human",
-      "look": "mai",
-      "x": -140,
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
       "facing": 1
     }
   ],
@@ -31,10 +45,34 @@
       "face": "happy"
     },
     {
-      "actor": "mai",
+      "actor": "hung",
       "at": 0,
-      "do": "raise",
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 13.09,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "idle",
       "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "worry",
+      "face": "worried"
     }
   ],
   "shots": [
@@ -43,15 +81,24 @@
       "type": "full",
       "on": [
         "huy",
-        "mai"
+        "hung",
+        "boi",
+        "beo"
       ],
-      "dx": 0.33,
-      "share": 0.56,
-      "gy": 0.9
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
     }
   ],
+  "mood": "playful",
   "board": {
-    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0.3\" x=\"500\" y=\"70\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Honey Through Time</text><line class=\"draw\" data-in=\"1\" x1=\"920\" y1=\"340\" x2=\"90\" y2=\"340\" stroke=\"#3a2a20\" stroke-width=\"8\" stroke-linecap=\"round\"/><polygon data-in=\"2\" points=\"60,340 100,314 100,366\" fill=\"#3a2a20\"/><g data-in=\"3\"><rect x=\"170\" y=\"110\" width=\"80\" height=\"22\" rx=\"8\" fill=\"#b5651d\" stroke=\"#3a2a20\" stroke-width=\"5\"/><rect x=\"182\" y=\"130\" width=\"56\" height=\"34\" fill=\"#b5651d\" stroke=\"#3a2a20\" stroke-width=\"5\"/><ellipse cx=\"210\" cy=\"235\" rx=\"85\" ry=\"85\" fill=\"#c97b3d\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M135 215 Q210 245 285 215\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle cx=\"210\" cy=\"270\" r=\"12\" fill=\"#ffb300\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><text data-in=\"3.5\" x=\"210\" y=\"450\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"32\" fill=\"#2a2a40\">Thousands of years</text><g data-in=\"5\" class=\"pulse\"><rect x=\"740\" y=\"105\" width=\"130\" height=\"36\" rx=\"10\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\"/><rect x=\"725\" y=\"140\" width=\"160\" height=\"180\" rx=\"24\" fill=\"#ffb300\" stroke=\"#3a2a20\" stroke-width=\"5\"/><rect x=\"750\" y=\"205\" width=\"110\" height=\"50\" rx=\"8\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text x=\"805\" y=\"243\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"32\" font-weight=\"bold\" fill=\"#2a2a40\">HONEY</text></g><text data-in=\"5.5\" x=\"805\" y=\"450\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"32\" fill=\"#2a2a40\">Today</text><text data-in=\"8\" x=\"500\" y=\"200\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"38\" font-weight=\"bold\" fill=\"#43a047\">Still safe to eat?</text><text data-in=\"12.5\" x=\"500\" y=\"280\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"38\" font-weight=\"bold\" fill=\"#e53935\">Keep the lid on!</text></svg>"
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"75\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.3\">Honey is a fortress</text><circle cx=\"500\" cy=\"340\" r=\"190\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"6\" data-in=\"1\"/><ellipse cx=\"440\" cy=\"270\" rx=\"50\" ry=\"30\" fill=\"#ffd23f\" data-in=\"1\"/><text x=\"500\" y=\"360\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"2\">sugar!</text><circle cx=\"160\" cy=\"200\" r=\"48\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\" class=\"float\" data-in=\"5\"/><circle cx=\"145\" cy=\"190\" r=\"6\" fill=\"#3a2a20\" data-in=\"5\"/><circle cx=\"177\" cy=\"190\" r=\"6\" fill=\"#3a2a20\" data-in=\"5\"/><path d=\"M142 225 Q160 205 178 225\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"5\"/><circle cx=\"840\" cy=\"220\" r=\"48\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"5\" class=\"float\" data-in=\"7\"/><circle cx=\"825\" cy=\"210\" r=\"6\" fill=\"#3a2a20\" data-in=\"7\"/><circle cx=\"857\" cy=\"210\" r=\"6\" fill=\"#3a2a20\" data-in=\"7\"/><path d=\"M822 245 Q840 225 858 245\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"7\"/><circle cx=\"170\" cy=\"470\" r=\"48\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\" class=\"float\" data-in=\"9\"/><circle cx=\"155\" cy=\"460\" r=\"6\" fill=\"#3a2a20\" data-in=\"9\"/><circle cx=\"187\" cy=\"460\" r=\"6\" fill=\"#3a2a20\" data-in=\"9\"/><path d=\"M152 495 Q170 475 188 495\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"9\"/><text x=\"160\" y=\"290\" font-family=\"sans-serif\" font-size=\"34\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"6\">germ</text></svg>",
+    "style": "sketch",
+    "icons": {}
   },
   "speakerShots": false,
   "backdrop": {

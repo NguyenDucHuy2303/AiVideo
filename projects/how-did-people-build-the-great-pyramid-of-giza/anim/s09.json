@@ -1,0 +1,99 @@
+{
+  "castFile": "cast.json",
+  "duration": 20.8,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a dark cave in Egypt with torches and old papyrus pages",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -250,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": 240,
+      "facing": -1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": 415,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "hung",
+      "at": 1.4,
+      "do": "point",
+      "face": "surprised"
+    },
+    {
+      "actor": "hung",
+      "at": 14.56,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "share": 0.62
+    }
+  ],
+  "mood": "playful",
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/aaa612ad3e7f.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

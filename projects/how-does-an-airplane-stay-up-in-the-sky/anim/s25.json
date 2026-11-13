@@ -1,0 +1,99 @@
+{
+  "castFile": "cast.json",
+  "duration": 16.47,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"70\" font-family=\"sans-serif\" font-size=\"42\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.3\">Two ways, one lift</text><ellipse cx=\"250\" cy=\"230\" rx=\"130\" ry=\"28\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"1\"/><path class=\"flow\" d=\"M410 250 L440 340 M370 260 L390 350 M330 260 L340 350\" stroke=\"#4aa3e0\" stroke-width=\"8\" stroke-dasharray=\"14 10\" fill=\"none\" data-in=\"3\"/><text x=\"250\" y=\"400\" font-family=\"sans-serif\" font-size=\"34\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"3\">Air pushed down</text><ellipse cx=\"750\" cy=\"230\" rx=\"130\" ry=\"28\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"6\"/><path class=\"flow\" d=\"M700 190 L700 130 M760 190 L760 130 M820 190 L820 130\" stroke=\"#e53935\" stroke-width=\"8\" stroke-dasharray=\"14 10\" fill=\"none\" data-in=\"7\"/><path d=\"M700 270 L700 330 M760 270 L760 330 M820 270 L820 330\" stroke=\"#fb8c00\" stroke-width=\"8\" fill=\"none\" data-in=\"7.5\"/><text x=\"750\" y=\"400\" font-family=\"sans-serif\" font-size=\"34\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"7.5\">Pressure</text><path d=\"M250 420 L460 470 M750 420 L540 470\" stroke=\"#3a2a20\" stroke-width=\"5\" fill=\"none\" data-in=\"9\"/><polygon class=\"pulse\" points=\"500,440 560,500 525,500 525,560 475,560 475,500 440,500\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"10\"/><text x=\"640\" y=\"530\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#2a2a40\" data-in=\"11\">LIFT</text></svg>",
+    "style": "grid",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

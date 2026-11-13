@@ -1,0 +1,111 @@
+{
+  "castFile": "cast.json",
+  "duration": 19.13,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 13.39,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"70\" font-family=\"sans-serif\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.5\">Jean-Pierre Houdin's idea</text><polygon points=\"150,510 450,140 750,510\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"2\"/><polyline points=\"250,480 650,470 300,400 600,390 350,330 550,320 400,260 500,250 450,200\" fill=\"none\" stroke=\"#fb8c00\" stroke-width=\"10\" stroke-dasharray=\"16 10\" class=\"flow\" data-in=\"5\"/><text x=\"60\" y=\"250\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\" data-in=\"7\">inside ramp</text><polygon points=\"750,510 900,510 700,440\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"10\"/><text x=\"720\" y=\"555\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\" data-in=\"11\">outside ramp</text><text x=\"640\" y=\"250\" font-family=\"sans-serif\" font-size=\"56\" fill=\"#8e24aa\" class=\"pulse\" data-in=\"13\">?</text></svg>",
+    "style": "card",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

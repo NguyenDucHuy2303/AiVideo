@@ -1,0 +1,99 @@
+{
+  "castFile": "cast.json",
+  "duration": 14.27,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a cozy living room",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -250,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": 240,
+      "facing": -1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": 415,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "give",
+      "face": "proud"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "cheer",
+      "face": "laugh"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 1.4,
+      "do": "point",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 9.99,
+      "do": "talk",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "share": 0.62
+    }
+  ],
+  "mood": "playful",
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/593617cb9e14.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

@@ -87,45 +87,47 @@
     "shorts/3.mp4"
   ],
   "exported": {
-    "long": {
-      "dir": "/home/huynguyen/youtube/Sơn Tinh – Thủy Tinh",
-      "publishAt": "2026-11-13T12:30:00.000Z",
-      "channel": "huy-ke-chuyen",
-      "at": "2026-11-13T03:46:22.514Z"
-    },
     "shorts": [
       {
         "dir": "/home/huynguyen/youtube/Sơn Tinh – Thủy Tinh",
         "publishAt": "2026-11-14T00:30:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T03:46:22.516Z"
+        "at": "2026-11-13T07:47:23.680Z"
       },
       {
         "dir": "/home/huynguyen/youtube/Sơn Tinh – Thủy Tinh",
         "publishAt": "2026-11-14T05:00:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T03:46:22.517Z"
+        "at": "2026-11-13T07:47:23.685Z"
       },
       {
         "dir": "/home/huynguyen/youtube/Sơn Tinh – Thủy Tinh",
         "publishAt": "2026-11-14T10:00:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T03:46:22.519Z"
+        "at": "2026-11-13T07:47:23.690Z"
       }
     ]
   },
   "drive": {
     "folder": "Sơn Tinh – Thủy Tinh",
-    "mtime": 1794541582530.9734,
-    "at": "2026-11-13T03:46:52.959Z"
+    "mtime": 1794556043711.4985,
+    "at": "2026-11-13T07:48:54.401Z"
   },
   "published": {
     "en": {
       "videoId": "uDZZYe6wJz4",
       "url": "https://youtu.be/uDZZYe6wJz4",
       "publishAt": "2026-11-13T12:00:00.000Z",
-      "channel": "ask-huy",
+      "channel": "huy-ke-chuyen",
       "at": "2026-11-13T03:43:04.456Z",
+      "manual": true
+    },
+    "long": {
+      "videoId": "-4eGEY7uKZc",
+      "url": "https://youtu.be/-4eGEY7uKZc",
+      "publishAt": "2026-11-13T12:30:00.000Z",
+      "channel": "huy-ke-chuyen",
+      "at": "2026-11-13T07:39:36.562Z",
       "manual": true
     }
   }

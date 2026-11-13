@@ -1,0 +1,111 @@
+{
+  "castFile": "cast.json",
+  "duration": 8.47,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "determined"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "determined"
+    },
+    {
+      "actor": "huy",
+      "at": 5.93,
+      "do": "talk",
+      "face": "determined"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"80\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0\">Wing Bends the Air Down</text><path d=\"M370 320 Q380 260 480 260 Q600 255 680 310 L685 322 Q520 335 385 335 Q368 334 370 320 Z\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"6\" data-in=\"0.5\" transform=\"rotate(-8 520 300)\"/><path d=\"M60 220 Q300 220 480 200 Q650 200 760 300 L900 440\" stroke=\"#4aa3e0\" stroke-width=\"6\" fill=\"none\" stroke-dasharray=\"20 14\" class=\"flow\" data-in=\"1.5\"/><path d=\"M60 280 Q300 280 400 270\" stroke=\"#4aa3e0\" stroke-width=\"6\" fill=\"none\" stroke-dasharray=\"20 14\" class=\"flow\" data-in=\"2.5\"/><path d=\"M60 380 Q400 390 700 380 Q820 390 900 480\" stroke=\"#4aa3e0\" stroke-width=\"6\" fill=\"none\" stroke-dasharray=\"20 14\" class=\"flow\" data-in=\"3.5\"/><path d=\"M830 380 L900 520\" stroke=\"#e53935\" stroke-width=\"8\" fill=\"none\" data-in=\"5\"/><polygon points=\"875 500 920 540 930 480\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\" data-in=\"5\"/><text x=\"620\" y=\"560\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#2a2a40\" data-in=\"5.5\">Air goes down</text></svg>",
+    "style": "grid",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

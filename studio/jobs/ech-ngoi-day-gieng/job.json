@@ -65,6 +65,11 @@
       "at": "2026-11-12T22:59:42.764Z",
       "status": "done",
       "info": "bản tiếng Anh: xong"
+    },
+    {
+      "at": "2026-11-13T07:10:24.653Z",
+      "status": "done",
+      "info": "bản tiếng Anh: giọng xong"
     }
   ],
   "kind": "ngụ ngôn",
@@ -112,39 +117,39 @@
       "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
       "publishAt": "2026-11-16T12:30:00.000Z",
       "channel": "huy-ke-chuyen",
-      "at": "2026-11-13T03:46:22.654Z"
+      "at": "2026-11-13T08:10:10.201Z"
     },
     "shorts": [
       {
         "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
         "publishAt": "2026-11-17T00:30:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T03:46:22.659Z"
+        "at": "2026-11-13T08:10:10.214Z"
       },
       {
         "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
         "publishAt": "2026-11-17T05:00:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T03:46:22.662Z"
+        "at": "2026-11-13T08:10:10.227Z"
       },
       {
         "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
         "publishAt": "2026-11-17T10:00:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T03:46:22.666Z"
+        "at": "2026-11-13T08:10:10.231Z"
       }
     ],
     "en": {
       "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
-      "publishAt": "2026-11-16T12:00:00.000Z",
-      "channel": "ask-huy",
-      "at": "2026-11-13T03:46:22.668Z"
+      "publishAt": "2026-11-18T01:30:00.000Z",
+      "channel": "huy-ke-chuyen",
+      "at": "2026-11-13T08:10:10.249Z"
     }
   },
-  "english": "done",
   "drive": {
     "folder": "Ếch Ngồi Đáy Giếng",
-    "mtime": 1794541582673.9731,
-    "at": "2026-11-13T03:48:38.757Z"
-  }
+    "mtime": 1794557410260.1128,
+    "at": "2026-11-13T08:10:42.081Z"
+  },
+  "english": "ready"
 }

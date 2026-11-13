@@ -65,6 +65,11 @@
       "at": "2026-11-12T23:03:09.037Z",
       "status": "done",
       "info": "bản tiếng Anh: giọng xong"
+    },
+    {
+      "at": "2026-11-13T07:11:02.175Z",
+      "status": "done",
+      "info": "bản tiếng Anh: giọng xong"
     }
   ],
   "kind": "ngụ ngôn",
@@ -125,33 +130,33 @@
       "dir": "/home/huynguyen/youtube/Trí khôn của ta đây",
       "publishAt": "2026-11-14T12:30:00.000Z",
       "channel": "huy-ke-chuyen",
-      "at": "2026-11-13T03:46:22.595Z"
+      "at": "2026-11-13T07:47:23.866Z"
     },
     "shorts": [
       {
         "dir": "/home/huynguyen/youtube/Trí khôn của ta đây",
         "publishAt": "2026-11-15T00:30:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T03:46:22.597Z"
+        "at": "2026-11-13T07:47:23.869Z"
       },
       {
         "dir": "/home/huynguyen/youtube/Trí khôn của ta đây",
         "publishAt": "2026-11-15T05:00:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T03:46:22.598Z"
+        "at": "2026-11-13T07:47:23.870Z"
       },
       {
         "dir": "/home/huynguyen/youtube/Trí khôn của ta đây",
         "publishAt": "2026-11-15T10:00:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T03:46:22.599Z"
+        "at": "2026-11-13T07:47:23.874Z"
       }
     ]
   },
   "drive": {
     "folder": "Trí khôn của ta đây",
-    "mtime": 1794541582613.9731,
-    "at": "2026-11-13T03:47:55.474Z"
+    "mtime": 1794556043882.4978,
+    "at": "2026-11-13T07:51:49.531Z"
   },
   "english": "ready"
 }

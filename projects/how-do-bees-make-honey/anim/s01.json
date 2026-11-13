@@ -1,13 +1,13 @@
 {
   "castFile": "cast.json",
-  "duration": 11.53,
+  "duration": 16.87,
   "time": "day",
   "style": "hien_dai",
   "styleLook": {},
   "set": {
     "name": "plain"
   },
-  "place": "a sunny breakfast kitchen",
+  "place": "a sunny kitchen table with a jar of golden honey",
   "cast": [
     {
       "id": "huy",
@@ -16,10 +16,24 @@
       "x": 0
     },
     {
-      "id": "mai",
+      "id": "hung",
       "type": "human",
-      "look": "mai",
-      "x": 250,
+      "look": "hung",
+      "x": -250,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": 240,
+      "facing": -1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": 415,
       "facing": -1
     }
   ],
@@ -31,10 +45,22 @@
       "face": "happy"
     },
     {
-      "actor": "mai",
+      "actor": "hung",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
       "at": 0,
       "do": "raise",
       "face": "worried"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "cheer",
+      "face": "surprised"
     }
   ],
   "shots": [
@@ -43,13 +69,16 @@
       "type": "full",
       "on": [
         "huy",
-        "mai"
+        "hung",
+        "boi",
+        "beo"
       ],
       "share": 0.62
     }
   ],
+  "mood": "playful",
   "backdrop": {
-    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/fc8f98815650.png",
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/658fcea9c0b4.png",
     "size": [
       768,
       448

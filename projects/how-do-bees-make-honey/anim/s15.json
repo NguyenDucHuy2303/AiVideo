@@ -1,6 +1,6 @@
 {
   "castFile": "cast.json",
-  "duration": 11.13,
+  "duration": 14.17,
   "time": "day",
   "style": "hien_dai",
   "styleLook": {},
@@ -14,6 +14,27 @@
       "type": "human",
       "look": "huy",
       "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
     }
   ],
   "actions": [
@@ -24,16 +45,34 @@
       "face": "happy"
     },
     {
-      "actor": "huy",
-      "at": 1.4,
-      "do": "point",
-      "face": "happy"
+      "actor": "hung",
+      "at": 0,
+      "do": "talk",
+      "face": "determined"
     },
     {
-      "actor": "huy",
-      "at": 7.79,
+      "actor": "hung",
+      "at": 1.4,
+      "do": "point",
+      "face": "determined"
+    },
+    {
+      "actor": "hung",
+      "at": 9.92,
       "do": "talk",
-      "face": "happy"
+      "face": "determined"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
     }
   ],
   "shots": [
@@ -41,15 +80,31 @@
       "at": 0,
       "type": "full",
       "on": [
-        "huy"
+        "huy",
+        "hung",
+        "boi",
+        "beo"
       ],
-      "dx": 0.33,
-      "share": 0.56,
-      "gy": 0.9
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
     }
   ],
+  "mood": "playful",
   "board": {
-    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"70\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Why Bubbles?</text><line x1=\"500\" y1=\"110\" x2=\"500\" y2=\"560\" stroke=\"#3a2a20\" stroke-width=\"4\" stroke-dasharray=\"14 12\"/><circle data-in=\"1\" cx=\"250\" cy=\"330\" r=\"90\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"6\"/><g data-in=\"2\" class=\"float\"><path d=\"M250 235 q14 -14 0 -28 t0 -28 t0 -28\" fill=\"none\" stroke=\"#4aa3e0\" stroke-width=\"6\"/><polygon points=\"238,157 262,157 250,133\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"3\"/></g><ellipse data-in=\"3.5\" cx=\"740\" cy=\"330\" rx=\"190\" ry=\"45\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"6\"/><g data-in=\"5\" class=\"float\"><path d=\"M610 270 q14 -14 0 -28 t0 -28 t0 -28\" fill=\"none\" stroke=\"#4aa3e0\" stroke-width=\"6\"/><polygon points=\"598,190 622,190 610,166\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"3\"/><path d=\"M690 270 q14 -14 0 -28 t0 -28 t0 -28\" fill=\"none\" stroke=\"#4aa3e0\" stroke-width=\"6\"/><polygon points=\"678,190 702,190 690,166\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"3\"/><path d=\"M790 270 q14 -14 0 -28 t0 -28 t0 -28\" fill=\"none\" stroke=\"#4aa3e0\" stroke-width=\"6\"/><polygon points=\"778,190 802,190 790,166\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"3\"/><path d=\"M870 270 q14 -14 0 -28 t0 -28 t0 -28\" fill=\"none\" stroke=\"#4aa3e0\" stroke-width=\"6\"/><polygon points=\"858,190 882,190 870,166\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"3\"/></g><text data-in=\"1.5\" x=\"250\" y=\"480\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"38\" fill=\"#2a2a40\">Thick drop</text><text data-in=\"4\" x=\"740\" y=\"480\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"38\" fill=\"#2a2a40\">Thin bubble</text><text data-in=\"2.5\" x=\"250\" y=\"535\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#4aa3e0\">Slow</text><text data-in=\"6.5\" x=\"740\" y=\"535\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#e53935\">Fast!</text></svg>"
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"80\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.5\">Bubble time</text><icon name=\"honeybee\" x=\"250\" y=\"150\" size=\"500\" data-in=\"1\"/><circle cx=\"720\" cy=\"300\" r=\"60\" fill=\"#fff3b0\" stroke=\"#fb8c00\" stroke-width=\"6\" class=\"pulse\" data-in=\"4\"/><path d=\"M640 390 L700 350\" stroke=\"#e53935\" stroke-width=\"6\" fill=\"none\" class=\"flow\" stroke-dasharray=\"14 10\" data-in=\"6\"/><path d=\"M800 250 L840 200\" stroke=\"#43a047\" stroke-width=\"6\" fill=\"none\" class=\"flow\" stroke-dasharray=\"14 10\" data-in=\"8\"/><text x=\"850\" y=\"180\" font-family=\"sans-serif\" font-size=\"32\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"8\">Out</text><text x=\"600\" y=\"430\" font-family=\"sans-serif\" font-size=\"32\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"6\">In</text></svg>",
+    "style": "sketch",
+    "icons": {
+      "honeybee": {
+        "body": "<g fill=\"none\"><path fill=\"#212121\" d=\"M5.43 13.36c-.28 0-.5-.22-.5-.5V12c0-.71-.4-1.35-1.04-1.67l-.67-.38a.5.5 0 1 1 .44-.9l.68.38c.98.49 1.59 1.47 1.59 2.57v.86c0 .28-.22.5-.5.5M24.3 27.001h-1.47c-1.02 0-1.84-.83-1.84-1.84v-3.36c0-.41.34-.75.75-.75s.75.34.75.75v3.35c0 .19.15.34.34.34h1.47c.41 0 .75.34.75.75s-.34.76-.75.76m-14.5 1.98c-.19 0-.38-.07-.53-.22a.754.754 0 0 1 0-1.06l.65-.65c.36-.36.56-.85.56-1.36v-1.89c0-.41.34-.75.75-.75s.75.34.75.75v1.89c0 .91-.36 1.77-1 2.42l-.65.65c-.15.15-.34.22-.53.22m8.84-.22c.15.15.34.22.53.22s.38-.07.53-.22c.29-.29.29-.77 0-1.06l-.65-.65c-.36-.36-.56-.85-.56-1.36v-1.89c0-.41-.34-.75-.75-.75s-.75.34-.75.75v1.89c0 .91.35 1.77 1 2.42zM28 16.36l1.78.38c.29.06.29.47 0 .54l-1.78.38l-1-.66z\"/><path fill=\"#ffb02e\" d=\"M17 25.001h2.11c.647 0 1.282-.09 1.89-.26L23.5 17L21 9.28a7 7 0 0 0-1.89-.259H17L15 17zM12 9.147a8 8 0 0 0-4.819 2.884L7.5 13.5v7l-.306 1.507A8 8 0 0 0 12 24.875L14.5 17zM24.5 17l1.5-3.377l2 2.755v1.267l-2 2.754z\"/><path fill=\"#533566\" d=\"M16.98 9.021h-3.77c-.42.01-.83.06-1.23.13v15.72c.4.07.81.12 1.23.13h3.77zm-8.61 4.36c0-.75-.6-1.35-1.34-1.36h-.08c-2.74 0-4.95 2.24-4.95 5s2.22 5 4.95 5h.08c.75-.02 1.34-.62 1.34-1.37zm16.67-1.08l.94 1.3v6.8l-.94 1.3c-.94 1.5-2.4 2.57-4.06 3.03V9.271c1.67.47 3.12 1.53 4.06 3.03\"/><path fill=\"#aeddff\" d=\"M14.94 4.74A4.47 4.47 0 0 1 18.57 3c2.39.04 4.35 1.99 4.41 4.38a4.49 4.49 0 0 1-4.49 4.6H10.9c-.55 0-.86-.63-.54-1.07l4.5-6.06c.02-.03.04-.05.06-.08z\"/><path fill=\"#212121\" d=\"M5.44 18.001a1 1 0 1 0 0-2a1 1 0 0 0 0 2\"/></g>",
+        "width": 32,
+        "height": 32
+      }
+    }
   },
   "speakerShots": false,
   "backdrop": {

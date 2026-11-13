@@ -1,0 +1,99 @@
+{
+  "castFile": "cast.json",
+  "duration": 6.17,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a colorful coral reef under the sea",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -250,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": 240,
+      "facing": -1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": 415,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 4.32,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "worry",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "share": 0.62
+    }
+  ],
+  "mood": "playful",
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/9174805d67af.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

@@ -123,33 +123,13 @@
       "dir": "/home/huynguyen/youtube/Học tiếng Anh Đồ dùng học tập",
       "publishAt": "2026-11-17T12:30:00.000Z",
       "channel": "huy-ke-chuyen",
-      "at": "2026-11-13T02:31:03.174Z"
-    },
-    "shorts": [
-      {
-        "dir": "/home/huynguyen/youtube/Học tiếng Anh Đồ dùng học tập",
-        "publishAt": "2026-11-18T00:30:00.000Z",
-        "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T02:31:03.175Z"
-      },
-      {
-        "dir": "/home/huynguyen/youtube/Học tiếng Anh Đồ dùng học tập",
-        "publishAt": "2026-11-18T05:00:00.000Z",
-        "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T02:31:03.175Z"
-      },
-      {
-        "dir": "/home/huynguyen/youtube/Học tiếng Anh Đồ dùng học tập",
-        "publishAt": "2026-11-18T10:00:00.000Z",
-        "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T02:31:03.176Z"
-      }
-    ]
+      "at": "2026-11-13T07:47:23.984Z"
+    }
   },
   "drive": {
     "folder": "Học tiếng Anh Đồ dùng học tập",
-    "mtime": 1794537063182.185,
-    "at": "2026-11-13T02:31:30.837Z"
+    "mtime": 1794556043988.4973,
+    "at": "2026-11-13T08:07:49.264Z"
   },
   "stage": "ready"
 }

@@ -1,13 +1,13 @@
 {
   "castFile": "cast.json",
-  "duration": 18.53,
+  "duration": 16.57,
   "time": "day",
   "style": "hien_dai",
   "styleLook": {},
   "set": {
     "name": "plain"
   },
-  "place": "a sunny flower meadow",
+  "place": "a garden with flowers",
   "cast": [
     {
       "id": "huy",
@@ -16,10 +16,24 @@
       "x": 0
     },
     {
-      "id": "mai",
+      "id": "hung",
       "type": "human",
-      "look": "mai",
-      "x": 250,
+      "look": "hung",
+      "x": -250,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": 240,
+      "facing": -1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": 415,
       "facing": -1
     }
   ],
@@ -31,10 +45,34 @@
       "face": "happy"
     },
     {
-      "actor": "mai",
+      "actor": "hung",
       "at": 0,
-      "do": "raise",
+      "do": "idle",
       "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "talk",
+      "face": "proud"
+    },
+    {
+      "actor": "boi",
+      "at": 1.4,
+      "do": "point",
+      "face": "proud"
+    },
+    {
+      "actor": "boi",
+      "at": 11.6,
+      "do": "talk",
+      "face": "proud"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
     }
   ],
   "shots": [
@@ -43,13 +81,16 @@
       "type": "full",
       "on": [
         "huy",
-        "mai"
+        "hung",
+        "boi",
+        "beo"
       ],
       "share": 0.62
     }
   ],
+  "mood": "playful",
   "backdrop": {
-    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/9acf33b91f01.png",
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/172af13539c6.png",
     "size": [
       768,
       448

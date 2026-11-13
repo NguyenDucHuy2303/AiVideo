@@ -52,6 +52,51 @@
       "at": "2026-11-13T03:45:12.763Z",
       "status": "rewrite",
       "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T04:15:23.788Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T04:45:27.362Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T05:15:30.941Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T05:45:34.417Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T06:15:37.568Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T06:45:40.885Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T07:16:03.626Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T07:46:26.598Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T09:19:56.685Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
     }
   ],
   "kind": "qa-vi",
@@ -62,5 +107,5 @@
     "why": "Điểm mạnh: mở đầu bằng câu hỏi gần gũi và so sánh \"hàng trăm xe máy\", chủ đề rất nhiều người tìm, giải thích đúng (có lưu ý lực nâng phức tạp, tránh lỗi \"đường đi dài hơn\"), có bốn bước ghi nhớ, thí nghiệm máy bay giấy và nhiều cảnh dễ dựng; điểm yếu: hơi dài và nặng khái niệm (áp suất, góc tấn, bốn lực, cánh tà, đuôi) nên dễ loãng với trẻ 6–12 tuổi, và có vài chỗ nhỏ chưa chặt (giải thích áp suất chưa liên kết rõ, lời \"nặng hàng nghìn xe máy\" hơi mơ hồ).",
     "hash": "3e419dace58485f4"
   },
-  "retryAt": "2026-11-13T04:15:12.762Z"
+  "retryAt": "2026-11-13T09:49:56.681Z"
 }

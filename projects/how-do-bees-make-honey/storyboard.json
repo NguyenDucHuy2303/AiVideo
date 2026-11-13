@@ -3,7 +3,7 @@
   "kind": "story",
   "scenes": [
     {
-      "narration": "Mai (surprised): \"Huy, this honey came from bees. But bees are so tiny! How do they make something this sweet and sticky?\" Huy (happily): \"Great question, Mai. And here is a surprise. To make honey, bees blow bubbles. Lots and lots of tiny bubbles.\" Mai (laughing): \"Bees blowing bubbles? No way!\"",
+      "narration": "Bối (surprised): \"Huy, this honey came from bees. But bees are so tiny! How do they make something this sweet and sticky?\" Huy (happily): \"Great question, Bối. And here is a surprise. To make honey, bees blow bubbles. Lots and lots of tiny bubbles.\" Beo (laughing): \"Bees blowing bubbles? Like me in the bath!\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -25,7 +25,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Mai (proudly): \"I know! Flowers have honey inside, and bees just scoop it up and carry it home.\" Huy (happily): \"That is a really good guess, and you are partly right. Bees do start with flowers. But flowers do not hold honey. They hold nectar. Nectar is a sweet, watery juice, much runnier than honey.\" Huy: \"So something must happen to the nectar to turn it into honey. That is the part we need to find out.\"",
+      "narration": "Bối (proudly): \"I know! Flowers have honey inside, and bees just scoop it up and carry it home.\" Huy (happily): \"That is a really good guess, and you are partly right. Bees do start with flowers. But flowers do not hold honey. They hold nectar. Nectar is a sweet, watery juice, much runnier than honey.\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -36,7 +36,18 @@
       "transition": "cut"
     },
     {
-      "narration": "Mai (worried): \"Wait. Then is honey bee poop?\" Huy (laughing): \"Lots of kids wonder that! No, it is not. Bees have a special pouch just for carrying nectar. It is separate from the stomach that digests the bee's own food. Let's see how it all works.\"",
+      "narration": "Hùng (proudly): \"Look. Nectar is runny, like this water. Honey is thick, like this. Totally different!\" Huy: \"So something must happen to the nectar to turn it into honey. That is the part we need to find out.\"",
+      "chapter": "How Do Bees Make Honey?",
+      "onScreen": {},
+      "visual": {
+        "description": "studio",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Beo (worried): \"Wait. Is honey bee poop?\" Huy (laughing): \"Lots of kids wonder that! No, it is not. Bees have a special pouch just for carrying nectar. It is separate from the stomach that digests the bee's own food. Let's see how it all works.\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -58,7 +69,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"The bee has a long tongue called a proboscis. Say it with me. Pro-BOSS-is. It works like a drinking straw, and the bee uses it to suck up the nectar.\" Mai (joyfully): \"A built-in straw! I want one for my juice.\"",
+      "narration": "Huy: \"The bee has a long tongue called a proboscis. Say it with me. Pro-BOSS-is. It works like a drinking straw, and the bee uses it to suck up the nectar.\" Bối (joyfully): \"A built-in straw! I want one for my juice.\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -69,7 +80,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"The nectar goes into the bee's honey stomach, also called the honey crop. It sits just above the bee's food stomach. Think of it as a lunch box inside the bee, used to carry nectar home.\"",
+      "narration": "Huy: \"The nectar goes into the bee's honey stomach, also called the honey crop. It sits just above the bee's food stomach. Think of it as a lunch box inside the bee, used to carry nectar home.\" Beo (happily): \"My lunch box has a sandwich in it.\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -80,7 +91,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"The honey stomach is small. To fill it, a bee may visit more than a thousand flowers. That can take more than an hour of nonstop work.\" Mai (surprised): \"A thousand flowers for one tummy full? Wow!\"",
+      "narration": "Huy: \"The honey stomach is small. To fill it, a bee may visit more than a thousand flowers. That can take more than an hour of nonstop work.\" Bối (surprised): \"A thousand flowers for one tummy full? Wow!\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -91,7 +102,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"When it is full, the nectar weighs about half as much as the bee itself. Imagine flying home with a backpack half as heavy as you!\" Huy: \"So, step one. A bee sips watery nectar and carries it home in its honey stomach.\"",
+      "narration": "Huy: \"When it is full, the nectar weighs about half as much as the bee itself. Imagine flying home with a backpack half as heavy as you!\" Hùng (tired): \"Whoa, whoa! I can't even walk with this, never mind fly!\" Huy: \"So, step one. A bee sips watery nectar and carries it home in its honey stomach.\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -113,7 +124,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"The enzymes work like tiny scissors. They cut big sugars into smaller, simpler sugars. This is the start of turning nectar into honey.\"",
+      "narration": "Huy: \"The enzymes work like tiny scissors. They cut big sugars into smaller, simpler sugars. This is the start of turning nectar into honey.\" Hùng (proudly): \"One big sugar, snip, snip, lots of little sugars!\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -124,7 +135,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"Back at the hive, the forager passes the nectar to a hive bee, mouth to mouth. A hive bee is a bee whose job is to work inside the hive.\" Mai (laughing): \"Mouth to mouth? That is like sharing a smoothie the weird way!\" Huy (happily): \"A bit weird for us, but perfect for bees. And the hive bee adds even more enzymes.\"",
+      "narration": "Huy: \"Back at the hive, the forager passes the nectar to a hive bee, mouth to mouth. A hive bee is a bee whose job is to work inside the hive.\" Bối (laughing): \"Mouth to mouth? That is like sharing a smoothie the weird way!\" Beo (surprised): \"Eww! But cool.\" Huy (happily): \"A bit weird for us, but perfect for bees. And the hive bee adds even more enzymes.\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -146,7 +157,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"Step three. Remember the bubbles? Here they are. The hive bee pushes out a little drop of nectar and holds it between its jaws, making a tiny bubble. Then it sucks it back in. Again and again.\" Mai (surprised): \"The bees really do blow bubbles!\"",
+      "narration": "Huy: \"Step three. Remember the bubbles? Here they are. The hive bee pushes out a little drop of nectar and holds it between its jaws, making a tiny bubble. Then it sucks it back in. Again and again.\" Bối (surprised): \"The bees really do blow bubbles!\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -168,7 +179,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy (happily): \"Bees work in teams, like a relay race. One bee bubbles the nectar, then passes it on to the next. This can go on for up to 20 minutes.\"",
+      "narration": "Huy (happily): \"Bees work in teams, like a relay race. One bee bubbles the nectar, then passes it on to the next. This can go on for up to 20 minutes.\" Beo (joyfully): \"Like my race at school!\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -179,7 +190,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"Then the bees put the new honey into the honeycomb. Honeycomb is made of beeswax, a wax that bees make. It has hundreds or thousands of little rooms called cells. Each cell has six sides. That shape is called a hexagon.\"",
+      "narration": "Huy: \"Then the bees put the new honey into the honeycomb. Honeycomb is made of beeswax, a wax that bees make. It has hundreds or thousands of little rooms called cells. Each cell has six sides. That shape is called a hexagon.\" Hùng (happily): \"Count them with me. One, two, three, four, five, six sides!\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -190,7 +201,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"But this honey is still too watery. So the bees keep the honey area warm, about 35 degrees, as warm as a hot summer day. And they beat their wings together, moving air over the honey to carry the water away.\" Mai (joyfully): \"Bee fans! Whoosh!\"",
+      "narration": "Huy: \"But this honey is still too watery. So the bees keep the honey area warm, about 35 degrees Celsius, as warm as a hot summer day. And they beat their wings together, moving air over the honey to carry the water away.\" Bối (joyfully): \"Bee fans! Whoosh!\" Hùng (surprised): \"Whoosh! Oops, I fanned my own hair up.\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -223,7 +234,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"Honey has so much sugar and so little water that most germs cannot grow in it. Germs are tiny living things, too small to see. So honey that is stored well does not go bad.\"",
+      "narration": "Huy (firmly): \"Honey has so much sugar and so little water that most germs cannot grow in it. Germs are tiny living things, too small to see. So honey that is stored well does not go bad.\" Beo (surprised): \"The germs can't come in?\" Huy (happily): \"Some germs may get in, but most of them can't grow in it. Honey is a tough little fortress.\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -234,7 +245,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy (firmly): \"Scientists think honey can last for thousands of years. They say some very old honey found by archaeologists was still safe to eat, but not everyone agrees about the oldest finds. Archaeologists are people who dig up old things to learn about the past. Honey must also be kept in a closed jar. If it soaks up water from damp air, it can spoil.\" Mai (surprised): \"Thousands of years? That is older than Grandpa!\"",
+      "narration": "Huy (firmly): \"Scientists think honey can last for thousands of years. They say some very old honey found by archaeologists was still safe to eat, but not everyone agrees about the oldest finds. Archaeologists are people who dig up old things to learn about the past. Honey must also be kept in a closed jar. If it soaks up water from damp air, it can spoil.\" Bối (surprised): \"Thousands of years? That is older than Grandpa!\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -278,7 +289,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"Imagine if you were a bee! To fill your honey stomach, you would visit more than a thousand flowers. Then you would fly home carrying a load half as heavy as you.\" Mai (tired): \"I would need a really long nap after that!\"",
+      "narration": "Huy: \"Imagine if you were a bee! To fill your honey stomach, you would visit more than a thousand flowers. Then you would fly home carrying a load half as heavy as you.\" Bối (tired): \"I would need a really long nap after that!\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -289,7 +300,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"Here is a safe test to try at home. Ask a grown-up for two paper towels and wet them both. Leave one flat and squash the other into a ball. Which one will dry first?\" Mai (proudly): \"The flat one, because more of it touches the air. Just like the bee bubbles!\" Huy (happily): \"Exactly. Spreading out helps water escape.\"",
+      "narration": "Huy: \"Here is a safe test to try at home. Ask a grown-up for two paper towels and wet them both. Leave one flat and squash the other into a ball. Which one will dry first?\" Hùng (laughing): \"Oops, my sock got wet first!\" Bối (proudly): \"The flat one, because more of it touches the air. Just like the bee bubbles!\" Huy (happily): \"Exactly. Spreading out helps water escape.\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -300,7 +311,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"One more. With a grown-up, tip a spoon of water and a spoon of honey onto a tilted plate. The water races away. The honey crawls slowly, because the bees took most of the water out.\"",
+      "narration": "Huy: \"One more. With a grown-up, tip a spoon of water and a spoon of honey onto a tilted plate. The water races away. The honey crawls slowly, because the bees took most of the water out.\" Beo (laughing): \"Honey is a snail!\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -322,7 +333,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"And here is a fun fact. One hive can make about 29 kilograms of honey in a year. That is about as heavy as a nine year old child!\" Mai (laughing): \"That is a lot of bubbles!\"",
+      "narration": "Huy: \"And here is a fun fact. One hive can make about 29 kilograms of honey in a year. That is about as heavy as a nine year old child!\" Bối (laughing): \"That is a lot of bubbles!\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {
@@ -333,7 +344,7 @@
       "transition": "cut"
     },
     {
-      "narration": "Huy: \"Next time we will ask, how do bees find their way back home? Subscribe so you do not miss it!\" Mai (joyfully): \"Bye bye! Buzz buzz!\"",
+      "narration": "Huy: \"Next time we will ask, how do bees find their way back home? Subscribe to Ask Huy so you do not miss it!\" Bối (joyfully): \"Bye bye!\" Beo (joyfully): \"Buzz buzz!\"",
       "chapter": "How Do Bees Make Honey?",
       "onScreen": {},
       "visual": {

@@ -1,6 +1,6 @@
 {
   "castFile": "cast.json",
-  "duration": 10.17,
+  "duration": 20.8,
   "time": "day",
   "style": "hien_dai",
   "styleLook": {},
@@ -14,6 +14,27 @@
       "type": "human",
       "look": "huy",
       "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
     }
   ],
   "actions": [
@@ -24,16 +45,22 @@
       "face": "happy"
     },
     {
-      "actor": "huy",
-      "at": 1.4,
-      "do": "point",
-      "face": "happy"
+      "actor": "hung",
+      "at": 0,
+      "do": "worry",
+      "face": "surprised"
     },
     {
-      "actor": "huy",
-      "at": 7.12,
-      "do": "talk",
-      "face": "happy"
+      "actor": "boi",
+      "at": 0,
+      "do": "raise",
+      "face": "proud"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "laugh"
     }
   ],
   "shots": [
@@ -41,15 +68,25 @@
       "at": 0,
       "type": "full",
       "on": [
-        "huy"
+        "huy",
+        "hung",
+        "boi",
+        "beo"
       ],
-      "dx": 0.33,
-      "share": 0.56,
-      "gy": 0.9
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
     }
   ],
+  "mood": "playful",
   "board": {
-    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"85\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Water vs honey</text><polygon points=\"100,270 900,450 900,490 100,310\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"/><path data-in=\"2.5\" class=\"draw\" d=\"M170 275 L800 417\" fill=\"none\" stroke=\"#4aa3e0\" stroke-width=\"16\" stroke-linecap=\"round\"/><circle data-in=\"4\" cx=\"845\" cy=\"425\" r=\"16\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text data-in=\"3\" x=\"640\" y=\"345\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"38\" fill=\"#2a2a40\">Water: fast!</text><g data-in=\"5\"><ellipse cx=\"320\" cy=\"308\" rx=\"46\" ry=\"22\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"290\" cy=\"300\" r=\"6\" fill=\"#ffd23f\"/></g><text data-in=\"6\" x=\"300\" y=\"250\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"38\" fill=\"#2a2a40\">Honey: slow</text></svg>"
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"80\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\">Which dries first?</text><rect data-in=\"1\" x=\"80\" y=\"280\" width=\"340\" height=\"40\" rx=\"12\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><text data-in=\"2\" x=\"250\" y=\"370\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\">Flat</text><circle data-in=\"5\" cx=\"720\" cy=\"270\" r=\"70\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><text data-in=\"6\" x=\"720\" y=\"370\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\">Ball</text><path data-in=\"9\" class=\"flow\" d=\"M170 230 Q200 170 230 230 M270 230 Q300 170 330 230\" fill=\"none\" stroke=\"#fb8c00\" stroke-width=\"6\" stroke-dasharray=\"12 10\"/><text data-in=\"11\" x=\"250\" y=\"460\" font-family=\"sans-serif\" font-size=\"34\" text-anchor=\"middle\" fill=\"#2a2a40\">More air touches</text><path data-in=\"13\" d=\"M690 190 L750 190\" stroke=\"#e53935\" stroke-width=\"6\" fill=\"none\"/><text data-in=\"15\" x=\"500\" y=\"540\" font-family=\"sans-serif\" font-size=\"38\" text-anchor=\"middle\" fill=\"#43a047\">Spreading out = dries faster</text></svg>",
+    "style": "sketch",
+    "icons": {}
   },
   "speakerShots": false,
   "backdrop": {

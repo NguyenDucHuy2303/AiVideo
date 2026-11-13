@@ -1,6 +1,6 @@
 {
   "castFile": "cast.json",
-  "duration": 15.3,
+  "duration": 12.4,
   "time": "day",
   "style": "hien_dai",
   "styleLook": {},
@@ -16,10 +16,24 @@
       "x": 0
     },
     {
-      "id": "mai",
+      "id": "hung",
       "type": "human",
-      "look": "mai",
-      "x": -140,
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
       "facing": 1
     }
   ],
@@ -31,10 +45,22 @@
       "face": "happy"
     },
     {
-      "actor": "mai",
+      "actor": "hung",
       "at": 0,
-      "do": "worry",
-      "face": "surprised"
+      "do": "give",
+      "face": "joy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "cheer",
+      "face": "happy"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
     }
   ],
   "shots": [
@@ -43,22 +69,37 @@
       "type": "full",
       "on": [
         "huy",
-        "mai"
+        "hung",
+        "boi",
+        "beo"
       ],
-      "dx": 0.33,
-      "share": 0.56,
-      "gy": 0.9
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
     }
   ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"75\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.3\">Enzymes cut sugars</text><rect x=\"60\" y=\"200\" width=\"400\" height=\"60\" rx=\"30\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"1\"/><text x=\"260\" y=\"310\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"1.5\">big sugar</text><icon name=\"scissors\" x=\"230\" y=\"110\" size=\"90\" class=\"pulse\" data-in=\"3\"/><rect x=\"540\" y=\"200\" width=\"80\" height=\"60\" rx=\"28\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"4.5\"/><rect x=\"650\" y=\"200\" width=\"80\" height=\"60\" rx=\"28\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"5\"/><rect x=\"760\" y=\"200\" width=\"80\" height=\"60\" rx=\"28\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"5.5\"/><text x=\"690\" y=\"310\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"6\">small sugars</text><path d=\"M470 230 L530 230\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"6\" class=\"flow\" data-in=\"4\"/><icon name=\"scissors\" x=\"400\" y=\"380\" size=\"130\" class=\"float\" data-in=\"7\"/><text x=\"600\" y=\"460\" font-family=\"sans-serif\" font-size=\"38\" fill=\"#e53935\" data-in=\"7.5\">enzymes</text></svg>",
+    "style": "sketch",
+    "icons": {
+      "scissors": {
+        "body": "<g fill=\"none\"><path fill=\"#9b9b9b\" d=\"m6.44 29.66l12.637-12.637L19 15l-1-1l-2-.042L5.74 24.21a3.36 3.36 0 0 0 0 4.75z\"/><path fill=\"#d3d3d3\" d=\"m13 15l-.05 2.03l12.63 12.63l.64-.63c1.31-1.31 1.3-3.56-.02-4.88L15.98 13.93H14zm4.05 2.03a1.07 1.07 0 1 1-2.14 0a1.07 1.07 0 0 1 2.14 0\"/><path fill=\"#f8312f\" d=\"M15.02 9.53c0 .99-.24 1.95-.65 2.79l1.62 1.62l-3.03 3.1l-1.67-1.65c-.84.41-1.79.65-2.79.65c-3.6 0-6.5-2.92-6.5-6.52S4.9 3 8.5 3s6.52 2.92 6.52 6.53m-9.54-.01c0 1.67 1.36 3.03 3.03 3.03s3.03-1.35 3.03-3.03c0-1.67-1.36-3.03-3.03-3.03S5.48 7.85 5.48 9.52m15.23 5.87l-1.643 1.627l-3.068-3.068l1.631-1.639a6.36 6.36 0 0 1-.65-2.79C16.98 5.92 19.9 3 23.5 3S30 5.92 30 9.52s-2.9 6.52-6.5 6.52c-.99 0-1.95-.24-2.79-.65m-.25-5.87c0 1.68 1.36 3.03 3.03 3.03s3.03-1.36 3.03-3.03s-1.36-3.03-3.03-3.03s-3.03 1.36-3.03 3.03\"/></g>",
+        "width": 32,
+        "height": 32
+      }
+    }
+  },
+  "speakerShots": false,
   "backdrop": {
     "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
     "size": [
       768,
       448
     ]
-  },
-  "board": {
-    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\">\n<text x=\"500\" y=\"60\" font-size=\"40\" font-family=\"sans-serif\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2a2a40\">Passing nectar mouth to mouth</text>\n<rect x=\"80\" y=\"110\" width=\"840\" height=\"430\" rx=\"30\" fill=\"#ffe7a3\" stroke=\"#3a2a20\" stroke-width=\"5\"/>\n<g fill=\"#f6c343\" stroke=\"#3a2a20\" stroke-width=\"4\"><polygon points=\"700,150 740,127 780,150 780,196 740,219 700,196\"/><polygon points=\"780,196 820,173 860,196 860,242 820,265 780,242\"/><polygon points=\"700,242 740,219 780,242 780,288 740,311 700,288\"/></g>\n<g data-in=\"0.3\" class=\"float\"><ellipse cx=\"290\" cy=\"340\" rx=\"95\" ry=\"58\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M250 288 L250 392 M290 283 L290 397 M330 288 L330 392\" stroke=\"#3a2a20\" stroke-width=\"10\"/><circle cx=\"385\" cy=\"330\" r=\"34\" fill=\"#3a2a20\"/><circle cx=\"395\" cy=\"320\" r=\"7\" fill=\"#ffffff\"/><ellipse cx=\"260\" cy=\"270\" rx=\"45\" ry=\"28\" fill=\"#e6f4ff\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g>\n<text x=\"290\" y=\"450\" font-size=\"30\" font-family=\"sans-serif\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.6\">forager bee</text>\n<g data-in=\"0.9\" class=\"float\"><ellipse cx=\"640\" cy=\"340\" rx=\"95\" ry=\"58\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\"/><path d=\"M600 288 L600 392 M640 283 L640 397 M680 288 L680 392\" stroke=\"#3a2a20\" stroke-width=\"10\"/><circle cx=\"545\" cy=\"330\" r=\"34\" fill=\"#3a2a20\"/><circle cx=\"535\" cy=\"320\" r=\"7\" fill=\"#ffffff\"/><ellipse cx=\"670\" cy=\"270\" rx=\"45\" ry=\"28\" fill=\"#e6f4ff\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g>\n<text x=\"640\" y=\"450\" font-size=\"30\" font-family=\"sans-serif\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"1.2\">hive bee</text>\n<path d=\"M420 330 L510 330\" stroke=\"#f6a623\" stroke-width=\"12\" stroke-linecap=\"round\" class=\"flow\" data-in=\"1.6\"/>\n<circle cx=\"465\" cy=\"330\" r=\"14\" fill=\"#f6a623\" stroke=\"#3a2a20\" stroke-width=\"3\" class=\"pulse\" data-in=\"1.6\"/>\n<text x=\"465\" y=\"290\" font-size=\"28\" font-family=\"sans-serif\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"1.8\">nectar</text>\n</svg>"
-  },
-  "speakerShots": false
+  }
 }

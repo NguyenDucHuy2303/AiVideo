@@ -1,13 +1,13 @@
 {
   "castFile": "cast.json",
-  "duration": 14.9,
+  "duration": 12.8,
   "time": "day",
   "style": "hien_dai",
   "styleLook": {},
   "set": {
     "name": "plain"
   },
-  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "place": "a sunny flower meadow with many flowers",
   "cast": [
     {
       "id": "huy",
@@ -16,11 +16,25 @@
       "x": 0
     },
     {
-      "id": "mai",
+      "id": "hung",
       "type": "human",
-      "look": "mai",
-      "x": -140,
+      "look": "hung",
+      "x": -250,
       "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": 240,
+      "facing": -1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": 415,
+      "facing": -1
     }
   ],
   "actions": [
@@ -31,22 +45,22 @@
       "face": "happy"
     },
     {
-      "actor": "huy",
-      "at": 1.4,
-      "do": "point",
-      "face": "happy"
+      "actor": "hung",
+      "at": 0,
+      "do": "idle",
+      "face": "laugh"
     },
     {
-      "actor": "huy",
-      "at": 10.43,
-      "do": "talk",
-      "face": "happy"
-    },
-    {
-      "actor": "mai",
+      "actor": "boi",
       "at": 0,
       "do": "talk",
       "face": "joy"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "cheer",
+      "face": "laugh"
     }
   ],
   "shots": [
@@ -55,19 +69,16 @@
       "type": "full",
       "on": [
         "huy",
-        "mai"
+        "hung",
+        "boi",
+        "beo"
       ],
-      "dx": 0.33,
-      "share": 0.56,
-      "gy": 0.9
+      "share": 0.62
     }
   ],
-  "board": {
-    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"85\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Which dries first?</text><g data-in=\"0.5\"><ellipse cx=\"250\" cy=\"420\" rx=\"190\" ry=\"50\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\"/><ellipse cx=\"750\" cy=\"420\" rx=\"190\" ry=\"50\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g><g data-in=\"3\"><ellipse cx=\"250\" cy=\"405\" rx=\"150\" ry=\"26\" fill=\"#9fd4f5\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"750\" cy=\"355\" r=\"65\" fill=\"#9fd4f5\" stroke=\"#3a2a20\" stroke-width=\"4\"/><path d=\"M720 335 Q750 315 780 340\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><text data-in=\"5.5\" x=\"250\" y=\"520\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#2a2a40\">Flat</text><text data-in=\"6.5\" x=\"750\" y=\"520\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"40\" fill=\"#2a2a40\">Ball</text><g data-in=\"8.5\" class=\"pulse\"><circle cx=\"500\" cy=\"300\" r=\"55\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><line x1=\"500\" y1=\"300\" x2=\"500\" y2=\"262\" stroke=\"#3a2a20\" stroke-width=\"5\"/><line x1=\"500\" y1=\"300\" x2=\"526\" y2=\"314\" stroke=\"#e53935\" stroke-width=\"5\"/></g></svg>"
-  },
-  "speakerShots": false,
+  "mood": "playful",
   "backdrop": {
-    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/1faa8f5ef99a.png",
     "size": [
       768,
       448

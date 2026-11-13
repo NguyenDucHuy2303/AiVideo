@@ -1,0 +1,111 @@
+{
+  "castFile": "cast.json",
+  "duration": 14.33,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 10.03,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "give",
+      "face": "proud"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"75\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.5\">Pyramid vs Pitch</text><icon name=\"pyramid\" x=\"100\" y=\"150\" size=\"400\" data-in=\"2\"/><text x=\"300\" y=\"555\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"4\">about 146 m</text><rect x=\"640\" y=\"230\" width=\"170\" height=\"290\" rx=\"10\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"6\"/><line x1=\"640\" y1=\"375\" x2=\"810\" y2=\"375\" stroke=\"#fffaf0\" stroke-width=\"5\" data-in=\"6\"/><circle cx=\"725\" cy=\"375\" r=\"30\" fill=\"none\" stroke=\"#fffaf0\" stroke-width=\"5\" data-in=\"6\"/><text x=\"725\" y=\"555\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"7\">football pitch</text><line x1=\"60\" y1=\"150\" x2=\"900\" y2=\"150\" stroke=\"#e53935\" stroke-width=\"5\" stroke-dasharray=\"16 12\" class=\"flow\" data-in=\"10\"/></svg>",
+    "style": "card",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

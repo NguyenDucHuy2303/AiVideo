@@ -1,29 +1,29 @@
 {
   "title": "How Do Bees Make Honey?",
   "question": "How do bees make honey?",
-  "answer": "Bees sip watery nectar from flowers and carry it home in a special honey stomach. There, enzymes from the bee's body start to change it. Back at the hive, bees dry the nectar by blowing tiny bubbles, keeping the hive warm and fanning their wings, until it is thick honey. Then they seal it in wax cells to keep as food.",
+  "answer": "Bees sip watery nectar from flowers and carry it home in a special honey stomach. Enzymes start to change it. Then bees dry it with tiny bubbles, warmth and wing-fanning until it is thick and sweet. Last, they seal it in wax cells to keep as food.",
   "scenes": [
     {
       "beat": "hook",
       "visual": {
         "kind": "scene",
-        "what": "Mai at a breakfast table holding up a jar of golden honey, looking puzzled. A small cartoon bee buzzes past the kitchen window, and Huy sits next to her smiling."
+        "what": "A sunny kitchen table with a jar of golden honey. Bối holds the jar up and looks puzzled, Beo peeks over the table, and Huy and Hùng smile beside them."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "Huy, this honey came from bees. But bees are so tiny! How do they make something this sweet and sticky?"
         },
         {
           "who": "Huy",
           "how": "happily",
-          "text": "Great question, Mai. And here is a surprise. To make honey, bees blow bubbles. Lots and lots of tiny bubbles."
+          "text": "Great question, Bối. And here is a surprise. To make honey, bees blow bubbles. Lots and lots of tiny bubbles."
         },
         {
-          "who": "Mai",
+          "who": "Beo",
           "how": "laughing",
-          "text": "Bees blowing bubbles? No way!"
+          "text": "Bees blowing bubbles? Like me in the bath!"
         }
       ]
     },
@@ -31,7 +31,7 @@
       "beat": "hook",
       "visual": {
         "kind": "host",
-        "what": "Huy talking to camera in front of a sunny meadow, with three small icons floating beside him, a flower, a bee and a honey jar."
+        "what": "Huy talks to the camera with a cartoon honey bee buzzing around his head, while the other three wave in the background."
       },
       "parts": [
         {
@@ -45,11 +45,11 @@
       "beat": "guess",
       "visual": {
         "kind": "scene",
-        "what": "Mai in the meadow pointing at a big flower and pretending to scoop honey out of it with a spoon, while Huy listens kindly."
+        "what": "A garden with flowers. Bối points at a flower and pretends to scoop with a tiny spoon, while Huy kneels beside her."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "proudly",
           "text": "I know! Flowers have honey inside, and bees just scoop it up and carry it home."
         },
@@ -57,6 +57,20 @@
           "who": "Huy",
           "how": "happily",
           "text": "That is a really good guess, and you are partly right. Bees do start with flowers. But flowers do not hold honey. They hold nectar. Nectar is a sweet, watery juice, much runnier than honey."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "compare",
+        "what": "Hùng holds a glass of runny water in one hand and a jar of thick honey in the other. The water is labelled like nectar, runny, and the honey is labelled honey, thick."
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "Look. Nectar is runny, like this water. Honey is thick, like this. Totally different!"
         },
         {
           "who": "Huy",
@@ -68,14 +82,14 @@
     {
       "beat": "guess",
       "visual": {
-        "kind": "diagram",
-        "what": "A simple cartoon cutaway of a bee showing two separate pouches, one labelled honey stomach and one below it labelled food stomach. Mai covers her mouth, giggling."
+        "kind": "scene",
+        "what": "Beo looks up at Huy with a worried face, and a little thought bubble shows a bee with a question mark. Bối giggles behind her hand."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Beo",
           "how": "worried",
-          "text": "Wait. Then is honey bee poop?"
+          "text": "Wait. Is honey bee poop?"
         },
         {
           "who": "Huy",
@@ -88,8 +102,8 @@
       "beat": "step",
       "step": 1,
       "visual": {
-        "kind": "scene",
-        "what": "A bright meadow full of flowers. A single bee flies out of a beehive toward the flowers, with a dotted path showing it stays fairly close to home."
+        "kind": "map",
+        "what": "A simple map with a beehive in the middle and a dotted circle around it labelled about 3 km. A bee flies from the hive to a patch of flowers inside the circle."
       },
       "parts": [
         {
@@ -104,7 +118,7 @@
       "step": 1,
       "visual": {
         "kind": "labels",
-        "what": "A big friendly close-up of a bee's head on a flower, with its long straw-like tongue dipped into the flower. Labels say proboscis, eyes, antennae."
+        "what": "A big friendly bee on a flower, with its long tongue labelled proboscis dipping into the flower like a drinking straw."
       },
       "parts": [
         {
@@ -113,7 +127,7 @@
           "text": "The bee has a long tongue called a proboscis. Say it with me. Pro-BOSS-is. It works like a drinking straw, and the bee uses it to suck up the nectar."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "joyfully",
           "text": "A built-in straw! I want one for my juice."
         }
@@ -124,13 +138,18 @@
       "step": 1,
       "visual": {
         "kind": "diagram",
-        "what": "Cutaway of a bee with nectar flowing from the proboscis down into a small pouch labelled honey stomach, drawn like a little lunch box, sitting above the food stomach."
+        "what": "A see-through cartoon bee. A small pouch labelled honey stomach sits just above a second pouch labelled food stomach, with a little lunch box icon next to the honey stomach."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "The nectar goes into the bee's honey stomach, also called the honey crop. It sits just above the bee's food stomach. Think of it as a lunch box inside the bee, used to carry nectar home."
+        },
+        {
+          "who": "Beo",
+          "how": "happily",
+          "text": "My lunch box has a sandwich in it."
         }
       ]
     },
@@ -139,7 +158,7 @@
       "step": 1,
       "visual": {
         "kind": "count",
-        "what": "One bee hopping across a row of flowers while a counter goes up past 1,000, and a little clock beside it ticks past one hour."
+        "what": "A counter clicking up to 1,000 as a bee zips from flower to flower across a big meadow, with a small clock showing more than one hour."
       },
       "parts": [
         {
@@ -148,7 +167,7 @@
           "text": "The honey stomach is small. To fill it, a bee may visit more than a thousand flowers. That can take more than an hour of nonstop work."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "A thousand flowers for one tummy full? Wow!"
         }
@@ -159,13 +178,18 @@
       "step": 1,
       "visual": {
         "kind": "compare",
-        "what": "Side by side, a bee with an empty honey stomach and a bee with a full, round one. Next to them, Mai wearing a huge backpack and staggering a little."
+        "what": "On the left, a bee with a full, round honey stomach. On the right, Hùng wobbling under a giant backpack stuffed with pillows, legs bending."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "When it is full, the nectar weighs about half as much as the bee itself. Imagine flying home with a backpack half as heavy as you!"
+        },
+        {
+          "who": "Hùng",
+          "how": "tired",
+          "text": "Whoa, whoa! I can't even walk with this, never mind fly!"
         },
         {
           "who": "Huy",
@@ -179,7 +203,7 @@
       "step": 2,
       "visual": {
         "kind": "zoom",
-        "what": "Zooming inside the bee's honey stomach while it flies. Tiny smiling helper characters holding scissors float in the nectar."
+        "what": "Zooming in on a bee's head. Tiny glowing dots labelled enzymes flow from small glands near the mouth into the nectar."
       },
       "parts": [
         {
@@ -193,14 +217,19 @@
       "beat": "step",
       "step": 2,
       "visual": {
-        "kind": "zoom",
-        "what": "Inside the honey stomach, the tiny scissor helpers snip long chains of beads, labelled big sugars, into single beads, labelled simple sugars."
+        "kind": "diagram",
+        "what": "Hùng holds a long paper chain labelled big sugar and snips it with round-tipped scissors into short pieces labelled small sugars, next to cartoon enzyme scissors doing the same."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "The enzymes work like tiny scissors. They cut big sugars into smaller, simpler sugars. This is the start of turning nectar into honey."
+        },
+        {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "One big sugar, snip, snip, lots of little sugars!"
         }
       ]
     },
@@ -209,7 +238,7 @@
       "step": 2,
       "visual": {
         "kind": "scene",
-        "what": "At the hive entrance, a forager bee passes a shiny drop of nectar mouth to mouth to a hive bee waiting inside. Mai watches with her nose wrinkled."
+        "what": "Inside a cosy hive, a forager bee passes a drop of nectar mouth to mouth to a hive bee. Bối laughs and Beo makes a funny face."
       },
       "parts": [
         {
@@ -218,9 +247,14 @@
           "text": "Back at the hive, the forager passes the nectar to a hive bee, mouth to mouth. A hive bee is a bee whose job is to work inside the hive."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "laughing",
           "text": "Mouth to mouth? That is like sharing a smoothie the weird way!"
+        },
+        {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "Eww! But cool."
         },
         {
           "who": "Huy",
@@ -234,7 +268,7 @@
       "step": 2,
       "visual": {
         "kind": "host",
-        "what": "Huy talking to camera, holding a big cartoon picture of the tiny scissor helpers."
+        "what": "Huy holds up a card with a drop of nectar and a little enzyme helper on it."
       },
       "parts": [
         {
@@ -249,7 +283,7 @@
       "step": 3,
       "visual": {
         "kind": "zoom",
-        "what": "Close-up of a hive bee's face holding a tiny round bubble of nectar between its jaws, like a kid blowing a bubble with gum."
+        "what": "A close-up of a hive bee holding a shiny little bubble of nectar between its jaws, with arrows showing it going out and back in."
       },
       "parts": [
         {
@@ -258,7 +292,7 @@
           "text": "Step three. Remember the bubbles? Here they are. The hive bee pushes out a little drop of nectar and holds it between its jaws, making a tiny bubble. Then it sucks it back in. Again and again."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "The bees really do blow bubbles!"
         }
@@ -268,8 +302,8 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "diagram",
-        "what": "Left, a round thick drop with one small wavy arrow of water leaving it. Right, the same nectar stretched into a thin bubble with many wavy arrows of water floating away into warm air."
+        "kind": "compare",
+        "what": "On the left, a deep cup of water with only a small top touching the air. On the right, the same water spread as a wide flat puddle with many little steam wisps rising."
       },
       "parts": [
         {
@@ -284,13 +318,18 @@
       "step": 3,
       "visual": {
         "kind": "arrows",
-        "what": "A line of hive bees passing a drop of nectar from one to the next like a relay race, with arrows showing the drop moving along the line."
+        "what": "A line of bees passing a nectar drop from one to the next like a relay baton, with arrows between them and a small timer showing up to 20 minutes."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "happily",
           "text": "Bees work in teams, like a relay race. One bee bubbles the nectar, then passes it on to the next. This can go on for up to 20 minutes."
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Like my race at school!"
         }
       ]
     },
@@ -299,13 +338,18 @@
       "step": 3,
       "visual": {
         "kind": "labels",
-        "what": "A piece of honeycomb with six-sided cells, some filled with shiny honey. Labels say beeswax, cell and hexagon."
+        "what": "Hùng holds a big cardboard honeycomb model. Labels point to beeswax, a cell, and the six-sided shape called a hexagon."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Then the bees put the new honey into the honeycomb. Honeycomb is made of beeswax, a wax that bees make. It has hundreds or thousands of little rooms called cells. Each cell has six sides. That shape is called a hexagon."
+        },
+        {
+          "who": "Hùng",
+          "how": "happily",
+          "text": "Count them with me. One, two, three, four, five, six sides!"
         }
       ]
     },
@@ -313,19 +357,24 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "scene",
-        "what": "Inside the hive, a row of bees beating their wings over open honey cells, with swirly air lines blowing across. A cartoon thermometer on the wall shows 35 degrees."
+        "kind": "arrows",
+        "what": "Bees on a honeycomb beat their wings, with wavy arrows carrying water drops out of the hive and a thermometer showing about 35 °C. Hùng waves a paper fan so hard his hair blows up."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "But this honey is still too watery. So the bees keep the honey area warm, about 35 degrees, as warm as a hot summer day. And they beat their wings together, moving air over the honey to carry the water away."
+          "text": "But this honey is still too watery. So the bees keep the honey area warm, about 35 degrees Celsius, as warm as a hot summer day. And they beat their wings together, moving air over the honey to carry the water away."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "joyfully",
           "text": "Bee fans! Whoosh!"
+        },
+        {
+          "who": "Hùng",
+          "how": "surprised",
+          "text": "Whoosh! Oops, I fanned my own hair up."
         }
       ]
     },
@@ -334,7 +383,7 @@
       "step": 3,
       "visual": {
         "kind": "compare",
-        "what": "Two tall glasses side by side. The nectar glass is about three quarters blue water. The honey glass is only about one fifth blue water, and the rest is thick gold."
+        "what": "Two jars side by side. The nectar jar is filled about three quarters with blue water, and the honey jar has only about one fifth blue water and the rest golden."
       },
       "parts": [
         {
@@ -353,8 +402,8 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "zoom",
-        "what": "Close-up of honeycomb cells full of honey. A bee presses a thin pale wax lid over one cell, and the cells next to it are already capped."
+        "kind": "diagram",
+        "what": "A row of honeycomb cells full of golden honey, with bees pressing flat wax lids on top. One lid is labelled wax lid."
       },
       "parts": [
         {
@@ -368,14 +417,24 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "diagram",
-        "what": "A big golden honey drop. Tiny cartoon germs try to get in and bounce off, looking grumpy, with a label saying too sugary."
+        "kind": "zoom",
+        "what": "Zooming into a drop of honey. Tiny cartoon germs bounce off it with sad faces, unable to get in."
       },
       "parts": [
         {
           "who": "Huy",
-          "how": "",
+          "how": "firmly",
           "text": "Honey has so much sugar and so little water that most germs cannot grow in it. Germs are tiny living things, too small to see. So honey that is stored well does not go bad."
+        },
+        {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "The germs can't come in?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Some germs may get in, but most of them can't grow in it. Honey is a tough little fortress."
         }
       ]
     },
@@ -384,7 +443,7 @@
       "step": 4,
       "visual": {
         "kind": "count",
-        "what": "A timeline arrow stretching back thousands of years, with a very old clay jar of honey at the far end and a modern closed honey jar at the near end."
+        "what": "A timeline stretching back thousands of years, with an archaeologist holding up an old clay pot at the far end and a modern closed honey jar at today's end."
       },
       "parts": [
         {
@@ -393,7 +452,7 @@
           "text": "Scientists think honey can last for thousands of years. They say some very old honey found by archaeologists was still safe to eat, but not everyone agrees about the oldest finds. Archaeologists are people who dig up old things to learn about the past. Honey must also be kept in a closed jar. If it soaks up water from damp air, it can spoil."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "Thousands of years? That is older than Grandpa!"
         }
@@ -404,7 +463,7 @@
       "step": 4,
       "visual": {
         "kind": "scene",
-        "what": "A beehive in winter snow. Cutaway inside shows bees huddled on the honeycomb eating honey, and small white baby bees in their cells."
+        "what": "A snowy winter outside a hive. Inside, bees huddle together eating honey from the comb, and small baby bees called larvae lie in their cells."
       },
       "parts": [
         {
@@ -419,7 +478,7 @@
       "step": 4,
       "visual": {
         "kind": "scene",
-        "what": "A beekeeper in a white bee suit and veil gently lifting a honeycomb frame from a wooden hive box. Mai and Huy watch from far away."
+        "what": "A beekeeper in a white bee suit and veil lifts a honeycomb frame from a wooden hive, while Huy and the kids watch from far away behind a fence."
       },
       "parts": [
         {
@@ -439,7 +498,7 @@
       "step": 4,
       "visual": {
         "kind": "host",
-        "what": "Huy talking to camera, holding a capped piece of honeycomb like a little treasure box."
+        "what": "Huy holds up a sealed honeycomb piece with a snowflake sticker on it."
       },
       "parts": [
         {
@@ -453,7 +512,7 @@
       "beat": "imagine",
       "visual": {
         "kind": "scene",
-        "what": "Mai wearing pretend bee wings and antennae in a giant field of flowers that tower over her, with a round full belly and a tired face."
+        "what": "Bối dressed in a cardboard bee costume with antennas, flopping onto a big flower like a bed, surrounded by many flowers."
       },
       "parts": [
         {
@@ -462,7 +521,7 @@
           "text": "Imagine if you were a bee! To fill your honey stomach, you would visit more than a thousand flowers. Then you would fly home carrying a load half as heavy as you."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "tired",
           "text": "I would need a really long nap after that!"
         }
@@ -472,7 +531,7 @@
       "beat": "imagine",
       "visual": {
         "kind": "experiment",
-        "what": "Two plates on a table. One has a wet paper towel spread out flat, the other has a wet paper towel squashed into a ball. A small clock sits between them."
+        "what": "Hùng sets two wet paper towels on a table, one laid flat and one squashed into a ball. A drip lands on his sock and he hops."
       },
       "parts": [
         {
@@ -481,7 +540,12 @@
           "text": "Here is a safe test to try at home. Ask a grown-up for two paper towels and wet them both. Leave one flat and squash the other into a ball. Which one will dry first?"
         },
         {
-          "who": "Mai",
+          "who": "Hùng",
+          "how": "laughing",
+          "text": "Oops, my sock got wet first!"
+        },
+        {
+          "who": "Bối",
           "how": "proudly",
           "text": "The flat one, because more of it touches the air. Just like the bee bubbles!"
         },
@@ -496,21 +560,26 @@
       "beat": "imagine",
       "visual": {
         "kind": "experiment",
-        "what": "A plate tilted gently. A spoon of water races down it in a long streak, while a spoon of honey creeps slowly behind like a snail."
+        "what": "Hùng tilts a plate with a spoon of water racing down one side and a spoon of honey creeping slowly on the other. Beo watches closely, chin on the table."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "One more. With a grown-up, tip a spoon of water and a spoon of honey onto a tilted plate. The water races away. The honey crawls slowly, because the bees took most of the water out."
+        },
+        {
+          "who": "Beo",
+          "how": "laughing",
+          "text": "Honey is a snail!"
         }
       ]
     },
     {
       "beat": "recap",
       "visual": {
-        "kind": "diagram",
-        "what": "Four pictures in a row joined by arrows, a flower, a bee with a full honey stomach, bees blowing bubbles and fanning, and a honeycomb cell with a wax lid."
+        "kind": "arrows",
+        "what": "A loop of four pictures joined by arrows. A bee sipping a flower, enzyme scissors, a bee blowing a bubble with wings fanning, and a sealed wax cell."
       },
       "parts": [
         {
@@ -524,7 +593,7 @@
       "beat": "recap",
       "visual": {
         "kind": "compare",
-        "what": "A big pile of honey jars on one side of a balance scale, and a smiling nine year old child on the other side, balanced evenly."
+        "what": "A balance scale with a beehive and a pile of honey jars labelled about 29 kg on one side and Bối on the other side, level."
       },
       "parts": [
         {
@@ -533,7 +602,7 @@
           "text": "And here is a fun fact. One hive can make about 29 kilograms of honey in a year. That is about as heavy as a nine year old child!"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "laughing",
           "text": "That is a lot of bubbles!"
         }
@@ -542,46 +611,51 @@
     {
       "beat": "next",
       "visual": {
-        "kind": "host",
-        "what": "Huy and Mai waving goodbye in front of a beehive, with a bee flying along a curly dotted path back toward it and a big question mark above."
+        "kind": "scene",
+        "what": "All four wave at the camera. A bee flies toward a hive with a question mark over it, and a big button reads Subscribe to Ask Huy."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Next time we will ask, how do bees find their way back home? Subscribe so you do not miss it!"
+          "text": "Next time we will ask, how do bees find their way back home? Subscribe to Ask Huy so you do not miss it!"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "joyfully",
-          "text": "Bye bye! Buzz buzz!"
+          "text": "Bye bye!"
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Buzz buzz!"
         }
       ]
     }
   ],
   "facts": [
     {
-      "claim": "Honey is made by honeybees from nectar.",
+      "claim": "Honey is made by honeybees from nectar, the sweet juice from flowers.",
       "source": "Honey (https://simple.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "Nectar is the sugary juice of flowers and is much runnier than finished honey.",
+      "claim": "Nectar is much runnier than finished honey.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "The honey stomach (honey crop) is separate from and lies just above the food stomach that digests the bee's own food.",
+      "claim": "Nectar goes to a honey stomach (honey crop), which sits above and is separate from the food stomach that digests the bee's own food.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "A foraging bee leaves the hive to collect nectar.",
+      "claim": "Foraging bees collect nectar and bring it back to the hive.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "Bees do not usually go more than about two miles (about 3 km) from the hive for nectar.",
+      "claim": "Bees usually do not go more than about two miles (about 3 km) from the hive for nectar.",
       "source": "Honey (https://simple.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "The bee sucks nectar through its proboscis into its honey stomach.",
+      "claim": "Bees suck up nectar through a proboscis.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
@@ -589,19 +663,19 @@
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "A full honey stomach holds about half the weight of an unladen bee.",
+      "claim": "A full honey stomach holds about 40 mg, about half the weight of an unladen bee.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "Enzymes from the bee's glands are added to the nectar in the honey stomach and break complex sugars into simpler sugars.",
+      "claim": "Enzymes from a gland of the bee are added to the nectar and break complex sugars into simpler sugars like glucose and fructose.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "Foragers return to the hive and pass nectar mouth to mouth to hive bees, who process it in their own honey stomachs.",
+      "claim": "Foragers pass nectar mouth to mouth to hive bees at the hive.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "Hive bees form bubbles of nectar between their jaws, which helps water evaporate into the warm hive air.",
+      "claim": "Hive bees repeatedly form nectar bubbles between their jaws; the large surface area helps water evaporate into the warm hive air.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
@@ -613,67 +687,81 @@
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "The honey storage area of the hive is kept at about 35 °C, and bees beat their wings together to move air over the honey and remove water.",
+      "claim": "Honey storage areas are kept at about 35 °C, and bees fan their wings to move air over the honey and remove water.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "Nectar is about 70 to 80 percent water, while finished honey is about 18 percent water or less.",
+      "claim": "Nectar is about 70 to 80% water; finished honey is about 18% water or less.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "Bees cap finished honey cells with wax, which keeps out contamination and stops further evaporation.",
+      "claim": "Bees cap finished honey cells with wax, sealing them from contamination and stopping further evaporation.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "Most microorganisms cannot grow in honey, so honey that is stored properly does not spoil.",
+      "claim": "Because of its high sugar content most microorganisms cannot grow in honey, so stored honey does not spoil.",
       "source": "Honey (https://simple.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "Honey found at archaeological sites has been shown to be edible even after thousands of years.",
+      "claim": "Old honey found by archaeologists has been reported edible after thousands of years, but claims about edible honey from Egyptian tombs have been disputed.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "If honey takes in moisture from damp air, it can become watery enough to ferment (spoil).",
+      "claim": "Honey exposed to moist air pulls in water and can begin to ferment.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "Bees eat stored honey in cold weather or when food is scarce, feed it to their larvae, and honey has many times more energy than nectar.",
+      "claim": "Bees eat stored honey in cold weather or when food is scarce, feed it to their larvae, and honey has much more energy than nectar.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "Beekeepers harvest honey, and most make sure their bees keep enough food to survive the winter.",
+      "claim": "Beekeepers harvest honey and make sure bees have enough food to survive the winter.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "On average, a hive produces about 29 kilograms of honey a year.",
+      "claim": "On average a hive produces about 29 kg of honey per year.",
       "source": "Honey (https://en.wikipedia.org/wiki/Honey)"
     },
     {
-      "claim": "Water spread out flat dries faster than water bunched up, because more of it touches the air.",
-      "source": "Basic school science (evaporation)"
+      "claim": "Spread-out water dries faster than bunched-up water because more of it touches the air.",
+      "source": "Basic school science"
     }
   ],
   "shorts": [
     1,
-    8,
-    29,
-    30
+    15,
+    20,
+    31
   ],
-  "thumbnail": "Bees Blow Bubbles for Honey?",
-  "description": "How do tiny bees turn flower juice into thick, golden honey? Join Huy and Mai as they follow a bee from flower to honeycomb. They find out about the bee's honey stomach, the enzymes that act like tiny scissors, and the bubbles and wing fanning that dry the nectar. Made for curious kids aged 6 to 12, with two safe, easy tests to try at home with a grown-up.",
+  "thumbnail": "Bees Blow Bubbles for Honey?!",
+  "description": "How do tiny bees turn flower juice into thick, golden honey? Join Huy, his helper Hùng, Bối and little Beo as they follow nectar from the flower into a bee's honey stomach and through the hive, where bees blow bubbles and fan their wings to make honey. A calm, fact-checked science adventure for kids aged 6 to 12, with two safe experiments to try at home with a grown-up.",
   "cast": [
     {
       "name": "Huy",
       "gender": "male",
       "age": "young",
-      "role": "the host: curious, warm, a little funny; explains",
+      "role": "the host (25): curious, warm, a little funny; explains",
       "villain": false
     },
     {
-      "name": "Mai",
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
       "gender": "female",
       "age": "child",
-      "role": "an 8-year-old who asks, guesses and tries things",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
       "villain": false
     }
   ],

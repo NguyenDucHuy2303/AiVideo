@@ -1,41 +1,96 @@
 {
   "castFile": "cast.json",
-  "duration": 5.57,
+  "duration": 14.5,
   "time": "day",
   "style": "hien_dai",
   "styleLook": {},
   "set": {
     "name": "plain"
   },
-  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "place": "a beekeeper's yard with a wooden hive and a fence",
   "cast": [
     {
       "id": "huy",
       "type": "human",
       "look": "huy",
       "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -250,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": 240,
+      "facing": -1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": 415,
+      "facing": -1
     }
   ],
   "actions": [
     {
       "actor": "huy",
       "at": 0,
-      "do": "give",
-      "face": "proud"
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "hung",
+      "at": 1.4,
+      "do": "point",
+      "face": "surprised"
+    },
+    {
+      "actor": "hung",
+      "at": 10.15,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "scared"
     }
   ],
   "shots": [
     {
       "at": 0,
-      "type": "medium",
+      "type": "full",
       "on": [
-        "huy"
+        "huy",
+        "hung",
+        "boi",
+        "beo"
       ],
-      "push": 0.06
+      "share": 0.62
     }
   ],
+  "mood": "playful",
   "backdrop": {
-    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/a14cae80ba83.png",
     "size": [
       768,
       448

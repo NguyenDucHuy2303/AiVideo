@@ -1,0 +1,99 @@
+{
+  "castFile": "cast.json",
+  "duration": 9.63,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "neutral"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "give",
+      "face": "proud"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"80\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0\">Inside the pyramid</text><polygon points=\"80,220 380,200 400,380 100,400\" fill=\"#d9b27c\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"1\"/><polygon points=\"460,210 780,230 760,400 440,380\" fill=\"#c9a066\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"2\"/><polygon points=\"130,430 420,415 440,550 150,550\" fill=\"#c9a066\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"3\"/><polygon points=\"380,200 460,210 440,380 400,380\" fill=\"#fffaf0\" stroke=\"#3a2a20\" stroke-width=\"4\" data-in=\"5\"/><circle cx=\"600\" cy=\"470\" r=\"14\" fill=\"#8d6e63\" stroke=\"#3a2a20\" stroke-width=\"4\" data-in=\"4\"/><circle cx=\"650\" cy=\"500\" r=\"10\" fill=\"#8d6e63\" stroke=\"#3a2a20\" stroke-width=\"4\" data-in=\"4\"/><text x=\"700\" y=\"470\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\" data-in=\"4\">rubble</text><text x=\"700\" y=\"540\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\" data-in=\"6\">gypsum</text></svg>",
+    "style": "card",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

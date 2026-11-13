@@ -1,0 +1,111 @@
+{
+  "castFile": "cast.json",
+  "duration": 15.87,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "determined"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "talk",
+      "face": "neutral"
+    },
+    {
+      "actor": "hung",
+      "at": 1.4,
+      "do": "point",
+      "face": "neutral"
+    },
+    {
+      "actor": "hung",
+      "at": 11.11,
+      "do": "talk",
+      "face": "neutral"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "talk",
+      "face": "worried"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "worry",
+      "face": "worried"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"75\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.5\">Which ramp?</text><polygon points=\"70,450 200,200 330,450\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"2\"/><polygon points=\"330,450 440,450 210,215 200,230\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"4\"/><path d=\"M340 280L420 370M420 280L340 370\" stroke=\"#e53935\" stroke-width=\"12\" fill=\"none\" data-in=\"6\"/><text x=\"200\" y=\"520\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"5\">straight</text><polygon points=\"370,450 500,200 630,450\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"8\"/><polyline points=\"390,440 590,425 410,390 570,360 440,330 550,300 470,270 530,250\" fill=\"none\" stroke=\"#fb8c00\" stroke-width=\"10\" data-in=\"9\"/><text x=\"500\" y=\"520\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"9\">zigzag</text><polygon points=\"670,450 800,200 930,450\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"11\"/><path d=\"M690 450Q800 480 915 435Q800 410 710 400Q800 375 890 380Q800 350 735 340Q800 320 860 330Q810 300 780 280\" fill=\"none\" stroke=\"#8e24aa\" stroke-width=\"10\" data-in=\"12\"/><text x=\"800\" y=\"520\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"12\">spiral</text><text x=\"470\" y=\"200\" font-family=\"sans-serif\" font-size=\"48\" fill=\"#8e24aa\" class=\"pulse\" data-in=\"10\">?</text><text x=\"770\" y=\"190\" font-family=\"sans-serif\" font-size=\"48\" fill=\"#8e24aa\" class=\"pulse\" data-in=\"13\">?</text></svg>",
+    "style": "card",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

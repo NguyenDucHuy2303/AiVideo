@@ -1,0 +1,105 @@
+{
+  "castFile": "cast.json",
+  "duration": 10.97,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "worry",
+      "face": "surprised"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"80\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0\">Inside Blue Blood</text><path d=\"M500 120 Q280 340 330 440 Q380 540 500 540 Q620 540 670 440 Q720 340 500 120 Z\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"6\" data-in=\"1\"/><circle cx=\"450\" cy=\"400\" r=\"18\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\" class=\"float\" data-in=\"3\"/><circle cx=\"550\" cy=\"380\" r=\"18\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\" class=\"float\" data-in=\"3.3\"/><circle cx=\"500\" cy=\"460\" r=\"18\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\" class=\"float\" data-in=\"3.6\"/><circle cx=\"480\" cy=\"340\" r=\"12\" fill=\"#fffaf0\" stroke=\"#3a2a20\" stroke-width=\"4\" class=\"float\" data-in=\"4\"/><circle cx=\"530\" cy=\"310\" r=\"12\" fill=\"#fffaf0\" stroke=\"#3a2a20\" stroke-width=\"4\" class=\"float\" data-in=\"4.3\"/><text x=\"190\" y=\"330\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#fb8c00\" data-in=\"3\">Copper</text><text x=\"810\" y=\"330\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"4.3\">Oxygen</text><icon name=\"copper coin\" x=\"800\" y=\"430\" size=\"120\" class=\"pulse\" data-in=\"6\"/></svg>",
+    "style": "sketch",
+    "icons": {
+      "copper coin": {
+        "body": "<g fill=\"none\"><path fill=\"#f9c23c\" d=\"M16 30c7.732 0 14-6.268 14-14S23.732 2 16 2S2 8.268 2 16s6.268 14 14 14\"/><path fill=\"#d3883e\" d=\"M27 16c0 6.075-4.925 11-11 11S5 22.075 5 16S9.925 5 16 5s11 4.925 11 11m-4.68 3.89a.54.54 0 0 0-.51-.37h.03v-7.76c.43-.28.51-.97-.01-1.28l-5.39-3.26a.73.73 0 0 0-.78 0l-5.4 3.26c-.52.31-.44 1-.02 1.28v7.77h-.11c-.24 0-.45.16-.51.39l-.35 1.25c-.1.34.16.68.51.68h12.45c.35-.01.61-.36.5-.71zM11.9 11.88v7.64h1.66v-7.64zm3.31 0v7.64h1.69v-7.64zm3.35 0v7.64h1.62v-7.64z\" opacity=\".53\"/></g>",
+        "width": 32,
+        "height": 32
+      }
+    }
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

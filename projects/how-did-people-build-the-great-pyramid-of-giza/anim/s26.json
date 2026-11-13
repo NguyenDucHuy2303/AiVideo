@@ -1,0 +1,99 @@
+{
+  "castFile": "cast.json",
+  "duration": 11.3,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "give",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"80\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.5\">Sandbox Sledge Test</text><rect x=\"30\" y=\"400\" width=\"940\" height=\"150\" rx=\"20\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"1\"/><rect x=\"330\" y=\"290\" width=\"200\" height=\"110\" rx=\"12\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"2\"/><icon name=\"pebbles\" x=\"360\" y=\"240\" size=\"140\" data-in=\"3\"/><path d=\"M530 350 Q700 330 850 360\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\" class=\"draw\" data-in=\"5\"/><path d=\"M200 330 L110 330 M110 330 L145 295 M110 330 L145 365\" fill=\"none\" stroke=\"#e53935\" stroke-width=\"8\" class=\"flow\" data-in=\"7\"/><text x=\"500\" y=\"520\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#3a2a20\" data-in=\"8\">Dry sand: hard!</text></svg>",
+    "style": "card",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

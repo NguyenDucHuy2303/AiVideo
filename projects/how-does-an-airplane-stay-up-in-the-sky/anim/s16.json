@@ -1,0 +1,99 @@
+{
+  "castFile": "cast.json",
+  "duration": 11.43,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "give",
+      "face": "proud"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "cheer",
+      "face": "joy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"80\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0\">A Wing From the Side</text><path d=\"M250 340 Q260 250 400 250 Q600 240 760 330 L770 345 Q500 360 270 360 Q248 358 250 340 Z\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"6\" data-in=\"1\"/><line x1=\"260\" y1=\"460\" x2=\"760\" y2=\"460\" stroke=\"#3a2a20\" stroke-width=\"4\" stroke-dasharray=\"16 12\" data-in=\"7\"/><path d=\"M300 460 Q330 460 340 420\" stroke=\"#e53935\" stroke-width=\"5\" fill=\"none\" class=\"draw\" data-in=\"7\"/><text x=\"60\" y=\"200\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#2a2a40\" data-in=\"3\">Rounded front</text><line x1=\"200\" y1=\"215\" x2=\"262\" y2=\"310\" stroke=\"#e53935\" stroke-width=\"5\" class=\"draw\" data-in=\"3\"/><text x=\"380\" y=\"170\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#2a2a40\" data-in=\"4.5\">Curved top</text><line x1=\"470\" y1=\"185\" x2=\"470\" y2=\"245\" stroke=\"#e53935\" stroke-width=\"5\" class=\"draw\" data-in=\"4.5\"/><text x=\"700\" y=\"230\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#2a2a40\" data-in=\"6\">Thin back</text><line x1=\"780\" y1=\"245\" x2=\"760\" y2=\"325\" stroke=\"#e53935\" stroke-width=\"5\" class=\"draw\" data-in=\"6\"/><text x=\"360\" y=\"520\" font-family=\"sans-serif\" font-size=\"34\" fill=\"#2a2a40\" data-in=\"8\">Tilted up a little</text></svg>",
+    "style": "grid",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

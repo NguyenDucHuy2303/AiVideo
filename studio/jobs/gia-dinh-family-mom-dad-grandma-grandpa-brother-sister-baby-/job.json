@@ -1,12 +1,17 @@
 {
   "slug": "gia-dinh-family-mom-dad-grandma-grandpa-brother-sister-baby-",
   "topic": "Gia đình (Family): mom, dad, grandma, grandpa, brother, sister, baby, me",
-  "status": "done",
+  "status": "rewrite",
   "notes": [
     {
       "at": "2026-11-11T06:53:10.327Z",
       "on": "script",
       "text": "Xưng hô: Huy là anh trai trẻ, gọi người xem là \"các bạn\", gọi Mai là \"em\"; Mai gọi \"anh Huy\" và xưng \"em\" (không xưng \"con\"); không ai gọi người xem là \"con\". Giữ nguyên phần còn lại."
+    },
+    {
+      "at": "2026-11-13T08:00:51.445Z",
+      "on": "script",
+      "text": "Đổi dàn nhân vật: Mai nay tên là Bối (bé gái 8 tuổi, vẫn hỏi và đoán). Thêm Hùng (21 tuổi, em trai Huy, phụ tá: bày và làm thí nghiệm, đưa đồ vật, thỉnh thoảng hậu đậu vui vẻ) và Beo (5 tuổi, em trai Bối, tò mò, đoán ngây ngô bằng câu ngắn). Cả bốn có mặt suốt video. Giữ nguyên nội dung, kiến thức và độ dài; chỉ thêm lời cho Hùng và Beo ở những chỗ hợp lý."
     }
   ],
   "history": [
@@ -65,6 +70,11 @@
       "at": "2026-11-12T18:32:23.316Z",
       "status": "done",
       "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-13T08:00:51.446Z",
+      "status": "rewrite",
+      "info": "viết lại với Huy, Hùng, Bối, Beo"
     }
   ],
   "kind": "lesson",
@@ -75,51 +85,5 @@
     "why": "Điểm mạnh: chủ đề gia đình rất nhiều người tìm, cấu trúc học–đố–ghép câu–ôn rõ ràng, từ vựng và câu mẫu đúng, phát âm dễ hiểu, dễ dựng hình; điểm yếu: mở đầu hơi chung chung, chưa có câu \"móc\" gây tò mò, mười từ trong một video khá dài với trẻ 5–9 tuổi, và một vài chỗ phiên âm tiếng Việt (đát, phem mơ li) chưa chuẩn lắm.",
     "hash": "c44101935fab4906"
   },
-  "autoPicked": true,
-  "autoCheck": {
-    "at": "2026-11-12T06:52:59.011Z",
-    "mtimeMs": 1794422186532.4941,
-    "ok": true,
-    "problems": [],
-    "seconds": 328
-  },
-  "autoApproved": "2026-11-12T06:52:59.011Z",
-  "shorts": [
-    "shorts/1.mp4",
-    "shorts/2.mp4",
-    "shorts/3.mp4"
-  ],
-  "exported": {
-    "long": {
-      "dir": "/home/huynguyen/youtube/Học tiếng Anh Gia đình",
-      "publishAt": "2026-11-15T12:30:00.000Z",
-      "channel": "huy-ke-chuyen",
-      "at": "2026-11-13T03:46:22.629Z"
-    },
-    "shorts": [
-      {
-        "dir": "/home/huynguyen/youtube/Học tiếng Anh Gia đình",
-        "publishAt": "2026-11-16T00:30:00.000Z",
-        "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T03:46:22.631Z"
-      },
-      {
-        "dir": "/home/huynguyen/youtube/Học tiếng Anh Gia đình",
-        "publishAt": "2026-11-16T05:00:00.000Z",
-        "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T03:46:22.632Z"
-      },
-      {
-        "dir": "/home/huynguyen/youtube/Học tiếng Anh Gia đình",
-        "publishAt": "2026-11-16T10:00:00.000Z",
-        "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T03:46:22.633Z"
-      }
-    ]
-  },
-  "drive": {
-    "folder": "Học tiếng Anh Gia đình",
-    "mtime": 1794541582635.9731,
-    "at": "2026-11-13T03:48:35.353Z"
-  }
+  "retryAt": "2026-11-14T09:20:40.850Z"
 }

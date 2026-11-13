@@ -1,7 +1,7 @@
 {
   "slug": "how-did-people-build-the-great-pyramid-of-giza",
   "topic": "How did people build the Great Pyramid of Giza?",
-  "status": "review",
+  "status": "producing",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.283Z",
@@ -26,6 +26,21 @@
     {
       "at": "2026-11-12T10:42:42.416Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-13T08:09:37.642Z",
+      "status": "approved",
+      "info": "bạn: approve"
+    },
+    {
+      "at": "2026-11-13T08:10:07.585Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-13T08:37:07.190Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
     }
   ],
   "kind": "qa",
@@ -35,5 +50,6 @@
     "value": 8.4,
     "why": "Chủ đề kim tự tháp Giza rất hot, mở đầu bằng con số gây choáng và phá lầm tưởng \"nô lệ\" nên giữ chân tốt, bốn bước rõ ràng, đúng tư liệu (mộ thợ, nhật ký Merer, tranh cãi về đường dốc), có thí nghiệm vui và hình ảnh dễ dựng; điểm yếu là hơi dài và dày đặc số liệu/thuật ngữ cho trẻ 6–12 (đặc biệt phần đá granite, đường dốc), ngôn ngữ là tiếng Anh nên cần chuyển sang tiếng Việt, và một vài con số như \"20.000 thợ\", \"mỗi 2 phút một khối\" cần ghi rõ là ước tính.",
     "hash": "effbac7651718673"
-  }
+  },
+  "stage": "ready"
 }

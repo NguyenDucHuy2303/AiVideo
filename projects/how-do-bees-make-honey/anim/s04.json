@@ -1,6 +1,6 @@
 {
   "castFile": "cast.json",
-  "duration": 11.57,
+  "duration": 10.9,
   "time": "day",
   "style": "hien_dai",
   "styleLook": {},
@@ -16,10 +16,24 @@
       "x": 0
     },
     {
-      "id": "mai",
+      "id": "hung",
       "type": "human",
-      "look": "mai",
-      "x": -140,
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
       "facing": 1
     }
   ],
@@ -28,25 +42,25 @@
       "actor": "huy",
       "at": 0,
       "do": "talk",
+      "face": "determined"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "give",
       "face": "happy"
     },
     {
-      "actor": "huy",
-      "at": 1.4,
-      "do": "point",
-      "face": "happy"
-    },
-    {
-      "actor": "huy",
-      "at": 8.1,
-      "do": "talk",
-      "face": "happy"
-    },
-    {
-      "actor": "mai",
+      "actor": "boi",
       "at": 0,
       "do": "idle",
-      "face": "laugh"
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "worry",
+      "face": "worried"
     }
   ],
   "shots": [
@@ -55,15 +69,35 @@
       "type": "full",
       "on": [
         "huy",
-        "mai"
+        "hung",
+        "boi",
+        "beo"
       ],
-      "dx": 0.33,
-      "share": 0.56,
-      "gy": 0.9
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
     }
   ],
+  "mood": "playful",
   "board": {
-    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0.3\" x=\"500\" y=\"80\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">Inside a bee</text><g data-in=\"0.8\" class=\"float\"><ellipse cx=\"380\" cy=\"200\" rx=\"70\" ry=\"45\" transform=\"rotate(-20 380 200)\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><ellipse cx=\"470\" cy=\"195\" rx=\"70\" ry=\"45\" transform=\"rotate(15 470 195)\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g><g data-in=\"0.8\"><polygon points=\"540,330 600,345 540,365\" fill=\"#3a2a20\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"/><ellipse cx=\"340\" cy=\"330\" rx=\"205\" ry=\"130\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"6\"/><path d=\"M470 215 Q510 330 470 445\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"22\" stroke-linecap=\"round\"/></g><g data-in=\"1.5\"><circle cx=\"150\" cy=\"330\" r=\"75\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"6\"/><circle cx=\"125\" cy=\"310\" r=\"14\" fill=\"#3a2a20\"/><path d=\"M110 360 Q135 385 165 360\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linecap=\"round\"/></g><path data-in=\"4.2\" d=\"M190 330 Q240 320 300 300\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"8\" stroke-linecap=\"round\"/><ellipse data-in=\"4.5\" class=\"pulse\" cx=\"350\" cy=\"290\" rx=\"95\" ry=\"48\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\"/><g data-in=\"5.0\"><line x1=\"430\" y1=\"270\" x2=\"615\" y2=\"230\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text x=\"620\" y=\"240\" font-family=\"sans-serif\" font-size=\"36\" font-weight=\"bold\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"0.5\">honey stomach</text></g><ellipse data-in=\"6.5\" cx=\"330\" cy=\"390\" rx=\"75\" ry=\"36\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\"/><g data-in=\"7.0\"><line x1=\"405\" y1=\"395\" x2=\"615\" y2=\"450\" stroke=\"#3a2a20\" stroke-width=\"4\"/><text x=\"620\" y=\"470\" font-family=\"sans-serif\" font-size=\"36\" font-weight=\"bold\" fill=\"#2a2a40\">food stomach</text></g></svg>"
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"80\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0\">Nectar vs Honey</text><icon name=\"glass of water\" x=\"90\" y=\"140\" size=\"300\" data-in=\"1\"/><icon name=\"honey jar\" x=\"610\" y=\"140\" size=\"300\" data-in=\"4\" class=\"float\"/><text x=\"240\" y=\"500\" font-family=\"sans-serif\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"2\">Nectar: runny</text><text x=\"760\" y=\"500\" font-family=\"sans-serif\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"5\">Honey: thick</text></svg>",
+    "style": "sketch",
+    "icons": {
+      "glass of water": {
+        "body": "<g fill=\"none\"><path fill=\"#ca0b4a\" d=\"M15.25 2.75A.75.75 0 0 1 16 2h4v1.5h-3.25V8a.75.75 0 0 1-1.5 0z\"/><path fill=\"#990838\" d=\"M20.5 2.75c0 .414-.224.75-.5.75s-.5-.336-.5-.75s.224-.75.5-.75s.5.336.5.75\"/><path fill=\"#cdc4d6\" d=\"m11 9l.5-1l.007-.013C11.75 7.507 12.009 7 13 7h6c1 0 1.263.509 1.5 1l.5 1v1H11zM9.5 29l-.916-11l.198-.141l7.2-3.466l7.202 3.466l.233.141l-.917 11c-.04.556-.5 1-1 1h-11c-.5 0-.935-.45-1-1\"/><path fill=\"#e5336d\" d=\"M23.417 18H8.583L8 11l8-.5l8 .5z\"/><path fill=\"#f3eef8\" d=\"M7 10a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1\"/></g>",
+        "width": 32,
+        "height": 32
+      },
+      "honey jar": {
+        "body": "<g fill=\"none\"><path fill=\"#9b9b9b\" d=\"m22 5l-6-1.141L10 5v1l6 1.394L22 6z\"/><path fill=\"#aeddff\" d=\"M7.895 6C6.296 6 5 7.226 5 8.738v18.524C5 28.774 6.296 30 7.895 30h16.21C25.704 30 27 28.774 27 27.262V8.738C27 7.226 25.704 6 24.105 6z\"/><path fill=\"#bebebe\" d=\"M8 3.5A1.5 1.5 0 0 1 9.5 2h13a1.5 1.5 0 0 1 0 3h-13A1.5 1.5 0 0 1 8 3.5\"/><rect width=\"2\" height=\"20\" x=\"22\" y=\"8\" fill=\"#fff\" rx=\"1\"/><path fill=\"#9b9b9b\" d=\"M9.999 14A1 1 0 0 0 9 15v5a1 1 0 0 0 .999 1H22a1 1 0 0 0 1-1v-5a1 1 0 0 0-.999-1z\"/></g>",
+        "width": 32,
+        "height": 32
+      }
+    }
   },
   "speakerShots": false,
   "backdrop": {

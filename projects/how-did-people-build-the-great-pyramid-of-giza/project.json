@@ -1,0 +1,48 @@
+{
+  "engine": "kokoro",
+  "voice": "am_michael",
+  "speed": 0.92,
+  "imageGen": "off",
+  "onlineImages": false,
+  "profiles": [
+    "16x9"
+  ],
+  "channel": "Ask Huy",
+  "voices": {
+    "Huy": "am_liam",
+    "Hùng": "am_eric",
+    "Bối": {
+      "voice": "af_nova",
+      "pitch": 3
+    },
+    "Beo": {
+      "voice": "af_sky",
+      "pitch": 3
+    }
+  },
+  "speakers": {
+    "Huy": [
+      "huy"
+    ],
+    "Hùng": [
+      "hung"
+    ],
+    "Bối": [
+      "boi"
+    ],
+    "Beo": [
+      "beo"
+    ],
+    "Mai": [
+      "boi",
+      "mai"
+    ]
+  },
+  "brandId": "ask-huy",
+  "style": "hien_dai",
+  "thumbnail": {
+    "title": "How Did They Build This?",
+    "subtitle": "Ask Huy",
+    "at": 10.96
+  }
+}

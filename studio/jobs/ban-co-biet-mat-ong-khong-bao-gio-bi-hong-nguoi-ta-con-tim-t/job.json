@@ -1,7 +1,7 @@
 {
   "slug": "ban-co-biet-mat-ong-khong-bao-gio-bi-hong-nguoi-ta-con-tim-t",
   "topic": "Bạn có biết mật ong không bao giờ bị hỏng, người ta còn tìm thấy hũ mật ong trong lăng mộ Ai Cập hơn 3.000 năm tuổi mà vẫn ăn được?",
-  "status": "review",
+  "status": "producing",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.313Z",
@@ -27,9 +27,35 @@
     {
       "at": "2026-11-13T01:52:13.404Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-13T10:01:52.299Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (điểm 7.4/10)"
+    },
+    {
+      "at": "2026-11-13T10:15:46.853Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-13T10:38:23.849Z",
+      "status": "approved",
+      "info": "dừng giữa chừng, sẽ làm tiếp"
+    },
+    {
+      "at": "2026-11-13T10:38:27.449Z",
+      "status": "producing",
+      "info": "chuẩn bị"
     }
   ],
   "kind": "fact-vi",
   "summary": "Sự thật nổi tiếng, kiểm chứng được trên Wikipedia (mục Honey). Trẻ rất thích kể lại. Minh họa dễ bằng 2 hình: hũ mật ong trong lăng mộ Ai Cập và chú ong. Có thể giải thích đơn giản: mật ong rất ít nước và có tính axit nhẹ nên vi khuẩn không sống được. An toàn, thân thiện và không trùng với các chủ đề đã làm.",
-  "by": "claude-sonnet"
+  "by": "claude-sonnet",
+  "score": {
+    "value": 7.4,
+    "why": "Điểm mạnh: chủ đề \"mật ong không hỏng\" rất hút người tìm, mở đầu gây tò mò, giải thích đúng (ít nước, nhiều đường, hơi chua, ong quạt cánh) và có lưu ý an toàn về em bé dưới 1 tuổi; điểm yếu: tiêu đề \"hơn 3.000 năm\" không được nhắc lại/nêu rõ ví dụ cụ thể (mật trong mộ Ai Cập), lời giải thích còn ngắn và thiếu hình ảnh \"wow\", câu thoại của nhân vật phụ khá nhạt, và đoạn cuối hơi vội, lẫn \"Huy Kể Chuyện\" vào kênh Ask Huy.",
+    "hash": "6e33a8ede1d9b5e9"
+  },
+  "autoPicked": true
 }

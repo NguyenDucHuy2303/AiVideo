@@ -1,19 +1,40 @@
 {
   "castFile": "cast.json",
-  "duration": 12.57,
+  "duration": 24,
   "time": "day",
   "style": "hien_dai",
   "styleLook": {},
   "set": {
     "name": "plain"
   },
-  "place": "a beehive in winter snow",
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
   "cast": [
     {
       "id": "huy",
       "type": "human",
       "look": "huy",
       "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
     }
   ],
   "actions": [
@@ -21,7 +42,37 @@
       "actor": "huy",
       "at": 0,
       "do": "talk",
+      "face": "neutral"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "talk",
       "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 16.8,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "raise",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
     }
   ],
   "shots": [
@@ -29,13 +80,40 @@
       "at": 0,
       "type": "full",
       "on": [
-        "huy"
+        "huy",
+        "hung",
+        "boi",
+        "beo"
       ],
-      "share": 0.62
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
     }
   ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"75\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.3\">Honey can last</text><line x1=\"100\" y1=\"380\" x2=\"900\" y2=\"380\" stroke=\"#3a2a20\" stroke-width=\"8\" stroke-linecap=\"round\" class=\"draw\" data-in=\"1\"/><icon name=\"archaeologist\" x=\"60\" y=\"170\" size=\"170\" data-in=\"4\"/><icon name=\"clay pot\" x=\"230\" y=\"250\" size=\"120\" data-in=\"6\"/><text x=\"160\" y=\"450\" font-family=\"sans-serif\" font-size=\"34\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"6\">1000s of years</text><icon name=\"honey jar\" x=\"740\" y=\"220\" size=\"140\" data-in=\"12\"/><text x=\"810\" y=\"450\" font-family=\"sans-serif\" font-size=\"34\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"12\">today</text><text x=\"810\" y=\"500\" font-family=\"sans-serif\" font-size=\"34\" text-anchor=\"middle\" fill=\"#e53935\" data-in=\"15\">keep it closed!</text><path d=\"M300 330 L700 330\" fill=\"none\" stroke=\"#fb8c00\" stroke-width=\"6\" stroke-dasharray=\"14 10\" class=\"flow\" data-in=\"9\"/></svg>",
+    "style": "sketch",
+    "icons": {
+      "clay pot": {
+        "body": "<g fill=\"none\"><path fill=\"#d3883e\" d=\"M6 8a1 1 0 0 1 1-1h2.05l.048.047H22.93L22.988 7H25a1 1 0 1 1 0 2l-9 2l-9-2a1 1 0 0 1-1-1\"/><path fill=\"#b97028\" d=\"M4 16c-1-4.5 2-7 4-7l.059-.04H23.91L24 9c2 0 5 2.5 4 7l-.288 1l-.087.055l-11.627 4l-11.627-4L4.288 17zm2.452 8.5L7.75 29S8 30 9 30h14c1 0 1.25-1 1.25-1l1.298-4.5l-.167-.113l-9.398-3l-9.398 3z\"/><path fill=\"#8c5543\" d=\"M27.712 17H4.288l2.164 7.5h19.096z\"/><path fill=\"#6d4534\" d=\"M19.683 3.273a.75.75 0 0 1 .544.91l-.998 3.96a.75.75 0 1 1-1.454-.367l.998-3.96a.75.75 0 0 1 .91-.543\"/><path fill=\"#8c5543\" d=\"M21.5 4.002a2 2 0 1 1-4 0a2 2 0 0 1 4 0\"/><path fill=\"#f9c23c\" d=\"M9.047 7c1.04 6.128 4.452 5.73 4.452 5.73c2.321 0 2.776-1.122 3.206-2.18c.127-.313.252-.62.422-.892c.657-.986 1.77-.265 2.022 0c.645.695 1.353.569 1.353.569c1.61-.033 2.332-2.603 2.484-3.227zm12.599 5.632s-.355-.987-1.408-.96c-.222.019-.919.253-.815 1.315c.038.43.136 1.695 1.741 1.287c.638-.162.772-.879.482-1.642\"/></g>",
+        "width": 32,
+        "height": 32
+      },
+      "honey jar": {
+        "body": "<g fill=\"none\"><path fill=\"#9b9b9b\" d=\"m22 5l-6-1.141L10 5v1l6 1.394L22 6z\"/><path fill=\"#aeddff\" d=\"M7.895 6C6.296 6 5 7.226 5 8.738v18.524C5 28.774 6.296 30 7.895 30h16.21C25.704 30 27 28.774 27 27.262V8.738C27 7.226 25.704 6 24.105 6z\"/><path fill=\"#bebebe\" d=\"M8 3.5A1.5 1.5 0 0 1 9.5 2h13a1.5 1.5 0 0 1 0 3h-13A1.5 1.5 0 0 1 8 3.5\"/><rect width=\"2\" height=\"20\" x=\"22\" y=\"8\" fill=\"#fff\" rx=\"1\"/><path fill=\"#9b9b9b\" d=\"M9.999 14A1 1 0 0 0 9 15v5a1 1 0 0 0 .999 1H22a1 1 0 0 0 1-1v-5a1 1 0 0 0-.999-1z\"/></g>",
+        "width": 32,
+        "height": 32
+      }
+    }
+  },
+  "speakerShots": false,
   "backdrop": {
-    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/43d94ad543eb.png",
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
     "size": [
       768,
       448

@@ -1,6 +1,6 @@
 {
   "castFile": "cast.json",
-  "duration": 10.13,
+  "duration": 13.77,
   "time": "day",
   "style": "hien_dai",
   "styleLook": {},
@@ -16,10 +16,24 @@
       "x": 0
     },
     {
-      "id": "mai",
+      "id": "hung",
       "type": "human",
-      "look": "mai",
-      "x": -140,
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
       "facing": 1
     }
   ],
@@ -28,25 +42,37 @@
       "actor": "huy",
       "at": 0,
       "do": "talk",
-      "face": "surprised"
+      "face": "proud"
     },
     {
-      "actor": "huy",
-      "at": 1.4,
-      "do": "point",
-      "face": "surprised"
-    },
-    {
-      "actor": "huy",
-      "at": 7.09,
-      "do": "talk",
-      "face": "surprised"
-    },
-    {
-      "actor": "mai",
+      "actor": "hung",
       "at": 0,
       "do": "talk",
-      "face": "laugh"
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 9.64,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "cheer",
+      "face": "happy"
     }
   ],
   "shots": [
@@ -55,15 +81,35 @@
       "type": "full",
       "on": [
         "huy",
-        "mai"
+        "hung",
+        "boi",
+        "beo"
       ],
-      "dx": 0.33,
-      "share": 0.56,
-      "gy": 0.9
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
     }
   ],
+  "mood": "playful",
   "board": {
-    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"85\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" font-weight=\"bold\" fill=\"#2a2a40\">A year of honey</text><polygon points=\"440,480 560,480 500,260\" fill=\"#8e24aa\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\"/><line x1=\"200\" y1=\"260\" x2=\"800\" y2=\"260\" stroke=\"#3a2a20\" stroke-width=\"10\" stroke-linecap=\"round\"/><circle cx=\"500\" cy=\"260\" r=\"16\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"4\"/><path d=\"M200 260 L120 410 M200 260 L280 410 M800 260 L720 410 M800 260 L880 410\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"100\" y=\"410\" width=\"200\" height=\"20\" rx=\"10\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><rect x=\"700\" y=\"410\" width=\"200\" height=\"20\" rx=\"10\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><g data-in=\"1.5\"><rect x=\"120\" y=\"355\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"177\" y=\"355\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"234\" y=\"355\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"148\" y=\"298\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"206\" y=\"298\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><text data-in=\"2.5\" x=\"200\" y=\"500\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\">29 kg of honey</text><g data-in=\"4.5\" class=\"float\"><circle cx=\"800\" cy=\"320\" r=\"30\" fill=\"#ffd9b3\" stroke=\"#3a2a20\" stroke-width=\"4\"/><rect x=\"768\" y=\"350\" width=\"64\" height=\"60\" rx=\"14\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"4\"/><path d=\"M788 330 Q800 342 812 330\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"4\" stroke-linecap=\"round\"/></g><text data-in=\"5.5\" x=\"800\" y=\"500\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\">9-year-old</text></svg>"
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"70\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\">How bees make honey</text><icon data-in=\"1\" name=\"honeybee\" x=\"80\" y=\"120\" size=\"170\"/><text data-in=\"1\" x=\"165\" y=\"340\" font-family=\"sans-serif\" font-size=\"32\" text-anchor=\"middle\" fill=\"#2a2a40\">Sip nectar</text><path data-in=\"3\" class=\"flow\" d=\"M270 200 L440 200\" stroke=\"#3a2a20\" stroke-width=\"6\" stroke-dasharray=\"12 10\" fill=\"none\"/><icon data-in=\"4\" name=\"scissors\" x=\"540\" y=\"120\" size=\"170\"/><text data-in=\"4\" x=\"625\" y=\"340\" font-family=\"sans-serif\" font-size=\"32\" text-anchor=\"middle\" fill=\"#2a2a40\">Enzymes</text><path data-in=\"6\" class=\"flow\" d=\"M700 200 L760 200 L760 380\" stroke=\"#3a2a20\" stroke-width=\"6\" stroke-dasharray=\"12 10\" fill=\"none\"/><icon data-in=\"7\" name=\"honeybee\" x=\"680\" y=\"400\" size=\"140\"/><text data-in=\"7\" x=\"590\" y=\"540\" font-family=\"sans-serif\" font-size=\"32\" text-anchor=\"middle\" fill=\"#2a2a40\">Dry it</text><path data-in=\"9\" class=\"flow\" d=\"M660 470 L400 470\" stroke=\"#3a2a20\" stroke-width=\"6\" stroke-dasharray=\"12 10\" fill=\"none\"/><icon data-in=\"10\" name=\"honeycomb\" x=\"230\" y=\"400\" size=\"140\"/><text data-in=\"10\" x=\"300\" y=\"560\" font-family=\"sans-serif\" font-size=\"32\" text-anchor=\"middle\" fill=\"#2a2a40\">Seal in wax</text><path data-in=\"11\" class=\"flow\" d=\"M200 480 L130 480 L130 360\" stroke=\"#3a2a20\" stroke-width=\"6\" stroke-dasharray=\"12 10\" fill=\"none\"/></svg>",
+    "style": "sketch",
+    "icons": {
+      "honeybee": {
+        "body": "<g fill=\"none\"><path fill=\"#212121\" d=\"M5.43 13.36c-.28 0-.5-.22-.5-.5V12c0-.71-.4-1.35-1.04-1.67l-.67-.38a.5.5 0 1 1 .44-.9l.68.38c.98.49 1.59 1.47 1.59 2.57v.86c0 .28-.22.5-.5.5M24.3 27.001h-1.47c-1.02 0-1.84-.83-1.84-1.84v-3.36c0-.41.34-.75.75-.75s.75.34.75.75v3.35c0 .19.15.34.34.34h1.47c.41 0 .75.34.75.75s-.34.76-.75.76m-14.5 1.98c-.19 0-.38-.07-.53-.22a.754.754 0 0 1 0-1.06l.65-.65c.36-.36.56-.85.56-1.36v-1.89c0-.41.34-.75.75-.75s.75.34.75.75v1.89c0 .91-.36 1.77-1 2.42l-.65.65c-.15.15-.34.22-.53.22m8.84-.22c.15.15.34.22.53.22s.38-.07.53-.22c.29-.29.29-.77 0-1.06l-.65-.65c-.36-.36-.56-.85-.56-1.36v-1.89c0-.41-.34-.75-.75-.75s-.75.34-.75.75v1.89c0 .91.35 1.77 1 2.42zM28 16.36l1.78.38c.29.06.29.47 0 .54l-1.78.38l-1-.66z\"/><path fill=\"#ffb02e\" d=\"M17 25.001h2.11c.647 0 1.282-.09 1.89-.26L23.5 17L21 9.28a7 7 0 0 0-1.89-.259H17L15 17zM12 9.147a8 8 0 0 0-4.819 2.884L7.5 13.5v7l-.306 1.507A8 8 0 0 0 12 24.875L14.5 17zM24.5 17l1.5-3.377l2 2.755v1.267l-2 2.754z\"/><path fill=\"#533566\" d=\"M16.98 9.021h-3.77c-.42.01-.83.06-1.23.13v15.72c.4.07.81.12 1.23.13h3.77zm-8.61 4.36c0-.75-.6-1.35-1.34-1.36h-.08c-2.74 0-4.95 2.24-4.95 5s2.22 5 4.95 5h.08c.75-.02 1.34-.62 1.34-1.37zm16.67-1.08l.94 1.3v6.8l-.94 1.3c-.94 1.5-2.4 2.57-4.06 3.03V9.271c1.67.47 3.12 1.53 4.06 3.03\"/><path fill=\"#aeddff\" d=\"M14.94 4.74A4.47 4.47 0 0 1 18.57 3c2.39.04 4.35 1.99 4.41 4.38a4.49 4.49 0 0 1-4.49 4.6H10.9c-.55 0-.86-.63-.54-1.07l4.5-6.06c.02-.03.04-.05.06-.08z\"/><path fill=\"#212121\" d=\"M5.44 18.001a1 1 0 1 0 0-2a1 1 0 0 0 0 2\"/></g>",
+        "width": 32,
+        "height": 32
+      },
+      "scissors": {
+        "body": "<g fill=\"none\"><path fill=\"#9b9b9b\" d=\"m6.44 29.66l12.637-12.637L19 15l-1-1l-2-.042L5.74 24.21a3.36 3.36 0 0 0 0 4.75z\"/><path fill=\"#d3d3d3\" d=\"m13 15l-.05 2.03l12.63 12.63l.64-.63c1.31-1.31 1.3-3.56-.02-4.88L15.98 13.93H14zm4.05 2.03a1.07 1.07 0 1 1-2.14 0a1.07 1.07 0 0 1 2.14 0\"/><path fill=\"#f8312f\" d=\"M15.02 9.53c0 .99-.24 1.95-.65 2.79l1.62 1.62l-3.03 3.1l-1.67-1.65c-.84.41-1.79.65-2.79.65c-3.6 0-6.5-2.92-6.5-6.52S4.9 3 8.5 3s6.52 2.92 6.52 6.53m-9.54-.01c0 1.67 1.36 3.03 3.03 3.03s3.03-1.35 3.03-3.03c0-1.67-1.36-3.03-3.03-3.03S5.48 7.85 5.48 9.52m15.23 5.87l-1.643 1.627l-3.068-3.068l1.631-1.639a6.36 6.36 0 0 1-.65-2.79C16.98 5.92 19.9 3 23.5 3S30 5.92 30 9.52s-2.9 6.52-6.5 6.52c-.99 0-1.95-.24-2.79-.65m-.25-5.87c0 1.68 1.36 3.03 3.03 3.03s3.03-1.36 3.03-3.03s-1.36-3.03-3.03-3.03s-3.03 1.36-3.03 3.03\"/></g>",
+        "width": 32,
+        "height": 32
+      }
+    }
   },
   "speakerShots": false,
   "backdrop": {

@@ -1,13 +1,13 @@
 {
   "castFile": "cast.json",
-  "duration": 6.9,
+  "duration": 11.77,
   "time": "day",
   "style": "hien_dai",
   "styleLook": {},
   "set": {
     "name": "plain"
   },
-  "place": "a sunny meadow with a beehive",
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
   "cast": [
     {
       "id": "huy",
@@ -16,25 +16,63 @@
       "x": 0
     },
     {
-      "id": "mai",
+      "id": "hung",
       "type": "human",
-      "look": "mai",
-      "x": 250,
-      "facing": -1
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
     }
   ],
   "actions": [
     {
       "actor": "huy",
       "at": 0,
-      "do": "wave",
+      "do": "talk",
       "face": "happy"
     },
     {
-      "actor": "mai",
+      "actor": "huy",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "huy",
+      "at": 8.24,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
       "at": 0,
-      "do": "wave",
-      "face": "joy"
+      "do": "give",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "cheer",
+      "face": "laugh"
     }
   ],
   "shots": [
@@ -43,13 +81,39 @@
       "type": "full",
       "on": [
         "huy",
-        "mai"
+        "hung",
+        "boi",
+        "beo"
       ],
-      "share": 0.62
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
     }
   ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"90\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.3\">Fun fact!</text><rect x=\"480\" y=\"240\" width=\"40\" height=\"300\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"0.8\"/><rect x=\"380\" y=\"530\" width=\"240\" height=\"36\" rx=\"12\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"0.8\"/><g class=\"pulse\" data-in=\"1.2\"><line x1=\"200\" y1=\"230\" x2=\"800\" y2=\"230\" stroke=\"#3a2a20\" stroke-width=\"10\" stroke-linecap=\"round\"/><circle cx=\"500\" cy=\"230\" r=\"20\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g><g data-in=\"1.8\"><line x1=\"200\" y1=\"230\" x2=\"110\" y2=\"400\" stroke=\"#3a2a20\" stroke-width=\"4\"/><line x1=\"200\" y1=\"230\" x2=\"290\" y2=\"400\" stroke=\"#3a2a20\" stroke-width=\"4\"/><path d=\"M90 400H310Q300 455 200 455Q100 455 90 400Z\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g><g data-in=\"2.4\"><line x1=\"800\" y1=\"230\" x2=\"710\" y2=\"400\" stroke=\"#3a2a20\" stroke-width=\"4\"/><line x1=\"800\" y1=\"230\" x2=\"890\" y2=\"400\" stroke=\"#3a2a20\" stroke-width=\"4\"/><path d=\"M690 400H910Q900 455 800 455Q700 455 690 400Z\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\"/></g><icon name=\"beehive\" x=\"100\" y=\"280\" size=\"120\" data-in=\"3.4\"/><icon name=\"honey jar\" x=\"225\" y=\"320\" size=\"80\" data-in=\"4.4\"/><icon name=\"honey jar\" x=\"250\" y=\"340\" size=\"60\" data-in=\"4.8\"/><text x=\"200\" y=\"520\" font-family=\"sans-serif\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"5.6\">about 29 kg</text><icon name=\"girl\" x=\"725\" y=\"250\" size=\"150\" data-in=\"6.6\"/><text x=\"800\" y=\"520\" font-family=\"sans-serif\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"7.6\">Bối</text></svg>",
+    "style": "sketch",
+    "icons": {
+      "honey jar": {
+        "body": "<g fill=\"none\"><path fill=\"#9b9b9b\" d=\"m22 5l-6-1.141L10 5v1l6 1.394L22 6z\"/><path fill=\"#aeddff\" d=\"M7.895 6C6.296 6 5 7.226 5 8.738v18.524C5 28.774 6.296 30 7.895 30h16.21C25.704 30 27 28.774 27 27.262V8.738C27 7.226 25.704 6 24.105 6z\"/><path fill=\"#bebebe\" d=\"M8 3.5A1.5 1.5 0 0 1 9.5 2h13a1.5 1.5 0 0 1 0 3h-13A1.5 1.5 0 0 1 8 3.5\"/><rect width=\"2\" height=\"20\" x=\"22\" y=\"8\" fill=\"#fff\" rx=\"1\"/><path fill=\"#9b9b9b\" d=\"M9.999 14A1 1 0 0 0 9 15v5a1 1 0 0 0 .999 1H22a1 1 0 0 0 1-1v-5a1 1 0 0 0-.999-1z\"/></g>",
+        "width": 32,
+        "height": 32
+      },
+      "girl": {
+        "body": "<g fill=\"none\"><path fill=\"#f1a11e\" d=\"M25.5 14.5c-.243 0-.708.077-.708.077L6.054 14.53s-1.504.51-2.008 1.089a7 7 0 0 1-.017-.489v-4.07a7.06 7.06 0 0 1 5.993-6.98A2.187 2.187 0 0 1 12.199 2h5.81c5.52 0 10 4.48 10 10v3.13q0 .266-.02.53A3.24 3.24 0 0 0 25.5 14.5M8.439 21.22l-6 4.03c-.55.37-.59 1.17-.08 1.6l3.19 2.81c.72.64 1.85.34 2.18-.56l2.32-6.49zm15.19 0l6 4.03c.55.37.59 1.17.08 1.6l-3.19 2.81c-.72.64-1.85.34-2.18-.56l-2.32-6.49z\"/><path fill=\"#fdbb11\" d=\"M9.75 17.75a3.25 3.25 0 1 1-6.5 0a3.25 3.25 0 0 1 6.5 0m19 0a3.25 3.25 0 1 1-6.5 0a3.25 3.25 0 0 1 6.5 0\"/><path fill=\"#ffc83d\" d=\"M18.829 13a8.82 8.82 0 0 1-8.1-5.337a10.24 10.24 0 0 1-3.62 5.417a3.23 3.23 0 0 0-1.055 1.45q-.106.015-.21.036l.192 5.649C6.275 26.074 10.659 30 16 30c5.33 0 9.725-3.926 9.964-9.785l.192-5.649a3.3 3.3 0 0 0-1.364.011A4.86 4.86 0 0 0 21.19 13z\"/><path fill=\"#990839\" d=\"M16.014 23.373a6.5 6.5 0 0 1-3.016-.733a.329.329 0 0 0-.43.472a4.088 4.088 0 0 0 6.89 0c.18-.281-.13-.622-.429-.472a6.35 6.35 0 0 1-3.015.733\"/><path fill=\"#ed9200\" d=\"M16.003 22c.67 0 1.27-.345 1.62-.873c.32-.477-.02-1.127-.59-1.127h-2.07c-.57 0-.91.65-.59 1.127c.36.528.96.873 1.63.873\"/><path fill=\"#fff\" d=\"M8.219 18.47a3.09 3.09 0 0 1 3-2.34c1.5 0 2.76 1.07 3.05 2.49c.06.31-.19.6-.51.6h-4.94c-.4 0-.7-.37-.6-.75m15.6 0a3.09 3.09 0 0 0-3-2.34c-1.5 0-2.75 1.07-3.05 2.49c-.06.31.19.6.51.6h4.94c.4 0 .7-.37.6-.75\"/><path fill=\"#7d4533\" d=\"M9.699 18.7c0-1.09.89-1.98 1.98-1.98s1.98.89 1.97 1.98c0 .18-.02.35-.07.52h-3.81c-.04-.16-.07-.34-.07-.52m12.65 0c0-1.09-.89-1.98-1.98-1.98c-1.1 0-1.98.89-1.97 1.98c0 .18.02.35.07.52h3.81c.04-.16.07-.34.07-.52\"/><path fill=\"#000\" d=\"M11.679 17.57c.62 0 1.13.51 1.13 1.13c0 .19-.05.37-.13.52h-2c-.08-.15-.13-.33-.13-.52c0-.62.51-1.13 1.13-1.13m8.69 0c-.62 0-1.13.51-1.13 1.13c0 .19.04.37.13.52h2c.08-.15.13-.33.13-.52c0-.62-.51-1.13-1.13-1.13\"/><path fill=\"#fff\" d=\"M11.349 17.92a.35.35 0 1 1-.7 0a.35.35 0 0 1 .7 0m8.75 0a.35.35 0 1 1-.7 0a.35.35 0 0 1 .7 0\"/><path fill=\"#d37034\" d=\"M9.906 15.171c.522-.185 1.268-.326 2.256-.233a.5.5 0 0 0 .094-.996c-1.133-.107-2.026.053-2.685.287a.5.5 0 0 0 .335.942m12.56-.942c-.658-.234-1.552-.394-2.684-.287a.5.5 0 1 0 .094.996c.987-.093 1.734.047 2.255.233a.5.5 0 1 0 .335-.942\"/></g>",
+        "width": 32,
+        "height": 32
+      }
+    }
+  },
+  "speakerShots": false,
   "backdrop": {
-    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/f58541cb991c.png",
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
     "size": [
       768,
       448

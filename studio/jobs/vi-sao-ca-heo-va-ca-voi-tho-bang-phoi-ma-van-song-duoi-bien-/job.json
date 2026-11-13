@@ -57,6 +57,51 @@
       "at": "2026-11-13T04:13:23.400Z",
       "status": "rewrite",
       "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T04:43:27.126Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T05:13:30.649Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T05:43:34.155Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T06:13:37.300Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T06:43:40.513Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T07:14:03.340Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T07:44:26.214Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T09:19:56.610Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 110156 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T09:59:24.951Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-ca-heo-va-ca-voi-tho-bang-phoi-ma-van-song-duoi-bien-\" has spent 148080 of its 120000 write tokens; gemma3:12b is not installed, so the work waits a"
     }
   ],
   "kind": "qa-vi",
@@ -67,5 +112,5 @@
     "why": "Mở bài hay (cá heo không phải cá), kiến thức chính xác, giải thích theo từng bước có nhắc lại và có thí nghiệm đếm nhịp thở an toàn, chủ đề được nhiều người tìm và dễ dựng hình; điểm yếu là kịch bản khá dài và dày (bốn bước, nhiều số liệu, đoạn cá mập voi và đoạn bong bóng cá hơi lan man) nên dễ vượt 8 phút và làm trẻ 6–7 tuổi mất tập trung.",
     "hash": "a54ac58cd25f9372"
   },
-  "retryAt": "2026-11-13T04:43:23.400Z"
+  "retryAt": "2026-11-13T10:29:24.950Z"
 }

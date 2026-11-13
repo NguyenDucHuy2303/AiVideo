@@ -1,7 +1,7 @@
 {
   "slug": "did-you-know-octopuses-have-three-hearts-and-blue-blood",
   "topic": "Did you know octopuses have three hearts and blue blood?",
-  "status": "review",
+  "status": "producing",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.311Z",
@@ -26,9 +26,31 @@
     {
       "at": "2026-11-13T01:51:16.830Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-13T10:01:41.346Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (điểm 7.6/10)"
+    },
+    {
+      "at": "2026-11-13T10:01:52.318Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-13T10:15:46.836Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
     }
   ],
   "kind": "fact",
   "summary": "Surprising, easy to verify on Wikipedia (Octopus). Easy to show with two pictures: an octopus with three glowing hearts, and a drop of blue blood. Kids love repeating it, and it is safe and friendly.",
-  "by": "claude-sonnet"
+  "by": "claude-sonnet",
+  "score": {
+    "value": 7.6,
+    "why": "Điểm mạnh: câu mở \"3 quả tim, máu xanh\" rất hấp dẫn, đúng sự thật (2 tim mang ở mang, 1 tim cho cơ thể; máu chứa hemocyanin đồng nên xanh khi có oxy), chủ đề được nhiều trẻ tìm và dễ dựng hình; điểm yếu: hơi ngắn, gag đồng xu đồng hơi gượng và không nối rõ với ý máu xanh, thiếu giải thích vì sao bạch tuộc cần 3 tim hay máu đồng hợp với nước lạnh ít oxy, và kết thúc hơi vội.",
+    "hash": "aab89535a6a4e562"
+  },
+  "autoPicked": true,
+  "stage": "ready"
 }

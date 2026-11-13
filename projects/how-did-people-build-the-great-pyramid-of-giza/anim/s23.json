@@ -1,0 +1,111 @@
+{
+  "castFile": "cast.json",
+  "duration": 14.67,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 10.27,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "cheer",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><line x1=\"500\" y1=\"90\" x2=\"500\" y2=\"560\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"0\"/><text x=\"260\" y=\"80\" font-family=\"sans-serif\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0\">Long ago</text><text x=\"740\" y=\"80\" font-family=\"sans-serif\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"5\">Today</text><polygon points=\"260,130 70,480 450,480\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"1\"/><path d=\"M200 300 L240 200\" stroke=\"#ffd23f\" stroke-width=\"6\" class=\"pulse\" data-in=\"3\"/><polygon points=\"740,130 700,170 660,170 640,210 600,210 580,250 540,250 520,290 530,480 960,480 900,290 880,250 840,250 820,210 780,210 780,170 760,170\" fill=\"#d9b27c\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"6\"/><polygon points=\"530,430 960,430 960,480 530,480\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"8\"/><text x=\"260\" y=\"540\" font-family=\"sans-serif\" font-size=\"34\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"3\">smooth and white</text><text x=\"745\" y=\"540\" font-family=\"sans-serif\" font-size=\"34\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"9\">rough steps</text></svg>",
+    "style": "card",
+    "icons": {}
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

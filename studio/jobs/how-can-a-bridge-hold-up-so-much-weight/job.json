@@ -57,6 +57,51 @@
       "at": "2026-11-13T04:07:22.394Z",
       "status": "rewrite",
       "info": "chờ thử lại: job \"how-can-a-bridge-hold-up-so-much-weight\" has spent 85309 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T04:37:26.435Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"how-can-a-bridge-hold-up-so-much-weight\" has spent 85309 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T05:07:29.765Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"how-can-a-bridge-hold-up-so-much-weight\" has spent 85309 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T05:37:33.351Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"how-can-a-bridge-hold-up-so-much-weight\" has spent 85309 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T06:07:36.697Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"how-can-a-bridge-hold-up-so-much-weight\" has spent 85309 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T06:37:39.633Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"how-can-a-bridge-hold-up-so-much-weight\" has spent 85309 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T07:08:29.818Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"how-can-a-bridge-hold-up-so-much-weight\" has spent 85309 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T07:38:55.181Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"how-can-a-bridge-hold-up-so-much-weight\" has spent 85309 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T09:19:56.461Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"how-can-a-bridge-hold-up-so-much-weight\" has spent 88580 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T09:51:38.547Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"how-can-a-bridge-hold-up-so-much-weight\" has spent 125749 of its 120000 write tokens; gemma3:12b is not installed, so the work waits and retries"
     }
   ],
   "kind": "qa",
@@ -66,5 +111,5 @@
     "why": "Điểm mạnh: mở đầu bằng xe tải nặng hơn con voi và cây cầu đá Hy Lạp 3.300 năm tuổi, kiến thức chính xác (nén/kéo, vòm, giàn tam giác, cầu Triệu Châu), có thí nghiệm tờ giấy và ruler dễ dựng hình, chủ đề nhiều người tìm; điểm yếu: quá dày đặc (4 ý chính cùng hàng loạt thuật ngữ như compression, tension, keystone, abutment, cantilever, truss) nên dễ làm trẻ 6–8 tuổi quá tải, và phần liệt kê 5 loại cầu hơi lướt, nên nên cắt gọn trước khi dựng.",
     "hash": "ad4c71fbc26fa1dd"
   },
-  "retryAt": "2026-11-13T04:37:22.393Z"
+  "retryAt": "2026-11-13T10:21:38.545Z"
 }

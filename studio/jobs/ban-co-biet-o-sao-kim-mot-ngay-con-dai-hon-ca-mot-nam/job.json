@@ -33,7 +33,7 @@
   "by": "claude-sonnet",
   "score": {
     "value": 7.2,
-    "why": "Mở đầu \"một ngày dài hơn một năm\" là câu hook rất cuốn, số liệu đúng (xoay 243 ngày, quay quanh Mặt Trời 225 ngày, ngày Mặt Trời ~117 ngày) và dễ dựng hình, nhưng kịch bản lặp ý nhiều (câu \"dài hơn một năm\" nhắc 3–4 lần), phần \"ngày\" và \"vòng xoay\" gây lẫn lộn (tựa nói \"ngày\" mà thoại lại nói \"vòng xoay\"), thiếu hình ảnh so sánh dễ hiểu và chưa nhắc sao Kim xoay ngược chiều hay vì sao nóng nhất, nên còn mỏng và chưa đủ sâu.",
-    "hash": "4d81aa09e8ed67f6"
+    "why": "Điểm mạnh: mở đầu gây tò mò, số liệu đúng (quay 243 ngày, năm 225 ngày, ngày Mặt Trời ~117 ngày), ngắn gọn, dễ dựng bằng hình quỹ đạo, chủ đề sao Kim được nhiều trẻ tìm; điểm yếu: tiêu đề \"một ngày dài hơn một năm\" gây nhầm vì ngày thật (Mặt Trời mọc đến mọc) chỉ 117 ngày và chưa phân biệt rõ hai khái niệm, chưa giải thích vì sao quay ngược/chậm, và câu kêu gọi theo dõi lại ghi \"Huy Kể Chuyện\" trong khi kênh hỏi–đáp là Ask Huy.",
+    "hash": "db4f2b8ecf20c956"
   }
 }

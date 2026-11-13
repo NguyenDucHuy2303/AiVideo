@@ -47,10 +47,55 @@
       "at": "2026-11-13T03:51:20.258Z",
       "status": "rewrite",
       "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T04:21:24.599Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T04:51:28.005Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T05:21:31.647Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T05:51:35.037Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T06:21:38.084Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T06:51:41.555Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T07:22:04.613Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T07:52:22.515Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 89083 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T09:20:08.138Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
     }
   ],
   "kind": "qa",
   "summary": "Every child has had hiccups and found them funny and puzzling, and the video shows the diaphragm and the 'hic' sound with a simple animated body diagram and ends with fun, safe tricks people try.",
   "by": "claude-opus",
-  "retryAt": "2026-11-13T04:21:20.257Z"
+  "retryAt": "2026-11-13T09:50:08.137Z"
 }

@@ -1,7 +1,7 @@
 {
   "slug": "how-do-bees-make-honey",
   "topic": "How do bees make honey?",
-  "status": "done",
+  "status": "video",
   "notes": [
     {
       "at": "2026-11-11T01:38:20.239Z",
@@ -12,6 +12,11 @@
       "at": "2026-11-11T03:32:36.507Z",
       "on": "video",
       "text": "Số trong câu tiếng Anh bị đọc bằng chữ số tiếng Việt (bộ chuẩn hóa chữ tiếng Việt chạy cho cả Kokoro). Đọc lại giọng."
+    },
+    {
+      "at": "2026-11-13T08:00:51.418Z",
+      "on": "script",
+      "text": "Đổi dàn nhân vật: Mai nay tên là Bối (bé gái 8 tuổi, vẫn hỏi và đoán). Thêm Hùng (21 tuổi, em trai Huy, phụ tá: bày và làm thí nghiệm, đưa đồ vật, thỉnh thoảng hậu đậu vui vẻ) và Beo (5 tuổi, em trai Bối, tò mò, đoán ngây ngô bằng câu ngắn). Cả bốn có mặt suốt video. Giữ nguyên nội dung, kiến thức và độ dài; chỉ thêm lời cho Hùng và Beo ở những chỗ hợp lý."
     }
   ],
   "history": [
@@ -131,6 +136,104 @@
       "at": "2026-11-12T17:28:33.986Z",
       "status": "done",
       "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-13T08:00:51.419Z",
+      "status": "rewrite",
+      "info": "viết lại với Huy, Hùng, Bối, Beo"
+    },
+    {
+      "at": "2026-11-13T08:02:55.054Z",
+      "status": "review"
+    },
+    {
+      "at": "2026-11-13T08:02:55.082Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-13T08:03:13.286Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-13T08:03:13.287Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-13T08:47:35.382Z",
+      "status": "failed",
+      "info": "ffmpeg: [out#0/mp4 @ 0x5c0fe1cfa3c0] Output file does not contain any stream\nError opening output file /home/huynguyen/WataCreateVideo/projects/how-do-bees-make-honey/build/anim/16x9/s32-fb8bfbf67658.mp4.part.mp4.\nError opening output files: Invalid argument\n"
+    },
+    {
+      "at": "2026-11-13T08:49:58.786Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-13T08:50:02.737Z",
+      "status": "failed",
+      "info": "ffmpeg: [out#0/mp4 @ 0x571b8195b3c0] Output file does not contain any stream\nError opening output file /home/huynguyen/WataCreateVideo/projects/how-do-bees-make-honey/build/anim/16x9/s32-fb8bfbf67658.mp4.part.mp4.\nError opening output files: Invalid argument\n"
+    },
+    {
+      "at": "2026-11-13T08:50:02.753Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-13T08:50:05.889Z",
+      "status": "failed",
+      "info": "ffmpeg: [out#0/mp4 @ 0x63bc68da13c0] Output file does not contain any stream\nError opening output file /home/huynguyen/WataCreateVideo/projects/how-do-bees-make-honey/build/anim/16x9/s32-fb8bfbf67658.mp4.part.mp4.\nError opening output files: Invalid argument\n"
+    },
+    {
+      "at": "2026-11-13T09:19:59.807Z",
+      "status": "review",
+      "info": "chuẩn bị lại: giọng và chỉ đạo cảnh theo kịch bản mới"
+    },
+    {
+      "at": "2026-11-13T09:19:59.810Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-13T09:19:59.837Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-13T09:19:59.838Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-13T09:20:02.476Z",
+      "status": "failed",
+      "info": "ffmpeg: [out#0/mp4 @ 0x5eae271633c0] Output file does not contain any stream\nError opening output file /home/huynguyen/WataCreateVideo/projects/how-do-bees-make-honey/build/anim/16x9/s32-fb8bfbf67658.mp4.part.mp4.\nError opening output files: Invalid argument\n"
+    },
+    {
+      "at": "2026-11-13T09:20:43.927Z",
+      "status": "review",
+      "info": "chuẩn bị lại: giọng và chỉ đạo cảnh theo kịch bản mới"
+    },
+    {
+      "at": "2026-11-13T09:20:43.939Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-13T09:42:49.107Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-13T09:42:49.150Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-13T10:36:42.038Z",
+      "status": "video"
     }
   ],
   "kind": "qa",
@@ -140,52 +243,15 @@
     "why": "Điểm mạnh: câu mở \"ong thổi bong bóng\" rất hấp dẫn, cấu trúc 4 bước rõ ràng, nội dung đúng khoa học (mật hoa, dạ dày mật, enzyme, quạt cánh, nắp sáp), có thí nghiệm an toàn và chủ đề nhiều người tìm, dễ dựng hình; điểm yếu: hơi dài và dày thông tin (nhiều thuật ngữ như proboscis, enzyme, hexagon), đoạn mật ong \"thọ nghìn năm\" còn gây tranh cãi và phần bubble/số liệu (3 km, 29 kg) cần kiểm chứng nguồn, nên cần cắt gọn để giữ chân trẻ 6–12 tuổi.",
     "hash": "ab852b80f6087633"
   },
-  "autoPicked": true,
-  "retryAt": "2026-11-10T12:02:44.019Z",
-  "autoCheck": {
-    "at": "2026-11-12T06:52:18.584Z",
-    "mtimeMs": 1794405630714.3044,
-    "ok": true,
-    "problems": [],
-    "seconds": 410
-  },
-  "autoApproved": "2026-11-12T06:52:18.584Z",
-  "shorts": [
-    "shorts/1.mp4",
-    "shorts/2.mp4",
-    "shorts/3.mp4"
-  ],
-  "exported": {
-    "long": {
-      "dir": "/home/huynguyen/youtube/How Do Bees Make Honey",
-      "publishAt": "2026-11-14T12:00:00.000Z",
-      "channel": "ask-huy",
-      "at": "2026-11-13T03:46:22.548Z"
-    },
-    "shorts": [
-      {
-        "dir": "/home/huynguyen/youtube/How Do Bees Make Honey",
-        "publishAt": "2026-11-15T02:00:00.000Z",
-        "channel": "ask-huy",
-        "at": "2026-11-13T03:46:22.548Z"
-      },
-      {
-        "dir": "/home/huynguyen/youtube/How Do Bees Make Honey",
-        "publishAt": "2026-11-15T08:00:00.000Z",
-        "channel": "ask-huy",
-        "at": "2026-11-13T03:46:22.549Z"
-      },
-      {
-        "dir": "/home/huynguyen/youtube/How Do Bees Make Honey",
-        "publishAt": "2026-11-16T02:00:00.000Z",
-        "channel": "ask-huy",
-        "at": "2026-11-13T03:46:22.550Z"
+  "retryAt": "2026-11-14T10:36:42.039Z",
+  "inspect": {
+    "at": "2026-11-13T10:36:42.037Z",
+    "perMinute": 0.5,
+    "byKind": {
+      "head-cut": {
+        "count": 4,
+        "seconds": 5.6
       }
-    ]
-  },
-  "drive": {
-    "folder": "How Do Bees Make Honey",
-    "mtime": 1794541582552.9734,
-    "at": "2026-11-13T03:47:48.987Z"
+    }
   }
 }
