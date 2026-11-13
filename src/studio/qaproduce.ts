@@ -178,7 +178,17 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
   await fs.mkdir(anim, { recursive: true });
   const script = await fs.readFile(path.join(dir, "script.txt"), "utf8");
   const lines = script.trim().split("\n").slice(1);
-  await fs.writeFile(path.join(proj, "script.txt"), [plan.title, ...lines].join("\n") + "\n");
+  // A script written again after the film was made (a rewrite): the old voice timing and the
+  // old direction belong to the old lines, so both are made anew (unchanged lines keep their
+  // voice from the cache). Without this the "new" film is the old one.
+  const text = [plan.title, ...lines].join("\n") + "\n";
+  const before = await fs.readFile(path.join(proj, "script.txt"), "utf8").catch(() => undefined);
+  if (before !== undefined && before !== text) {
+    log("  the script changed: voices and direction made again");
+    await fs.rm(path.join(proj, "timeline.json"), { force: true });
+    for (const f of await fs.readdir(anim)) if (/^s\d+\.json$/.test(f)) await fs.rm(path.join(anim, f));
+  }
+  await fs.writeFile(path.join(proj, "script.txt"), text);
   await fs.writeFile(path.join(proj, "storyboard.json"), JSON.stringify({ title: plan.title, kind: "story", scenes: lines.map((narration) => ({ narration, chapter: plan.title, onScreen: {}, visual: { description: "studio", mood: "calm" }, camera: "ken_burns", transition: "cut" })) }, null, 2));
   const project = JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8"));
   await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers: { [P.host.name]: ["huy"], [P.helper.name]: ["hung"], [P.kid.name]: ["boi"], [P.little.name]: ["beo"], [OLD_KID]: ["boi", "mai"] }, brandId: P.brandId, style: STYLE, thumbnail: { title: plan.thumbnail, subtitle: P.channel } }, null, 2));
