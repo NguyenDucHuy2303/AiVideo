@@ -71,6 +71,8 @@
   .themes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .themes select { font: inherit; font-size: 15px; padding: 6px 8px; border-radius: 8px; border: 1.5px solid var(--line); width: 100%; margin: 6px 0; }
   .themes video { border-radius: 10px; }
+  p.frow { margin: 6px 0 2px; font-size: 14px; }
+  p.frow.must { background: #fff3d6; border-left: 4px solid #e0a84a; padding: 4px 8px; border-radius: 4px; }
   .copybox { background: #fffdf8; border: 1.5px solid var(--line, #e6d8bf); border-radius: 8px; padding: 8px 10px; font-size: 14px; margin: 4px 0 10px; max-height: 260px; overflow: auto; }
   details.post { border: 1.5px solid var(--line, #e6d8bf); border-radius: 12px; padding: 8px 14px; margin: 10px 0; background: #fff; }
   details.post summary { cursor: pointer; padding: 4px 0; }
@@ -211,6 +213,11 @@ async function show(slug) {
   if (job.autoApproved) h += `<div class="meta">✔ <b>Studio tự duyệt video</b> lúc ${new Date(job.autoApproved).toLocaleString("vi")} (anh chưa duyệt kịp, kiểm tra máy đạt). Chưa ưng thì bấm “Hoãn đăng” ở mục YouTube.</div>`;
   if (job.error) h += `<div class="warn">Lỗi: ${esc(job.error)}</div>`;
   else if (last?.info && /vấn đề/.test(last.info)) h += `<div class="warn">${esc(last.info)}</div>`;
+  if (job.status === "video") {
+    // Waiting for review (or the studio's own approval): the words are ready already.
+    const { posts } = await fetch(`/api/job/${slug}/social`).then((r) => r.json());
+    if (posts.length) h += postWords(posts, () => null);
+  }
   if (job.status === "done") {
     // Every video of the topic: downloaded, and posted where (the ticks work here too).
     const { posts } = await fetch(`/api/job/${slug}/social`).then((r) => r.json());
@@ -368,22 +375,14 @@ function postWords(posts, yt) {
   const when = (t) => new Date(t).toLocaleString("vi", { weekday: "long", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" });
   const box = (text, pre) => `<div class="copybox"${pre ? ' style="white-space:pre-wrap"' : ""}>${esc(text)}</div>`;
   const card = (p, i) => {
-    const m = p.youtube, posted = yt(p), thumb = p.what === "long" ? "anh-bia.jpg" : p.what === "en" ? "anh-bia-tieng-anh.jpg" : "";
-    const settings = [
-      ["Lên lịch", p.publishAt ? when(p.publishAt) : "—"],
-      ["Dành cho trẻ em", "Có"], ["Nội dung có sự thay đổi", "Không (phim hoạt hình)"],
-      ["Danh mục", m.categoryId === "27" || m.categoryId === 27 ? "Giáo dục (Education)" : "Phim và hoạt hình (Film & Animation)"],
-      ...(m.playlist ? [["Danh sách phát", m.playlist]] : []),
-      ["Ngôn ngữ video", m.lang === "en" ? "Tiếng Anh" : "Tiếng Việt"],
-      ...(thumb ? [["Hình thu nhỏ", `${thumb} (có thêm ${thumb.replace(".jpg", "-2.jpg")}, ${thumb.replace(".jpg", "-3.jpg")})`]] : []),
-    ];
+    const posted = yt(p);
+    // YouTube Studio's page, box by box, in its order (publish.ts youtubeForm).
+    const rows = p.form.map((r) => r.copy
+      ? `<p class="frow"><b>${esc(r.label)}</b> ${clip(r.value)}${r.note ? ` <small class="meta">${esc(r.note)}</small>` : ""}</p>${box(r.value, r.label === "Mô tả")}`
+      : `<p class="frow${r.must ? " must" : ""}"><b>${esc(r.label)}:</b> ${esc(r.value)}${r.note ? ` <small class="meta">(${esc(r.note)})</small>` : ""}</p>`).join("");
     const social = Object.entries(p.text).map(([pl, text]) => `<h4>${pl === "tiktok" ? "♪ TikTok" : p.what === "short" ? "f Facebook Reels" : "f Facebook (video)"} ${p.done[pl] ? "· ✔ đã đăng" : ""} ${clip(text)}</h4>${box(text, true)}`).join("");
-    return `<details ${i === 0 ? "open" : ""} class="post"><summary><b>${esc(p.label)}</b> · ${esc(p.account)} · ${esc(p.name)}${p.publishAt ? ` · ${when(p.publishAt)}` : ""}${posted ? " · ✔ đã lên YouTube" : ""}</summary>
-      <h4>▶ YouTube</h4>
-      <p><b>Tiêu đề</b> ${clip(m.title)}</p>${box(m.title)}
-      <p><b>Mô tả</b> ${clip(m.description)}</p>${box(m.description, true)}
-      <p><b>Thẻ</b> <small>(ô Thẻ, ở mục Hiện thêm)</small> ${clip(m.tags.join(", "))}</p>${box(m.tags.join(", "))}
-      <p><b>Cài đặt</b></p><table class="kv">${settings.map(([k, v]) => `<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join("")}</table>
+    return `<details ${i === 0 ? "open" : ""} class="post"><summary><b>${esc(p.label)}</b> · <b>${esc(p.name)}</b> → kênh ${esc(p.account)}${p.publishAt ? ` · ${when(p.publishAt)}` : ""}${posted ? " · ✔ đã lên YouTube" : ""}</summary>
+      <h4>▶ YouTube Studio</h4>${rows}
       ${social}</details>`;
   };
   return `<section><h3>Lời đăng</h3><p class="meta">Giống hai tệp <code>dang-len-youtube.txt</code> và <code>dang-tiktok-facebook.txt</code> trong thư mục đăng. Bấm 📋 để chép rồi dán vào YouTube Studio, TikTok, Facebook.</p>${posts.map(card).join("")}</section>`;

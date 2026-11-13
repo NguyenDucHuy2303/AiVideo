@@ -19,6 +19,7 @@
   nav .n { background: var(--bronze); color: #fff; border-radius: 999px; font-size: 11px; padding: 0 6px; margin-left: 3px; }
   main { padding: 12px; max-width: 760px; margin: 0 auto; }
   @media (min-width: 800px) { nav { left: 50%; transform: translateX(-50%); max-width: 760px; } .bar { max-width: 760px; left: 50%; transform: translateX(-50%); } video.v { height: 50vh; } }
+  ul.form { margin: 6px 0; padding-left: 18px; font-size: 14px; } ul.form li { margin: 3px 0; } ul.form li.must { background: #fff3d6; border-radius: 4px; padding: 2px 4px; }
   .job { background: var(--card); border: 1.5px solid var(--line); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; }
   .job b { display: block; font-size: 17px; }
   small, .meta { color: var(--muted); font-size: 13px; }
@@ -281,8 +282,8 @@ async function drawPost(d) {
           return jpgs.length ? saveBtn(jpgs.map((f, i) => ({ url: `/files/${slug}/${f}`, name: `${slug}-${en ? "anh-bia-tieng-anh" : "anh-bia"}${i ? `-${i + 1}` : ""}.jpg` })), jpgs.length > 1 ? `${jpgs.length} ảnh bìa` : "ảnh bìa") : ""; })()}</div>
       <div class="plat"><h4>▶ YouTube ${yt ? `<span class="tag done">✔ đã đăng</span>` : `<span class="tag">chờ</span>`}</h4>
         ${yt ? `<p><a href="${esc(yt.url)}">${esc(yt.url)}</a></p>` : `
-        <div class="row">${copyBtn(p.youtube.title, "Tiêu đề", "tiêu đề")}${copyBtn(p.youtube.description, "Mô tả", "mô tả")}${copyBtn(p.youtube.tags.join(", "), "Thẻ", "thẻ")}</div>
-        <p class="meta">Dành cho trẻ em: Có${p.youtube.playlist ? ` · danh sách phát: ${esc(p.youtube.playlist)}` : ""}${p.publishAt ? ` · lên lịch ${when(p.publishAt)}` : ""}</p>
+        <div class="row">${p.form.filter((r) => r.copy).map((r) => copyBtn(r.value, r.label, r.label.toLowerCase())).join("")}</div>
+        <ul class="form">${p.form.filter((r) => !r.copy).map((r) => `<li${r.must ? ' class="must"' : ""}><b>${esc(r.label)}:</b> ${esc(r.value)}</li>`).join("")}</ul>
         <div class="row"><input id="yt-${p.what}-${p.index ?? 0}" placeholder="Dán link YouTube sau khi đăng"><button class="btn fix" onclick="ytDone('${p.what}', ${p.index ?? "undefined"})">✔ Đã đăng</button></div>`}</div>`;
     for (const [pl, label] of [["tiktok", "♪ TikTok"], ["facebook", vertical ? "f Facebook Reels" : "f Facebook (video)"]]) {
       const text = p.text[pl];

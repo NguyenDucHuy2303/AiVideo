@@ -472,25 +472,41 @@ export async function staleExport(job: Job, files: string[]): Promise<boolean> {
 /** The other thumbnails of a film's main one ("thumbnail.jpg" → thumbnail-2.jpg, -3; "thumbnail.en.jpg" → thumbnail-2.en.jpg…). */
 export const thumbVariants = (jpg: string, files: string[]) => [2, 3].map((k) => jpg.replace(/^thumbnail/, `thumbnail-${k}`)).filter((f) => files.includes(f));
 
+/**
+ * Everything to fill in on YouTube Studio's upload page, in the page's own order: the file and
+ * the channel first (the English version goes to Ask Huy, not the Vietnamese channel), then each
+ * box. The sheet (dang-len-youtube.txt) and the studio's pages show the same rows.
+ */
+export interface FormRow { label: string; value: string; copy?: boolean; must?: boolean; note?: string }
+export function youtubeForm(file: string, meta: Meta, cfg: ChannelCfg, what: What, at: Date | undefined, thumb: string | undefined, moreThumbs: string[] = []): FormRow[] {
+  return [
+    { label: "Tệp tải lên", value: file, must: true },
+    { label: "Kênh", value: cfg.name, must: true, note: "đăng đúng kênh này (đổi kênh: ảnh đại diện → Chuyển đổi tài khoản)" },
+    { label: "Tiêu đề", value: meta.title, copy: true },
+    { label: "Mô tả", value: meta.description, copy: true },
+    thumb ? { label: "Hình thu nhỏ", value: `Tải tệp lên: ${thumb}`, note: moreThumbs.length ? `có thêm ${moreThumbs.join(", ")} để chọn; sau 3–4 ngày tỷ lệ nhấp CTR thấp thì đổi ảnh khác` : undefined }
+      : { label: "Hình thu nhỏ", value: what === "short" ? "Short: không cần tải ảnh" : "Chọn trong video" },
+    ...(meta.playlist ? [{ label: "Danh sách phát", value: meta.playlist, copy: true, note: "chưa có thì bấm Tạo danh sách phát mới với đúng tên này" }] : []),
+    { label: "Đối tượng người xem", value: "Có, nội dung này dành cho trẻ em", must: true, note: "bắt buộc với phim thiếu nhi, theo luật COPPA" },
+    { label: "Nội dung được trả tiền để quảng cáo", value: "Không" },
+    { label: "Sử dụng AI", value: "Không", note: "câu hỏi chỉ về hình ảnh, âm thanh giống thật như người thật, sự kiện thật; phim hoạt hình vẽ thì không" },
+    { label: "Thẻ", value: meta.tags.join(", "), copy: true, note: "ở mục Hiện thêm; xóa thẻ cũ nếu có" },
+    { label: "Ngôn ngữ video", value: meta.lang === "vi" ? "Tiếng Việt" : "Tiếng Anh (Hoa Kỳ)" },
+    { label: "Danh mục", value: CATEGORY_VI[meta.categoryId] ?? meta.categoryId },
+    { label: "Các mục khác", value: "Giữ mặc định", note: "bình luận tự tắt khi chọn dành cho trẻ em, như vậy là bình thường" },
+    at ? { label: "Chế độ hiển thị", value: `Lên lịch: ${when(at)}`, must: true } : { label: "Chế độ hiển thị", value: "Giờ đăng được xếp khi studio duyệt xong video" },
+    { label: "Đăng xong", value: "Dán link video vào trang duyệt của studio (bài này, mục YouTube) rồi bấm ✔ Đã đăng" },
+  ];
+}
+
 export function sheetSection(n: number, file: string, meta: Meta, cfg: ChannelCfg, what: What, at: Date, thumb: string | undefined, done?: Published, moreThumbs: string[] = []): string {
+  const rows = youtubeForm(file, meta, cfg, what, at, thumb, moreThumbs);
   return [
     `════════ ${n}. ${WHAT_VI[what]}: ${file} ════════`,
     ...(done ? [`✔ ĐÃ ĐĂNG: ${done.url}`, ""] : []),
-    `KÊNH: ${cfg.name}`,
-    `GIỜ CÔNG KHAI: ${when(at)}   (YouTube Studio: bước "Chế độ hiển thị" → "Lên lịch", chọn đúng giờ này)`,
-    "",
-    "TIÊU ĐỀ:", meta.title, "",
-    "MÔ TẢ:", meta.description, "",
-    "THẺ (dán vào ô Thẻ, ở mục Hiện thêm):", meta.tags.join(", "), "",
-    "CÀI ĐẶT:",
-    "- Đối tượng người xem: Có, nội dung này dành cho trẻ em",
-    "- Nội dung có sự thay đổi (altered content): Không (phim hoạt hình, không giả người thật)",
-    `- Danh mục: ${CATEGORY_VI[meta.categoryId] ?? meta.categoryId}`,
-    ...(meta.playlist ? [`- Danh sách phát: ${meta.playlist} (tạo trong YouTube Studio nếu chưa có)`] : []),
-    `- Ngôn ngữ video: ${meta.lang === "vi" ? "Tiếng Việt" : "Tiếng Anh (English)"}`,
-    ...(thumb ? [`- Hình thu nhỏ: ${thumb}`] : what === "short" ? ["- Short: không cần hình thu nhỏ"] : []),
-    // (YouTube's A/B test of thumbnails is closed to videos made for kids: changed by hand instead)
-    ...(thumb && moreThumbs.length ? [`  Có thêm ${moreThumbs.join(", ")}: chọn ảnh anh thấy hút mắt nhất. Sau 3–4 ngày xem "Tỷ lệ nhấp" (CTR) ở YouTube Studio → Số liệu phân tích → Phạm vi tiếp cận; thấp hơn các video khác của kênh thì đổi sang ảnh khác.`] : []),
+    ...rows.flatMap((r) => r.copy
+      ? [`${r.label.toUpperCase()}:${r.note ? ` — ${r.note}` : ""}`, r.value, ""]
+      : [`${r.must ? "⚠ " : ""}${r.label}: ${r.value}${r.note ? ` — ${r.note}` : ""}`]),
     "", "",
   ].join("\n");
 }
@@ -593,6 +609,8 @@ export interface SocialPost {
   /** The YouTube time, when given: a good time on the other platforms too. */
   publishAt?: string;
   youtube: Meta;
+  /** What to fill in on YouTube Studio's page, in its order (youtubeForm). */
+  form: FormRow[];
   text: Partial<Record<Platform, string>>;
   /** Marked posted by the user: when. */
   done: Partial<Record<Platform, string>>;
@@ -614,9 +632,15 @@ export async function socialPosts(job: Job, files: string[], settings: PublishSe
       const d = job.social?.[socialKey(p, item.what, item.index)];
       if (d) done[p] = d;
     }
+    const publishAt = (publishedOf(job, item) ?? exportedOf(job, item))?.publishAt;
+    // (the thumbnails' names in the topic folder, as exportJob lays them out)
+    const jpg = item.what === "short" ? undefined : item.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg";
+    const thumb = jpg && files.includes(jpg) ? (item.what === "en" ? "anh-bia-tieng-anh.jpg" : "anh-bia.jpg") : undefined;
+    const more = thumb ? thumbVariants(jpg!, files).map((_, k) => thumb.replace(/\.jpg$/, `-${k + 2}.jpg`)) : [];
     out.push({
       what: item.what, index: item.index, file: item.file, name: fileNameOf(job, item), label: labelOf(job, item),
-      channel, account: cfg.name, publishAt: (publishedOf(job, item) ?? exportedOf(job, item))?.publishAt, youtube, text, done,
+      channel, account: cfg.name, publishAt, youtube, text, done,
+      form: youtubeForm(fileNameOf(job, item), youtube, cfg, item.what, publishAt ? new Date(publishAt) : undefined, thumb, more),
     });
   }
   return out;

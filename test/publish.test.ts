@@ -114,7 +114,7 @@ test("a topic is laid out once its Shorts are cut, again only if something new i
 test("each video's part of the sheet, and its time kept from other videos", () => {
   const cfg = { ...PUBLISH_DEFAULTS["ask-huy"]! };
   const txt = sheetSection(1, "video-dai.mp4", { title: "Why is the sky blue? | Ask Huy", description: "Light from the Sun…", tags: ["Ask Huy", "kids science"], categoryId: "27", lang: "en", playlist: "Ask Huy: Big Questions" }, cfg, "long", new Date(2026, 10, 13, 17, 0), "anh-bia.jpg");
-  for (const want of ["1. VIDEO DÀI: video-dai.mp4", "KÊNH: Ask Huy", "17:00 Thứ Sáu 13/11/2026", "Why is the sky blue? | Ask Huy", "Ask Huy, kids science", "dành cho trẻ em", "Giáo dục", "Tiếng Anh", "Hình thu nhỏ: anh-bia.jpg", "Danh sách phát: Ask Huy: Big Questions"]) assert.ok(txt.includes(want), want);
+  for (const want of ["1. VIDEO DÀI: video-dai.mp4", "Tệp tải lên: video-dai.mp4", "Kênh: Ask Huy", "Lên lịch: 17:00 Thứ Sáu 13/11/2026", "Why is the sky blue? | Ask Huy", "Ask Huy, kids science", "Có, nội dung này dành cho trẻ em", "trả tiền để quảng cáo: Không", "Sử dụng AI: Không", "Giáo dục", "Tiếng Anh (Hoa Kỳ)", "Tải tệp lên: anh-bia.jpg", "Ask Huy: Big Questions"]) assert.ok(txt.includes(want), want);
   const done = sheetSection(2, "short-1.mp4", { title: "t", description: "d", tags: [], categoryId: "27", lang: "en" }, cfg, "short", new Date(2026, 10, 13, 19, 30), undefined, { videoId: "a", url: "https://youtube.com/shorts/a", publishAt: "t", channel: "ask-huy", at: "t" });
   assert.ok(done.includes("✔ ĐÃ ĐĂNG: https://youtube.com/shorts/a"));
   const ex = { dir: "/x", publishAt: "2026-11-13T10:00:00.000Z", channel: "ask-huy", at: "t" };
