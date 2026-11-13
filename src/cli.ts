@@ -51,6 +51,7 @@ Usage:
   npm run wata -- produce <job> --test 6   test the whole production on the first 6 scenes (projects/<job>-thu)
   npm run wata -- era <key> --title "<thời đại>"   research and build a missing era into the library (eras.json)
   npm run wata -- brand [theme,…] [--lang en]   render the intro/outro themes (previews for the review page)
+  npm run wata -- channel-art                   profile pictures and covers of both channels (YouTube, Facebook, TikTok)
   npm run wata -- tokens                     what the brain (Claude) has spent: today, per job, per step
   npm run wata -- validate <timeline.json>   check a timeline without rendering
   npm run wata -- render <timeline.json> [--profile 9x16|16x9] [--encoder x264|qsv] [--force]
@@ -303,6 +304,13 @@ async function main(): Promise<number> {
       for (const theme of file ? file.split(",") : Object.keys(BRAND_THEMES)) {
         for (const kind of ["intro", "outro"] as const) console.log(`✔ ${(await brandClip(brand, kind, false, theme)).file}`);
       }
+      return 0;
+    }
+
+    case "channel-art": {
+      // Profile pictures and covers for YouTube, Facebook, TikTok (assets/brand/**/channel-art).
+      const { allChannelArt } = await import("./animation/brand/channelart.ts");
+      await allChannelArt();
       return 0;
     }
 

@@ -353,6 +353,16 @@
       const g = scene.grade;
       if (g) S.grade.setAttribute("opacity", f2(lerp(g.from ?? 0.06, g.to ?? 0.06, seg(t, g.at ?? 0, (g.at ?? 0) + (g.dur ?? 1)))));
     }
+    // A still for compositing (channel art, brand/channelart.ts): only the characters and their
+    // shadows; sky, sun, set, haze, vignette and grade hidden, the page shows through.
+    if (scene.transparent) {
+      const keep = new Set([S.layer("actors"), S.layer("shadows"), S.defs]);
+      const path = (n) => { const out = []; for (; n && n !== S.svg; n = n.parentNode) out.push(n); return out; };
+      const needed = new Set([...keep].flatMap(path));
+      const hide = (parent) => { for (const c of [...parent.children]) { if (keep.has(c)) continue; if (needed.has(c)) hide(c); else c.style.display = "none"; } };
+      hide(S.svg);
+      document.documentElement.style.background = document.body.style.background = "transparent";
+    }
     return { S, renderFrame, poseAt, pointsAt, duration: scene.duration, ready, actors, actorLayer };
   }
 

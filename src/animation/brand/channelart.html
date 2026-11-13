@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; overflow: hidden; background: transparent; }
+  svg { display: block; }
+</style>
+</head>
+<body>
+<script>
+/*
+ * Channel art (channelart.ts): a vector background for the channel's look, and the picture
+ * layers laid on it (the logo, the four presenters drawn by the player). Crisp at any size.
+ *
+ *   window.params = { width, height, theme: "trong_dong" | "ask_huy", kind: "avatar" | "banner",
+ *                     focus: { x, y, r }   (the logo's middle: the sun's rays come from there),
+ *                     ground: y            (where the presenters' feet are: the hills start there),
+ *                     layers: [{ src, x, y, w, h }] }
+ */
+const P = window.params || {}, W = P.width || 2560, H = P.height || 1440, U = Math.min(W, H);
+const NS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs, parent) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); if (parent) parent.appendChild(n); return n; };
+const svg = el("svg", { width: W, height: H, viewBox: `0 0 ${W} ${H}` }, document.body);
+const defs = el("defs", {}, svg);
+let seed = 7;
+const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
+const grad = (id, type, stops, attrs = {}) => {
+  const g = el(type, { id, ...attrs }, defs);
+  for (const [o, c, a] of stops) el("stop", { offset: o, "stop-color": c, ...(a !== undefined ? { "stop-opacity": a } : {}) }, g);
+  return `url(#${id})`;
+};
+const f = P.focus || { x: W / 2, y: H / 2, r: U * 0.3 };
+
+/** Sun rays from the focus: thin wedges, every other one lighter. */
+function rays(color, opacity, n = 28) {
+  const g = el("g", { opacity }, svg), R = Math.hypot(W, H);
+  for (let i = 0; i < n; i += 2) {
+    const a0 = (i / n) * Math.PI * 2, a1 = ((i + 1) / n) * Math.PI * 2;
+    el("path", { d: `M ${f.x} ${f.y} L ${f.x + R * Math.cos(a0)} ${f.y + R * Math.sin(a0)} L ${f.x + R * Math.cos(a1)} ${f.y + R * Math.sin(a1)} Z`, fill: color }, g);
+  }
+}
+/** A soft round cloud. */
+function cloud(x, y, s, fill = "#fff", opacity = 0.95) {
+  const g = el("g", { opacity }, svg);
+  for (const [dx, dy, r] of [[0, 0, 1], [0.9, -0.35, 1.15], [1.9, 0, 0.95], [0.95, 0.25, 1]]) el("circle", { cx: x + dx * s, cy: y + dy * s, r: r * s, fill }, g);
+}
+/** A Lạc bird of the Đông Sơn drum, flying (long beak, swept wings). */
+function bird(x, y, s, rot, fill) {
+  el("path", { d: "M -1 0 Q -0.2 -0.25 0.9 -0.1 L 1.5 -0.18 L 0.95 0.05 Q 0.2 0.25 -1 0 Z M -0.2 -0.08 Q -0.6 -0.9 -0.1 -1.2 Q 0.1 -0.6 0.3 -0.1 Z M -0.9 0 L -1.5 -0.25 L -1.35 0.2 Z",
+    fill, transform: `translate(${x} ${y}) rotate(${rot}) scale(${s})` }, svg);
+}
+/** A band of Đông Sơn pattern: rows of dotted circles between zigzags, in bronze. */
+function bronzeBand(y, h) {
+  const g = el("g", {}, svg);
+  el("rect", { x: 0, y, width: W, height: h, fill: "#a8701f" }, g);
+  el("rect", { x: 0, y: y + h * 0.08, width: W, height: h * 0.84, fill: "#c98a2a" }, g);
+  const step = h * 0.9;
+  let zz = `M 0 ${y + h * 0.22}`;
+  for (let x = 0; x <= W + step; x += step / 2) zz += ` L ${x} ${y + h * ((x / (step / 2)) % 2 ? 0.12 : 0.3)}`;
+  el("path", { d: zz, fill: "none", stroke: "#6e4512", "stroke-width": h * 0.05 }, g);
+  el("path", { d: zz, fill: "none", stroke: "#6e4512", "stroke-width": h * 0.05, transform: `translate(0 ${h * 0.58})` }, g);
+  for (let x = step / 2; x < W; x += step) {
+    el("circle", { cx: x, cy: y + h / 2, r: h * 0.17, fill: "none", stroke: "#6e4512", "stroke-width": h * 0.045 }, g);
+    el("circle", { cx: x, cy: y + h / 2, r: h * 0.05, fill: "#6e4512" }, g);
+  }
+}
+/** A question mark with a dark edge (Ask Huy). */
+function question(x, y, s, rot, fill) {
+  const t = el("text", { x, y, "font-size": s, "font-family": "Baloo 2, Nunito, Arial Rounded MT Bold, sans-serif", "font-weight": 900, "text-anchor": "middle",
+    fill, stroke: "#1f3557", "stroke-width": s * 0.07, "paint-order": "stroke", transform: `rotate(${rot} ${x} ${y})` }, svg);
+  t.textContent = "?";
+}
+/** A four-pointed sparkle. */
+function star(x, y, s, fill) {
+  el("path", { d: `M ${x} ${y - s} Q ${x + s * 0.18} ${y - s * 0.18} ${x + s} ${y} Q ${x + s * 0.18} ${y + s * 0.18} ${x} ${y + s} Q ${x - s * 0.18} ${y + s * 0.18} ${x - s} ${y} Q ${x - s * 0.18} ${y - s * 0.18} ${x} ${y - s} Z`,
+    fill, stroke: "#1f3557", "stroke-width": s * 0.12, "stroke-linejoin": "round" }, svg);
+}
+/** Spread n things over the frame, away from the focus and the given boxes. */
+function scatter(n, keepOut, draw) {
+  let placed = 0;
+  for (let tries = 0; placed < n && tries < n * 40; tries++) {
+    const x = rnd() * W, y = rnd() * H;
+    if (Math.hypot(x - f.x, y - f.y) < f.r * 1.15) continue;
+    if (keepOut.some(([x0, y0, x1, y1]) => x > x0 && x < x1 && y > y0 && y < y1)) continue;
+    draw(x, y); placed++;
+  }
+}
+// (the presenters' box, with room around it: nothing drawn over them)
+const people = (P.layers || []).filter((l) => l.people).map((l) => [l.x - U * 0.06, l.y - U * 0.06, l.x + l.w + U * 0.06, l.y + l.h + U * 0.06]);
+const ground = P.ground ?? H * 0.75;
+/** Rolling hills from y0 down, the near ones with rows (rice, grass). */
+function hill(y0, amp, fill, rowsColour) {
+  let d = `M 0 ${H} L 0 ${y0}`;
+  for (let x = 0; x <= W; x += W / 8) d += ` Q ${x + W / 16} ${y0 - amp * (0.6 + 0.4 * Math.sin(x / 300))} ${x + W / 8} ${y0}`;
+  el("path", { d: d + ` L ${W} ${H} Z`, fill }, svg);
+  if (rowsColour) for (let k = 1; k < 7; k++) el("path", { d: `M 0 ${y0 + k * (H - y0) / 7} Q ${W / 2} ${y0 + k * (H - y0) / 7 - amp * 0.4} ${W} ${y0 + k * (H - y0) / 7}`, stroke: rowsColour, "stroke-width": U * 0.004, fill: "none", opacity: 0.5 }, svg);
+}
+
+if (P.theme === "ask_huy") {
+  el("rect", { width: W, height: H, fill: P.kind === "avatar"
+    ? grad("bg", "radialGradient", [[0, "#7fd0ff"], [0.6, "#45a8ec"], [1, "#2a78c8"]], { cx: "50%", cy: "45%", r: "70%" })
+    : grad("bg", "linearGradient", [[0, "#c9ecff"], [0.55, "#86cdf6"], [1, "#4aa3e0"]], { x1: 0, y1: 0, x2: 0, y2: 1 }) }, svg);
+  rays("#ffffff", P.kind === "avatar" ? 0.1 : 0.14, 32);
+  if (P.kind !== "avatar") {
+    for (const [x, y, s] of [[0.08, 0.2, 0.05], [0.3, 0.12, 0.035], [0.86, 0.16, 0.05], [0.66, 0.08, 0.03]]) cloud(x * W, y * H, s * U);
+    // A soft green hill under the presenters' feet (they stand, they do not float).
+    hill(ground - U * 0.035, U * 0.03, grad("hill1", "linearGradient", [[0, "#b8eb8e"], [1, "#8fd46a"]], { x1: 0, y1: 0, x2: 0, y2: 1 }));
+    hill(ground + U * 0.05, U * 0.025, "#7cc75a");
+    const colours = ["#ffd23f", "#ff7b6b", "#ffffff", "#8fe388"];
+    scatter(Math.round((W * H) / 200000), people.concat([[0, ground - U * 0.06, W, H]]), (x, y) => question(x, y, U * (0.06 + rnd() * 0.05), -25 + rnd() * 50, colours[Math.floor(rnd() * colours.length)]));
+    scatter(Math.round((W * H) / 300000), people.concat([[0, ground - U * 0.06, W, H]]), (x, y) => star(x, y, U * (0.012 + rnd() * 0.012), ["#ffd23f", "#ffffff", "#ff7b6b"][Math.floor(rnd() * 3)]));
+  }
+} else {
+  if (P.kind === "avatar") {
+    el("rect", { width: W, height: H, fill: grad("bg", "radialGradient", [[0, "#e2533a"], [0.62, "#b3261e"], [1, "#7a140e"]], { cx: "50%", cy: "50%", r: "70%" }) }, svg);
+    rays("#ffd27a", 0.12, 36);
+  } else {
+    el("rect", { width: W, height: H, fill: grad("bg", "linearGradient", [[0, "#ffe9b0"], [0.5, "#ffcf7a"], [1, "#f7a24b"]], { x1: 0, y1: 0, x2: 0, y2: 1 }) }, svg);
+    rays("#fff6dc", 0.35, 36);
+    for (const [x, y, s] of [[0.07, 0.25, 0.045], [0.33, 0.14, 0.03], [0.84, 0.2, 0.05], [0.62, 0.1, 0.028]]) cloud(x * W, y * H, s * U, "#fff8e8", 0.9);
+    // Rice fields: rolling hills, the presenters standing on the near one (rows of young rice).
+    hill(ground - U * 0.05, U * 0.04, "#9fcf6e");
+    hill(ground - U * 0.012, U * 0.03, "#7cbc52", "#5f9f3a");
+    scatter(9, people.concat([[0, ground - U * 0.1, W, H]]), (x, y) => bird(x, y, U * (0.02 + rnd() * 0.012), -15 + rnd() * 25, "#7a4a1e"));
+    const band = Math.max(18, H * 0.035);
+    bronzeBand(0, band);
+    bronzeBand(H - band, band);
+  }
+}
+for (const l of P.layers || []) el("image", { href: l.src, x: l.x, y: l.y, width: l.w, height: l.h, preserveAspectRatio: "xMidYMid meet" }, svg);
+window.renderFrame = () => {}; // (a still: nothing moves)
+// The capture waits for every image.
+window.ready = Promise.all([...svg.querySelectorAll("image")].map((im) => new Promise((ok) => { const i = new Image(); i.onload = i.onerror = ok; i.src = im.getAttribute("href"); })));
+</script>
+</body>
+</html>
