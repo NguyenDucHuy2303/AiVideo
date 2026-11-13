@@ -71,6 +71,12 @@
   .themes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .themes select { font: inherit; font-size: 15px; padding: 6px 8px; border-radius: 8px; border: 1.5px solid var(--line); width: 100%; margin: 6px 0; }
   .themes video { border-radius: 10px; }
+  .copybox { background: #fffdf8; border: 1.5px solid var(--line, #e6d8bf); border-radius: 8px; padding: 8px 10px; font-size: 14px; margin: 4px 0 10px; max-height: 260px; overflow: auto; }
+  details.post { border: 1.5px solid var(--line, #e6d8bf); border-radius: 12px; padding: 8px 14px; margin: 10px 0; background: #fff; }
+  details.post summary { cursor: pointer; padding: 4px 0; }
+  details.post h4 { margin: 14px 0 4px; }
+  button.cp { font-size: 12px; padding: 2px 8px; margin-left: 6px; }
+  table.kv td:first-child { color: var(--muted); width: 32%; }
   .warn { background: #fff0d6; border: 1.5px solid #e8b25a; border-radius: 10px; padding: 8px 12px; margin-bottom: 12px; font-size: 14px; }
   .dls { display:flex; gap:10px; flex-wrap:wrap } a.dl { display:inline-block; padding:7px 14px; border-radius:8px; background:#2e7d32; color:#fff; text-decoration:none; font-weight:600 } a.dl:hover { background:#256628 }
 </style>
@@ -218,6 +224,7 @@ async function show(slug) {
         <td>${job.downloaded?.[p.file] ? `✔ ${new Date(job.downloaded[p.file]).toLocaleString("vi", { day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" })}` : "<small>chưa (lấy trong thư mục ~/youtube cũng được)</small>"}</td>
         <td>${yt(p) ? `<a href="${esc(yt(p).url)}" target="_blank">✔ đã đăng</a>` : "chưa <small>(dán link ở mục YouTube)</small>"}</td>${cell(p, "tiktok")}${cell(p, "facebook")}</tr>`).join("")}</table>
       <p class="meta">Đủ dấu ✔ ở mọi ô thì bài chuyển sang tab “✔ Đã đăng hết”.</p></section>`;
+    if (posts.length) h += postWords(posts, yt);
   }
   if (!qa) h += await artSection(job, d.art, d.redrawing);
   if (qa && plan) {
@@ -347,6 +354,41 @@ function calRow(e) {
     <td style="width:34%"><a href="#${e.slug}" onclick="openFromCalendar('${e.slug}');return false">${esc(e.folder)}</a><br><small class="meta">${esc(e.file)}</small></td>
     <td>${yt}<br><small>${others}</small></td></tr>`;
 }
+/** What to paste where, for every video of a topic (the same as dang-len-youtube.txt and dang-tiktok-facebook.txt). */
+const CLIP = [];
+const clip = (text, label = "Chép") => { CLIP.push(text); return `<button class="fixb cp" onclick="copyClip(${CLIP.length - 1}, this)">📋 ${label}</button>`; };
+async function copyClip(i, btn) {
+  const text = CLIP[i];
+  try { await navigator.clipboard.writeText(text); }
+  catch { const t = document.createElement("textarea"); t.value = text; document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove(); }
+  const was = btn.textContent; btn.textContent = "✔ Đã chép"; setTimeout(() => (btn.textContent = was), 1500);
+}
+function postWords(posts, yt) {
+  CLIP.length = 0;
+  const when = (t) => new Date(t).toLocaleString("vi", { weekday: "long", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" });
+  const box = (text, pre) => `<div class="copybox"${pre ? ' style="white-space:pre-wrap"' : ""}>${esc(text)}</div>`;
+  const card = (p, i) => {
+    const m = p.youtube, posted = yt(p), thumb = p.what === "long" ? "anh-bia.jpg" : p.what === "en" ? "anh-bia-tieng-anh.jpg" : "";
+    const settings = [
+      ["Lên lịch", p.publishAt ? when(p.publishAt) : "—"],
+      ["Dành cho trẻ em", "Có"], ["Nội dung có sự thay đổi", "Không (phim hoạt hình)"],
+      ["Danh mục", m.categoryId === "27" || m.categoryId === 27 ? "Giáo dục (Education)" : "Phim và hoạt hình (Film & Animation)"],
+      ...(m.playlist ? [["Danh sách phát", m.playlist]] : []),
+      ["Ngôn ngữ video", m.lang === "en" ? "Tiếng Anh" : "Tiếng Việt"],
+      ...(thumb ? [["Hình thu nhỏ", `${thumb} (có thêm ${thumb.replace(".jpg", "-2.jpg")}, ${thumb.replace(".jpg", "-3.jpg")})`]] : []),
+    ];
+    const social = Object.entries(p.text).map(([pl, text]) => `<h4>${pl === "tiktok" ? "♪ TikTok" : p.what === "short" ? "f Facebook Reels" : "f Facebook (video)"} ${p.done[pl] ? "· ✔ đã đăng" : ""} ${clip(text)}</h4>${box(text, true)}`).join("");
+    return `<details ${i === 0 ? "open" : ""} class="post"><summary><b>${esc(p.label)}</b> · ${esc(p.account)} · ${esc(p.name)}${p.publishAt ? ` · ${when(p.publishAt)}` : ""}${posted ? " · ✔ đã lên YouTube" : ""}</summary>
+      <h4>▶ YouTube</h4>
+      <p><b>Tiêu đề</b> ${clip(m.title)}</p>${box(m.title)}
+      <p><b>Mô tả</b> ${clip(m.description)}</p>${box(m.description, true)}
+      <p><b>Thẻ</b> <small>(ô Thẻ, ở mục Hiện thêm)</small> ${clip(m.tags.join(", "))}</p>${box(m.tags.join(", "))}
+      <p><b>Cài đặt</b></p><table class="kv">${settings.map(([k, v]) => `<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join("")}</table>
+      ${social}</details>`;
+  };
+  return `<section><h3>Lời đăng</h3><p class="meta">Giống hai tệp <code>dang-len-youtube.txt</code> và <code>dang-tiktok-facebook.txt</code> trong thư mục đăng. Bấm 📋 để chép rồi dán vào YouTube Studio, TikTok, Facebook.</p>${posts.map(card).join("")}</section>`;
+}
+
 /** A topic of the calendar opened in the tab it belongs to. */
 function openFromCalendar(slug) {
   const j = jobs.find((x) => x.slug === slug);

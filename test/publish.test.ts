@@ -129,3 +129,19 @@ test("a Short goes public after its film, never before", () => {
   assert.equal(at.getDate(), 12);
   assert.equal(at.getHours(), 19);
 });
+
+test("a Short is titled by its own line: a long one by its first sentence, always within 100 with #Shorts", async () => {
+  const { shortTitle } = await import("../src/studio/publish.ts");
+  assert.equal(shortTitle("Ếch Ngồi Đáy Giếng", "“Nghe chưa? Tiếng của ta vang khắp cả trời đất!”"), "Nghe chưa? Tiếng của ta vang khắp cả trời đất! | Ếch Ngồi Đáy Giếng #Shorts");
+  assert.equal(shortTitle("Ếch Ngồi Đáy Giếng", "Thóc ở ngoài đồng kia kìa. Cả cánh đồng lúa vàng óng, rộng mênh mông như biển."), "Thóc ở ngoài đồng kia kìa. | Ếch Ngồi Đáy Giếng #Shorts");
+  assert.equal(shortTitle("Why is the sky blue?"), "Why is the sky blue? #Shorts");
+  assert.ok(shortTitle("x".repeat(120), "y".repeat(120)).length <= 100);
+});
+
+test("a story's sources keep only pages about it: by the brain's choice and by name", async () => {
+  const { relevantSources } = await import("../src/studio/copy.ts");
+  const S = [{ title: "Truyện ngụ ngôn Việt Nam" }, { title: "Pinocchio (phim truyền hình Hàn Quốc)" }, { title: "Giấc mơ của Ếch Xanh" }];
+  assert.deepEqual(relevantSources("Ếch Ngồi Đáy Giếng", S).map((s) => s.title), ["Truyện ngụ ngôn Việt Nam"]);
+  assert.deepEqual(relevantSources("Ếch Ngồi Đáy Giếng", S, [1, 2]), []);
+  assert.deepEqual(relevantSources("Hai Bà Trưng khởi nghĩa", [{ title: "Khởi nghĩa Hai Bà Trưng" }, { title: "Nhà Hán" }]).map((s) => s.title), ["Khởi nghĩa Hai Bà Trưng"]);
+});

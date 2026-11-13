@@ -10,6 +10,7 @@
  */
 import { isFact, isQA, profileOf, writeFact, writeQA } from "./qa.ts";
 import { writeLesson } from "./lesson.ts";
+import { writeStoryCopy } from "./copy.ts";
 import { prepareQA, renderQA } from "./qaproduce.ts";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -125,7 +126,11 @@ export async function prepare(slug: string, log: (s: string) => void = console.l
     job = await setStatus(job, "producing", fixing ? "sửa theo góp ý" : "chuẩn bị");
     // A question (Ask Huy): its own voices, direction and paintings (qaproduce.ts).
     if (isQA(job.kind)) await prepareQA(slug, log);
-    else await buildProject(job, projectOf(slug), { notes: job.notes.filter((n) => n.on === "video").map((n) => n.text), redirect: fixing, revoice: !fixing }, log);
+    else {
+      await buildProject(job, projectOf(slug), { notes: job.notes.filter((n) => n.on === "video").map((n) => n.text), redirect: fixing, revoice: !fixing }, log);
+      // The YouTube words for viewers (copy.ts, ~8k tokens): a failure only leaves the plainer ones.
+      await writeStoryCopy(slug, log).catch((err) => log(`  mô tả YouTube: chưa viết được (${(err as Error).message.slice(0, 120)})`));
+    }
     job = await loadJob(slug);
     job.stage = "ready";
     await saveJob(job);

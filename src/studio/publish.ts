@@ -32,6 +32,7 @@ import { Readable } from "node:stream";
 import { STUDIO_DIR } from "../brain/claude.ts";
 import { exists } from "../utils/fs.ts";
 import { jobDir, loadJob, saveJob, type Job } from "./jobs.ts";
+import { relevantSources, storyCopy } from "./copy.ts";
 import { lineOf, type Line } from "./pick.ts";
 import { PLATFORM_NAME, platformsOf, SETTINGS_VI, shortHooks, socialText, type Platform } from "./social.ts";
 
@@ -183,10 +184,22 @@ function tagsOf(list: string[]): string[] {
 }
 
 /** Title, description and tags from the job's plan, sources and summary (no brain needed). */
-export async function metaOf(job: Job, what: What, cfg: ChannelCfg, longUrl?: string): Promise<Meta> {
-  return { ...(await metaText(job, what, cfg, longUrl)), categoryId: categoryOf(job), playlist: seriesOf(job, what) };
+/** `hook`: a Short's best line (social.ts shortHooks): its title, so a topic's Shorts are not all named alike. */
+export async function metaOf(job: Job, what: What, cfg: ChannelCfg, longUrl?: string, hook?: string): Promise<Meta> {
+  return { ...(await metaText(job, what, cfg, longUrl, hook)), categoryId: categoryOf(job), playlist: seriesOf(job, what) };
 }
-async function metaText(job: Job, what: What, cfg: ChannelCfg, longUrl?: string): Promise<Omit<Meta, "categoryId" | "playlist">> {
+/** A Short's title: its line first, then what it is from, " #Shorts" at the end, within 100. */
+export function shortTitle(base: string, hook?: string): string {
+  let line = hook?.replace(/[“”"«»]/g, "").replace(/\s+/g, " ").trim();
+  // Too long: its first sentence whole, rather than a line cut in the middle.
+  if (line && line.length > 60) { const first = /^.+?[.!?…](?=\s|$)/.exec(line)?.[0]; if (first && first.length >= 12 && first.length <= 60) line = first; }
+  return `${cut(line ? `${cut(line, 60)} | ${base}` : base, 92)} #Shorts`;
+}
+/** The first sentences of a text, within n characters (a Short's description). */
+const opening = (text: string, n = 220) => { let out = ""; for (const x of text.match(/[^.!?…]+[.!?…]+["”]?\s*/g) ?? [text]) { if ((out + x).length > n && out) break; out += x; } return out.trim(); };
+/** A summary written for choosing topics, not for viewers: without its "for the occasion" sentence. */
+const forViewers = (summary = "") => summary.split(/(?<=[.!?])\s+/).filter((x) => !/\bdịp\b|Ngày Nhà giáo|Tết|Trung thu/i.test(x)).join(" ");
+async function metaText(job: Job, what: What, cfg: ChannelCfg, longUrl?: string, hook?: string): Promise<Omit<Meta, "categoryId" | "playlist">> {
   const dir = jobDir(job.slug);
   const read = async (f: string) => ((await exists(path.join(dir, f))) ? JSON.parse(await fsp.readFile(path.join(dir, f), "utf8")) : undefined);
   const sources = ((await read("sources.json")) ?? []) as { title: string; url: string }[];
@@ -198,14 +211,14 @@ async function metaText(job: Job, what: What, cfg: ChannelCfg, longUrl?: string)
   if (job.kind === "lesson") {
     const wordsTaught = ((plan?.words ?? []) as { en: string; vi: string }[]).map((w) => `${w.en} (${w.vi})`).join(", ");
     return {
-      title: cut(what === "short" ? `${title0} #Shorts` : title0, 100), lang: "vi",
+      title: what === "short" ? shortTitle(title0, hook) : cut(title0, 100), lang: "vi",
       description: cut(`${watch}${plan?.description ?? ""}\n\n${wordsTaught ? `Từ vựng trong bài: ${wordsTaught}\n\n` : ""}Học tiếng Anh cùng Huy: mỗi bài một chủ đề, từ vựng có hình, giọng đọc mẫu chậm và rõ cho các bé.\n\n#HocTiengAnh #TiengAnhChoBe #HocTiengAnhCungHuy`, 5000),
       tags: tagsOf(["học tiếng Anh", "tiếng Anh cho bé", "tiếng Anh trẻ em", "từ vựng tiếng Anh", "Học tiếng Anh cùng Huy", String(plan?.question ?? job.topic), ...((plan?.words ?? []) as { en: string }[]).map((w) => w.en)]),
     };
   }
   if (qa && (job.kind === "qa-vi" || job.kind === "fact-vi")) {
     const question = String(plan?.question ?? job.topic);
-    const base = what === "short" ? `${cut(question, 88)} #Shorts` : title0.includes(series) ? title0 : `${title0} | ${series}`;
+    const base = what === "short" ? shortTitle(question, isFactJob(job) ? undefined : hook) : title0.includes(series) ? title0 : `${title0} | ${series}`;
     return {
       title: cut(base, 100), lang: "vi",
       description: cut(`${watch}${plan?.description ?? ""}\n\n${plan?.answer ? `Trả lời ngắn: ${plan.answer}\n\n` : ""}${sources.length ? `Nguồn tư liệu:\n${sources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Hỏi Huy (kênh Huy Kể Chuyện): mỗi video trả lời một câu hỏi lớn cho các bạn nhỏ hay tò mò.\n\n#HoiHuy #KhoaHocThieuNhi #HocMaChoi`, 5000),
@@ -214,25 +227,31 @@ async function metaText(job: Job, what: What, cfg: ChannelCfg, longUrl?: string)
   }
   if (qa) {
     const question = String(plan?.question ?? job.topic);
-    const base = what === "short" ? `${cut(question, 88)} #Shorts` : title0.includes(series) ? title0 : `${title0} | ${series}`;
+    const base = what === "short" ? shortTitle(question, isFactJob(job) ? undefined : hook) : title0.includes(series) ? title0 : `${title0} | ${series}`;
     return {
       title: cut(base, 100), lang: "en",
       description: cut(`${watch}${plan?.description ?? ""}\n\n${plan?.answer ? `The short answer: ${plan.answer}\n\n` : ""}${sources.length ? `Sources:\n${sources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Ask Huy answers one big question for curious kids in every video. New questions every week!\n\n#AskHuy #KidsScience #LearningForKids`, 5000),
       tags: tagsOf(["Ask Huy", "kids science", "science for kids", "learning for kids", "educational cartoon", question, ...String(job.topic).toLowerCase().replace(/[?!.]/g, "").split(/\s+/).filter((w) => w.length > 3)]),
     };
   }
+  // Stories: the description written for viewers (copy.ts) and only the sources about this story.
+  const copy = await storyCopy(job.slug);
+  const storySources = relevantSources(String((await read("plan.json"))?.title ?? job.topic), sources, copy?.sources);
   if (what === "en") {
     return {
       title: cut(`${title0} | Vietnamese Folk Tale for Kids`, 100), lang: "en",
-      description: cut(`${watch}A Vietnamese ${job.kind === "lịch sử" ? "history story" : "folk tale"} told as a cartoon for children.\n\n${sources.length ? `Sources (Vietnamese Wikipedia):\n${sources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Huy Tells Tales: Vietnamese folk tales and history for kids, on the Ask Huy channel.\n\n#HuyTellsTales #VietnameseFolkTales #KidsStories`, 5000),
+      description: cut(`${watch}${copy?.en ?? `A Vietnamese ${job.kind === "lịch sử" ? "history story" : "folk tale"} told as a cartoon for children.`}\n\n${storySources.length ? `Sources (Vietnamese Wikipedia):\n${storySources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Huy Tells Tales: Vietnamese folk tales and history for kids, on the Ask Huy channel.\n\n#HuyTellsTales #VietnameseFolkTales #KidsStories`, 5000),
       tags: tagsOf(["Huy Tells Tales", "Vietnamese folk tale", "stories for kids", "kids cartoon", "Vietnam", title0]),
     };
   }
   const kind = job.kind ?? "truyện cổ tích";
-  const base = what === "short" ? `${cut(title0, 85)} #Shorts` : `${title0} | ${kind[0]!.toUpperCase()}${kind.slice(1)} Việt Nam | ${cfg.name}`;
+  const story = copy?.vi ?? forViewers(job.summary);
+  const base = what === "short" ? shortTitle(title0, hook) : `${title0} | ${kind[0]!.toUpperCase()}${kind.slice(1)} Việt Nam | ${cfg.name}`;
+  // A Short: a line or two and the way to the film; the film: the whole description and its sources.
+  const body = what === "short" ? opening(story) : `${story}${storySources.length ? `\n\nNguồn tư liệu:\n${storySources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}` : ""}`;
   return {
     title: cut(base, 100), lang: "vi",
-    description: cut(`${watch}${job.summary ?? ""}\n\n${sources.length ? `Nguồn tư liệu:\n${sources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Huy Kể Chuyện: truyện cổ tích, truyền thuyết và lịch sử Việt Nam cho bé, kể bằng phim hoạt hình.\n\n#HuyKeChuyen #TruyenCoTich #TruyenThieuNhi`, 5000),
+    description: cut(`${watch}${body}\n\nHuy Kể Chuyện: truyện cổ tích, truyền thuyết và lịch sử Việt Nam cho bé, kể bằng phim hoạt hình.\n\n#HuyKeChuyen #TruyenCoTich #TruyenThieuNhi`, 5000),
     tags: tagsOf(["Huy Kể Chuyện", "truyện cổ tích", "truyện thiếu nhi", "phim hoạt hình", kind, title0, "Việt Nam"]),
   };
 }
@@ -334,7 +353,9 @@ export async function publishOne(slug: string, item: { what: What; file: string;
   if (!cfg) throw new Error(`không có kênh "${channel}" trong cài đặt đăng`);
   const at = nextSlot(cfg, item.what === "short" ? "short" : "long", takenTimes(jobs, channel), new Date(), item.what === "short" ? job.published?.long?.publishAt : undefined);
   if (!at) throw new Error(`kênh ${cfg.name} không có giờ đăng cho ${item.what}`);
-  const meta = await metaOf(job, item.what, cfg, item.what === "short" ? job.published?.long?.url : undefined);
+  const plan = JSON.parse(await fsp.readFile(path.join(jobDir(slug), "plan.json"), "utf8").catch(() => "{}"));
+  const hook = item.what === "short" && !isFactJob(job) ? (await shortHooks(slug, job.shorts ?? [], jobDir(slug), plan.shorts))[item.index!] : undefined;
+  const meta = await metaOf(job, item.what, cfg, item.what === "short" ? job.published?.long?.url : undefined, hook);
   log(`  upload ${item.file} → ${cfg.name}, công khai lúc ${at.toLocaleString("vi")}`);
   const videoId = await upload(channel, path.join(jobDir(slug), item.file), meta, at);
   const jpg = path.join(jobDir(slug), item.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg");
@@ -509,6 +530,7 @@ export async function exportJob(slug: string, jobs: Job[], settings: PublishSett
   });
   if (!items.length) return undefined;
   const plan = JSON.parse(await fsp.readFile(path.join(dir, "plan.json"), "utf8").catch(() => "{}"));
+  const hooks = isFactJob(job) ? [] : await shortHooks(job.slug, job.shorts ?? [], dir, plan.shorts);
   // (the topic's name: the title without its " | Ask Huy" series tail)
   const folder = await folderOf(job, String(plan.title ?? job.topic).split(" | ")[0]!);
   await fsp.mkdir(folder, { recursive: true });
@@ -532,7 +554,7 @@ export async function exportJob(slug: string, jobs: Job[], settings: PublishSett
     // The other two pictures (thumbnail-2.jpg, -3): to choose from, or to change to later.
     const more = thumb ? thumbVariants(jpg!, files).map((f, k) => [f, thumb.replace(/\.jpg$/, `-${k + 2}.jpg`)] as const) : [];
     if (thumb) for (const [from, to] of [[jpg!, thumb] as const, ...more]) await place(path.join(dir, from), path.join(folder, to));
-    const meta = await metaOf(job, item.what, cfg, item.what === "short" && !isFactJob(job) ? job.published?.long?.url ?? LINK_HERE : undefined);
+    const meta = await metaOf(job, item.what, cfg, item.what === "short" && !isFactJob(job) ? job.published?.long?.url ?? LINK_HERE : undefined, item.what === "short" ? hooks[item.index!] : undefined);
     sections.push(sheetSection(n + 1, name, meta, cfg, item.what, at, thumb, done, more.map((m) => m[1])));
     if (!done) {
       const ex: Exported = { dir: folder, publishAt: at.toISOString(), channel, at: (opts.now ?? new Date()).toISOString() };
@@ -585,7 +607,7 @@ export async function socialPosts(job: Job, files: string[], settings: PublishSe
   for (const item of allItems(job, files)) {
     const channel = channelOf(job, item.what, lines), cfg = settings[channel] ?? PUBLISH_DEFAULTS[channel]!;
     const fact = isFactJob(job), longUrl = item.what === "short" && !fact ? job.published?.long?.url : undefined;
-    const youtube = await metaOf(job, item.what, cfg, longUrl);
+    const youtube = await metaOf(job, item.what, cfg, longUrl, item.what === "short" ? hooks[item.index!] : undefined);
     const text: SocialPost["text"] = {}, done: SocialPost["done"] = {};
     for (const p of platformsOf(item.what)) {
       text[p] = socialText(p, youtube, { what: item.what, kind: job.kind, channel: cfg.name, longUrl, isFact: fact, hook: item.what === "short" ? hooks[item.index!] : undefined });
