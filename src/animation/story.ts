@@ -16,6 +16,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { renderSoundtrack, type MusicMood, type MusicSection, type SfxEvent } from "../audio/soundtrack.ts";
+import { ambienceOf, mergeSections, renderAmbience } from "../audio/ambience.ts";
 import { AUDIO_SAMPLE_RATE, FFMPEG, FONTS_DIR, ROOT } from "../config.ts";
 import { exists, slugify } from "../utils/fs.ts";
 import { run } from "../utils/process.ts";
@@ -194,6 +195,8 @@ export interface StoryOptions {
   /** Intro, logo, outro and thumbnail of the channel (default: on when assets/brand/brand.json exists). */
   brand?: boolean;
   onLog?: (s: string) => void;
+  /** The sound of the place under each scene (audio/ambience.ts); default: project.json "ambience". */
+  ambience?: boolean;
   /** Called with the scenes as they will be filmed (speech, shots and timing in place); "stop": no film (inspect.ts). */
   onScenes?: (scenes: { name: string; scene: Record<string, unknown> }[]) => Promise<"stop" | void>;
 }
@@ -351,8 +354,15 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
     if (s.scene.fadeIn && opts.chapters) sfx.push({ type: "chime", at: t + 0.15 });
     t += s.scene.duration;
   }
-  const bed = path.join(work, "bed.wav");
+  let bed = path.join(work, "bed.wav");
   await renderSoundtrack(sections, sfx.sort((a, b) => a.at - b.at), total, bed);
+  // The sound of each place under it (ambience.ts): project.json "ambience": true, or the option.
+  if (opts.ambience ?? project.ambience) {
+    const amb = path.join(work, "ambience.wav"), both = path.join(work, "bed-ambience.wav");
+    await renderAmbience(mergeSections(scripts.map((s) => ({ duration: s.scene.duration, kind: ambienceOf(s.scene as Parameters<typeof ambienceOf>[0]) }))), total, amb);
+    await run(FFMPEG, ["-hide_banner", "-nostdin", "-y", "-v", "error", "-i", bed, "-i", amb, "-filter_complex", "[0:a][1:a]amix=inputs=2:normalize=0,alimiter=limit=0.9", "-ac", "1", "-c:a", "pcm_s16le", both], { timeoutMs: 5 * 60_000 });
+    bed = both;
+  }
 
   // Captions (timed by the voice) and, if asked, chapter cards.
   const cards: { at: number; title: string; no: number }[] = [];

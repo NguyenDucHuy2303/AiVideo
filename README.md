@@ -91,6 +91,11 @@ npm run wata -- cartoon projects/thanh-giong --vertical --after 18:00      # b�
 
 - `animate`: AI chỉ chọn trong menu của thư viện (bối cảnh, giờ, nhạc, ai đứng đâu, làm gì, nét mặt, hiệu ứng, góc máy); luật cố định đối chiếu với lời kể tiếng Việt ("bay … trời" → bay lên, "nằm ngửa" → nằm, "cất tiếng" → ngồi dậy nói, "tan tác" → giặc ngã, "phun lửa", "nhảy lên ngựa"…); cảnh biến hình ("trở thành…") tự có vươn vai → lớn lên → hình dạng mới, và từ đó nhân vật giữ hình dạng mới. File `anim/sNN.json` đã có (có thể bạn đã sửa) được giữ nguyên trừ khi `--force`.
 - Tên file cảnh cho biết nó thuộc câu kể nào: `s05` = cảnh 5, `s04a` + `s04b` = hai shot của cảnh 4, `s11-12` = một shot cho cảnh 11 và 12. Tổng thời lượng phải bằng lời đọc (có cảnh báo nếu lệch).
+- **Độ tự nhiên** (không tốn token):
+  - `node src/animation/inspect.ts projects/<tên> [--lang en]`: máy soi phát từng cảnh, báo giữ tay cứng, đứng im, đồ che mặt, khung cắt đầu, mặt chồng nhau, người nói ngoài hình. Chạy tự động sau mỗi lần render; kết quả hiện trên trang duyệt.
+  - Lớp diễn xuất `runtime/acting.js` (cử chỉ có nhịp, cử động nhỏ khi đứng/ngồi, gật theo nhấn giọng, người nghe gật); người đứng trùng chỗ tự giãn ra; máy quay không cắt ngang đầu ai.
+  - `node src/audio/voicecheck.ts projects/<tên> [--lang en]`: Whisper large-v3-turbo (MIT, `vendor/whisper`) nghe lại giọng, so với kịch bản theo âm tiết (gộp đồng âm giọng Bắc r/d/gi, s/x, tr/ch). Khoảng 9 phút CPU một phim.
+  - Tiếng nền theo nơi chốn (`src/audio/ambience.ts`, tổng hợp bằng ffmpeg): đang tắt, bật bằng `"ambience": true` trong `project.json`.
 - `cartoon`: render từng cảnh (có cache: sửa cảnh nào chỉ render lại cảnh đó), nối thành **một phim liền mạch** (chỉ mờ vào đầu phim, mờ ra cuối phim), giọng đọc đúng chỗ, nhạc theo `mood`, tiếng động tự lấy từ hành động/hiệu ứng, phụ đề. `--chapters` để chia chương (thẻ tên chương, mờ qua màn đen, tiếng chuông). Khoảng 1 phút máy cho mỗi 8 giây phim.
 
 ## Cài đặt

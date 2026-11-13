@@ -19,6 +19,8 @@ export interface RunOptions {
   env?: NodeJS.ProcessEnv;
   /** Receives every stderr chunk (for log files). */
   onStderr?: (chunk: string) => void;
+  /** Called with stdout as it comes (it is still collected in `stdout`). */
+  onStdout?: (chunk: string) => void;
 }
 
 export interface RunResult {
@@ -73,7 +75,7 @@ export function run(cmd: string, args: string[], opts: RunOptions): Promise<RunR
       child.kill("SIGKILL");
     }, opts.timeoutMs);
 
-    child.stdout!.setEncoding("utf8").on("data", (d: string) => (stdout += d));
+    child.stdout!.setEncoding("utf8").on("data", (d: string) => { stdout += d; opts.onStdout?.(d); });
     child.stderr!.setEncoding("utf8").on("data", (d: string) => {
       stderr += d;
       if (stderr.length > 1_000_000) stderr = stderr.slice(-TAIL_CHARS);
