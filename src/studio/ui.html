@@ -377,10 +377,12 @@ function postWords(posts, yt) {
   const card = (p, i) => {
     const posted = yt(p);
     // YouTube Studio's page, box by box, in its order (publish.ts youtubeForm).
-    const rows = p.form.map((r) => r.copy
-      ? `<p class="frow"><b>${esc(r.label)}</b> ${clip(r.value)}${r.note ? ` <small class="meta">${esc(r.note)}</small>` : ""}</p>${box(r.value, r.label === "Mô tả")}`
+    const formRows = (form) => form.map((r) => r.copy
+      ? `<p class="frow"><b>${esc(r.label)}</b> ${clip(r.value)}${r.note ? ` <small class="meta">${esc(r.note)}</small>` : ""}</p>${box(r.value, r.value.includes("\n"))}`
       : `<p class="frow${r.must ? " must" : ""}"><b>${esc(r.label)}:</b> ${esc(r.value)}${r.note ? ` <small class="meta">(${esc(r.note)})</small>` : ""}</p>`).join("");
-    const social = Object.entries(p.text).map(([pl, text]) => `<h4>${pl === "tiktok" ? "♪ TikTok" : p.what === "short" ? "f Facebook Reels" : "f Facebook (video)"} ${p.done[pl] ? "· ✔ đã đăng" : ""} ${clip(text)}</h4>${box(text, true)}`).join("");
+    const rows = formRows(p.form);
+    // TikTok and Facebook: the same, box by box in their upload pages' order (publish.ts socialForm).
+    const social = Object.entries(p.forms || {}).map(([pl, form]) => `<h4>${pl === "tiktok" ? "♪ TikTok" : p.what === "short" ? "f Facebook Reels" : "f Facebook (video)"} ${p.done[pl] ? "· ✔ đã đăng" : ""}</h4>${formRows(form)}`).join("");
     return `<details ${i === 0 ? "open" : ""} class="post"><summary><b>${esc(p.label)}</b> · <b>${esc(p.name)}</b> → kênh ${esc(p.account)}${p.publishAt ? ` · ${when(p.publishAt)}` : ""}${posted ? " · ✔ đã lên YouTube" : ""}</summary>
       <h4>▶ YouTube Studio</h4>${rows}
       ${social}</details>`;

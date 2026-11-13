@@ -499,6 +499,45 @@ export function youtubeForm(file: string, meta: Meta, cfg: ChannelCfg, what: Wha
   ];
 }
 
+/**
+ * TikTok and Facebook, box by box in the order of their upload pages (TikTok Studio on the
+ * computer or the app; Meta Business Suite for the Page), as youtubeForm does for YouTube.
+ */
+export function socialForm(platform: Platform, p: { what: What; name: string; account: string; publishAt?: string; text: string; youtube: Meta; thumb?: string }): FormRow[] {
+  const at = p.publishAt ? new Date(p.publishAt) : undefined;
+  const done: FormRow = { label: "Đăng xong", value: `Đánh dấu ✔ ${PLATFORM_NAME[platform]} ở bài này trên trang duyệt của studio` };
+  if (platform === "tiktok") return [
+    { label: "Tệp tải lên", value: p.name, must: true },
+    { label: "Tài khoản", value: `TikTok ${p.account}`, must: true, note: "tài khoản TikTok của kênh, không phải tài khoản cá nhân" },
+    { label: "Mô tả", value: p.text, copy: true },
+    { label: "Ảnh bìa", value: "Chọn một khung hình đẹp trong video", note: "khung có nhân vật rõ mặt" },
+    { label: "Âm thanh", value: "Không thêm nhạc", note: "video đã có nhạc và lời" },
+    { label: "Vị trí", value: "Không thêm" },
+    { label: "Ai có thể xem video này", value: "Mọi người" },
+    { label: "Cho phép người dùng", value: "Bình luận: Bật · Duet: Tắt · Stitch: Tắt", note: "giữ video nguyên vẹn, không bị ghép vào video khác" },
+    { label: "Công khai nội dung (nội dung thương hiệu)", value: "Tắt" },
+    { label: "Nội dung do AI tạo", value: "Bật", must: true, note: "ở mục Hiện thêm; giọng đọc là giọng AI" },
+    at ? { label: "Lịch đăng", value: when(at), must: true, note: "TikTok Studio trên máy tính đặt giờ được, tối đa 10 ngày trước; trên điện thoại thì đăng đúng giờ này" }
+      : { label: "Lịch đăng", value: "Giờ được xếp khi studio duyệt xong video" },
+    done,
+  ];
+  const reel = p.what === "short", title = p.text.split("\n")[0]!;
+  return [
+    { label: "Tệp tải lên", value: p.name, must: true },
+    { label: "Đăng lên", value: `Trang ${p.account}`, must: true, note: "Trang (Page) của kênh, không phải trang cá nhân; Meta Business Suite → Tạo " + (reel ? "thước phim (Reel)" : "bài viết → Thêm video") },
+    { label: "Dạng bài", value: reel ? "Thước phim (Reel)" : "Video" },
+    ...(reel ? [] : [{ label: "Tiêu đề", value: title, copy: true }]),
+    { label: reel ? "Mô tả" : "Nội dung bài viết", value: p.text, copy: true },
+    p.thumb && !reel ? { label: "Ảnh thu nhỏ", value: `Tải lên: ${p.thumb}` } : { label: "Ảnh bìa", value: "Chọn một khung hình đẹp trong video" },
+    ...(reel ? [] : [{ label: "Thẻ", value: p.youtube.tags.join(", "), copy: true, note: "ô Thẻ (tags) của video, có thể bỏ qua" }]),
+    { label: "Thông tin AI (AI info)", value: "Bật", must: true, note: "giọng đọc là giọng AI" },
+    { label: "Đối tượng", value: "Công khai" },
+    at ? { label: "Lên lịch", value: when(at), must: true, note: "Meta Business Suite: Tùy chọn lên lịch → chọn ngày giờ" }
+      : { label: "Lên lịch", value: "Giờ được xếp khi studio duyệt xong video" },
+    done,
+  ];
+}
+
 export function sheetSection(n: number, file: string, meta: Meta, cfg: ChannelCfg, what: What, at: Date, thumb: string | undefined, done?: Published, moreThumbs: string[] = []): string {
   const rows = youtubeForm(file, meta, cfg, what, at, thumb, moreThumbs);
   return [
@@ -611,6 +650,8 @@ export interface SocialPost {
   youtube: Meta;
   /** What to fill in on YouTube Studio's page, in its order (youtubeForm). */
   form: FormRow[];
+  /** The same for TikTok and Facebook (socialForm). */
+  forms: Partial<Record<Platform, FormRow[]>>;
   text: Partial<Record<Platform, string>>;
   /** Marked posted by the user: when. */
   done: Partial<Record<Platform, string>>;
@@ -641,6 +682,7 @@ export async function socialPosts(job: Job, files: string[], settings: PublishSe
       what: item.what, index: item.index, file: item.file, name: fileNameOf(job, item), label: labelOf(job, item),
       channel, account: cfg.name, publishAt, youtube, text, done,
       form: youtubeForm(fileNameOf(job, item), youtube, cfg, item.what, publishAt ? new Date(publishAt) : undefined, thumb, more),
+      forms: Object.fromEntries((Object.entries(text) as [Platform, string][]).map(([pl, t]) => [pl, socialForm(pl, { what: item.what, name: fileNameOf(job, item), account: cfg.name, publishAt, text: t, youtube, thumb })])),
     });
   }
   return out;
@@ -659,8 +701,10 @@ export function socialSheet(title: string, posts: SocialPost[]): string {
     `════════ ${n + 1}. ${p.label.toUpperCase()}: ${p.name} ════════`,
     `TÀI KHOẢN: ${p.account}`,
     ...(p.publishAt ? [`GIỜ GỢI Ý: ${when(new Date(p.publishAt))} (cùng giờ với YouTube)`] : []), "",
-    ...(Object.entries(p.text) as [Platform, string][]).flatMap(([pl, t]) => [
-      `── ${PLATFORM_NAME[pl]}${pl === "facebook" ? (p.what === "short" ? " (Reel)" : " (Video)") : ""}${p.done[pl] ? " · ✔ ĐÃ ĐĂNG" : ""} ──`, t, "",
+    ...(Object.entries(p.forms) as [Platform, FormRow[]][]).flatMap(([pl, rows]) => [
+      `── ${PLATFORM_NAME[pl]}${pl === "facebook" ? (p.what === "short" ? " (Reel)" : " (Video)") : ""}${p.done[pl] ? " · ✔ ĐÃ ĐĂNG" : ""} ──`,
+      ...rows.flatMap((r) => r.copy ? [`${r.label.toUpperCase()}:${r.note ? ` — ${r.note}` : ""}`, r.value, ""] : [`${r.must ? "⚠ " : ""}${r.label}: ${r.value}${r.note ? ` — ${r.note}` : ""}`]),
+      "",
     ]), "",
   ].join("\n"));
   return head.join("\n") + body.join("");

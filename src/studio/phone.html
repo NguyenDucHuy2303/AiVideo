@@ -290,7 +290,8 @@ async function drawPost(d) {
       if (!text) continue;
       h += `<div class="plat"><h4>${label} ${p.done[pl] ? `<span class="tag done">✔ đã đăng</span>` : `<span class="tag">chờ</span>`}</h4>
         <div class="text" onclick="this.classList.toggle('open')">${esc(text)}</div>
-        <div class="row">${copyBtn(text, "Chép lời đăng", `lời đăng ${pl === "tiktok" ? "TikTok" : "Facebook"}`)}</div>
+        <div class="row">${(p.forms?.[pl] || []).filter((r) => r.copy).map((r) => copyBtn(r.value, r.label === "Mô tả" || r.label === "Nội dung bài viết" ? "Chép lời đăng" : r.label, `${r.label.toLowerCase()} ${pl === "tiktok" ? "TikTok" : "Facebook"}`)).join("") || copyBtn(text, "Chép lời đăng", `lời đăng ${pl === "tiktok" ? "TikTok" : "Facebook"}`)}</div>
+        <ul class="form">${(p.forms?.[pl] || []).filter((r) => !r.copy).map((r) => `<li${r.must ? ' class="must"' : ""}><b>${esc(r.label)}:</b> ${esc(r.value)}</li>`).join("")}</ul>
         <label class="tick"><input type="checkbox" ${p.done[pl] ? "checked" : ""} onchange="socialDone('${pl}', '${p.what}', ${p.index ?? "undefined"}, this.checked)"> Đã đăng lên ${pl === "tiktok" ? "TikTok" : "Facebook"}</label></div>`;
     }
     h += `</section>`;

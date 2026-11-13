@@ -145,3 +145,19 @@ test("a story's sources keep only pages about it: by the brain's choice and by n
   assert.deepEqual(relevantSources("Ếch Ngồi Đáy Giếng", S, [1, 2]), []);
   assert.deepEqual(relevantSources("Hai Bà Trưng khởi nghĩa", [{ title: "Khởi nghĩa Hai Bà Trưng" }, { title: "Nhà Hán" }]).map((s) => s.title), ["Khởi nghĩa Hai Bà Trưng"]);
 });
+
+test("TikTok and Facebook have their own boxes in their pages' order, with the AI label on and the time", async () => {
+  const { socialForm } = await import("../src/studio/publish.ts");
+  const meta = { title: "t", description: "d", tags: ["a", "b"], categoryId: "1", lang: "vi" as const };
+  const at = new Date(2026, 10, 14, 7, 30).toISOString();
+  const tk = socialForm("tiktok", { what: "short", name: "short-1.mp4", account: "Huy Kể Chuyện", publishAt: at, text: "lời đăng", youtube: meta });
+  assert.deepEqual(tk.slice(0, 3).map((r) => r.label), ["Tệp tải lên", "Tài khoản", "Mô tả"]);
+  assert.equal(tk.find((r) => r.label === "Nội dung do AI tạo")?.value, "Bật");
+  assert.match(tk.find((r) => r.label === "Lịch đăng")!.value, /07:30/);
+  const fbReel = socialForm("facebook", { what: "short", name: "short-1.mp4", account: "Huy Kể Chuyện", publishAt: at, text: "Tên\n\nlời", youtube: meta });
+  assert.equal(fbReel.find((r) => r.label === "Dạng bài")?.value, "Thước phim (Reel)");
+  assert.equal(fbReel.find((r) => r.label === "Tiêu đề"), undefined);
+  const fbVideo = socialForm("facebook", { what: "long", name: "video-dai.mp4", account: "Huy Kể Chuyện", text: "Tên\n\nlời", youtube: meta, thumb: "anh-bia.jpg" });
+  assert.equal(fbVideo.find((r) => r.label === "Tiêu đề")?.value, "Tên");
+  assert.equal(fbVideo.find((r) => r.label === "Ảnh thu nhỏ")?.value, "Tải lên: anh-bia.jpg");
+});

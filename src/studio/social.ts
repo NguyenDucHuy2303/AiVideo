@@ -33,7 +33,8 @@ export function hashtagsOf(lang: string, kind: string | undefined, platform: Pla
 }
 
 /** The video's name for a post: the YouTube title without "#Shorts" and the " | channel" tail. */
-export const postTitle = (meta: Meta) => meta.title.replace(/\s*#Shorts\b/i, "").split(" | ")[0]!.trim();
+/** The video's name in its YouTube title: the first part; a Short titled by its line ("line | name #Shorts"), the last. */
+export const postTitle = (meta: Meta, hooked = false) => { const parts = meta.title.replace(/\s*#Shorts\b/i, "").split(" | "); return (hooked && parts.length > 1 ? parts.at(-1)! : parts[0]!).trim(); };
 
 /** One or two sentences of the YouTube description: no link line, no sources, no hashtags. */
 export function blurbOf(description: string, max = 220): string {
@@ -55,7 +56,7 @@ export function blurbOf(description: string, max = 220): string {
  */
 export function socialText(platform: Platform, meta: Meta, o: { what: What; kind?: string; channel: string; longUrl?: string; isFact?: boolean; hook?: string }): string {
   // A film's Short opens on a line of its own (its posts differ), the film's name under it.
-  const vi = meta.lang === "vi", title = o.hook ? `${o.hook}\n${postTitle(meta)}` : postTitle(meta), blurb = o.hook ? "" : blurbOf(meta.description);
+  const vi = meta.lang === "vi", title = o.hook ? `${o.hook}\n${postTitle(meta, true)}` : postTitle(meta), blurb = o.hook ? "" : blurbOf(meta.description);
   const full = o.what === "short" && !o.isFact
     ? platform === "facebook" && o.longUrl ? (vi ? `Xem trọn phim: ${o.longUrl}` : `Watch the whole video: ${o.longUrl}`)
       : vi ? `Xem trọn phim trên YouTube: ${o.channel}` : `Watch the whole video on YouTube: ${o.channel}`
