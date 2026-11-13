@@ -6,7 +6,7 @@
  */
 import path from "node:path";
 import type { Job } from "./jobs.ts";
-import { fileNameOf, socialKey, type Exported, type PublishSettings, type Published, type What } from "./publish.ts";
+import { fileNameOf, longLabel, socialKey, type Exported, type PublishSettings, type Published, type What } from "./publish.ts";
 import { PLATFORM_NAME, platformsOf, type Platform } from "./social.ts";
 
 export interface CalEntry {
@@ -26,7 +26,7 @@ export interface CalEntry {
 }
 
 const isFact = (job: Job) => job.kind === "fact" || job.kind === "fact-vi";
-const labelOf = (job: Job, what: What, index?: number) => what === "long" ? "Video dài" : what === "en" ? "Bản tiếng Anh" : isFact(job) ? "Short" : `Short ${index! + 1}`;
+const labelOf = (job: Job, what: What, lang: "vi" | "en", index?: number) => what === "long" ? longLabel(lang) : what === "en" ? "Bản tiếng Anh" : isFact(job) ? "Short" : `Short ${index! + 1}`;
 
 /** Every video of one job with a time: posted (its record) or laid out (the export's). */
 export function entriesOf(job: Job, settings: PublishSettings, now = new Date()): CalEntry[] {
@@ -39,7 +39,7 @@ export function entriesOf(job: Job, settings: PublishSettings, now = new Date())
     if (!rec) return;
     out.push({
       at: rec.publishAt, channel: rec.channel, channelName: settings[rec.channel]?.name ?? rec.channel,
-      what, index, label: labelOf(job, what, index), slug: job.slug,
+      what, index, label: labelOf(job, what, settings[rec.channel]?.lang ?? "vi", index), slug: job.slug,
       folder, file: fileNameOf(job, { what, file: "", index }),
       url: pub?.url,
       social: Object.fromEntries(platformsOf(what).map((p) => [p, !!job.social?.[socialKey(p, what, index)]])),

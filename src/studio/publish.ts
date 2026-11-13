@@ -413,7 +413,10 @@ export async function savePublishSettings(channel: string, change: { mode?: Mode
 
 /** ~/youtube/<topic>/: the film, its Shorts, its English version, thumbnails, one sheet. */
 export const EXPORT_DIR = () => process.env.WATA_EXPORT_DIR ?? path.join(process.env.HOME ?? "/tmp", "youtube");
-const WHAT_VI: Record<What, string> = { long: "VIDEO DÀI", en: "BẢN TIẾNG ANH", short: "SHORT" };
+/** The main film is named by its language (a Vietnamese story: "Bản tiếng Việt"; an Ask Huy
+ *  question: "Bản tiếng Anh"); a story's English version is "Bản tiếng Anh" too. */
+export const longLabel = (lang: "vi" | "en") => (lang === "en" ? "Bản tiếng Anh" : "Bản tiếng Việt");
+const WHAT_VI = (what: What, lang: "vi" | "en") => (what === "long" ? longLabel(lang).toUpperCase() : what === "en" ? "BẢN TIẾNG ANH" : "SHORT");
 const CATEGORY_VI: Record<string, string> = { "1": "Phim và hoạt hình (Film & Animation)", "27": "Giáo dục (Education)" };
 const safe = (s: string) => s.replace(/[\/\\:*?"<>|#]/g, "").replace(/\s+/g, " ").trim().slice(0, 80).trim();
 const two = (n: number) => String(n).padStart(2, "0");
@@ -545,7 +548,7 @@ export function socialForm(platform: Platform, p: { what: What; name: string; ac
 export function sheetSection(n: number, file: string, meta: Meta, cfg: ChannelCfg, what: What, at: Date, thumb: string | undefined, done?: Published, moreThumbs: string[] = []): string {
   const rows = youtubeForm(file, meta, cfg, what, at, thumb, moreThumbs);
   return [
-    `════════ ${n}. ${WHAT_VI[what]}: ${file} ════════`,
+    `════════ ${n}. ${WHAT_VI(what, cfg.lang)}: ${file} ════════`,
     ...(done ? [`✔ ĐÃ ĐĂNG: ${done.url}`, ""] : []),
     ...rows.flatMap((r) => r.copy
       ? [`${r.label.toUpperCase()}:${r.note ? ` — ${r.note}` : ""}`, r.value, ""]
@@ -624,8 +627,8 @@ export async function exportJob(slug: string, jobs: Job[], settings: PublishSett
     `CHỦ ĐỀ: ${String(plan.title ?? job.topic).split(" | ")[0]}`,
     "",
     "Cách đăng:",
-    "1. Đăng VIDEO DÀI trước (mục 1), đặt lịch đúng giờ ghi bên dưới.",
-    "2. Mở trang duyệt của studio, bài này, mục YouTube: dán link video dài vào ô \"Đã đăng\".",
+    "1. Đăng mục 1 (video chính, không phải Short) trước, đặt lịch đúng giờ ghi bên dưới.",
+    "2. Mở trang duyệt của studio, bài này, mục YouTube: dán link mục 1 vào ô \"Đã đăng\".",
     `   Studio tự điền link đó vào mô tả các Short trong tệp này (chỗ ${LINK_HERE}).`,
     "3. Đăng từng Short theo giờ của nó, rồi dán link từng cái vào trang duyệt.",
     "", "",
@@ -660,7 +663,7 @@ export interface SocialPost {
   /** Marked posted by the user: when. */
   done: Partial<Record<Platform, string>>;
 }
-const labelOf = (job: Job, item: Item) => item.what === "long" ? "Video dài" : item.what === "en" ? "Bản tiếng Anh" : isFactJob(job) ? "Short" : `Short ${item.index! + 1}`;
+const labelOf = (job: Job, item: Item, lang: "vi" | "en") => item.what === "long" ? longLabel(lang) : item.what === "en" ? "Bản tiếng Anh" : isFactJob(job) ? "Short" : `Short ${item.index! + 1}`;
 
 /** Every video of a job with its YouTube details and its TikTok / Facebook words. */
 export async function socialPosts(job: Job, files: string[], settings: PublishSettings, lines: Line[]): Promise<SocialPost[]> {
@@ -683,7 +686,7 @@ export async function socialPosts(job: Job, files: string[], settings: PublishSe
     const thumb = jpg && files.includes(jpg) ? (item.what === "en" ? "anh-bia-tieng-anh.jpg" : "anh-bia.jpg") : undefined;
     const more = thumb ? thumbVariants(jpg!, files).map((_, k) => thumb.replace(/\.jpg$/, `-${k + 2}.jpg`)) : [];
     out.push({
-      what: item.what, index: item.index, file: item.file, name: fileNameOf(job, item), label: labelOf(job, item),
+      what: item.what, index: item.index, file: item.file, name: fileNameOf(job, item), label: labelOf(job, item, cfg.lang),
       channel, account: cfg.name, publishAt, youtube, text, done,
       form: youtubeForm(fileNameOf(job, item), youtube, cfg, item.what, publishAt ? new Date(publishAt) : undefined, thumb, more),
       forms: Object.fromEntries((Object.entries(text) as [Platform, string][]).map(([pl, t]) => [pl, socialForm(pl, { what: item.what, name: fileNameOf(job, item), account: cfg.name, publishAt, text: t, youtube, thumb })])),

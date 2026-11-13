@@ -17,7 +17,7 @@ const job = (extra: Partial<Job> = {}): Job => ({
 
 test("a laid-out film and its Shorts are on the calendar by their YouTube times", () => {
   const es = entriesOf(job(), SETTINGS, NOW);
-  assert.deepEqual(es.map((e) => [e.label, e.file]), [["Video dài", "video-dai.mp4"], ["Short 1", "short-1.mp4"], ["Short 2", "short-2.mp4"]]);
+  assert.deepEqual(es.map((e) => [e.label, e.file]), [["Bản tiếng Việt", "video-dai.mp4"], ["Short 1", "short-1.mp4"], ["Short 2", "short-2.mp4"]]);
   assert.equal(es[0]!.folder, "Ếch ngồi đáy giếng");
   assert.equal(es[0]!.channelName, "Huy Kể Chuyện");
   // A film goes to Facebook too, a Short to TikTok and Facebook.
@@ -37,7 +37,7 @@ test("the calendar keeps today and the next days, plus late ones, in time order"
   const far = job({ slug: "far", exported: { long: ex(at(30, 19, 30)) } });
   const late = job({ slug: "late", exported: { long: ex(at(10, 19, 30)) } });
   const es = calendar([job(), far, late], SETTINGS, { now: NOW, days: 7 });
-  assert.deepEqual(es.map((e) => e.slug + ":" + e.label), ["late:Video dài", "ech:Video dài", "ech:Short 1", "ech:Short 2"]);
+  assert.deepEqual(es.map((e) => e.slug + ":" + e.label), ["late:Bản tiếng Việt", "ech:Bản tiếng Việt", "ech:Short 1", "ech:Short 2"]);
 });
 
 test("the text calendar puts late videos first and says what is left to post", () => {
