@@ -18,7 +18,7 @@ LANG = {"a": "en-us", "b": "en-gb", "e": "es", "f": "fr-fr", "h": "hi", "i": "it
 
 # Vietnamese names said as in Vietnamese (no tones): espeak spells "Bối" letter by letter, reads
 # "Huy" as "Hi", "Hùng" as "hung", "Beo" as "bay-oh". The rest of the line is phonemized as usual.
-NAMES = {"Huy": "hwˈi", "Hùng": "hˈuŋ", "Bối": "bˈoɪ", "Beo": "bˈɛw"}
+NAMES = {"Huy": "hwˈi", "Hùng": "hˈuŋ", "Bối": "bˈoɪ", "Beo": "bˈɛw", "Kể Chuyện": "kˈe ʧwˈiən"}
 NAME_RE = re.compile(r"(?<![\w])((?:" + "|".join(map(re.escape, NAMES)) + r")(?:['’]s)?)(?![\w])")
 
 tts = Kokoro(os.path.join(DIR, "kokoro-v1.0.onnx"), os.path.join(DIR, "voices-v1.0.bin"))

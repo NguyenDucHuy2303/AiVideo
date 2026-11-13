@@ -6,10 +6,10 @@ import type { Job } from "../src/studio/jobs.ts";
 
 const job = (extra: Partial<Job> = {}): Job => ({ slug: "x", topic: "x", status: "done", notes: [], history: [{ at: "2026-11-10T01:00:00Z", status: "writing" }], ...extra });
 
-test("two channels: everything Vietnamese on Huy Kể Chuyện, everything English on Ask Huy", () => {
+test("two channels: stories (and their English versions) on Huy Kể Chuyện, English questions on Ask Huy", () => {
   const lines = PICK_DEFAULTS.lines;
   assert.equal(channelOf(job({ kind: "truyền thuyết" }), "long", lines), "huy-ke-chuyen");
-  assert.equal(channelOf(job({ kind: "truyền thuyết" }), "en", lines), "ask-huy");
+  assert.equal(channelOf(job({ kind: "truyền thuyết" }), "en", lines), "huy-ke-chuyen");
   assert.equal(channelOf(job({ kind: "qa" }), "short", lines), "ask-huy");
   assert.equal(channelOf(job({ kind: "fact" }), "short", lines), "ask-huy");
   for (const kind of ["qa-vi", "fact-vi", "lesson", "ngụ ngôn", "lịch sử"]) assert.equal(channelOf(job({ kind }), "long", lines), "huy-ke-chuyen", kind);
@@ -39,6 +39,9 @@ test("the next publishing time: at least two hours ahead, never one already take
   const second = nextSlot(cfg, "long", [first.toISOString()], now)!;
   assert.equal(second.getDate(), 13);
   assert.equal(nextSlot({ ...cfg, shorts: [] }, "short", [], now), undefined);
+  // An English version of a story: its own hour (not the Vietnamese film's), the long ones without it.
+  assert.equal(nextSlot({ ...cfg, english: ["08:30"] }, "en", [], now)!.getHours(), 8);
+  assert.equal(nextSlot({ ...cfg, english: undefined }, "en", [], now)!.getTime(), first.getTime());
 });
 
 test("only approved films are published: the film first, its Shorts after it, nothing while held", () => {

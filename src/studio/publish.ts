@@ -12,11 +12,12 @@
  *           videos out to be uploaded by hand.
  * The film first, then its Shorts (linking to it) and its English version (English channel).
  *
- * Two channels (since 2026-11-12): "huy-ke-chuyen" takes everything in Vietnamese (stories,
- * the Hỏi Huy questions, the English lessons, "Bạn có biết?" Shorts), "ask-huy" everything in
- * English (the Ask Huy questions, "Did you know?" Shorts, the English versions of the stories,
- * as the series Huy Tells Tales). Each video goes into a playlist of its series. The older
- * channel keys (hoi-huy, huy-tells-tales) are read as the channel they were merged into.
+ * Two channels (since 2026-11-12): "huy-ke-chuyen" is the storytelling channel (the stories, and
+ * their English versions as the series Huy Tells Tales at their own hour, the Hỏi Huy questions,
+ * the English lessons, "Bạn có biết?" Shorts), "ask-huy" the English question channel (the Ask
+ * Huy questions, "Did you know?" Shorts): no stories there. Each video goes into a playlist of
+ * its series. The older channel keys (hoi-huy, huy-tells-tales) are read as the channel they
+ * were merged into.
  * Secrets stay in studio/secrets/
  * (git-ignored): client_secret.json (an OAuth "Desktop app" client from Google Cloud) and
  * youtube-<channel>.json (each channel's refresh token).
@@ -47,6 +48,9 @@ export interface ChannelCfg {
   /** Local times for full videos (one a day each) and for Shorts. */
   long: string[];
   shorts: string[];
+  /** Times for the English versions of the stories (Huy Tells Tales), apart from the
+   *  Vietnamese films (so they do not take their days); none: the long times. */
+  english?: string[];
   mode: Mode;
   /** Why the studio turned the channel from auto back to manual (a locked video). */
   locked?: string;
@@ -57,11 +61,11 @@ export const modeOf = (cfg?: Partial<ChannelCfg> & { enabled?: boolean }): Mode 
 export type PublishSettings = Record<string, ChannelCfg>;
 export const PUBLISH_DEFAULTS: PublishSettings = {
   // (four lines a day in Vietnamese: stories, fables, questions, lessons; each with Shorts)
-  "huy-ke-chuyen": { name: "Huy Kể Chuyện", lang: "vi", long: ["08:00", "16:00", "18:00", "19:30"], shorts: ["07:30", "10:30", "12:30", "15:30", "17:30", "20:30"], mode: "manual" },
+  "huy-ke-chuyen": { name: "Huy Kể Chuyện", lang: "vi", long: ["08:00", "16:00", "18:00", "19:30"], shorts: ["07:30", "10:30", "12:30", "15:30", "17:30", "20:30"], english: ["08:30"], mode: "manual" },
   "ask-huy": { name: "Ask Huy", lang: "en", long: ["17:00", "19:00"], shorts: ["09:00", "12:00", "15:00", "19:30"], mode: "manual" },
 };
 /** Channels merged into another (2026-11-12). */
-export const MERGED: Record<string, string> = { "hoi-huy": "huy-ke-chuyen", "huy-tells-tales": "ask-huy" };
+export const MERGED: Record<string, string> = { "hoi-huy": "huy-ke-chuyen", "huy-tells-tales": "huy-ke-chuyen" };
 
 export interface Published {
   videoId: string; url: string; publishAt: string; channel: string; at: string;
@@ -76,7 +80,7 @@ export type What = "long" | "short" | "en";
 
 /** Which channel a job's video goes to. */
 export function channelOf(job: Job, what: What, lines: Line[]): string {
-  if (what === "en") return "ask-huy";
+  if (what === "en") return "huy-ke-chuyen"; // (Huy Tells Tales: a story stays on the story channel)
   const line = lineOf(job, lines), ch = line?.channel ?? line?.id ?? "huy-ke-chuyen";
   return MERGED[ch] ?? ch;
 }
@@ -240,7 +244,7 @@ async function metaText(job: Job, what: What, cfg: ChannelCfg, longUrl?: string,
   if (what === "en") {
     return {
       title: cut(`${title0} | Vietnamese Folk Tale for Kids`, 100), lang: "en",
-      description: cut(`${watch}${copy?.en ?? `A Vietnamese ${job.kind === "lịch sử" ? "history story" : "folk tale"} told as a cartoon for children.`}\n\n${storySources.length ? `Sources (Vietnamese Wikipedia):\n${storySources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Huy Tells Tales: Vietnamese folk tales and history for kids, on the Ask Huy channel.\n\n#HuyTellsTales #VietnameseFolkTales #KidsStories`, 5000),
+      description: cut(`${watch}${copy?.en ?? `A Vietnamese ${job.kind === "lịch sử" ? "history story" : "folk tale"} told as a cartoon for children.`}\n\n${storySources.length ? `Sources (Vietnamese Wikipedia):\n${storySources.map((s) => `- ${s.title}: ${s.url}`).join("\n")}\n\n` : ""}Huy Tells Tales: Vietnamese folk tales and history for kids, on the Huy Kể Chuyện channel.\n\n#HuyTellsTales #VietnameseFolkTales #KidsStories`, 5000),
       tags: tagsOf(["Huy Tells Tales", "Vietnamese folk tale", "stories for kids", "kids cartoon", "Vietnam", title0]),
     };
   }
@@ -263,8 +267,8 @@ async function metaText(job: Job, what: What, cfg: ChannelCfg, longUrl?: string,
  * least two hours from now (and after `after`: a Short after its film is public), not yet
  * taken by another video of that channel.
  */
-export function nextSlot(cfg: ChannelCfg, kind: "long" | "short", taken: string[], now = new Date(), after?: string): Date | undefined {
-  const times = kind === "short" ? cfg.shorts : cfg.long, used = new Set(taken.map((t) => new Date(t).getTime()));
+export function nextSlot(cfg: ChannelCfg, kind: "long" | "short" | "en", taken: string[], now = new Date(), after?: string): Date | undefined {
+  const times = kind === "short" ? cfg.shorts : kind === "en" && cfg.english?.length ? cfg.english : cfg.long, used = new Set(taken.map((t) => new Date(t).getTime()));
   if (!times.length) return undefined;
   const earliest = Math.max(now.getTime() + 2 * 3600_000, after ? new Date(after).getTime() + 60_000 : 0);
   for (let d = 0; d < 120; d++) {
@@ -351,7 +355,7 @@ export function takenTimes(jobs: Job[], channel: string): string[] {
 export async function publishOne(slug: string, item: { what: What; file: string; index?: number }, jobs: Job[], settings: PublishSettings, lines: Line[], log: (s: string) => void): Promise<Published> {
   const job = await loadJob(slug), channel = channelOf(job, item.what, lines), cfg = settings[channel];
   if (!cfg) throw new Error(`không có kênh "${channel}" trong cài đặt đăng`);
-  const at = nextSlot(cfg, item.what === "short" ? "short" : "long", takenTimes(jobs, channel), new Date(), item.what === "short" ? job.published?.long?.publishAt : undefined);
+  const at = nextSlot(cfg, item.what, takenTimes(jobs, channel), new Date(), item.what !== "long" ? job.published?.long?.publishAt : undefined);
   if (!at) throw new Error(`kênh ${cfg.name} không có giờ đăng cho ${item.what}`);
   const plan = JSON.parse(await fsp.readFile(path.join(jobDir(slug), "plan.json"), "utf8").catch(() => "{}"));
   const hook = item.what === "short" && !isFactJob(job) ? (await shortHooks(slug, job.shorts ?? [], jobDir(slug), plan.shorts))[item.index!] : undefined;
@@ -392,14 +396,14 @@ export async function publishSettings(): Promise<PublishSettings> {
 }
 const HHMM = /^([01]\d|2[0-3]):[0-5]\d$/;
 /** Change a channel's settings from the review page (on/off, times). */
-export async function savePublishSettings(channel: string, change: { mode?: Mode; long?: string[]; shorts?: string[]; locked?: string | null }): Promise<PublishSettings> {
+export async function savePublishSettings(channel: string, change: { mode?: Mode; long?: string[]; shorts?: string[]; english?: string[]; locked?: string | null }): Promise<PublishSettings> {
   const raw = (await exists(SETTINGS)) ? JSON.parse(await fsp.readFile(SETTINGS, "utf8")) : {};
   const all = normalise(raw.publish);
   const cfg = all[channel];
   if (!cfg) throw new Error(`không có kênh "${channel}"`);
   if (change.mode && ["off", "manual", "auto"].includes(change.mode)) { cfg.mode = change.mode; if (change.mode === "auto") delete cfg.locked; }
   if (change.locked) cfg.locked = change.locked;
-  for (const k of ["long", "shorts"] as const) if (Array.isArray(change[k])) cfg[k] = change[k]!.map((x) => String(x).trim()).filter((x) => HHMM.test(x));
+  for (const k of ["long", "shorts", "english"] as const) if (Array.isArray(change[k])) cfg[k] = change[k]!.map((x) => String(x).trim()).filter((x) => HHMM.test(x));
   raw.publish = all;
   await fsp.writeFile(SETTINGS, JSON.stringify(raw, null, 2));
   return all;
@@ -599,7 +603,7 @@ export async function exportJob(slug: string, jobs: Job[], settings: PublishSett
     const channel = channelOf(job, item.what, lines), cfg = settings[channel]!, done = publishedOf(job, item);
     const before = exportedOf(job, item);
     const at = done ? new Date(done.publishAt) : before ? new Date(before.publishAt)
-      : nextSlot(cfg, item.what === "short" ? "short" : "long", takenOn(channel), opts.now, item.what === "short" && !isFactJob(job) ? filmAt : undefined);
+      : nextSlot(cfg, item.what, takenOn(channel), opts.now, item.what !== "long" && !isFactJob(job) ? filmAt : undefined);
     if (!at) continue;
     if (!done) takenOn(channel).push(at.toISOString());
     if (item.what === "long") filmAt = at.toISOString();

@@ -4,7 +4,7 @@
  *
  *   vi       the Vietnamese description: 2–3 sentences that make a child (and a parent) want to
  *            watch, without telling the ending, then the lesson
- *   en       the same for the English version (Huy Tells Tales, on Ask Huy)
+ *   en       the same for the English version (the series Huy Tells Tales, same channel)
  *   sources  which of the research pages really are about this story (the search brings odd
  *            ones: a Korean TV series under "Ếch ngồi đáy giếng")
  *
@@ -45,7 +45,7 @@ export async function writeStoryCopy(slug: string, log: (s: string) => void = co
   const sources = JSON.parse((await read("sources.json")) || "[]") as { title: string; url: string }[];
   const { data } = await think<Omit<StoryCopy, "at">>({
     job: slug, phase: "produce", step: "story-copy", model: "sonnet", effort: "low", schema: SCHEMA,
-    system: "You write YouTube descriptions for \"Huy Kể Chuyện\", an animated channel of Vietnamese folk tales, legends, fables and history for children (its English versions, \"Huy Tells Tales\", go on the channel \"Ask Huy\"). Warm, simple, honest; never clickbait.",
+    system: "You write YouTube descriptions for \"Huy Kể Chuyện\", an animated channel of Vietnamese folk tales, legends, fables and history for children (its English versions go on the same channel, as the series \"Huy Tells Tales\"). Warm, simple, honest; never clickbait.",
     prompt: [
       `The story: "${plan.title ?? job.topic}" (${job.kind ?? "story"}).${planEn.title ? ` English title: "${planEn.title}".` : ""}`,
       "",

@@ -1,8 +1,8 @@
 # CLAUDE.md — Wata Video Studio
 
 Phần mềm chạy trên máy, tự làm phim hoạt hình thiếu nhi. Chủ kênh là Nguyễn Đức Huy. Từ 12/11/2026 chỉ còn **hai kênh YouTube**:
-- **Huy Kể Chuyện** (tiếng Việt): truyện, lịch sử, ngụ ngôn, chuyên mục Hỏi Huy, Học tiếng Anh, Shorts "Bạn có biết?".
-- **Ask Huy** (tiếng Anh): hỏi–đáp, Shorts "Did you know?", bản tiếng Anh của truyện (chuyên mục Huy Tells Tales).
+- **Huy Kể Chuyện** (kênh kể chuyện): truyện, lịch sử, ngụ ngôn, bản tiếng Anh của truyện (chuyên mục Huy Tells Tales, giờ đăng riêng `english` trong `publish`), chuyên mục Hỏi Huy, Học tiếng Anh, Shorts "Bạn có biết?".
+- **Ask Huy** (kênh hỏi–đáp tiếng Anh): hỏi–đáp, Shorts "Did you know?". Không đăng truyện.
 - Lời mời đăng ký luôn nêu tên kênh thật, không nêu tên chuyên mục (`home` trong `src/studio/qa.ts`). Đăng video: `src/studio/publish.ts` (Xuất tay: mỗi chủ đề một thư mục `~/youtube/<tên chủ đề>/` gom video dài, Shorts, ảnh bìa, tệp hướng dẫn; Tự đăng khi đã qua audit).
 - Lịch đăng (`src/studio/calendar.ts`): tab 📅 Lịch đăng trên trang duyệt, tab Lịch trên điện thoại (`/m#lich`). Google Drive (`src/studio/drive.ts`, rclone ở `vendor/rclone`, cấu hình `studio/secrets/rclone.conf`, remote `wata`): mỗi 5 phút chép thư mục chủ đề lên `Wata/<chủ đề>` kèm `Lich dang.txt`, chạy bên cạnh bộ lập lịch (không chặn render); chủ đề đăng hết thì xóa khỏi Drive sau 7 ngày.
 - Lời đăng (tiêu đề, mô tả, thẻ, cài đặt, giờ; TikTok/Facebook) có trong tệp của thư mục đăng và mục "Lời đăng" trên trang duyệt (mỗi bài chờ đăng). Truyện: mô tả cho người xem do `src/studio/copy.ts` viết khi chuẩn bị video (Sonnet, ~7–8k token mỗi truyện, lưu `copy.json`), nguồn tư liệu lọc theo bộ não và tên truyện. Short lấy câu thoại riêng làm tiêu đề.
@@ -15,7 +15,7 @@ Kênh thứ hai **Ask Huy** (tiếng Anh, trẻ 6–12, mỗi video trả lời 
 - `src/studio/qa.ts`: kịch bản, soát sự thật, đề xuất câu hỏi.
 - `qaproduce.ts`: giọng, chỉ đạo cảnh, tranh nền, render.
 - `runtime/board.js`: bảng giải thích SVG.
-- Người dẫn là Huy (25 tuổi); em trai Hùng (21, phụ tá làm thí nghiệm, áo tím); bé Bối (gái, 8 tuổi) hỏi; em trai Beo (5 tuổi, dáng `body: "small"`) hay đoán ngây ngô. Cả bốn có mặt suốt video ở mọi chương trình hỏi đáp, Shorts và Học tiếng Anh (`helper`, `kid`, `little` trong `QAProfile`). Trước 12/11/2026 Bối tên là Mai (kịch bản cũ ghi "Mai" vẫn đọc được). Kokoro đọc sai tên Việt ("Huy" thành "Hi", "Bối" thành chuỗi vô nghĩa), nên `src/tts/kokoro_worker.py` (`NAMES`) đưa phiên âm tiếng Việt của Huy, Hùng, Bối, Beo vào thẳng; thêm tên khác thì thêm vào đó.
+- Người dẫn là Huy (25 tuổi); em trai Hùng (21, phụ tá làm thí nghiệm, áo tím); bé Bối (gái, 8 tuổi) hỏi; em trai Beo (5 tuổi, dáng `body: "small"`) hay đoán ngây ngô. Cả bốn có mặt suốt video ở mọi chương trình hỏi đáp, Shorts và Học tiếng Anh (`helper`, `kid`, `little` trong `QAProfile`). Trước 12/11/2026 Bối tên là Mai (kịch bản cũ ghi "Mai" vẫn đọc được). Kokoro đọc sai tên Việt ("Huy" thành "Hi", "Bối" thành chuỗi vô nghĩa), nên `src/tts/kokoro_worker.py` (`NAMES`) đưa phiên âm tiếng Việt của Huy, Hùng, Bối, Beo, "Kể Chuyện" vào thẳng; thêm tên khác thì thêm vào đó.
 
 Mỗi **dòng nội dung** khai báo trong `studio/settings.json` → `pick.lines`, gồm `kinds`, `perWeek` (số video mỗi tuần, sửa trên tab Đăng YouTube), `ahead`, `propose`.
 - Dịp lễ (`src/studio/occasions.ts`): bài hợp dịp sắp tới được làm trước, và được tự chọn từ 14 đến 2 ngày trước dịp.

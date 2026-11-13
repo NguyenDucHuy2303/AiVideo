@@ -432,7 +432,8 @@ async function showYoutube() {
         ${ready ? `<a class="dl" style="margin-left:10px" href="/oauth/start?channel=${encodeURIComponent(c.key)}">${c.connected ? "Kết nối lại" : "Kết nối kênh"}</a>` : ""}</p>
       <p>Chế độ: <select id="mode-${c.key}">${[["manual", "Xuất tay"], ["auto", "Tự đăng"], ["off", "Tắt"]].map(([v, l]) => `<option value="${v}" ${c.mode === v ? "selected" : ""} ${v === "auto" && !c.connected ? "disabled" : ""}>${l}${v === "auto" && !c.connected ? " (cần kết nối kênh)" : ""}</option>`).join("")}</select></p>
       <table><tr><td>Giờ công khai video chính</td><td><input id="long-${c.key}" value="${esc(c.long.join(", "))}"></td></tr>
-      <tr><td>Giờ công khai Shorts</td><td><input id="shorts-${c.key}" value="${esc(c.shorts.join(", "))}"></td></tr></table>
+      <tr><td>Giờ công khai Shorts</td><td><input id="shorts-${c.key}" value="${esc(c.shorts.join(", "))}"></td></tr>
+      ${c.english ? `<tr><td>Giờ công khai bản tiếng Anh của truyện (Huy Tells Tales)</td><td><input id="english-${c.key}" value="${esc(c.english.join(", "))}"></td></tr>` : ""}</table>
       <p><button class="fixb" style="padding:8px 14px;border-radius:10px;border:2px solid;cursor:pointer" onclick="savePublish('${c.key}')">Lưu</button></p></section>`).join("")}${await trendsSection()}`;
 }
 /** How many videos a week each content line makes (the 17:00 pick keeps to it). */
@@ -443,7 +444,7 @@ async function linesSection() {
     <p>Lúc 17:00 mỗi ngày, nếu bạn chưa duyệt đủ, studio tự chọn kịch bản điểm cao nhất, nhưng không quá số này trong 7 ngày và rải đều (3/tuần: hai, ba ngày một bài). Bài bạn tự duyệt cũng được tính. Chủ đề cho dịp lễ sắp tới (Noel, Tết…) được ưu tiên và không chờ lượt. Mỗi video dài còn được cắt thêm 3 Shorts.</p>
     <table><tr><th>Dòng nội dung</th><th>Kênh</th><th>Video/tuần</th><th>Kịch bản đang chờ duyệt</th></tr>
     ${lines.map((l) => `<tr><td>${esc(l.name)}</td><td>${l.channel === "ask-huy" ? "Ask Huy" : "Huy Kể Chuyện"}</td><td><input id="week-${l.id}" type="number" min="0" max="21" step="0.5" value="${l.perWeek}" style="width:70px" onchange="saveWeek('${l.id}')"></td><td>${l.waiting}</td></tr>`).join("")}
-    <tr><td colspan="4" class="meta">Tổng mỗi tuần: Huy Kể Chuyện ${sum("huy-ke-chuyen")} video · Ask Huy ${sum("ask-huy")} video (chưa kể Shorts cắt ra và bản tiếng Anh của truyện).</td></tr></table></section>`;
+    <tr><td colspan="4" class="meta">Tổng mỗi tuần: Huy Kể Chuyện ${sum("huy-ke-chuyen")} video · Ask Huy ${sum("ask-huy")} video (chưa kể Shorts cắt ra; bản tiếng Anh của truyện đăng trên Huy Kể Chuyện ở giờ riêng).</td></tr></table></section>`;
 }
 async function saveWeek(id) {
   const r = await fetch("/api/lines", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, perWeek: Number($(`#week-${id}`).value) }) }).then((r) => r.json());
@@ -462,7 +463,7 @@ async function savePublish(key) {
   const split = (v) => v.split(/[,\s]+/).filter(Boolean);
   const mode = $(`#mode-${key}`).value;
   if (mode === "auto" && !confirm("Chỉ bật Tự đăng khi dự án Google đã qua audit của YouTube. Chưa audit thì video bị khóa ở chế độ riêng tư. Bật?")) return;
-  const r = await fetch("/api/publish", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ channel: key, mode, long: split($(`#long-${key}`).value), shorts: split($(`#shorts-${key}`).value) }) }).then((r) => r.json());
+  const r = await fetch("/api/publish", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ channel: key, mode, long: split($(`#long-${key}`).value), shorts: split($(`#shorts-${key}`).value), ...($(`#english-${key}`) ? { english: split($(`#english-${key}`).value) } : {}) }) }).then((r) => r.json());
   if (r.error) alert(r.error);
   showYoutube();
 }

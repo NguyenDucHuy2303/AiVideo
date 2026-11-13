@@ -225,7 +225,7 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
     }
     if (parts[1] === "publish") {
       if (req.method === "POST") {
-        const b = await body(req) as unknown as { channel: string; mode?: Mode; long?: string[]; shorts?: string[] };
+        const b = await body(req) as unknown as { channel: string; mode?: Mode; long?: string[]; shorts?: string[]; english?: string[] };
         try { await savePublishSettings(b.channel, b); } catch (err) { return json(res, { error: (err as Error).message }, 400); }
       }
       const cfg = await publishSettings();

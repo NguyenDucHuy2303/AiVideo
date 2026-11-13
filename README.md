@@ -337,10 +337,10 @@ Studio đăng lên **hai kênh** (gộp từ bốn kênh ngày 12/11/2026):
 
 | Kênh | Nội dung | Danh sách phát |
 |---|---|---|
-| **Huy Kể Chuyện** (tiếng Việt) | truyện cổ tích, truyền thuyết, lịch sử, ngụ ngôn; hỏi–đáp tiếng Việt; học tiếng Anh; Shorts "Bạn có biết?" | Truyện cổ tích Việt Nam · Truyền thuyết Việt Nam · Lịch sử Việt Nam cho bé · Truyện ngụ ngôn · Hỏi Huy · Học tiếng Anh cùng Huy · Bạn có biết? (Shorts) |
-| **Ask Huy** (tiếng Anh) | hỏi–đáp tiếng Anh; Shorts "Did you know?"; bản tiếng Anh của truyện (loạt Huy Tells Tales) | Ask Huy: Big Questions · Did You Know? (Shorts) · Huy Tells Tales: Vietnamese Folk Tales |
+| **Huy Kể Chuyện** (kênh kể chuyện) | truyện cổ tích, truyền thuyết, lịch sử, ngụ ngôn và bản tiếng Anh của chúng (loạt Huy Tells Tales, giờ đăng riêng `english`, mặc định 08:30); hỏi–đáp tiếng Việt; học tiếng Anh; Shorts "Bạn có biết?" | Truyện cổ tích Việt Nam · Truyền thuyết Việt Nam · Lịch sử Việt Nam cho bé · Truyện ngụ ngôn · Huy Tells Tales: Vietnamese Folk Tales · Hỏi Huy · Học tiếng Anh cùng Huy · Bạn có biết? (Shorts) |
+| **Ask Huy** (kênh hỏi–đáp tiếng Anh) | hỏi–đáp tiếng Anh; Shorts "Did you know?". Không đăng truyện. | Ask Huy: Big Questions · Did You Know? (Shorts) |
 
-"Hỏi Huy" và "Huy Tells Tales" giờ là chuyên mục, không phải kênh riêng: video vẫn chào bằng tên chuyên mục và giữ intro riêng, nhưng lời mời đăng ký và outro nêu tên kênh thật. Danh mục YouTube chọn theo từng video: truyện là Phim và hoạt hình, hỏi–đáp và học tiếng Anh là Giáo dục.
+"Hỏi Huy" và "Huy Tells Tales" giờ là chuyên mục, không phải kênh riêng: video vẫn chào bằng tên chuyên mục và giữ intro riêng, nhưng lời mời đăng ký và outro nêu tên kênh thật. Từ 13/11/2026 bản tiếng Anh của truyện ở lại kênh Huy Kể Chuyện (lời mời đăng ký: "subscribe to the channel Huy Kể Chuyện", Kokoro đọc tên kênh theo phiên âm trong `NAMES`). Danh mục YouTube chọn theo từng video: truyện là Phim và hoạt hình, hỏi–đáp và học tiếng Anh là Giáo dục.
 
 Mỗi kênh có một chế độ, chọn ở tab **Đăng YouTube** của trang duyệt:
 
