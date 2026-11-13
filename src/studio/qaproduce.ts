@@ -181,8 +181,10 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
   // A script written again after the film was made (a rewrite): the old voice timing and the
   // old direction belong to the old lines, so both are made anew (unchanged lines keep their
   // voice from the cache). Without this the "new" film is the old one.
-  const text = [plan.title, ...lines].join("\n") + "\n";
-  const before = await fs.readFile(path.join(proj, "script.txt"), "utf8").catch(() => undefined);
+  // (what the voices and direction were last made for: written when the preparation is whole;
+  // older projects have only their script.txt, written at the start)
+  const text = [plan.title, ...lines].join("\n") + "\n", made = path.join(proj, ".prepared-script.txt");
+  const before = await fs.readFile(made, "utf8").catch(() => fs.readFile(path.join(proj, "script.txt"), "utf8").catch(() => undefined));
   if (before !== undefined && before !== text) {
     log("  the script changed: voices and direction made again");
     await fs.rm(path.join(proj, "timeline.json"), { force: true });
@@ -226,6 +228,7 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
     sc.backdrop = file ? { src: `file://${file}`, size: SIZES.landscape } : false;
     await fs.writeFile(path.join(anim, f), JSON.stringify(sc, null, 2));
   }
+  await fs.writeFile(made, text);
   return proj;
 }
 
