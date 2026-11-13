@@ -4,7 +4,8 @@
  * beside or instead of the presenters.
  *
  *   scene.board = { svg: "<svg viewBox='0 0 1000 600'>…</svg>", x, y, w, h, bg }
- *     x, y, w, h: the card in fractions of the frame (default: the right 61%, the presenters on the left)
+ *     x, y, w, h: the card in fractions of the frame (default: the right 57%, from 0.40; the presenters
+ *       on the left, inside the camera's region [0.02, 0.36])
  *
  * Inside the SVG, plain attributes animate it (times in seconds of the scene):
  *   data-in="1.2"   appears then (a quick pop)       data-out="4"  goes away then
@@ -37,7 +38,7 @@
     // Wide frames: the card on the right, the presenters on the left. Tall frames (Shorts): the
     // card across the top half, the presenters under it.
     const tall = H > W;
-    const x = (board.x ?? (tall ? 0.04 : 0.36)) * W, y = (board.y ?? (tall ? 0.06 : 0.08)) * H, w = (board.w ?? (tall ? 0.92 : 0.61)) * W, h = (board.h ?? (tall ? 0.42 : 0.74)) * H;
+    const x = (board.x ?? (tall ? 0.04 : 0.4)) * W, y = (board.y ?? (tall ? 0.06 : 0.08)) * H, w = (board.w ?? (tall ? 0.92 : 0.57)) * W, h = (board.h ?? (tall ? 0.42 : 0.74)) * H;
     const root = g(parent);
     const style = board.style || "card";
     // The card: a soft shadow, the panel in the board's look, its frame.

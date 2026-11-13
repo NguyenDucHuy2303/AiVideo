@@ -11,6 +11,8 @@
  *   push:  slow zoom over the shot (0.1 = 10 % closer by its end)
  *   gy:    where the ground sits, as a share of the frame height (default 0.86)
  *   dx/dy: shift the framing, as a share of the frame width / height
+ *   region: [from, to] shares of the frame width that everyone must stay inside (beside an
+ *          explainer board): the zoom is held down so the whole group fits, push or not
  *   follow: keep tracking the subject sideways (default: only "track" and moving subjects)
  *   ease:  seconds to move from the previous shot instead of cutting
  *   sizeLag: the camera reacts to a change of size this late (default 0.5 s), like an
@@ -62,6 +64,7 @@
     let z = ((H * share) / boxH) * push;
     if (shot.type !== "medium") z = Math.min(z, (H * (gy - 0.07)) / boxH); // the top stays in frame
     z = Math.min(z, (W * 0.86) / boxW); // and so do both ends
+    if (shot.region) z = Math.min(z, ((shot.region[1] - shot.region[0]) * W) / Math.max(1, right - left));
     const cx = (left + right) / 2;
     // Lead room in front of a moving subject, but never pushing it out of the frame.
     const room = Math.max(0, (W * 0.93 - (right - left) * z) / 2);
@@ -70,7 +73,8 @@
     // Off the ground (flying): rise with the subject; followY < 1 lets it drift up the frame.
     const top = Math.min(...place.map((p) => p.box[1])), bottom = Math.max(...place.map((p) => p.box[3]));
     if ((shot.follow || shot.type === "track") && bottom < -40) y = Math.min(y, lerp(y, (top + bottom) / 2, shot.followY ?? 1));
-    const x = cx + leadPx / z + ((shot.dx || 0) * W) / z;
+    // In a region: the group's middle at the region's middle (the screen's middle is the camera's x).
+    const x = shot.region ? cx - (((shot.region[0] + shot.region[1]) / 2 - 0.5) * W) / z : cx + leadPx / z + ((shot.dx || 0) * W) / z;
     // (people at the sides, not in the shot: all in or all out, never cut through the head)
     return { x: x + cleared(shot, ctx, S, ids, 0.1), y, z };
   }

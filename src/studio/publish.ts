@@ -432,6 +432,21 @@ export function needsExport(job: Job, files: string[], settings: PublishSettings
   });
 }
 
+/**
+ * A laid-out video made again since (a render after a fix): its file in the topic folder is
+ * still the old one (a hard link to the old file), so the folder is laid out again (same times).
+ */
+export async function staleExport(job: Job, files: string[]): Promise<boolean> {
+  if (job.status !== "done" || job.publishHold) return false;
+  for (const item of allItems(job, files)) {
+    const ex = exportedOf(job, item);
+    if (!ex || publishedOf(job, item) || !inExportDir(ex.dir)) continue;
+    const st = await fsp.stat(path.join(jobDir(job.slug), item.file)).catch(() => undefined);
+    if (st && st.mtimeMs > new Date(ex.at).getTime()) return true;
+  }
+  return false;
+}
+
 /** One video's part of the sheet: everything to fill in on YouTube Studio's upload page. */
 /** The other thumbnails of a film's main one ("thumbnail.jpg" → thumbnail-2.jpg, -3; "thumbnail.en.jpg" → thumbnail-2.en.jpg…). */
 export const thumbVariants = (jpg: string, files: string[]) => [2, 3].map((k) => jpg.replace(/^thumbnail/, `thumbnail-${k}`)).filter((f) => files.includes(f));

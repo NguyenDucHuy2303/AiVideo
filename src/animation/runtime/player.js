@@ -147,7 +147,7 @@
     }
     let shots = (scene.shots || [{ at: 0, type: "wide", on: Object.keys(actors).slice(0, 1) }]).slice().sort((a, b) => a.at - b.at);
     // A tall frame (Shorts) with a board: the board fills the top, the presenters stand below it.
-    if (scene.board && H > W) shots = shots.map((s) => ({ ...s, dx: 0, share: 0.34, gy: 0.96 }));
+    if (scene.board && H > W) shots = shots.map((s) => ({ ...s, dx: 0, share: 0.34, gy: 0.96, region: undefined }));
     shots.forEach((s, i) => (s.end = shots[i + 1]?.at ?? scene.duration));
 
     /** Position along x at time t: base x, then each move in order. */

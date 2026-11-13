@@ -11,7 +11,7 @@
 import { hasApiKey, hintsFor, refreshOwnStats, refreshPopular } from "./trends.ts";
 import { jobOccasion } from "./occasions.ts";
 import { wasInterrupted } from "../utils/process.ts";
-import { channelOf, checkOne, dueCheck, exportJob, needsExport, normalise, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings, type Published, type What } from "./publish.ts";
+import { channelOf, checkOne, dueCheck, exportJob, needsExport, staleExport, normalise, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings, type Published, type What } from "./publish.ts";
 import { dailyPick, lineOf, PICK_DEFAULTS, proposerOf, type PickSettings } from "./pick.ts";
 import { isFact, isQA, proposeFacts, proposeQuestions } from "./qa.ts";
 import { proposeLessons } from "./lesson.ts";
@@ -123,12 +123,13 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
     const d = due[0];
     if (d && (await token(d.pub.channel))) return { what: `publish-check ${d.what}`, slug: j.slug, run: () => checkOne(j.slug, d.what, d.index, say(j.slug)) };
   }
-  // Manual channels: lay out every approved video not yet laid out (~/Videos/Wata). A failure
+  // Manual channels: lay out every approved video not yet laid out (~/youtube), and again one made
+  // again since (a re-render: the folder still holds the old file). A failure
   // waits an hour (else the same job would be picked again at every tick).
   for (const j of jobs) {
     if (j.status !== "done" || j.publishHold || (j.publishRetryAt && new Date(j.publishRetryAt) > new Date())) continue;
     const files = await fs.readdir(jobDir(j.slug)).catch(() => [] as string[]);
-    if (needsExport(j, files, s.publish, s.pick.lines)) return {
+    if (needsExport(j, files, s.publish, s.pick.lines) || (await staleExport(j, files))) return {
       what: "export", slug: j.slug,
       run: async () => {
         try { const d = await exportJob(j.slug, jobs, s.publish, s.pick.lines); if (d) say(j.slug)(`→ ${d}`); }

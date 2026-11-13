@@ -127,6 +127,8 @@ export function gestures(actor: string, move: { do: string; face: string }, seco
 }
 
 /** The board looks, one per video (by its name, so a video keeps its look when directed again). */
+/** Where the presenters stand beside the board (shares of the frame width; the card starts at 0.40). */
+export const BOARD_REGION = [0.02, 0.36];
 export const BOARD_STYLES = ["card", "grid", "chalk", "sketch"] as const;
 export function boardStyleOf(slug: string): (typeof BOARD_STYLES)[number] {
   let h = 0;
@@ -150,7 +152,8 @@ function sceneOf(P: QAProfile, d: Directed, plan: QAPlan, i: number, seconds: nu
   ];
   const actions: Record<string, unknown>[] = [...gestures("huy", d.huy, seconds), ...gestures("hung", d.hung, seconds), ...gestures("boi", d.boi, seconds), ...gestures("beo", d.beo, seconds)];
   const on = ["huy", "hung", "boi", "beo"];
-  const shot = board ? { at: 0, type: "full", on, dx: 0.33, share: 0.44, gy: 0.9, push: 0.05 }
+  // (beside the board: all four inside the left of the frame, never under the card; board.js)
+  const shot = board ? { at: 0, type: "full", on, region: BOARD_REGION, share: 0.5, gy: 0.9, push: 0.05 }
     : d.layout === "host" ? { at: 0, type: "full", on, push: 0.06 }
     : { at: 0, type: "full", on, share: 0.62 };
   return {
