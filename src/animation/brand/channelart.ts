@@ -7,6 +7,9 @@
  *                                   (what a phone shows; a TV shows it all)
  *   facebook-cover.png  1640×624    the same inside the middle 1110 px (a phone crops the sides)
  *
+ * Who stands on the covers: Ask Huy, its four presenters (in every video); Huy Kể Chuyện, Huy
+ * alone (the storyteller: the presenters belong to its Q&A and English series, not its stories).
+ *
  * The background is drawn in vector (brand/channelart.html), the presenters by the player
  * (front view, waving, on a transparent page), the logo by the brand page: no painting, no
  * brain. `npm run wata -- channel-art` writes assets/brand/channel-art/ and
@@ -23,25 +26,31 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PAGE = path.join(HERE, "channelart.html"), BRAND_PAGE = path.join(HERE, "brand.html"), PLAYER = path.join(HERE, "..", "player.html");
 
 type Box = { x: number; y: number; w: number; h: number };
-interface Cover { file: string; width: number; height: number; logo: Box; people: Box }
+interface Layout { logo: Box; people: Box }
+interface Cover { file: string; width: number; height: number; group: Layout; solo: Layout }
 /** Where things go on each cover (inside what every screen shows). */
 const COVERS: Cover[] = [
   // YouTube: the band a phone shows is x 507–2053, y 508–931.
-  { file: "youtube-banner.png", width: 2560, height: 1440, logo: { x: 580, y: 515, w: 410, h: 410 }, people: { x: 1060, y: 470, w: 1000, h: 470 } },
+  { file: "youtube-banner.png", width: 2560, height: 1440,
+    group: { logo: { x: 580, y: 515, w: 410, h: 410 }, people: { x: 1060, y: 470, w: 1000, h: 470 } },
+    solo: { logo: { x: 760, y: 515, w: 410, h: 410 }, people: { x: 1210, y: 515, w: 520, h: 420 } } },
   // Facebook: a phone shows x 265–1375; the page's round picture sits over the bottom left on a computer.
-  { file: "facebook-cover.png", width: 1640, height: 624, logo: { x: 285, y: 92, w: 430, h: 430 }, people: { x: 735, y: 40, w: 640, h: 560 } },
+  { file: "facebook-cover.png", width: 1640, height: 624,
+    group: { logo: { x: 285, y: 92, w: 430, h: 430 }, people: { x: 735, y: 40, w: 640, h: 560 } },
+    solo: { logo: { x: 390, y: 92, w: 430, h: 430 }, people: { x: 860, y: 40, w: 400, h: 560 } } },
 ];
 /** The presenters, left to right: far enough apart that a waving hand does not reach a face. */
-const LINE_UP = [["hung", 0], ["huy", 250], ["boi", 500], ["beo", 710]] as const;
+type LineUp = readonly (readonly [string, number])[];
+const GROUP: LineUp = [["hung", 0], ["huy", 250], ["boi", 500], ["beo", 710]], SOLO: LineUp = [["huy", 0]];
 
-/** The four presenters waving, front view, on a transparent picture of the given size. */
-async function presenters(out: string, w: number, h: number): Promise<void> {
+/** The presenters waving, front view, on a transparent picture of the given size. */
+async function presenters(out: string, w: number, h: number, line: LineUp): Promise<void> {
   const L = LOOKS as Record<string, unknown>;
   const scene = {
     duration: 4, time: "day", transparent: true, backdrop: false, set: { name: "plain" }, style: "hien_dai",
-    cast: LINE_UP.map(([id, x]) => ({ id, type: "human", look: L[`${id}_front`], x })),
-    actions: LINE_UP.map(([id], i) => ({ actor: id, at: 0, do: "wave", face: i % 2 ? "joy" : "happy" })),
-    shots: [{ at: 0, type: "full", on: LINE_UP.map(([id]) => id), region: [0.02, 0.98], share: 0.9, gy: 0.96 }],
+    cast: line.map(([id, x]) => ({ id, type: "human", look: L[`${id}_front`], x })),
+    actions: line.map(([id], i) => ({ actor: id, at: 0, do: "wave", face: i % 2 ? "joy" : "happy" })),
+    shots: [{ at: 0, type: "full", on: line.map(([id]) => id), region: [0.02, 0.98], share: 0.9, gy: 0.96 }],
   };
   await still({ page: PLAYER, width: w, height: h, output: out, at: 1.2, transparent: true, params: { scene, width: w, height: h } });
 }
@@ -58,9 +67,11 @@ export async function channelArt(brand: Brand, log: (s: string) => void = consol
   const avatar = path.join(dir, "avatar.png");
   await still({ page: PAGE, width: 1080, height: 1080, output: avatar, params: { width: 1080, height: 1080, theme, kind: "avatar", focus: { x: 540, y: 540, r: 380 }, layers: [{ src: url(mark), x: 40, y: 40, w: 1000, h: 1000 }] } });
   out.push(avatar);
-  for (const c of COVERS) {
+  const solo = theme !== "ask_huy";
+  for (const cover of COVERS) {
+    const c = { ...cover, ...(solo ? cover.solo : cover.group) };
     const people = path.join(tmp, `people-${c.width}.png`);
-    await presenters(people, c.people.w, c.people.h);
+    await presenters(people, c.people.w, c.people.h, solo ? SOLO : GROUP);
     const file = path.join(dir, c.file);
     await still({ page: PAGE, width: c.width, height: c.height, output: file, params: {
       width: c.width, height: c.height, theme, kind: "banner",

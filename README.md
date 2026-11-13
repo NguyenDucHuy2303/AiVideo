@@ -399,7 +399,7 @@ Drive miễn phí có 15 GB. Mỗi chủ đề khoảng 90–500 MB.
 
 `npm run wata -- channel-art` (`src/animation/brand/channelart.ts`) vẽ cho mỗi kênh:
 - `avatar.png` 1080×1080: ảnh đại diện chung cho YouTube, Facebook, TikTok. Là logo không chữ trên nền màu kênh, hiển thị hình tròn.
-- `youtube-banner.png` 2560×1440: logo và bốn người dẫn nằm trong vùng giữa 1546×423 (vùng điện thoại hiển thị).
+- `youtube-banner.png` 2560×1440: logo và người dẫn nằm trong vùng giữa 1546×423 (vùng điện thoại hiển thị). Ask Huy có bốn người dẫn; Huy Kể Chuyện chỉ có Huy, vì người kể là Huy và bốn người dẫn chỉ có ở chuyên mục hỏi đáp và học tiếng Anh.
 - `facebook-cover.png` 1640×624: các phần chính nằm giữa, vì điện thoại cắt hai bên.
 
 TikTok không có ảnh bìa. Ảnh nằm ở `assets/brand/channel-art/` (Huy Kể Chuyện) và `assets/brand/ask-huy/channel-art/` (Ask Huy). Nền vẽ bằng vector nên sắc nét; đổi nhân vật hoặc logo thì chạy lại lệnh.
