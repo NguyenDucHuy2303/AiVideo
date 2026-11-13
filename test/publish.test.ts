@@ -92,10 +92,11 @@ test("an auto upload is looked at half an hour after its hour, every 30 minutes,
 });
 
 test("one topic, one folder: the film, every Short, the English version, with plain names", () => {
-  const film = job({ kind: "qa", shorts: ["shorts/1.mp4", "shorts/2.mp4"] });
+  const film = job({ kind: "truyền thuyết", shorts: ["shorts/1.mp4", "shorts/2.mp4"] });
   const items = allItems(film, ["video.mp4", "video.en.mp4", "plan.json"]);
-  assert.deepEqual(items.map((i) => fileNameOf(film, i)), ["video-dai.mp4", "short-1.mp4", "short-2.mp4", "video-tieng-anh.mp4"]);
+  assert.deepEqual(items.map((i) => fileNameOf(film, i)), ["video-tieng-viet.mp4", "short-1.mp4", "short-2.mp4", "video-tieng-anh.mp4"]);
   const fact = job({ kind: "fact-vi" });
+  assert.equal(fileNameOf(job({ kind: "qa" }), { what: "long", file: "video.mp4" }), "video-tieng-anh.mp4"); // (Ask Huy: the film is in English)
   assert.deepEqual(allItems(fact, ["video.mp4"]).map((i) => fileNameOf(fact, i)), ["short.mp4"]);
 });
 

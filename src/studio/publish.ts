@@ -436,9 +436,11 @@ export function allItems(job: Job, files: string[]): Item[] {
   if (files.includes("video.en.mp4")) out.push({ what: "en", file: "video.en.mp4" });
   return out;
 }
-/** The names inside the topic folder. */
+/** The names inside the topic folder: the main film by its language, like its label (an Ask
+ *  Huy question is in English; a story, a Hỏi Huy question, a lesson in Vietnamese). */
+export const OLD_LONG_NAME = "video-dai.mp4";
 export function fileNameOf(job: Job, item: Item): string {
-  if (item.what === "long") return "video-dai.mp4";
+  if (item.what === "long") return job.kind === "qa" ? "video-tieng-anh.mp4" : "video-tieng-viet.mp4";
   if (item.what === "en") return "video-tieng-anh.mp4";
   return isFactJob(job) ? "short.mp4" : `short-${item.index! + 1}.mp4`;
 }
@@ -563,6 +565,12 @@ async function place(from: string, to: string): Promise<void> {
   try { await fsp.link(from, to); } catch { await fsp.copyFile(from, to); }
 }
 
+/** Remove `old` only when it is another link to the same film (same file on disk): nothing is lost. */
+async function dropOldLink(film: string, old: string): Promise<void> {
+  const [a, b] = await Promise.all([fsp.stat(film).catch(() => undefined), fsp.stat(old).catch(() => undefined)]);
+  if (a && b && a.ino === b.ino && a.dev === b.dev) await fsp.unlink(old);
+}
+
 /** The topic's folder: kept from before, else ~/youtube/<title>, "(2)"… if another topic has that name. */
 async function folderOf(job: Job, title: string): Promise<string> {
   const before = [job.exported?.long, job.exported?.en, ...(job.exported?.shorts ?? [])].find((x) => x && inExportDir(x.dir))?.dir;
@@ -612,6 +620,8 @@ export async function exportJob(slug: string, jobs: Job[], settings: PublishSett
     if (item.what === "long") filmAt = at.toISOString();
     const name = fileNameOf(job, item);
     await place(path.join(dir, item.file), path.join(folder, name));
+    // (laid out before under the old name "video-dai.mp4": that link to the same film goes)
+    if (item.what === "long") await dropOldLink(path.join(dir, item.file), path.join(folder, OLD_LONG_NAME));
     const jpg = item.what === "short" ? undefined : item.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg", thumb = jpg && files.includes(jpg) ? (item.what === "en" ? "anh-bia-tieng-anh.jpg" : "anh-bia.jpg") : undefined;
     // The other two pictures (thumbnail-2.jpg, -3): to choose from, or to change to later.
     const more = thumb ? thumbVariants(jpg!, files).map((f, k) => [f, thumb.replace(/\.jpg$/, `-${k + 2}.jpg`)] as const) : [];

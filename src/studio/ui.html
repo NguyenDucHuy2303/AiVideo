@@ -253,7 +253,7 @@ async function show(slug) {
     const list = [item(main, p.long), item("Bản tiếng Anh", p.en), ...(p.shorts || []).map((x, i) => item(`Short ${i + 1}`, x))].join("");
     // Laid out by hand in one folder (~/youtube/<topic>), waiting for the user's upload: the time, a box for the link.
     const fact = job.kind === "fact" || job.kind === "fact-vi";
-    const waiting = [["long", main, "video-dai.mp4", ex.long], ...(ex.shorts || []).map((x, i) => ["short", fact ? "Short" : `Short ${i + 1}`, fact ? "short.mp4" : `short-${i + 1}.mp4`, x, i]), ["en", "Bản tiếng Anh", "video-tieng-anh.mp4", ex.en]].filter((e) => e[3]);
+    const waiting = [["long", main, job.kind === "qa" ? "video-tieng-anh.mp4" : "video-tieng-viet.mp4", ex.long], ...(ex.shorts || []).map((x, i) => ["short", fact ? "Short" : `Short ${i + 1}`, fact ? "short.mp4" : `short-${i + 1}.mp4`, x, i]), ["en", "Bản tiếng Anh", "video-tieng-anh.mp4", ex.en]].filter((e) => e[3]);
     const box = ([what, label, file, x, i]) => `<li><b>${label}</b> <small>(${file})</small> · công khai ${when(x)}
       <br><input id="pub-${what}-${i ?? 0}" placeholder="Dán link YouTube sau khi đăng" style="width:60%"> <button class="fixb" onclick="markPublished('${what}', ${i ?? "undefined"})">✔ Đã đăng</button></li>`;
     h += `<section><h3>YouTube</h3>${list ? `<ul>${list}</ul>` : ""}

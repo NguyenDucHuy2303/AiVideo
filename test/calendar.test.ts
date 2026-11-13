@@ -17,7 +17,7 @@ const job = (extra: Partial<Job> = {}): Job => ({
 
 test("a laid-out film and its Shorts are on the calendar by their YouTube times", () => {
   const es = entriesOf(job(), SETTINGS, NOW);
-  assert.deepEqual(es.map((e) => [e.label, e.file]), [["Bản tiếng Việt", "video-dai.mp4"], ["Short 1", "short-1.mp4"], ["Short 2", "short-2.mp4"]]);
+  assert.deepEqual(es.map((e) => [e.label, e.file]), [["Bản tiếng Việt", "video-tieng-viet.mp4"], ["Short 1", "short-1.mp4"], ["Short 2", "short-2.mp4"]]);
   assert.equal(es[0]!.folder, "Ếch ngồi đáy giếng");
   assert.equal(es[0]!.channelName, "Huy Kể Chuyện");
   // A film goes to Facebook too, a Short to TikTok and Facebook.
