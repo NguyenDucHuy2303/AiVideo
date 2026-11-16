@@ -168,3 +168,18 @@ test("TikTok and Facebook have their own boxes in their pages' order, with the A
   assert.equal(fbVideo.find((r) => r.label === "Tiêu đề")?.value, "Tên");
   assert.equal(fbVideo.find((r) => r.label === "Ảnh thu nhỏ")?.value, "Tải lên: anh-bia.jpg");
 });
+
+import { uploadBy, uploadFrom } from "../src/studio/publish.ts";
+test("the weekend off: its times only for videos laid out by Friday (uploaded ahead with a schedule)", () => {
+  const cfg = { ...PUBLISH_DEFAULTS["ask-huy"]!, long: ["19:00"], offDays: [0, 6] };
+  // Friday 20 Nov, 09:00: Saturday's 19:00 is fine (uploaded today, scheduled).
+  assert.deepEqual([nextSlot(cfg, "long", [], new Date(2026, 10, 20, 9))!.getDate()], [20]);
+  assert.equal(nextSlot(cfg, "long", [new Date(2026, 10, 20, 19).toISOString()], new Date(2026, 10, 20, 9))!.getDate(), 21);
+  // Saturday 21 Nov: nobody uploads before Monday, so no weekend time; Monday 19:00.
+  const sat = nextSlot(cfg, "long", [], new Date(2026, 10, 21, 10))!;
+  assert.deepEqual([sat.getDate(), sat.getHours()], [23, 19]);
+  assert.equal(uploadFrom(cfg, new Date(2026, 10, 22, 15)).getDate(), 23);
+  // A Saturday or Sunday video is uploaded by Friday; a Monday one on Monday.
+  assert.equal(uploadBy(cfg, new Date(2026, 10, 22, 19)).getDate(), 20);
+  assert.equal(uploadBy(cfg, new Date(2026, 10, 23, 19)).getDate(), 23);
+});

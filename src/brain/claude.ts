@@ -56,11 +56,29 @@ export async function ledger(): Promise<LedgerEntry[]> {
 /** Weighted tokens spent: by one job, or today (local time) by all. */
 export type Phase = "write" | "produce";
 
-export async function spent(filter: { job?: string; phase?: Phase; today?: boolean }): Promise<number> {
+export async function spent(filter: { job?: string; phase?: Phase; today?: boolean; since?: string }): Promise<number> {
   const day = new Date().toLocaleDateString("sv");
   return (await ledger())
-    .filter((e) => (!filter.job || e.job === filter.job) && (!filter.phase || (e.phase ?? "write") === filter.phase) && (!filter.today || new Date(e.at).toLocaleDateString("sv") === day))
+    .filter((e) => (!filter.job || e.job === filter.job) && (!filter.phase || (e.phase ?? "write") === filter.phase) && (!filter.today || new Date(e.at).toLocaleDateString("sv") === day) && (!filter.since || e.at >= filter.since))
     .reduce((n, e) => n + weigh(e), 0);
+}
+
+/**
+ * When a job's current round of a phase began: the last time it came into the phase's states
+ * from outside them (writing / rewrite for the script; approved / producing / fix for the film).
+ * A job's cap holds for one round: a script written again after a note, or a film made again,
+ * has its own budget (before 2026-11-16 the cap counted every round together, so a job written
+ * once could never be written again). Undefined: no job file (an era's research), all counted.
+ */
+const ROUND: Record<Phase, string[]> = { write: ["writing", "rewrite"], produce: ["approved", "producing", "fix"] };
+export async function roundStart(job: string, phase: Phase): Promise<string | undefined> {
+  const file = path.join(STUDIO_DIR, "jobs", job, "job.json");
+  if (!(await exists(file))) return undefined;
+  const history = (JSON.parse(await fs.readFile(file, "utf8")).history ?? []) as { at: string; status: string }[];
+  for (let i = history.length - 1; i >= 0; i--) {
+    if (ROUND[phase].includes(history[i]!.status) && (i === 0 || !ROUND[phase].includes(history[i - 1]!.status))) return history[i]!.at;
+  }
+  return undefined;
 }
 
 export class BudgetExceeded extends Error {}
@@ -115,8 +133,8 @@ export async function askClaude(a: Ask): Promise<{ text: string; data?: unknown;
   const cfg = await brainSettings();
   if (cfg.paused) throw new BrainPaused("Claude đang tạm dừng (bạn cần token cho việc khác)");
   const phase = a.phase ?? "write", cap = phase === "produce" ? cfg.perProduceTokens : cfg.perJobTokens;
-  const [job, day] = [await spent({ job: a.job, phase }), await spent({ today: true })];
-  if (job >= cap) throw new BudgetExceeded(`job "${a.job}" has spent ${job} of its ${cap} ${phase} tokens`);
+  const [job, day] = [await spent({ job: a.job, phase, since: await roundStart(a.job, phase) }), await spent({ today: true })];
+  if (job >= cap) throw new BudgetExceeded(`job "${a.job}" has spent ${job} of its ${cap} ${phase} tokens (this round)`);
   if (day >= cfg.perDayTokens) throw new BudgetExceeded(`today's ${day} of ${cfg.perDayTokens} tokens are spent`);
   const bin = await findClaude();
   if (!bin) throw new Error("Claude Code is not installed (or set CLAUDE_BIN)");

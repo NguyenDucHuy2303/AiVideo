@@ -35,7 +35,7 @@ export interface Line {
 }
 /** A line's way of finding topics (older settings without "propose": by its kinds). */
 export const proposerOf = (l: Line) => l.propose ?? (l.kinds?.includes("lesson") ? "lessons" : l.kinds?.some((k) => k === "fact" || k === "fact-vi") ? "facts" : l.kinds?.some((k) => k === "qa" || k === "qa-vi") ? "questions" : "stories");
-export interface PickSettings { at: string; lines: Line[] }
+export interface PickSettings { at: string; lines: Line[]; /** (the user's days off: publish offDays) */ offDays?: number[] }
 export const PICK_DEFAULTS: PickSettings = {
   at: "17:00",
   lines: [
@@ -89,7 +89,7 @@ export const weekly = (l: Line) => l.perWeek ?? l.perDay * 7;
  * than its week allows (the last seven days, today included), and with fewer than one a day,
  * not before its turn (3 a week: two days after the last one).
  */
-export function needToday(line: Line, mine: Job[], now = new Date()): number {
+export function needToday(line: Line, mine: Job[], now = new Date(), offDays: number[] = []): number {
   const week = weekly(line);
   if (week <= 0) return 0;
   const today = day(now), start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 6).getTime();
@@ -97,7 +97,13 @@ export function needToday(line: Line, mine: Job[], now = new Date()): number {
   const days = mine.map((j) => [...j.history].reverse().find((h) => h.status === "approved")?.at).filter((at): at is string => !!at);
   const inWeek = days.filter((at) => new Date(at).getTime() >= start).length;
   const onDay = days.filter((at) => day(at) === today).length;
-  let need = Math.min(Math.ceil(week / 7) - onDay, Math.round(week) - inWeek);
+  // A film approved today is made tonight and laid out tomorrow. When tomorrow is the last day
+  // the user can upload before days off (Thursday, before the weekend), the days off need their
+  // films today too: today's share is theirs as well (the week's count still holds).
+  const off = new Set(offDays), at = (k: number) => new Date(now.getFullYear(), now.getMonth(), now.getDate() + k).getDay();
+  let k = 0;
+  if (!off.has(at(1))) while (k < 6 && off.has(at(2 + k))) k++;
+  let need = Math.min(Math.ceil(week / 7) * (1 + k) - onDay, Math.round(week) - inWeek);
   if (week < 7 && need > 0) {
     const before = days.filter((at) => day(at) < today).sort().at(-1);
     const gap = Math.floor(7 / week);
@@ -119,7 +125,7 @@ export async function dailyPick(jobs: Job[], s: PickSettings, log: (s: string) =
   const picked: string[] = [];
   for (const line of s.lines) {
     const mine = jobs.filter((j) => lineOf(j, s.lines) === line);
-    let need = needToday(line, mine, now);
+    let need = needToday(line, mine, now, s.offDays);
     const waiting = mine.filter((j) => j.status === "review" && !j.retryAt);
     const urgent = waiting.map((job) => ({ job, o: jobOccasion(job, now) }))
       .filter((x) => x.o && x.o.left >= 2 && x.o.left <= URGENT_DAYS).sort((a, b) => a.o!.left - b.o!.left)[0];

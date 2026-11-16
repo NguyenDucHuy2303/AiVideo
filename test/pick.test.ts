@@ -70,3 +70,10 @@ test("occasions: a topic is for one only in the weeks before it", () => {
   assert.equal(occasionOf("Tết Trung Thu", now), undefined, "Trung Thu is not Tết Nguyên Đán");
   assert.equal(occasionOf("Bánh chưng bánh giầy", new Date("2027-01-20T10:00:00"))?.key, "tet");
 });
+
+test("before the weekend off, a daily line approves the weekend's films on Thursday", () => {
+  const daily: Line = { id: "q", name: "Q", perDay: 1, perWeek: 7 };
+  assert.equal(needToday(daily, [], new Date(2026, 10, 19, 17), [0, 6]), 3, "Thursday: Friday's turn plus Saturday's and Sunday's");
+  assert.equal(needToday(daily, [], new Date(2026, 10, 18, 17), [0, 6]), 1, "Wednesday: one");
+  assert.equal(needToday(daily, [], new Date(2026, 10, 19, 17)), 1, "no days off: one");
+});

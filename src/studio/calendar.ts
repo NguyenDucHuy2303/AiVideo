@@ -6,7 +6,7 @@
  */
 import path from "node:path";
 import type { Job } from "./jobs.ts";
-import { fileNameOf, longLabel, socialKey, type Exported, type PublishSettings, type Published, type What } from "./publish.ts";
+import { fileNameOf, longLabel, socialKey, uploadBy, type Exported, type PublishSettings, type Published, type What } from "./publish.ts";
 import { PLATFORM_NAME, platformsOf, type Platform } from "./social.ts";
 
 export interface CalEntry {
@@ -23,6 +23,8 @@ export interface CalEntry {
   social: Partial<Record<Platform, boolean>>;
   /** Not on YouTube yet and its time has passed. */
   late: boolean;
+  /** On a day off (the weekend): the last day to upload it, with its schedule (local date, YYYY-MM-DD). */
+  uploadBy?: string;
 }
 
 const isFact = (job: Job) => job.kind === "fact" || job.kind === "fact-vi";
@@ -44,6 +46,7 @@ export function entriesOf(job: Job, settings: PublishSettings, now = new Date())
       url: pub?.url,
       social: Object.fromEntries(platformsOf(what).map((p) => [p, !!job.social?.[socialKey(p, what, index)]])),
       late: !pub && new Date(rec.publishAt) < now,
+      ...(() => { const at = new Date(rec.publishAt), by = uploadBy(settings[rec.channel] ?? {}, at); return by.getDate() !== at.getDate() ? { uploadBy: by.toLocaleDateString("sv") } : {}; })(),
     });
   };
   for (const what of ["long", "en"] as const) add(what, undefined, job.published?.[what], job.exported?.[what]);
@@ -84,7 +87,7 @@ export function calendarText(entries: CalEntry[], now = new Date()): string {
   let day = "";
   for (const e of entries.filter((x) => !x.late)) {
     const d = dayOf(new Date(e.at));
-    if (d !== day) { out.push(`── ${d} ──`); day = d; }
+    if (d !== day) { out.push(`── ${d} ──${e.uploadBy ? `  (anh bận: tải lên và hẹn giờ trước, chậm nhất ${dayOf(new Date(`${e.uploadBy}T12:00`))})` : ""}`); day = d; }
     out.push(line(e));
   }
   if (!entries.length) out.push("Chưa có video nào được xếp lịch.");

@@ -4,7 +4,7 @@ Phần mềm chạy trên máy, tự làm phim hoạt hình thiếu nhi. Chủ k
 - **Huy Kể Chuyện** (kênh kể chuyện): truyện, lịch sử, ngụ ngôn, bản tiếng Anh của truyện (chuyên mục Huy Tells Tales, giờ đăng riêng `english` trong `publish`), chuyên mục Hỏi Huy, Học tiếng Anh, Shorts "Bạn có biết?".
 - **Ask Huy** (kênh hỏi–đáp tiếng Anh): hỏi–đáp, Shorts "Did you know?". Không đăng truyện.
 - Lời mời đăng ký luôn nêu tên kênh thật, không nêu tên chuyên mục (`home` trong `src/studio/qa.ts`). Đăng video: `src/studio/publish.ts` (Xuất tay: mỗi chủ đề một thư mục `~/youtube/<tên chủ đề>/` gom video dài, Shorts, ảnh bìa, tệp hướng dẫn; Tự đăng khi đã qua audit).
-- Lịch đăng (`src/studio/calendar.ts`): tab 📅 Lịch đăng trên trang duyệt, tab Lịch trên điện thoại (`/m#lich`). Google Drive (`src/studio/drive.ts`, rclone ở `vendor/rclone`, cấu hình `studio/secrets/rclone.conf`, remote `wata`): mỗi 5 phút chép thư mục chủ đề lên `Wata/<chủ đề>` kèm `Lich dang.txt`, chạy bên cạnh bộ lập lịch (không chặn render); chủ đề đăng hết thì xóa khỏi Drive sau 7 ngày.
+- Lịch đăng (`src/studio/calendar.ts`): tab 📅 Lịch đăng trên trang duyệt, tab Lịch trên điện thoại (`/m#lich`). Người dùng bận cuối tuần (`offDays: [0, 6]` của mỗi kênh trong `publish`): giờ đăng thứ Bảy, Chủ nhật chỉ dành cho video đã vào thư mục đăng trước hết thứ Sáu (tải lên, hẹn giờ trước); thứ Năm 17:00 dòng hằng ngày chọn luôn phần cuối tuần (`needToday`). Google Drive (`src/studio/drive.ts`, rclone ở `vendor/rclone`, cấu hình `studio/secrets/rclone.conf`, remote `wata`): mỗi 5 phút chép thư mục chủ đề lên `Wata/<chủ đề>` kèm `Lich dang.txt`, chạy bên cạnh bộ lập lịch (không chặn render); chủ đề đăng hết thì xóa khỏi Drive sau 7 ngày.
 - Lời đăng (tiêu đề, mô tả, thẻ, cài đặt, giờ; TikTok/Facebook) có trong tệp của thư mục đăng và mục "Lời đăng" trên trang duyệt (mỗi bài chờ đăng). Truyện: mô tả cho người xem do `src/studio/copy.ts` viết khi chuẩn bị video (Sonnet, ~7–8k token mỗi truyện, lưu `copy.json`), nguồn tư liệu lọc theo bộ não và tên truyện. Short lấy câu thoại riêng làm tiêu đề.
 - TikTok và Facebook đăng tay: lời đăng ở `src/studio/social.ts` (không tốn token), tệp `dang-tiktok-facebook.txt` trong thư mục chủ đề.
 - Điện thoại: trang `/m` (`src/studio/phone.html`, khóa trong `src/studio/phone.ts`). Studio nghe mọi địa chỉ (0.0.0.0); máy khác phải có khóa (cookie từ mã QR). Cổng 5176 là https với chứng chỉ riêng của studio (`src/studio/tls.ts`, chỉ hợp lệ trong mạng nhà) để iPhone lưu video thẳng vào Ảnh. Người dùng dùng iPhone.
@@ -55,7 +55,7 @@ Node ≥ 22.18 chạy TypeScript trực tiếp, không có bước build. Import
 ## Bộ não (Claude) và token
 
 - `src/brain/claude.ts` gọi Claude Code CLI ở chế độ không giao diện. Mỗi lần gọi được ghi vào `studio/ledger.jsonl`.
-- Trần token nằm trong `studio/settings.json` (ngày / kịch bản / lần làm video), sửa được trên tab Token. Có nút tạm dừng Claude.
+- Trần token nằm trong `studio/settings.json` (ngày / kịch bản / lần làm video), sửa được trên tab Token. Trần mỗi bài tính theo **từng lượt** (`roundStart`: lượt viết bắt đầu khi vào writing/rewrite, lượt làm video khi vào approved/producing/fix), không cộng dồn. Có nút tạm dừng Claude.
 - Claude lỗi hai lần thì chỉ chuyển sang Ollama khi đã có `gemma3:12b`. Không có thì job chờ 30 phút (`retryAt`), không dùng mô hình yếu.
 - Người dùng để ý số token bị đốt: thêm bước gọi bộ não mới thì **báo số token đo được**.
 

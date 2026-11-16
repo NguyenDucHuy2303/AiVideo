@@ -172,7 +172,7 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   // The daily pick, once a day from the cut-off time: lines short of approved scripts get the best ones.
   const today = new Date().toLocaleDateString("sv"), now = new Date().getHours() * 60 + new Date().getMinutes();
   if (state.pickedOn !== today && now >= minutes(s.pick.at)) {
-    return { what: "pick", run: async () => { try { await dailyPick(jobs, s.pick, (l) => void log(l.trim())); } finally { state.pickedOn = today; } } };
+    return { what: "pick", run: async () => { try { await dailyPick(jobs, { ...s.pick, offDays: s.publish["huy-ke-chuyen"]?.offDays }, (l) => void log(l.trim())); } finally { state.pickedOn = today; } } };
   }
   const toPrepare = first((j) => (j.status === "approved" || j.status === "fix") && (!j.era || !!known[j.era]));
   if (toPrepare) return { what: "prepare", slug: toPrepare.slug, run: () => prepare(toPrepare.slug, say(toPrepare.slug)) };

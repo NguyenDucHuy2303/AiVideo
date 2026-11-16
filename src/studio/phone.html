@@ -199,16 +199,16 @@ async function drawCalendar() {
       <small style="display:block">${todo.length ? `${e.late ? "⚠ quá giờ · " : ""}còn: ${todo.join(", ")}` : "✔ đã đăng hết"}</small></div>`;
   };
   const late = c.entries.filter((e) => e.late), rest = c.entries.filter((e) => !e.late);
-  const now_ = rest.filter((e) => new Date(e.at).toDateString() === today && !doneAll(e));
+  const ymd = now.toLocaleDateString("sv"), now_ = rest.filter((e) => (new Date(e.at).toDateString() === today || e.uploadBy === ymd) && !doneAll(e));
   let h = c.drive.ready ? `<p class="meta">☁ Video có trên Google Drive, thư mục <b>Wata</b> (cùng tên chủ đề), kèm tệp <b>Lich dang.txt</b>.</p>`
     : `<p class="meta">Chưa kết nối Google Drive: video chỉ tải được ở nhà.</p>`;
-  h += `<h3>Hôm nay cần đăng</h3>` + (now_.length ? now_.map(row).join("") : `<p class="meta">Hôm nay không còn gì phải đăng.</p>`);
+  h += `<h3>Hôm nay cần đăng</h3>` + (now_.some((e) => e.uploadBy) ? `<p class="meta">Gồm cả video cuối tuần: tải lên hôm nay, chọn Lên lịch đúng giờ.</p>` : "") + (now_.length ? now_.map(row).join("") : `<p class="meta">Hôm nay không còn gì phải đăng.</p>`);
   if (late.length) h += `<h3>⚠ Quá giờ, chưa đăng</h3>` + late.map(row).join("");
   let d0 = "";
   for (const e of rest) {
     const k = new Date(e.at).toDateString();
-    if (k === today) continue;
-    if (k !== d0) { h += `<h3>${day(new Date(e.at))}</h3>`; d0 = k; }
+    if (k === today || e.uploadBy === ymd) continue;
+    if (k !== d0) { h += `<h3>${day(new Date(e.at))}${e.uploadBy ? ` <small style="color:#b3261e">· tải lên trước, chậm nhất ${day(new Date(e.uploadBy + "T12:00"))}</small>` : ""}</h3>`; d0 = k; }
     h += row(e);
   }
   $("#main").innerHTML = h;

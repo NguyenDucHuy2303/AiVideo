@@ -401,17 +401,18 @@ function openFromCalendar(slug) {
 async function showCalendar() {
   const c = await fetch("/api/calendar?days=7").then((r) => r.json()), now = new Date();
   const todayKey = now.toDateString(), late = c.entries.filter((e) => e.late), rest = c.entries.filter((e) => !e.late);
-  const today = rest.filter((e) => new Date(e.at).toDateString() === todayKey && !(e.url && Object.values(e.social).every(Boolean)));
+  // (to upload today: today's, and on the last day before days off, theirs too)
+  const ymd = now.toLocaleDateString("sv"), today = rest.filter((e) => (new Date(e.at).toDateString() === todayKey || e.uploadBy === ymd) && !(e.url && Object.values(e.social).every(Boolean)));
   const d = c.drive;
   const drive = d.ready
     ? `<p class="meta">☁ Google Drive: mỗi chủ đề được chép lên thư mục <b>Wata</b> (kèm tệp <b>Lich dang.txt</b>), xóa khỏi Drive ${c.keepDays} ngày sau khi đăng hết.${d.busy ? ` Đang chép: <b>${esc(d.busy)}</b>.` : ""}${d.lastPush ? ` Lần chép gần nhất: ${ago(d.lastPush)}.` : ""}</p>${d.lastError ? `<div class="warn">Drive lỗi: ${esc(d.lastError)}</div>` : ""}`
     : `<div class="warn">Chưa kết nối Google Drive: video chỉ nằm trên máy ở nhà. Cách kết nối: README, mục “Google Drive”.</div>`;
   let h = `<h2>Lịch đăng</h2>${drive}
-    <section><h3>Hôm nay cần đăng${today.length ? ` · ${today.length}` : ""}</h3>${today.length ? `<table style="table-layout:fixed">${today.map(calRow).join("")}</table>` : `<p class="meta">Hôm nay không còn gì phải đăng.</p>`}</section>`;
+    <section><h3>Hôm nay cần đăng${today.length ? ` · ${today.length}` : ""}</h3>${today.some((e) => e.uploadBy) ? `<p class="meta">Gồm cả video cuối tuần: tải lên hôm nay và chọn <b>Lên lịch</b> đúng giờ ghi ở từng video.</p>` : ""}${today.length ? `<table style="table-layout:fixed">${today.map(calRow).join("")}</table>` : `<p class="meta">Hôm nay không còn gì phải đăng.</p>`}</section>`;
   if (late.length) h += `<section><h3 style="color:#b3261e">Đã quá giờ, chưa đăng YouTube · ${late.length}</h3><table style="table-layout:fixed">${late.map(calRow).join("")}</table></section>`;
   const days = [];
-  for (const e of rest) { const k = new Date(e.at).toDateString(); if (k === todayKey) continue; (days.at(-1)?.[0] === k ? days.at(-1)[1] : (days.push([k, []]), days.at(-1)[1])).push(e); }
-  h += days.length ? days.map(([k, es]) => `<section><h3>${calDay(new Date(k))}</h3><table style="table-layout:fixed">${es.map(calRow).join("")}</table></section>`).join("")
+  for (const e of rest) { const k = new Date(e.at).toDateString(); if (k === todayKey || e.uploadBy === ymd) continue; (days.at(-1)?.[0] === k ? days.at(-1)[1] : (days.push([k, []]), days.at(-1)[1])).push(e); }
+  h += days.length ? days.map(([k, es]) => `<section><h3>${calDay(new Date(k))}${es[0].uploadBy ? ` <small style="color:#b3261e">· anh bận: tải lên và hẹn giờ trước, chậm nhất ${calDay(new Date(es[0].uploadBy + "T12:00"))}</small>` : ""}</h3><table style="table-layout:fixed">${es.map(calRow).join("")}</table></section>`).join("")
     : `<section><p class="meta">Chưa có video nào xếp lịch cho những ngày tới. Video được xếp giờ khi studio duyệt xong và gom vào thư mục đăng.</p></section>`;
   h += `<p class="meta">Giờ đăng theo khung giờ của từng kênh (tab Đăng YouTube). TikTok và Facebook: đăng cùng giờ với YouTube.</p>`;
   $("#detail").innerHTML = h;

@@ -51,6 +51,9 @@ export interface ChannelCfg {
   /** Times for the English versions of the stories (Huy Tells Tales), apart from the
    *  Vietnamese films (so they do not take their days); none: the long times. */
   english?: string[];
+  /** Days of the week the user cannot upload (0 Sunday … 6 Saturday; the weekend): a time on
+   *  them goes only to a video laid out before they begin (uploaded ahead, with a schedule). */
+  offDays?: number[];
   mode: Mode;
   /** Why the studio turned the channel from auto back to manual (a locked video). */
   locked?: string;
@@ -61,8 +64,8 @@ export const modeOf = (cfg?: Partial<ChannelCfg> & { enabled?: boolean }): Mode 
 export type PublishSettings = Record<string, ChannelCfg>;
 export const PUBLISH_DEFAULTS: PublishSettings = {
   // (four lines a day in Vietnamese: stories, fables, questions, lessons; each with Shorts)
-  "huy-ke-chuyen": { name: "Huy Kể Chuyện", lang: "vi", long: ["08:00", "16:00", "18:00", "19:30"], shorts: ["07:30", "10:30", "12:30", "15:30", "17:30", "20:30"], english: ["08:30"], mode: "manual" },
-  "ask-huy": { name: "Ask Huy", lang: "en", long: ["17:00", "19:00"], shorts: ["09:00", "12:00", "15:00", "19:30"], mode: "manual" },
+  "huy-ke-chuyen": { name: "Huy Kể Chuyện", lang: "vi", long: ["08:00", "16:00", "18:00", "19:30"], shorts: ["07:30", "10:30", "12:30", "15:30", "17:30", "20:30"], english: ["08:30"], offDays: [0, 6], mode: "manual" },
+  "ask-huy": { name: "Ask Huy", lang: "en", long: ["17:00", "19:00"], shorts: ["09:00", "12:00", "15:00", "19:30"], offDays: [0, 6], mode: "manual" },
 };
 /** Channels merged into another (2026-11-12). */
 export const MERGED: Record<string, string> = { "hoi-huy": "huy-ke-chuyen", "huy-tells-tales": "huy-ke-chuyen" };
@@ -272,7 +275,7 @@ async function metaText(job: Job, what: What, cfg: ChannelCfg, longUrl?: string,
 export function nextSlot(cfg: ChannelCfg, kind: "long" | "short" | "en", taken: string[], now = new Date(), after?: string): Date | undefined {
   const times = kind === "short" ? cfg.shorts : kind === "en" && cfg.english?.length ? cfg.english : cfg.long, used = new Set(taken.map((t) => new Date(t).getTime()));
   if (!times.length) return undefined;
-  const earliest = Math.max(now.getTime() + 2 * 3600_000, after ? new Date(after).getTime() + 60_000 : 0);
+  const earliest = Math.max(uploadFrom(cfg, now).getTime() + 2 * 3600_000, after ? new Date(after).getTime() + 60_000 : 0);
   const at0 = (d: number, hhmm: string) => { const [h, m] = hhmm.split(":").map(Number); return new Date(now.getFullYear(), now.getMonth(), now.getDate() + d, h, m, 0, 0); };
   if (kind === "en") for (let d = 0; d < 14; d++) {
     if (cfg.long.some((t) => used.has(at0(d, t).getTime()))) continue; // (that day has its main film)
@@ -286,6 +289,21 @@ export function nextSlot(cfg: ChannelCfg, kind: "long" | "short" | "en", taken: 
     }
   }
   return undefined;
+}
+
+/** The first moment the user can upload: now, or on a day off the next working morning (08:00). */
+export function uploadFrom(cfg: Pick<ChannelCfg, "offDays">, now = new Date()): Date {
+  const off = new Set(cfg.offDays ?? []);
+  let d = now;
+  for (let k = 0; k < 7 && off.has(d.getDay()); k++) d = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1, 8, 0, 0, 0);
+  return d;
+}
+/** The last day the user can upload a video set for `at`: the day itself, or before the days off. */
+export function uploadBy(cfg: Pick<ChannelCfg, "offDays">, at: Date): Date {
+  const off = new Set(cfg.offDays ?? []);
+  let d = new Date(at.getFullYear(), at.getMonth(), at.getDate());
+  for (let k = 0; k < 7 && off.has(d.getDay()); k++) d = new Date(d.getFullYear(), d.getMonth(), d.getDate() - 1);
+  return d;
 }
 
 // ── Upload ──────────────────────────────────────────────────────────────────────────────────
@@ -403,7 +421,7 @@ export async function publishSettings(): Promise<PublishSettings> {
 }
 const HHMM = /^([01]\d|2[0-3]):[0-5]\d$/;
 /** Change a channel's settings from the review page (on/off, times). */
-export async function savePublishSettings(channel: string, change: { mode?: Mode; long?: string[]; shorts?: string[]; english?: string[]; locked?: string | null }): Promise<PublishSettings> {
+export async function savePublishSettings(channel: string, change: { mode?: Mode; long?: string[]; shorts?: string[]; english?: string[]; offDays?: number[]; locked?: string | null }): Promise<PublishSettings> {
   const raw = (await exists(SETTINGS)) ? JSON.parse(await fsp.readFile(SETTINGS, "utf8")) : {};
   const all = normalise(raw.publish);
   const cfg = all[channel];
@@ -411,6 +429,7 @@ export async function savePublishSettings(channel: string, change: { mode?: Mode
   if (change.mode && ["off", "manual", "auto"].includes(change.mode)) { cfg.mode = change.mode; if (change.mode === "auto") delete cfg.locked; }
   if (change.locked) cfg.locked = change.locked;
   for (const k of ["long", "shorts", "english"] as const) if (Array.isArray(change[k])) cfg[k] = change[k]!.map((x) => String(x).trim()).filter((x) => HHMM.test(x));
+  if (Array.isArray(change.offDays)) cfg.offDays = [...new Set(change.offDays.map(Number).filter((d) => Number.isInteger(d) && d >= 0 && d <= 6))].sort();
   raw.publish = all;
   await fsp.writeFile(SETTINGS, JSON.stringify(raw, null, 2));
   return all;
