@@ -20,10 +20,12 @@ import { renderStory } from "../animation/story.ts";
 import { backdropOfPlace } from "../animation/backdrops.ts";
 import { SIZES } from "../imagegen/sd.ts";
 import { boardIcons } from "../animation/icons.ts";
+import { voicesChecked } from "../audio/voicefix.ts";
 import { styleOf } from "../animation/styles.ts";
 import { jobDir } from "./jobs.ts";
 import { isFact, OLD_KID, profileOf, type QAPlan, type QAProfile } from "./qa.ts";
 import { loadJob } from "./jobs.ts";
+import { formatOf } from "./formats.ts";
 
 export const qaProject = (slug: string) => path.join(ROOT, "projects", slug);
 const STYLE = "hien_dai";
@@ -66,7 +68,7 @@ const SCHEMA = {
         type: "object",
         properties: {
           index: { type: "number" },
-          layout: { enum: ["board", "host", "place"] },
+          layout: { enum: ["board", "host", "place", "tag"] },
           place: { type: "string" },
           time: { enum: ["day", "dawn", "dusk", "night"] },
           huy: WHO,
@@ -82,7 +84,7 @@ const SCHEMA = {
   },
   required: ["scenes"],
 };
-interface Directed { index: number; layout: "board" | "host" | "place"; place: string; time: string; outfit?: (typeof OUTFITS)[number]; huy: { do: string; face: string }; hung: { do: string; face: string }; boi: { do: string; face: string }; beo: { do: string; face: string }; board: string }
+interface Directed { index: number; layout: "board" | "host" | "place" | "tag"; place: string; time: string; outfit?: (typeof OUTFITS)[number]; huy: { do: string; face: string }; hung: { do: string; face: string }; boi: { do: string; face: string }; beo: { do: string; face: string }; board: string }
 
 const system = (P: QAProfile) => `You direct the scenes of "${P.channel}"${P.lang === "vi" ? " (in Vietnamese)" : ""}, a 2D cartoon for children aged 6–12 that answers one question per video. Huy (the host, a young man of 25) explains; his younger brother Hùng (21), his hands-on assistant, shows and runs the experiments and demos; Bối (a girl of 8) asks and guesses; her little brother Beo (5) is curious and reacts. All four are always there. You also draw the explainer pictures, as SVG, in a clean, bright, friendly flat style: thick dark outlines (#3a2a20, stroke-width 4–6), flat fills, rounded shapes, big readable labels.`;
 
@@ -101,7 +103,12 @@ const BOARD_RULES = [
 
 function brief(P: QAProfile, plan: QAPlan, from: number, to: number, seconds: number[], kind?: string): string {
   return [
-    ...(kind === "lesson" ? ["An English lesson for Vietnamese children: a word card shows the picture, the English word big (it is what the child learns) and the Vietnamese meaning smaller under it. Emma is only a voice (the card's): never on screen."]
+    ...(kind === "lesson" ? [
+      `An English lesson for Vietnamese children, format "${formatOf((plan as { format?: string }).format).name}": a word card shows the picture, the English word big (it is what the child learns) and the Vietnamese meaning smaller under it. Emma is only a voice (the card's): never on screen. Board text in English or Vietnamese (with its diacritics). A picture keeps the colour it is drawn in (a "cat" is orange, a "bear" brown): when a card names a colour, name a thing of that colour ("black cat", "white snowman", "red apple") or draw a circle filled with it. Name one thing per icon, the thing itself ("rabbit", not "rabbit eating carrot").`,
+      "Layout by beat:", ...formatOf((plan as { format?: string }).format).direct.map((x) => `- ${x}`),
+      "- Layout tag (only where said above): the scene at its painted place (place = that place, as for layout place) with a small word card in the corner; board = \"english | nghĩa tiếng Việt | icon name\", no SVG.",
+      "- hook and next: host. A \"[3s]\" in the lines is a pause for the viewers: the studio shows a clock then.",
+    ]
       : P.lang === "vi" ? ["All text on the boards is in Vietnamese (with its diacritics), short and simple."] : []),
     "Choosing the layout: place only for a real place that can be painted (a park, a beach, a rooftop, Mars); anything imagined, impossible or abstract (\"Bối imagines the sky as a pinball machine\", inside a molecule) is a board picture instead.",
     "Moves: point = at the board or at something in front; raise = pointing up at the sky or above; wave = hello or goodbye; cheer = delight; worry = puzzled.",
@@ -137,9 +144,13 @@ export function boardStyleOf(slug: string): (typeof BOARD_STYLES)[number] {
 }
 
 /** The scene script for the player (anim/sNN.json). */
-function sceneOf(P: QAProfile, d: Directed, plan: QAPlan, i: number, seconds: number, style: (typeof BOARD_STYLES)[number] = "card", log: (s: string) => void = () => {}): Record<string, unknown> {
+/** What a scene of a game lesson adds: the viewers' pauses (clocks; the answer after the last
+ *  one) and the score before it (formats.ts "gameshow"). */
+export interface SceneGame { pauses?: { at: number; seconds: number }[]; score?: { "Bối": number; "Beo": number; gain?: string } }
+
+function sceneOf(P: QAProfile, d: Directed, plan: QAPlan, i: number, seconds: number, style: (typeof BOARD_STYLES)[number] = "card", log: (s: string) => void = () => {}, game: SceneGame = {}): Record<string, unknown> {
   const suit = d.outfit === "spacesuit" ? "_space" : "";
-  const board = d.layout === "board";
+  const board = d.layout === "board", tag = d.layout === "tag" && !!d.board.trim();
   // All four in every scene. Before the board they stand in a row on its left (Beo, Bối, Hùng,
   // Huy nearest the board), turned to it; elsewhere Huy is in the middle (from the front when he
   // talks to the viewer), Hùng on his left, Bối and Beo on his right, all turned to him. Never
@@ -155,12 +166,78 @@ function sceneOf(P: QAProfile, d: Directed, plan: QAPlan, i: number, seconds: nu
   // (beside the board: all four inside the left of the frame, never under the card; board.js)
   const shot = board ? { at: 0, type: "full", on, region: BOARD_REGION, share: 0.5, gy: 0.9, push: 0.05 }
     : d.layout === "host" ? { at: 0, type: "full", on, push: 0.06 }
+    : tag ? { at: 0, type: "full", on, region: TAG_REGION, share: 0.6, push: 0.04 }
     : { at: 0, type: "full", on, share: 0.62 };
+  // The answer is given when the viewers' last pause is over (or past the middle of the scene).
+  const pauses = game.pauses ?? [], last = pauses.at(-1), reveal = Math.round((last ? last.at + last.seconds : seconds * 0.6) * 100) / 100;
+  const overlay = { ...(pauses.length ? { countdowns: pauses } : {}), ...(game.score ? { score: { ...game.score, at: reveal } } : {}) };
   return {
     castFile: "cast.json", duration: Math.max(1, Math.round(seconds * 100) / 100), time: d.time, style: STYLE, styleLook: styleOf(STYLE).look,
-    set: { name: "plain" }, place: d.layout === "place" ? d.place : STUDIO, cast, actions, shots: [shot], mood: "playful",
-    ...(d.layout === "board" && d.board.trim() ? { board: boardOf(d.board, style, i, log), speakerShots: false } : {}),
+    set: { name: "plain" }, place: d.layout === "place" || d.layout === "tag" ? d.place : STUDIO, cast, actions, shots: [shot], mood: "playful",
+    // In a place (a park, a kitchen) the speaker is shown whole, the place around them: a face
+    // close-up filled the frame and the painting behind was a blur (the user, 16/11/2026).
+    // Under a corner word card all four stay left of it the whole scene (a cut to one of them put
+    // another under the card).
+    ...(d.layout === "place" ? { speakerShot: PLACE_SPEAKER_SHOT } : tag ? { speakerShots: false } : {}),
+    ...(d.layout === "board" && d.board.trim() ? { board: { ...boardOf(d.board, style, i, log), reveal }, speakerShots: false } : {}),
+    ...(tag ? { board: { ...boardOf(tagSvg(d.board), style === "chalk" ? "card" : style, i, log), corner: true, reveal } } : {}),
+    ...(Object.keys(overlay).length ? { overlay } : {}),
   };
+}
+
+/** Where the presenters stand under a corner word card (it covers the top right). */
+export const TAG_REGION = [0.03, 0.58];
+/** A speaker in a place: whole (about 60 % of the height), the place around them. */
+export const PLACE_SPEAKER_SHOT = { type: "full", share: 0.6, push: 0.03 };
+
+/** The corner word card from "english | nghĩa | icon": the picture on the left, the words on the right. */
+export function tagSvg(spec: string): string {
+  const [en = "", vi = "", icon = ""] = spec.split("|").map((x) => x.trim().replace(/[<>&"]/g, ""));
+  // One line, or two (three) of about the same length, cut at spaces.
+  const lines = (t: string, max: number): string[] => {
+    if (t.length <= max) return [t];
+    const n = Math.min(3, Math.ceil(t.length / max)), words = t.split(" "), out: string[] = [];
+    let cur = "";
+    for (const w of words) {
+      if (cur && (cur + " " + w).length > t.length / n + 2 && out.length < n - 1) { out.push(cur); cur = w; } else cur = cur ? `${cur} ${w}` : w;
+    }
+    return [...out, cur];
+  };
+  const enL = lines(en, 11), viL = lines(vi, 18);
+  const big = Math.round(Math.min(160, 600 / (0.56 * Math.max(...enL.map((l) => l.length), 3)))), small = Math.round(Math.min(80, 600 / (0.52 * Math.max(...viL.map((l) => l.length), 4))));
+  const h = enL.length * big * 1.1 + 18 + viL.length * small * 1.15, top = 300 - h / 2 + big * 0.85;
+  const text = [
+    ...enL.map((l, k) => `<text x="660" y="${Math.round(top + k * big * 1.1)}" font-size="${big}" font-weight="bold" text-anchor="middle" font-family="sans-serif" fill="#2a2a40">${l}</text>`),
+    ...viL.map((l, k) => `<text x="660" y="${Math.round(top + (enL.length - 1) * big * 1.1 + 18 + (k + 1) * small * 1.15)}" font-size="${small}" text-anchor="middle" font-family="sans-serif" fill="#6a5a50">${l}</text>`),
+  ];
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">${icon ? `<icon name="${icon}" x="30" y="150" size="300" class="float"/>` : ""}${text.join("")}</svg>`;
+}
+
+/** The viewers' pauses of a scene, from its captions: a silence of more than a second between
+ *  two lines (or after the last), where the line before was taken off when said (narrate.ts). */
+export function pausesOf(cues: { startFrame: number; endFrame: number }[], durationFrames: number, fps: number): { at: number; seconds: number }[] {
+  const out: { at: number; seconds: number }[] = [];
+  cues.forEach((c, k) => {
+    const next = cues[k + 1]?.startFrame ?? durationFrames, gap = (next - c.endFrame) / fps;
+    // (the gap holds the pause plus a breath before the next line, or the scene's tail)
+    if (gap > 1.2) out.push({ at: Math.round((c.endFrame / fps) * 100) / 100, seconds: Math.max(1, Math.round(gap - (cues[k + 1] ? 0.45 : 0.75))) });
+  });
+  return out;
+}
+
+/** The score before each scene of a game lesson, and who wins the scene's point. */
+export function scoresOf(plan: QAPlan): (SceneGame["score"] | undefined)[] {
+  if (!plan.scenes.some((s) => s.point)) return plan.scenes.map(() => undefined);
+  const now = { "Bối": 0, "Beo": 0 };
+  let started = false;
+  return plan.scenes.map((s) => {
+    const gain = s.point?.trim() || undefined;
+    started ||= !!gain || ["round", "final", "result"].includes(s.beat as string);
+    const before = started ? { ...now, ...(gain ? { gain } : {}) } : undefined;
+    if (gain === "Bối" || gain === "both") now["Bối"]++;
+    if (gain === "Beo" || gain === "both") now["Beo"]++;
+    return before;
+  });
 }
 
 /** A board: its SVG, its look, and the icons it asks for (flat ones on chalk and sketch). */
@@ -195,10 +272,8 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
   const project = JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8"));
   await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers: { [P.host.name]: ["huy"], [P.helper.name]: ["hung"], [P.kid.name]: ["boi"], [P.little.name]: ["beo"], [OLD_KID]: ["boi", "mai"] }, brandId: P.brandId, style: STYLE, thumbnail: { title: plan.thumbnail, subtitle: P.channel } }, null, 2));
   await fs.writeFile(path.join(anim, "cast.json"), JSON.stringify(LOOKS, null, 2));
-  if (!(await exists(path.join(proj, "timeline.json")))) {
-    log("  voices");
-    await run(process.execPath, [path.join(ROOT, "src", "cli.ts"), "build", path.join(proj, "storyboard.json"), "--voice-only"], { cwd: ROOT, timeoutMs: 60 * 60_000 });
-  }
+  // (the voices, their English heard back and set right: voicefix.ts)
+  if (!(await exists(path.join(proj, "timeline.json")))) await voicesChecked(proj, log);
   const timeline = JSON.parse(await fs.readFile(path.join(proj, "timeline.json"), "utf8"));
   const seconds: number[] = timeline.scenes.map((s: { durationFrames: number }) => s.durationFrames / timeline.fps);
   // The thumbnail's picture: the opening scene (the four, the question asked), not a board.
@@ -206,7 +281,7 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
   pj.thumbnail = { ...pj.thumbnail, at: Math.round((seconds[0] ?? 4) * 0.6 * 100) / 100 };
   await fs.writeFile(path.join(proj, "project.json"), JSON.stringify(pj, null, 2));
   // Direction in batches (the SVG pictures are long answers), each batch written as it comes.
-  const BATCH = 6;
+  const BATCH = 6, scores = scoresOf(plan);
   for (let from = 0; from < plan.scenes.length; from += BATCH) {
     const to = Math.min(plan.scenes.length, from + BATCH);
     const names = Array.from({ length: to - from }, (_, k) => `s${String(from + k + 1).padStart(2, "0")}.json`);
@@ -215,7 +290,9 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
     for (const d of data.scenes) {
       const i = d.index - 1;
       if (i < from || i >= to) continue;
-      await fs.writeFile(path.join(anim, `s${String(i + 1).padStart(2, "0")}.json`), JSON.stringify(sceneOf(P, d, plan, i, seconds[i] ?? 4, boardStyleOf(slug), log), null, 2));
+      const ts = timeline.scenes[i], game: SceneGame = { pauses: ts ? pausesOf(ts.captionCues ?? [], ts.durationFrames, timeline.fps) : [], score: scores[i] };
+      const look = boardStyleOf(slug), dark = look === "chalk" && formatOf((plan as { format?: string }).format).id === "shadow";
+      await fs.writeFile(path.join(anim, `s${String(i + 1).padStart(2, "0")}.json`), JSON.stringify(sceneOf(P, d, plan, i, seconds[i] ?? 4, dark ? "card" : look, log, game), null, 2));
     }
   }
   // The paintings (the studio and every place), so the night only renders.

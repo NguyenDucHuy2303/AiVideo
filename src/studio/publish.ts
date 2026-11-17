@@ -44,6 +44,11 @@ const SCOPES = ["https://www.googleapis.com/auth/youtube.upload", "https://www.g
 
 export interface ChannelCfg {
   name: string;
+  /** The YouTube channel the videos really go to for now, when it is not `name` (the user's own
+   *  "Huy Nguyen" until the brand channel is made): the upload page and "watch on YouTube" name it. */
+  youtube?: string;
+  /** The channel's Facebook Page (its id): the studio posts every Short there as a Reel (facebook.ts). */
+  facebookPage?: string;
   lang: "vi" | "en";
   /** Local times for full videos (one a day each) and for Shorts. */
   long: string[];
@@ -453,6 +458,18 @@ export const LINK_HERE = "[dán link video dài vào đây]";
 
 export interface Item { what: What; file: string; index?: number }
 const isFactJob = (job: Job) => job.kind === "fact" || job.kind === "fact-vi";
+
+/**
+ * The YouTube video a Short's TikTok and Facebook posts point to, once its link is pasted: a
+ * film's Short, the film; a "Did you know?" Short, its long version (`long`) when that is out by
+ * the Short's time, else the Short itself on YouTube (`own`). Undefined: no link yet.
+ */
+export function linkOfShort(job: Job, index: number, long?: Published): { url: string; publishAt: string; own: boolean } | undefined {
+  if (!isFactJob(job)) { const p = job.published?.long; return p ? { url: p.url, publishAt: p.publishAt, own: false } : undefined; }
+  const mine = job.published?.shorts?.[index], at = mine?.publishAt ?? job.exported?.shorts?.[index]?.publishAt;
+  if (long && at && new Date(long.publishAt) <= new Date(at)) return { url: long.url, publishAt: long.publishAt, own: false };
+  return mine ? { url: mine.url, publishAt: mine.publishAt, own: true } : undefined;
+}
 /** Everything of a job that goes on YouTube, in upload order: the film, its Shorts, its English version. */
 export function allItems(job: Job, files: string[]): Item[] {
   if (isFactJob(job)) return files.includes("video.mp4") ? [{ what: "short", file: "video.mp4", index: 0 }] : [];
@@ -493,7 +510,9 @@ export function needsExport(job: Job, files: string[], settings: PublishSettings
  * still the old one (a hard link to the old file), so the folder is laid out again (same times).
  */
 export async function staleExport(job: Job, files: string[]): Promise<boolean> {
-  if (job.status !== "done" || job.publishHold) return false;
+  // (a film made again is laid out as soon as it is made, before it is approved again: the
+  // folder always holds the newest one; the user's rule, 16/11/2026)
+  if (!["done", "video"].includes(job.status) || job.publishHold) return false;
   for (const item of allItems(job, files)) {
     const ex = exportedOf(job, item);
     if (!ex || publishedOf(job, item) || !inExportDir(ex.dir)) continue;
@@ -516,7 +535,7 @@ export interface FormRow { label: string; value: string; copy?: boolean; must?: 
 export function youtubeForm(file: string, meta: Meta, cfg: ChannelCfg, what: What, at: Date | undefined, thumb: string | undefined, moreThumbs: string[] = []): FormRow[] {
   return [
     { label: "Tệp tải lên", value: file, must: true },
-    { label: "Kênh", value: cfg.name, must: true, note: "đăng đúng kênh này (đổi kênh: ảnh đại diện → Chuyển đổi tài khoản)" },
+    { label: "Kênh", value: cfg.youtube ?? cfg.name, must: true, note: cfg.youtube ? `đăng đúng kênh này (nội dung của ${cfg.name}; kênh ${cfg.name} chưa tạo)` : "đăng đúng kênh này (đổi kênh: ảnh đại diện → Chuyển đổi tài khoản)" },
     { label: "Tiêu đề", value: meta.title, copy: true },
     { label: "Mô tả", value: meta.description, copy: true },
     thumb ? { label: "Hình thu nhỏ", value: `Tải tệp lên: ${thumb}`, note: moreThumbs.length ? `có thêm ${moreThumbs.join(", ")} để chọn; sau 3–4 ngày tỷ lệ nhấp CTR thấp thì đổi ảnh khác` : undefined }
@@ -664,8 +683,9 @@ export async function exportJob(slug: string, jobs: Job[], settings: PublishSett
     "",
     "Cách đăng:",
     "1. Đăng mục 1 (video chính, không phải Short) trước, đặt lịch đúng giờ ghi bên dưới.",
-    "2. Mở trang duyệt của studio, bài này, mục YouTube: dán link mục 1 vào ô \"Đã đăng\".",
-    `   Studio tự điền link đó vào mô tả các Short trong tệp này (chỗ ${LINK_HERE}).`,
+    "2. Mở trang duyệt của studio, bài này, mục YouTube: dán link mục 1 vào ô \"Đã đăng\" NGAY khi tải lên (hẹn giờ cũng có link).",
+    `   Studio tự điền link đó vào mô tả các Short trong tệp này (chỗ ${LINK_HERE}) và vào lời đăng TikTok, Facebook.`,
+    "   Facebook chỉ được studio đăng khi đã có link này: chưa dán link thì bài Facebook phải chờ.",
     "3. Đăng từng Short theo giờ của nó, rồi dán link từng cái vào trang duyệt.",
     "", "",
   ].join("\n");
@@ -673,6 +693,13 @@ export async function exportJob(slug: string, jobs: Job[], settings: PublishSett
   const placed = new Set(items.map((i) => i.file));
   const posts = (await socialPosts(job, files, settings, lines)).filter((p) => placed.has(p.file));
   await fsp.writeFile(path.join(folder, "dang-tiktok-facebook.txt"), socialSheet(String(plan.title ?? job.topic).split(" | ")[0]!, posts));
+  // A Short of the film before it was made again (cut again from the new one, at night): its old
+  // file leaves the folder, its time stays (the new cut takes it, staleExport).
+  for (const [i, x] of (job.exported?.shorts ?? []).entries()) {
+    if (!x || exported.shorts?.[i] || job.published?.shorts?.[i] || items.some((it) => it.what === "short" && it.index === i)) continue;
+    (exported.shorts ??= [])[i] = x;
+    await fsp.rm(path.join(folder, fileNameOf(job, { what: "short", file: "", index: i })), { force: true });
+  }
   const fresh = await loadJob(slug);
   fresh.exported = exported;
   await saveJob(fresh);
@@ -698,8 +725,16 @@ export interface SocialPost {
   text: Partial<Record<Platform, string>>;
   /** Marked posted by the user: when. */
   done: Partial<Record<Platform, string>>;
+  /** Platforms the studio posts to itself (Facebook, facebook.ts): nothing for the user to do. */
+  auto: Platform[];
 }
 const labelOf = (job: Job, item: Item, lang: "vi" | "en") => item.what === "long" ? longLabel(lang) : item.what === "en" ? "Bản tiếng Anh" : isFactJob(job) ? "Short" : `Short ${item.index! + 1}`;
+
+/** The long version of a "Did you know?" Short, once on YouTube (its link pasted). */
+async function longOfFact(job: Job): Promise<Published | undefined> {
+  if (!job.longJob) return undefined;
+  try { return (await loadJob(job.longJob)).published?.long; } catch { return undefined; }
+}
 
 /** Every video of a job with its YouTube details and its TikTok / Facebook words. */
 export async function socialPosts(job: Job, files: string[], settings: PublishSettings, lines: Line[]): Promise<SocialPost[]> {
@@ -708,15 +743,20 @@ export async function socialPosts(job: Job, files: string[], settings: PublishSe
   const hooks = isFactJob(job) ? [] : await shortHooks(job.slug, job.shorts ?? [], jobDir(job.slug), plan.shorts);
   for (const item of allItems(job, files)) {
     const channel = channelOf(job, item.what, lines), cfg = settings[channel] ?? PUBLISH_DEFAULTS[channel]!;
-    const fact = isFactJob(job), longUrl = item.what === "short" && !fact ? job.published?.long?.url : undefined;
+    // (a Short's whole film: its own; a "Did you know?" Short's: its long version, longs.ts)
+    const fact = isFactJob(job), long = item.what === "short" && fact ? await longOfFact(job) : undefined;
+    const longUrl = item.what !== "short" ? undefined : fact ? long?.url : job.published?.long?.url;
     const youtube = await metaOf(job, item.what, cfg, longUrl, item.what === "short" ? hooks[item.index!] : undefined);
     const text: SocialPost["text"] = {}, done: SocialPost["done"] = {};
+    // (the YouTube link every post carries; none yet: a "Did you know?" Short points to itself)
+    const link = item.what === "short" ? linkOfShort(job, item.index!, long) : undefined;
     for (const p of platformsOf(item.what)) {
-      text[p] = socialText(p, youtube, { what: item.what, kind: job.kind, channel: cfg.name, longUrl, isFact: fact, hook: item.what === "short" ? hooks[item.index!] : undefined });
+      text[p] = socialText(p, youtube, { what: item.what, kind: job.kind, channel: cfg.name, youtube: cfg.youtube, link: link?.url, own: link ? link.own : fact, isFact: fact, hook: item.what === "short" ? hooks[item.index!] : undefined });
       const d = job.social?.[socialKey(p, item.what, item.index)];
       if (d) done[p] = d;
     }
     const publishAt = (publishedOf(job, item) ?? exportedOf(job, item))?.publishAt;
+    const auto: Platform[] = cfg.facebookPage && text.facebook ? ["facebook"] : [];
     // (the thumbnails' names in the topic folder, as exportJob lays them out)
     const jpg = item.what === "short" ? undefined : item.what === "en" ? "thumbnail.en.jpg" : "thumbnail.jpg";
     const thumb = jpg && files.includes(jpg) ? (item.what === "en" ? "anh-bia-tieng-anh.jpg" : "anh-bia.jpg") : undefined;
@@ -725,20 +765,31 @@ export async function socialPosts(job: Job, files: string[], settings: PublishSe
       what: item.what, index: item.index, file: item.file, name: fileNameOf(job, item), label: labelOf(job, item, cfg.lang),
       channel, account: cfg.name, publishAt, youtube, text, done,
       form: youtubeForm(fileNameOf(job, item), youtube, cfg, item.what, publishAt ? new Date(publishAt) : undefined, thumb, more),
-      forms: Object.fromEntries((Object.entries(text) as [Platform, string][]).map(([pl, t]) => [pl, socialForm(pl, { what: item.what, name: fileNameOf(job, item), account: cfg.name, publishAt, text: t, youtube, thumb })])),
+      forms: Object.fromEntries((Object.entries(text) as [Platform, string][]).map(([pl, t]) => [pl, auto.includes(pl) ? autoForm(job, cfg, socialKey(pl, item.what, item.index), publishAt, !link) : socialForm(pl, { what: item.what, name: fileNameOf(job, item), account: cfg.name, publishAt, text: t, youtube, thumb })])),
+      auto,
     });
   }
   return out;
+}
+
+/** Facebook, posted by the studio: where it stands, nothing to fill in. */
+function autoForm(job: Job, cfg: ChannelCfg, key: string, publishAt?: string, noLink = false): FormRow[] {
+  const f = job.facebook?.[key];
+  if (f) return [{ label: "Studio đã đăng", value: f.byHand ? `có sẵn trên Trang ${cfg.name} (anh đăng tay trước)` : `Reel lên Trang ${cfg.name} lúc ${when(new Date(f.at))}`, note: f.url }];
+  return [
+    { label: "Studio tự đăng", value: publishAt ? `Reel lên Trang ${cfg.name} lúc ${when(new Date(publishAt))}` : `Reel lên Trang ${cfg.name} khi có giờ đăng`, note: noLink ? "khi đã có link YouTube" : "anh không cần làm gì" },
+    ...(noLink ? [{ label: "Chờ link YouTube", value: isFactJob(job) ? "Tải Short này lên YouTube (hẹn giờ cũng được) rồi dán link vào trang duyệt" : "Tải video chính lên YouTube (hẹn giờ cũng được) rồi dán link vào trang duyệt", must: true, note: "bài Facebook luôn có link YouTube: chưa có link thì studio chưa đăng" }] : []),
+    ...(job.fbError ? [{ label: "Lần trước lỗi", value: job.fbError, must: true, note: "studio thử lại sau 30 phút" }] : []),
+  ];
 }
 
 /** dang-tiktok-facebook.txt: the words of every post, what to set, what is already posted. */
 export function socialSheet(title: string, posts: SocialPost[]): string {
   const head = [
     `CHỦ ĐỀ: ${title}`, "",
-    "Short (dọc 9:16) đăng lên TikTok và Facebook Reels; video dài đăng lên Trang Facebook.",
-    "Mỗi kênh có tài khoản TikTok và Trang Facebook cùng tên (dòng TÀI KHOẢN). Điện thoại: mở trang /m của studio,",
-    "có nút tải video và nút chép lời đăng.", "",
-    ...(["tiktok", "facebook"] as Platform[]).flatMap((p) => [`${PLATFORM_NAME[p]}:`, ...SETTINGS_VI[p], ""]), "",
+    "Short (dọc 9:16): anh đăng TikTok bằng tay; Facebook Reels do STUDIO TỰ ĐĂNG lên Trang của kênh, anh không cần làm gì.",
+    "Video dài chỉ đăng YouTube. Điện thoại: mở trang /m của studio, có nút tải video và nút chép lời đăng.", "",
+    ...(["tiktok"] as Platform[]).flatMap((p) => [`${PLATFORM_NAME[p]}:`, ...SETTINGS_VI[p], ""]), "",
   ];
   const body = posts.filter((p) => Object.keys(p.text).length).map((p, n) => [
     `════════ ${n + 1}. ${p.label.toUpperCase()}: ${p.name} ════════`,

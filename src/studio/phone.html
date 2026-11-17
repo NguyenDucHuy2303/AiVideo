@@ -183,7 +183,7 @@ function drawList() {
   const t = TABS.find((x) => x[0] === tab), list = jobs.filter(t[3]).sort((a, b) => (a.occasion?.left ?? 999) - (b.occasion?.left ?? 999));
   const hint = { script: "Kịch bản chờ anh duyệt. Duyệt xong studio làm giọng, tranh nền và render buổi tối.", video: `Video đã render, chờ anh xem và duyệt.${REVIEW_HOURS ? ` Quá ${REVIEW_HOURS} giờ chưa duyệt thì studio kiểm tra máy móc rồi tự duyệt.` : ""}`, post: "Bài đã duyệt xong, chưa đăng đủ: tải video về máy, chép lời đăng cho YouTube, TikTok, Facebook, đăng xong thì đánh dấu.", posted: "Bài đã đăng đủ YouTube, TikTok và Facebook." }[tab];
   $("#main").innerHTML = `<p class="meta">${hint}</p>` + (list.length ? list.map((j) => `<div class="job" onclick="open_('${j.slug}')">
-    <b>${esc(j.topic)}</b><small>${esc(KIND[j.kind] || `${j.kind || ""} · ${j.era || ""}`)}${j.score ? ` · ${j.score.value}/10` : ""}${j.autoApproved ? " · studio tự duyệt" : ""}${j.status === "video" && j.autoCheck && !j.autoCheck.ok ? " · ⚠ cần anh xem" : ""}</small>${occOf(j)}${stageOf(j.post)}</div>`).join("") : `<div class="empty">Không có gì chờ ở đây.</div>`);
+    <b>${esc(j.topic)}</b><small>${esc(KIND[j.kind] || `${j.kind || ""} · ${j.era || ""}`)}${j.lessonFormat ? ` · ${j.lessonFormat.icon} ${esc(j.lessonFormat.name)}` : ""}${j.score ? ` · ${j.score.value}/10` : ""}${j.autoApproved ? " · studio tự duyệt" : ""}${j.status === "video" && j.autoCheck && !j.autoCheck.ok ? " · ⚠ cần anh xem" : ""}</small>${occOf(j)}${stageOf(j.post)}</div>`).join("") : `<div class="empty">Không có gì chờ ở đây.</div>`);
 }
 
 /** The posting calendar (/api/calendar): what to post today, late ones, the next days. */
@@ -288,6 +288,7 @@ async function drawPost(d) {
     for (const [pl, label] of [["tiktok", "♪ TikTok"], ["facebook", vertical ? "f Facebook Reels" : "f Facebook (video)"]]) {
       const text = p.text[pl];
       if (!text) continue;
+      if (p.auto?.includes(pl)) { h += `<div class="plat"><h4>${label} ${p.done[pl] ? `<span class="tag done">✔ studio đã đăng</span>` : `<span class="tag">studio tự đăng</span>`}</h4><p class="meta">${esc(p.forms?.[pl]?.[0]?.value || "")}</p></div>`; continue; }
       h += `<div class="plat"><h4>${label} ${p.done[pl] ? `<span class="tag done">✔ đã đăng</span>` : `<span class="tag">chờ</span>`}</h4>
         <div class="text" onclick="this.classList.toggle('open')">${esc(text)}</div>
         <div class="row">${(p.forms?.[pl] || []).filter((r) => r.copy).map((r) => copyBtn(r.value, r.label === "Mô tả" || r.label === "Nội dung bài viết" ? "Chép lời đăng" : r.label, `${r.label.toLowerCase()} ${pl === "tiktok" ? "TikTok" : "Facebook"}`)).join("") || copyBtn(text, "Chép lời đăng", `lời đăng ${pl === "tiktok" ? "TikTok" : "Facebook"}`)}</div>
@@ -296,6 +297,7 @@ async function drawPost(d) {
     }
     h += `</section>`;
   }
+  if (job.kind === "fact" || job.kind === "fact-vi") h += `<p class="meta">📺 Bản dài: ${job.longJob ? `<b>${esc(job.longJob)}</b> (studio đang làm)` : "studio tạo trong ít phút"}</p>`;
   h += `<section><h3>Lưu ý khi đăng</h3><p>• TikTok và Facebook: bật nhãn <b>nội dung do AI tạo</b> (giọng đọc là giọng AI).</p><p>• Facebook: đăng lên <b>Trang</b> của kênh, Short đăng dạng Reel.</p>${CAN_SHARE ? `<p>• Lưu vào Ảnh: bấm nút, chờ chuẩn bị xong (video lớn mất chút thời gian), bấm lần nữa rồi chọn <b>Lưu video</b>. Phim dài vài trăm MB: nên lưu riêng từng video nếu iPhone báo lỗi.</p>` : `<p>• Chrome hỏi “tải tệp không an toàn” thì chọn <b>Giữ lại</b>: video đi thẳng từ máy tính trong nhà, không qua mạng ngoài.</p>`}</section>`;
   $("#main").innerHTML = h;
 }

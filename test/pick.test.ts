@@ -77,3 +77,17 @@ test("before the weekend off, a daily line approves the weekend's films on Thurs
   assert.equal(needToday(daily, [], new Date(2026, 10, 18, 17), [0, 6]), 1, "Wednesday: one");
   assert.equal(needToday(daily, [], new Date(2026, 10, 19, 17)), 1, "no days off: one");
 });
+
+import { needAhead, pending } from "../src/studio/pick.ts";
+test("a line keeps its videos ready days ahead: it approves more while behind, then only what is posted", () => {
+  const now = new Date("2026-11-17T10:00:00Z"), daily = { id: "a", name: "A", perDay: 1, perWeek: 7 };
+  const j = (status: string, o: Partial<Job> = {}): Job => ({ slug: "x", topic: "x", kind: "qa", status: status as Job["status"], notes: [], history: [], ...o });
+  assert.equal(needAhead(daily, [], now, 3), 3, "nothing ready: three today (at most)");
+  assert.equal(needAhead(daily, [j("producing"), j("video")], now, 3), 2);
+  assert.equal(needAhead(daily, [j("done"), j("done"), j("approved"), j("producing")], now, 3), 0, "four days ready");
+  const out = { videoId: "v", url: "u", publishAt: "2026-11-16T12:00:00Z", channel: "c", at: "t" };
+  assert.equal(pending(j("done", { published: { long: out } }), now), false, "already out on YouTube");
+  assert.equal(pending(j("done", { published: { long: { ...out, publishAt: "2026-11-19T12:00:00Z" } } }), now), true, "scheduled for later");
+  assert.equal(pending(j("failed"), now), false);
+  assert.equal(needAhead({ id: "b", name: "B", perDay: 1, perWeek: 2 }, [], now, 3), 2, "two a week: two ready");
+});

@@ -37,14 +37,16 @@ export function entriesOf(job: Job, settings: PublishSettings, now = new Date())
   const ex0 = job.exported?.long ?? job.exported?.en ?? job.exported?.shorts?.find(Boolean);
   const folder = ex0?.dir ? path.basename(ex0.dir) : job.drive?.folder ?? job.topic;
   const add = (what: What, index: number | undefined, pub?: Published, ex?: Exported) => {
-    const rec = pub ?? ex;
+    // (a topic dropped or stopped by an error is off the calendar, but what is already on YouTube stays)
+    const rec = pub ?? (["failed", "rejected"].includes(job.status) ? undefined : ex);
     if (!rec) return;
     out.push({
       at: rec.publishAt, channel: rec.channel, channelName: settings[rec.channel]?.name ?? rec.channel,
       what, index, label: labelOf(job, what, settings[rec.channel]?.lang ?? "vi", index), slug: job.slug,
       folder, file: fileNameOf(job, { what, file: "", index }),
       url: pub?.url,
-      social: Object.fromEntries(platformsOf(what).map((p) => [p, !!job.social?.[socialKey(p, what, index)]])),
+      // (the user's platforms only: Facebook is the studio's on a channel with its Page, facebook.ts)
+      social: Object.fromEntries(platformsOf(what).filter((p) => !(p === "facebook" && settings[rec.channel]?.facebookPage)).map((p) => [p, !!job.social?.[socialKey(p, what, index)]])),
       late: !pub && new Date(rec.publishAt) < now,
       ...(() => { const at = new Date(rec.publishAt), by = uploadBy(settings[rec.channel] ?? {}, at); return by.getDate() !== at.getDate() ? { uploadBy: by.toLocaleDateString("sv") } : {}; })(),
     });

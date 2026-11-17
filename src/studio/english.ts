@@ -15,6 +15,7 @@ import { exists } from "../utils/fs.ts";
 import { run } from "../utils/process.ts";
 import { renderStory } from "../animation/story.ts";
 import { castVoicesEn } from "./cast.ts";
+import { voicesChecked } from "../audio/voicefix.ts";
 import type { Designed } from "./design.ts";
 import { toScript, type Plan } from "./write.ts";
 
@@ -86,7 +87,7 @@ export async function prepareEnglish(slug: string, log: (s: string) => void = co
   const vproj = JSON.parse(await fs.readFile(path.join(vi, "project.json"), "utf8"));
   await fs.writeFile(path.join(en, "project.json"), JSON.stringify({ ...vproj, engine: "kokoro", voice: EN_NARRATOR, speed: 1.0, voices: castVoicesEn(plan.cast, EN_NARRATOR), speakers, thumbnail: { title: plan.title, subtitle: job.kind === "lịch sử" ? "Vietnamese History for Kids" : "Vietnamese Folk Tales" } }, null, 2));
   log("  English voices");
-  await run(process.execPath, [path.join(ROOT, "src", "cli.ts"), "build", path.join(en, "storyboard.json"), "--voice-only"], { cwd: ROOT, timeoutMs: 60 * 60_000 });
+  await voicesChecked(en, log);
   return en;
 }
 

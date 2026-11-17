@@ -111,7 +111,9 @@ export async function driveTick(log: (s: string) => void): Promise<void> {
     await putCalendar(await listJobs());
     driveState.lastError = undefined;
   } catch (err) {
-    driveState.lastError = (err as Error).message.slice(0, 300);
+    // (rclone's own words, not only "exited with 1")
+    const tail = String((err as { stderrTail?: string }).stderrTail ?? "").split("\n").filter((l) => l.trim() && !/NOTICE/.test(l)).slice(-2).join(" | ");
+    driveState.lastError = `${(err as Error).message}${tail ? `: ${tail}` : ""}`.slice(0, 400);
     log(`Drive: lỗi ${driveState.lastError}`);
   } finally {
     driveState.busy = undefined;

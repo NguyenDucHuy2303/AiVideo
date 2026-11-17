@@ -282,7 +282,8 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
     let clipStart = 0;
     for (const s of scripts) {
       const D = s.scene.duration, ts = s.scene.timeScale ?? 1;
-      const ids = new Set((s.scene.cast ?? []).map((c: { id: string }) => c.id));
+      // (a thing in the scene can speak too: items.js gives it eyes and a mouth)
+      const ids = new Set([...(s.scene.cast ?? []), ...((s.scene as { items?: { id: string; face?: unknown }[] }).items ?? []).filter((it) => it.face)].map((c: { id: string }) => c.id));
       const speech: Record<string, unknown>[] = [];
       for (const c of dialogue) {
         const from = Math.max(0, c.from - clipStart), to = Math.min(D, c.to - clipStart);
@@ -306,7 +307,8 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
         for (const sp of speech as { actor: string; from: number; to: number }[]) {
           if (sp.to - sp.from < 0.8) continue;
           const back = active(sp.to * ts);
-          added.push({ at: sp.from * ts, type: "close", on: sp.actor, push: 0.04 });
+          // (a scene can frame its speakers its own way: whole, with the place around them)
+          added.push({ at: sp.from * ts, ...(s.scene.speakerShot ?? { type: "close", push: 0.04 }), on: sp.actor });
           if (back && sp.to < D - 0.3) added.push({ ...back, at: sp.to * ts, ease: undefined });
         }
         s.scene.shots = [...shots, ...added].sort((a, b) => a.at - b.at);
@@ -392,7 +394,8 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
     const { watermark } = await brandStills(brand);
     // A short starts on the story at once (no intro) and ends on a short card.
     // The intro and outro the user picked (project.json "brand": { "intro", "outro" }).
-    const intro = opts.short ? undefined : await brandClip(brand, "intro", !!opts.vertical, project.brand?.intro);
+    // (a story that opens on its action at once, an English episode: project.json brand.intro "none")
+    const intro = opts.short || project.brand?.intro === "none" ? undefined : await brandClip(brand, "intro", !!opts.vertical, project.brand?.intro);
     const outro = await brandClip(brand, opts.short ? "end" : "outro", !!opts.vertical, project.brand?.outro);
     const mark = Math.round(Math.min(W, H) * 0.11), pad = Math.round(Math.min(W, H) * 0.035);
     const norm = `aresample=${AUDIO_SAMPLE_RATE},aformat=sample_fmts=fltp:channel_layouts=stereo`;

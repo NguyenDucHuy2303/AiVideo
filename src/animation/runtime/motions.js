@@ -105,6 +105,35 @@
     charge: (τ, c) => ({ ...human.run(τ, c), armF: [80, -10], face: c.face || "shout", talk: 0.5 }),
     /** Holding something up with both hands (the iron armour, a basket of rice). */
     carry: (τ, c) => ({ ...human.walk(τ, c), armF: [150, 30], armB: [150, 30], lean: -2, face: c.face || "happy" }),
+    // ── Everyday actions for the stories (English lessons, 16/11/2026) ──
+    /** Clapping: both hands meet in front of the chest, quick. */
+    clap: (τ, c) => { const k = Math.abs(sin(τ * 9)); return { ...human.idle(τ, c), armF: [70, 70 + 18 * k], armB: [62, 74 + 18 * k], dy: -2 * k, face: c.face || "joy" }; },
+    /** Dancing: a bounce on the knees, the arms up in turn, the body swaying. */
+    dance: (τ, c) => {
+      const b = Math.abs(sin(τ * 6)), s = sin(τ * 3);
+      return { dy: 10 * b, lean: 8 * s, headTilt: -6 * s, legF: [14 + 10 * b, -20 * b], legB: [-14 + 10 * b, -20 * b], armF: [110 + 50 * s, 40], armB: [110 - 50 * s, 40], face: c.face || "laugh", talk: 0.4 };
+    },
+    /** A kick: weight back, the front leg swings through once, then down. */
+    kick: (τ, c) => { const k = bump(τ, 0.1, 0.55); return { lean: -10 * k, legF: [-20 + 110 * k, -10 - 20 * (1 - k)], legB: [-8, -6], armF: [-30 * k, 30], armB: [60 * k, 30], face: c.face || "determined" }; },
+    /** Hopping on the spot, small and happy. */
+    hop: (τ, c) => { const k = Math.abs(sin(τ * 5.5)); return { ...human.idle(τ, c), dy: -34 * k, legF: [12 * k, -24 * k], legB: [-6 * k, -24 * k], armF: [40 + 40 * k, 30], armB: [30 + 40 * k, 30], face: c.face || "joy" }; },
+    /** Peeking: bent sideways, the head stretched to look round something. */
+    peek: (τ, c) => { const k = EASE.out(Math.min(1, τ / 0.5)); return { dy: 12 * k, lean: 26 * k, headTilt: 14 * k, legF: [16 * k, -24 * k], legB: [-10, -14 * k], armF: [40, 50], armB: [10, 40], face: c.face || "surprised" }; },
+    /** Knocking: the hand up at the door, three knocks. */
+    knock: (τ, c) => ({ ...human.idle(τ, c), lean: 4, armF: [64, 34 + 26 * Math.max(0, sin(τ * 14))], face: c.face || "happy" }),
+    /** A hug (of a thing or someone in front): the arms open, then close round it. */
+    hug: (τ, c) => { const k = EASE.inOut(Math.min(1, τ / 0.6)); return { ...human.idle(τ, c), lean: 6 * k, armF: [lerp(20, 56, k), lerp(20, 64, k)], armB: [lerp(10, 52, k), lerp(20, 68, k)], face: c.face || "joy" }; },
+    /** Picking something up: down to the ground, then up holding it before the chest. */
+    pick_up: (τ, c) => {
+      const d = bump(τ, 0, 0.9), up = smooth(seg(τ, 0.45, 0.9));
+      return { dy: 46 * d, lean: 34 * d, headTilt: 10 * d, legF: [40 * d, -70 * d], legB: [20 * d, -60 * d], armF: [lerp(10, 62, up) + 30 * d, lerp(20, 52, up)], armB: [lerp(0, 56, up) + 30 * d, lerp(20, 56, up)], face: c.face || "happy" };
+    },
+    /** Nodding yes. */
+    nod: (τ, c) => ({ ...human.idle(τ, c), headTilt: 10 * Math.max(0, sin(τ * 8)), face: c.face || "happy" }),
+    /** Looking about for something: the head and body turning, a hand at the brow. */
+    search: (τ, c) => ({ ...human.idle(τ, c), headTilt: 8 * sin(τ * 2.2), lean: 10 + 6 * sin(τ * 1.1), armF: [30, 40], armB: [24, 40], face: c.face || "worried" }),
+    /** Walking with something held before the chest (a gift box, items.js `carry`). */
+    carry_front: (τ, c) => ({ ...human.walk(τ, c), armF: [62, 52], armB: [56, 56], lean: -4, face: c.face || "happy" }),
     /** Taking off the armour: hands across the chest, then thrown open. */
     undress: (τ, c) => { const k = cycle([[0, 0], [0.5, 1], [1, 0]], seg(τ, 0, c.dur || 1.2)); return { ...human.still(τ, c), armF: [lerp(10, 40, k), lerp(14, 120, k)], armB: [lerp(-6, 30, k), lerp(10, 120, k)], lean: 6 * k, face: c.face || "proud" }; },
     hold_bowl: (τ, c) => ({ ...human.idle(τ, c), armF: [40, 60], face: c.face || "happy" }),

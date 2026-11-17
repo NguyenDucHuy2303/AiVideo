@@ -29,9 +29,11 @@ export function castVoices(cast: CastMember[], narrator: string): Record<string,
 
 /** Kokoro voices for the English version (American and British), by the same rules. */
 const EN = {
-  male: { young: ["am_liam", "am_eric", "bm_lewis", "am_adam"], adult: ["am_michael", "bm_george", "am_adam", "bm_daniel"], elder: ["bm_george", "am_onyx", "bm_daniel"], villain: ["am_onyx", "am_fenrir", "bm_lewis"] },
-  female: { young: ["af_bella", "af_sarah", "bf_lily", "af_nicole"], adult: ["af_heart", "bf_emma", "af_sarah", "bf_isabella"], elder: ["bf_alice", "af_heart", "bf_emma"], villain: ["af_nicole", "bf_isabella", "af_kore"] },
-  child: { male: ["af_sky", "af_nova"], female: ["af_nova", "af_sky"] },
+  // (ordered by how right they read children's English words, Whisper and IPA, 16–17/11/2026:
+  // am_liam, am_eric, af_nova, af_sky read many wrong; voicefix.ts still checks every film)
+  male: { young: ["am_michael", "bm_lewis", "am_puck", "am_adam"], adult: ["am_michael", "bm_lewis", "am_adam", "am_puck"], elder: ["am_michael", "bm_lewis", "bm_george"], villain: ["am_fenrir", "am_onyx", "bm_lewis"] },
+  female: { young: ["af_heart", "af_bella", "af_alloy", "af_nicole"], adult: ["af_heart", "af_bella", "af_nicole", "af_alloy"], elder: ["af_heart", "af_bella", "bf_alice"], villain: ["af_nicole", "af_alloy", "af_kore"] },
+  child: { male: ["af_heart", "af_bella"], female: ["af_heart", "af_bella"] },
 };
 
 export function castVoicesEn(cast: CastMember[], narrator: string): Record<string, Voice> {

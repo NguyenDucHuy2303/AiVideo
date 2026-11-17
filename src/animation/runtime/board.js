@@ -16,7 +16,17 @@
  *
  * Pictures of things come from an icon set (icons.ts resolves them before the render):
  *   <icon name="cat" x="100" y="150" size="180" data-in="1"/>   (x, y: top left; size: width)
- * and board.icons carries their SVG. board.style is the board's look:
+ * and board.icons carries their SVG.
+ *
+ * Games for the viewers (the English lessons, studio/formats.ts): board.reveal is when the answer
+ * is given (the end of the viewers' pause): class="answer" appears then, class="shadow" (an icon)
+ * is a black shadow until then and turns into the picture. board.corner: a small word card in the
+ * top corner over a painted place (the presenters keep the rest of the frame).
+ *
+ * The overlay (scene.overlay, any layout): a scoreboard { score: { "Bối": n, "Beo": n, gain, at } }
+ * and countdown clocks { countdowns: [{ at, seconds }] } over the viewers' pauses.
+ *
+ * board.style is the board's look:
  *   card (cream card, the default) · grid (squared paper) · chalk (a green chalkboard in a wooden
  *   frame: dark lines and words turn to chalk) · sketch (paper, every drawn shape redrawn by
  *   hand with Rough.js, MIT, when it is loaded).
@@ -38,6 +48,7 @@
     // Wide frames: the card on the right, the presenters on the left. Tall frames (Shorts): the
     // card across the top half, the presenters under it.
     const tall = H > W;
+    if (board.corner) Object.assign(board, tall ? { x: 0.05, y: 0.04, w: 0.9, h: 0.24 } : { x: 0.59, y: 0.05, w: 0.38, h: 0.38 });
     const x = (board.x ?? (tall ? 0.04 : 0.4)) * W, y = (board.y ?? (tall ? 0.06 : 0.08)) * H, w = (board.w ?? (tall ? 0.92 : 0.57)) * W, h = (board.h ?? (tall ? 0.42 : 0.74)) * H;
     const root = g(parent);
     const style = board.style || "card";
@@ -61,6 +72,7 @@
     if (src.nodeName !== "svg") return { root, items: [] };
     clean(src);
     icons(src, board.icons || {});
+    reveal(src, board.reveal);
     if (style === "chalk") chalk(src);
     const pad = Math.min(w, h) * 0.04;
     const inner = document.importNode(src, true);
@@ -114,6 +126,29 @@
         holder.innerHTML = `<rect x="${f2(x)}" y="${f2(y)}" width="${f2(size)}" height="${f2(hh)}" rx="18" fill="none" stroke="#3a2a20" stroke-width="3" stroke-dasharray="10 8"/><text x="${f2(x + size / 2)}" y="${f2(y + hh / 2 + 10)}" font-size="${f2(Math.min(30, size / 5))}" text-anchor="middle" font-family="sans-serif" fill="#2a2a40">${name.replace(/[<&]/g, "")}</text>`;
       }
       ic.replaceWith(holder);
+    }
+  }
+  /**
+   * The answer of a game: class="answer" comes in at the reveal (or later, by its own data-in);
+   * class="shadow" is doubled: a black copy shown until the reveal, the picture from then.
+   */
+  function reveal(root, at) {
+    if (!Number.isFinite(at)) return;
+    const later = (n) => n.setAttribute("data-in", String(Math.max(at, parseFloat(n.getAttribute("data-in")) || 0)));
+    for (const n of [...root.querySelectorAll(".answer")]) later(n);
+    for (const n of [...root.querySelectorAll(".shadow")]) {
+      const dark = n.cloneNode(true);
+      dark.classList.remove("shadow");
+      n.classList.remove("shadow");
+      for (const m of [dark, ...dark.querySelectorAll("*")]) {
+        for (const a of ["fill", "stroke"]) { const v = m.getAttribute(a); if (v && v !== "none") m.setAttribute(a, "#23202e"); }
+        if (m.style) { if (m.style.fill && m.style.fill !== "none") m.style.fill = "#23202e"; if (m.style.stroke && m.style.stroke !== "none") m.style.stroke = "#23202e"; }
+        if (/^(path|circle|ellipse|rect|polygon|polyline)$/.test(m.tagName) && !m.getAttribute("fill") && !(m.style && m.style.fill)) m.setAttribute("fill", "#23202e");
+        m.removeAttribute("opacity"); m.removeAttribute("fill-opacity");
+      }
+      dark.setAttribute("data-out", String(at));
+      n.parentNode.insertBefore(dark, n);
+      later(n);
     }
   }
   const isIcon = (n) => !!n.closest("[data-icon]");
@@ -196,5 +231,59 @@
     }
   }
 
-  WA.board = { build, render };
+  /** The scoreboard and the clocks of a game, fixed to the screen (over any layout). */
+  const TEAMS = [["Bối", "#f4a62a", "#b8730c"], ["Beo", "#4caf62", "#2f8040"]];
+  function overlay(S, spec, parent) {
+    const { W, H } = S, tall = H > W, root = g(parent), O = { root, score: null, clocks: [] };
+    const u = tall ? W / 1080 : H / 1080;
+    if (spec.score) {
+      const sc = spec.score, x0 = tall ? 0.5 * W - 330 * u : 0.025 * W, y0 = tall ? 0.495 * H : 0.03 * H;
+      const box = g(root);
+      el("rect", { x: f2(x0 + 6 * u), y: f2(y0 + 8 * u), width: f2(660 * u), height: f2(112 * u), rx: f2(56 * u), fill: "#000", opacity: 0.2 }, box);
+      el("rect", { x: f2(x0), y: f2(y0), width: f2(660 * u), height: f2(112 * u), rx: f2(56 * u), fill: "#fffaf0", stroke: "#3a2a20", "stroke-width": f2(5 * u) }, box);
+      const vs = el("text", { x: f2(x0 + 330 * u), y: f2(y0 + 74 * u), "font-size": f2(40 * u), "font-weight": 800, "text-anchor": "middle", "font-family": "sans-serif", fill: "#3a2a20" }, box);
+      vs.textContent = "VS";
+      O.score = TEAMS.map(([name, color, dark], k) => {
+        const px = x0 + (k ? 380 : 14) * u, py = y0 + 12 * u, team = g(box);
+        el("rect", { x: f2(px), y: f2(py), width: f2(266 * u), height: f2(88 * u), rx: f2(44 * u), fill: color, stroke: dark, "stroke-width": f2(4 * u) }, team);
+        const label = el("text", { x: f2(px + 30 * u), y: f2(py + 60 * u), "font-size": f2(44 * u), "font-weight": 800, "font-family": "sans-serif", fill: "#fff" }, team);
+        label.textContent = name;
+        const num = g(team);
+        num.style.transformBox = "fill-box"; num.style.transformOrigin = "center";
+        el("circle", { cx: f2(px + 212 * u), cy: f2(py + 44 * u), r: f2(36 * u), fill: "#fff" }, num);
+        const t = el("text", { x: f2(px + 212 * u), y: f2(py + 62 * u), "font-size": f2(50 * u), "font-weight": 800, "text-anchor": "middle", "font-family": "sans-serif", fill: dark }, num);
+        const before = (sc[name] || 0), gains = sc.gain === name || sc.gain === "both";
+        t.textContent = String(before);
+        return { t, num, before, after: before + (gains ? 1 : 0), at: sc.at || 0 };
+      });
+    }
+    for (const c of spec.countdowns || []) {
+      const cx = tall ? 0.86 * W : 0.19 * W, cy = tall ? 0.555 * H : 0.24 * H, r = 70 * u, k = g(root);
+      k.style.transformBox = "fill-box"; k.style.transformOrigin = "center";
+      el("circle", { cx: f2(cx + 4 * u), cy: f2(cy + 6 * u), r: f2(r), fill: "#000", opacity: 0.2 }, k);
+      el("circle", { cx: f2(cx), cy: f2(cy), r: f2(r), fill: "#fffaf0", stroke: "#3a2a20", "stroke-width": f2(5 * u) }, k);
+      const ring = el("circle", { cx: f2(cx), cy: f2(cy), r: f2(r - 14 * u), fill: "none", stroke: "#e53935", "stroke-width": f2(12 * u), "stroke-linecap": "round", pathLength: 1, "stroke-dasharray": "1 1", transform: `rotate(-90 ${f2(cx)} ${f2(cy)})` }, k);
+      const digit = el("text", { x: f2(cx), y: f2(cy + 26 * u), "font-size": f2(74 * u), "font-weight": 800, "text-anchor": "middle", "font-family": "sans-serif", fill: "#3a2a20" }, k);
+      O.clocks.push({ k, ring, digit, at: c.at, seconds: c.seconds });
+    }
+    return O;
+  }
+  function renderOverlay(O, t) {
+    for (const s of O.score || []) {
+      const on = t >= s.at, pop = s.after !== s.before ? clamp((t - s.at) / 0.45) : 1;
+      s.t.textContent = String(on ? s.after : s.before);
+      s.num.style.transform = `scale(${f2(on && s.after !== s.before ? 1 + 0.45 * Math.sin(Math.PI * pop) : 1)})`;
+    }
+    for (const c of O.clocks) {
+      const left = c.at + c.seconds - t, live = t >= c.at - 0.2 && left > -0.35;
+      c.k.setAttribute("opacity", f2(live ? smooth(clamp((t - c.at + 0.2) / 0.25)) * smooth(clamp((left + 0.35) / 0.3)) : 0));
+      if (!live) continue;
+      const n = Math.max(1, Math.ceil(left)), frac = left - Math.floor(left);
+      c.digit.textContent = String(Math.min(n, Math.ceil(c.seconds)));
+      c.ring.setAttribute("stroke-dashoffset", f2(1 - clamp(left / c.seconds)));
+      c.k.style.transform = `scale(${f2(1 + 0.08 * smooth(clamp((frac - 0.75) / 0.25)))})`;
+    }
+  }
+
+  WA.board = { build, render, overlay, renderOverlay };
 })();

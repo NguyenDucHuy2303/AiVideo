@@ -357,6 +357,8 @@ export async function buildProject(storyboardFile: string, options: BuildOptions
         ...(actorSrc && action ? { actor: { src: actorSrc, action, ...actorPlacement(action, settings.fps) } } : {}),
         ...(effects.length ? { effects } : {}),
         captionCues: n.cues,
+        // (every part of the scene, the pauses too: a story's actions are timed on them, staging.ts)
+        marks: n.marks,
         transitionOut: next && frames > 0 ? { type: transition, frames } : { type: "cut" as const, frames: 0 },
       });
     }

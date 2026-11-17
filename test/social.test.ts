@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { blurbOf, hashtagsOf, hookOf, platformsOf, postTitle, socialText } from "../src/studio/social.ts";
+import { blurbOf, hashtagsOf, hookOf, LINK_WAIT, platformsOf, postTitle, socialText } from "../src/studio/social.ts";
 import { hostAllowed, isLoopback, lanAddress } from "../src/studio/phone.ts";
 import type { Meta } from "../src/studio/publish.ts";
 
@@ -12,8 +12,8 @@ const meta = (extra: Partial<Meta> = {}): Meta => ({
 
 test("posts: a Short goes to TikTok and Facebook, a film to Facebook only", () => {
   assert.deepEqual(platformsOf("short"), ["tiktok", "facebook"]);
-  assert.deepEqual(platformsOf("long"), ["facebook"]);
-  assert.deepEqual(platformsOf("en"), ["facebook"]);
+  assert.deepEqual(platformsOf("long"), []); // (films are watched on YouTube)
+  assert.deepEqual(platformsOf("en"), []);
 });
 
 test("post title: no #Shorts, no ' | channel' tail", () => {
@@ -36,19 +36,23 @@ test("hashtags: by language and kind, fewer on Facebook, no TikTok tag there", (
   assert.ok(!fb.includes("#LearnOnTikTok"));
 });
 
-test("a Short's post: its own line first, where the film is (a link on Facebook only)", () => {
+test("a Short's post: its own line first, always a YouTube link (written out on TikTok, the bio named)", () => {
   const o = { what: "short" as const, kind: "truyền thuyết", channel: "Huy Kể Chuyện", hook: "“Chặn nước lại!”" };
-  const tt = socialText("tiktok", meta(), { ...o, longUrl: "https://youtu.be/abcdefghijk" });
+  const tt = socialText("tiktok", meta(), { ...o, link: "https://youtu.be/abcdefghijk" });
   assert.ok(tt.startsWith("“Chặn nước lại!”\nSơn Tinh – Thủy Tinh"));
-  assert.ok(tt.includes("Xem trọn phim trên YouTube: Huy Kể Chuyện"));
-  assert.ok(!tt.includes("https://"), "TikTok shows no links");
+  assert.ok(tt.includes("Xem trọn phim trên YouTube: https://youtu.be/abcdefghijk\n👉 Link bấm được ở trang cá nhân (bio) của kênh Huy Kể Chuyện"));
   assert.ok(!tt.includes("Vua Hùng"), "the hook stands for the blurb");
-  const fb = socialText("facebook", meta(), { ...o, longUrl: "https://youtu.be/abcdefghijk" });
-  assert.ok(fb.includes("Xem trọn phim: https://youtu.be/abcdefghijk"));
-  // A fact Short is whole: no "watch the film".
-  const fact = socialText("tiktok", meta({ lang: "en", title: "Wombat poop is a cube? #Shorts", description: "Wombats make cube poop." }), { what: "short", kind: "fact", channel: "Ask Huy", isFact: true });
-  assert.ok(!/whole video/.test(fact));
-  assert.ok(fact.includes("Follow Ask Huy for more!"));
+  const fb = socialText("facebook", meta(), { ...o, link: "https://youtu.be/abcdefghijk" });
+  assert.ok(fb.includes("Xem trọn phim trên YouTube: https://youtu.be/abcdefghijk"));
+  assert.ok(!fb.includes("bio"));
+  // No link yet: the place for it, filled in once the user pastes it (Facebook waits for it).
+  assert.ok(socialText("facebook", meta(), o).includes(LINK_WAIT));
+  // A fact Short: its own link until its long version is out; then the explanation.
+  const factMeta = meta({ lang: "en", title: "Wombat poop is a cube? #Shorts", description: "Wombats make cube poop." });
+  const own = socialText("facebook", factMeta, { what: "short", kind: "fact", channel: "Ask Huy", isFact: true, own: true, link: "https://youtube.com/shorts/abc" });
+  assert.ok(own.includes("Watch on YouTube: https://youtube.com/shorts/abc"));
+  assert.ok(own.includes("Follow Ask Huy for more!"));
+  assert.ok(socialText("tiktok", factMeta, { what: "short", kind: "fact", channel: "Ask Huy", isFact: true, link: "https://youtu.be/x" }).includes("Watch the full explanation on YouTube: https://youtu.be/x\n👉 Tap the link in our bio (Ask Huy)"));
 });
 
 test("hook: a called-out spoken line, else the first told one", () => {
@@ -85,8 +89,8 @@ test("post stage: preparing, ready, downloaded, partly posted, posted everywhere
   const job: Job = { ...base, shorts: ["shorts/1.mp4"] };
   const s0 = postState(job, files)!;
   assert.equal(s0.stage, "ready");
-  // film: YouTube + Facebook; Short: YouTube + TikTok + Facebook
-  assert.deepEqual(s0.by, { youtube: [0, 2], tiktok: [0, 1], facebook: [0, 2] });
+  // film: YouTube only; Short: YouTube + TikTok + Facebook
+  assert.deepEqual(s0.by, { youtube: [0, 2], tiktok: [0, 1], facebook: [0, 1] });
   assert.equal(postState({ ...job, downloaded: { "shorts/1.mp4": "t" } }, files)!.stage, "downloaded");
   const pub = { videoId: "abcdefghijk", url: "u", publishAt: "t", channel: "huy-ke-chuyen", at: "t" };
   assert.equal(postState({ ...job, published: { long: pub } }, files)!.stage, "partial");

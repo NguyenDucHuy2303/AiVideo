@@ -30,12 +30,18 @@ export interface Line {
   ahead?: number;
   /** How new topics are found when the line runs low: stories, animal fables, or questions (qa.ts). */
   propose?: "stories" | "fables" | "questions" | "facts" | "lessons";
+  /** English lessons: the formats it takes in turn (formats.ts; default: all of them). */
+  formats?: string[];
   /** The YouTube channel it is published on (publish.ts), when not one of its own (default: the id). */
   channel?: string;
 }
 /** A line's way of finding topics (older settings without "propose": by its kinds). */
 export const proposerOf = (l: Line) => l.propose ?? (l.kinds?.includes("lesson") ? "lessons" : l.kinds?.some((k) => k === "fact" || k === "fact-vi") ? "facts" : l.kinds?.some((k) => k === "qa" || k === "qa-vi") ? "questions" : "stories");
-export interface PickSettings { at: string; lines: Line[]; /** (the user's days off: publish offDays) */ offDays?: number[] }
+export interface PickSettings {
+  at: string; lines: Line[]; /** (the user's days off: publish offDays) */ offDays?: number[];
+  /** Days of videos each line keeps ready ahead of its posting (the user, 17/11/2026: "ready 2–3 days before"). */
+  leadDays?: number;
+}
 export const PICK_DEFAULTS: PickSettings = {
   at: "17:00",
   lines: [
@@ -112,6 +118,27 @@ export function needToday(line: Line, mine: Job[], now = new Date(), offDays: nu
   return Math.max(0, need);
 }
 
+/** A job whose video is still to come out: being made, or made and not on YouTube yet (or scheduled later). */
+export function pending(j: Job, now = new Date()): boolean {
+  if (["approved", "producing", "video", "fix"].includes(j.status)) return true;
+  if (j.status !== "done") return false;
+  const out = j.kind === "fact" || j.kind === "fact-vi" ? j.published?.shorts?.[0] : j.published?.long;
+  return !out || new Date(out.publishAt) > now;
+}
+
+/**
+ * Scripts a line needs approved today to keep `lead` days of its videos ready before they are
+ * posted (17/11/2026): its share of lead + 1 days, less what is already being made or waiting to
+ * go out; at most `max` a day (what the nights can render). Catching up, it approves more than a
+ * day's share; once ahead, only what is posted.
+ */
+export function needAhead(line: Line, mine: Job[], now = new Date(), lead = 3, max = 3): number {
+  const week = weekly(line);
+  if (week <= 0 || lead <= 0) return 0;
+  const target = Math.ceil((week / 7) * (lead + 1));
+  return Math.max(0, Math.min(max, target - mine.filter((j) => pending(j, now)).length));
+}
+
 /** Days before an occasion within which its script is approved even beyond the line's share. */
 export const URGENT_DAYS = 14;
 
@@ -125,7 +152,8 @@ export async function dailyPick(jobs: Job[], s: PickSettings, log: (s: string) =
   const picked: string[] = [];
   for (const line of s.lines) {
     const mine = jobs.filter((j) => lineOf(j, s.lines) === line);
-    let need = needToday(line, mine, now, s.offDays);
+    // the day's share, or more while the line is behind its days ahead
+    let need = Math.max(needToday(line, mine, now, s.offDays), needAhead(line, mine, now, s.leadDays ?? 3));
     const waiting = mine.filter((j) => j.status === "review" && !j.retryAt);
     const urgent = waiting.map((job) => ({ job, o: jobOccasion(job, now) }))
       .filter((x) => x.o && x.o.left >= 2 && x.o.left <= URGENT_DAYS).sort((a, b) => a.o!.left - b.o!.left)[0];
@@ -133,11 +161,14 @@ export async function dailyPick(jobs: Job[], s: PickSettings, log: (s: string) =
     if (!waiting.length) { log(`  ${line.name}: không có kịch bản chờ duyệt`); continue; }
     const chosen: { job: Job; why: string }[] = [];
     if (urgent) { chosen.push({ job: urgent.job, why: `cho dịp ${urgent.o!.short}, còn ${urgent.o!.left} ngày` }); need -= 1; }
+    // (the long version of a Short, longs.ts: first within the line's share, the oldest first)
+    const wanted = waiting.filter((j) => j.wanted && j !== urgent?.job).slice(0, Math.max(0, need));
+    for (const j of wanted) { chosen.push({ job: j, why: "bản dài của Short đã làm" }); need -= 1; }
     if (need > 0) {
       // A script that cannot be scored (Claude at its limit, the job's budget spent) still counts:
       // it comes after the scored ones, so the line never goes without its videos.
       const scored: { job: Job; score: number }[] = [];
-      for (const j of waiting.filter((j) => j !== urgent?.job)) {
+      for (const j of waiting.filter((j) => j !== urgent?.job && !wanted.includes(j))) {
         try { scored.push({ job: j, score: (await scoreJob(j.slug, log)).value }); }
         catch (err) { scored.push({ job: j, score: 0 }); log(`  ${j.slug}: chưa chấm được (${(err as Error).message.slice(0, 80)})`); }
       }

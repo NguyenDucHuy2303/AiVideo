@@ -102,6 +102,10 @@
     // The explainer board (question channel): fixed to the screen, above the stage and its
     // vignette (a clean card), under the fade to black.
     const board = scene.board ? WA.board.build(S, scene.board, S.svg.insertBefore(WA.core.g(S.svg), S.black)) : null;
+    // A game's scoreboard and clocks (English lessons), over everything but the fade.
+    const overlay = scene.overlay ? WA.board.overlay(S, scene.overlay, S.svg.insertBefore(WA.core.g(S.svg), S.black)) : null;
+    // Things in the world (items.js): a gift box, a ball… from the emoji pictures.
+    const items = scene.items && WA.items ? WA.items.build(S, scene.items, actorLayer) : null;
     // The drawing style of the film (library/styles.json), once everything is built.
     WA.style.apply(S, scene.styleLook);
     // The light of the scene (stage.js LIGHT, or the scene's own "light") on the characters and on
@@ -147,7 +151,8 @@
     }
     let shots = (scene.shots || [{ at: 0, type: "wide", on: Object.keys(actors).slice(0, 1) }]).slice().sort((a, b) => a.at - b.at);
     // A tall frame (Shorts) with a board: the board fills the top, the presenters stand below it.
-    if (scene.board && H > W) shots = shots.map((s) => ({ ...s, dx: 0, share: 0.34, gy: 0.96, region: undefined }));
+    // (a small corner card: the presenters keep most of the frame)
+    if (scene.board && H > W) shots = shots.map((s) => ({ ...s, dx: 0, share: scene.board.corner ? 0.5 : 0.34, gy: 0.96, region: undefined }));
     shots.forEach((s, i) => (s.end = shots[i + 1]?.at ?? scene.duration));
 
     /** Position along x at time t: base x, then each move in order. */
@@ -289,7 +294,12 @@
     /** Every person's head at t (the camera keeps a close-up clear of half-heads). */
     const people = Object.keys(actors).filter((id) => actors[id].kind === "human");
     const heads = (t) => people.map((id) => { const p = pointsAt(id, t), o = poseAt(id, t).opacity ?? 1; return { id, head: p.head, r: p.headR, seen: o > 0.5 }; });
-    const ctx = { pointsAt, speedOf, heads };
+    /** How open a talking thing's mouth is at t (items.js: a gift box that speaks), from the voice. */
+    const talkOf = (id, t) => {
+      const clip = t / (scene.timeScale ?? 1), line = (scene.speech || []).find((sp) => sp.actor === id && clip >= sp.from && clip < sp.to);
+      return line ? clamp((line.env[Math.floor((clip - line.from) * 30)] ?? 0) * 1.25) : 0;
+    };
+    const ctx = { pointsAt, speedOf, heads, talkOf };
 
     /**
      * How a person is moving at t, for the parts that follow through (hair, sleeves, skirts):
@@ -342,7 +352,9 @@
         const show = (o.from === undefined ? 1 : WA.core.smooth(seg(t, o.from, o.from + 0.3))) * (o.until === undefined ? 1 : 1 - WA.core.smooth(seg(t, o.until, o.until + 0.3)));
         node.setAttribute("opacity", f2(show));
       }
+      if (items) WA.items.render(items, t, ctx);
       if (board) WA.board.render(board, t);
+      if (overlay) WA.board.renderOverlay(overlay, t);
       const shake = WA.fx.render(S, fx, t, ctx);
       S.styleTick(t);
       S.setCamera(cam, t, shake);

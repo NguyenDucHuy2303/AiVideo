@@ -60,8 +60,18 @@ Chim, cá, ếch, kiến dùng rối riêng (`runtime/critters.js`) nhưng khai 
 ## Động tác (`runtime/motions.js`)
 
 - Người: `idle still walk run stretch heroic raise point talk wave cheer bow kneel sit crouch leap ride swing ride_swing fall lie sit_up fly eat give worry land call march charge carry undress hold_bowl`
+- Việc thường ngày (phim tiếng Anh, 16/11/2026): `carry_front` (đi, bê đồ trước ngực) `clap` (vỗ tay) `dance` (nhún nhảy) `kick` (đá) `hop` (nhảy tưng tưng) `peek` (nghiêng người ló nhìn) `knock` (gõ cửa) `hug` (ôm) `pick_up` (cúi nhặt rồi cầm) `nod` (gật đầu) `search` (ngó quanh tìm)
 - Ngựa: `stand walk gallop rear fly`
 - Các động tác nối mượt vào nhau (0,25 s). `leap` với `onto` thì nhảy lên ngựa rồi tự cưỡi theo nhịp phi của ngựa.
+
+## Đồ vật trong cảnh (`runtime/items.js`)
+
+- `scene.items`: đồ vật hình Fluent Emoji (icons.ts nhúng SVG) đứng trên mặt đất của cảnh, máy quay đi qua như với nhân vật.
+- `from`/`until`: bật ra, biến mất. `shakes` [{at, dur, amp, hop}]: rung lắc. `carry` {by, from, until, dy}: nhân vật bê trước ngực. `moves` [{at, dur, to: [x, lift], arc}]: trượt, bay vòng cung (bóng bị đá).
+- `pops` [at…]: mở ra (nảy lên, nén lại, pháo giấy), đồ vẫn còn. `burst`: nổ tung, biến mất.
+- `label` {at, until, text, sub, on}: thẻ chữ tiếng Anh (đỏ) + nghĩa tiếng Việt trên đồ vật, hoặc trên một nhân vật/con vật (`on`).
+- `face` {y, eyes, look}: đồ vật biết nói. Mắt to biết chớp, liếc; miệng mở theo giọng (`project.json` "speakers" trỏ tên người nói vào id đồ vật; story.ts nhận đồ vật có `face` làm người nói).
+- Hình tự vẽ khi bộ Fluent thiếu (`icons.ts` CUSTOM): khối xếp hình ABC, kim tự tháp, tổ ong, sáp ong, sao Kim, viên đường, giấy vo viên, cùng đồ dùng học tập.
 
 ## Bối cảnh (`runtime/scenery.js`, `runtime/stage.js`)
 

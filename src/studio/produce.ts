@@ -10,6 +10,8 @@
  */
 import { isFact, isQA, profileOf, writeFact, writeQA } from "./qa.ts";
 import { writeLesson } from "./lesson.ts";
+import { buildEpisode, writeLessonEpisode } from "./episode.ts";
+import { formatOf } from "./formats.ts";
 import { writeStoryCopy } from "./copy.ts";
 import { prepareQA, renderQA } from "./qaproduce.ts";
 import fs from "node:fs/promises";
@@ -34,6 +36,8 @@ export const projectOf = (slug: string) => path.join(ROOT, "projects", slug);
 
 async function fail(slug: string, err: unknown, back?: JobStatus): Promise<Job> {
   const job = await loadJob(slug);
+  // A render cut short is ready to render again (not "rendering" for ever).
+  if (job.stage === "rendering") { job.stage = "ready"; await saveJob(job); }
   // The studio is stopping: leave the job as it was; the next start picks it up again.
   if (wasInterrupted()) return back && job.status !== back ? setStatus(job, back, "dừng giữa chừng, sẽ làm tiếp") : job;
   // Paused by the user: the job waits where it was, it has not failed.
@@ -54,7 +58,15 @@ export async function writeJob(slug: string, log: (s: string) => void = console.
     let job = await loadJob(slug);
     const dir = jobDir(slug);
     // A script already written (an interrupted run) is not written again.
-    const resume = job.status === "writing" && (await exists(path.join(dir, "plan.json")));
+    // (an English lesson whose format was changed is written again in the new one)
+    const resume = job.status === "writing" && (await exists(path.join(dir, "plan.json")))
+      && (job.kind !== "lesson" || formatOf(JSON.parse(await fs.readFile(path.join(dir, "plan.json"), "utf8")).format).id === formatOf(job.format).id);
+    // An English lesson (16/11/2026): an episode, a story of its own (episode.ts), not a board lesson.
+    if (job.kind === "lesson") {
+      const written = job.status === "writing" && (await exists(path.join(dir, "episode.json"))) && (await exists(path.join(dir, "plan.json")));
+      const problems = written ? [] : await writeLessonEpisode(slug, log);
+      return setStatus(await loadJob(slug), "review", problems.length ? `${problems.length} vấn đề còn lại: ${problems.slice(0, 3).join(" ")}` : undefined);
+    }
     // A question for the English question channel (qa.ts): its own writer, no era or costumes.
     if (isQA(job.kind)) {
       const problems = resume ? [] : await (job.kind === "lesson" ? writeLesson : isFact(job.kind) ? writeFact : writeQA)(slug, log);
@@ -125,7 +137,9 @@ export async function prepare(slug: string, log: (s: string) => void = console.l
     from = job.status;
     job = await setStatus(job, "producing", fixing ? "sửa theo góp ý" : "chuẩn bị");
     // A question (Ask Huy): its own voices, direction and paintings (qaproduce.ts).
-    if (isQA(job.kind)) await prepareQA(slug, log);
+    // An English lesson's episode: voices (its English heard back), staging, paintings (episode.ts).
+    if (job.kind === "lesson") await buildEpisode(projectOf(slug), JSON.parse(await fs.readFile(path.join(jobDir(slug), "episode.json"), "utf8")), log);
+    else if (isQA(job.kind)) await prepareQA(slug, log);
     else {
       await buildProject(job, projectOf(slug), { notes: job.notes.filter((n) => n.on === "video").map((n) => n.text), redirect: fixing, revoice: !fixing }, log);
       // The YouTube words for viewers (copy.ts, ~8k tokens): a failure only leaves the plainer ones.
@@ -174,9 +188,12 @@ export async function shorts(slug: string, log: (s: string) => void = console.lo
 export async function render(slug: string, log: (s: string) => void = console.log): Promise<Job> {
   try {
     let job = await loadJob(slug);
+    // (marked as rendering: the scheduler takes "ready" jobs, so a render started by hand is not started twice)
+    job.stage = "rendering";
     job = await setStatus(job, "producing", "đang render");
     let out: string;
-    if (isQA(job.kind)) out = await renderQA(slug, log);
+    if (job.kind === "lesson") out = await renderStory(projectOf(slug), { onLog: log });
+    else if (isQA(job.kind)) out = await renderQA(slug, log);
     else {
       await syncArt(job, projectOf(slug)); // a style or intro changed on the review page since
       out = await renderStory(projectOf(slug), { onLog: log });

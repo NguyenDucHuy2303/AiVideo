@@ -20,9 +20,11 @@ test("a laid-out film and its Shorts are on the calendar by their YouTube times"
   assert.deepEqual(es.map((e) => [e.label, e.file]), [["Bản tiếng Việt", "video-tieng-viet.mp4"], ["Short 1", "short-1.mp4"], ["Short 2", "short-2.mp4"]]);
   assert.equal(es[0]!.folder, "Ếch ngồi đáy giếng");
   assert.equal(es[0]!.channelName, "Huy Kể Chuyện");
-  // A film goes to Facebook too, a Short to TikTok and Facebook.
-  assert.deepEqual(es[0]!.social, { facebook: false });
+  // A film stays on YouTube; a Short goes to TikTok and Facebook (the studio's, once the channel has its Page).
+  assert.deepEqual(es[0]!.social, {});
   assert.deepEqual(es[1]!.social, { tiktok: false, facebook: false });
+  const auto = { "huy-ke-chuyen": { ...SETTINGS["huy-ke-chuyen"]!, facebookPage: "1" } } as PublishSettings;
+  assert.deepEqual(entriesOf(job(), auto, NOW)[1]!.social, { tiktok: false });
 });
 
 test("past its time and not on YouTube: late; posted: its link, not late", () => {

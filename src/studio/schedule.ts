@@ -10,11 +10,14 @@
  */
 import { hasApiKey, hintsFor, refreshOwnStats, refreshPopular } from "./trends.ts";
 import { jobOccasion } from "./occasions.ts";
-import { wasInterrupted } from "../utils/process.ts";
+import { run, wasInterrupted } from "../utils/process.ts";
 import { channelOf, checkOne, dueCheck, exportJob, needsExport, staleExport, normalise, publishOne, PUBLISH_DEFAULTS, toPublish, token, type PublishSettings, type Published, type What } from "./publish.ts";
 import { dailyPick, lineOf, PICK_DEFAULTS, proposerOf, type PickSettings } from "./pick.ts";
 import { isFact, isQA, proposeFacts, proposeQuestions } from "./qa.ts";
 import { proposeLessons } from "./lesson.ts";
+import { FORMATS, nextFormats } from "./formats.ts";
+import { makeLong, needsLong } from "./longs.ts";
+import { dueReel, lastReels, postDue } from "./facebook.ts";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { exists } from "../utils/fs.ts";
@@ -35,6 +38,8 @@ export interface ScheduleSettings {
   office: { days: number[]; start: string; end: string };
   /** Scripts kept waiting for review (written ahead). */
   scriptsAhead: number;
+  /** By day, renders start once the user has been away this many minutes (0: never by day). */
+  idleRenderMinutes?: number;
   /** Threads for the image model during office hours. */
   officeThreads: number;
   /** The daily pick (pick.ts): cut-off time and content lines with their videos per day. */
@@ -92,6 +97,19 @@ async function log(line: string): Promise<void> {
   await fs.appendFile(LOG, text);
 }
 
+/**
+ * The user has not touched the keyboard or mouse for `minutes` (GNOME's idle monitor, over the
+ * session bus): by day the computer is free for a render. Off (0) or unknown: not away.
+ */
+export async function userAway(minutes: number): Promise<boolean> {
+  if (!(minutes > 0)) return false;
+  try {
+    const r = await run("gdbus", ["call", "--session", "--dest", "org.gnome.Mutter.IdleMonitor", "--object-path", "/org/gnome/Mutter/IdleMonitor/Core", "--method", "org.gnome.Mutter.IdleMonitor.GetIdletime"], { timeoutMs: 5000 });
+    const ms = Number(/uint64 (\d+)/.exec(r.stdout)?.[1]);
+    return Number.isFinite(ms) && ms >= minutes * 60_000;
+  } catch { return false; }
+}
+
 /** The next thing to do, by the rules above. */
 async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<{ what: string; slug?: string; run: () => Promise<unknown> } | undefined> {
   const known = await eras();
@@ -100,13 +118,26 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
   const soon = new Map(jobs.map((j) => [j.slug, jobOccasion(j)?.left ?? 999]));
   const first = (f: (j: Job) => boolean) => jobs.filter((j) => (!j.retryAt || new Date(j.retryAt) <= new Date()) && f(j)).sort((a, b) => soon.get(a.slug)! - soon.get(b.slug)!)[0];
   const say = (slug: string) => (l: string) => void log(`[${slug}] ${l.trim()}`);
+  // Every approved "Did you know?" Short gets its long version (longs.ts: no brain, a second).
+  const lonely = jobs.find((j) => needsLong(j, jobs));
+  if (lonely) return { what: "long", slug: lonely.slug, run: () => makeLong(lonely.slug, say(lonely.slug)) };
+  // Facebook is the studio's (facebook.ts): a Short whose time has come goes to its Page as a Reel
+  // (a minute's upload, any hour), late ones one at a time per Page.
+  const last = lastReels(jobs, s.pick.lines);
+  for (const j of jobs) {
+    if (j.status !== "done") continue;
+    const files = await fs.readdir(jobDir(j.slug)).catch(() => [] as string[]);
+    if (dueReel(j, files, s.publish, s.pick.lines, new Date(), last)) return { what: "facebook", slug: j.slug, run: () => postDue(j.slug, s.publish, s.pick.lines, say(j.slug)) };
+  }
+  // Heavy work (renders) at night, or by day while the user is away from the computer (17/11/2026).
   const ready = first((j) => j.status === "producing" && j.stage === "ready");
-  if (!office && ready) return { what: "render", slug: ready.slug, run: () => render(ready.slug, say(ready.slug)) };
   const cut = first((j) => (j.status === "video" || j.status === "done") && !j.shorts);
-  if (!office && cut) return { what: "shorts", slug: cut.slug, run: () => shorts(cut.slug, say(cut.slug)) };
-  // The English version of an approved film: voices by day, the film at night.
   const enFilm = first((j) => j.status === "done" && j.english === "ready");
-  if (!office && enFilm) return { what: "english-render", slug: enFilm.slug, run: () => english(enFilm.slug, "render", say(enFilm.slug)) };
+  const heavy = !office || ((ready || cut || enFilm) && (await userAway(s.idleRenderMinutes ?? 15)));
+  if (heavy && ready) return { what: "render", slug: ready.slug, run: () => render(ready.slug, say(ready.slug)) };
+  if (heavy && cut) return { what: "shorts", slug: cut.slug, run: () => shorts(cut.slug, say(cut.slug)) };
+  // The English version of an approved film: voices by day, the film at night (or while away).
+  if (heavy && enFilm) return { what: "english-render", slug: enFilm.slug, run: () => english(enFilm.slug, "render", say(enFilm.slug)) };
   // Videos the user has not reviewed in time: checked by machine (one low-priority ffmpeg pass,
   // under a minute), then approved (autoreview.ts). Any hour.
   for (const j of jobs) {
@@ -124,10 +155,10 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
     if (d && (await token(d.pub.channel))) return { what: `publish-check ${d.what}`, slug: j.slug, run: () => checkOne(j.slug, d.what, d.index, say(j.slug)) };
   }
   // Manual channels: lay out every approved video not yet laid out (~/youtube), and again one made
-  // again since (a re-render: the folder still holds the old file). A failure
+  // again since, right after its render (approved again or not: the folder holds the newest). A failure
   // waits an hour (else the same job would be picked again at every tick).
   for (const j of jobs) {
-    if (j.status !== "done" || j.publishHold || (j.publishRetryAt && new Date(j.publishRetryAt) > new Date())) continue;
+    if (!["done", "video"].includes(j.status) || j.publishHold || (j.publishRetryAt && new Date(j.publishRetryAt) > new Date())) continue;
     const files = await fs.readdir(jobDir(j.slug)).catch(() => [] as string[]);
     if (needsExport(j, files, s.publish, s.pick.lines) || (await staleExport(j, files))) return {
       what: "export", slug: j.slug,
@@ -200,10 +231,12 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
           const lang = line.kinds?.some((k) => k === "qa" || k === "fact") ? "en" : "vi";
           const hints = await hintsFor(line, lang, jobs, s.pick.lines);
           if (proposerOf(line) === "lessons") {
-            for (const t of await proposeLessons(count, mine.map((j) => ({ topic: j.topic })), (l) => void log(l.trim()), hints)) {
-              const job = await newJob(t.question, { kind: "lesson", summary: t.why });
+            // Each new lesson in the format least lately used on the line (formats.ts).
+            const formats = nextFormats(count, mine.map((j) => j.format), line.formats);
+            for (const t of await proposeLessons(count, mine.map((j) => ({ topic: j.topic })), (l) => void log(l.trim()), hints, formats)) {
+              const job = await newJob(t.question, { kind: "lesson", format: t.format, summary: t.why });
               await fs.writeFile(path.join(jobDir(job.slug), "topic.json"), JSON.stringify(t, null, 2));
-              await log(`+ ${job.slug} [bài tiếng Anh]`);
+              await log(`+ ${job.slug} [bài tiếng Anh: ${FORMATS[t.format].name}]`);
             }
           } else if (proposerOf(line) === "questions" || proposerOf(line) === "facts") {
             const made = await Promise.all(mine.map(async (j) => {
@@ -236,6 +269,13 @@ async function next(jobs: Job[], office: boolean, s: ScheduleSettings): Promise<
 /** Run forever (the studio service). */
 export async function runScheduler(): Promise<never> {
   await log(`scheduler started (pid ${process.pid})`);
+  // A render killed with the studio (no time to tidy up) left its job "rendering": ready again
+  // once that is long past (a film renders in under an hour; one rendered by hand is left alone).
+  for (const j of await listJobs()) {
+    const last = j.history.at(-1);
+    if (j.stage === "rendering" && last && Date.now() - new Date(last.at).getTime() > 3 * 3600_000) { j.stage = "ready"; await saveJob(j); await log(`[${j.slug}] render cut short: ready again`); }
+    if (j.english === "rendering" && last && Date.now() - new Date(last.at).getTime() > 3 * 3600_000) { j.english = "ready"; await saveJob(j); await log(`[${j.slug}] English render cut short: ready again`); }
+  }
   // Google Drive beside the tasks (drive.ts): uploads never hold up a render.
   startDrive((l) => void log(l));
   for (;;) {
@@ -273,14 +313,19 @@ export async function runScheduler(): Promise<never> {
 async function english(slug: string, step: "prepare" | "render", log: (s: string) => void): Promise<void> {
   try {
     if (step === "prepare") await prepareEnglish(slug, log);
-    else await renderEnglish(slug, log);
+    else {
+      // (marked first: a render started by hand at the same time sees it and leaves it)
+      const j = await loadJob(slug); j.english = "rendering"; await saveJob(j);
+      await renderEnglish(slug, log);
+    }
     const job = await loadJob(slug);
     job.english = step === "prepare" ? "ready" : "done";
     await saveJob(job);
     await setStatus(job, job.status, step === "prepare" ? "bản tiếng Anh: giọng xong" : "bản tiếng Anh: xong");
   } catch (err) {
     const job = await loadJob(slug);
-    job.english = `failed: ${(err as Error).message.slice(0, 200)}`;
+    // (a render cut short by a restart is ready to render again)
+    job.english = wasInterrupted() && step === "render" ? "ready" : `failed: ${(err as Error).message.slice(0, 200)}`;
     await saveJob(job);
   }
 }

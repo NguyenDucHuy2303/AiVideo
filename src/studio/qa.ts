@@ -70,7 +70,11 @@ export const BEATS = ["hook", "guess", "step", "imagine", "recap", "next"] as co
 /** What the explainer pictures can show (phase 2 builds them in the vector runtime). */
 export const VISUALS = ["host", "scene", "diagram", "labels", "arrows", "map", "compare", "zoom", "count", "experiment"] as const;
 
-export interface QAScene { beat: (typeof BEATS)[number]; step?: number; visual: { kind: (typeof VISUALS)[number]; what: string }; parts: Part[] }
+export interface QAScene {
+  beat: (typeof BEATS)[number]; step?: number; visual: { kind: (typeof VISUALS)[number]; what: string }; parts: Part[];
+  /** A game lesson (formats.ts "gameshow"): who won a point in this scene ("Bối", "Beo", "both"). */
+  point?: string;
+}
 export interface QAPlan {
   title: string;
   question: string;

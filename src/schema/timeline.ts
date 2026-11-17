@@ -176,6 +176,8 @@ export const Scene = z.object({
     .array(z.object({ text: z.string().min(1).max(500), startFrame: z.int().min(0), endFrame: z.int().min(1), who: z.string().optional(), mood: z.string().optional() }))
     .max(60)
     .optional(),
+  /** Every part of the narration in order, pauses too (seconds into the scene): what a story's actions are timed on. */
+  marks: z.array(z.object({ at: z.number().min(0), end: z.number().min(0), pause: z.boolean().optional(), who: z.string().optional() })).max(80).optional(),
   transitionOut: z
     .object({
       type: z.enum(TRANSITIONS),

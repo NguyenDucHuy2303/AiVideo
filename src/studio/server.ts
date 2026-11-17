@@ -20,6 +20,7 @@ import { jobDir, listJobs, loadJob, saveJob, setStatus, type JobStatus } from ".
 import { saveLineWeek, schedulerState, settings as scheduleSettings } from "./schedule.ts";
 import { lineOf, weekly } from "./pick.ts";
 import { artOf, validStyle, validTheme } from "./art.ts";
+import { FORMAT_IDS, FORMATS, formatOf, isFormat } from "./formats.ts";
 import { costumeSheet } from "./design.ts";
 import { BRAND_DIR, BRAND_THEMES } from "../animation/brand/brand.ts";
 import { calendar } from "./calendar.ts";
@@ -128,6 +129,7 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
         ...j, tokens: all.filter((e) => e.job === j.slug).reduce((n, e) => n + weigh(e), 0),
         post: j.status === "done" ? postState(j, await fsp.readdir(jobDir(j.slug)).catch(() => [] as string[])) : undefined,
         occasion: j.status === "rejected" ? undefined : jobOccasion(j),
+        lessonFormat: j.kind === "lesson" ? (({ id, name, icon }) => ({ id, name, icon }))(formatOf(j.format)) : undefined,
       })));
       return json(res, { jobs, scheduler: await schedulerState(), reviewHours: (await scheduleSettings()).review.videoHours });
     }
@@ -137,6 +139,7 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
       const job = await loadJob(slug);
       return json(res, {
         job, art: artOf(job), redrawing: redrawing.has(slug),
+        ...(job.kind === "lesson" ? { format: formatOf(job.format).id, formats: FORMAT_IDS.map((id) => ({ id, name: FORMATS[id].name, icon: FORMATS[id].icon, fits: FORMATS[id].fits })) } : {}),
         plan: await readJson(path.join(dir, "plan.json")),
         project: await readJson(path.join(dir, "project.json")),
         sources: await readJson(path.join(dir, "sources.json")),
@@ -167,6 +170,18 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
         costumeSheet(slug).catch((e) => console.error(`sheet ${slug}: ${(e as Error).message}`)).finally(() => redrawing.delete(slug));
       }
       return json(res, { job, art, redrawing: redrawing.has(slug) });
+    }
+    if (req.method === "POST" && parts[1] === "job" && SLUG.test(parts[2] ?? "") && parts[3] === "format") {
+      // Another format for an English lesson: the script is written again in it (one writing).
+      const slug = parts[2]!, job = await loadJob(slug), b = await body(req) as Record<string, unknown>;
+      if (job.kind !== "lesson") return json(res, { error: "chỉ bài Học tiếng Anh có khuôn" }, 400);
+      if (!isFormat(b.format)) return json(res, { error: "khuôn không có" }, 400);
+      if (!["review", "rewrite", "failed"].includes(job.status)) return json(res, { error: `không đổi khuôn được khi đang "${job.status}"` }, 400);
+      if (formatOf(job.format).id === b.format) return json(res, { job });
+      job.format = b.format;
+      delete job.score;
+      await setStatus(job, "writing", `đổi khuôn: ${FORMATS[b.format].name}`);
+      return json(res, { job });
     }
     if (req.method === "POST" && parts[1] === "job" && SLUG.test(parts[2] ?? "") && parts[3] === "rerender") {
       // The finished film again with the new look: no brain, only the render (tonight).
@@ -249,6 +264,8 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
         const published = await markPublished(parts[2]!, b.what, b.index === undefined ? undefined : Number(b.index), String(b.url ?? ""), s.pick.lines);
         // The topic's sheet again: this video marked published, the film's link in the Shorts.
         if (hadFolder) await exportJob(parts[2]!, await listJobs(), s.publish, s.pick.lines, { force: true });
+        // (a long version's link: its "Did you know?" Shorts' posts point to it now)
+        if (b.what === "long") for (const f of (await listJobs()).filter((j) => j.longJob === parts[2] && Object.keys(j.exported ?? {}).length)) await exportJob(f.slug, await listJobs(), s.publish, s.pick.lines, { force: true }).catch(() => {});
         return json(res, { published });
       } catch (err) { return json(res, { error: (err as Error).message }, 400); }
     }

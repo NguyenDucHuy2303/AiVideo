@@ -14,7 +14,8 @@ export const PLATFORMS: Platform[] = ["tiktok", "facebook"];
 export const PLATFORM_NAME: Record<Platform, string> = { tiktok: "TikTok", facebook: "Facebook" };
 
 /** Which platforms a video goes to: a vertical Short to both, a 16:9 film to Facebook only. */
-export const platformsOf = (what: What): Platform[] => (what === "short" ? ["tiktok", "facebook"] : ["facebook"]);
+// (only Shorts leave YouTube since 16/11/2026: films are watched whole on YouTube, not on Facebook)
+export const platformsOf = (what: What): Platform[] => (what === "short" ? ["tiktok", "facebook"] : []);
 
 /** Hashtags by language and kind: few and plain (TikTok and Facebook rank by them, not by many). */
 export function hashtagsOf(lang: string, kind: string | undefined, platform: Platform): string[] {
@@ -50,17 +51,23 @@ export function blurbOf(description: string, max = 220): string {
   return out.length > max ? `${out.slice(0, max - 1).trimEnd()}…` : out;
 }
 
+/** Where a post's YouTube link goes until the user pastes it (the studio fills it in then;
+ *  Facebook is never posted with it: facebook.ts waits for the link). */
+export const LINK_WAIT = "[link YouTube: studio tự điền khi anh dán link video vào trang duyệt]";
+
 /**
- * The words of one post. A Short tells where the whole film is (TikTok shows no links: the
- * channel's name; Facebook: the link once known).
+ * The words of one post. Every post carries a YouTube link (the user's rule, 16/11/2026): a
+ * film's Short the whole film's, a "Did you know?" Short its long version's once that is out,
+ * else its own on YouTube (`own`; publish.ts linkOfShort). TikTok makes no link in a caption
+ * clickable: the link is written out (to copy) and the profile's (bio) named under it.
  */
-export function socialText(platform: Platform, meta: Meta, o: { what: What; kind?: string; channel: string; longUrl?: string; isFact?: boolean; hook?: string }): string {
+export function socialText(platform: Platform, meta: Meta, o: { what: What; kind?: string; channel: string; youtube?: string; link?: string; own?: boolean; isFact?: boolean; hook?: string }): string {
   // A film's Short opens on a line of its own (its posts differ), the film's name under it.
   const vi = meta.lang === "vi", title = o.hook ? `${o.hook}\n${postTitle(meta, true)}` : postTitle(meta), blurb = o.hook ? "" : blurbOf(meta.description);
-  const full = o.what === "short" && !o.isFact
-    ? platform === "facebook" && o.longUrl ? (vi ? `Xem trọn phim: ${o.longUrl}` : `Watch the whole video: ${o.longUrl}`)
-      : vi ? `Xem trọn phim trên YouTube: ${o.channel}` : `Watch the whole video on YouTube: ${o.channel}`
-    : "";
+  const label = o.own ? (vi ? "Xem trên YouTube" : "Watch on YouTube")
+    : `${o.isFact ? (vi ? "Xem giải thích đầy đủ" : "Watch the full explanation") : vi ? "Xem trọn phim" : "Watch the whole video"}${vi ? " trên YouTube" : " on YouTube"}`;
+  const bio = vi ? `👉 Link bấm được ở trang cá nhân (bio) của kênh ${o.youtube ?? o.channel}` : `👉 Tap the link in our bio (${o.youtube ?? o.channel})`;
+  const full = o.what !== "short" ? "" : `${label}: ${o.link ?? LINK_WAIT}${platform === "tiktok" ? `\n${bio}` : ""}`;
   const follow = vi ? `Theo dõi ${o.channel} để xem thêm nhé!` : `Follow ${o.channel} for more!`;
   return [title, blurb, full, follow, hashtagsOf(meta.lang, o.kind, platform).join(" ")].filter(Boolean).join("\n\n").slice(0, 2200);
 }

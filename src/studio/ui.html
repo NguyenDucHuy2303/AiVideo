@@ -73,11 +73,46 @@
   .themes video { border-radius: 10px; }
   p.frow { margin: 6px 0 2px; font-size: 14px; }
   p.frow.must { background: #fff3d6; border-left: 4px solid #e0a84a; padding: 4px 8px; border-radius: 4px; }
-  .copybox { background: #fffdf8; border: 1.5px solid var(--line, #e6d8bf); border-radius: 8px; padding: 8px 10px; font-size: 14px; margin: 4px 0 10px; max-height: 260px; overflow: auto; }
-  details.post { border: 1.5px solid var(--line, #e6d8bf); border-radius: 12px; padding: 8px 14px; margin: 10px 0; background: #fff; }
-  details.post summary { cursor: pointer; padding: 4px 0; }
-  details.post h4 { margin: 14px 0 4px; }
-  button.cp { font-size: 12px; padding: 2px 8px; margin-left: 6px; }
+  /* Lời đăng: a video picker, platform tabs, then what to paste (left) and what to pick (right). */
+  .vpick { display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0 14px; }
+  .vp { font: inherit; text-align: left; border: 2px solid var(--line); background: #fff; border-radius: 12px; padding: 8px 12px; cursor: pointer; min-width: 150px; line-height: 1.35; }
+  .vp:hover { border-color: var(--bronze); }
+  .vp.on { border-color: var(--red); background: #fff6ee; box-shadow: 0 2px 8px rgba(163,38,28,.12); }
+  .vp b { display: block; font-size: 15px; }
+  .vp small { color: var(--muted); font-size: 12.5px; display: block; }
+  .vp .marks { font-size: 12px; margin-top: 3px; color: var(--muted); }
+  .vp .marks i { font-style: normal; color: var(--green); font-weight: 700; }
+  .ppane { display: none; } .ppane.on { display: block; }
+  .ptabs { display: flex; gap: 0; border-bottom: 2px solid var(--line); margin-bottom: 14px; }
+  .ptab { font: inherit; font-size: 15px; border: 0; background: none; padding: 8px 16px; cursor: pointer; color: var(--muted); border-bottom: 3px solid transparent; margin-bottom: -2px; }
+  .ptab.on { color: var(--ink); font-weight: 700; border-color: var(--red); }
+  .ptab .ok-mark { color: var(--green); font-size: 13px; margin-left: 4px; }
+  .facts { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
+  .fact { background: #fff3d6; border: 1.5px solid #ecc77a; border-radius: 10px; padding: 6px 12px; font-size: 14px; }
+  .fact small { display: block; color: var(--muted); font-size: 12px; }
+  .pgrid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+  @media (max-width: 1250px) { .pgrid { grid-template-columns: 1fr; } }
+  .colh { font-size: 13px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 0 0 8px; font-weight: 700; }
+  .fld { border: 1.5px solid var(--line); border-radius: 12px; background: #fff; margin-bottom: 12px; overflow: hidden; }
+  .fh { display: flex; align-items: center; gap: 10px; padding: 7px 8px 7px 12px; background: #faf3e6; border-bottom: 1px solid var(--line); }
+  .fh b { font-size: 15px; } .fh small { color: var(--muted); font-size: 12.5px; } .fh small.over { color: #b3261e; font-weight: 700; }
+  .fh .grow { flex: 1; }
+  .fv { padding: 10px 12px; font-size: 14.5px; line-height: 1.55; white-space: pre-wrap; word-break: break-word; max-height: 220px; overflow: auto; }
+  .fn { padding: 0 12px 8px; font-size: 12.5px; color: var(--muted); }
+  button.cp { font: inherit; font-size: 14px; font-weight: 600; padding: 5px 14px; border-radius: 8px; border: 2px solid #e0a84a; background: #fff; color: #9a5a00; cursor: pointer; white-space: nowrap; }
+  button.cp:hover { background: #fff3d6; }
+  button.cp.done { background: var(--green); border-color: var(--green); color: #fff; }
+  .picks { list-style: none; margin: 0; padding: 0; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; }
+  .picks li { padding: 8px 12px; border-bottom: 1px solid #f0e6d2; font-size: 14px; line-height: 1.4; }
+  .picks li:last-child { border: 0; }
+  .picks .k { color: var(--muted); font-size: 13px; display: block; }
+  .picks .v { font-weight: 600; }
+  .picks .n { display: block; color: var(--muted); font-size: 12.5px; margin-top: 1px; }
+  .picks li.must { background: #fff8e8; }
+  .picks li.must .k::before { content: "⚠ "; color: #c77700; }
+  .ptail { margin-top: 12px; font-size: 13.5px; color: var(--muted); }
+  details.fold { margin-bottom: 16px; } details.fold > summary { cursor: pointer; font-weight: 700; padding: 10px 18px; background: var(--card); border: 1.5px solid var(--line); border-radius: 14px; } details.fold[open] > summary { margin-bottom: 10px; }
+  table.posted td, table.posted th { padding: 7px 8px; } table.posted .nope { color: #b9a990; }
   table.kv td:first-child { color: var(--muted); width: 32%; }
   .warn { background: #fff0d6; border: 1.5px solid #e8b25a; border-radius: 10px; padding: 8px 12px; margin-bottom: 12px; font-size: 14px; }
   .dls { display:flex; gap:10px; flex-wrap:wrap } a.dl { display:inline-block; padding:7px 14px; border-radius:8px; background:#2e7d32; color:#fff; text-decoration:none; font-weight:600 } a.dl:hover { background:#256628 }
@@ -115,7 +150,7 @@ const TABS = [
 ];
 const INSPECT_VI = { held: "giữ tay cứng", still: "đứng im", "prop-face": "đồ che mặt", "talk-covered": "nói khi bị che miệng", "head-cut": "khung cắt đầu", "faces-overlap": "mặt chồng nhau", "speaker-off": "người nói ngoài hình" };
 const STATUS = { writing: "đang viết", review: "chờ duyệt kịch bản", rewrite: "đang viết lại", approved: "đã duyệt, chờ làm", producing: "đang làm video", video: "chờ duyệt video", fix: "chờ sửa video", done: "xong", rejected: "đã bỏ", failed: "lỗi" };
-const TASK = { write: "viết kịch bản", prepare: "chuẩn bị video", render: "render video", shorts: "cắt Shorts", english: "chuẩn bị bản tiếng Anh", "english-render": "render bản tiếng Anh", topics: "đề xuất chủ đề", "auto-review": "kiểm tra để tự duyệt video" };
+const TASK = { write: "viết kịch bản", prepare: "chuẩn bị video", render: "render video", shorts: "cắt Shorts", english: "chuẩn bị bản tiếng Anh", "english-render": "render bản tiếng Anh", topics: "đề xuất chủ đề", "auto-review": "kiểm tra để tự duyệt video", long: "tạo bản dài của Short" };
 let tab = null, jobs = [], current = null, sched = null, ART = null, REVIEW_HOURS = 12;
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -162,7 +197,7 @@ function drawList() {
   $("#list").innerHTML = list.length ? list.map((j) => `
     <div class="job ${current === j.slug ? "on" : ""}" onclick="show('${j.slug}')">
       <b>${esc(j.topic)}</b>
-      <small>${j.kind === "qa" ? "hỏi–đáp (tiếng Anh)" : j.kind === "qa-vi" ? "hỏi–đáp (tiếng Việt)" : j.kind === "lesson" ? "Học tiếng Anh cùng Huy" : j.kind === "fact" ? "Short Did you know? (Ask Huy)" : j.kind === "fact-vi" ? "Short Bạn có biết? (Hỏi Huy)" : `${esc(j.kind || "")} · ${esc(j.era || "")}`} · ${fmt(j.tokens)} token${j.score ? ` · ${j.score.value}/10` : ""}${j.autoPicked ? " · tự chọn" : ""}${j.autoApproved ? " · studio tự duyệt video" : ""}${j.status === "video" && j.autoCheck && !j.autoCheck.ok ? " · ⚠ kiểm tra máy chưa đạt" : ""}</small><br>
+      <small>${j.kind === "qa" ? "hỏi–đáp (tiếng Anh)" : j.kind === "qa-vi" ? "hỏi–đáp (tiếng Việt)" : j.kind === "lesson" ? `Học tiếng Anh cùng Huy${j.lessonFormat ? ` · ${j.lessonFormat.icon} ${esc(j.lessonFormat.name)}` : ""}` : j.kind === "fact" ? "Short Did you know? (Ask Huy)" : j.kind === "fact-vi" ? "Short Bạn có biết? (Hỏi Huy)" : `${esc(j.kind || "")} · ${esc(j.era || "")}`} · ${fmt(j.tokens)} token${j.score ? ` · ${j.score.value}/10` : ""}${j.autoPicked ? " · tự chọn" : ""}${j.fromShort ? " · 📺 bản dài của Short" : ""}${j.autoApproved ? " · studio tự duyệt video" : ""}${j.status === "video" && j.autoCheck && !j.autoCheck.ok ? " · ⚠ kiểm tra máy chưa đạt" : ""}</small><br>
       ${occBadge(j)}${j.post ? `${postBadge(j.post)}<br>${postCounts(j.post)}` : `<span class="st ${j.status}">${STATUS[j.status] || j.status}</span>
       <small> ${ago(j.history.at(-1).at)}</small>`}
     </div>`).join("") : `<div class="empty">Trống.</div>`;
@@ -211,6 +246,9 @@ async function show(slug) {
   if (job.inspect) h += `<div class="meta">Máy soi độ tự nhiên: <b>${job.inspect.perMinute} lỗi/phút</b>${Object.keys(job.inspect.byKind).length ? ` · ${Object.entries(job.inspect.byKind).map(([k, v]) => `${INSPECT_VI[k] || k} ${v.count}`).join(" · ")}` : " · không thấy lỗi"}</div>`;
   if (job.status === "video" && job.autoCheck && !job.autoCheck.ok) h += `<div class="warn">Studio chưa tự duyệt được video này, kiểm tra máy thấy: ${esc(job.autoCheck.problems.join("; "))}. Anh xem giúp.</div>`;
   if (job.autoApproved) h += `<div class="meta">✔ <b>Studio tự duyệt video</b> lúc ${new Date(job.autoApproved).toLocaleString("vi")} (anh chưa duyệt kịp, kiểm tra máy đạt). Chưa ưng thì bấm “Hoãn đăng” ở mục YouTube.</div>`;
+  if ((job.kind === "fact" || job.kind === "fact-vi") && ["approved", "producing", "video", "done"].includes(job.status)) h += longSection(job);
+  if (job.fromShort) h += `<div class="meta">📺 Bản dài của Short <a href="#${job.fromShort}" onclick="openFromCalendar('${job.fromShort}');return false">${esc(jobs.find((j) => j.slug === job.fromShort)?.topic || job.fromShort)}</a> (studio chọn bài này trước trong phần của dòng)</div>`;
+  if (job.fbError) h += `<div class="warn">Đăng Facebook lỗi: ${esc(job.fbError)} (studio thử lại sau 30 phút; mã Trang hỏng thì báo em tạo lại)</div>`;
   if (job.error) h += `<div class="warn">Lỗi: ${esc(job.error)}</div>`;
   else if (last?.info && /vấn đề/.test(last.info)) h += `<div class="warn">${esc(last.info)}</div>`;
   if (job.status === "video") {
@@ -224,16 +262,20 @@ async function show(slug) {
     const pub = job.published || {}, yt = (p) => p.what === "short" ? pub.shorts?.[p.index] : pub[p.what];
     const st = jobs.find((j) => j.slug === slug)?.post;
     const cell = (p, pl) => !p.text[pl] ? `<td style="color:#bbb">—</td>`
-      : `<td><label style="cursor:pointer"><input type="checkbox" ${p.done[pl] ? "checked" : ""} onchange="socialDone('${pl}', '${p.what}', ${p.index ?? "undefined"}, this.checked)"> ${p.done[pl] ? "✔ đã đăng" : "chưa"}</label></td>`;
-    if (posts.length) h += `<section><h3>Đã tải, đã đăng ở đâu ${postBadge(st)}</h3><table>
-      <tr><th>Video</th><th>Đã tải về</th><th>YouTube</th><th>TikTok</th><th>Facebook</th></tr>
-      ${posts.map((p) => `<tr><td><b>${esc(p.label)}</b><br><small>${esc(p.name)}</small></td>
-        <td>${job.downloaded?.[p.file] ? `✔ ${new Date(job.downloaded[p.file]).toLocaleString("vi", { day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" })}` : "<small>chưa (lấy trong thư mục ~/youtube cũng được)</small>"}</td>
-        <td>${yt(p) ? `<a href="${esc(yt(p).url)}" target="_blank">✔ đã đăng</a>` : "chưa <small>(dán link ở mục YouTube)</small>"}</td>${cell(p, "tiktok")}${cell(p, "facebook")}</tr>`).join("")}</table>
-      <p class="meta">Đủ dấu ✔ ở mọi ô thì bài chuyển sang tab “✔ Đã đăng hết”.</p></section>`;
+      : p.auto?.includes(pl) ? `<td>${p.done[pl] ? "✔ studio đã đăng" : "<span class='nope'>studio tự đăng</span>"}</td>`
+      : `<td><label style="cursor:pointer"><input type="checkbox" ${p.done[pl] ? "checked" : ""} onchange="socialDone('${pl}', '${p.what}', ${p.index ?? "undefined"}, this.checked)"> ${p.done[pl] ? "✔ đã đăng" : "<span class='nope'>chưa</span>"}</label></td>`;
+    if (posts.length) h += `<section><h3>Đã tải, đã đăng ở đâu ${postBadge(st)}</h3><table class="posted">
+      <tr><th>Video</th><th>Giờ đăng</th><th>Đã tải về</th><th>YouTube</th><th>TikTok</th><th>Facebook</th></tr>
+      ${posts.map((p) => `<tr><td><b>${esc(p.label)}</b><br><small class="meta">${esc(p.name)}</small></td>
+        <td>${p.publishAt ? new Date(p.publishAt).toLocaleString("vi", { weekday: "short", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" }) : "<span class='nope'>chưa xếp</span>"}</td>
+        <td>${job.downloaded?.[p.file] ? `✔ ${new Date(job.downloaded[p.file]).toLocaleString("vi", { day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" })}` : "<span class='nope'>chưa</span>"}</td>
+        <td>${yt(p) ? `<a href="${esc(yt(p).url)}" target="_blank">✔ đã đăng</a>` : "<span class='nope'>chưa</span>"}</td>${cell(p, "tiktok")}${cell(p, "facebook")}</tr>`).join("")}</table>
+      <p class="meta">Tải về: bấm nút ở mục Video, hoặc lấy trong thư mục ~/youtube. YouTube: dán link ở mục YouTube bên dưới. TikTok: tích vào ô khi đã đăng. Facebook: studio tự đăng Reel đúng giờ. Đủ dấu ✔ thì bài chuyển sang tab “✔ Đã đăng hết”.</p></section>`;
     if (posts.length) h += postWords(posts, yt);
   }
-  if (!qa) h += await artSection(job, d.art, d.redrawing);
+  if (!qa) { const art = await artSection(job, d.art, d.redrawing); h += job.status === "done" && art ? `<details class="fold"><summary>🎨 Phong cách vẽ, intro và outro <small class="meta">(đổi thì render lại)</small></summary>${art}</details>` : art; }
+  if (d.formats && !plan?.story) h += formatSection(job, d.format, d.formats);
+  if (plan?.story) h += `<section><h3>🎬 Tập phim · ${plan.scenes.length} cảnh</h3><p><b>Từ tiếng Anh:</b> ${esc(plan.answer || "")}</p><p class="meta">${esc(plan.description || "")}</p><p class="meta">Mỗi bài là một tập phim có cốt truyện riêng (episode.ts): tiếng Anh đã được soát và Whisper nghe lại trước khi render.</p></section>`;
   if (qa && plan) {
     const fc = has("factcheck.json") ? await fetch(`/files/${slug}/factcheck.json`).then((r) => r.json()).catch(() => null) : null;
     const shortWords = (plan.shorts || []).map((n) => plan.scenes[n - 1]).filter(Boolean).flatMap((s) => s.parts).reduce((n, p) => n + p.text.split(/\s+/).length, 0);
@@ -285,6 +327,19 @@ async function show(slug) {
 }
 
 /** Style, intro and outro: what the brain suggests (★) and what is chosen (✔); a click changes it. */
+/** An English lesson's format (formats.ts): changing it writes the script again in the new one. */
+function formatSection(job, format, formats) {
+  const can = ["review", "rewrite", "failed"].includes(job.status);
+  return `<section><h3>Khuôn bài học</h3>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">${formats.map((f) => `<button title="${esc(f.fits)}" ${f.id === format ? 'class="ok"' : can ? `onclick="setFormat('${f.id}', '${esc(f.name)}')"` : "disabled"}>${f.icon} ${esc(f.name)}${f.id === format ? " ✔" : ""}</button>`).join("")}</div>
+    <p class="meta">${can ? "Đổi khuôn thì studio viết lại kịch bản theo khuôn mới (một lần viết, khoảng 25 nghìn token)." : "Đổi khuôn được khi kịch bản đang chờ duyệt."} Studio tự xoay vòng khuôn cho bài mới.</p></section>`;
+}
+async function setFormat(id, name) {
+  if (!confirm(`Viết lại bài này theo khuôn “${name}”?`)) return;
+  const r = await fetch(`/api/job/${current}/format`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ format: id }) }).then((r) => r.json());
+  if (r.error) return alert(r.error);
+  await load(); show(current);
+}
 async function artSection(job, art, redrawing) {
   if (!art || job.status === "writing" || job.status === "rejected") return "";
   ART ||= await fetch("/api/art").then((r) => r.json());
@@ -364,31 +419,62 @@ function calRow(e) {
 }
 /** What to paste where, for every video of a topic (the same as dang-len-youtube.txt and dang-tiktok-facebook.txt). */
 const CLIP = [];
-const clip = (text, label = "Chép") => { CLIP.push(text); return `<button class="fixb cp" onclick="copyClip(${CLIP.length - 1}, this)">📋 ${label}</button>`; };
+const clip = (text, label = "Chép") => { CLIP.push(text); return `<button class="cp" onclick="copyClip(${CLIP.length - 1}, this)">📋 ${label}</button>`; };
 async function copyClip(i, btn) {
   const text = CLIP[i];
   try { await navigator.clipboard.writeText(text); }
   catch { const t = document.createElement("textarea"); t.value = text; document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove(); }
-  const was = btn.textContent; btn.textContent = "✔ Đã chép"; setTimeout(() => (btn.textContent = was), 1500);
+  const was = btn.textContent; btn.textContent = "✔ Đã chép"; btn.classList.add("done"); setTimeout(() => { btn.textContent = was; btn.classList.remove("done"); }, 1500);
 }
+/** Which video and platform the Lời đăng section shows (kept while the page redraws). */
+const POSTSEL = { slug: null, i: 0, pl: {} };
+const PLAT = { youtube: "▶ YouTube", tiktok: "♪ TikTok", facebook: "f Facebook" };
+/** The facts to get right before anything else (the file, the channel, the time): chips on top. */
+const isFact = (r) => /^(Tệp tải lên|Kênh|Tài khoản|Đăng lên|Chế độ hiển thị|Lịch đăng|Lên lịch)$/.test(r.label);
+/** YouTube's limits: past them the box refuses the text. */
+const LIMIT = { "Tiêu đề": 100, "Mô tả": 5000 };
 function postWords(posts, yt) {
   CLIP.length = 0;
-  const when = (t) => new Date(t).toLocaleString("vi", { weekday: "long", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" });
-  const box = (text, pre) => `<div class="copybox"${pre ? ' style="white-space:pre-wrap"' : ""}>${esc(text)}</div>`;
-  const card = (p, i) => {
-    const posted = yt(p);
-    // YouTube Studio's page, box by box, in its order (publish.ts youtubeForm).
-    const formRows = (form) => form.map((r) => r.copy
-      ? `<p class="frow"><b>${esc(r.label)}</b> ${clip(r.value)}${r.note ? ` <small class="meta">${esc(r.note)}</small>` : ""}</p>${box(r.value, r.value.includes("\n"))}`
-      : `<p class="frow${r.must ? " must" : ""}"><b>${esc(r.label)}:</b> ${esc(r.value)}${r.note ? ` <small class="meta">(${esc(r.note)})</small>` : ""}</p>`).join("");
-    const rows = formRows(p.form);
-    // TikTok and Facebook: the same, box by box in their upload pages' order (publish.ts socialForm).
-    const social = Object.entries(p.forms || {}).map(([pl, form]) => `<h4>${pl === "tiktok" ? "♪ TikTok" : p.what === "short" ? "f Facebook Reels" : "f Facebook (video)"} ${p.done[pl] ? "· ✔ đã đăng" : ""}</h4>${formRows(form)}`).join("");
-    return `<details ${i === 0 ? "open" : ""} class="post"><summary><b>${esc(p.label)}</b> · <b>${esc(p.name)}</b> → kênh ${esc(p.account)}${p.publishAt ? ` · ${when(p.publishAt)}` : ""}${posted ? " · ✔ đã lên YouTube" : ""}</summary>
-      <h4>▶ YouTube Studio</h4>${rows}
-      ${social}</details>`;
+  if (POSTSEL.slug !== current) Object.assign(POSTSEL, { slug: current, i: 0, pl: {} });
+  POSTSEL.i = Math.min(POSTSEL.i, posts.length - 1);
+  const when = (t) => new Date(t).toLocaleString("vi", { weekday: "short", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" });
+  const doneOn = (p, pl) => pl === "youtube" ? !!yt(p) : !!p.done[pl];
+  const plats = (p) => ["youtube", ...Object.keys(p.forms || {})];
+  // One platform: chips (file, channel, time), the boxes to paste (left), the choices on the upload page in its order (right).
+  const pane = (p, form, pl, platform) => {
+    const facts = form.filter((r) => !r.copy && isFact(r)), copies = form.filter((r) => r.copy), picks = form.filter((r) => !r.copy && !isFact(r) && r.label !== "Đăng xong"), end = form.find((r) => r.label === "Đăng xong");
+    const fld = (r) => { const lim = pl === "youtube" ? LIMIT[r.label] : undefined, n = [...r.value].length;
+      return `<div class="fld"><div class="fh"><b>${esc(r.label)}</b><small class="${lim && n > lim ? "over" : ""}">${fmt(n)}${lim ? ` / ${fmt(lim)}` : ""} ký tự</small><span class="grow"></span>${clip(r.value)}</div><div class="fv">${esc(r.value)}</div>${r.note ? `<div class="fn">${esc(r.note)}</div>` : ""}</div>`; };
+    return `<div class="ppane ${platform === (POSTSEL.pl[p.file] || "youtube") ? "on" : ""}" data-pl="${platform}">
+      <div class="facts">${facts.map((r) => `<div class="fact"><small>${esc(r.label)}</small><b>${esc(r.value)}</b>${r.note ? `<small>${esc(r.note)}</small>` : ""}</div>`).join("")}</div>
+      <div class="pgrid"><div><p class="colh">Chép rồi dán</p>${copies.map(fld).join("") || `<p class="meta">Không có ô nào cần chép.</p>`}</div>
+        <div><p class="colh">Chọn trên trang tải lên (theo thứ tự)</p><ul class="picks">${picks.map((r) => `<li class="${r.must ? "must" : ""}"><span class="k">${esc(r.label)}</span><span class="v">${esc(r.value)}</span>${r.note ? `<span class="n">${esc(r.note)}</span>` : ""}</li>`).join("")}</ul>
+        ${end ? `<p class="ptail">✔ ${esc(end.value)}</p>` : ""}</div></div></div>`;
   };
-  return `<section><h3>Lời đăng</h3><p class="meta">Giống hai tệp <code>dang-len-youtube.txt</code> và <code>dang-tiktok-facebook.txt</code> trong thư mục đăng. Bấm 📋 để chép rồi dán vào YouTube Studio, TikTok, Facebook.</p>${posts.map(card).join("")}</section>`;
+  const card = (p, i) => `<div class="pcard" data-i="${i}" style="${i === POSTSEL.i ? "" : "display:none"}">
+      <div class="ptabs">${plats(p).map((pl) => `<button class="ptab ${pl === (POSTSEL.pl[p.file] || "youtube") ? "on" : ""}" onclick="pickPlat(${i}, '${p.file}', '${pl}')">${pl === "facebook" && p.what === "short" ? "f Facebook Reels" : PLAT[pl]}${doneOn(p, pl) ? `<span class="ok-mark">✔ đã đăng</span>` : ""}</button>`).join("")}</div>
+      ${pane(p, p.form, "youtube", "youtube")}${Object.entries(p.forms || {}).map(([pl, form]) => pane(p, form, pl, pl)).join("")}</div>`;
+  const pill = (p, i) => `<button class="vp ${i === POSTSEL.i ? "on" : ""}" onclick="pickPost(${i})"><b>${esc(p.label)}</b><small>${p.publishAt ? when(p.publishAt) : "chưa xếp giờ"} · ${esc(p.account)}</small>
+      <div class="marks">${plats(p).map((pl) => doneOn(p, pl) ? `<i>✔ ${PLAT[pl].split(" ")[1]}</i>` : `○ ${PLAT[pl].split(" ")[1]}`).join(" · ")}</div></button>`;
+  return `<section><h3>Lời đăng</h3><p class="meta">Chọn video, chọn nơi đăng, bấm 📋 Chép rồi dán vào ô cùng tên. Giống tệp <code>dang-len-youtube.txt</code> và <code>dang-tiktok-facebook.txt</code> trong thư mục đăng.</p>
+    <div class="vpick">${posts.map(pill).join("")}</div>${posts.map(card).join("")}</section>`;
+}
+function pickPost(i) {
+  POSTSEL.i = i;
+  document.querySelectorAll(".vp").forEach((b, k) => b.classList.toggle("on", k === i));
+  document.querySelectorAll(".pcard").forEach((c) => (c.style.display = Number(c.dataset.i) === i ? "" : "none"));
+}
+function pickPlat(i, file, pl) {
+  POSTSEL.pl[file] = pl;
+  const c = document.querySelector(`.pcard[data-i="${i}"]`);
+  c.querySelectorAll(".ppane").forEach((x) => x.classList.toggle("on", x.dataset.pl === pl));
+  c.querySelectorAll(".ptab").forEach((x) => x.classList.toggle("on", x.getAttribute("onclick").includes(`'${pl}'`)));
+}
+
+/** Every "Did you know?" Short has its long version (longs.ts), made when the Short is approved. */
+function longSection(job) {
+  const other = job.longJob && jobs.find((j) => j.slug === job.longJob);
+  return `<div class="meta">📺 Bản dài: ${other ? `<a href="#${job.longJob}" onclick="openFromCalendar('${job.longJob}');return false"><b>${esc(other.topic)}</b></a> · ${STATUS[other.status] || other.status}` : "studio tạo trong ít phút (mọi Short đều có bản dài)"}</div>`;
 }
 
 /** A topic of the calendar opened in the tab it belongs to. */

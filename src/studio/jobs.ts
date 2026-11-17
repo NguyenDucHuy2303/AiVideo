@@ -23,6 +23,8 @@ export interface Job {
   topic: string;
   kind?: string;
   era?: string;
+  /** An English lesson's format (formats.ts): cards, story, gameshow…; none = cards. */
+  format?: string;
   /** Why this topic (from the proposal). */
   summary?: string;
   status: JobStatus;
@@ -36,7 +38,7 @@ export interface Job {
   /** Shorts cut from the film (job folder paths), made at night after the film. */
   shorts?: string[];
   /** The English version: voices ready ("ready"), film made ("done"), or what went wrong. */
-  english?: "ready" | "done" | `failed: ${string}`;
+  english?: "ready" | "rendering" | "done" | `failed: ${string}`;
   /** Drawing style, intro and outro (art.ts): suggested with the cast, changeable on the review page. */
   art?: Art;
   /** The brain's score of the script (pick.ts), for the daily pick; hash: the script it scored. */
@@ -45,6 +47,15 @@ export interface Job {
   autoPicked?: boolean;
   /** Approved by the studio (autoreview.ts): the user had not reviewed the video in time. */
   autoApproved?: string;
+  /** The user asked for this one ("Làm bản dài" on a Short): the daily pick takes it first. */
+  wanted?: boolean;
+  /** A long question made from a "Did you know?" Short (its slug), and the Short's long one. */
+  fromShort?: string;
+  longJob?: string;
+  /** Reels the studio posted to Facebook (facebook.ts), by socialKey; byHand: found posted already. */
+  facebook?: Record<string, { videoId: string; postId?: string; url: string; at: string; byHand?: boolean }>;
+  fbError?: string;
+  fbRetryAt?: string;
   /** The machine check of the video before that approval (autoreview.ts). */
   autoCheck?: import("./autoreview.ts").VideoCheck;
   /** The naturalness check of the film (animation/inspect.ts): mistakes a minute, by kind. */
