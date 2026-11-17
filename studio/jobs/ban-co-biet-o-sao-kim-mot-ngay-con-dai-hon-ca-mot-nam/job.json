@@ -1,7 +1,7 @@
 {
   "slug": "ban-co-biet-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam",
   "topic": "Bạn có biết ở sao Kim, một ngày còn dài hơn cả một năm?",
-  "status": "review",
+  "status": "video",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.306Z",
@@ -26,6 +26,59 @@
     {
       "at": "2026-11-13T01:47:51.406Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-15T10:00:00.271Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (điểm 7.2/10)"
+    },
+    {
+      "at": "2026-11-15T10:00:00.291Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-15T10:04:01.714Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-15T10:04:01.728Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-15T10:08:48.469Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-15T11:09:00.536Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (44 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-16T11:04:52.124Z",
+      "status": "producing",
+      "info": "render lại: sửa hình trên bảng (tra hình sai, thiếu hình)"
+    },
+    {
+      "at": "2026-11-16T11:04:52.128Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-16T11:06:43.528Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-16T11:08:49.824Z",
+      "status": "failed",
+      "info": "ffmpeg: [mp4 @ 0x5cd016cf22c0] Unable to re-open /home/huynguyen/WataCreateVideo/projects/ban-co-biet-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam/build/anim/9x16/s04-b388f1d6888d.mp4.part.mp4 output file for shifting data\n[out#0/mp4 @ 0x5cd016cf2180] Error writing trailer: No such file or directory\n"
+    },
+    {
+      "at": "2026-11-16T11:10:02.946Z",
+      "status": "video"
     }
   ],
   "kind": "fact-vi",
@@ -35,5 +88,38 @@
     "value": 7.2,
     "why": "Điểm mạnh: mở đầu gây tò mò, số liệu đúng (quay 243 ngày, năm 225 ngày, ngày Mặt Trời ~117 ngày), ngắn gọn, dễ dựng bằng hình quỹ đạo, chủ đề sao Kim được nhiều trẻ tìm; điểm yếu: tiêu đề \"một ngày dài hơn một năm\" gây nhầm vì ngày thật (Mặt Trời mọc đến mọc) chỉ 117 ngày và chưa phân biệt rõ hai khái niệm, chưa giải thích vì sao quay ngược/chậm, và câu kêu gọi theo dõi lại ghi \"Huy Kể Chuyện\" trong khi kênh hỏi–đáp là Ask Huy.",
     "hash": "db4f2b8ecf20c956"
-  }
+  },
+  "autoPicked": true,
+  "inspect": {
+    "at": "2026-11-16T11:10:02.944Z",
+    "perMinute": 0,
+    "byKind": {}
+  },
+  "autoCheck": {
+    "at": "2026-11-16T13:13:42.039Z",
+    "mtimeMs": 1794827401200.6238,
+    "ok": false,
+    "problems": [
+      "hình đứng yên 11 giây"
+    ],
+    "seconds": 44
+  },
+  "autoApproved": "2026-11-15T11:09:00.535Z",
+  "exported": {
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/Ở sao Kim, một ngày dài hơn cả một năm!",
+        "publishAt": "2026-11-21T10:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-16T13:13:45.409Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "Ở sao Kim, một ngày dài hơn cả một năm!",
+    "mtime": 1794834825409.1604,
+    "at": "2026-11-17T01:43:52.871Z"
+  },
+  "longJob": "vi-sao-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam",
+  "shorts": []
 }

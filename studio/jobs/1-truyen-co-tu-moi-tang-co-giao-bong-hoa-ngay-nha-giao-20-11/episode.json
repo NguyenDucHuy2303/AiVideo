@@ -1,0 +1,615 @@
+{
+  "title": "Tặng cô giáo bông hoa",
+  "youtubeTitle": "Tặng cô giáo bông hoa | Học tiếng Anh: rose, daisy, flower, card, gift",
+  "words": [
+    {
+      "en": "rose",
+      "vi": "hoa hồng",
+      "thing": "rose"
+    },
+    {
+      "en": "daisy",
+      "vi": "hoa cúc",
+      "thing": "daisy"
+    },
+    {
+      "en": "flower",
+      "vi": "bó hoa",
+      "thing": "flower"
+    },
+    {
+      "en": "card",
+      "vi": "cái thiệp",
+      "thing": "card"
+    },
+    {
+      "en": "gift",
+      "vi": "món quà",
+      "thing": "gift"
+    }
+  ],
+  "things": [
+    {
+      "id": "rose",
+      "kind": "item",
+      "icon": "rose",
+      "speaker": "Hoa hồng"
+    },
+    {
+      "id": "daisy",
+      "kind": "item",
+      "icon": "daisy"
+    },
+    {
+      "id": "flower",
+      "kind": "item",
+      "icon": "bouquet"
+    },
+    {
+      "id": "card",
+      "kind": "item",
+      "icon": "greeting card"
+    },
+    {
+      "id": "gift",
+      "kind": "item",
+      "icon": "wrapped gift",
+      "speaker": "Hộp quà"
+    }
+  ],
+  "places": {
+    "living": "a bright cozy modern Vietnamese living room: a sofa, a rug, a big window, a front door, no people",
+    "market": "a colorful Vietnamese flower market in the morning: stalls with buckets of roses, daisies and lilies, no people",
+    "classroom": "a bright modern Vietnamese primary classroom: small desks, a green board with a heart drawn on it, a teacher's desk, a big window, no people"
+  },
+  "scenes": [
+    {
+      "place": "living",
+      "say": "Bối (lo lắng): \"Chết rồi! Hôm nay là Ngày Nhà giáo mà em chưa có quà!\" Beo (ngạc nhiên): \"Quà là gì ạ? Ăn được không?\" Huy (vui vẻ): \"Mình ra chợ hoa nhanh nào!\" Hùng (tinh nghịch): \"Anh chở cả nhà bằng xe đạp!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "worry",
+          "who": "Bối",
+          "face": "worried"
+        },
+        {
+          "line": 2,
+          "do": "look",
+          "who": "Beo",
+          "to": "Bối",
+          "face": "surprised"
+        },
+        {
+          "line": 3,
+          "do": "point",
+          "who": "Huy",
+          "face": "happy"
+        },
+        {
+          "line": 4,
+          "do": "cheer",
+          "who": "Hùng",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Huy (vui vẻ): \"Chợ hoa đẹp quá!\" [2s] Hoa hồng (vui vẻ): \"Hi! I am a rose!\" Beo (ngạc nhiên): \"Hoa biết nói! *Rose!* Là hoa hồng!\" Huy (vui vẻ): \"Các bạn nói cùng Beo nào: *Rose!*\" [3s] Hùng (vui vẻ): \"Giỏi lắm!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "look",
+          "who": "Huy",
+          "face": "happy"
+        },
+        {
+          "line": 2,
+          "do": "appear",
+          "what": "rose"
+        },
+        {
+          "line": 3,
+          "do": "shake",
+          "what": "rose"
+        },
+        {
+          "line": 4,
+          "do": "jump",
+          "who": "Beo",
+          "face": "surprised"
+        },
+        {
+          "line": 7,
+          "do": "clap",
+          "who": "Hùng",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Hùng (tinh nghịch): \"Nhìn nè! Anh tìm được hoa nhỏ xíu màu trắng!\" Bối (vui vẻ): \"*Daisy!* Là hoa cúc!\" Hùng (vui vẻ): \"Các bạn nói cùng anh nào: *Daisy!*\" [3s] Huy (vui vẻ): \"Hay quá! Các bạn giỏi lắm!\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "enter",
+          "who": "Hùng",
+          "from": "right",
+          "what": "daisy",
+          "face": "happy"
+        },
+        {
+          "line": 2,
+          "do": "point",
+          "who": "Bối",
+          "face": "happy"
+        },
+        {
+          "line": 5,
+          "do": "cheer",
+          "who": "Huy",
+          "face": "proud"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Huy (vui vẻ): \"Mình gom hoa hồng với hoa cúc thành một bó nhé.\" [2s] Beo (ngạc nhiên): \"Ồ, nhiều hoa quá! *Bouquet!*\" Bối (vui vẻ): \"Các bạn nói cùng Bối nào: *Bouquet!*\" [3s] Huy (tự hào): \"Tuyệt vời!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "pick_up",
+          "who": "Huy",
+          "what": "rose",
+          "face": "happy"
+        },
+        {
+          "line": 2,
+          "do": "appear",
+          "what": "flower"
+        },
+        {
+          "line": 3,
+          "do": "hop",
+          "who": "Beo",
+          "face": "surprised"
+        },
+        {
+          "line": 6,
+          "do": "nod",
+          "who": "Huy",
+          "face": "proud"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Bối (vui vẻ): \"Mình cần thiệp để viết lời chúc!\" Hùng (tinh nghịch): \"Tèn ten! Thiệp đây!\" [2s] Beo (vui vẻ): \"Thiệp có hình trái tim! *Card!*\" Huy (vui vẻ): \"Các bạn nói cùng Beo nào: *Card!*\" [3s] Hùng (vui vẻ): \"Giỏi ghê!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "look",
+          "who": "Bối",
+          "face": "happy"
+        },
+        {
+          "line": 2,
+          "do": "point",
+          "who": "Hùng",
+          "face": "proud"
+        },
+        {
+          "line": 3,
+          "do": "appear",
+          "what": "card"
+        },
+        {
+          "line": 4,
+          "do": "hop",
+          "who": "Beo",
+          "face": "joy"
+        },
+        {
+          "line": 7,
+          "do": "clap",
+          "who": "Hùng",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Huy (vui vẻ): \"Bối viết lời chúc lên thiệp nhé.\" [2s] Bối (tự hào): \"Happy Teachers' Day!\" Huy (vui vẻ): \"Là chúc mừng Ngày Nhà giáo đó.\" Beo (vui vẻ): \"Chữ Bối đẹp quá!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "crouch",
+          "who": "Bối",
+          "face": "determined"
+        },
+        {
+          "line": 2,
+          "do": "talk",
+          "who": "Bối",
+          "face": "determined"
+        },
+        {
+          "line": 3,
+          "do": "stand",
+          "who": "Bối",
+          "face": "proud"
+        },
+        {
+          "line": 5,
+          "do": "clap",
+          "who": "Beo",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Hùng (tinh nghịch): \"Anh còn giấu một bí mật. Nghe nè!\" [2s] Hộp quà (vui vẻ): \"Hi! I am a gift!\" Beo (sợ hãi): \"Hộp biết nói! *Gift!* Là món quà!\" Hùng (vui vẻ): \"Các bạn nói cùng anh nào: *Gift!*\" [3s] Bối (vui vẻ): \"Các bạn giỏi quá!\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "gift"
+        },
+        {
+          "line": 2,
+          "do": "shake",
+          "what": "gift"
+        },
+        {
+          "line": 3,
+          "do": "shake",
+          "what": "gift"
+        },
+        {
+          "line": 4,
+          "do": "jump",
+          "who": "Beo",
+          "face": "scared"
+        },
+        {
+          "line": 7,
+          "do": "cheer",
+          "who": "Bối",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Beo (tinh nghịch): \"Em mở quà ra xem một tí nhé?\" Hộp quà (lo lắng): \"Hey! Not yet!\" Beo (sợ hãi): \"Ối! Hộp mắng em!\" [2s] Huy (cười): \"Quà để dành tặng cô, Beo ơi.\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "walk_to",
+          "who": "Beo",
+          "to": "gift",
+          "face": "happy"
+        },
+        {
+          "line": 2,
+          "do": "shake",
+          "what": "gift"
+        },
+        {
+          "line": 3,
+          "do": "fall",
+          "who": "Beo",
+          "face": "scared"
+        },
+        {
+          "line": 4,
+          "do": "laugh",
+          "who": "Hùng",
+          "face": "laugh"
+        },
+        {
+          "line": 5,
+          "do": "get_up",
+          "who": "Beo",
+          "face": "happy"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Huy (lo lắng): \"Sắp tới giờ học rồi! Chạy thôi!\" Hùng (vui vẻ): \"Anh ôm bó hoa cho!\" Bối (vui vẻ): \"Em giữ thiệp với quà!\" [2s] Beo (cười): \"Chạy nhanh như con thỏ!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "worry",
+          "who": "Huy",
+          "face": "worried"
+        },
+        {
+          "line": 2,
+          "do": "pick_up",
+          "who": "Hùng",
+          "what": "flower",
+          "face": "determined"
+        },
+        {
+          "line": 3,
+          "do": "pick_up",
+          "who": "Bối",
+          "what": "card",
+          "face": "determined"
+        },
+        {
+          "line": 4,
+          "do": "exit",
+          "who": "Hùng"
+        },
+        {
+          "line": 4,
+          "do": "exit",
+          "who": "Bối"
+        },
+        {
+          "line": 4,
+          "do": "exit",
+          "who": "Huy"
+        },
+        {
+          "line": 4,
+          "do": "exit",
+          "who": "Beo"
+        }
+      ]
+    },
+    {
+      "place": "classroom",
+      "say": "Bối (vui vẻ): \"Tới lớp rồi! Cô chưa vào.\" Huy (vui vẻ): \"Mình tập nói trước nhé. Anh làm cô giáo.\" Bối (tự hào): \"Thank you, teacher!\" Huy (vui vẻ): \"Các bạn nói cùng Bối nào: *Thank you, teacher!*\" [3s] Huy (tự hào): \"Hay lắm!\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "enter",
+          "who": "Huy",
+          "from": "left"
+        },
+        {
+          "line": 0,
+          "do": "enter",
+          "who": "Hùng",
+          "from": "left",
+          "what": "flower"
+        },
+        {
+          "line": 0,
+          "do": "enter",
+          "who": "Bối",
+          "from": "left",
+          "what": "card"
+        },
+        {
+          "line": 0,
+          "do": "enter",
+          "who": "Beo",
+          "from": "left"
+        },
+        {
+          "line": 2,
+          "do": "stand",
+          "who": "Huy",
+          "face": "proud"
+        },
+        {
+          "line": 3,
+          "do": "nod",
+          "who": "Bối",
+          "face": "proud"
+        }
+      ]
+    },
+    {
+      "place": "classroom",
+      "say": "Hùng (tinh nghịch): \"Ta là cô giáo mới đây! Ahem!\" Beo (vui vẻ): \"*Thank you, teacher!* Em tặng cô hoa!\" [2s] Hùng (sợ hãi): \"Hắt xì! Hắt xì! Anh bị dị ứng phấn hoa!\" Bối (cười): \"Cô giáo gì mà hắt xì hoài!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "idle",
+          "who": "Hùng",
+          "face": "proud"
+        },
+        {
+          "line": 2,
+          "do": "give",
+          "who": "Beo",
+          "what": "flower",
+          "to": "Hùng",
+          "face": "happy"
+        },
+        {
+          "line": 3,
+          "do": "shake",
+          "what": "flower"
+        },
+        {
+          "line": 4,
+          "do": "fall",
+          "who": "Hùng",
+          "face": "scared"
+        },
+        {
+          "line": 5,
+          "do": "laugh",
+          "who": "Bối",
+          "face": "laugh"
+        },
+        {
+          "line": 5,
+          "do": "laugh",
+          "who": "Huy",
+          "face": "laugh"
+        }
+      ]
+    },
+    {
+      "place": "classroom",
+      "say": "Huy (vui vẻ): \"Giờ mình đặt quà lên bàn cô nhé.\" [2s] Bối (vui vẻ): \"Em đặt hoa trước.\" Beo (tự hào): \"Em đặt thiệp. Em vẽ trái tim to lắm!\" Hùng (tự hào): \"Còn hộp quà là của anh!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "point",
+          "who": "Huy",
+          "face": "happy"
+        },
+        {
+          "line": 2,
+          "do": "put",
+          "who": "Bối",
+          "what": "flower"
+        },
+        {
+          "line": 2,
+          "do": "put",
+          "who": "Beo",
+          "what": "card"
+        },
+        {
+          "line": 2,
+          "do": "put",
+          "who": "Hùng",
+          "what": "gift"
+        },
+        {
+          "line": 5,
+          "do": "hop",
+          "who": "Hùng",
+          "face": "proud"
+        }
+      ]
+    },
+    {
+      "place": "classroom",
+      "say": "Huy (vui vẻ): \"Chuông reo rồi. Cô sắp vào lớp.\" [2s] Bối (tự hào): \"Happy Teachers' Day!\" Beo (vui vẻ): \"Happy Teachers' Day!\" Hùng (vui vẻ): \"Các bạn nói cùng bọn mình nào: *Happy Teachers' Day!*\" [3s] Huy (tự hào): \"Cảm ơn các bạn nhiều!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "look",
+          "who": "Huy",
+          "face": "happy"
+        },
+        {
+          "line": 3,
+          "do": "cheer",
+          "who": "Bối",
+          "face": "joy"
+        },
+        {
+          "line": 4,
+          "do": "cheer",
+          "who": "Beo",
+          "face": "joy"
+        },
+        {
+          "line": 5,
+          "do": "wave",
+          "who": "Hùng",
+          "face": "happy"
+        },
+        {
+          "line": 7,
+          "do": "hug",
+          "who": "Huy",
+          "what": "flower",
+          "face": "proud"
+        }
+      ]
+    },
+    {
+      "place": "classroom",
+      "say": "Huy (vui vẻ): \"Nào, cùng nhớ lại các từ mới nhé!\" Hoa hồng (vui vẻ): \"I am a rose!\" Bối (vui vẻ): \"*Rose!* Hoa hồng!\" Hùng (vui vẻ): \"*Daisy!* Hoa cúc!\" Beo (vui vẻ): \"*Bouquet!* Bó hoa!\" Huy (vui vẻ): \"*Card!* Cái thiệp!\" Hộp quà (vui vẻ): \"I am a gift!\" Huy (vui vẻ): \"Cùng nói nào: *Rose, daisy, bouquet, card, gift!*\"",
+      "beats": [
+        {
+          "line": 2,
+          "do": "appear",
+          "what": "rose"
+        },
+        {
+          "line": 3,
+          "do": "hop",
+          "who": "Bối",
+          "face": "joy"
+        },
+        {
+          "line": 4,
+          "do": "appear",
+          "what": "daisy"
+        },
+        {
+          "line": 5,
+          "do": "appear",
+          "what": "flower"
+        },
+        {
+          "line": 6,
+          "do": "appear",
+          "what": "card"
+        },
+        {
+          "line": 7,
+          "do": "appear",
+          "what": "gift"
+        },
+        {
+          "line": 8,
+          "do": "dance",
+          "who": "Beo",
+          "face": "joy"
+        },
+        {
+          "line": 8,
+          "do": "dance",
+          "who": "Hùng",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "classroom",
+      "say": "Huy (vui vẻ): \"Các bạn nhớ bấm đăng ký kênh Huy Kể Chuyện để xem tập sau nhé!\" Hùng (tinh nghịch): \"Tập sau, Beo bị lạc trong siêu thị bánh kẹo!\" Beo (vui vẻ): \"Ồ, có kẹo hả? Em đi liền!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "wave",
+          "who": "Huy",
+          "face": "happy"
+        },
+        {
+          "line": 2,
+          "do": "point",
+          "who": "Hùng",
+          "face": "happy"
+        },
+        {
+          "line": 3,
+          "do": "hop",
+          "who": "Beo",
+          "face": "joy"
+        },
+        {
+          "line": 3,
+          "do": "laugh",
+          "who": "Bối",
+          "face": "laugh"
+        }
+      ]
+    }
+  ],
+  "thumbnail": "Tặng cô bông hoa hồng",
+  "description": "Nhân Ngày Nhà giáo 20/11, Bối, Beo và hai anh ra chợ hoa chọn quà tặng cô, rồi tập nói lời cảm ơn trong lớp. Qua câu chuyện vui, các bé học các từ tiếng Anh rose, daisy, flower, card, gift cùng hai câu \"Thank you, teacher!\" và \"Happy Teachers' Day!\".",
+  "englishReviewed": [
+    "cảnh 4: \"Flower!\" → \"Bouquet!\" (The picture shows a bouquet, so the word must be bouquet (to match the word fix).)",
+    "cảnh 14: \"Flower!\" → \"Bouquet!\" (Same: the picture shows a bouquet.)",
+    "cảnh 14: \"Rose, daisy, flower, card, gift!\" → \"Rose, daisy, bouquet, card, gift!\" (Match the corrected taught word. Rose and daisy are also flowers, so 'flower' is confusing.)",
+    "từ \"flower\": nên là \"bouquet\" ('Flower' means 'bông hoa', not 'bó hoa'. A bouquet picture is 'bouquet'. Rose and daisy are flowers too, so 'flower' would be confusing.) — chưa đổi, cần viết lại tập"
+  ]
+}

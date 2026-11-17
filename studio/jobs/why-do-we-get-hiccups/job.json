@@ -1,7 +1,7 @@
 {
   "slug": "why-do-we-get-hiccups",
   "topic": "Why do we get hiccups?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.309Z",
@@ -92,10 +92,538 @@
       "at": "2026-11-13T09:20:08.138Z",
       "status": "rewrite",
       "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T10:46:27.559Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: today's 1005386 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T19:42:19.975Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T20:12:25.245Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T20:42:30.311Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T21:12:35.317Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T21:42:40.751Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T22:12:46.033Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T22:42:51.283Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T23:12:57.398Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T23:43:02.042Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T00:13:07.265Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T00:43:13.036Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T01:13:18.059Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T01:43:22.973Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T02:13:28.582Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T02:43:33.544Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T03:13:38.593Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T03:43:44.063Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T04:13:49.208Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T04:43:54.488Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T05:13:59.826Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T05:44:04.995Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T06:14:10.760Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T06:44:15.675Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T07:14:21.051Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T07:44:26.962Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T08:14:31.752Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T08:44:36.629Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T09:14:42.711Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T09:44:47.781Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T12:08:28.041Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T12:38:32.802Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T15:05:06.831Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T15:35:12.657Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T16:05:17.690Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T16:35:22.574Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T17:05:28.390Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T17:35:33.511Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T18:05:38.275Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T18:35:43.215Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T19:05:48.312Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T19:35:53.690Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T20:05:59.283Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T20:36:04.556Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T21:06:10.475Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T21:36:15.589Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T22:06:20.922Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T22:36:27.363Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T23:06:32.252Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T23:36:36.914Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T00:06:42.860Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T00:36:47.836Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T01:06:53.083Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T01:36:58.851Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T02:07:04.101Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T02:37:09.343Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T03:07:14.729Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T03:37:20.082Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T04:07:25.597Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T04:37:30.856Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T05:07:36.285Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T05:37:42.632Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T06:07:47.661Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T06:37:53.287Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T07:07:59.137Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T07:38:04.624Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T08:08:10.095Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T08:38:15.430Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T09:08:20.648Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T09:38:26.692Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T10:08:48.900Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T10:38:51.492Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T11:09:00.821Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T11:39:06.022Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T12:09:12.408Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T12:39:17.461Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T13:09:22.743Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T13:39:28.642Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T14:09:33.916Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T14:39:39.184Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T15:09:44.931Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T15:39:50.310Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T16:09:56.125Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T16:40:01.266Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T17:10:06.422Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T17:40:12.645Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T18:10:17.954Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T18:40:23.391Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T19:10:29.350Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T19:40:34.804Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T20:10:40.396Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T20:40:45.554Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T21:10:51.011Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T21:40:57.260Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T22:11:02.326Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T22:41:07.818Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T23:11:13.600Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T23:41:18.886Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T00:11:24.395Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T00:41:30.084Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T01:11:35.401Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T01:41:41.221Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T01:52:08.004Z",
+      "status": "review",
+      "info": "kẹt vì trần token cộng dồn (lỗi đã sửa 16/11)"
+    },
+    {
+      "at": "2026-11-16T01:52:08.005Z",
+      "status": "rewrite",
+      "info": "viết lại với Huy, Hùng, Bối, Beo: lượt mới, trần token tính từ đây"
+    },
+    {
+      "at": "2026-11-16T01:52:13.544Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-do-we-get-hiccups\" has spent 92243 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T02:22:44.710Z",
+      "status": "review"
     }
   ],
   "kind": "qa",
   "summary": "Every child has had hiccups and found them funny and puzzling, and the video shows the diaphragm and the 'hic' sound with a simple animated body diagram and ends with fun, safe tricks people try.",
-  "by": "claude-opus",
-  "retryAt": "2026-11-13T09:50:08.137Z"
+  "by": "claude-opus"
 }

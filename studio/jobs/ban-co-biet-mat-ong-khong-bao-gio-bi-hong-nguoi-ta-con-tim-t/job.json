@@ -1,7 +1,7 @@
 {
   "slug": "ban-co-biet-mat-ong-khong-bao-gio-bi-hong-nguoi-ta-con-tim-t",
   "topic": "Bạn có biết mật ong không bao giờ bị hỏng, người ta còn tìm thấy hũ mật ong trong lăng mộ Ai Cập hơn 3.000 năm tuổi mà vẫn ăn được?",
-  "status": "producing",
+  "status": "done",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.313Z",
@@ -47,6 +47,53 @@
       "at": "2026-11-13T10:38:27.449Z",
       "status": "producing",
       "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-13T10:46:27.160Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-13T13:20:36.085Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-13T13:25:40.240Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-13T19:39:18.337Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (46 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-16T10:58:55.655Z",
+      "status": "producing",
+      "info": "render lại: sửa hình trên bảng (tra hình sai, thiếu hình)"
+    },
+    {
+      "at": "2026-11-16T10:58:55.660Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-16T11:02:52.463Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-16T11:04:52.122Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-16T11:06:43.495Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-16T13:13:45.291Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (46 giây, không đen màn, đứng hình hay im lặng)"
     }
   ],
   "kind": "fact-vi",
@@ -57,5 +104,35 @@
     "why": "Điểm mạnh: chủ đề \"mật ong không hỏng\" rất hút người tìm, mở đầu gây tò mò, giải thích đúng (ít nước, nhiều đường, hơi chua, ong quạt cánh) và có lưu ý an toàn về em bé dưới 1 tuổi; điểm yếu: tiêu đề \"hơn 3.000 năm\" không được nhắc lại/nêu rõ ví dụ cụ thể (mật trong mộ Ai Cập), lời giải thích còn ngắn và thiếu hình ảnh \"wow\", câu thoại của nhân vật phụ khá nhạt, và đoạn cuối hơi vội, lẫn \"Huy Kể Chuyện\" vào kênh Ask Huy.",
     "hash": "6e33a8ede1d9b5e9"
   },
-  "autoPicked": true
+  "autoPicked": true,
+  "inspect": {
+    "at": "2026-11-16T11:06:43.492Z",
+    "perMinute": 0,
+    "byKind": {}
+  },
+  "autoCheck": {
+    "at": "2026-11-16T13:13:45.290Z",
+    "mtimeMs": 1794827201279.1724,
+    "ok": true,
+    "problems": [],
+    "seconds": 46
+  },
+  "autoApproved": "2026-11-16T13:13:45.290Z",
+  "exported": {
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/Mật ong để hơn 3.000 năm vẫn không hỏng",
+        "publishAt": "2026-11-19T05:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-16T13:13:45.428Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "Mật ong để hơn 3.000 năm vẫn không hỏng",
+    "mtime": 1794834825429.1604,
+    "at": "2026-11-17T01:44:32.608Z"
+  },
+  "longJob": "vi-sao-mat-ong-khong-bao-gio-bi-hong-nguoi-ta-con-tim-thay-h",
+  "shorts": []
 }

@@ -1,0 +1,238 @@
+{
+  "slug": "why-is-it-that-octopuses-have-three-hearts-and-blue-blood",
+  "topic": "Why is it that octopuses have three hearts and blue blood?",
+  "status": "producing",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-16T07:42:37.478Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-16T07:48:36.850Z",
+      "status": "review"
+    },
+    {
+      "at": "2026-11-16T10:00:40.786Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (bản dài của Short đã làm)"
+    },
+    {
+      "at": "2026-11-16T10:53:08.169Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T11:02:52.437Z",
+      "status": "approved",
+      "info": "chờ thử lại: Claude Code failed on qa-direct: You've hit your 5-hour limit · resets 6:30pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work waits"
+    },
+    {
+      "at": "2026-11-16T13:14:47.979Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T13:14:48.002Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T13:44:50.541Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T13:44:50.550Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T14:14:53.013Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T14:14:53.021Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T14:44:55.014Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T14:44:55.022Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T15:14:56.666Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T15:14:56.682Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T15:44:58.854Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T15:44:58.864Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T16:15:00.857Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T16:15:00.869Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T16:45:02.707Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T16:45:02.716Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T18:24:08.142Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T18:37:44.235Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-16T18:37:44.274Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-16T19:18:32.382Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-16T19:31:31.963Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-16T20:32:17.543Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (370 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-17T02:18:51.502Z",
+      "status": "approved",
+      "info": "làm lại giọng tiếng Anh cho đúng (giọng mới, Whisper kiểm từng câu)"
+    },
+    {
+      "at": "2026-11-17T03:11:35.323Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-17T03:40:43.946Z",
+      "status": "failed",
+      "info": "tiếng Anh đọc sai sau 3 lượt đổi giọng: \"Hùng got a face bath!\" (Beo) nghe ra \"Whom got a face bath?\""
+    },
+    {
+      "at": "2026-11-17T07:05:07.384Z",
+      "status": "approved",
+      "info": "làm lại: máy kiểm tiếng Anh đã sửa (tên riêng, tiếng kêu không chấm)"
+    },
+    {
+      "at": "2026-11-17T07:05:10.875Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-17T07:05:10.884Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    }
+  ],
+  "kind": "qa",
+  "summary": "Bản dài của Short \"Did you know octopuses have three hearts and blue blood?\"",
+  "wanted": true,
+  "fromShort": "did-you-know-octopuses-have-three-hearts-and-blue-blood",
+  "by": "claude-opus",
+  "autoPicked": true,
+  "retryAt": "2026-11-16T17:15:02.715Z",
+  "inspect": {
+    "at": "2026-11-16T19:18:32.381Z",
+    "perMinute": 0.7,
+    "byKind": {
+      "head-cut": {
+        "count": 3,
+        "seconds": 2.5
+      },
+      "still": {
+        "count": 1,
+        "seconds": 5.8
+      }
+    }
+  },
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "autoCheck": {
+    "at": "2026-11-16T20:32:17.542Z",
+    "mtimeMs": 1794856702526.049,
+    "ok": true,
+    "problems": [],
+    "seconds": 370
+  },
+  "autoApproved": "2026-11-16T20:32:17.542Z",
+  "exported": {
+    "long": {
+      "dir": "/home/huynguyen/youtube/Why Do Octopuses Have Three Hearts and Blue Blood",
+      "publishAt": "2026-11-19T12:00:00.000Z",
+      "channel": "ask-huy",
+      "at": "2026-11-16T20:32:17.568Z"
+    },
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/Why Do Octopuses Have Three Hearts and Blue Blood",
+        "publishAt": "2026-11-21T08:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-16T20:32:17.569Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Why Do Octopuses Have Three Hearts and Blue Blood",
+        "publishAt": "2026-11-22T02:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-16T20:32:17.569Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Why Do Octopuses Have Three Hearts and Blue Blood",
+        "publishAt": "2026-11-22T08:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-16T20:32:17.570Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "Why Do Octopuses Have Three Hearts and Blue Blood",
+    "mtime": 1794861137573.865,
+    "at": "2026-11-17T01:45:38.985Z"
+  },
+  "stage": "ready"
+}

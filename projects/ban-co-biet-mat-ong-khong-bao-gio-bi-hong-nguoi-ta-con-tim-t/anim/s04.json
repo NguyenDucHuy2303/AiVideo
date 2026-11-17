@@ -88,5 +88,12 @@
       "share": 0.62
     }
   ],
-  "mood": "playful"
+  "mood": "playful",
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/33b9da3c28f5.png",
+    "size": [
+      768,
+      448
+    ]
+  }
 }

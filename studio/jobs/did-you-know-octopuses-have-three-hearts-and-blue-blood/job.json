@@ -1,7 +1,7 @@
 {
   "slug": "did-you-know-octopuses-have-three-hearts-and-blue-blood",
   "topic": "Did you know octopuses have three hearts and blue blood?",
-  "status": "producing",
+  "status": "done",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.311Z",
@@ -41,6 +41,20 @@
       "at": "2026-11-13T10:15:46.836Z",
       "status": "producing",
       "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-13T13:16:02.206Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-13T13:20:36.047Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-13T19:38:53.767Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (44 giây, không đen màn, đứng hình hay im lặng)"
     }
   ],
   "kind": "fact",
@@ -52,5 +66,48 @@
     "hash": "aab89535a6a4e562"
   },
   "autoPicked": true,
-  "stage": "ready"
+  "inspect": {
+    "at": "2026-11-13T13:20:36.046Z",
+    "perMinute": 0,
+    "byKind": {}
+  },
+  "shorts": [],
+  "autoCheck": {
+    "at": "2026-11-13T19:38:53.764Z",
+    "mtimeMs": 1794576034641.19,
+    "ok": true,
+    "problems": [],
+    "seconds": 44
+  },
+  "autoApproved": "2026-11-13T19:38:53.764Z",
+  "exported": {},
+  "drive": {
+    "folder": "An Octopus Has 3 Hearts and Blue Blood!",
+    "mtime": 1794814092295.315,
+    "at": "2026-11-16T07:28:36.101Z"
+  },
+  "published": {
+    "shorts": [
+      {
+        "videoId": "bYzzzp0gnoI",
+        "url": "https://youtube.com/shorts/bYzzzp0gnoI",
+        "publishAt": "2026-11-16T08:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-16T07:28:12.280Z",
+        "manual": true
+      }
+    ]
+  },
+  "longJob": "why-is-it-that-octopuses-have-three-hearts-and-blue-blood",
+  "social": {
+    "facebook:short:0": "2026-11-16T08:14:48.530Z"
+  },
+  "facebook": {
+    "facebook:short:0": {
+      "videoId": "1692232598951729",
+      "postId": "122095936887556851",
+      "url": "https://www.facebook.com/reel/1692232598951729/",
+      "at": "2026-11-16T08:14:48.530Z"
+    }
+  }
 }

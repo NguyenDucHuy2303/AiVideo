@@ -1,0 +1,100 @@
+{
+  "castFile": "cast.json",
+  "duration": 13.67,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "give",
+      "face": "surprised"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "cheer",
+      "face": "laugh"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "cheer",
+      "face": "laugh"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"70\" font-family=\"sans-serif\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0\">Hùng's heart model</text><circle cx=\"150\" cy=\"400\" r=\"60\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\" class=\"pulse\" data-in=\"1\"/><circle cx=\"150\" cy=\"230\" r=\"60\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\" class=\"pulse\" data-in=\"2\"/><text x=\"150\" y=\"530\" font-family=\"sans-serif\" font-size=\"28\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"2\">gills</text><path d=\"M210 400 L400 330 M210 230 L400 310\" stroke=\"#4aa3e0\" stroke-width=\"10\" stroke-dasharray=\"16 10\" class=\"flow\" data-in=\"4\"/><circle cx=\"480\" cy=\"320\" r=\"95\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"6\" class=\"pulse\" data-in=\"6\"/><text x=\"480\" y=\"470\" font-family=\"sans-serif\" font-size=\"28\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"6\">body</text><path d=\"M580 320 L800 320\" stroke=\"#4aa3e0\" stroke-width=\"12\" stroke-dasharray=\"16 10\" class=\"flow\" data-in=\"8\"/><text x=\"880\" y=\"335\" font-family=\"sans-serif\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"9\">Splash!</text><text x=\"500\" y=\"560\" font-family=\"sans-serif\" font-size=\"32\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"10\">2 gill hearts + 1 body heart</text></svg>",
+    "style": "sketch",
+    "icons": {},
+    "reveal": 8.2
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

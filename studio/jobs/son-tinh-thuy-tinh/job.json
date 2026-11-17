@@ -86,32 +86,11 @@
     "shorts/2.mp4",
     "shorts/3.mp4"
   ],
-  "exported": {
-    "shorts": [
-      {
-        "dir": "/home/huynguyen/youtube/Sơn Tinh – Thủy Tinh",
-        "publishAt": "2026-11-14T00:30:00.000Z",
-        "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T07:47:23.680Z"
-      },
-      {
-        "dir": "/home/huynguyen/youtube/Sơn Tinh – Thủy Tinh",
-        "publishAt": "2026-11-14T05:00:00.000Z",
-        "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T07:47:23.685Z"
-      },
-      {
-        "dir": "/home/huynguyen/youtube/Sơn Tinh – Thủy Tinh",
-        "publishAt": "2026-11-14T10:00:00.000Z",
-        "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T07:47:23.690Z"
-      }
-    ]
-  },
+  "exported": {},
   "drive": {
     "folder": "Sơn Tinh – Thủy Tinh",
-    "mtime": 1794556043711.4985,
-    "at": "2026-11-13T07:48:54.401Z"
+    "mtime": 1794811967466.2952,
+    "at": "2026-11-16T06:54:35.198Z"
   },
   "published": {
     "en": {
@@ -129,6 +108,60 @@
       "channel": "huy-ke-chuyen",
       "at": "2026-11-13T07:39:36.562Z",
       "manual": true
+    },
+    "shorts": [
+      {
+        "videoId": "oWvzAYYaadA",
+        "url": "https://youtube.com/shorts/oWvzAYYaadA",
+        "publishAt": "2026-11-16T05:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-16T06:28:16.822Z",
+        "manual": true
+      },
+      {
+        "videoId": "gmS4PMszYPo",
+        "url": "https://youtube.com/shorts/gmS4PMszYPo",
+        "publishAt": "2026-11-16T10:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-16T06:50:46.042Z",
+        "manual": true
+      },
+      {
+        "videoId": "bzCfisqm3Kk",
+        "url": "https://youtube.com/shorts/bzCfisqm3Kk",
+        "publishAt": "2026-11-17T00:30:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-16T06:52:47.435Z",
+        "manual": true
+      }
+    ]
+  },
+  "social": {
+    "tiktok:short:0": "2026-11-16T07:11:51.547Z",
+    "tiktok:short:1": "2026-11-16T07:11:52.398Z",
+    "tiktok:short:2": "2026-11-16T07:11:53.032Z",
+    "facebook:short:0": "2026-11-16T08:14:36.874Z",
+    "facebook:short:1": "2026-11-16T10:00:40.117Z",
+    "facebook:short:2": "2026-11-17T00:30:11.968Z"
+  },
+  "facebook": {
+    "facebook:short:0": {
+      "videoId": "3621055388072839",
+      "postId": "122102007705549373",
+      "url": "https://www.facebook.com/reel/3621055388072839/",
+      "at": "2026-11-16T08:14:36.874Z"
+    },
+    "facebook:short:1": {
+      "videoId": "1530179505631485",
+      "postId": "122102081541549373",
+      "url": "https://www.facebook.com/reel/1530179505631485/",
+      "at": "2026-11-16T10:00:40.117Z"
+    },
+    "facebook:short:2": {
+      "videoId": "1674529094208063",
+      "postId": "122102627019549373",
+      "url": "https://www.facebook.com/reel/1674529094208063/",
+      "at": "2026-11-17T00:30:11.968Z"
     }
   }
 }

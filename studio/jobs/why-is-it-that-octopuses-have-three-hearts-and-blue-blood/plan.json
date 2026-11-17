@@ -1,0 +1,699 @@
+{
+  "title": "Why Do Octopuses Have Three Hearts and Blue Blood?",
+  "question": "Why is it that octopuses have three hearts and blue blood?",
+  "answer": "An octopus has two small hearts that pump blood through its gills, where the blood picks up oxygen, and one bigger heart that pumps it to the rest of the body. Its blood is blue because it carries oxygen with a helper made with copper, called hemocyanin. Hemocyanin turns blue when it holds oxygen and loses its colour when it lets the oxygen go. Scientists think copper blood works well in cold water with little oxygen, and that the extra hearts help keep the blood moving.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "A bright studio next to a big fish tank. Hùng holds up a big, soft toy octopus while Huy, Bối and Beo look at it."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Riddle time! Who has three hearts, eight arms and blue blood?"
+        },
+        {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "A space monster!"
+        },
+        {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "Nope. Meet this little friend. It's an octopus!"
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy stands next to a picture of an octopus with three glowing hearts inside it. Beside it are two test tubes, one with blue liquid and one almost clear, with a question mark above them."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Here is a surprise. Octopus blood is not always blue. Sometimes it has almost no colour at all! Today we will find out why an octopus has three hearts, and why its blood turns blue."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Bối counts the toy octopus's arms on her fingers. Beo hugs the toy, with three little love hearts floating above him."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "happily",
+          "text": "I know! It has eight arms. So it needs lots of hearts to move them all."
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Or three hearts so it can love three times more!"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "That is the sweetest guess ever, Beo."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "experiment",
+        "what": "Hùng pours seawater from a bucket into a clear glass. The water in the glass is clear, not blue, and Bối leans in to look."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "happily",
+          "text": "And its blood is blue because it drinks the blue sea!"
+        },
+        {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "Let's check. Here is a glass of seawater. Look, it's clear, not blue!"
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "host",
+        "what": "Huy smiles at the camera. Tiny sparkly dots float in the air around him, labelled oxygen."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Great thinking, both of you. Arms really do need blood. But that's not the whole story. The real story is about something you can't even see. It is called oxygen."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "diagram",
+        "what": "On the left, a girl breathes in air full of tiny blue dots labelled oxygen. On the right, a fish swims in water that has a few of the same dots."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Oxygen is an invisible gas. It is in the air, and a little bit is mixed into water too. Every animal needs it all the time to keep its body working. It is a bit like fuel for a car."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "diagram",
+        "what": "The outline of a child's body with a heart in the chest, joined to red tubes that go everywhere. Tiny delivery trucks carrying oxygen dots drive along the tubes."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So how does oxygen get to every part of you? Your blood carries it, like tiny delivery trucks. The blood travels in tubes called blood vessels. And the heart is the pump that pushes it along."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "arrows",
+        "what": "A simple heart split into two halves. Arrows go from one half to the lungs and back, and from the other half out to the whole body and back."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Your heart is about the size of your fist. It has two sides. One side sends blood to your lungs to pick up oxygen. The other side sends that fresh blood all around your body."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "scene",
+        "what": "Beo holds up a small toy water squirter and squeezes it. Huy smiles beside him."
+      },
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "Like my water squirter?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Yes! A heart squeezes and pushes, just like that. Here is our first big idea. A heart is a pump that moves oxygen around the body."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "labels",
+        "what": "A friendly cartoon octopus with its parts named: eight arms with suckers, two big eyes, a soft body, a hard beak like a parrot's, and gills tucked inside the body."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Now let's meet the octopus up close. Eight arms with suckers. Two big eyes. A soft body with no bones at all. A hard beak, a bit like a parrot's. And hidden inside are its gills."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "zoom",
+        "what": "A zoom inside the octopus shows two feathery gills. Water flows over them, and tiny oxygen dots move from the water into the blood."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "surprised",
+          "text": "Gills? Like a fish?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Yes! An octopus has no lungs. Gills are like lungs for living in water. As water flows over them, they pull oxygen out of it."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "Inside the octopus there is a small heart next to each of the two gills, both labelled gill heart, pushing blood through the gills."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "And here comes the surprise. Next to each gill sits a small heart. That makes two gill hearts. Their job is to pump blood through the gills, so the blood can pick up oxygen."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "arrows",
+        "what": "Arrows carry blood from the two gills to a bigger heart in the middle, labelled body heart. From there, arrows go out to the eight arms and the brain."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Then the blood, full of oxygen, flows to heart number three. This is the body heart. It pumps the blood out to the arms, the brain, and everywhere else."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "compare",
+        "what": "On the left, a child's heart with two coloured halves, one for the lungs and one for the body. On the right, the octopus's three separate hearts, in the same two colours for the same jobs."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "happily",
+          "text": "Oh! So our one heart does two jobs, and the octopus has different hearts for different jobs!"
+        },
+        {
+          "who": "Huy",
+          "how": "proudly",
+          "text": "Exactly, Bối. You just thought like a scientist."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "experiment",
+        "what": "Hùng holds a model made of two small rubber squeeze bulbs and one big one, joined by clear tubes of water. The big bulb squirts water right into his face."
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "I built a model! Squeeze, squeeze for the gills, then the big one for the body. Whoa!"
+        },
+        {
+          "who": "Beo",
+          "how": "laughing",
+          "text": "Hùng got a face bath!"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "Here's takeaway number two. Two hearts pump blood to the gills, and one heart pumps it to the rest of the body."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "zoom",
+        "what": "A zoom into human blood shows round red blood cells. Each one carries little oxygen dots, with a tiny iron symbol inside."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "surprised",
+          "text": "But why is octopus blood blue?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Let's zoom into our own blood first. It is full of tiny red blood cells. Inside them is a helper called hemoglobin. It holds on to oxygen using iron, the same metal that nails are made from. It helps make our blood red."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "zoom",
+        "what": "A zoom into octopus blood shows little blue helper blobs floating in liquid. Each one is labelled hemocyanin and has two copper dots."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Octopus blood uses a different helper. It is called hemocyanin. Say it with me. He-mo-SY-a-nin. Instead of iron, it holds on to oxygen with copper."
+        },
+        {
+          "who": "Beo",
+          "how": "laughing",
+          "text": "Hemo... cyan... achoo!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "labels",
+        "what": "Hùng holds up a coil of shiny, orange-brown wire, labelled copper. Next to it is a tiny drawing of a helper with two copper bits holding an oxygen dot."
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "Here's some copper. It's the shiny orange-brown metal you find inside lots of electric wires."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Each hemocyanin helper has two tiny bits of copper. Together they grab on to oxygen."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "compare",
+        "what": "Two tubes of octopus blood side by side. The left one is almost clear, labelled no oxygen. The right one is blue, labelled carrying oxygen. Arrows go back and forth between them."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Now the cool part. When the copper helper is carrying oxygen, it turns blue. When it gives the oxygen away to the body, it loses its colour. That's why octopus blood is not always blue!"
+        },
+        {
+          "who": "Bối",
+          "how": "surprised",
+          "text": "It changes colour like a magic trick!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "diagram",
+        "what": "On the left, our oxygen helpers sit inside red blood cells drawn like little buses with passengers. On the right, octopus helpers float freely in the liquid."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "There is one more difference. Our helpers ride inside blood cells, like passengers on a bus. Octopus helpers float freely in the liquid of the blood."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "count",
+        "what": "A timeline with a pin at 1878. A scientist from long ago looks at an octopus, and a little label says found in the common octopus."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Scientists first found this copper helper in the common octopus about 150 years ago. Here's takeaway number three. Octopus blood is blue because it carries oxygen with copper, not iron."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "compare",
+        "what": "Two cups of blood the same size. The red cup holds four oxygen dots. The blue cup holds only one."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So which helper is better? In the same amount of blood, most copper helpers carry only about a quarter as much oxygen as our red helper."
+        },
+        {
+          "who": "Beo",
+          "how": "worried",
+          "text": "Poor octopus!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "A dark, cold part of the deep sea, with an octopus resting by the rocks. A thermometer shows cold, and only a few oxygen dots float in the water."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "surprised",
+          "text": "Then why doesn't an octopus just have red blood?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Good question! Scientists think copper blood works well in cold water that has little oxygen. In places like that, the red helper doesn't work as well."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "compare",
+        "what": "A row of animals with little blue drops above them: an octopus, a crab, a big hairy spider and a scorpion."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "And octopuses are not alone. Crabs, some spiders and some scorpions use copper helpers too. So blue blood is not so strange after all!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "arrows",
+        "what": "Blood flows through the gills, gets a push from each small gill heart, and then gets another push from the big body heart. Push marks are drawn at each heart."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "This is where the three hearts come in. Scientists think the gill hearts give the blood an extra push through the gills. Then the body heart sends it on its way. More pumping may help blood that carries less oxygen keep up. Scientists are still studying how it all works."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "host",
+        "what": "Huy holds up a card showing three hearts next to a little blue copper drop."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Here's takeaway number four. Scientists think copper blood works well in the cold sea, and three hearts may help keep it moving."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "scene",
+        "what": "Hùng wears a floppy octopus costume with three toy drums on his chest. He trips over the costume's eight arms while Beo giggles."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Imagine if you had three hearts like an octopus!"
+        },
+        {
+          "who": "Hùng",
+          "how": "laughing",
+          "text": "Boom, boom, boom! Three drums! Oops, I tripped over my own arms."
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "You need more feet, not more hearts!"
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Bối sits still on a cushion with her hand flat on the left side of her chest. A small heart symbol beats next to her, and Huy sits beside her."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "You can feel your own heart at home. Sit quietly. Put your hand flat on your chest, a little to the left. Then wait and feel."
+        },
+        {
+          "who": "Bối",
+          "how": "surprised",
+          "text": "I can feel it! Thump, thump, thump."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Hùng gently hops in place, with a counter showing 10. Then he puts his hand on his chest, and the heart symbol beside him beats faster."
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "tired",
+          "text": "I just hopped ten times. Now my heart is going faster. It's pumping more blood so my body gets more oxygen."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "That's your one heart working hard. An octopus has three pumps sharing the work."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "host",
+        "what": "Huy stands next to the octopus drawing. Its two gill hearts and its body heart are labelled, and its blood is shown in blue."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "So here's the answer. An octopus has two hearts for its gills and one heart for its body. Its blood is blue because it carries oxygen with copper, which scientists think works well in the cold sea."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "scene",
+        "what": "An octopus squeezes its soft body through a tiny gap between two rocks. A dotted circle shows that the gap is about as big as its eye."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "And here's a fun fact. Octopuses have no bones. Their only hard part is the beak. So an octopus can squeeze through a hole about as big as its eye!"
+        },
+        {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "Through a hole as small as an eye? Wow!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "scene",
+        "what": "Huy, Hùng, Bối and Beo wave goodbye. Behind them, a cartoon octopus squirts a cloud of dark ink, and a big subscribe button reads Ask Huy."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Next time, we'll find out why octopuses squirt ink! Subscribe to Ask Huy so you don't miss it."
+        },
+        {
+          "who": "Bối",
+          "how": "joyfully",
+          "text": "Bye, everyone!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Octopuses have three hearts. Two pump blood to the gills, and the third pumps it to the rest of the body.",
+      "source": "Octopus"
+    },
+    {
+      "claim": "Octopuses have eight arms with suckers, two large eyes and a hard beak like a parrot's.",
+      "source": "Octopus"
+    },
+    {
+      "claim": "Octopuses have no bones (no inside or outside skeleton). The beak is their only hard part.",
+      "source": "Octopus"
+    },
+    {
+      "claim": "An octopus can squeeze through a hole about as big as its eye.",
+      "source": "Octopus"
+    },
+    {
+      "claim": "The circulatory system is the heart and the blood vessels. It moves blood around the body, and the blood carries what the body needs, including oxygen.",
+      "source": "Circulatory system"
+    },
+    {
+      "claim": "In humans, blood goes through the lungs in one loop and to the rest of the body in another. Blood from the left side of the heart is full of oxygen and goes to the body.",
+      "source": "Circulatory system"
+    },
+    {
+      "claim": "In animals with backbones, such as humans, hemoglobin carries oxygen inside red blood cells and holds it with iron.",
+      "source": "Hemocyanin"
+    },
+    {
+      "claim": "Hemocyanin is a protein that carries oxygen in some animals without backbones. Each unit has two copper atoms that hold one oxygen molecule.",
+      "source": "Hemocyanin"
+    },
+    {
+      "claim": "Hemocyanin is colourless when it is not carrying oxygen and turns blue when it is.",
+      "source": "Hemocyanin"
+    },
+    {
+      "claim": "Hemocyanin is not kept inside blood cells. It floats freely in the blood liquid.",
+      "source": "Hemocyanin"
+    },
+    {
+      "claim": "Hemocyanin was first found in the common octopus (Octopus vulgaris) in 1878, about 150 years ago.",
+      "source": "Hemocyanin"
+    },
+    {
+      "claim": "Most hemocyanins are about one quarter as good as hemoglobin at carrying oxygen in the same amount of blood.",
+      "source": "Hemocyanin"
+    },
+    {
+      "claim": "In cold places with little oxygen, hemocyanin carries oxygen better than hemoglobin does (seen in animals living there, such as crustaceans).",
+      "source": "Hemocyanin"
+    },
+    {
+      "claim": "Crabs (crustaceans), some spiders such as tarantulas, and some scorpions such as the emperor scorpion also use hemocyanin.",
+      "source": "Hemocyanin"
+    },
+    {
+      "claim": "Octopuses and other cephalopods live only in the sea, in all the oceans, from the surface down to the deep sea.",
+      "source": "Cephalopod"
+    },
+    {
+      "claim": "Gills take oxygen from water. The heart is about the size of your fist. Copper is an orange-brown metal used in electric wires. Hemoglobin with iron helps make our blood red. Exercise makes the heart beat faster.",
+      "source": "Basic school knowledge"
+    },
+    {
+      "claim": "Octopuses can squirt ink (teaser for the next video).",
+      "source": "Octopus"
+    },
+    {
+      "claim": "The idea that the extra hearts help push blood that carries less oxygen is presented only as what scientists think, and the script says they are still studying it.",
+      "source": "Octopus; Hemocyanin (inference, flagged as uncertain)"
+    }
+  ],
+  "shorts": [
+    1,
+    30,
+    19,
+    31
+  ],
+  "thumbnail": "3 Hearts? BLUE Blood?!",
+  "description": "Why does an octopus have three hearts, and why is its blood blue? Huy, Hùng, Bối and Beo find out how gills, copper and a clever team of hearts keep an octopus going in the cold sea. A gentle, fact-checked science video for curious kids aged 6–12, with a safe heartbeat check you can try together at home.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host (25): curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
+      "villain": false
+    }
+  ],
+  "look": ""
+}

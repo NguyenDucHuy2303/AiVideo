@@ -1,7 +1,7 @@
 {
   "slug": "why-does-the-moon-change-shape",
   "topic": "Why does the Moon change shape?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.272Z",
@@ -102,6 +102,535 @@
       "at": "2026-11-13T09:53:15.556Z",
       "status": "rewrite",
       "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 120000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T10:46:27.324Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 120000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T19:40:58.043Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T20:11:24.870Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T20:41:29.944Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T21:11:35.061Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T21:41:40.430Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T22:11:45.625Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T22:41:50.895Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T23:11:57.052Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T23:42:01.667Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T00:12:06.860Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T00:42:12.623Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T01:12:17.705Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T01:42:22.612Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T02:12:28.253Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T02:42:33.279Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T03:12:38.148Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T03:42:43.719Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T04:12:48.854Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T04:42:54.117Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T05:12:59.518Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T05:43:04.675Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T06:13:10.359Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T06:43:15.364Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T07:13:20.657Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T07:43:26.563Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T08:13:31.454Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T08:43:36.281Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T09:13:42.396Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T09:43:47.418Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T12:08:27.813Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T12:38:32.643Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T15:05:06.570Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T15:35:12.495Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T16:05:17.476Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T16:35:22.413Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T17:05:28.236Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T17:35:33.351Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T18:05:38.123Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T18:35:43.050Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T19:05:48.156Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T19:35:53.536Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T20:05:59.105Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T20:36:04.395Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T21:06:10.276Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T21:36:15.433Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T22:06:20.745Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T22:36:27.174Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T23:06:32.040Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-14T23:36:36.733Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T00:06:42.707Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T00:36:47.681Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T01:06:52.927Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T01:36:58.697Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T02:07:03.929Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T02:37:09.178Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T03:07:14.543Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T03:37:19.923Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T04:07:25.437Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T04:37:30.697Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T05:07:36.113Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T05:37:42.470Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T06:07:47.489Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T06:37:53.132Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T07:07:58.981Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T07:38:04.448Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T08:08:09.934Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T08:38:15.274Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T09:08:20.494Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T09:38:26.528Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T10:08:48.727Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T10:38:51.329Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T11:09:00.658Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T11:39:05.854Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T12:09:12.235Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T12:39:17.265Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T13:09:22.583Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T13:39:28.479Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T14:09:33.752Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T14:39:39.024Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T15:09:44.772Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T15:39:50.140Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T16:09:55.957Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T16:40:01.097Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T17:10:06.257Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T17:40:12.479Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T18:10:17.793Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T18:40:23.201Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T19:10:29.193Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T19:40:34.645Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T20:10:40.231Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T20:40:45.391Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T21:10:50.846Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T21:40:57.087Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T22:11:02.169Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T22:41:07.650Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T23:11:13.429Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-15T23:41:18.724Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T00:11:24.227Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T00:41:29.915Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T01:11:35.239Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T01:41:41.062Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T01:52:07.989Z",
+      "status": "review",
+      "info": "kẹt vì trần token cộng dồn (lỗi đã sửa 16/11)"
+    },
+    {
+      "at": "2026-11-16T01:52:07.990Z",
+      "status": "rewrite",
+      "info": "viết lại với Huy, Hùng, Bối, Beo: lượt mới, trần token tính từ đây"
+    },
+    {
+      "at": "2026-11-16T01:52:13.293Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"why-does-the-moon-change-shape\" has spent 121678 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T02:08:17.930Z",
+      "status": "review"
     }
   ],
   "kind": "qa",
@@ -111,6 +640,5 @@
     "value": 8.3,
     "why": "Mạnh ở mở đầu gây tò mò (\"cái chuối\", \"ai cắn Mặt Trăng?\"), giải thích đúng khoa học, gỡ hiểu lầm bóng Trái Đất, có thí nghiệm đèn pin–quả bóng, chủ đề nhiều người tìm và dễ dựng hình; yếu ở chỗ hơi dài và nhiều thuật ngữ (terminator, tidal locking, gibbous, waxing/waning) có thể làm trẻ 6–12 tuổi rối, đoạn quỹ đạo/khóa thủy triều chen giữa hơi lan man, và lời thoại viết bằng tiếng Anh trong khi kênh là \"Hỏi Huy\" tiếng Việt.",
     "hash": "d1201eb19135ef5e"
-  },
-  "retryAt": "2026-11-13T10:23:15.555Z"
+  }
 }

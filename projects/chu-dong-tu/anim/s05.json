@@ -1,0 +1,108 @@
+{
+  "narration": "Năm tháng trôi qua, người cha già yếu rồi ốm nặng. Ông gọi con lại gần bên mình. Cha (mệt): \"Con ơi, cha sắp đi xa rồi. Con hãy giữ lấy chiếc khố mà mặc nhé.\" Chử Đồng Tử (khóc): \"Cha ơi, cha đừng lo cho con.\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo_form",
+        "place": "right",
+        "enter": "none",
+        "act": "kneel",
+        "face": "sad",
+        "then": "worry",
+        "thenFace": "sad"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  "era": "van_lang",
+  "duration": 11.4,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "field",
+    "objects": [
+      {
+        "type": "mat",
+        "x": 260
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "dong_tu_ngheo_form",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": false,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": 582.4,
+      "scale": 1.4,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 0,
+      "do": "kneel",
+      "face": "sad"
+    },
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 5.7,
+      "do": "worry",
+      "face": "sad"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.7,
+      "type": "close",
+      "on": [
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.06
+    }
+  ]
+}

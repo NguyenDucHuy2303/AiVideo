@@ -70,6 +70,16 @@
       "at": "2026-11-13T07:10:24.653Z",
       "status": "done",
       "info": "bản tiếng Anh: giọng xong"
+    },
+    {
+      "at": "2026-11-13T16:52:59.198Z",
+      "status": "done",
+      "info": "bản tiếng Anh: xong"
+    },
+    {
+      "at": "2026-11-17T04:10:13.772Z",
+      "status": "done",
+      "info": "bản tiếng Anh: giọng xong"
     }
   ],
   "kind": "ngụ ngôn",
@@ -115,41 +125,41 @@
   "exported": {
     "long": {
       "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
-      "publishAt": "2026-11-16T12:30:00.000Z",
+      "publishAt": "2026-11-18T12:30:00.000Z",
       "channel": "huy-ke-chuyen",
-      "at": "2026-11-13T08:10:10.201Z"
+      "at": "2026-11-16T08:54:16.027Z"
     },
     "shorts": [
       {
         "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
-        "publishAt": "2026-11-17T00:30:00.000Z",
+        "publishAt": "2026-11-19T10:00:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T08:10:10.214Z"
+        "at": "2026-11-16T08:54:16.046Z"
       },
       {
         "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
-        "publishAt": "2026-11-17T05:00:00.000Z",
+        "publishAt": "2026-11-20T00:30:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T08:10:10.227Z"
+        "at": "2026-11-16T08:54:16.076Z"
       },
       {
         "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
-        "publishAt": "2026-11-17T10:00:00.000Z",
+        "publishAt": "2026-11-20T05:00:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-13T08:10:10.231Z"
+        "at": "2026-11-16T08:54:16.095Z"
       }
     ],
     "en": {
       "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
-      "publishAt": "2026-11-18T01:30:00.000Z",
+      "publishAt": "2026-11-19T01:30:00.000Z",
       "channel": "huy-ke-chuyen",
-      "at": "2026-11-13T08:10:10.249Z"
+      "at": "2026-11-16T08:54:16.120Z"
     }
   },
   "drive": {
     "folder": "Ếch Ngồi Đáy Giếng",
-    "mtime": 1794557410260.1128,
-    "at": "2026-11-13T08:10:42.081Z"
+    "mtime": 1794819256212.458,
+    "at": "2026-11-16T08:54:48.965Z"
   },
   "english": "ready"
 }

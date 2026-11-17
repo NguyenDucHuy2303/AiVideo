@@ -1,7 +1,7 @@
 {
   "slug": "vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t",
   "topic": "Vì sao Việt Nam có hình chữ S và có những vùng đất nào dọc theo hình chữ S ấy?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.296Z",
@@ -102,6 +102,536 @@
       "at": "2026-11-13T10:01:36.819Z",
       "status": "rewrite",
       "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 120000 write tokens; gemma3:12b is not installed, so the work waits a"
+    },
+    {
+      "at": "2026-11-13T10:46:27.486Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 120000 write tokens; gemma3:12b is not installed, so the work waits a"
+    },
+    {
+      "at": "2026-11-13T19:40:58.153Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T20:11:24.976Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T20:41:30.082Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T21:11:35.174Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T21:41:40.547Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T22:11:45.807Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T22:41:51.040Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T23:11:57.153Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T23:42:01.790Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T00:12:07.054Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T00:42:12.825Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T01:12:17.809Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T01:42:22.717Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T02:12:28.357Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T02:42:33.395Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T03:12:38.331Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T03:42:43.821Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T04:12:48.982Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T04:42:54.219Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T05:12:59.621Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T05:43:04.798Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T06:13:10.468Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T06:43:15.464Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T07:13:20.767Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T07:43:26.672Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T08:13:31.559Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T08:43:36.389Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T09:13:42.512Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T09:43:47.517Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T12:08:27.981Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T12:38:32.752Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T15:05:06.767Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T15:35:12.606Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T16:05:17.640Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T16:35:22.518Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T17:05:28.341Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T17:35:33.461Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T18:05:38.228Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T18:35:43.164Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T19:05:48.261Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T19:35:53.642Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T20:05:59.230Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T20:36:04.501Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T21:06:10.425Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T21:36:15.541Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T22:06:20.860Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T22:36:27.292Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T23:06:32.204Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T23:36:36.865Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T00:06:42.813Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T00:36:47.784Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T01:06:53.030Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T01:36:58.804Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T02:07:04.050Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T02:37:09.295Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T03:07:14.656Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T03:37:20.030Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T04:07:25.547Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T04:37:30.805Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T05:07:36.232Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T05:37:42.577Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T06:07:47.611Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T06:37:53.237Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T07:07:59.089Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T07:38:04.574Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T08:08:10.042Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T08:38:15.381Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T09:08:20.596Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T09:38:26.643Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T10:08:48.845Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T10:38:51.440Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T11:09:00.769Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T11:39:05.968Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T12:09:12.356Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T12:39:17.407Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T13:09:22.690Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T13:39:28.588Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T14:09:33.859Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T14:39:39.133Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T15:09:44.878Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T15:39:50.258Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T16:09:56.072Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T16:40:01.214Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T17:10:06.369Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T17:40:12.591Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T18:10:17.902Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T18:40:23.335Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T19:10:29.301Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T19:40:34.752Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T20:10:40.344Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T20:40:45.502Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T21:10:50.958Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T21:40:57.206Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T22:11:02.276Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T22:41:07.769Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T23:11:13.545Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T23:41:18.834Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-16T00:11:24.342Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-16T00:41:30.032Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-16T01:11:35.349Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-16T01:41:41.171Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-16T01:52:07.999Z",
+      "status": "review",
+      "info": "kẹt vì trần token cộng dồn (lỗi đã sửa 16/11)"
+    },
+    {
+      "at": "2026-11-16T01:52:08.001Z",
+      "status": "rewrite",
+      "info": "viết lại với Huy, Hùng, Bối, Beo: lượt mới, trần token tính từ đây"
+    },
+    {
+      "at": "2026-11-16T01:52:13.476Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-viet-nam-co-hinh-chu-s-va-co-nhung-vung-dat-nao-doc-t\" has spent 121202 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-16T02:18:35.157Z",
+      "status": "review",
+      "info": "1 vấn đề còn lại: The script is too long (1554 words): it needs about 1,050–1,400."
     }
   ],
   "kind": "qa-vi",
@@ -111,6 +641,5 @@
     "value": 8.2,
     "why": "Mở đầu cuốn (\"bản đồ vẫn lớn thêm mỗi năm\"), bố cục bốn bước rõ, có thí nghiệm cát và mẹo \"sông Chín Rồng\", chủ đề phổ biến và dễ dựng bằng bản đồ; nhưng nhiều số liệu dày đặc (đặc biệt \"13 lần phù sa\", chiều dài Mê Kông, mốc \"hơn ba trăm năm\" với Lào) còn lỏng hoặc cần kiểm chứng, nói Cửu Long \"vẫn bồi thêm\" bỏ qua thực tế sạt lở/sụt lún, và phần đi dọc chữ S hơi giống liệt kê địa lý nên dễ chùng ở giữa.",
     "hash": "eb164fc5ec66029e"
-  },
-  "retryAt": "2026-11-13T10:31:36.818Z"
+  }
 }

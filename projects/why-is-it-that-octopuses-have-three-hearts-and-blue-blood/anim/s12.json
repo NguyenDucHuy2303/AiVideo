@@ -1,0 +1,112 @@
+{
+  "castFile": "cast.json",
+  "duration": 10.6,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "proud"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 7.42,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "worry",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"75\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.5\">Two Gill Hearts</text><ellipse cx=\"500\" cy=\"330\" rx=\"440\" ry=\"220\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"1\"/><path d=\"M240 240 C220 320 230 400 260 450 C290 400 300 320 280 240 Z\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"1.5\"/><path d=\"M720 240 C700 320 710 400 740 450 C770 400 780 320 760 240 Z\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"1.5\"/><path d=\"M370 330 C340 300 330 280 355 275 C368 272 370 285 370 285 C370 285 372 272 385 275 C410 280 400 300 370 330 Z\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\" class=\"pulse\" data-in=\"3\"/><path d=\"M630 330 C600 300 590 280 615 275 C628 272 630 285 630 285 C630 285 632 272 645 275 C670 280 660 300 630 330 Z\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\" class=\"pulse\" data-in=\"3.5\"/><path d=\"M340 290 L290 290 M660 290 L710 290\" fill=\"none\" stroke=\"#e53935\" stroke-width=\"10\" stroke-dasharray=\"16 10\" class=\"flow\" data-in=\"5\"/><text x=\"370\" y=\"420\" font-family=\"sans-serif\" font-size=\"32\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"4\">gill heart</text><text x=\"630\" y=\"420\" font-family=\"sans-serif\" font-size=\"32\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"4.5\">gill heart</text><text x=\"260\" y=\"510\" font-family=\"sans-serif\" font-size=\"32\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"2\">gill</text><text x=\"740\" y=\"510\" font-family=\"sans-serif\" font-size=\"32\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"2\">gill</text></svg>",
+    "style": "sketch",
+    "icons": {},
+    "reveal": 6.36
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

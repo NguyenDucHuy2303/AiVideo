@@ -1,0 +1,325 @@
+{
+  "narration": "Một ngày đẹp trời, đoàn thuyền của công chúa xuôi dòng sông Hồng. Trống đồng vang tùng tùng, tiếng sáo réo rắt, người hầu tấp nập. Thị nữ (hớn hở): \"Công chúa ơi, cảnh bên sông đẹp quá!\"",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "center",
+        "enter": "from_left",
+        "act": "ride",
+        "face": "happy",
+        "then": "point",
+        "thenFace": "joy"
+      },
+      {
+        "id": "thi_nu",
+        "place": "right",
+        "enter": "from_left",
+        "act": "cheer",
+        "face": "joy",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "crowd": {
+      "id": "tien_dong",
+      "count": 4,
+      "act": "idle",
+      "then": "none"
+    },
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "track"
+  },
+  "era": "van_lang",
+  "duration": 10.3,
+  "time": "day",
+  "mood": "majestic",
+  "set": {
+    "name": "mountain",
+    "objects": [
+      {
+        "type": "banner",
+        "x": 1500,
+        "color": "#3a1a1a"
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "tien_dung",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#efe4cc",
+          "skirt": "#efe4cc",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1210"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12",
+          "eyeScale": 1.1
+        },
+        "build": "slim",
+        "props": []
+      },
+      "x": -1900,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "thi_nu",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "outfit": {
+          "type": "dongson",
+          "color": "#b89a6e",
+          "skirt": "#b89a6e",
+          "trim": "#a87a3a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "earrings": false,
+        "props": [],
+        "build": "slim",
+        "skin": "#e0aa74",
+        "bracelets": true,
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": -1380,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "tien_dong_1",
+      "type": "human",
+      "look": {
+        "body": "child",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f2e6b8",
+          "trim": "#d8a830",
+          "skirt": "#e3c890"
+        },
+        "hair": {
+          "style": "traidao"
+        },
+        "bracelets": true,
+        "props": [],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 900,
+      "scale": 0.8075,
+      "facing": -1
+    },
+    {
+      "id": "tien_dong_2",
+      "type": "human",
+      "look": {
+        "body": "child",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f2e6b8",
+          "trim": "#d8a830",
+          "skirt": "#e3c890"
+        },
+        "hair": {
+          "style": "traidao"
+        },
+        "bracelets": true,
+        "props": [],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1220,
+      "scale": 0.867,
+      "facing": -1
+    },
+    {
+      "id": "tien_dong_3",
+      "type": "human",
+      "look": {
+        "body": "child",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f2e6b8",
+          "trim": "#d8a830",
+          "skirt": "#e3c890"
+        },
+        "hair": {
+          "style": "traidao"
+        },
+        "bracelets": true,
+        "props": [],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1540,
+      "scale": 0.8075,
+      "facing": -1
+    },
+    {
+      "id": "tien_dong_4",
+      "type": "human",
+      "look": {
+        "body": "child",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f2e6b8",
+          "trim": "#d8a830",
+          "skirt": "#e3c890"
+        },
+        "hair": {
+          "style": "traidao"
+        },
+        "bracelets": true,
+        "props": [],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1860,
+      "scale": 0.867,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "tien_dung",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": 0,
+        "ease": "out"
+      },
+      "dur": 4.64,
+      "face": "happy"
+    },
+    {
+      "actor": "tien_dung",
+      "at": 4.64,
+      "do": "ride",
+      "face": "happy"
+    },
+    {
+      "actor": "tien_dung",
+      "at": 5.15,
+      "do": "point",
+      "face": "joy"
+    },
+    {
+      "actor": "thi_nu",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": 520,
+        "ease": "out"
+      },
+      "dur": 4.64,
+      "face": "joy"
+    },
+    {
+      "actor": "thi_nu",
+      "at": 4.64,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "thi_nu",
+      "at": 5.15,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "tien_dong_1",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "tien_dong_2",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "tien_dong_3",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "tien_dong_4",
+      "at": 0,
+      "do": "idle"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "sparkle",
+      "on": "tien_dung",
+      "at": 3.0900000000000003,
+      "dur": 6.180000000000001
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": [
+        "tien_dung",
+        "thi_nu"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.15,
+      "type": "full",
+      "on": [
+        "tien_dung"
+      ],
+      "push": 0.06
+    }
+  ]
+}

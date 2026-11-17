@@ -1,3 +1,16 @@
 {
-  "issues": []
+  "issues": [
+    {
+      "scene": 25,
+      "quote": "And that is exactly what thin pieces handle best.",
+      "problem": "Oversimplified and partly wrong. Thin pieces handle pulling well. A long, thin piece that is squeezed can bend sideways and buckle. The source says truss parts are braced to stop this. It says a spaghetti stick is weak and breaks easily when bent.",
+      "fix": "And that is much easier for thin pieces than bending. A thin piece can pull well, and when pieces are joined in triangles, they hold each other in place."
+    },
+    {
+      "scene": 14,
+      "quote": "Builders just had to find a shape that only squeezes the stone and never pulls it.",
+      "problem": "Too absolute. The source says masonry arches are designed to stay under compression \"so far as possible\". Moving loads can cause some pulling, which is why builders add heavy fill on top.",
+      "fix": "Builders just had to find a shape that squeezes the stone and pulls it as little as possible."
+    }
+  ]
 }

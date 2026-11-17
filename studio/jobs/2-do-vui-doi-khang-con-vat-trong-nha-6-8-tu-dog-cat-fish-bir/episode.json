@@ -1,0 +1,583 @@
+{
+  "title": "Cá của Beo đi đâu rồi?",
+  "youtubeTitle": "Cá của Beo mất tích! Học dog, cat, fish, rabbit, chicken | Tiếng Anh cho bé",
+  "words": [
+    {
+      "en": "dog",
+      "vi": "con chó",
+      "thing": "dog"
+    },
+    {
+      "en": "chicken",
+      "vi": "con gà",
+      "thing": "chicken"
+    },
+    {
+      "en": "rabbit",
+      "vi": "con thỏ",
+      "thing": "rabbit"
+    },
+    {
+      "en": "cat",
+      "vi": "con mèo",
+      "thing": "cat"
+    },
+    {
+      "en": "fish",
+      "vi": "con cá",
+      "thing": "fish"
+    }
+  ],
+  "things": [
+    {
+      "id": "dog",
+      "kind": "animal",
+      "species": "dog",
+      "speaker": "Chó"
+    },
+    {
+      "id": "cat",
+      "kind": "animal",
+      "species": "cat",
+      "speaker": "Mèo"
+    },
+    {
+      "id": "chicken",
+      "kind": "animal",
+      "species": "chicken"
+    },
+    {
+      "id": "rabbit",
+      "kind": "animal",
+      "species": "rabbit"
+    },
+    {
+      "id": "fish",
+      "kind": "animal",
+      "species": "fish"
+    },
+    {
+      "id": "pot",
+      "kind": "item",
+      "icon": "cooking pot"
+    }
+  ],
+  "places": {
+    "living": "a bright cozy modern Vietnamese living room: a sofa, a rug, a big window, an empty fish tank on a low table",
+    "garden": "a sunny green garden of a modern Vietnamese house: grass, flower bushes, a small wooden fence",
+    "kitchen": "a bright modern Vietnamese kitchen: a counter, a stove, shelves, a round table"
+  },
+  "scenes": [
+    {
+      "place": "living",
+      "say": "Beo (sợ hãi): \"Anh ơi! Bể cá trống rỗng rồi!\" Bối (ngạc nhiên): \"Cá của Beo đâu mất rồi?\" Huy (vui vẻ): \"Bình tĩnh nào. Cả nhà cùng đi tìm nhé.\" Hùng (tinh nghịch): \"Ừm... em không biết gì đâu nha.\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "worry",
+          "who": "Beo",
+          "face": "scared"
+        },
+        {
+          "line": 2,
+          "do": "look",
+          "who": "Bối",
+          "to": "Beo",
+          "face": "surprised"
+        },
+        {
+          "line": 3,
+          "do": "nod",
+          "who": "Huy",
+          "face": "happy"
+        },
+        {
+          "line": 4,
+          "do": "idle",
+          "who": "Hùng",
+          "face": "worried"
+        }
+      ]
+    },
+    {
+      "place": "living",
+      "say": "Bối (ngạc nhiên): \"Nghe kìa! Có tiếng gì sau ghế sofa.\" [2s] Chó (vui vẻ): \"Woof! I am a dog!\" Beo (vui vẻ): \"*Dog!* Là con chó!\" Huy (vui vẻ): \"Các bạn nói cùng Beo nào: *Dog!*\" [3s] Hùng (vui vẻ): \"Giỏi quá! Chó biết cá đi đâu không?\" Chó (tinh nghịch): \"Woof! Follow me!\" Bối (vui vẻ): \"Chó dẫn đường kìa, đi thôi!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "peek",
+          "who": "Bối",
+          "face": "surprised"
+        },
+        {
+          "line": 2,
+          "do": "appear",
+          "what": "dog"
+        },
+        {
+          "line": 4,
+          "do": "jump",
+          "who": "Beo",
+          "face": "joy"
+        },
+        {
+          "line": 7,
+          "do": "look",
+          "who": "Hùng",
+          "to": "dog",
+          "face": "happy"
+        },
+        {
+          "line": 8,
+          "do": "run_around",
+          "what": "dog"
+        },
+        {
+          "line": 9,
+          "do": "point",
+          "who": "Bối",
+          "face": "happy"
+        }
+      ]
+    },
+    {
+      "place": "living",
+      "say": "Chó (tinh nghịch): \"Woof! Water! Water!\" Bối (ngạc nhiên): \"Có vết nước! Ra vườn thôi!\" Beo (vui vẻ): \"Em chạy trước nha!\" [2s]",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "dog"
+        },
+        {
+          "line": 1,
+          "do": "run_around",
+          "what": "dog"
+        },
+        {
+          "line": 2,
+          "do": "point",
+          "who": "Bối",
+          "face": "surprised"
+        },
+        {
+          "line": 3,
+          "do": "hop",
+          "who": "Beo",
+          "face": "happy"
+        }
+      ]
+    },
+    {
+      "place": "garden",
+      "say": "[2s] Beo (sợ hãi): \"Ối! Con gì chạy vòng vòng thế?\" Bối (vui vẻ): \"*Chicken!* Là con gà đó Beo.\" Huy (vui vẻ): \"Các bạn nói cùng Bối nào: *Chicken!*\" [3s] Huy (tự hào): \"Tuyệt vời! Gà ơi, có thấy cá không?\" Hùng (cười): \"Gà chỉ biết cục tác thôi anh.\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "appear",
+          "what": "chicken"
+        },
+        {
+          "line": 1,
+          "do": "run_around",
+          "what": "chicken"
+        },
+        {
+          "line": 2,
+          "do": "jump",
+          "who": "Beo",
+          "face": "scared"
+        },
+        {
+          "line": 3,
+          "do": "point",
+          "who": "Bối",
+          "face": "happy"
+        },
+        {
+          "line": 6,
+          "do": "crouch",
+          "who": "Huy",
+          "face": "proud"
+        },
+        {
+          "line": 7,
+          "do": "laugh",
+          "who": "Hùng",
+          "face": "laugh"
+        }
+      ]
+    },
+    {
+      "place": "garden",
+      "say": "Beo (lo lắng): \"Gà ơi, gà có ăn cá của em không?\" [2s] Hùng (cười): \"Gà mà ăn cá thì buồn cười lắm!\" Huy (vui vẻ): \"Gà không ăn cá đâu. Mình tìm tiếp nhé.\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "chicken"
+        },
+        {
+          "line": 1,
+          "do": "crouch",
+          "who": "Beo",
+          "face": "worried"
+        },
+        {
+          "line": 2,
+          "do": "run_around",
+          "what": "chicken"
+        },
+        {
+          "line": 3,
+          "do": "laugh",
+          "who": "Hùng",
+          "face": "laugh"
+        },
+        {
+          "line": 4,
+          "do": "nod",
+          "who": "Huy",
+          "face": "happy"
+        }
+      ]
+    },
+    {
+      "place": "garden",
+      "say": "Hùng (ngạc nhiên): \"Nhìn kìa! Con gì trắng trắng nhảy nhảy?\" Bối (vui vẻ): \"*Rabbit!* Con thỏ!\" Hùng (vui vẻ): \"Các bạn nói cùng Hùng nào: *Rabbit!*\" [3s] Beo (vui vẻ): \"Giỏi quá! Thỏ có ăn cá không?\" Huy (cười): \"Thỏ ăn cà rốt, Beo ạ.\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "rabbit"
+        },
+        {
+          "line": 1,
+          "do": "point",
+          "who": "Hùng",
+          "face": "surprised"
+        },
+        {
+          "line": 2,
+          "do": "hop",
+          "who": "Bối",
+          "face": "joy"
+        },
+        {
+          "line": 5,
+          "do": "look",
+          "who": "Beo",
+          "to": "rabbit",
+          "face": "happy"
+        },
+        {
+          "line": 6,
+          "do": "laugh",
+          "who": "Huy",
+          "face": "laugh"
+        }
+      ]
+    },
+    {
+      "place": "kitchen",
+      "say": "[2s] Mèo (tinh nghịch): \"Meow! I am a cat!\" Beo (vui vẻ): \"*Cat!* Là con mèo!\" Hùng (vui vẻ): \"Các bạn nói cùng Beo nào: *Cat!*\" [3s] Huy (tự hào): \"Giỏi lắm! Mèo ngồi cạnh cái nồi.\" Mèo (tinh nghịch): \"Meow! Look at the pot!\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "pot"
+        },
+        {
+          "line": 1,
+          "do": "appear",
+          "what": "cat"
+        },
+        {
+          "line": 3,
+          "do": "wave",
+          "who": "Beo",
+          "face": "happy"
+        },
+        {
+          "line": 6,
+          "do": "look",
+          "who": "Huy",
+          "to": "pot",
+          "face": "proud"
+        },
+        {
+          "line": 7,
+          "do": "point",
+          "who": "Bối",
+          "face": "surprised"
+        }
+      ]
+    },
+    {
+      "place": "kitchen",
+      "say": "Beo (sợ hãi): \"Cái nồi đang rung kìa!\" [2s] Bối (lo lắng): \"Trong nồi có gì thế?\" Huy (vui vẻ): \"Để anh mở ra xem.\" [2s] Bối (vui vẻ): \"*Fish!* Cá của Beo đây rồi!\" Hùng (vui vẻ): \"Các bạn nói cùng Bối nào: *Fish!*\" [3s] Huy (tự hào): \"Giỏi quá! Cá bơi trong nồi luôn.\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "pot"
+        },
+        {
+          "line": 2,
+          "do": "shake",
+          "what": "pot"
+        },
+        {
+          "line": 4,
+          "do": "walk_to",
+          "who": "Huy",
+          "to": "pot"
+        },
+        {
+          "line": 5,
+          "do": "open",
+          "what": "pot"
+        },
+        {
+          "line": 5,
+          "do": "pop_out",
+          "what": "fish",
+          "to": "pot"
+        },
+        {
+          "line": 6,
+          "do": "cheer",
+          "who": "Bối",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "kitchen",
+      "say": "Hùng (lo lắng): \"Em xin lỗi. Em thay nước bể rồi quên mất.\" Beo (ngạc nhiên): \"Anh Hùng bỏ cá vào nồi á?\" Hùng (cười): \"Em tưởng đó là cái bể to mà!\" Huy (vui vẻ): \"Lần sau nhớ nói cả nhà nhé.\" Hùng (tự hào): \"Dạ! Em hứa!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "worry",
+          "who": "Hùng",
+          "face": "worried"
+        },
+        {
+          "line": 2,
+          "do": "look",
+          "who": "Beo",
+          "to": "Hùng",
+          "face": "surprised"
+        },
+        {
+          "line": 3,
+          "do": "laugh",
+          "who": "Hùng",
+          "face": "laugh"
+        },
+        {
+          "line": 4,
+          "do": "nod",
+          "who": "Huy",
+          "face": "happy"
+        },
+        {
+          "line": 5,
+          "do": "cheer",
+          "who": "Hùng",
+          "face": "proud"
+        }
+      ]
+    },
+    {
+      "place": "living",
+      "say": "Hùng (vui vẻ): \"Để em đặt cá về bể.\" [2s] Beo (cười): \"Anh Hùng ngã bịch kìa!\" Chó (cười): \"Woof! You are funny!\" Bối (cười): \"Chó cũng cười anh Hùng nè.\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "dog"
+        },
+        {
+          "line": 1,
+          "do": "carry",
+          "who": "Hùng",
+          "what": "fish"
+        },
+        {
+          "line": 2,
+          "do": "fall",
+          "who": "Hùng",
+          "face": "surprised"
+        },
+        {
+          "line": 3,
+          "do": "laugh",
+          "who": "Beo",
+          "face": "laugh"
+        },
+        {
+          "line": 4,
+          "do": "laugh",
+          "who": "Bối",
+          "face": "laugh"
+        }
+      ]
+    },
+    {
+      "place": "living",
+      "say": "Beo (vui vẻ): \"Cá ơi, về nhà rồi. Đừng đi nữa nhé.\" Huy (tự hào): \"Cả nhà mình giỏi lắm. Tìm được cá rồi.\" Bối (vui vẻ): \"Ai cũng giúp Beo hết.\" Beo (vui vẻ): \"Em thương cả nhà!\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "fish"
+        },
+        {
+          "line": 1,
+          "do": "hug",
+          "who": "Beo",
+          "what": "fish",
+          "face": "joy"
+        },
+        {
+          "line": 2,
+          "do": "nod",
+          "who": "Huy",
+          "face": "proud"
+        },
+        {
+          "line": 3,
+          "do": "clap",
+          "who": "Bối",
+          "face": "happy"
+        },
+        {
+          "line": 4,
+          "do": "hug",
+          "who": "Hùng",
+          "what": "fish",
+          "face": "happy"
+        }
+      ]
+    },
+    {
+      "place": "living",
+      "say": "Huy (vui vẻ): \"Ôn lại nào! Ai xuất hiện đây?\" [2s] Chó (vui vẻ): \"Woof! I am a dog!\" Bối (vui vẻ): \"*Dog!*\" Beo (vui vẻ): \"*Dog!*\" Mèo (tinh nghịch): \"Meow! I am a cat!\" Hùng (vui vẻ): \"*Cat!*\" Beo (vui vẻ): \"*Cat!*\"",
+      "beats": [
+        {
+          "line": 2,
+          "do": "appear",
+          "what": "dog"
+        },
+        {
+          "line": 2,
+          "do": "appear",
+          "what": "cat"
+        },
+        {
+          "line": 4,
+          "do": "clap",
+          "who": "Bối",
+          "face": "happy"
+        },
+        {
+          "line": 5,
+          "do": "dance",
+          "who": "Beo",
+          "face": "joy"
+        },
+        {
+          "line": 7,
+          "do": "clap",
+          "who": "Hùng",
+          "face": "happy"
+        },
+        {
+          "line": 8,
+          "do": "hop",
+          "who": "Beo",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "living",
+      "say": "[2s] Bối (vui vẻ): \"*Chicken!*\" Hùng (vui vẻ): \"*Chicken!*\" [2s] Beo (vui vẻ): \"*Rabbit!*\" Huy (vui vẻ): \"*Rabbit!*\" [2s] Bối (vui vẻ): \"*Fish!*\" Beo (vui vẻ): \"*Fish!*\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "appear",
+          "what": "chicken"
+        },
+        {
+          "line": 2,
+          "do": "clap",
+          "who": "Bối",
+          "face": "joy"
+        },
+        {
+          "line": 4,
+          "do": "appear",
+          "what": "rabbit"
+        },
+        {
+          "line": 5,
+          "do": "hop",
+          "who": "Beo",
+          "face": "joy"
+        },
+        {
+          "line": 7,
+          "do": "appear",
+          "what": "fish"
+        },
+        {
+          "line": 8,
+          "do": "dance",
+          "who": "Bối",
+          "face": "joy"
+        },
+        {
+          "line": 9,
+          "do": "cheer",
+          "who": "Beo",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "living",
+      "say": "Huy (vui vẻ): \"Các bạn nhớ bấm đăng ký kênh Huy Kể Chuyện để xem tập sau nhé!\" Hùng (tinh nghịch): \"Tập sau, bánh sinh nhật của Bối biến mất đó!\" Bối (ngạc nhiên): \"Hả? Bánh của em á?\" Beo (sợ hãi): \"Không phải em ăn đâu nha!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "wave",
+          "who": "Huy",
+          "face": "happy"
+        },
+        {
+          "line": 2,
+          "do": "point",
+          "who": "Hùng",
+          "face": "happy"
+        },
+        {
+          "line": 3,
+          "do": "worry",
+          "who": "Bối",
+          "face": "surprised"
+        },
+        {
+          "line": 4,
+          "do": "worry",
+          "who": "Beo",
+          "face": "scared"
+        }
+      ]
+    }
+  ],
+  "thumbnail": "Cá của Beo mất tích!",
+  "description": "Bể cá của Beo bỗng trống rỗng, cả nhà cùng đi tìm và gặp bao con vật dễ thương trước khi phát hiện bí mật trong cái nồi! Các bé học 5 từ tiếng Anh: dog (chó), chicken (gà), rabbit (thỏ), cat (mèo), fish (cá).",
+  "englishReviewed": []
+}

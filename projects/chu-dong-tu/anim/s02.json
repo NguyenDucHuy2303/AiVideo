@@ -1,0 +1,245 @@
+{
+  "narration": "Ngày xửa ngày xưa, vào thời vua Hùng thứ mười tám, ở làng Chử Xá bên bờ sông Hồng, có hai cha con nhà họ Chử. Người cha tên là Chử Cù Vân, người con tên là Chử Đồng Tử. Hai cha con sống hiền lành trong một căn nhà sàn nhỏ. Cha (vui vẻ): \"Con ơi, ra sông bắt cá với cha nào!\" Chử Đồng Tử (hớn hở): \"Vâng ạ! Hôm nay con sẽ bắt thật nhiều cá cho cha.\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "cha",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "dong_tu_ngheo_form",
+        "place": "right",
+        "enter": "from_right",
+        "act": "walk",
+        "face": "joy",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "vua_hung",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "nong"
+    ],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 19.7,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "nong",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "cha",
+      "type": "human",
+      "look": {
+        "body": "elder",
+        "skin": "#c99a66",
+        "outfit": {
+          "type": "dongson",
+          "color": "#8a7a5a",
+          "skirt": "#6a5a42",
+          "trim": "#a87a3a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#e8e4dc"
+        },
+        "beard": "#e8e4dc",
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "droopy",
+          "nose": "long",
+          "brows": "thin",
+          "wrinkles": true
+        },
+        "build": "slim",
+        "bracelets": false,
+        "earrings": false
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "dong_tu_ngheo_form",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": false,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": 2482.4,
+      "scale": 1.4,
+      "facing": -1
+    },
+    {
+      "id": "vua_hung",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "plume",
+          "color": "#8a3a22",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "headwear": "feather",
+        "beard": "#4a3a30",
+        "bracelets": true,
+        "earrings": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick",
+          "mustache": "thick",
+          "wrinkles": true
+        },
+        "build": "heavy"
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "cha",
+      "at": 0,
+      "do": "call",
+      "face": "happy",
+      "talk": 1,
+      "move": {
+        "by": 600,
+        "ease": "linear"
+      },
+      "dur": 19.7
+    },
+    {
+      "actor": "cha",
+      "at": 9.85,
+      "do": "walk",
+      "face": "happy",
+      "move": {
+        "by": 700,
+        "ease": "in"
+      },
+      "dur": 9.85
+    },
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": 582.4,
+        "ease": "out"
+      },
+      "dur": 8.87,
+      "face": "joy"
+    },
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 8.87,
+      "do": "still",
+      "face": "joy"
+    },
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 9.85,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "vua_hung",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "cha",
+        "dong_tu_ngheo_form",
+        "vua_hung"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 7.09,
+      "type": "close",
+      "on": [
+        "cha"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 13.4,
+      "type": "close",
+      "on": [
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.05
+    }
+  ]
+}

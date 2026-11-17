@@ -1,0 +1,10 @@
+{
+  "issues": [
+    {
+      "scene": 28,
+      "quote": "Nhưng ở nhà mình, đêm chỉ vài tiếng thôi, Beo yên tâm nhé.",
+      "problem": "Misleading. A night on Earth lasts about half of the 24-hour day, so around 12 hours (in Vietnam about 11–13 hours), not \"a few hours\". The sources only give the 24-hour day.",
+      "fix": "Nhưng ở nhà mình, đêm chỉ kéo dài khoảng nửa ngày thôi, Beo yên tâm nhé."
+    }
+  ]
+}

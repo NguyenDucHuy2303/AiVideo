@@ -1,0 +1,22 @@
+{
+  "slug": "vi-sao-mat-ong-khong-bao-gio-bi-hong-nguoi-ta-con-tim-thay-h",
+  "topic": "Vì sao mật ong không bao giờ bị hỏng, người ta còn tìm thấy hũ mật ong trong lăng mộ Ai Cập hơn 3.000 năm tuổi mà vẫn ăn được?",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-16T07:42:37.576Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-16T07:54:00.619Z",
+      "status": "review",
+      "info": "1 vấn đề còn lại: The Short (scenes 1, 13, 17, 23, 24, 32) has 285 words: it needs about 120–160."
+    }
+  ],
+  "kind": "qa-vi",
+  "summary": "Bản dài của Short \"Bạn có biết mật ong không bao giờ bị hỏng, người ta còn tìm thấy hũ mật ong trong lăng mộ Ai Cập hơn 3.000 năm tuổi mà vẫn ăn được?\"",
+  "wanted": true,
+  "fromShort": "ban-co-biet-mat-ong-khong-bao-gio-bi-hong-nguoi-ta-con-tim-t",
+  "by": "claude-opus"
+}

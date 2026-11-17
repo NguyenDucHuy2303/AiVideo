@@ -1,7 +1,7 @@
 {
   "slug": "chu-dong-tu",
   "topic": "Chử Đồng Tử",
-  "status": "review",
+  "status": "done",
   "notes": [],
   "history": [
     {
@@ -11,6 +11,55 @@
     {
       "at": "2026-11-09T03:09:23.709Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-14T10:00:20.179Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (điểm 8.4/10)"
+    },
+    {
+      "at": "2026-11-14T10:00:20.233Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-14T10:24:14.129Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-14T10:24:14.145Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-14T11:49:09.261Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-14T12:08:27.506Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-14T13:09:14.135Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (458 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-14T13:13:45.595Z",
+      "status": "done",
+      "info": "bản tiếng Anh: giọng xong"
+    },
+    {
+      "at": "2026-11-14T15:05:06.417Z",
+      "status": "done",
+      "info": "bản tiếng Anh: xong"
+    },
+    {
+      "at": "2026-11-17T04:30:12.672Z",
+      "status": "done",
+      "info": "bản tiếng Anh: giọng xong"
     }
   ],
   "kind": "truyền thuyết",
@@ -21,5 +70,96 @@
     "value": 8.4,
     "why": "Điểm mạnh: câu mở đầu về hai cha con chung một chiếc khố rất hút trẻ, truyền thuyết nổi tiếng (Tứ bất tử) đúng tư liệu, mạch kể rõ ràng, nhiều cảnh dễ dựng (cháy nhà, chôn trong cát, thành mọc lên rồi bay lên trời) và bài học hiếu thảo, thật thà rõ ràng. Điểm yếu: truyện khá dài, đoạn giữa (đi buôn, gặp tiên ông, học đạo) hơi dàn trải, chi tiết liệm khố cho cha và cảnh chàng trần truồng nấp dưới cát cần xử lý khéo cho trẻ 4–10 tuổi, còn đoạn kết có phần liệt kê đền thờ, địa danh nặng so với trẻ nhỏ.",
     "hash": "1e6c4a46e7ffa888"
+  },
+  "autoPicked": true,
+  "inspect": {
+    "at": "2026-11-14T11:49:09.260Z",
+    "perMinute": 2.1,
+    "byKind": {
+      "still": {
+        "count": 4,
+        "seconds": 24.2
+      },
+      "faces-overlap": {
+        "count": 3,
+        "seconds": 7.8
+      },
+      "head-cut": {
+        "count": 4,
+        "seconds": 3.4
+      },
+      "prop-face": {
+        "count": 4,
+        "seconds": 2
+      },
+      "talk-covered": {
+        "count": 1,
+        "seconds": 2.5
+      }
+    }
+  },
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "autoCheck": {
+    "at": "2026-11-14T13:09:14.134Z",
+    "mtimeMs": 1794656931121.482,
+    "ok": true,
+    "problems": [],
+    "seconds": 458
+  },
+  "autoApproved": "2026-11-14T13:09:14.134Z",
+  "exported": {},
+  "drive": {
+    "folder": "Chử Đồng Tử và công chúa Tiên Dung",
+    "mtime": 1794898924724.4966,
+    "at": "2026-11-17T07:03:38.438Z"
+  },
+  "english": "ready",
+  "published": {
+    "long": {
+      "videoId": "0AILuFCqbHY",
+      "url": "https://youtu.be/0AILuFCqbHY",
+      "publishAt": "2026-11-17T12:30:00.000Z",
+      "channel": "huy-ke-chuyen",
+      "at": "2026-11-17T06:26:11.377Z",
+      "manual": true
+    },
+    "shorts": [
+      {
+        "videoId": "YTzLnb9MJHY",
+        "url": "https://youtube.com/shorts/YTzLnb9MJHY",
+        "publishAt": "2026-11-18T05:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-17T06:55:49.990Z",
+        "manual": true
+      },
+      {
+        "videoId": "t7_Ofn_KXgg",
+        "url": "https://youtube.com/shorts/t7_Ofn_KXgg",
+        "publishAt": "2026-11-18T10:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-17T06:56:54.589Z",
+        "manual": true
+      },
+      {
+        "videoId": "AsKEUqhV_LQ",
+        "url": "https://youtube.com/shorts/AsKEUqhV_LQ",
+        "publishAt": "2026-11-19T00:30:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-17T06:57:52.773Z",
+        "manual": true
+      }
+    ],
+    "en": {
+      "videoId": "1vN-wJHFrwU",
+      "url": "https://youtu.be/1vN-wJHFrwU",
+      "publishAt": "2026-11-18T01:30:00.000Z",
+      "channel": "huy-ke-chuyen",
+      "at": "2026-11-17T07:02:04.680Z",
+      "manual": true
+    }
   }
 }

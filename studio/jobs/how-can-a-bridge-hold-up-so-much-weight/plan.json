@@ -1,24 +1,29 @@
 {
   "title": "How Can a Bridge Hold Up So Much Weight?",
   "question": "How can a bridge hold up so much weight?",
-  "answer": "Bridges hold heavy loads mostly because of their shape. Beams, arches, triangles (trusses) and cables turn weight into squeezing (compression) and pulling (tension). Each part handles the job it is best at, and the weight passes safely into the strong ground at the ends and supports.",
+  "answer": "Bridges use clever shapes. Arches, triangles and cables turn heavy weight into squeezing and pulling, and pass it safely down into the strong ground.",
   "scenes": [
     {
       "beat": "hook",
       "visual": {
         "kind": "scene",
-        "what": "Huy and Mai stand on a grassy riverbank watching a big truck drive across a road bridge over the river. Mai points at the truck with wide eyes."
+        "what": "Huy, Hùng, Bối and Beo stand on a riverbank watching a big loaded truck drive across a long bridge. Beo hugs Hùng's leg and peeks out."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "Huy, look at that truck! It is heavier than an elephant. Why doesn't the bridge just snap?"
         },
         {
+          "who": "Beo",
+          "how": "scared",
+          "text": "Will it fall in the water?"
+        },
+        {
           "who": "Huy",
           "how": "happily",
-          "text": "Great question, Mai. And here is a surprise. In Greece there is a stone bridge about 3,300 years old, and people still use it today."
+          "text": "No, Beo, it is safe. Great question, Bối. And here is a surprise. In Greece there is a stone bridge about 3,300 years old, and people still use it today."
         }
       ]
     },
@@ -26,13 +31,18 @@
       "beat": "hook",
       "visual": {
         "kind": "host",
-        "what": "Huy faces the camera with four small icons floating around him. A squeezed spring, a stretched rubber band, a stone arch and a triangle."
+        "what": "Huy talks to camera. Behind him Hùng carries a wobbly box full of rulers, sticks, paper and toy blocks."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Today we will find out how a bridge can hold up so much weight. We will meet squeezing, pulling, a clever curve, and a shape that refuses to squash."
+        },
+        {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "And I brought lots of things to test!"
         }
       ]
     },
@@ -40,13 +50,18 @@
       "beat": "guess",
       "visual": {
         "kind": "scene",
-        "what": "Mai flexes her arm like a strongwoman. A thought bubble shows a bridge made of huge thick steel bars and giant boulders."
+        "what": "Bối flexes her arm like a strongwoman next to a drawing of a steel beam and a giant rock. Beo holds up a huge bottle of glue."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "proudly",
           "text": "Easy! Bridges are made of super strong stuff. Thick steel and giant rocks!"
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Or glue! Lots and lots of glue!"
         }
       ]
     },
@@ -54,18 +69,32 @@
       "beat": "guess",
       "visual": {
         "kind": "compare",
-        "what": "On the left, a messy pile of rocks with a question mark. On the right, a single snapped stick of dry spaghetti next to a neat bridge built of spaghetti triangles."
+        "what": "Side by side, a pile of rocks lying in a river with no way across, and a tall steel bridge over the river."
       },
       "parts": [
         {
           "who": "Huy",
-          "how": "happily",
-          "text": "That is a smart guess, Mai. Strong materials really do matter, and most big bridges today are made mostly of steel."
+          "how": "laughing",
+          "text": "Glue would be very sticky, Beo. Bối, that is a smart guess. Strong materials really do matter, and most big bridges today are made mostly of steel. But a pile of rocks is not a bridge."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "experiment",
+        "what": "Hùng holds one stick of dry spaghetti that has just snapped in two, pieces flying. Next to him is a small, strong spaghetti bridge made of triangles."
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "laughing",
+          "text": "Snap! Oops, there goes dinner."
         },
         {
           "who": "Huy",
           "how": "",
-          "text": "But a pile of rocks is not a bridge. And one stick of dry spaghetti snaps easily, yet students build bridges out of spaghetti that are surprisingly strong. So the secret is not just what a bridge is made of. It is also the shape."
+          "text": "One stick of spaghetti snaps easily. Yet students build bridges out of spaghetti that are surprisingly strong. So the secret is not just what a bridge is made of. It is also the shape."
         }
       ]
     },
@@ -73,8 +102,8 @@
       "beat": "step",
       "step": 1,
       "visual": {
-        "kind": "diagram",
-        "what": "A side view of a truck on a simple bridge. A big arrow labelled weight points down from the truck, then smaller arrows run along the bridge to both ends and down into the ground, labelled ground."
+        "kind": "arrows",
+        "what": "A simple bridge with a car on it. Big arrows show the car's weight pushing down, going through the bridge and into the ground at both ends."
       },
       "parts": [
         {
@@ -88,14 +117,19 @@
       "beat": "step",
       "step": 1,
       "visual": {
-        "kind": "scene",
-        "what": "On a table, Mai lays a wooden ruler across two stacks of books. A small drawing in the corner shows a plank across a stream."
+        "kind": "experiment",
+        "what": "Hùng lays a ruler across two stacks of books on a table. Bối gets ready to press the middle with one finger."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Let's build the simplest bridge, a beam bridge. A beam is just a long, flat piece, like a plank across a stream. Mai, try this ruler."
+          "text": "Let's build the simplest bridge, a beam bridge. A beam is just a long, flat piece, like a plank across a stream."
+        },
+        {
+          "who": "Hùng",
+          "how": "happily",
+          "text": "One ruler bridge, ready. Your turn, Bối."
         }
       ]
     },
@@ -104,11 +138,11 @@
       "step": 1,
       "visual": {
         "kind": "experiment",
-        "what": "Mai presses one finger on the middle of the ruler and it bends down in a gentle curve between the two book stacks."
+        "what": "Close view of the ruler bending down in the middle under Bối's finger, the ends still resting on the books."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "When I press the middle, it bends!"
         },
@@ -124,13 +158,23 @@
       "step": 1,
       "visual": {
         "kind": "zoom",
-        "what": "A close-up of the bent ruler. Along the top edge, little arrows push towards each other, labelled squeezed. Along the bottom edge, little arrows pull away from each other, labelled stretched."
+        "what": "Zoom into the bent ruler. Little arrows on the top edge point inward, labelled squeezed. Little arrows on the bottom edge point outward, labelled stretched."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Now look closely. When a beam bends, its top gets squeezed together, and its bottom gets stretched apart. One ruler, two jobs at once."
+          "text": "Now look closely. When a beam bends, its top gets squeezed together, and its bottom gets stretched apart."
+        },
+        {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "The ruler does two jobs?"
+        },
+        {
+          "who": "Huy",
+          "how": "happily",
+          "text": "Yes, Beo. One ruler, two jobs at once."
         }
       ]
     },
@@ -139,7 +183,7 @@
       "step": 1,
       "visual": {
         "kind": "host",
-        "what": "Huy holds up the bent ruler next to a speech card with the number 1 on it."
+        "what": "Huy holds up a card with a bridge and a down arrow going into the ground."
       },
       "parts": [
         {
@@ -154,7 +198,7 @@
       "step": 2,
       "visual": {
         "kind": "labels",
-        "what": "Two springs side by side. Hands push the left spring together, labelled compression = squeezing. Hands pull the right spring apart, labelled tension = pulling."
+        "what": "Two drawings. A sponge being pressed by two hands, labelled compression, squeezing. A rubber band being pulled by two hands, labelled tension, pulling."
       },
       "parts": [
         {
@@ -169,18 +213,23 @@
       "step": 2,
       "visual": {
         "kind": "scene",
-        "what": "Mai squishes a yellow kitchen sponge in one hand, then stretches a rubber band between two fingers, grinning."
+        "what": "Bối squishes her hands together then pulls them apart. Beo copies her, squishing his own cheeks."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "laughing",
           "text": "Compression, squish! Tension, stretch!"
         },
         {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Squish! Squish!"
+        },
+        {
           "who": "Huy",
           "how": "laughing",
-          "text": "Perfect. You sound like an engineer already."
+          "text": "Perfect. You both sound like engineers already."
         }
       ]
     },
@@ -189,7 +238,7 @@
       "step": 2,
       "visual": {
         "kind": "compare",
-        "what": "A stone block with squeeze arrows and a green tick, then the same stone block with pull arrows, a crack and a red cross. Beside them, a steel bar with green ticks for both."
+        "what": "A stone block with hands pressing it, a green tick. The same stone being pulled apart with a crack, a red cross. A steel bar with two green ticks."
       },
       "parts": [
         {
@@ -204,18 +253,18 @@
       "step": 2,
       "visual": {
         "kind": "scene",
-        "what": "Mai looks worried, holding a small stone. Behind them, an old mossy stone bridge crosses a stream."
+        "what": "Bối looks worried in front of an old stone bridge covered in moss. Huy points to it with a smile."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "worried",
           "text": "So stone is bad for bridges?"
         },
         {
           "who": "Huy",
           "how": "firmly",
-          "text": "Not at all! Some stone bridges have lasted thousands of years. Builders just had to find a shape that only squeezes the stone and never pulls it."
+          "text": "Not at all! Some stone bridges have lasted thousands of years. Builders just had to find a shape that squeezes the stone and pulls it as little as possible."
         }
       ]
     },
@@ -224,7 +273,7 @@
       "step": 2,
       "visual": {
         "kind": "host",
-        "what": "Huy stands between a squeezed spring and a stretched spring, holding a speech card with the number 2."
+        "what": "Huy holds a sponge in one hand and a rubber band in the other."
       },
       "parts": [
         {
@@ -238,8 +287,8 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "diagram",
-        "what": "A stone arch bridge seen from the side. A cart on top pushes down, and arrows follow the curve of the arch around and down both sides into the ground."
+        "kind": "arrows",
+        "what": "A stone arch bridge with a weight on top. Arrows follow the curve around and down both sides into the ground."
       },
       "parts": [
         {
@@ -253,14 +302,19 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "zoom",
-        "what": "A close-up of the arch showing wedge-shaped stones, each with small arrows pressing into its neighbours. A slice of cake is drawn beside one stone for comparison."
+        "kind": "labels",
+        "what": "An arch made of wedge shaped stones, one stone pulled out beside it and labelled wedge, next to a slice of cake of the same shape. Small arrows show each stone pressing on its neighbours."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "An arch is built from wedge shaped stones. A wedge is wide at one end and narrow at the other, like a slice of cake. Each stone presses on its neighbours, so every stone is squeezed. Just what stone likes."
+        },
+        {
+          "who": "Beo",
+          "how": "happily",
+          "text": "Cake? Can I have a slice?"
         }
       ]
     },
@@ -268,14 +322,19 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "labels",
-        "what": "The stone arch with the top middle stone glowing gold and labelled keystone. A jigsaw puzzle piece clicks into place beside it."
+        "kind": "experiment",
+        "what": "Hùng has built a small arch from soft toy foam blocks on the table. He has just lifted out the top block, and the other blocks tumble down onto the table around him."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "The stone at the very top is called the keystone. It locks all the others in place, like the last piece of a puzzle."
+        },
+        {
+          "who": "Hùng",
+          "how": "surprised",
+          "text": "I took out the top block, and the whole arch fell down! Oops."
         }
       ]
     },
@@ -283,8 +342,8 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "arrows",
-        "what": "The arch with arrows at its feet pushing outward and down. At each end, a big solid block of rock labelled abutment pushes back with its own arrow."
+        "kind": "diagram",
+        "what": "An arch with arrows pushing outward at its two feet, and big strong blocks at each end labelled abutment pushing back. A small inset shows Bối standing with her legs wide."
       },
       "parts": [
         {
@@ -298,12 +357,12 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "scene",
-        "what": "A heavy wooden cart rolls over an old stone arch bridge. The stones underneath have tiny squeeze arrows and a layer of rubble sits on top of the arch under the road."
+        "kind": "diagram",
+        "what": "A heavy wooden cart rolling on an old stone arch bridge. A layer of broken stones above the arch is labelled rubble, and the arch stones have small arrows pressing tighter together."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "So if a heavy cart rolls on top, the stones squeeze together even tighter?"
         },
@@ -319,7 +378,7 @@
       "step": 3,
       "visual": {
         "kind": "count",
-        "what": "A timeline. Far left, a small stone bridge in Greece at about 3,300 years ago. In the middle, a row of Roman arch bridges at about 2,000 years ago. On the right, a car crossing an old Roman arch bridge today."
+        "what": "A timeline from about 2,000 years ago to today. At the start, Roman builders in tunics stack stones. At the end, a modern car drives over the same old stone arch bridge."
       },
       "parts": [
         {
@@ -334,7 +393,7 @@
       "step": 3,
       "visual": {
         "kind": "host",
-        "what": "Huy traces a curve in the air with his finger, next to a speech card with the number 3."
+        "what": "Huy stands under a big drawn stone arch, arms out like the arch."
       },
       "parts": [
         {
@@ -348,14 +407,19 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "scene",
-        "what": "Huy holds up two frames made of wooden sticks with pins at the corners. One frame is a square and one is a triangle."
+        "kind": "experiment",
+        "what": "Hùng holds up a square and a triangle made of craft sticks joined with loose pins at the corners."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Now meet a shape that refuses to squash. Here is a square and a triangle made of sticks, with loose pins at the corners."
+          "text": "Now meet a shape that refuses to squash."
+        },
+        {
+          "who": "Hùng",
+          "how": "happily",
+          "text": "Here is a square and a triangle made of sticks. The pins at the corners are loose. Give them a push, Bối."
         }
       ]
     },
@@ -363,12 +427,12 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "experiment",
-        "what": "Mai pushes the corner of the square and it leans over into a flat diamond shape. She pushes the triangle and it stays exactly the same."
+        "kind": "compare",
+        "what": "Left, the stick square flopped into a leaning diamond shape. Right, the stick triangle staying perfectly in shape while Bối pushes it."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "The square flopped into a diamond! But the triangle won't budge!"
         },
@@ -384,13 +448,13 @@
       "step": 4,
       "visual": {
         "kind": "diagram",
-        "what": "A metal truss bridge made of many triangles, seen from the side. Some pieces are coloured blue with the label squeezed, others red with the label pulled."
+        "what": "A truss bridge made of steel triangles. Some pieces are coloured blue and labelled squeezed, others red and labelled pulled."
       },
       "parts": [
         {
           "who": "Huy",
-          "how": "",
-          "text": "A bridge made of triangles is called a truss bridge. Each straight piece is mostly just squeezed or just pulled, not bent. And that is exactly what thin pieces handle best."
+          "how": "happily",
+          "text": "A bridge made of triangles is called a truss bridge. Each straight piece is mostly just squeezed or just pulled, not bent. And that is much easier for thin pieces than bending. A thin piece can pull well, and when pieces are joined in triangles, they hold each other in place."
         }
       ]
     },
@@ -398,14 +462,19 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "compare",
-        "what": "On the left, one spaghetti stick bending and snapping in two. On the right, a spaghetti truss bridge made of triangles holding a small toy car."
+        "kind": "experiment",
+        "what": "The spaghetti truss bridge from earlier holding a small toy car. Beo stares at it with wide eyes."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "That is the spaghetti secret. One stick snaps when you bend it. But joined in triangles, lots of weak sticks become one strong bridge. Trusses use material well, so they cost less to build too."
+        },
+        {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "Strong spaghetti!"
         }
       ]
     },
@@ -414,7 +483,7 @@
       "step": 4,
       "visual": {
         "kind": "labels",
-        "what": "Five small bridge drawings in a row, each labelled. Beam, cantilever (arms sticking out from towers), arch, suspension (road hanging from big curved cables), and cable-stayed (straight cables from tall towers)."
+        "what": "Five small bridge drawings in a row, labelled beam, cantilever, arch, suspension and cable stayed. The suspension and cable stayed bridges show steel cables holding the road."
       },
       "parts": [
         {
@@ -428,8 +497,8 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "scene",
-        "what": "Engineers in hard hats gather around a table with a model bridge, drawings and a small fan blowing at the model."
+        "kind": "count",
+        "what": "Four boxes in a row with arrows between them, labelled research, design, test, build. In the test box, a small model bridge sits in front of a fan blowing wind."
       },
       "parts": [
         {
@@ -444,7 +513,7 @@
       "step": 4,
       "visual": {
         "kind": "host",
-        "what": "Huy holds up the stiff stick triangle next to a speech card with the number 4."
+        "what": "Huy holds up the stiff stick triangle and smiles."
       },
       "parts": [
         {
@@ -458,7 +527,7 @@
       "beat": "imagine",
       "visual": {
         "kind": "experiment",
-        "what": "A flat sheet of paper lies across a gap between two stacks of books, sagging in the middle under one coin. Mai frowns at it."
+        "what": "A flat sheet of paper laid across two stacks of books. Hùng places one coin in the middle and the paper sags down to the table."
       },
       "parts": [
         {
@@ -467,7 +536,12 @@
           "text": "Here is a check you can try at home. Lay a sheet of paper across two stacks of books, and put a coin in the middle."
         },
         {
-          "who": "Mai",
+          "who": "Hùng",
+          "how": "happily",
+          "text": "One coin, coming up."
+        },
+        {
+          "who": "Bối",
           "how": "sadly",
           "text": "It flopped right down."
         }
@@ -477,7 +551,7 @@
       "beat": "imagine",
       "visual": {
         "kind": "experiment",
-        "what": "The same paper folded back and forth into zigzags like a paper fan, lying across the books and holding a little stack of coins. A zoom bubble shows the zigzag folds as little triangles."
+        "what": "The same paper folded back and forth like a fan, laid across the books, holding a small stack of coins. Beo points at the coins counting on his fingers."
       },
       "parts": [
         {
@@ -486,9 +560,14 @@
           "text": "Now fold the same paper back and forth, like a paper fan, and lay it across again."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "joyfully",
           "text": "It holds lots of coins! The folds make little triangles!"
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "One, two, three, lots!"
         }
       ]
     },
@@ -496,16 +575,21 @@
       "beat": "imagine",
       "visual": {
         "kind": "experiment",
-        "what": "A flat sheet of paper on top of a second sheet bent into a curve beneath it, the curve's ends pressed against the book stacks. Coins sit on top, and the books are labelled abutments."
+        "what": "Hùng slides a second sheet of paper, bent into a curve, under a flat sheet, with the curve's ends pushed against the two book stacks. Coins sit on top."
       },
       "parts": [
         {
-          "who": "Huy",
-          "how": "",
-          "text": "Or bend a second sheet into a curve under the flat one, with its ends pushed against the books. Now you have an arch, and the books are your abutments."
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "Or bend a second sheet into a curve under the flat one, with its ends pushed against the books."
         },
         {
-          "who": "Mai",
+          "who": "Huy",
+          "how": "",
+          "text": "Now you have an arch, and the books are your abutments."
+        },
+        {
+          "who": "Bối",
           "how": "happily",
           "text": "Same paper, new shape, much stronger!"
         }
@@ -514,8 +598,8 @@
     {
       "beat": "recap",
       "visual": {
-        "kind": "host",
-        "what": "Huy stands in front of a small arch, a triangle truss and a cable bridge, with arrows flowing from each into the ground."
+        "kind": "diagram",
+        "what": "An arch, a truss triangle and a cable bridge side by side, each with arrows sending weight down into the ground."
       },
       "parts": [
         {
@@ -529,7 +613,7 @@
       "beat": "recap",
       "visual": {
         "kind": "scene",
-        "what": "The old stone Zhaozhou Bridge in China with one big flat arch and two small open arches in each side, river water flowing through the openings. Mai peeks through one small arch."
+        "what": "The old stone Zhaozhou Bridge in China with one big flat arch and small open arches in its sides, river water flowing through them. Beo points and grins."
       },
       "parts": [
         {
@@ -538,7 +622,7 @@
           "text": "Fun fact. The Zhaozhou Bridge in China was built of stone about 1,400 years ago, and it still stands. Little extra arches in its sides let floodwater rush through."
         },
         {
-          "who": "Mai",
+          "who": "Beo",
           "how": "surprised",
           "text": "A bridge with windows!"
         }
@@ -548,137 +632,157 @@
       "beat": "next",
       "visual": {
         "kind": "scene",
-        "what": "Huy and Mai stand on a bridge at sunset, looking up at a big airplane flying high overhead. A subscribe button glows in the corner."
+        "what": "All four look up at a big plane flying over the bridge. A red subscribe button with the words Ask Huy floats in the corner."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "happily",
           "text": "Huy, if bridges need the ground, how does a giant plane stay up with nothing under it?"
         },
         {
           "who": "Huy",
           "how": "laughing",
-          "text": "Ooh, that is next time's question! Subscribe so you don't miss it. Bye, bridge builders!"
+          "text": "Ooh, that is next time's question! Subscribe to Ask Huy so you don't miss it. Bye, bridge builders!"
+        },
+        {
+          "who": "Hùng",
+          "how": "happily",
+          "text": "Bye!"
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Bye bye!"
         }
       ]
     }
   ],
   "facts": [
     {
-      "claim": "A bridge is a structure built to cross a gap such as a river, valley or road.",
-      "source": "Bridge"
-    },
-    {
       "claim": "Possibly the oldest surviving arch bridge, the Arkadiko Bridge in Greece, dates to about 1300 BC (about 3,300 years ago) and local people still use it.",
       "source": "Arch bridge"
     },
     {
-      "claim": "In recent centuries, large bridges are made mostly of steel.",
+      "claim": "In recent centuries large bridges are made mostly of steel.",
       "source": "Bridge"
     },
     {
-      "claim": "Students build model bridges from spaghetti. A single stick breaks easily if bent, but a truss makes a strong structure from weak pieces.",
+      "claim": "Model bridges made of spaghetti show that a truss can make a strong structure from weak pieces; spaghetti breaks easily if bent.",
       "source": "Truss bridge"
     },
     {
-      "claim": "Gravity pulls things down, and that pull is weight.",
-      "source": "Basic school knowledge"
+      "claim": "Bridges carry weight (loads) caused by gravity and pass it into the ground; structures are designed to withstand gravity loads.",
+      "source": "Structural engineering"
     },
     {
-      "claim": "Beam bridges are one of the five main types of bridge.",
+      "claim": "Beam bridges are one of the five major types of bridge.",
       "source": "Bridge"
     },
     {
-      "claim": "A beam bends most in the middle, between its supports. When it bends, its top is squeezed and its bottom is stretched.",
-      "source": "Basic school knowledge"
+      "claim": "A bending beam is squeezed on top and stretched on the bottom, and bends most in the middle between supports.",
+      "source": "Basic school science (supported by Truss bridge: lower members in tension and bending, top members in compression)"
     },
     {
-      "claim": "Structural parts can be stressed by tension (pulling) or compression (squeezing).",
+      "claim": "Members of a structure act in tension (pulling) or compression (squeezing).",
       "source": "Truss bridge"
     },
     {
-      "claim": "Stone and brick are strong in compression but cannot resist much tension.",
+      "claim": "Stone and brick are strong in compression but cannot resist much force in tension.",
       "source": "Arch bridge"
     },
     {
-      "claim": "Steel is strong both when squeezed and when pulled.",
-      "source": "Basic school knowledge"
+      "claim": "Steel copes well with both squeezing and pulling.",
+      "source": "Basic school knowledge (supported by Truss bridge: iron rods used for tension members)"
     },
     {
       "claim": "Some stone bridges have lasted thousands of years.",
       "source": "Bridge"
     },
     {
-      "claim": "Masonry arch bridges are designed to stay squeezed (in compression) as much as possible. Arches pass weight down to the supports and push sideways against the abutments at each end.",
+      "claim": "Masonry arch bridges are designed to be kept under constant compression.",
       "source": "Arch bridge"
     },
     {
-      "claim": "Roman arch bridges used wedge-shaped arch stones called voussoirs.",
+      "claim": "Arches pass weight down to their supports and push outward (horizontal thrust), which is held by abutments at each end.",
       "source": "Arch bridge"
     },
     {
-      "claim": "In early arch bridges, a keystone in the middle of the bridge bore the weight of the rest of the bridge.",
+      "claim": "Roman arches used wedge-shaped stones (voussoirs); a keystone at the top bore the weight of the rest.",
       "source": "Arch bridge"
     },
     {
-      "claim": "In compression arch bridges, adding weight made the structure stronger. Builders put fill material such as packed rubble above the arch to add weight and stop the arch being pulled.",
+      "claim": "In early compression arch bridges, the more weight put on the bridge, the stronger it became; fill such as compacted rubble was added above the arch to increase dead weight.",
       "source": "Arch bridge"
     },
     {
-      "claim": "The Romans built hundreds of stone bridges, for example the Pons Fabricius from 62 BC (about 2,000 years ago). Many still stand and some still carry vehicles.",
+      "claim": "The Romans built hundreds of stone bridges (330 listed by O'Connor), many still standing and some still carrying vehicles.",
       "source": "Arch bridge"
     },
     {
-      "claim": "A triangle made of stiff sticks cannot change shape unless a side changes length, while a square frame can be pushed out of shape.",
-      "source": "Basic school knowledge"
-    },
-    {
-      "claim": "A truss bridge is made of connected pieces, usually forming triangles. In simple analysis, each piece is only in tension or compression and is not bent.",
+      "claim": "A truss bridge is made of connected elements usually forming triangles, whose members act mainly in tension or compression.",
       "source": "Truss bridge"
     },
     {
-      "claim": "Truss bridges are cheap to build mainly because they use materials efficiently.",
+      "claim": "A triangle cannot change shape unless a side changes length, so it is stiff.",
+      "source": "Basic school knowledge (supported by Truss bridge)"
+    },
+    {
+      "claim": "Truss bridges are economical because they use materials efficiently.",
       "source": "Truss bridge"
     },
     {
-      "claim": "The five major types of bridge are beam, cantilever, arch, suspension and cable-stayed.",
+      "claim": "There are five major types of bridges: beam, cantilever, arch, suspension and cable-stayed.",
       "source": "Bridge"
     },
     {
-      "claim": "The cables of a suspension bridge are in tension (being pulled).",
+      "claim": "In a suspension bridge the cables are in tension.",
       "source": "Arch bridge"
     },
     {
-      "claim": "Big structural engineering projects go through research, design, testing and construction. Structures are designed to stand up to gravity loads, wind and natural disasters.",
+      "claim": "Major structural projects go through research, design, testing and construction, and structures are designed to withstand gravity and wind loads and natural disasters.",
       "source": "Structural engineering"
     },
     {
-      "claim": "The Zhaozhou Bridge in China, built in 605 CE (about 1,400 years ago), is the oldest arch bridge still standing in China. It has open spandrels (small extra arches in its sides) that let floodwater pass through more easily.",
+      "claim": "The Zhaozhou Bridge in China (605 CE, about 1,400 years ago) is the oldest surviving arch bridge in China, wholly stone, with open spandrel arches allowing greater passage for floodwaters.",
       "source": "Arch bridge"
     }
   ],
   "shorts": [
     1,
-    15,
-    32,
-    33
+    16,
+    33,
+    34
   ],
   "thumbnail": "Why Don't Bridges Snap?",
-  "description": "How can a bridge carry a truck heavier than an elephant? Huy and Mai find out how squeezing and pulling, arches and triangles let bridges hold huge weights, and some of them have lasted thousands of years. It ends with a safe paper-bridge activity you can do with books and coins at home, which works well for curious kids aged 6 to 12 and for parents and teachers.",
+  "description": "Why doesn't a bridge snap when a heavy truck drives over it? Huy, Hùng, Bối and little Beo find out how squeezing, pulling, arches and triangles help bridges carry huge weights, with a safe paper-and-coins test kids can try at home. A calm, accurate science explainer for children aged 6 to 12 and the grown-ups watching with them.",
   "cast": [
     {
       "name": "Huy",
       "gender": "male",
       "age": "young",
-      "role": "the host: curious, warm, a little funny; explains",
+      "role": "the host (25): curious, warm, a little funny; explains",
       "villain": false
     },
     {
-      "name": "Mai",
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
       "gender": "female",
       "age": "child",
-      "role": "an 8-year-old who asks, guesses and tries things",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
       "villain": false
     }
   ],

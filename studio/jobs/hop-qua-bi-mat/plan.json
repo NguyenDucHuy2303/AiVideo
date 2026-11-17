@@ -1,0 +1,563 @@
+{
+  "title": "Hộp quà bí mật biết nói | Học tiếng Anh: cat, dog, rabbit, ball, teddy bear",
+  "answer": "cat = con mèo, dog = con chó, rabbit = con thỏ, ball = quả bóng, teddy bear = gấu bông",
+  "description": "",
+  "thumbnail": "Hộp quà biết nói bí mật",
+  "words": [
+    {
+      "en": "cat",
+      "vi": "con mèo"
+    },
+    {
+      "en": "dog",
+      "vi": "con chó"
+    },
+    {
+      "en": "rabbit",
+      "vi": "con thỏ"
+    },
+    {
+      "en": "ball",
+      "vi": "quả bóng"
+    },
+    {
+      "en": "teddy bear",
+      "vi": "gấu bông"
+    }
+  ],
+  "story": true,
+  "scenes": [
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Á! Cái hộp quà đang nói chuyện!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Hello! Open me, please!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Hộp quà biết nói thật này!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hùng, em lấy hộp này ở đâu vậy?"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Em nhặt ở trước cổng. Nó nói hoài luôn!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Em đang tìm gấu bông. Em để quên đâu mất rồi."
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Open me! Open me!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Mình mở thử đi!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Một, hai, ba, mở!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Nhẹ thôi nha! Đừng cắn em!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Mèo",
+          "how": "",
+          "text": "Meow! I am a cat!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Cat! Là con mèo!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Các bạn nói cùng Bối nào: Cat!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Giỏi quá! Các bạn nói chuẩn lắm!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Hộp ơi, còn gì nữa không?"
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Yes! One more! Open me!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Lần này Bối mở nha!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Woof woof! Look, a dog!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Dog! Là con chó!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Các bạn nói cùng anh nào: Dog!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hay lắm! Chó cũng thích nghe đó!"
+        }
+      ]
+    },
+    {
+      "beat": "garden",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ra vườn chơi cho thoáng nào!"
+        },
+        {
+          "who": "Mèo",
+          "how": "",
+          "text": "Meow! Run, run!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Chó đuổi mèo kìa!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Chạy nhanh quá! Em chóng mặt!"
+        }
+      ]
+    },
+    {
+      "beat": "garden",
+      "parts": [
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Open me again! Open me!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Để em mở! Em dũng cảm mà!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Ơ, có gì mềm mềm nhảy ra!"
+        }
+      ]
+    },
+    {
+      "beat": "garden",
+      "parts": [
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Hop hop! Look, a rabbit!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Rabbit! Thỏ nhảy giỏi ghê!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Các bạn nói cùng Bối nào: Rabbit!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Tuyệt vời! Các bạn nói rất rõ!"
+        }
+      ]
+    },
+    {
+      "beat": "garden",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Nhắm mắt lại! Hộp còn bất ngờ nữa!"
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Surprise! Open me!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Lần này để anh mở nhé."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        }
+      ]
+    },
+    {
+      "beat": "garden",
+      "parts": [
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Boing! Look, a ball!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Ball! Là quả bóng!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nói cùng Huy nào: Ball!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Giỏi lắm! Giờ mình đá bóng thôi!"
+        }
+      ]
+    },
+    {
+      "beat": "garden",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Beo, đỡ bóng nè!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Đừng ném mạnh nha!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Mèo",
+          "how": "",
+          "text": "Meow! You are funny!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Beo ngã ngồi luôn rồi!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Ui da! Gấu bông của em đâu rồi?"
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "One more gift! This one is for you!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Beo ơi, mở thử xem nào."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Teddy bear! Gấu bông của em đây!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nói cùng Huy nào: Teddy bear!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Các bạn giỏi quá!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Hì hì! Anh giấu gấu bông vào hộp để đùa em!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Anh Hùng! Mà thôi, em vui rồi."
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Shh! It is a secret!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Ủa? Hộp biết nói đâu phải do anh!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hôm nay ai cũng có quà rồi."
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ôn lại nào! Ai xuất hiện thì nói tên nhé!"
+        },
+        {
+          "who": "Mèo",
+          "how": "",
+          "text": "Meow! I am a cat!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Cat! Meo meo!"
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Woof woof! A dog!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Dog! Gâu gâu!"
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Hop hop! A rabbit!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Rabbit! Thỏ nhảy nè!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Boing! A ball!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ball! Tung tung!"
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Hug me! A teddy bear!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Teddy bear! Ôm chặt nè!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Em nhớ hết cả năm bạn rồi!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nhớ bấm đăng ký kênh Huy Kể Chuyện để xem tập sau nhé!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Tập sau hộp quà sẽ nhảy ra con gì nhỉ?"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Bí mật! Nhưng nó rất, rất to!"
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Bye bye! See you soon!"
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "name": "Huy",
+      "role": "anh cả"
+    },
+    {
+      "name": "Hùng",
+      "role": "em trai"
+    },
+    {
+      "name": "Bối",
+      "role": "bé gái 8 tuổi"
+    },
+    {
+      "name": "Beo",
+      "role": "bé trai 5 tuổi"
+    },
+    {
+      "name": "Hộp quà",
+      "role": "wrapped gift"
+    },
+    {
+      "name": "Mèo",
+      "role": "cat"
+    }
+  ],
+  "facts": []
+}

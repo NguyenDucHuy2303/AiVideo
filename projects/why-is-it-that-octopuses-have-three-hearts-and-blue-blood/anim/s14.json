@@ -1,0 +1,100 @@
+{
+  "castFile": "cast.json",
+  "duration": 9.5,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "proud"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"250\" y=\"80\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0\">Child: 1 heart</text><text x=\"740\" y=\"80\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"3\">Octopus: 3 hearts</text><line x1=\"500\" y1=\"110\" x2=\"500\" y2=\"560\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"0\"/><path d=\"M250 200 L250 480 Q150 440 150 320 Q150 220 250 260 Z\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"1\"/><path d=\"M250 200 L250 480 Q350 440 350 320 Q350 220 250 260 Z\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"1\"/><text x=\"150\" y=\"540\" font-family=\"sans-serif\" font-size=\"28\" fill=\"#2a2a40\" data-in=\"2\">lungs</text><text x=\"290\" y=\"540\" font-family=\"sans-serif\" font-size=\"28\" fill=\"#2a2a40\" data-in=\"2\">body</text><circle cx=\"620\" cy=\"300\" r=\"60\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\" class=\"pulse\" data-in=\"4\"/><circle cx=\"620\" cy=\"460\" r=\"60\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\" class=\"pulse\" data-in=\"5\"/><circle cx=\"830\" cy=\"380\" r=\"85\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\" class=\"pulse\" data-in=\"6\"/><text x=\"620\" y=\"200\" font-family=\"sans-serif\" font-size=\"28\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"5\">gills</text><text x=\"830\" y=\"510\" font-family=\"sans-serif\" font-size=\"28\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"6\">body</text></svg>",
+    "style": "sketch",
+    "icons": {},
+    "reveal": 5.7
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

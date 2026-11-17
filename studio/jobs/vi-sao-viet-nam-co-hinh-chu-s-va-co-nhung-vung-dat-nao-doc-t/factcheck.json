@@ -1,22 +1,22 @@
 {
   "issues": [
     {
-      "scene": 19,
-      "quote": "Còn ông cha ta, qua bao nhiêu thế hệ, đã vạch rõ đường biên giới thành chữ S hôm nay.",
-      "problem": "Misleading. The sources say the borders were settled at different times by different people. The Laos border was agreed between rulers in the 17th century and signed in 1977. The China border comes from French–Qing treaties of 1887 and 1895. The Cambodia border dates from the French annexation of 1867, with leftover issues settled in 1982–85. Saying that our ancestors over many generations drew the border is an oversimplification. It also hides that the northern and south-western borders were set under French rule.",
-      "fix": "Còn con người, qua nhiều thời kỳ, đã bàn bạc và ký các giấy tờ để định ra đường biên giới trên đất liền, như biên giới với Lào, Campuchia và Trung Quốc."
+      "scene": 7,
+      "quote": "Phía tây có dãy núi Trường Sơn chạy dài như cái xương sống.",
+      "problem": "Gây hiểu lầm vì nói quá đơn giản. Trường Sơn chạy dọc biên giới phía tây ở miền Trung, chứ không chạy suốt chiều dài đất nước. Phần đất liền hẹp nhất cũng chỉ ở miền Trung (gần Đồng Hới). Hai đầu chữ S thì rộng hơn nhiều.",
+      "fix": "Ở miền Trung, phía tây có dãy núi Trường Sơn chạy dài như cái xương sống. Phía đông là biển Đông mênh mông. Đất liền ở đây nằm kẹp ở giữa, giống nhân kẹp trong ổ bánh mì."
+    },
+    {
+      "scene": 9,
+      "quote": "Núi ở phía tây, biển ở phía đông, kẹp nước mình thành một dải đất dài và hẹp.",
+      "problem": "Gây hiểu lầm vì nói quá đơn giản. Cả nước dài, nhưng chỉ miền Trung mới hẹp. Hai đầu bắc và nam phình rộng, và chính bài này cũng nói vậy ở cảnh 10. Câu này lặp lại ở cảnh 30.",
+      "fix": "Núi ở phía tây, biển ở phía đông, kẹp miền Trung thành một dải đất dài và hẹp."
     },
     {
       "scene": 30,
-      "quote": "Còn ông cha ta qua bao đời đã vạch rõ biên giới.",
-      "problem": "Same oversimplification as scene 19. Our ancestors did not draw the whole border. It was agreed in different periods, some of it under French treaties and some only in recent decades.",
-      "fix": "Còn con người, qua nhiều thời kỳ, đã bàn bạc và định ra đường biên giới."
-    },
-    {
-      "scene": 1,
-      "quote": "Mỗi năm, bản đồ ấy vẫn dài thêm một chút đấy.",
-      "problem": "Imprecise. The sources say the deltas push out into the sea, so the land grows bigger at the coast. They do not say the country gets longer. The claim is a teaser that could be misread as the whole country stretching.",
-      "fix": "Mỗi năm, bản đồ ấy vẫn lớn thêm một chút ở chỗ giáp biển đấy."
+      "quote": "núi Trường Sơn ở phía tây và biển ở phía đông kẹp nước mình thành một dải dài và hẹp.",
+      "problem": "Cùng lỗi nói quá đơn giản như ở cảnh 7 và 9. Cả nước không hẹp. Chỉ phần eo miền Trung hẹp.",
+      "fix": "núi Trường Sơn ở phía tây và biển ở phía đông kẹp miền Trung thành một dải đất dài và hẹp."
     }
   ]
 }

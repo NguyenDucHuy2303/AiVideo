@@ -1,0 +1,114 @@
+{
+  "narration": "Từ đó, hai cha con nghèo lắm. Nghèo đến mức cả nhà chỉ còn đúng một chiếc khố. Ai ra ngoài làm việc thì người ấy mặc, người kia ở trong túp lều. Chử Đồng Tử (vui vẻ): \"Hôm nay cha mặc khố ra đồng nhé. Con ở nhà đan giỏ cho.\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo_form",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "sit",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stumps",
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  "era": "van_lang",
+  "duration": 13.133333333333333,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "field",
+    "objects": [
+      {
+        "type": "stumps",
+        "x": 300
+      },
+      {
+        "type": "mat",
+        "x": 260
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "dong_tu_ngheo_form",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": false,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": 582.4,
+      "scale": 1.4,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 0,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 6.57,
+      "do": "sit",
+      "face": "happy"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 6.57,
+      "type": "close",
+      "on": [
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.06
+    }
+  ]
+}

@@ -1,32 +1,37 @@
 {
   "title": "Why Do We Get Hiccups? | Ask Huy",
   "question": "Why do we get hiccups?",
-  "answer": "Your diaphragm, the dome-shaped breathing muscle under your lungs, suddenly jerks and pulls air in. Then your throat snaps shut, and the air bumping into it makes the hic sound. It is a reflex, often started by an air bubble in your belly. Scientists think hiccups may have started as a way to help babies burp out air so they can drink more milk.",
+  "answer": "A hiccup happens when your diaphragm, the dome-shaped breathing muscle under your lungs, suddenly jerks all by itself. A split second later your throat snaps shut, and the air bumping into it makes the hic sound. Things like eating fast or swallowing air can start it. Nobody knows for sure why we hiccup, but scientists think it may have started as a way to help babies burp out air so they could drink more milk.",
   "scenes": [
     {
       "beat": "hook",
       "visual": {
         "kind": "scene",
-        "what": "Mai sits at a kitchen table with a bowl of noodles. She hiccups, her shoulders jump, and the juice in her cup jiggles. Little HIC bubbles float above her head."
+        "what": "A bright living room. Bối jumps a little with a big HIC speech bubble, hands on her chest, while Beo points at her in surprise and Huy laughs. Hùng peeks in behind them holding a box."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "Hic! Huy, help! Hic! My body keeps making this funny noise, and I am not doing it on purpose! Hic!"
         },
         {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "Bối is making frog noises!"
+        },
+        {
           "who": "Huy",
           "how": "laughing",
-          "text": "Ah, the hiccups! Here is a surprise, Mai. Babies can hiccup even before they are born, while they are still inside their mom's tummy. And cats, dogs, rabbits and horses get hiccups too!"
+          "text": "Ah, the hiccups! Here is a surprise. Babies can hiccup even before they are born, while they are still inside their mom's body, in a special space called the womb. And cats, dogs, rabbits and horses get hiccups too!"
         }
       ]
     },
     {
       "beat": "hook",
       "visual": {
-        "kind": "host",
-        "what": "Huy faces the camera and smiles. Behind him are three floating icons, a body with a question mark, a speech bubble saying HIC, and a baby."
+        "kind": "scene",
+        "what": "Huy stands in front of a big question mark. Hùng sets down a cardboard box labelled SCIENCE BOX, and Bối and Beo cheer."
       },
       "parts": [
         {
@@ -35,7 +40,12 @@
           "text": "So today we will find out what really happens inside you when you hiccup, where that hic sound comes from, and why our bodies might do this at all."
         },
         {
-          "who": "Mai",
+          "who": "Hùng",
+          "how": "happily",
+          "text": "And I brought my science box, so we can see it too!"
+        },
+        {
+          "who": "Bối",
           "how": "happily",
           "text": "Hic! Let's go!"
         }
@@ -44,12 +54,12 @@
     {
       "beat": "guess",
       "visual": {
-        "kind": "scene",
-        "what": "Mai with a thought bubble that shows two far-away friends whispering and pointing at a little picture of her. Mai looks proud of her idea."
+        "kind": "map",
+        "what": "A simple world map with little speech bubbles saying hic pointing to Germany, Turkey, India and Kenya. Bối stands beside it looking proud."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "proudly",
           "text": "I know why! My grandma says you get hiccups when someone far away is talking about you. So somebody is talking about me right now!"
         },
@@ -63,43 +73,53 @@
     {
       "beat": "guess",
       "visual": {
-        "kind": "compare",
-        "what": "Left side shows the whispering friends with a big question mark. Right side shows a cartoon outline of a body with a magnifying glass over the chest and a sparkle under the lungs."
+        "kind": "scene",
+        "what": "Beo imagines a tiny green frog jumping inside Bối's tummy, shown in a dreamy thought bubble. Huy laughs and points at the middle of his own chest."
       },
       "parts": [
         {
-          "who": "Huy",
-          "how": "",
-          "text": "It is a fun story. But scientists found that the real action is much closer. It is right inside your own body, just under your lungs. Nobody needs to be chatting about you!"
+          "who": "Beo",
+          "how": "happily",
+          "text": "I think a tiny frog jumped in her tummy!"
         },
         {
-          "who": "Mai",
+          "who": "Huy",
+          "how": "laughing",
+          "text": "A frog would be a very noisy guest, Beo! These are fun ideas. But scientists found the real action is right inside your own body, just under your lungs. Nobody needs to be talking about you, and no frogs needed."
+        },
+        {
+          "who": "Bối",
           "how": "laughing",
           "text": "Hic! Oh. That is a little bit sad. Hic!"
         }
       ]
     },
     {
-      "beat": "step",
       "step": 1,
+      "beat": "step",
       "visual": {
         "kind": "labels",
-        "what": "A friendly cartoon body outline showing two pink lungs, a heart, and a red dome-shaped muscle under them labelled diaphragm. The stomach sits below, labelled belly."
+        "what": "Hùng holds a model made of two pink balloons for lungs sitting on an upside-down red bowl. Labels read lungs, diaphragm, belly."
       },
       "parts": [
         {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "Ta-da! Two balloons for lungs, and a bowl turned upside down."
+        },
+        {
           "who": "Huy",
           "how": "",
-          "text": "Meet the star of today's show, the diaphragm. Say it with me, DIE-uh-fram. It is a flat sheet of muscle shaped like a dome, a bit like an upside-down bowl. It sits under your lungs and above your belly."
+          "text": "Meet the star of today's show, the diaphragm. Say it with me, DIE-uh-fram. It is a flat sheet of muscle shaped like a dome, like that upside-down bowl. It sits under your lungs and above your belly."
         }
       ]
     },
     {
-      "beat": "step",
       "step": 1,
+      "beat": "step",
       "visual": {
         "kind": "diagram",
-        "what": "The diaphragm drawn as a curved wall across the middle of the body. Above it, the heart and lungs in a box labelled chest. Below it, the stomach in a box labelled belly. A small sign reads a wall in between."
+        "what": "A simple cut-away body outline with a red dome across the middle like a wall. Above it the heart and lungs, below it the stomach and belly parts."
       },
       "parts": [
         {
@@ -108,18 +128,18 @@
           "text": "The name comes from an old Greek word that means a wall in between. And that is just what it is. Above it are your heart and lungs. Below it are your stomach and other belly parts."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "A muscle wall inside me? Hic! I never knew!"
         }
       ]
     },
     {
-      "beat": "step",
       "step": 1,
+      "beat": "step",
       "visual": {
         "kind": "arrows",
-        "what": "Two panels. In the first, the diaphragm pulls down flat, the lungs grow bigger, and blue arrows show air rushing in through the nose. In the second, the diaphragm moves back up into a dome and arrows show air flowing out."
+        "what": "Two side-by-side pictures of a chest. Left, the dome pulls down flat and blue arrows show air rushing in as the lungs grow. Right, the dome rises and arrows show air going out."
       },
       "parts": [
         {
@@ -130,11 +150,11 @@
       ]
     },
     {
-      "beat": "step",
       "step": 1,
+      "beat": "step",
       "visual": {
         "kind": "experiment",
-        "what": "Mai lies on a rug with a teddy bear on her belly. Dotted lines show the teddy rising as she breathes in and sinking as she breathes out."
+        "what": "Hùng lies on a rug with a teddy bear on his belly, the teddy rising and falling. In the last moment the teddy tumbles off as Hùng laughs, and Beo catches it."
       },
       "parts": [
         {
@@ -143,18 +163,23 @@
           "text": "Try this. Lie down and put a teddy on your belly. Breathe in slowly. See the teddy go up? That is your diaphragm pushing down on your belly."
         },
         {
-          "who": "Mai",
+          "who": "Beo",
           "how": "joyfully",
-          "text": "The teddy is riding a wave! Up, and down, and up!"
+          "text": "The teddy is riding a wave! Up, and down!"
+        },
+        {
+          "who": "Hùng",
+          "how": "laughing",
+          "text": "Oops, I laughed and he fell off!"
         }
       ]
     },
     {
-      "beat": "step",
       "step": 1,
+      "beat": "step",
       "visual": {
         "kind": "host",
-        "what": "Huy holds up a card with a simple drawing of the dome-shaped diaphragm under two lungs and a big number 1."
+        "what": "Huy smiles at the camera next to a small picture of the red dome under two lungs, with the words Step 1."
       },
       "parts": [
         {
@@ -165,11 +190,11 @@
       ]
     },
     {
-      "beat": "step",
       "step": 2,
+      "beat": "step",
       "visual": {
-        "kind": "diagram",
-        "what": "The diaphragm suddenly jerks down, drawn with zigzag shake lines. A fast blue arrow shows air being pulled in with a whoosh."
+        "kind": "arrows",
+        "what": "The red dome drawn as a calm swing on the left, then on the right it jerks down suddenly with zig-zag lines and a fast blue arrow of air going in."
       },
       "parts": [
         {
@@ -180,66 +205,81 @@
       ]
     },
     {
-      "beat": "step",
       "step": 2,
+      "beat": "step",
       "visual": {
         "kind": "labels",
-        "what": "A close-up of a cartoon throat showing the windpipe and two little flaps labelled vocal cords. The gap between them closes like a pair of sliding doors."
+        "what": "A simple side view of a throat with two little flaps labelled vocal cords, shown open and then shut like a tiny door."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Then, a tiny moment later, something in your throat slams shut. It is the gap between your vocal cords. Those are two little flaps in your throat that help make your voice."
+        },
+        {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "There is a door in my throat?"
         }
       ]
     },
     {
-      "beat": "step",
       "step": 2,
+      "beat": "step",
       "visual": {
-        "kind": "arrows",
-        "what": "Air arrows rush up toward the closed vocal cords and bump into them like a ball hitting a shut door. A big speech bubble pops out saying HIC."
+        "kind": "diagram",
+        "what": "Blue air arrows rushing up and bumping into the shut vocal cord door, with a big HIC sound burst and a tiny stopwatch showing 0.035 seconds."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "happily",
-          "text": "The air rushing in bumps into that shut door, and the bump makes the sound. Hic! The throat shuts about thirty-five thousandths of a second after the jerk. That is super, super fast."
+          "text": "Sort of, Beo! The air rushing in bumps into that shut door, and the bump makes the sound. Hic! The throat shuts about thirty-five thousandths of a second after the jerk. That is super, super fast."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "So the hic is air crashing into a door in my throat? Hic! There it goes again!"
         }
       ]
     },
     {
-      "beat": "step",
       "step": 2,
+      "beat": "step",
       "visual": {
         "kind": "scene",
-        "what": "Mai frowns and holds her hands on her chest, saying stop. Beside her, a small picture shows a hand quickly pulling away from a prickly cactus."
+        "what": "Bối frowns with her arms crossed, telling her body to stop. Beo does a big pretend sneeze next to her, and Huy gives a thumbs up."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "worried",
           "text": "But why can't I stop it? I keep telling my body to stop!"
         },
         {
           "who": "Huy",
+          "how": "",
+          "text": "Because a hiccup is a reflex. A reflex is something your body does without you deciding, like quickly pulling your hand away from something prickly."
+        },
+        {
+          "who": "Beo",
+          "how": "proudly",
+          "text": "Like when I sneeze! Achoo!"
+        },
+        {
+          "who": "Huy",
           "how": "happily",
-          "text": "Because a hiccup is a reflex. A reflex is something your body does without you deciding, like quickly pulling your hand away from something prickly. For hiccups, your body is the boss, not you."
+          "text": "Yes, a sneeze is a reflex too! For hiccups, your body is the boss, not you."
         }
       ]
     },
     {
-      "beat": "step",
       "step": 2,
+      "beat": "step",
       "visual": {
         "kind": "host",
-        "what": "Huy holds a card with three small pictures in a row, a jerking diaphragm, a closing throat door, and a HIC bubble, with a big number 2."
+        "what": "Huy beside the word HICCUP written in big bouncy letters, with a sound wave under it, and the words Step 2."
       },
       "parts": [
         {
@@ -250,11 +290,11 @@
       ]
     },
     {
-      "beat": "step",
       "step": 3,
+      "beat": "step",
       "visual": {
-        "kind": "count",
-        "what": "Five big icons in a row, numbered 1 to 5. A plate of food eaten fast, a gulp of air, a fizzy drink with bubbles, a chili pepper, and a face laughing hard."
+        "kind": "scene",
+        "what": "A kitchen table with an empty noodle bowl in front of Bối. Hùng holds a fizzy drink can with a surprised face and a little HIC bubble."
       },
       "parts": [
         {
@@ -263,18 +303,23 @@
           "text": "So what starts hiccups? Scientists call these triggers. Common ones are eating very fast, swallowing lots of air, fizzy drinks, spicy food, and laughing hard for a long time."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "laughing",
           "text": "I did eat my noodles super fast. And then I laughed at your joke!"
+        },
+        {
+          "who": "Hùng",
+          "how": "surprised",
+          "text": "Oh no. I just drank my fizzy drink super fast. Hic!"
         }
       ]
     },
     {
-      "beat": "step",
       "step": 3,
+      "beat": "step",
       "visual": {
         "kind": "zoom",
-        "what": "Zooming inside the belly, a round air bubble floats in the stomach and presses up against the underside of the dome-shaped diaphragm."
+        "what": "Zooming into the stomach to show a round air bubble sitting at the top, pressing up right under the red dome of the diaphragm."
       },
       "parts": [
         {
@@ -285,11 +330,11 @@
       ]
     },
     {
-      "beat": "step",
       "step": 3,
+      "beat": "step",
       "visual": {
         "kind": "arrows",
-        "what": "Tiny glowing messages travel from the stomach up a nerve to a spot in the brain labelled hiccup center, then a second message travels back down to the diaphragm, which jerks."
+        "what": "Little sensor dots around the stomach and diaphragm send a yellow arrow up to a glowing spot in the brain labelled hiccup center, and a red arrow comes back down to the diaphragm."
       },
       "parts": [
         {
@@ -300,31 +345,36 @@
       ]
     },
     {
-      "beat": "step",
       "step": 3,
+      "beat": "step",
       "visual": {
         "kind": "count",
-        "what": "A big clock face with HIC marks spaced evenly around it like drum beats. Below, a short timeline shows a few minutes of hiccups and then a quiet stop sign."
+        "what": "A timeline with evenly spaced HIC marks like drum beats, and a clock showing they come a few times each minute. Beo taps a toy drum."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Hiccups also keep a beat, like a drum. The time between one hic and the next usually stays about the same, often a few each minute. And most hiccups stop all by themselves after a few minutes."
+          "text": "Hiccups also keep a beat. The time between one hic and the next usually stays about the same, often a few each minute. And most hiccups stop all by themselves after a few minutes."
         },
         {
-          "who": "Mai",
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Hic, hic, hic! Like a drum!"
+        },
+        {
+          "who": "Bối",
           "how": "happily",
-          "text": "So my hiccups have their own song! Hic!"
+          "text": "So my hiccups have their own song!"
         }
       ]
     },
     {
-      "beat": "step",
       "step": 3,
+      "beat": "step",
       "visual": {
         "kind": "host",
-        "what": "Huy holds a card showing an air bubble in a belly with an arrow up to the brain, and a big number 3."
+        "what": "Huy next to a small picture of an air bubble under the diaphragm, with the words Step 3."
       },
       "parts": [
         {
@@ -335,15 +385,15 @@
       ]
     },
     {
-      "beat": "step",
       "step": 4,
+      "beat": "step",
       "visual": {
         "kind": "scene",
-        "what": "Huy and Mai stand by a whiteboard with a giant question mark drawn on it. Mai has her arms crossed and a puzzled face."
+        "what": "Bối throws her hands up, puzzled. Huy scratches his chin thoughtfully next to a big question mark."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "But wait. Why would a body even want hiccups? They are useless! Hic!"
         },
@@ -355,11 +405,11 @@
       ]
     },
     {
-      "beat": "step",
       "step": 4,
+      "beat": "step",
       "visual": {
-        "kind": "scene",
-        "what": "A baby is cuddled while drinking milk from a bottle. Small air bubbles slip down into the baby's tummy next to the milk."
+        "kind": "diagram",
+        "what": "A baby drinking from a bottle, with a cut-away tummy showing milk at the bottom and a small air bubble taking up room at the top."
       },
       "parts": [
         {
@@ -370,11 +420,11 @@
       ]
     },
     {
-      "beat": "step",
       "step": 4,
+      "beat": "step",
       "visual": {
         "kind": "arrows",
-        "what": "An air bubble is pulled from the baby's stomach up the food tube and out of the mouth as a cute burp cloud. The stomach now shows more space for milk."
+        "what": "In the baby's cut-away body, the throat door shuts and an arrow pulls the air bubble up from the tummy and out of the mouth as a small burp cloud, leaving more room for milk."
       },
       "parts": [
         {
@@ -383,18 +433,23 @@
           "text": "Here is the clever part. A hiccup shuts the throat and makes a pull inside the chest. That may tug the air bubble up and out of the mouth, like a burp. Now there is more room for milk!"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "laughing",
-          "text": "A hiccup is a burp helper? That is so funny!"
+          "text": "A hiccup is a burp helper?"
+        },
+        {
+          "who": "Beo",
+          "how": "laughing",
+          "text": "Babies go burp! Hee hee!"
         }
       ]
     },
     {
-      "beat": "step",
       "step": 4,
+      "beat": "step",
       "visual": {
         "kind": "compare",
-        "what": "On the left, a baby with many HIC bubbles next to a grown-up with just one. On the right, a row of mammal moms feeding their babies milk, a cat, a dog, a horse and a rabbit."
+        "what": "A line from baby to child to grown-up with fewer HIC bubbles as they get older. Beside it, a group of mammals, a cat, a dog, a horse and a rabbit, each with a milk drop."
       },
       "parts": [
         {
@@ -405,11 +460,11 @@
       ]
     },
     {
-      "beat": "step",
       "step": 4,
+      "beat": "step",
       "visual": {
-        "kind": "scene",
-        "what": "A smiling tadpole in a pond gulps water through its gills, with a little speech bubble saying gulp. Mai peeks in from the side."
+        "kind": "compare",
+        "what": "A tadpole in a pond gulping water and air across its gills, next to a child with a HIC bubble. Bối crouches like a frog."
       },
       "parts": [
         {
@@ -418,18 +473,18 @@
           "text": "Some scientists have a second idea. Hiccups might be left over from long, long ago. Tadpoles gulp water and air across their gills with a simple movement a bit like a hiccup. Maybe our bodies kept an old trick."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "joyfully",
           "text": "So maybe I am hiccuping like a tadpole! Ribbit! Hic!"
         }
       ]
     },
     {
-      "beat": "step",
       "step": 4,
+      "beat": "step",
       "visual": {
         "kind": "host",
-        "what": "Huy holds a card showing a happy baby with a burp cloud and a big number 4."
+        "what": "Huy next to a small picture of a baby giving a tiny burp, with the words Step 4."
       },
       "parts": [
         {
@@ -443,7 +498,7 @@
       "beat": "imagine",
       "visual": {
         "kind": "experiment",
-        "what": "Mai sits under a big kitchen clock with a notebook, drawing a tally mark for each hiccup. The second hand ticks around."
+        "what": "Hùng sits by a wall clock, still hiccuping from his fizzy drink. Bối makes a pencil mark on paper for each hic while Beo watches the clock hand."
       },
       "parts": [
         {
@@ -452,23 +507,14 @@
           "text": "Here is a safe check you can try. Next time you have hiccups, look at a clock and count your hics for one minute. Make a little mark for each one. Is the time between them about the same?"
         },
         {
-          "who": "Mai",
-          "how": "proudly",
-          "text": "I have five marks in one minute! Hic! Six!"
-        }
-      ]
-    },
-    {
-      "beat": "imagine",
-      "visual": {
-        "kind": "compare",
-        "what": "Three thought bubbles with hiccup tricks, a glass of cold water, a child hugging their knees, and a clock with the words just wait. Only the clock has a small gold star."
-      },
-      "parts": [
+          "who": "Hùng",
+          "how": "laughing",
+          "text": "Good thing I still have mine. Hic!"
+        },
         {
-          "who": "Huy",
-          "how": "",
-          "text": "People all around the world have tricks to stop hiccups, like sipping cold water or pulling your knees up to your chest. But scientists say no trick has been proven to work best. Usually the easiest cure is just to wait."
+          "who": "Bối",
+          "how": "proudly",
+          "text": "I have five marks in one minute for Hùng! Hic! And six for me!"
         }
       ]
     },
@@ -476,7 +522,26 @@
       "beat": "imagine",
       "visual": {
         "kind": "scene",
-        "what": "A big friendly cartoon horse in a flowery field goes HIC, and its shoulders give a little jump. The flowers wobble. Mai laughs nearby."
+        "what": "Hùng holds a glass of cold water and then hugs his knees, shown as two little pictures, while Huy points to a clock and smiles."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "People all around the world have tricks to stop hiccups, like sipping cold water or pulling your knees up to your chest. But scientists say no trick has been proven to work best. Usually the easiest cure is just to wait."
+        },
+        {
+          "who": "Hùng",
+          "how": "happily",
+          "text": "Then I will wait!"
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "scene",
+        "what": "A thought bubble shows a big brown horse in a flower field with a HIC bubble, its shoulders jumping and flowers wobbling. Below, Bối and Hùng look surprised as their hiccups stop."
       },
       "parts": [
         {
@@ -485,27 +550,27 @@
           "text": "Now imagine if a horse got hiccups. Horses really can! Picture a big horse in a field going hic, with its shoulders giving a little jump each time."
         },
         {
-          "who": "Mai",
+          "who": "Beo",
           "how": "laughing",
-          "text": "The flowers would wobble! Hic! Hic!"
+          "text": "The flowers would wobble!"
         },
         {
-          "who": "Huy",
-          "how": "happily",
-          "text": "Wait, Mai. Listen."
-        },
-        {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
-          "text": "Oh! My hiccups stopped! All by themselves!"
+          "text": "Wait. Listen. My hiccups stopped! All by themselves!"
+        },
+        {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "Mine too! Waiting worked!"
         }
       ]
     },
     {
       "beat": "recap",
       "visual": {
-        "kind": "diagram",
-        "what": "A simple three-step strip. The diaphragm jerks down, the throat door snaps shut, and a big HIC bubble pops out, with a tiny burping baby in the corner."
+        "kind": "host",
+        "what": "Huy beside a simple three-picture strip, the diaphragm jerking down, the throat door shutting, and a HIC bubble, plus a baby burping."
       },
       "parts": [
         {
@@ -519,7 +584,7 @@
       "beat": "recap",
       "visual": {
         "kind": "count",
-        "what": "A long timeline from 1922 to 1990 with a smiling cartoon man walking along it, and a counter showing about 430,000,000 hiccups."
+        "what": "A calendar flipping from 1922 to 1990 next to a big number reading about 68 years and about 430 million hics. Bối stares with wide eyes."
       },
       "parts": [
         {
@@ -528,7 +593,7 @@
           "text": "And here is a fun fact. A man in America named Charles Osborne had hiccups for about sixty-eight years! That is a world record, about four hundred and thirty million hiccups. Do not worry, that is very, very rare."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "Sixty-eight years! Mine lasted about five minutes, and that felt long!"
         }
@@ -538,110 +603,115 @@
       "beat": "next",
       "visual": {
         "kind": "scene",
-        "what": "Huy and Mai wave at the camera. Mai does a big stretchy yawn, and a bubble with a question mark floats above her. A subscribe button glows below."
+        "what": "Bối gives a big yawn, Beo copies her, and Hùng yawns too. Huy waves next to a red subscribe button that says Ask Huy."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "tired",
           "text": "All that hiccuping made me sleepy. Ahhh. Huy, why do we yawn?"
         },
         {
+          "who": "Beo",
+          "how": "tired",
+          "text": "Me too. Ahhh."
+        },
+        {
           "who": "Huy",
           "how": "happily",
-          "text": "Ooh, that is a great question for next time! Subscribe so you do not miss it, and keep asking questions. See you soon!"
+          "text": "Ooh, that is a great question for next time! Subscribe to Ask Huy so you do not miss it, and keep asking questions. See you soon!"
         }
       ]
     }
   ],
   "facts": [
     {
-      "claim": "Babies can hiccup before they are born, inside the mother.",
+      "claim": "Hiccups have been observed before birth, in the womb.",
       "source": "Hiccup"
     },
     {
-      "claim": "Hiccups have been seen in cats, rats, rabbits, dogs and horses.",
+      "claim": "Cats, rabbits, dogs and horses (and rats) get hiccups.",
       "source": "Hiccup"
     },
     {
-      "claim": "In many traditions (German, Turkish, Indian, Luo people in Kenya and others), people say you get hiccups when someone who is not there is talking about you.",
+      "claim": "In many traditions (German, Turkish, Indian, some tribes in Kenya and others) people say hiccups happen when someone not present is talking about you.",
       "source": "Hiccup"
     },
     {
-      "claim": "The diaphragm is a dome-shaped sheet of muscle below the lungs that separates the chest (heart and lungs) from the belly.",
+      "claim": "The diaphragm is a dome-shaped sheet of muscle below the lungs, separating the chest (heart and lungs) from the belly.",
       "source": "Thoracic diaphragm"
     },
     {
-      "claim": "The word diaphragm comes from Ancient Greek meaning partition, a wall in between.",
+      "claim": "The word diaphragm comes from an Ancient Greek word meaning partition (a wall in between).",
       "source": "Thoracic diaphragm"
     },
     {
-      "claim": "The diaphragm is the most important breathing muscle. When it tightens and pulls down, the chest gets more room and air is drawn into the lungs. When it relaxes, air goes out.",
-      "source": "Thoracic diaphragm; Respiratory system"
+      "claim": "The diaphragm is the most important breathing muscle; when it contracts it pulls down, the chest gets bigger and air is drawn into the lungs; when it relaxes the air goes out.",
+      "source": "Respiratory system"
     },
     {
-      "claim": "When you breathe in, the diaphragm pushes down and the belly rises.",
-      "source": "Respiratory system (diaphragm pulled downward); basic school knowledge"
+      "claim": "A hiccup is a sudden tightening of the diaphragm that pulls air in, followed by the throat closing, which makes the hic sound.",
+      "source": "Hiccups"
     },
     {
-      "claim": "A hiccup is a sudden tightening of the diaphragm that pulls air in, and a moment later the throat closes.",
-      "source": "Hiccups (Simple Wikipedia)"
-    },
-    {
-      "claim": "The throat closes at the gap between the vocal cords about 35 milliseconds after the diaphragm tightens, making the hic sound.",
+      "claim": "The closing is of the glottis, the space between the vocal cords, about 35 milliseconds after the diaphragm contracts.",
       "source": "Hiccup"
     },
     {
-      "claim": "A hiccup is a reflex, something the body does without you trying.",
-      "source": "Hiccups (Simple Wikipedia)"
+      "claim": "A hiccup is a reflex, an action the body does without trying.",
+      "source": "Hiccups"
     },
     {
-      "claim": "The word hiccup was made by copying the sound.",
+      "claim": "A sneeze and pulling your hand away from something sharp are reflexes.",
+      "source": "Basic school knowledge"
+    },
+    {
+      "claim": "The word hiccup was created by imitating the sound.",
       "source": "Hiccup"
     },
     {
-      "claim": "Hiccups can be triggered by eating very fast, swallowing air, fizzy drinks, spicy food and laughing for a long time.",
-      "source": "Hiccups (Simple Wikipedia); Hiccup"
-    },
-    {
-      "claim": "Hiccups often happen when an air bubble forms in the belly below the diaphragm.",
-      "source": "Hiccups (Simple Wikipedia)"
-    },
-    {
-      "claim": "Sensors in the stomach, food tube and under the diaphragm send signals to a hiccup center in the brain, which triggers the hiccup.",
+      "claim": "Common triggers include eating quickly, swallowing air, fizzy (carbonated) drinks, spicy food and laughing for a long time.",
       "source": "Hiccup"
     },
     {
-      "claim": "Hiccups are rhythmic, often several per minute, and usually stop on their own after a few minutes.",
-      "source": "Hiccups (Simple Wikipedia)"
+      "claim": "Hiccups often happen when a bubble of air forms below the diaphragm and takes up space in the belly.",
+      "source": "Hiccups"
     },
     {
-      "claim": "Nobody knows for sure why people hiccup.",
-      "source": "Hiccups (Simple Wikipedia)"
+      "claim": "Under the leading hypothesis, sensors in the stomach, esophagus and under the diaphragm trigger a hiccup center in the brain, which makes the breathing muscles contract.",
+      "source": "Hiccup"
     },
     {
-      "claim": "The leading idea is that hiccups help young mammals get more milk by pulling swallowed air up out of the stomach, like a burp.",
-      "source": "Hiccup; Hiccups (Simple Wikipedia)"
+      "claim": "Hiccups are rhythmic, often several per minute, and usually end on their own after a few minutes.",
+      "source": "Hiccups"
+    },
+    {
+      "claim": "Why people hiccup is not known for sure.",
+      "source": "Hiccups"
+    },
+    {
+      "claim": "A leading theory is that hiccups help young mammals drink milk by burping out air swallowed while suckling, making room for more milk.",
+      "source": "Hiccup"
     },
     {
       "claim": "Babies hiccup a lot, hiccups become less frequent with age, and hiccups are only described in mammals, which feed their young milk.",
       "source": "Hiccup"
     },
     {
-      "claim": "Another idea is that hiccups are left over from an old breathing reflex like tadpoles gulping air and water across their gills.",
+      "claim": "Another idea is that hiccups are left over from amphibian breathing; tadpoles gulp air and water across their gills with a reflex similar to hiccuping.",
       "source": "Hiccup"
     },
     {
-      "claim": "There are many folk remedies, such as sipping ice-cold water or pulling the knees up to the chest, but no treatment is known to be especially effective. Hiccups are normally waited out.",
+      "claim": "Remedies suggested include sipping ice-cold water and pulling the knees up to the chest, but no treatment is known to be especially effective; hiccups are normally waited out.",
       "source": "Hiccup"
     },
     {
-      "claim": "Charles Osborne of America had hiccups for 68 years (1922 to 1990), a Guinness World Record, about 430 million hiccups.",
+      "claim": "Charles Osborne of America had hiccups for 68 years (1922 to 1990), a Guinness World Record, an estimated 430 million hiccups.",
       "source": "Hiccup"
     },
     {
-      "claim": "Hiccups that last a very long time are rare.",
-      "source": "Hiccups (Simple Wikipedia); Hiccup"
+      "claim": "Long-lasting hiccups are rare.",
+      "source": "Hiccups"
     }
   ],
   "shorts": [
@@ -649,21 +719,35 @@
     29,
     30
   ],
-  "thumbnail": "Why Do We HICCUP?",
-  "description": "What makes that funny hic sound, and why can't we stop it? Huy and Mai go inside the body to meet the diaphragm, find out what starts hiccups, and learn what scientists think hiccups might be for. A calm, accurate science explainer for kids aged 6 to 12, with a safe hiccup-counting check to try at home.",
+  "thumbnail": "What Makes the HIC?",
+  "description": "Why do we hiccup, and where does that funny hic sound come from? Huy, his helper Hùng, Bối and little Beo look inside the body to meet the diaphragm, find out what sets hiccups off, and hear the clever idea scientists have about why hiccups exist. It's a gentle, science-checked explainer for kids aged 6 to 12, with a safe hiccup-counting activity to try at home.",
   "cast": [
     {
       "name": "Huy",
       "gender": "male",
       "age": "young",
-      "role": "the host: curious, warm, a little funny; explains",
+      "role": "the host (25): curious, warm, a little funny; explains",
       "villain": false
     },
     {
-      "name": "Mai",
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
       "gender": "female",
       "age": "child",
-      "role": "an 8-year-old who asks, guesses and tries things",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
       "villain": false
     }
   ],

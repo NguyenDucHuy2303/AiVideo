@@ -1,0 +1,123 @@
+{
+  "castFile": "cast.json",
+  "duration": 12.03,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 1.4,
+      "do": "point",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 8.42,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"80\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#2a2a40\" data-in=\"0\">Oxygen: invisible fuel</text><icon name=\"girl\" x=\"60\" y=\"200\" size=\"200\" data-in=\"1\"/><g class=\"float\" data-in=\"2\"><circle cx=\"320\" cy=\"250\" r=\"14\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"380\" cy=\"320\" r=\"14\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"310\" cy=\"380\" r=\"14\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"400\" cy=\"230\" r=\"14\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"410\" cy=\"400\" r=\"14\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><text x=\"300\" y=\"490\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\" data-in=\"3\">oxygen</text><line x1=\"500\" y1=\"150\" x2=\"500\" y2=\"540\" stroke=\"#3a2a20\" stroke-width=\"4\" stroke-dasharray=\"14 12\" data-in=\"4\"/><rect x=\"540\" y=\"170\" width=\"400\" height=\"330\" rx=\"30\" fill=\"#cdeafa\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"5\"/><icon name=\"fish\" x=\"620\" y=\"280\" size=\"200\" class=\"float\" data-in=\"5\"/><g class=\"float\" data-in=\"6\"><circle cx=\"600\" cy=\"230\" r=\"12\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"880\" cy=\"400\" r=\"12\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle cx=\"860\" cy=\"230\" r=\"12\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><text x=\"740\" y=\"550\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"36\" fill=\"#2a2a40\" data-in=\"7\">a little oxygen</text></svg>",
+    "style": "sketch",
+    "icons": {
+      "girl": {
+        "body": "<g fill=\"none\"><path fill=\"#f1a11e\" d=\"M25.5 14.5c-.243 0-.708.077-.708.077L6.054 14.53s-1.504.51-2.008 1.089a7 7 0 0 1-.017-.489v-4.07a7.06 7.06 0 0 1 5.993-6.98A2.187 2.187 0 0 1 12.199 2h5.81c5.52 0 10 4.48 10 10v3.13q0 .266-.02.53A3.24 3.24 0 0 0 25.5 14.5M8.439 21.22l-6 4.03c-.55.37-.59 1.17-.08 1.6l3.19 2.81c.72.64 1.85.34 2.18-.56l2.32-6.49zm15.19 0l6 4.03c.55.37.59 1.17.08 1.6l-3.19 2.81c-.72.64-1.85.34-2.18-.56l-2.32-6.49z\"/><path fill=\"#fdbb11\" d=\"M9.75 17.75a3.25 3.25 0 1 1-6.5 0a3.25 3.25 0 0 1 6.5 0m19 0a3.25 3.25 0 1 1-6.5 0a3.25 3.25 0 0 1 6.5 0\"/><path fill=\"#ffc83d\" d=\"M18.829 13a8.82 8.82 0 0 1-8.1-5.337a10.24 10.24 0 0 1-3.62 5.417a3.23 3.23 0 0 0-1.055 1.45q-.106.015-.21.036l.192 5.649C6.275 26.074 10.659 30 16 30c5.33 0 9.725-3.926 9.964-9.785l.192-5.649a3.3 3.3 0 0 0-1.364.011A4.86 4.86 0 0 0 21.19 13z\"/><path fill=\"#990839\" d=\"M16.014 23.373a6.5 6.5 0 0 1-3.016-.733a.329.329 0 0 0-.43.472a4.088 4.088 0 0 0 6.89 0c.18-.281-.13-.622-.429-.472a6.35 6.35 0 0 1-3.015.733\"/><path fill=\"#ed9200\" d=\"M16.003 22c.67 0 1.27-.345 1.62-.873c.32-.477-.02-1.127-.59-1.127h-2.07c-.57 0-.91.65-.59 1.127c.36.528.96.873 1.63.873\"/><path fill=\"#fff\" d=\"M8.219 18.47a3.09 3.09 0 0 1 3-2.34c1.5 0 2.76 1.07 3.05 2.49c.06.31-.19.6-.51.6h-4.94c-.4 0-.7-.37-.6-.75m15.6 0a3.09 3.09 0 0 0-3-2.34c-1.5 0-2.75 1.07-3.05 2.49c-.06.31.19.6.51.6h4.94c.4 0 .7-.37.6-.75\"/><path fill=\"#7d4533\" d=\"M9.699 18.7c0-1.09.89-1.98 1.98-1.98s1.98.89 1.97 1.98c0 .18-.02.35-.07.52h-3.81c-.04-.16-.07-.34-.07-.52m12.65 0c0-1.09-.89-1.98-1.98-1.98c-1.1 0-1.98.89-1.97 1.98c0 .18.02.35.07.52h3.81c.04-.16.07-.34.07-.52\"/><path fill=\"#000\" d=\"M11.679 17.57c.62 0 1.13.51 1.13 1.13c0 .19-.05.37-.13.52h-2c-.08-.15-.13-.33-.13-.52c0-.62.51-1.13 1.13-1.13m8.69 0c-.62 0-1.13.51-1.13 1.13c0 .19.04.37.13.52h2c.08-.15.13-.33.13-.52c0-.62-.51-1.13-1.13-1.13\"/><path fill=\"#fff\" d=\"M11.349 17.92a.35.35 0 1 1-.7 0a.35.35 0 0 1 .7 0m8.75 0a.35.35 0 1 1-.7 0a.35.35 0 0 1 .7 0\"/><path fill=\"#d37034\" d=\"M9.906 15.171c.522-.185 1.268-.326 2.256-.233a.5.5 0 0 0 .094-.996c-1.133-.107-2.026.053-2.685.287a.5.5 0 0 0 .335.942m12.56-.942c-.658-.234-1.552-.394-2.684-.287a.5.5 0 1 0 .094.996c.987-.093 1.734.047 2.255.233a.5.5 0 1 0 .335-.942\"/></g>",
+        "width": 32,
+        "height": 32
+      },
+      "fish": {
+        "body": "<g fill=\"none\"><path fill=\"#00a6ed\" d=\"M16.406 5.866c-2.686 0-3.792 2.517-3.842 4.822h-.908a8.66 8.66 0 0 0-8.315 6.242a1.055 1.055 0 0 0-.622 2.015a1.055 1.055 0 0 0 .438 2.05a8.66 8.66 0 0 0 8.5 7.005h1.783c.036.965.51 1.997 1.631 1.997h2.205c.106.018.308-.046.265-.45c-.043-.407-.231-1.236-1.233-1.547h.036a8.66 8.66 0 0 0 8.578-7.488v4.176c0 2.25 4.922 4.625 4.922 2.437v-4.5c0-1.205-2.039-3.26-3.304-3.281c1.265-.021 3.304-2.076 3.304-3.282v-4.5c0-2.187-4.922.188-4.922 2.438v4.176a8.66 8.66 0 0 0-7.03-7.35c3.617-.276 4.209-2.776 4.327-3.9c.1-.95-.375-1.103-.625-1.06z\"/><path fill=\"#0074ba\" d=\"M11.726 13.804a.5.5 0 0 1 .704-.062c3.05 2.555 3.211 7.049.043 10.398a.5.5 0 1 1-.727-.687c2.832-2.994 2.587-6.812.042-8.945a.5.5 0 0 1-.062-.704\"/><path fill=\"#1c1c1c\" d=\"M9.078 17.5a.61.61 0 1 1-1.219 0a.61.61 0 0 1 1.22 0\"/></g>",
+        "width": 32,
+        "height": 32
+      }
+    },
+    "reveal": 7.22
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

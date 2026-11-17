@@ -1,0 +1,218 @@
+{
+  "narration": "Chàng gửi của cải cho bác lái thuyền đi mua hàng, còn mình ở lại học phép lạ. Chử Đồng Tử (vui vẻ): \"Bác cứ đi mua hàng giúp con. Con xin ở lại học với cụ.\" Bác lái thuyền (vui vẻ): \"Được, khi về ta sẽ ghé đón cháu!\"",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "dong_tu",
+        "place": "left",
+        "enter": "none",
+        "act": "give",
+        "face": "happy",
+        "then": "bow",
+        "thenFace": "happy"
+      },
+      {
+        "id": "bac_lai_thuyen",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "wave",
+        "thenFace": "happy"
+      },
+      {
+        "id": "dong_tu_ngheo_form",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "van_lang",
+  "duration": 10.633333333333333,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "dong_tu",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#c9902a",
+          "color": "#7a5030"
+        },
+        "bareChest": false,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "bac_lai_thuyen",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#b88a58",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#4a3a2a",
+          "trim": "#a87a3a",
+          "color": "#6a5a3a"
+        },
+        "bareChest": false,
+        "tattoo": true,
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "bamboo"
+          }
+        ],
+        "build": "average",
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "round",
+          "brows": "thick",
+          "mustache": "thin"
+        }
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "dong_tu_ngheo_form",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": false,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": -582.4,
+      "scale": 1.4,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "dong_tu",
+      "at": 0,
+      "do": "give",
+      "face": "happy"
+    },
+    {
+      "actor": "dong_tu",
+      "at": 5.32,
+      "do": "bow",
+      "face": "happy"
+    },
+    {
+      "actor": "bac_lai_thuyen",
+      "at": 0,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "bac_lai_thuyen",
+      "at": 5.32,
+      "do": "wave",
+      "face": "happy"
+    },
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "dong_tu",
+        "bac_lai_thuyen",
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 3.83,
+      "type": "close",
+      "on": [
+        "dong_tu"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 7.23,
+      "type": "close",
+      "on": [
+        "bac_lai_thuyen"
+      ],
+      "push": 0.05
+    }
+  ]
+}

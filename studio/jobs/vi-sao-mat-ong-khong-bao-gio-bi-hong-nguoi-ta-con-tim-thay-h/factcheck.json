@@ -1,0 +1,16 @@
+{
+  "issues": [
+    {
+      "scene": 30,
+      "quote": "Mật lại đặc đường và hơi chua, nên vi khuẩn không sống nổi.",
+      "problem": "Oversimplified. The source says most microorganisms cannot live in honey. Honey often holds dormant botulinum spores, which survive in it. That is why babies must not eat honey, as Bối is told in scene 29.",
+      "fix": "Mật lại đặc đường và hơi chua, nên phần lớn vi khuẩn không sống nổi."
+    },
+    {
+      "scene": 20,
+      "quote": "nên vi khuẩn và nấm men không sinh sôi được.",
+      "problem": "Too absolute. The sources say most microorganisms cannot grow in honey. Yeast can grow once honey takes in water and becomes diluted (scene 22). Some bacteria survive as dormant spores.",
+      "fix": "Ghi nhớ bước ba. Mật ong rất nhiều đường lại hơi chua, nên phần lớn vi khuẩn và nấm men khó sinh sôi."
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "narration": "Tin truyền về kinh đô. Vua Hùng nghe con gái tự ý lấy chồng mà không hỏi ý cha, thì giận lắm. Vua Hùng (tức giận): \"Tiên Dung tự ý lấy chồng, không hỏi ý cha. Từ nay con không được về cung nữa!\"",
+  "plan": {
+    "set": "palace",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "vua_hung",
+        "place": "center",
+        "enter": "none",
+        "act": "point",
+        "face": "angry",
+        "then": "call",
+        "thenFace": "angry"
+      },
+      {
+        "id": "tien_dung",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "tien_ong",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "shake"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "medium"
+  },
+  "era": "van_lang",
+  "duration": 10.733333333333333,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "palace",
+    "objects": [
+      {
+        "type": "banner",
+        "x": 1500,
+        "color": "#3a1a1a"
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "vua_hung",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "plume",
+          "color": "#8a3a22",
+          "skirt": "#6a4a2a",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "headwear": "feather",
+        "beard": "#4a3a30",
+        "bracelets": true,
+        "earrings": true,
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick",
+          "mustache": "thick",
+          "wrinkles": true
+        },
+        "build": "heavy"
+      },
+      "x": 0,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "tien_dung",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#efe4cc",
+          "skirt": "#efe4cc",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1210"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12",
+          "eyeScale": 1.1
+        },
+        "build": "slim",
+        "props": []
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "tien_ong",
+      "type": "human",
+      "look": {
+        "body": "elder",
+        "skin": "#e0b080",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f2eee4",
+          "skirt": "#e8e2d4",
+          "trim": "#d8d0b8"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#f4f4f0"
+        },
+        "beard": "#f8f8f4",
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "droopy",
+          "nose": "long",
+          "brows": "bushy",
+          "wrinkles": true
+        },
+        "build": "slim",
+        "cape": true,
+        "bracelets": false
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "vua_hung",
+      "at": 0,
+      "do": "point",
+      "face": "angry"
+    },
+    {
+      "actor": "vua_hung",
+      "at": 5.37,
+      "do": "call",
+      "face": "angry",
+      "talk": 1,
+      "move": {
+        "by": 700,
+        "ease": "in"
+      },
+      "dur": 5.363333333333332
+    },
+    {
+      "actor": "tien_dung",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "tien_ong",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "shake",
+      "at": 5.37,
+      "power": 0.5
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "vua_hung",
+        "tien_dung",
+        "tien_ong"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 3.86,
+      "type": "close",
+      "on": [
+        "vua_hung"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 7.3,
+      "type": "close",
+      "on": [
+        "tien_dung"
+      ],
+      "push": 0.05
+    }
+  ]
+}

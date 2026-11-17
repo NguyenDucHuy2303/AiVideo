@@ -95,5 +95,10 @@
       768,
       448
     ]
+  },
+  "speakerShot": {
+    "type": "full",
+    "share": 0.6,
+    "push": 0.03
   }
 }

@@ -76,5 +76,12 @@
       "push": 0.06
     }
   ],
-  "mood": "playful"
+  "mood": "playful",
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
 }

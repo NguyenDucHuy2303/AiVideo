@@ -1,7 +1,7 @@
 {
   "slug": "vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua",
   "topic": "Vì sao cầu vồng có bảy màu và luôn xuất hiện sau cơn mưa?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T10:05:14.842Z",
@@ -136,6 +136,535 @@
       "at": "2026-11-13T09:57:17.938Z",
       "status": "rewrite",
       "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 120000 write tokens; gemma3:12b is not installed, so the work waits and r"
+    },
+    {
+      "at": "2026-11-13T10:46:27.405Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 120000 write tokens; gemma3:12b is not installed, so the work waits and r"
+    },
+    {
+      "at": "2026-11-13T19:40:58.100Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T20:11:24.925Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T20:41:30.019Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T21:11:35.121Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T21:41:40.500Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T22:11:45.753Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T22:41:50.990Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T23:11:57.107Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-13T23:42:01.737Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T00:12:06.976Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T00:42:12.727Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T01:12:17.757Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T01:42:22.664Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T02:12:28.302Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T02:42:33.342Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T03:12:38.247Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T03:42:43.769Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T04:12:48.926Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T04:42:54.168Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T05:12:59.565Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T05:43:04.733Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T06:13:10.409Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T06:43:15.414Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T07:13:20.717Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T07:43:26.620Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T08:13:31.511Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T08:43:36.337Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T09:13:42.460Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T09:43:47.465Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T12:08:27.903Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T12:38:32.692Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T15:05:06.659Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T15:35:12.554Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T16:05:17.587Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T16:35:22.466Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T17:05:28.292Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T17:35:33.402Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T18:05:38.176Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T18:35:43.109Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T19:05:48.206Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T19:35:53.587Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T20:05:59.170Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T20:36:04.447Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T21:06:10.367Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T21:36:15.490Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T22:06:20.798Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T22:36:27.225Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T23:06:32.127Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-14T23:36:36.812Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T00:06:42.758Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T00:36:47.732Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T01:06:52.977Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T01:36:58.750Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T02:07:03.999Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T02:37:09.240Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T03:07:14.597Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T03:37:19.978Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T04:07:25.494Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T04:37:30.751Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T05:07:36.181Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T05:37:42.521Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T06:07:47.545Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T06:37:53.182Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T07:07:59.036Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T07:38:04.512Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T08:08:09.991Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T08:38:15.326Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T09:08:20.545Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T09:38:26.581Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T10:08:48.785Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T10:38:51.388Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T11:09:00.717Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T11:39:05.907Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T12:09:12.288Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T12:39:17.350Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T13:09:22.637Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T13:39:28.531Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T14:09:33.806Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T14:39:39.081Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T15:09:44.824Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T15:39:50.202Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T16:09:56.010Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T16:40:01.156Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T17:10:06.314Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T17:40:12.535Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T18:10:17.849Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T18:40:23.278Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T19:10:29.248Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T19:40:34.699Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T20:10:40.286Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T20:40:45.450Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T21:10:50.899Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T21:40:57.146Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T22:11:02.224Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T22:41:07.711Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T23:11:13.488Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-15T23:41:18.780Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-16T00:11:24.287Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-16T00:41:29.976Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-16T01:11:35.297Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-16T01:41:41.118Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-16T01:52:07.995Z",
+      "status": "review",
+      "info": "kẹt vì trần token cộng dồn (lỗi đã sửa 16/11)"
+    },
+    {
+      "at": "2026-11-16T01:52:07.996Z",
+      "status": "rewrite",
+      "info": "viết lại với Huy, Hùng, Bối, Beo: lượt mới, trần token tính từ đây"
+    },
+    {
+      "at": "2026-11-16T01:52:13.420Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"vi-sao-cau-vong-co-bay-mau-va-luon-xuat-hien-sau-con-mua\" has spent 141919 of its 80000 write tokens; gemma3:12b is not installed, so the work waits and re"
+    },
+    {
+      "at": "2026-11-16T02:12:33.184Z",
+      "status": "review"
     }
   ],
   "kind": "qa-vi",
@@ -151,6 +680,5 @@
     "shorts/1.mp4",
     "shorts/2.mp4",
     "shorts/3.mp4"
-  ],
-  "retryAt": "2026-11-13T10:27:17.927Z"
+  ]
 }

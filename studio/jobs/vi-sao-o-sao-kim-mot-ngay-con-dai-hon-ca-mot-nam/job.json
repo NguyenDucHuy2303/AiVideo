@@ -1,0 +1,217 @@
+{
+  "slug": "vi-sao-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam",
+  "topic": "Vì sao ở sao Kim, một ngày còn dài hơn cả một năm?",
+  "status": "done",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-16T07:42:37.422Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-16T07:45:55.576Z",
+      "status": "review"
+    },
+    {
+      "at": "2026-11-16T10:00:40.809Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (bản dài của Short đã làm)"
+    },
+    {
+      "at": "2026-11-16T10:00:40.956Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T10:10:56.518Z",
+      "status": "approved",
+      "info": "dừng giữa chừng, sẽ làm tiếp"
+    },
+    {
+      "at": "2026-11-16T10:11:00.847Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T10:52:28.172Z",
+      "status": "approved",
+      "info": "chờ thử lại: Claude Code failed on qa-direct: You've hit your 5-hour limit · resets 6:30pm (Asia/Ho_Chi_Minh) · 429 · success; gemma3:12b is not installed, so the work waits"
+    },
+    {
+      "at": "2026-11-16T13:13:45.451Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T13:14:47.943Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T13:44:50.496Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T13:44:50.521Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T14:14:52.915Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T14:14:52.992Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T14:44:54.974Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T14:44:54.993Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T15:14:56.593Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T15:14:56.637Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T15:44:58.798Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T15:44:58.816Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T16:15:00.787Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T16:15:00.830Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T16:45:02.642Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T16:45:02.679Z",
+      "status": "approved",
+      "info": "chờ thử lại: today's 1008231 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-16T17:15:05.050Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-16T17:31:18.725Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-16T17:31:18.765Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-16T18:10:50.545Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-16T18:24:08.117Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-16T19:31:52.743Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (349 giây, không đen màn, đứng hình hay im lặng)"
+    }
+  ],
+  "kind": "qa-vi",
+  "summary": "Bản dài của Short \"Bạn có biết ở sao Kim, một ngày còn dài hơn cả một năm?\"",
+  "wanted": true,
+  "fromShort": "ban-co-biet-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam",
+  "by": "claude-opus",
+  "autoPicked": true,
+  "retryAt": "2026-11-16T17:15:02.678Z",
+  "inspect": {
+    "at": "2026-11-16T18:10:50.544Z",
+    "perMinute": 1.1,
+    "byKind": {
+      "head-cut": {
+        "count": 4,
+        "seconds": 4.5
+      },
+      "still": {
+        "count": 2,
+        "seconds": 11.2
+      }
+    }
+  },
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "autoCheck": {
+    "at": "2026-11-16T19:31:52.742Z",
+    "mtimeMs": 1794852640217.9487,
+    "ok": true,
+    "problems": [],
+    "seconds": 349
+  },
+  "autoApproved": "2026-11-16T19:31:52.742Z",
+  "exported": {
+    "long": {
+      "dir": "/home/huynguyen/youtube/Vì sao ở sao Kim, một ngày còn dài hơn cả một năm",
+      "publishAt": "2026-11-20T12:30:00.000Z",
+      "channel": "huy-ke-chuyen",
+      "at": "2026-11-16T19:31:52.797Z"
+    },
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/Vì sao ở sao Kim, một ngày còn dài hơn cả một năm",
+        "publishAt": "2026-11-22T00:30:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-16T19:31:52.799Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Vì sao ở sao Kim, một ngày còn dài hơn cả một năm",
+        "publishAt": "2026-11-22T05:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-16T19:31:52.800Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Vì sao ở sao Kim, một ngày còn dài hơn cả một năm",
+        "publishAt": "2026-11-22T10:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-16T19:31:52.801Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "Vì sao ở sao Kim, một ngày còn dài hơn cả một năm",
+    "mtime": 1794857512806.2126,
+    "at": "2026-11-17T01:44:46.965Z"
+  }
+}

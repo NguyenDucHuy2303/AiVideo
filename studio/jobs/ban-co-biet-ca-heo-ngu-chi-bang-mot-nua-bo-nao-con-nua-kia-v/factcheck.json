@@ -1,0 +1,22 @@
+{
+  "issues": [
+    {
+      "scene": 1,
+      "quote": "Các bạn có biết cá heo ngủ chỉ bằng một nửa bộ não, còn nửa kia vẫn thức không?",
+      "problem": "The sources say nothing about how dolphins sleep. The sleep source is only about humans and never mentions half-brain sleep. The claim is the core of the video and is stated as a flat fact for all dolphins with no support.",
+      "fix": "Add a source on dolphin sleep. If none is available, hedge it: \"Các nhà khoa học thấy nhiều loài cá heo có thể nghỉ ngơi từng nửa bộ não một. Các bạn có biết không?\""
+    },
+    {
+      "scene": 4,
+      "quote": "Một nửa bộ não nghỉ ngơi, nửa còn lại vẫn thức.",
+      "problem": "Unsupported by the given sources. Neither the dolphin text nor the sleep text mentions one half of the brain resting while the other stays awake. It is stated for all dolphins with no hedge.",
+      "fix": "Add a source. Otherwise hedge it: \"Các nhà khoa học cho rằng cá heo có thể cho một nửa bộ não nghỉ ngơi, còn nửa kia vẫn thức.\""
+    },
+    {
+      "scene": 5,
+      "quote": "Nửa thức giúp cá heo nổi lên để thở. Rồi hai nửa đổi phiên cho nhau.",
+      "problem": "Unsupported by the sources. The claim that the awake half makes the dolphin surface to breathe, and that the two halves swap turns, appears in neither text. It is stated as certain, though the exact reasons are still being studied.",
+      "fix": "Add a source. Otherwise hedge it: \"Các nhà khoa học nghĩ nửa thức giúp cá heo nhớ nổi lên để thở, và hai nửa bộ não có thể thay phiên nhau nghỉ.\""
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "issues": [
+    {
+      "scene": 26,
+      "quote": "Copper blood works well in the cold sea, and three hearts help keep it moving.",
+      "problem": "Scenes 23 and 25 say \"scientists think\" and \"may help\". This takeaway drops that care and states an unsettled idea as fact. The source only says that some animals in cold, low-oxygen places use copper blood, and that the red helper is less efficient there. It does not say that three hearts help keep the blood moving.",
+      "fix": "Scientists think copper blood works well in the cold sea, and three hearts may help keep it moving."
+    }
+  ]
+}

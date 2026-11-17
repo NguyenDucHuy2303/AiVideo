@@ -3739,8 +3739,8 @@
   "publishHold": false,
   "drive": {
     "folder": "Why Is the Sky Blue",
-    "mtime": 1794556043759.4983,
-    "at": "2026-11-13T07:50:33.314Z"
+    "mtime": 1794794036022.0974,
+    "at": "2026-11-16T01:54:34.030Z"
   },
   "published": {
     "long": {
@@ -3782,6 +3782,9 @@
     "tiktok:short:0": "2026-11-13T03:07:56.536Z",
     "tiktok:short:1": "2026-11-13T03:07:57.829Z",
     "tiktok:short:2": "2026-11-13T03:10:48.097Z",
-    "facebook:long:0": "2026-11-13T03:13:38.677Z"
+    "facebook:long:0": "2026-11-13T03:13:38.677Z",
+    "facebook:short:0": "2026-11-16T06:18:59.252Z",
+    "facebook:short:1": "2026-11-16T06:18:59.769Z",
+    "facebook:short:2": "2026-11-16T06:19:00.511Z"
   }
 }

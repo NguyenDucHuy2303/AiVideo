@@ -1,0 +1,187 @@
+{
+  "narration": "Từ đó, chàng không còn gì để mặc. Ban đêm, chàng ra sông câu cá. Ban ngày, chàng ngâm mình dưới nước tới ngang bụng, lại gần các thuyền để bán cá hoặc xin ăn. Chử Đồng Tử (vui vẻ): \"Bác ơi, bác đổi cá không ạ? Cá cháu vừa câu đêm qua, tươi lắm.\" Bác lái thuyền (cười): \"Chàng trai chăm chỉ quá. Ta đổi cho cháu nắm cơm này nhé.\"",
+  "plan": {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo_form",
+        "place": "left",
+        "enter": "none",
+        "act": "swing",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "bac_lai_thuyen",
+        "place": "right",
+        "enter": "from_right",
+        "act": "talk",
+        "face": "laugh",
+        "then": "give",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "rice"
+    ],
+    "shot": "medium"
+  },
+  "era": "van_lang",
+  "duration": 16.9,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "field",
+    "objects": [
+      {
+        "type": "rice",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "dong_tu_ngheo_form",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": false,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": -582.4,
+      "scale": 1.4,
+      "facing": 1
+    },
+    {
+      "id": "bac_lai_thuyen",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#b88a58",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#4a3a2a",
+          "trim": "#a87a3a",
+          "color": "#6a5a3a"
+        },
+        "bareChest": false,
+        "tattoo": true,
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "bamboo"
+          }
+        ],
+        "build": "average",
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "round",
+          "brows": "thick",
+          "mustache": "thin"
+        }
+      },
+      "x": 2420,
+      "scale": 1,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 0,
+      "do": "swing",
+      "face": "happy"
+    },
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 8.45,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "bac_lai_thuyen",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": 520,
+        "ease": "out"
+      },
+      "dur": 7.61,
+      "face": "laugh"
+    },
+    {
+      "actor": "bac_lai_thuyen",
+      "at": 7.61,
+      "do": "talk",
+      "face": "laugh"
+    },
+    {
+      "actor": "bac_lai_thuyen",
+      "at": 8.45,
+      "do": "give",
+      "face": "happy"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "dong_tu_ngheo_form",
+        "bac_lai_thuyen"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 6.08,
+      "type": "close",
+      "on": [
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 11.49,
+      "type": "close",
+      "on": [
+        "bac_lai_thuyen"
+      ],
+      "push": 0.05
+    }
+  ]
+}

@@ -1,24 +1,29 @@
 {
   "title": "Why Does the Moon Change Shape?",
   "question": "Why does the Moon change shape?",
-  "answer": "The Moon is always a round ball, and the Sun always lights up half of it. As the Moon travels around the Earth, about once a month, we see different amounts of that bright half. So it looks like a thin crescent, then a half Moon, then a full Moon, and back again.",
+  "answer": "The Moon never really changes shape. It is always a round ball, and the Sun always lights up half of it. As the Moon travels around Earth about once a month, we see different amounts of that bright half. That is why it looks thin, then half, then full, and then thin again.",
   "scenes": [
     {
       "beat": "hook",
       "visual": {
         "kind": "scene",
-        "what": "Night. Mai at a bedroom window, pointing at a thin crescent Moon. A thought bubble shows a big full Moon from last week."
+        "what": "Night on a balcony. Bối points at a thin crescent Moon, and Beo pretends to munch a giant cookie. Huy laughs while Hùng holds up a photo of last week's full Moon."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
-          "text": "Huy, look! Last week the Moon was a big round ball. Now it is a thin banana! Did someone take a bite?"
+          "text": "Huy, look! Two weeks ago the Moon was a big round ball. Now it is a thin banana! Did someone take a bite?"
+        },
+        {
+          "who": "Beo",
+          "how": "happily",
+          "text": "Maybe a giant ate it for breakfast!"
         },
         {
           "who": "Huy",
           "how": "laughing",
-          "text": "Nobody is eating the Moon, Mai. And here is a surprise. The Moon is always a round ball. It never really changes shape at all!"
+          "text": "Nobody is eating the Moon. And here is a surprise. The Moon is always a round ball. It never really changes shape at all!"
         }
       ]
     },
@@ -26,7 +31,7 @@
       "beat": "hook",
       "visual": {
         "kind": "host",
-        "what": "Huy talking to camera. Moon shapes float around him: a crescent, a half Moon and a full Moon."
+        "what": "Huy faces the camera, with three small pictures floating beside him. They show the Sun, the Moon going around in a loop, and a row of Moon shapes."
       },
       "parts": [
         {
@@ -39,19 +44,38 @@
     {
       "beat": "guess",
       "visual": {
-        "kind": "scene",
-        "what": "Mai at a table drawing a picture of the Earth with a big shadow falling on the Moon. She holds up the drawing proudly."
+        "kind": "diagram",
+        "what": "Bối's guess drawn in crayon. The Earth casts a dark shadow that covers part of the Moon, with a big question mark next to it."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "proudly",
           "text": "I know! The Earth's shadow covers part of the Moon. That makes the dark bit."
         },
         {
           "who": "Huy",
           "how": "happily",
-          "text": "That is a great guess, Mai. Lots of grown-ups think so too. And you are right that the Earth has a shadow."
+          "text": "That is a great guess, Bối. Lots of grown-ups think so too. And you are right that the Earth has a shadow."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Beo's guess as a cosy cartoon. A sleepy Moon with a face pulls a starry blanket up over half of itself."
+      },
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "happily",
+          "text": "I think the Moon goes to bed. It pulls up a blanket!"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "A sleepy Moon with a blanket! I love it, Beo. Guessing is how scientists start."
         }
       ]
     },
@@ -59,7 +83,7 @@
       "beat": "guess",
       "visual": {
         "kind": "diagram",
-        "what": "Sun, Earth and Moon in a straight line. The Moon sits inside Earth's dark shadow and looks dim reddish. Label says lunar eclipse, only at full Moon."
+        "what": "Sun, Earth and Moon in a straight line, with the full Moon sliding into Earth's long dark shadow. It is labelled lunar eclipse, only at full Moon."
       },
       "parts": [
         {
@@ -68,7 +92,7 @@
           "text": "Sometimes the Moon really does slide into Earth's shadow. That is called a lunar eclipse. But it can only happen at full Moon, and not every month. So the shadow is not why the Moon changes shape night after night."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "So what is it then?"
         }
@@ -79,13 +103,18 @@
       "step": 1,
       "visual": {
         "kind": "compare",
-        "what": "Side by side. On the left a bright Sun with glowing rays, labelled makes its own light. On the right a plain grey rocky Moon, labelled no light of its own."
+        "what": "On the left, a glowing Sun with rays coming out, labelled makes its own light. On the right, a grey Moon, labelled rock and dust, no light of its own. Hùng holds up a plain grey rock."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Clue number one. The Sun makes its own light. The Moon does not. The Moon is a big ball of rock and dust, with no light of its own."
+        },
+        {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "I brought a Moon rock! Well, a rock from the garden. It does not glow either."
         }
       ]
     },
@@ -93,12 +122,12 @@
       "beat": "step",
       "step": 1,
       "visual": {
-        "kind": "scene",
-        "what": "A dark room. A torch on a table shines on a white football. Mai peeks at the ball, which glows on the side facing the torch."
+        "kind": "experiment",
+        "what": "A dark room. Hùng shines a torch on a football, and only the side facing the torch is bright. Arrows show light going to the ball and bouncing to Bối's eyes."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "Then why does it shine so brightly at night?"
         },
@@ -106,6 +135,11 @@
           "who": "Huy",
           "how": "",
           "text": "Because sunlight lands on it and bounces back to our eyes. It is like a football in a dark room. You only see it when a torch shines on it."
+        },
+        {
+          "who": "Hùng",
+          "how": "happily",
+          "text": "Torch off, no ball. Torch on, there it is!"
         }
       ]
     },
@@ -114,7 +148,7 @@
       "step": 1,
       "visual": {
         "kind": "diagram",
-        "what": "The Sun on the left with rays. A big Moon ball on the right, its left half bright and labelled day side, its right half dark and labelled night side."
+        "what": "The Sun on the left shines on a big Moon ball. The half facing the Sun is bright and labelled day, and the far half is dark and labelled night. A small Earth beside it is half lit too."
       },
       "parts": [
         {
@@ -123,7 +157,7 @@
           "text": "The Moon is round like a ball. So the Sun can only light the half that faces it. That half is bright, like daytime. The other half is dark, like night."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "happily",
           "text": "Just like Earth! Half has day and half has night."
         }
@@ -134,13 +168,23 @@
       "step": 1,
       "visual": {
         "kind": "labels",
-        "what": "Close-up of the Moon ball, half bright and half dark. The curved line between them is labelled terminator, where day meets night."
+        "what": "A close-up of the Moon ball, half bright and half dark. A curved line between them is labelled terminator, the edge where day meets night. Beo stands beside it doing a stiff robot pose."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Right! The line between the bright half and the dark half has a funny name. It is called the terminator. It just means the edge where day meets night."
+          "text": "Right! The line between the bright half and the dark half has a funny name. It is called the terminator."
+        },
+        {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "Terminator? Is it a robot?"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "No robots, Beo. It just means the edge where day meets night."
         }
       ]
     },
@@ -149,7 +193,7 @@
       "step": 1,
       "visual": {
         "kind": "host",
-        "what": "Huy holding up a ball that is half yellow and half dark blue. Big text reads Step 1."
+        "what": "Huy faces the camera next to a big card that shows the Sun lighting one half of the Moon."
       },
       "parts": [
         {
@@ -164,7 +208,7 @@
       "step": 2,
       "visual": {
         "kind": "arrows",
-        "what": "Earth in the middle. The Moon travels around it on a dotted circle path, with arrows showing it going round."
+        "what": "The Earth in the middle, with the Moon travelling around it on a big dotted loop. Curved arrows show the way it goes, and the loop is labelled orbit."
       },
       "parts": [
         {
@@ -179,7 +223,7 @@
       "step": 2,
       "visual": {
         "kind": "count",
-        "what": "A calendar page with days ticked off and a little Moon icon. Big number reads about 29 and a half days."
+        "what": "A calendar page with about 29 and a half days crossed off, and a little Moon shape drawn in each box. A big label says about one month."
       },
       "parts": [
         {
@@ -188,14 +232,14 @@
           "text": "It takes the Moon about 29 and a half days to go through all its shapes and come back to the same one. That is about one month."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "A whole month for the shapes to repeat?"
         },
         {
           "who": "Huy",
           "how": "happily",
-          "text": "Yes, Mai. The Moon's loop around Earth is enormous, and it takes about a month to go round."
+          "text": "Yes, Bối. The Moon's loop around Earth is enormous, and it takes about a month to go round."
         }
       ]
     },
@@ -203,19 +247,24 @@
       "beat": "step",
       "step": 2,
       "visual": {
-        "kind": "scene",
-        "what": "Living room. Huy sits on a chair in the middle. Mai walks in a circle around him, always facing him, with footprints showing her path."
+        "kind": "experiment",
+        "what": "Beo stands in the middle of the room. Hùng walks in a circle around him, always facing him, and wobbles at the end with little dizzy stars over his head."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Here is something odd. The Moon always shows us the same face. Mai, walk around me and keep looking at me."
+          "text": "Here is something odd. The Moon always shows us the same face. Hùng, walk around Beo and keep looking at him."
         },
         {
-          "who": "Mai",
+          "who": "Beo",
           "how": "joyfully",
-          "text": "I am going round and round, and you only ever see my front!"
+          "text": "I only see your face! Never your back!"
+        },
+        {
+          "who": "Hùng",
+          "how": "tired",
+          "text": "Round and round. Whoa, now the whole room is going round!"
         }
       ]
     },
@@ -224,7 +273,7 @@
       "step": 2,
       "visual": {
         "kind": "diagram",
-        "what": "Earth in the middle, the Moon drawn at four spots around it. The same smiley crater pattern always points toward Earth. Labels say near side and far side."
+        "what": "The Moon at four spots around Earth, with the same smiley face always pointing at Earth. The hidden side is labelled far side."
       },
       "parts": [
         {
@@ -239,7 +288,7 @@
       "step": 2,
       "visual": {
         "kind": "host",
-        "what": "Huy with a little Moon on a loop circling his head. Big text reads Step 2."
+        "what": "Huy faces the camera, holding a card of the Moon going around Earth with the same face always pointing in."
       },
       "parts": [
         {
@@ -254,7 +303,7 @@
       "step": 3,
       "visual": {
         "kind": "diagram",
-        "what": "Seen from high above. Sun rays come from the left. Earth in the middle, the Moon at four spots around it. Every Moon has its left half bright, facing the Sun."
+        "what": "A big picture seen from above. The Sun is on the left, Earth is in the middle, and the Moon is at several spots around Earth. Each Moon has its bright half facing the Sun, and a tiny child on Earth looks out."
       },
       "parts": [
         {
@@ -269,7 +318,7 @@
       "step": 3,
       "visual": {
         "kind": "diagram",
-        "what": "The Moon sits between Earth and the Sun, its bright half facing away from Earth. A small window shows the night sky from Earth with no Moon visible. Label says new Moon."
+        "what": "Sun, Moon and Earth in a line, with the Moon in the middle and its bright half facing the Sun. A box shows what we see from Earth, an almost black Moon labelled new Moon."
       },
       "parts": [
         {
@@ -278,9 +327,14 @@
           "text": "When the Moon is between Earth and the Sun, its bright half faces away from us. We see only the dark half. That is the new Moon, and we can hardly see the Moon at all."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "The Moon is still there, just hiding in the dark!"
+        },
+        {
+          "who": "Beo",
+          "how": "laughing",
+          "text": "Peekaboo, Moon!"
         }
       ]
     },
@@ -289,7 +343,7 @@
       "step": 3,
       "visual": {
         "kind": "diagram",
-        "what": "The Moon a quarter of the way around Earth. A small window shows what we see, a half circle of light. Label says half Moon, about one week later."
+        "what": "The Moon a quarter of the way around Earth, at the side. A box shows what we see from Earth, half a circle lit, labelled half Moon."
       },
       "parts": [
         {
@@ -304,7 +358,7 @@
       "step": 3,
       "visual": {
         "kind": "diagram",
-        "what": "The Moon on the far side of Earth from the Sun. A small window shows a big round bright Moon. Label says full Moon."
+        "what": "The Moon on the far side of Earth from the Sun, with its bright half facing Earth. A box shows a big round bright Moon, labelled full Moon."
       },
       "parts": [
         {
@@ -313,7 +367,7 @@
           "text": "About a week after that, the Moon is on the opposite side of Earth from the Sun. Now the whole bright half faces us. Full Moon!"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "joyfully",
           "text": "The big round one!"
         }
@@ -323,12 +377,12 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "compare",
-        "what": "Two pictures side by side. Left, the real Moon seen from space, a whole ball half lit, labelled the real Moon. Right, the same Moon seen from Earth as a thin crescent, labelled what we see."
+        "kind": "scene",
+        "what": "Bối looks worried and holds two drawings, a small Moon and a big Moon. Huy holds up a whole ball, half painted yellow."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "worried",
           "text": "Wait. So the Moon is not really getting smaller?"
         },
@@ -344,7 +398,7 @@
       "step": 3,
       "visual": {
         "kind": "host",
-        "what": "Huy pointing at a small Earth and Moon diagram beside him. Big text reads Step 3."
+        "what": "Huy faces the camera, pointing at an eye on Earth looking at a half-lit Moon."
       },
       "parts": [
         {
@@ -359,13 +413,18 @@
       "step": 4,
       "visual": {
         "kind": "count",
-        "what": "A row of eight Moon shapes in order, numbered 1 to 8. New, waxing crescent, first quarter, waxing gibbous, full, waning gibbous, last quarter, waning crescent."
+        "what": "Hùng holds up a long chart of eight Moon shapes, numbered 1 to 8, from new Moon to waning crescent. At first he holds it upside down, then flips it the right way."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Scientists give the shapes names. There are eight main phases. A phase just means the shape the Moon seems to have on that night."
+        },
+        {
+          "who": "Hùng",
+          "how": "surprised",
+          "text": "Here is the chart! Oops, it is upside down. There we go."
         }
       ]
     },
@@ -373,19 +432,24 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "labels",
-        "what": "Two Moons. A thin curved one labelled crescent, next to a banana. A fat bulging one labelled gibbous, more than half lit."
+        "kind": "compare",
+        "what": "Side by side, a thin crescent Moon next to a banana, and a gibbous Moon next to a round full tummy. Bối giggles and Beo grins."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "A crescent is a thin curved sliver, like Mai's banana. Gibbous is the word for a Moon that is more than half lit, bulging out like a full tummy."
+          "text": "A crescent is a thin curved sliver, like Bối's banana. Gibbous is the word for a Moon that is more than half lit, bulging out like a full tummy."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "laughing",
           "text": "Gibbous! That sounds like a name for a monkey!"
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Can I have a pet gibbous?"
         }
       ]
     },
@@ -394,7 +458,7 @@
       "step": 4,
       "visual": {
         "kind": "arrows",
-        "what": "Moon shapes along a hill. An arrow climbs from new to full, labelled waxing means growing. An arrow goes down from full to new, labelled waning means shrinking."
+        "what": "The row of Moon shapes. An arrow going up from new to full is labelled waxing, growing. An arrow going down from full back to new is labelled waning, shrinking."
       },
       "parts": [
         {
@@ -408,8 +472,8 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "scene",
-        "what": "Long ago, people in simple clothes sit by a hill at night, looking up at the Moon and making notches on a wooden stick to count the nights."
+        "kind": "diagram",
+        "what": "A giant clock face in the night sky with the eight Moon phases in place of the numbers. People from long ago point up at it."
       },
       "parts": [
         {
@@ -424,7 +488,7 @@
       "step": 4,
       "visual": {
         "kind": "host",
-        "what": "Huy next to a circle of the eight Moon phases, with an arrow going round. Big text reads Step 4."
+        "what": "Huy faces the camera next to a circle of the eight phases, with an arrow going round."
       },
       "parts": [
         {
@@ -438,13 +502,18 @@
       "beat": "imagine",
       "visual": {
         "kind": "experiment",
-        "what": "A dark living room. A grown-up places a torch on a table, pointing toward Mai. Mai holds a white ball. A label on the torch says Sun."
+        "what": "A room with the curtains closed. Hùng puts a torch on a table and a grown-up stands nearby. Labels show torch is the Sun and ball is the Moon."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Want to see the phases yourself? Ask a grown-up to help. You need a torch, a ball and a dark room. Put the torch on a table so it shines toward you. The torch is the Sun."
+        },
+        {
+          "who": "Hùng",
+          "how": "happily",
+          "text": "Torch ready, ball ready, curtains closed!"
         }
       ]
     },
@@ -452,13 +521,23 @@
       "beat": "imagine",
       "visual": {
         "kind": "experiment",
-        "what": "Mai holds the ball at arm's length, a little above her head. Labels say your head is Earth and the ball is the Moon."
+        "what": "Hùng stands in the room holding the ball out in front of him, a little above his head. A label on his head says Earth. The ball slips, and Beo catches it."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Your head is the Earth. Hold the ball out in front of you, a little above your head. That ball is the Moon. And never stare straight into the torch."
+        },
+        {
+          "who": "Hùng",
+          "how": "worried",
+          "text": "Whoops, the Moon slipped!"
+        },
+        {
+          "who": "Beo",
+          "how": "proudly",
+          "text": "I caught the Moon!"
         }
       ]
     },
@@ -466,11 +545,11 @@
       "beat": "imagine",
       "visual": {
         "kind": "experiment",
-        "what": "Mai slowly turning on the spot holding the ball. Three small windows show the ball as a crescent, a half and then fully lit."
+        "what": "Hùng turns slowly in a circle holding the ball up. Small pictures around him show the lit part of the ball as a crescent, then half, then full."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Hùng",
           "how": "surprised",
           "text": "I am turning slowly and the bright part of the ball is changing! Now a thin crescent. Now half. Now it is all bright!"
         },
@@ -485,13 +564,18 @@
       "beat": "imagine",
       "visual": {
         "kind": "scene",
-        "what": "Mai and a grown-up at the window at night. Mai draws the Moon's shape in a notebook with a page full of little Moon drawings, one per night."
+        "what": "Bối and Beo at a window at night with a grown-up, drawing Moon shapes in a notebook with a grid of 30 boxes."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Here is another try. With a grown-up, look at the Moon each night for a month and draw its shape. You will see it wax and wane, just like our chart."
+        },
+        {
+          "who": "Bối",
+          "how": "joyfully",
+          "text": "I will draw a Moon every night!"
         }
       ]
     },
@@ -499,7 +583,7 @@
       "beat": "recap",
       "visual": {
         "kind": "diagram",
-        "what": "Sun on the left, Earth in the middle, the Moon circling with its sunny half always facing the Sun. A ring of the eight phase shapes surrounds it."
+        "what": "A simple summary picture. The Sun lights half of the Moon, the Moon goes around Earth, and a row of shapes shows what we see."
       },
       "parts": [
         {
@@ -512,8 +596,8 @@
     {
       "beat": "recap",
       "visual": {
-        "kind": "labels",
-        "what": "The Moon seen from behind, away from Earth, fully lit by the Sun. Label says far side, it gets sunshine too. A tiny Earth in the distance sees a dark new Moon."
+        "kind": "diagram",
+        "what": "A new Moon seen from above. The side facing Earth is dark, but the far side facing the Sun is bright and sunny, with a little label that says not dark!"
       },
       "parts": [
         {
@@ -522,126 +606,142 @@
           "text": "And here is a fun fact. Some people call the far side the dark side of the Moon. But it is not dark! The Sun shines on it too. At new Moon, when we see no light at all, the far side is all lit up."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "So the hidden side has its own sunny days!"
+        },
+        {
+          "who": "Beo",
+          "how": "happily",
+          "text": "Sunny on the back!"
         }
       ]
     },
     {
       "beat": "next",
       "visual": {
-        "kind": "scene",
-        "what": "Huy and Mai waving goodbye. Behind them, half the background is a blue Earth sky and half is a black Moon sky with a question mark."
+        "kind": "compare",
+        "what": "A split picture with a blue sky over Earth on one side and a black sky over the Moon on the other. All four wave beside a big Subscribe to Ask Huy button."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Next time, we will find out why the sky is blue here on Earth but black on the Moon. Hit subscribe so you do not miss it!"
+          "text": "Next time, we will find out why the sky is blue here on Earth but black on the Moon. Subscribe to Ask Huy so you do not miss it!"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "joyfully",
           "text": "Bye! Keep looking up!"
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Bye bye, Moon!"
         }
       ]
     }
   ],
   "facts": [
     {
-      "claim": "The Moon does not send out its own light; we see the parts lit by sunlight",
+      "claim": "The Moon is a rocky and dusty place and does not make its own light; we see it because sunlight lights it.",
       "source": "Moon"
     },
     {
-      "claim": "The Moon is a rocky and dusty place",
+      "claim": "Because the Moon is round, the Sun lights up half of it at a time.",
       "source": "Moon"
     },
     {
-      "claim": "Because the Moon is round, half of it is lit up by the Sun",
-      "source": "Moon"
-    },
-    {
-      "claim": "The line dividing the lit and dark halves of the Moon is called the terminator",
+      "claim": "The line between the lit and dark halves of the Moon is called the terminator, the edge between day and night.",
       "source": "Terminator (solar)"
     },
     {
-      "claim": "The Moon orbits around the Earth",
+      "claim": "A lunar eclipse can only happen at full Moon.",
       "source": "Phases of the Moon"
     },
     {
-      "claim": "The cycle of phases repeats about every 29.5 days, about a month",
-      "source": "Phases of the Moon"
-    },
-    {
-      "claim": "The same side of the Moon always faces Earth, because of tidal locking; the side facing away is the far side",
+      "claim": "The Moon orbits the Earth.",
       "source": "Moon"
     },
     {
-      "claim": "The far side is sometimes called the dark side, but the Sun does shine on it",
+      "claim": "The cycle of phases repeats about every 29.5 days, about a month.",
+      "source": "Phases of the Moon"
+    },
+    {
+      "claim": "Because of tidal locking, the same side of the Moon always faces Earth. The other side is called the far side.",
       "source": "Moon"
     },
     {
-      "claim": "New Moon happens when the Moon is between Earth and the Sun and we see the unlit half",
-      "source": "Phases of the Moon"
-    },
-    {
-      "claim": "First quarter (half Moon) comes about a week after new Moon",
-      "source": "Phases of the Moon"
-    },
-    {
-      "claim": "Full Moon happens when the Moon is on the opposite side of Earth from the Sun and we see the whole lit half",
-      "source": "Phases of the Moon"
-    },
-    {
-      "claim": "A lunar eclipse can only happen at full Moon",
-      "source": "Phases of the Moon"
-    },
-    {
-      "claim": "There are 8 main phases of the Moon",
-      "source": "Phases of the Moon"
-    },
-    {
-      "claim": "Gibbous means more than half of the lit portion can be seen",
-      "source": "Phases of the Moon"
-    },
-    {
-      "claim": "Waxing means the lit shape grows; waning means it shrinks",
+      "claim": "The Moon wobbles a little (libration), so we can sometimes see a small part of the far side.",
       "source": "Lunar phase"
     },
     {
-      "claim": "People throughout history have used the Moon's cycles to measure time",
+      "claim": "At new Moon, the Moon is between Earth and the Sun, and we look at its unlit half.",
+      "source": "Phases of the Moon"
+    },
+    {
+      "claim": "First quarter, the half Moon, comes about a week after new Moon.",
+      "source": "Phases of the Moon"
+    },
+    {
+      "claim": "At full Moon, the Moon is on the opposite side of Earth from the Sun, and we see the whole lit portion.",
+      "source": "Phases of the Moon"
+    },
+    {
+      "claim": "There are 8 main phases. A crescent is a thin sliver, and gibbous means more than half lit.",
+      "source": "Phases of the Moon"
+    },
+    {
+      "claim": "Waxing means the lit part is growing, from new Moon to full Moon. Waning means it is shrinking, from full Moon to new Moon.",
+      "source": "Lunar phase"
+    },
+    {
+      "claim": "People throughout history have used the Moon's cycles to measure time.",
       "source": "Moon"
     },
     {
-      "claim": "Sky on the Moon looks black even in daytime, while Earth's sky is blue",
+      "claim": "The far side is sometimes called the dark side, even though the Sun does shine on it.",
       "source": "Moon"
     },
     {
-      "claim": "A lunar eclipse happens when the Moon passes into Earth's shadow and does not happen every month",
-      "source": "basic school knowledge"
+      "claim": "The sky on the Moon looks black even in the daytime because there is no atmosphere.",
+      "source": "Moon"
     }
   ],
   "shorts": [
     1,
-    30,
-    31
+    31,
+    32
   ],
-  "thumbnail": "Does the Moon REALLY Shrink?",
-  "description": "Why is the Moon a thin crescent one night and a big round ball another night? Huy and Mai find out how sunlight and the Moon's trip around Earth make the eight phases, and they try a safe torch-and-ball check at home. It's a clear, well-researched science explainer for curious kids aged 6 to 12, and the parents watching along.",
+  "thumbnail": "Who Took a Bite?",
+  "description": "Why does the Moon look like a thin banana one week and a big round ball the next? Join Huy, Hùng, Bối and Beo as they find out how sunlight, the Moon's month-long trip around Earth and our view from home make the eight phases of the Moon. It ends with a simple torch-and-ball activity that children can try with a grown-up.",
   "cast": [
     {
       "name": "Huy",
       "gender": "male",
       "age": "young",
-      "role": "the host: curious, warm, a little funny; explains",
+      "role": "the host (25): curious, warm, a little funny; explains",
       "villain": false
     },
     {
-      "name": "Mai",
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
       "gender": "female",
       "age": "child",
-      "role": "an 8-year-old who asks, guesses and tries things",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
       "villain": false
     }
   ],

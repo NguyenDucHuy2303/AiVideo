@@ -1,0 +1,558 @@
+{
+  "title": "Tặng cô giáo bông hoa | Học tiếng Anh: rose, daisy, flower, card, gift",
+  "answer": "rose = hoa hồng, daisy = hoa cúc, flower = bó hoa, card = cái thiệp, gift = món quà",
+  "description": "Nhân Ngày Nhà giáo 20/11, Bối, Beo và hai anh ra chợ hoa chọn quà tặng cô, rồi tập nói lời cảm ơn trong lớp. Qua câu chuyện vui, các bé học các từ tiếng Anh rose, daisy, flower, card, gift cùng hai câu \"Thank you, teacher!\" và \"Happy Teachers' Day!\".",
+  "thumbnail": "Tặng cô bông hoa hồng",
+  "words": [
+    {
+      "en": "rose",
+      "vi": "hoa hồng"
+    },
+    {
+      "en": "daisy",
+      "vi": "hoa cúc"
+    },
+    {
+      "en": "flower",
+      "vi": "bó hoa"
+    },
+    {
+      "en": "card",
+      "vi": "cái thiệp"
+    },
+    {
+      "en": "gift",
+      "vi": "món quà"
+    }
+  ],
+  "story": true,
+  "scenes": [
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Chết rồi! Hôm nay là Ngày Nhà giáo mà em chưa có quà!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Quà là gì ạ? Ăn được không?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Mình ra chợ hoa nhanh nào!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Anh chở cả nhà bằng xe đạp!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Chợ hoa đẹp quá!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Hoa hồng",
+          "how": "",
+          "text": "Hi! I am a rose!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Hoa biết nói! Rose! Là hoa hồng!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nói cùng Beo nào: Rose!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Giỏi lắm!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Nhìn nè! Anh tìm được hoa nhỏ xíu màu trắng!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Daisy! Là hoa cúc!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Các bạn nói cùng anh nào: Daisy!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hay quá! Các bạn giỏi lắm!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Mình gom hoa hồng với hoa cúc thành một bó nhé."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Ồ, nhiều hoa quá! Bouquet!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Các bạn nói cùng Bối nào: Bouquet!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Tuyệt vời!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Mình cần thiệp để viết lời chúc!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Tèn ten! Thiệp đây!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Thiệp có hình trái tim! Card!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nói cùng Beo nào: Card!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Giỏi ghê!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bối viết lời chúc lên thiệp nhé."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Happy Teachers' Day!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Là chúc mừng Ngày Nhà giáo đó."
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Chữ Bối đẹp quá!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Anh còn giấu một bí mật. Nghe nè!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Hi! I am a gift!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Hộp biết nói! Gift! Là món quà!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Các bạn nói cùng anh nào: Gift!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Các bạn giỏi quá!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Em mở quà ra xem một tí nhé?"
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "Hey! Not yet!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Ối! Hộp mắng em!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Quà để dành tặng cô, Beo ơi."
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Sắp tới giờ học rồi! Chạy thôi!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Anh ôm bó hoa cho!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Em giữ thiệp với quà!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Chạy nhanh như con thỏ!"
+        }
+      ]
+    },
+    {
+      "beat": "classroom",
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Tới lớp rồi! Cô chưa vào."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Mình tập nói trước nhé. Anh làm cô giáo."
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Thank you, teacher!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nói cùng Bối nào: Thank you, teacher!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hay lắm!"
+        }
+      ]
+    },
+    {
+      "beat": "classroom",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Ta là cô giáo mới đây! Ahem!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Thank you, teacher! Em tặng cô hoa!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Hắt xì! Hắt xì! Anh bị dị ứng phấn hoa!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Cô giáo gì mà hắt xì hoài!"
+        }
+      ]
+    },
+    {
+      "beat": "classroom",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Giờ mình đặt quà lên bàn cô nhé."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Em đặt hoa trước."
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Em đặt thiệp. Em vẽ trái tim to lắm!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Còn hộp quà là của anh!"
+        }
+      ]
+    },
+    {
+      "beat": "classroom",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Chuông reo rồi. Cô sắp vào lớp."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Happy Teachers' Day!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Happy Teachers' Day!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Các bạn nói cùng bọn mình nào: Happy Teachers' Day!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Cảm ơn các bạn nhiều!"
+        }
+      ]
+    },
+    {
+      "beat": "classroom",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Nào, cùng nhớ lại các từ mới nhé!"
+        },
+        {
+          "who": "Hoa hồng",
+          "how": "",
+          "text": "I am a rose!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Rose! Hoa hồng!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Daisy! Hoa cúc!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Bouquet! Bó hoa!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Card! Cái thiệp!"
+        },
+        {
+          "who": "Hộp quà",
+          "how": "",
+          "text": "I am a gift!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Cùng nói nào: Rose, daisy, bouquet, card, gift!"
+        }
+      ]
+    },
+    {
+      "beat": "classroom",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nhớ bấm đăng ký kênh Huy Kể Chuyện để xem tập sau nhé!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Tập sau, Beo bị lạc trong siêu thị bánh kẹo!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Ồ, có kẹo hả? Em đi liền!"
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "name": "Huy",
+      "role": "anh cả"
+    },
+    {
+      "name": "Hùng",
+      "role": "em trai"
+    },
+    {
+      "name": "Bối",
+      "role": "bé gái 8 tuổi"
+    },
+    {
+      "name": "Beo",
+      "role": "bé trai 5 tuổi"
+    },
+    {
+      "name": "Hoa hồng",
+      "role": "rose"
+    },
+    {
+      "name": "Hộp quà",
+      "role": "wrapped gift"
+    }
+  ],
+  "facts": []
+}

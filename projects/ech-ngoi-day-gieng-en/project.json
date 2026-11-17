@@ -10,15 +10,15 @@
   ],
   "voices": {
     "Frog": {
-      "voice": "af_sky",
+      "voice": "af_heart",
       "pitch": 3
     },
     "Uncle Buffalo": "am_michael",
     "Ant": "af_bella",
-    "Horse": "am_liam",
+    "Horse": "bm_lewis",
     "Crab": {
-      "voice": "af_nova",
-      "pitch": 3
+      "voice": "af_heart",
+      "pitch": 1
     }
   },
   "speakers": {

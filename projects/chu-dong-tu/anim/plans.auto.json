@@ -1,0 +1,1085 @@
+[
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "point",
+        "thenFace": "proud"
+      }
+    ],
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "cha",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "dong_tu_ngheo",
+        "place": "right",
+        "enter": "from_right",
+        "act": "walk",
+        "face": "joy",
+        "then": "cheer",
+        "thenFace": "joy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "nong"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "worried"
+      },
+      {
+        "id": "cha",
+        "place": "right",
+        "enter": "from_right",
+        "act": "run",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "sad"
+      }
+    ],
+    "fx": [
+      "fire",
+      "smoke",
+      "embers"
+    ],
+    "objects": [
+      "stumps"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "cha",
+        "place": "left",
+        "enter": "none",
+        "act": "walk",
+        "face": "sad",
+        "then": "walk",
+        "thenFace": "sad"
+      },
+      {
+        "id": "dong_tu_ngheo",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "sit",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stumps",
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "dusk",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "cha",
+        "place": "left",
+        "enter": "none",
+        "act": "lie",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "sad"
+      },
+      {
+        "id": "dong_tu_ngheo",
+        "place": "right",
+        "enter": "none",
+        "act": "kneel",
+        "face": "sad",
+        "then": "worry",
+        "thenFace": "sad"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "dusk",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo",
+        "place": "center",
+        "enter": "none",
+        "act": "kneel",
+        "face": "determined",
+        "then": "bow",
+        "thenFace": "sad"
+      },
+      {
+        "id": "cha",
+        "place": "left",
+        "enter": "none",
+        "act": "lie",
+        "face": "neutral",
+        "then": "lie",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "dawn",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo",
+        "place": "left",
+        "enter": "none",
+        "act": "swing",
+        "face": "neutral",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "bac_lai_thuyen",
+        "place": "right",
+        "enter": "from_right",
+        "act": "talk",
+        "face": "laugh",
+        "then": "give",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "rice"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "palace",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "left",
+        "enter": "none",
+        "act": "bow",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "vua_hung",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "proud",
+        "then": "point",
+        "thenFace": "proud"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "banner"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "center",
+        "enter": "from_left",
+        "act": "ride",
+        "face": "happy",
+        "then": "point",
+        "thenFace": "joy"
+      },
+      {
+        "id": "thi_nu",
+        "place": "right",
+        "enter": "from_left",
+        "act": "cheer",
+        "face": "joy",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "crowd": {
+      "id": "quan_linh",
+      "count": 3,
+      "act": "march",
+      "then": "march"
+    },
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "track"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "run",
+        "thenFace": "worried"
+      }
+    ],
+    "crowd": {
+      "id": "quan_linh",
+      "count": 2,
+      "act": "march",
+      "then": "march"
+    },
+    "fx": [
+      "pop"
+    ],
+    "objects": [
+      "stumps"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "left",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "happy",
+        "then": "point",
+        "thenFace": "happy"
+      },
+      {
+        "id": "thi_nu",
+        "place": "right",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "neutral",
+        "then": "bow",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stumps"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "thi_nu",
+        "place": "left",
+        "enter": "none",
+        "act": "point",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "tien_dung",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "dong_tu_ngheo",
+        "place": "center",
+        "enter": "none",
+        "act": "sit_up",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "pop"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo",
+        "place": "left",
+        "enter": "none",
+        "act": "kneel",
+        "face": "worried",
+        "then": "bow",
+        "thenFace": "sad"
+      },
+      {
+        "id": "tien_dung",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "worried",
+        "then": "point",
+        "thenFace": "happy"
+      },
+      {
+        "id": "thi_nu",
+        "place": "right",
+        "enter": "none",
+        "act": "give",
+        "face": "neutral",
+        "then": "give",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "dong_tu",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "sad",
+        "then": "worry",
+        "thenFace": "sad"
+      },
+      {
+        "id": "tien_dung",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "dong_tu",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "bow",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "left",
+        "enter": "none",
+        "act": "bow",
+        "face": "joy",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "dong_tu",
+        "place": "right",
+        "enter": "none",
+        "act": "bow",
+        "face": "happy",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "thi_nu",
+        "place": "center",
+        "enter": "none",
+        "act": "cheer",
+        "face": "joy",
+        "then": "cheer",
+        "thenFace": "joy"
+      }
+    ],
+    "crowd": {
+      "id": "quan_linh",
+      "count": 3,
+      "act": "cheer",
+      "then": "cheer"
+    },
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "palace",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "vua_hung",
+        "place": "center",
+        "enter": "none",
+        "act": "point",
+        "face": "angry",
+        "then": "call",
+        "thenFace": "angry"
+      },
+      {
+        "id": "lac_tuong",
+        "place": "left",
+        "enter": "none",
+        "act": "bow",
+        "face": "worried",
+        "then": "bow",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "shake"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "dusk",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "sad"
+      },
+      {
+        "id": "dong_tu",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "determined",
+        "then": "heroic",
+        "thenFace": "determined"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "left",
+        "enter": "none",
+        "act": "give",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "dong_tu",
+        "place": "center",
+        "enter": "none",
+        "act": "give",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "joy"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 4,
+      "act": "walk",
+      "then": "give"
+    },
+    "fx": [],
+    "objects": [
+      "rice",
+      "bowls"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "point",
+        "thenFace": "happy"
+      },
+      {
+        "id": "dong_tu",
+        "place": "right",
+        "enter": "none",
+        "act": "wave",
+        "face": "happy",
+        "then": "walk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "rice"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "mountain",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "dong_tu",
+        "place": "left",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "tien_ong",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "point",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "mountain",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "dong_tu",
+        "place": "left",
+        "enter": "none",
+        "act": "give",
+        "face": "happy",
+        "then": "bow",
+        "thenFace": "happy"
+      },
+      {
+        "id": "bac_lai_thuyen",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "wave",
+        "thenFace": "happy"
+      },
+      {
+        "id": "tien_ong",
+        "place": "center",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "mountain",
+    "time": "dawn",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "tien_ong",
+        "place": "right",
+        "enter": "none",
+        "act": "give",
+        "face": "proud",
+        "then": "talk",
+        "thenFace": "proud"
+      },
+      {
+        "id": "dong_tu",
+        "place": "left",
+        "enter": "none",
+        "act": "raise",
+        "face": "joy",
+        "then": "bow",
+        "thenFace": "joy"
+      }
+    ],
+    "fx": [
+      "glow",
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "dong_tu",
+        "place": "left",
+        "enter": "from_left",
+        "act": "talk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "tien_dung",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "dusk",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "sad",
+        "then": "sit",
+        "thenFace": "sad"
+      },
+      {
+        "id": "dong_tu",
+        "place": "right",
+        "enter": "none",
+        "act": "raise",
+        "face": "happy",
+        "then": "sit",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stumps"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "night",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "left",
+        "enter": "none",
+        "act": "sit_up",
+        "face": "surprised",
+        "then": "point",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "dong_tu",
+        "place": "right",
+        "enter": "none",
+        "act": "sit_up",
+        "face": "surprised",
+        "then": "cheer",
+        "thenFace": "joy"
+      }
+    ],
+    "crowd": {
+      "id": "tien_dong",
+      "count": 4,
+      "act": "idle",
+      "then": "bow"
+    },
+    "fx": [
+      "flash",
+      "transform",
+      "glow"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "dawn",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      },
+      {
+        "id": "dong_tu",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 6,
+      "act": "walk",
+      "then": "bow"
+    },
+    "fx": [
+      "sparkle",
+      "rays"
+    ],
+    "objects": [
+      "rice"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "palace",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "vua_hung",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "point",
+        "thenFace": "angry"
+      },
+      {
+        "id": "lac_tuong",
+        "place": "right",
+        "enter": "none",
+        "act": "bow",
+        "face": "determined",
+        "then": "heroic",
+        "thenFace": "determined"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "banner"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "dusk",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "dan_lang",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      },
+      {
+        "id": "tien_dung",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "raise",
+        "thenFace": "determined"
+      }
+    ],
+    "crowd": {
+      "id": "quan_linh",
+      "count": 4,
+      "act": "march",
+      "then": "idle"
+    },
+    "fx": [],
+    "objects": [
+      "banner"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "sky",
+    "time": "night",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "lac_tuong",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "point",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "tien_dung",
+        "place": "center",
+        "enter": "none",
+        "act": "fly",
+        "face": "happy",
+        "then": "fly",
+        "thenFace": "joy"
+      },
+      {
+        "id": "dong_tu",
+        "place": "right",
+        "enter": "none",
+        "act": "fly",
+        "face": "happy",
+        "then": "fly",
+        "thenFace": "joy"
+      }
+    ],
+    "crowd": {
+      "id": "tien_dong",
+      "count": 4,
+      "act": "fly",
+      "then": "fly"
+    },
+    "fx": [
+      "shake",
+      "rays",
+      "flash"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "palace",
+    "time": "dawn",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "vua_hung",
+        "place": "center",
+        "enter": "none",
+        "act": "worry",
+        "face": "sad",
+        "then": "kneel",
+        "thenFace": "sad"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "dan_lang",
+        "place": "left",
+        "enter": "none",
+        "act": "bow",
+        "face": "happy",
+        "then": "bow",
+        "thenFace": "proud"
+      },
+      {
+        "id": "dan_lang_nu",
+        "place": "right",
+        "enter": "none",
+        "act": "bow",
+        "face": "happy",
+        "then": "give",
+        "thenFace": "proud"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 5,
+      "act": "cheer",
+      "then": "cheer"
+    },
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "banner",
+      "fire_pit"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo_form",
+        "place": "left",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "wave",
+        "thenFace": "happy"
+      },
+      {
+        "id": "tien_dung",
+        "place": "right",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "wave",
+        "thenFace": "happy"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "wave",
+      "then": "wave"
+    },
+    "fx": [
+      "glow",
+      "sparkle",
+      "rays"
+    ],
+    "objects": [],
+    "shot": "wide"
+  }
+]

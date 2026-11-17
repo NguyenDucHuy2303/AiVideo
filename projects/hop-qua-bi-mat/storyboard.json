@@ -1,0 +1,204 @@
+{
+  "title": "Hộp quà bí mật",
+  "kind": "story",
+  "scenes": [
+    {
+      "narration": "Beo (sợ hãi): \"Á! Cái hộp quà đang nói chuyện!\" [2s] Hộp quà (tinh nghịch): \"Hello! Open me, please!\" Bối (ngạc nhiên): \"Hộp quà biết nói thật này!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (ngạc nhiên): \"Hùng, em lấy hộp này ở đâu vậy?\" Hùng (tinh nghịch): \"Em nhặt ở trước cổng. Nó nói hoài luôn!\" Beo (lo lắng): \"Em đang tìm gấu bông. Em để quên đâu mất rồi.\" Hộp quà (vui vẻ): \"Open me! Open me!\" Bối (vui vẻ): \"Mình mở thử đi!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (vui vẻ): \"Một, hai, ba, mở!\" [2s] Beo (sợ hãi): \"Nhẹ thôi nha! Đừng cắn em!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Mèo (vui vẻ): \"Meow! I am a cat!\" Beo (ngạc nhiên): \"*Cat!* Là con mèo!\" Bối (vui vẻ): \"Các bạn nói cùng Bối nào: *Cat!*\" [3s] Huy (tự hào): \"Giỏi quá! Các bạn nói chuẩn lắm!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Hùng (tinh nghịch): \"Hộp ơi, còn gì nữa không?\" Hộp quà (vui vẻ): \"Yes! One more! Open me!\" Bối (vui vẻ): \"Lần này Bối mở nha!\" [2s]",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Hộp quà (vui vẻ): \"Woof woof! Look, a dog!\" Beo (ngạc nhiên): \"*Dog!* Là con chó!\" Hùng (tinh nghịch): \"Các bạn nói cùng anh nào: *Dog!*\" [3s] Huy (tự hào): \"Hay lắm! Chó cũng thích nghe đó!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (vui vẻ): \"Ra vườn chơi cho thoáng nào!\" Mèo (sợ hãi): \"Meow! Run, run!\" Bối (cười): \"Chó đuổi mèo kìa!\" [2s] Beo (sợ hãi): \"Chạy nhanh quá! Em chóng mặt!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "garden",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Hộp quà (tinh nghịch): \"Open me again! Open me!\" Beo (vui vẻ): \"Để em mở! Em dũng cảm mà!\" [2s] Beo (ngạc nhiên): \"Ơ, có gì mềm mềm nhảy ra!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "garden",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Hộp quà (vui vẻ): \"Hop hop! Look, a rabbit!\" Beo (vui vẻ): \"*Rabbit!* Thỏ nhảy giỏi ghê!\" Bối (vui vẻ): \"Các bạn nói cùng Bối nào: *Rabbit!*\" [3s] Huy (tự hào): \"Tuyệt vời! Các bạn nói rất rõ!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "garden",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Hùng (tinh nghịch): \"Nhắm mắt lại! Hộp còn bất ngờ nữa!\" Hộp quà (tinh nghịch): \"Surprise! Open me!\" Huy (vui vẻ): \"Lần này để anh mở nhé.\" [2s]",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "garden",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Hộp quà (vui vẻ): \"Boing! Look, a ball!\" Bối (vui vẻ): \"*Ball!* Là quả bóng!\" Huy (vui vẻ): \"Các bạn nói cùng Huy nào: *Ball!*\" [3s] Hùng (tự hào): \"Giỏi lắm! Giờ mình đá bóng thôi!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "garden",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Hùng (tinh nghịch): \"Beo, đỡ bóng nè!\" Beo (sợ hãi): \"Đừng ném mạnh nha!\" [2s] Mèo (tinh nghịch): \"Meow! You are funny!\" Bối (cười): \"Beo ngã ngồi luôn rồi!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "garden",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Beo (lo lắng): \"Ui da! Gấu bông của em đâu rồi?\" Hộp quà (tinh nghịch): \"One more gift! This one is for you!\" Huy (vui vẻ): \"Beo ơi, mở thử xem nào.\" [2s]",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Beo (vui vẻ): \"*Teddy bear!* Gấu bông của em đây!\" Huy (vui vẻ): \"Các bạn nói cùng Huy nào: *Teddy bear!*\" [3s] Bối (tự hào): \"Các bạn giỏi quá!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Hùng (cười): \"Hì hì! Anh giấu gấu bông vào hộp để đùa em!\" Beo (ngạc nhiên): \"Anh Hùng! Mà thôi, em vui rồi.\" Hộp quà (tinh nghịch): \"Shh! It is a secret!\" Hùng (sợ hãi): \"Ủa? Hộp biết nói đâu phải do anh!\" Huy (vui vẻ): \"Hôm nay ai cũng có quà rồi.\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (vui vẻ): \"Ôn lại nào! Ai xuất hiện thì nói tên nhé!\" Mèo (vui vẻ): \"Meow! I am a cat!\" Bối (vui vẻ): \"*Cat!* Meo meo!\" Hộp quà (vui vẻ): \"Woof woof! A dog!\" Hùng (vui vẻ): \"*Dog!* Gâu gâu!\" Hộp quà (vui vẻ): \"Hop hop! A rabbit!\" Beo (vui vẻ): \"*Rabbit!* Thỏ nhảy nè!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Hộp quà (vui vẻ): \"Boing! A ball!\" Huy (vui vẻ): \"*Ball!* Tung tung!\" Hộp quà (vui vẻ): \"Hug me! A teddy bear!\" Bối (vui vẻ): \"*Teddy bear!* Ôm chặt nè!\" Beo (tự hào): \"Em nhớ hết cả năm bạn rồi!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (vui vẻ): \"Các bạn nhớ bấm đăng ký kênh Huy Kể Chuyện để xem tập sau nhé!\" Beo (ngạc nhiên): \"Tập sau hộp quà sẽ nhảy ra con gì nhỉ?\" Hùng (tinh nghịch): \"Bí mật! Nhưng nó rất, rất to!\" Hộp quà (tinh nghịch): \"Bye bye! See you soon!\"",
+      "chapter": "Hộp quà bí mật",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    }
+  ]
+}

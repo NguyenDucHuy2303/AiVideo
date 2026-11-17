@@ -1,0 +1,19 @@
+{
+  "slug": "ban-co-biet-ca-heo-ngu-chi-bang-mot-nua-bo-nao-con-nua-kia-v",
+  "topic": "Bạn có biết cá heo ngủ chỉ bằng một nửa bộ não, còn nửa kia vẫn thức để nổi lên thở?",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-15T10:08:53.318Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-15T10:09:46.259Z",
+      "status": "review"
+    }
+  ],
+  "kind": "fact-vi",
+  "summary": "Sự thật có thể kiểm chứng trên Wikipedia (ngủ bán cầu não). Trẻ em sẽ rất bất ngờ và thích kể lại. Có thể minh họa bằng một hình cá heo với hai nửa bộ não, nửa sáng, nửa tối. Chủ đề chưa trùng với 3 câu đã dùng.",
+  "by": "claude-sonnet"
+}

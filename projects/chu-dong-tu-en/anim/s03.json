@@ -1,0 +1,132 @@
+{
+  "narration": "Một đêm kia, căn nhà sàn bỗng bốc cháy. Lửa cháy rụi mái nhà, cháy hết cả của cải. Chử Đồng Tử (hoảng hốt): \"Cha ơi! Cha ra đây mau!\" Cha (thở dài): \"May mà hai cha con còn bình an. Của cải mất rồi thì ta làm lại con ạ.\"",
+  "plan": {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo_form",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "fire",
+      "smoke",
+      "embers"
+    ],
+    "objects": [
+      "stumps"
+    ],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 11.7,
+  "time": "night",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "stumps",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "dong_tu_ngheo_form",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": false,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": -582.4,
+      "scale": 1.4,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 0,
+      "do": "call",
+      "face": "surprised",
+      "talk": 1,
+      "move": {
+        "by": 840,
+        "ease": "linear"
+      },
+      "dur": 11.7
+    },
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 5.85,
+      "do": "worry",
+      "face": "worried"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "smoke",
+      "x": 1800,
+      "at": -2,
+      "dur": 13.7
+    },
+    {
+      "fx": "embers",
+      "x": 600,
+      "at": 0,
+      "dur": 11.7,
+      "width": 2600
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.85,
+      "type": "close",
+      "on": [
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.06
+    }
+  ]
+}

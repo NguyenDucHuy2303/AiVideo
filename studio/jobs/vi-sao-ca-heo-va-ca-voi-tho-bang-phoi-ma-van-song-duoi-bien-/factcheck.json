@@ -1,22 +1,16 @@
 {
   "issues": [
     {
-      "scene": 14,
-      "quote": "Còn đây là cá mập voi, dài khoảng mười sáu mét, cỡ một chiếc xe buýt rưỡi.",
-      "problem": "Nguồn nói cá nhám voi (cá mập voi) là loài cá lớn nhất, dài tới 16 m. Câu này nói như thể con nào cũng dài đúng 16 m, nên dễ gây hiểu sai.",
-      "fix": "Còn đây là cá mập voi, con lớn nhất có thể dài tới khoảng mười sáu mét, cỡ một chiếc xe buýt rưỡi."
+      "scene": 20,
+      "quote": "Chúng có một lỗ thở trên đỉnh đầu, giống như cái mũi được dời lên đỉnh đầu vậy.",
+      "problem": "Nói quá chung. Cá heo và cá voi có răng thì có một lỗ thở. Cá voi tấm sàng (như cá voi xanh, cá voi lưng gù) có hai lỗ thở. Nguồn không nói chuyện này, và câu \"cá heo và cá voi\" gộp chung dễ làm trẻ hiểu sai.",
+      "fix": "Cá heo có một lỗ thở trên đỉnh đầu, giống như cái mũi được dời lên đỉnh đầu vậy. Một số loài cá voi lớn có tới hai lỗ thở."
     },
     {
       "scene": 18,
-      "quote": "Chỉ cần nhô lưng lên một chút là thở được.",
-      "problem": "Mâu thuẫn với câu trước. Lỗ thở nằm trên đỉnh đầu, không nằm trên lưng. Nhô lưng thì chưa chắc đã chạm tới lỗ thở.",
-      "fix": "Chỉ cần nhô đỉnh đầu lên khỏi mặt nước một chút là thở được."
-    },
-    {
-      "scene": 13,
-      "quote": "Đuôi cá dựng đứng và quẫy sang hai bên.",
-      "problem": "Nói quá chắc cho mọi loài cá. Nguồn nói mỗi đặc điểm của cá đều có ngoại lệ. Ví dụ cá đuối và cá bơn bơi khác, dáng đuôi cũng khác.",
-      "fix": "Đa số cá có đuôi dựng đứng và quẫy sang hai bên. Đuôi cá heo nằm ngang và quẫy lên xuống."
+      "quote": "Phổi người lớn chứa được khoảng sáu lít không khí, cỡ ba chai nước to này.",
+      "problem": "Phần \"ba chai nước to\" không rõ dung tích. Chai nước to ở Việt Nam thường là 1,5 lít, nên ba chai chỉ được khoảng 4,5 lít, không đủ sáu lít. Hình vẽ có thể làm trẻ hiểu sai con số.",
+      "fix": "Phổi người lớn chứa được khoảng sáu lít không khí, cỡ ba chai nước hai lít này."
     }
   ]
 }

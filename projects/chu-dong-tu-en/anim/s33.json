@@ -1,0 +1,182 @@
+{
+  "narration": "Các bạn nhỏ ơi, Chử Đồng Tử nghèo lắm, nhưng chàng hết lòng thương cha và luôn sống thật thà. Vì thế chàng được mọi người yêu quý và được trời ban phúc. Các bạn hãy ngoan ngoãn, thương yêu ông bà cha mẹ và luôn nói thật nhé. Nếu thích câu chuyện này, các bạn hãy đăng ký kênh Huy Kể Chuyện để nghe thêm thật nhiều truyện hay nhé. Hẹn gặp lại các bạn!",
+  "plan": {
+    "set": "village",
+    "time": "dusk",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo_form",
+        "place": "left",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "wave",
+        "thenFace": "happy"
+      },
+      {
+        "id": "dong_tu",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "glow",
+      "sparkle",
+      "rays"
+    ],
+    "objects": [],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 21,
+  "time": "dusk",
+  "mood": "majestic",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "dong_tu_ngheo_form",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": false,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": -582.4,
+      "scale": 1.4,
+      "facing": 1
+    },
+    {
+      "id": "dong_tu",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#c9902a",
+          "color": "#7a5030"
+        },
+        "bareChest": false,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 0,
+      "do": "heroic",
+      "face": "proud"
+    },
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 10.5,
+      "do": "wave",
+      "face": "happy"
+    },
+    {
+      "actor": "dong_tu",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "glow",
+      "on": "dong_tu_ngheo_form",
+      "at": 6.3,
+      "dur": 12.6
+    },
+    {
+      "fx": "sparkle",
+      "on": "dong_tu_ngheo_form",
+      "at": 6.3,
+      "dur": 12.6
+    },
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 21,
+      "scale": 2.4
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "dong_tu_ngheo_form",
+        "dong_tu"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 7.56,
+      "type": "close",
+      "on": [
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 14.28,
+      "type": "close",
+      "on": [
+        "dong_tu"
+      ],
+      "push": 0.05
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "hop-qua-bi-mat",
+  "topic": "Hộp quà bí mật",
+  "status": "video",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-17T02:19:12.831Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-17T02:19:12.856Z",
+      "status": "review",
+      "info": "kịch bản tập phim kiểu mới, đã soát tiếng Anh"
+    },
+    {
+      "at": "2026-11-17T02:19:12.857Z",
+      "status": "approved",
+      "info": "mẫu tập phim kiểu mới: em duyệt để làm thử, giữ hoãn đăng cho anh xem"
+    },
+    {
+      "at": "2026-11-17T03:40:44.000Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-17T03:55:26.033Z",
+      "status": "failed",
+      "info": "tiếng Anh đọc sai sau 3 lượt đổi giọng: \"Boing! A ball!\" (Hộp quà) nghe ra \"Bawing a ball.\""
+    },
+    {
+      "at": "2026-11-17T07:05:07.386Z",
+      "status": "approved",
+      "info": "làm lại: máy kiểm tiếng Anh đã sửa (tên riêng, tiếng kêu không chấm)"
+    },
+    {
+      "at": "2026-11-17T07:05:10.903Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-17T07:08:16.984Z",
+      "status": "approved",
+      "info": "dừng giữa chừng, sẽ làm tiếp"
+    },
+    {
+      "at": "2026-11-17T07:08:20.327Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-17T07:29:46.954Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-17T07:50:14.872Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-17T08:18:42.020Z",
+      "status": "video"
+    }
+  ],
+  "kind": "lesson",
+  "publishHold": true,
+  "summary": "Tập phim đầu tiên kiểu mới (mẫu để duyệt)",
+  "inspect": {
+    "at": "2026-11-17T08:18:42.019Z",
+    "perMinute": 8.6,
+    "byKind": {
+      "speaker-off": {
+        "count": 19,
+        "seconds": 40.8
+      },
+      "still": {
+        "count": 9,
+        "seconds": 74
+      }
+    }
+  }
+}

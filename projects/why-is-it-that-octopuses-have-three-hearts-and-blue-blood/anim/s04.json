@@ -1,0 +1,106 @@
+{
+  "castFile": "cast.json",
+  "duration": 8,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "give",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "talk",
+      "face": "worried"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"80\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#2a2a40\" data-in=\"0\">Seawater test</text><icon name=\"bucket\" x=\"80\" y=\"200\" size=\"280\" data-in=\"1\"/><path class=\"flow\" d=\"M380 300 Q470 240 560 300\" fill=\"none\" stroke=\"#4aa3e0\" stroke-width=\"8\" stroke-dasharray=\"16 12\" data-in=\"3\"/><path d=\"M580 220 L600 500 Q605 530 640 530 L760 530 Q795 530 800 500 L820 220 Z\" fill=\"#fffaf0\" stroke=\"#3a2a20\" stroke-width=\"5\" stroke-linejoin=\"round\" data-in=\"3\"/><path d=\"M590 330 L605 495 Q608 515 640 515 L760 515 Q792 515 795 495 L810 330 Z\" fill=\"#e3f4fb\" stroke=\"#3a2a20\" stroke-width=\"4\" stroke-linejoin=\"round\" data-in=\"4\"/><text x=\"700\" y=\"170\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#2a2a40\" data-in=\"5\">Clear!</text><text x=\"700\" y=\"565\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"32\" fill=\"#2a2a40\" data-in=\"5\">not blue</text><g class=\"pulse\" data-in=\"6\"><line x1=\"860\" y1=\"250\" x2=\"920\" y2=\"210\" stroke=\"#ffd23f\" stroke-width=\"8\" stroke-linecap=\"round\"/><line x1=\"870\" y1=\"300\" x2=\"940\" y2=\"300\" stroke=\"#ffd23f\" stroke-width=\"8\" stroke-linecap=\"round\"/></g></svg>",
+    "style": "sketch",
+    "icons": {
+      "bucket": {
+        "body": "<g fill=\"none\"><path fill=\"#0074ba\" d=\"m4.47 10l.4 3.105L4.5 15.5l.847 1.317L6.77 27.88C6.85 28.52 7.38 29 8 29h16.14c.62 0 1.15-.48 1.23-1.12L27.548 10L16 8z\"/><path fill=\"#d3d3d3\" d=\"m4.872 13.12l.475 3.694a20 20 0 0 0-.765 2.085c-.412 1.4-.44 2.376-.18 2.966c.2.454.7.94 2.207 1.006c1.476.064 2.66-.179 3.666-.65c1.011-.472 1.899-1.2 2.744-2.183c1.478-1.718 2.73-4.082 4.268-6.984q.395-.746.817-1.536a1 1 0 1 1 1.763.944q-.404.758-.794 1.495c-1.525 2.881-2.9 5.482-4.538 7.385c-.979 1.138-2.082 2.07-3.413 2.691c-1.335.625-2.846.912-4.6.836c-1.927-.084-3.325-.782-3.95-2.196c-.564-1.278-.346-2.854.092-4.34c.45-1.53 1.21-3.204 2.01-4.817z\"/><path fill=\"#00a6ed\" d=\"m3.356 9.06l-.35-2.35c-.05-.37.24-.71.62-.71h24.75c.38 0 .67.34.62.71l-.36 2.35c-.08.54-.54.94-1.08.94H4.446c-.55 0-1.01-.4-1.09-.94\"/></g>",
+        "width": 32,
+        "height": 32
+      }
+    },
+    "reveal": 4.8
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

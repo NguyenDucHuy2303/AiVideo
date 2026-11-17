@@ -1,0 +1,553 @@
+{
+  "title": "Cá của Beo mất tích! Học dog, cat, fish, rabbit, chicken | Tiếng Anh cho bé",
+  "answer": "dog = con chó, chicken = con gà, rabbit = con thỏ, cat = con mèo, fish = con cá",
+  "description": "Bể cá của Beo bỗng trống rỗng, cả nhà cùng đi tìm và gặp bao con vật dễ thương trước khi phát hiện bí mật trong cái nồi! Các bé học 5 từ tiếng Anh: dog (chó), chicken (gà), rabbit (thỏ), cat (mèo), fish (cá).",
+  "thumbnail": "Cá của Beo mất tích!",
+  "words": [
+    {
+      "en": "dog",
+      "vi": "con chó"
+    },
+    {
+      "en": "chicken",
+      "vi": "con gà"
+    },
+    {
+      "en": "rabbit",
+      "vi": "con thỏ"
+    },
+    {
+      "en": "cat",
+      "vi": "con mèo"
+    },
+    {
+      "en": "fish",
+      "vi": "con cá"
+    }
+  ],
+  "story": true,
+  "scenes": [
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Anh ơi! Bể cá trống rỗng rồi!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Cá của Beo đâu mất rồi?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bình tĩnh nào. Cả nhà cùng đi tìm nhé."
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Ừm... em không biết gì đâu nha."
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Nghe kìa! Có tiếng gì sau ghế sofa."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Chó",
+          "how": "",
+          "text": "Woof! I am a dog!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Dog! Là con chó!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nói cùng Beo nào: Dog!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Giỏi quá! Chó biết cá đi đâu không?"
+        },
+        {
+          "who": "Chó",
+          "how": "",
+          "text": "Woof! Follow me!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Chó dẫn đường kìa, đi thôi!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Chó",
+          "how": "",
+          "text": "Woof! Water! Water!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Có vết nước! Ra vườn thôi!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Em chạy trước nha!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        }
+      ]
+    },
+    {
+      "beat": "garden",
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Ối! Con gì chạy vòng vòng thế?"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Chicken! Là con gà đó Beo."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nói cùng Bối nào: Chicken!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Tuyệt vời! Gà ơi, có thấy cá không?"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Gà chỉ biết cục tác thôi anh."
+        }
+      ]
+    },
+    {
+      "beat": "garden",
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Gà ơi, gà có ăn cá của em không?"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Gà mà ăn cá thì buồn cười lắm!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Gà không ăn cá đâu. Mình tìm tiếp nhé."
+        }
+      ]
+    },
+    {
+      "beat": "garden",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Nhìn kìa! Con gì trắng trắng nhảy nhảy?"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Rabbit! Con thỏ!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Các bạn nói cùng Hùng nào: Rabbit!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Giỏi quá! Thỏ có ăn cá không?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Thỏ ăn cà rốt, Beo ạ."
+        }
+      ]
+    },
+    {
+      "beat": "kitchen",
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Mèo",
+          "how": "",
+          "text": "Meow! I am a cat!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Cat! Là con mèo!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Các bạn nói cùng Beo nào: Cat!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Giỏi lắm! Mèo ngồi cạnh cái nồi."
+        },
+        {
+          "who": "Mèo",
+          "how": "",
+          "text": "Meow! Look at the pot!"
+        }
+      ]
+    },
+    {
+      "beat": "kitchen",
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Cái nồi đang rung kìa!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Trong nồi có gì thế?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Để anh mở ra xem."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Fish! Cá của Beo đây rồi!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Các bạn nói cùng Bối nào: Fish!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Giỏi quá! Cá bơi trong nồi luôn."
+        }
+      ]
+    },
+    {
+      "beat": "kitchen",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Em xin lỗi. Em thay nước bể rồi quên mất."
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Anh Hùng bỏ cá vào nồi á?"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Em tưởng đó là cái bể to mà!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Lần sau nhớ nói cả nhà nhé."
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Dạ! Em hứa!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Để em đặt cá về bể."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Anh Hùng ngã bịch kìa!"
+        },
+        {
+          "who": "Chó",
+          "how": "",
+          "text": "Woof! You are funny!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Chó cũng cười anh Hùng nè."
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Cá ơi, về nhà rồi. Đừng đi nữa nhé."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Cả nhà mình giỏi lắm. Tìm được cá rồi."
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Ai cũng giúp Beo hết."
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Em thương cả nhà!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ôn lại nào! Ai xuất hiện đây?"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Chó",
+          "how": "",
+          "text": "Woof! I am a dog!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Dog!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Dog!"
+        },
+        {
+          "who": "Mèo",
+          "how": "",
+          "text": "Meow! I am a cat!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Cat!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Cat!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Chicken!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Chicken!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Rabbit!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Rabbit!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Fish!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Fish!"
+        }
+      ]
+    },
+    {
+      "beat": "living",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nhớ bấm đăng ký kênh Huy Kể Chuyện để xem tập sau nhé!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Tập sau, bánh sinh nhật của Bối biến mất đó!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Hả? Bánh của em á?"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Không phải em ăn đâu nha!"
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "name": "Huy",
+      "role": "anh cả"
+    },
+    {
+      "name": "Hùng",
+      "role": "em trai"
+    },
+    {
+      "name": "Bối",
+      "role": "bé gái 8 tuổi"
+    },
+    {
+      "name": "Beo",
+      "role": "bé trai 5 tuổi"
+    },
+    {
+      "name": "Chó",
+      "role": "dog"
+    },
+    {
+      "name": "Mèo",
+      "role": "cat"
+    }
+  ],
+  "facts": []
+}

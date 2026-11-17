@@ -46,6 +46,84 @@
       "at": "2026-11-13T09:19:55.910Z",
       "status": "producing",
       "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-13T12:30:25.741Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-13T13:16:02.189Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-13T14:12:20.871Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-13T19:38:50.813Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (406 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-16T09:28:12.074Z",
+      "status": "producing",
+      "info": "render lại: sửa hình trên bảng (tra hình sai, thiếu hình)"
+    },
+    {
+      "at": "2026-11-16T09:28:12.076Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-16T10:58:55.653Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-16T11:54:22.704Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-16T13:13:39.622Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (406 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-17T02:18:51.497Z",
+      "status": "approved",
+      "info": "làm lại giọng tiếng Anh cho đúng (giọng mới, Whisper kiểm từng câu)"
+    },
+    {
+      "at": "2026-11-17T02:38:32.970Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-17T03:11:35.279Z",
+      "status": "failed",
+      "info": "tiếng Anh đọc sai sau 3 lượt đổi giọng: \"Bye bye, Hùng!\" (Beo) nghe ra \"Bye-bye, Hoong.\""
+    },
+    {
+      "at": "2026-11-17T07:05:07.380Z",
+      "status": "approved",
+      "info": "làm lại: máy kiểm tiếng Anh đã sửa (tên riêng, tiếng kêu không chấm)"
+    },
+    {
+      "at": "2026-11-17T07:05:10.830Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-17T07:05:10.854Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-17T08:18:42.021Z",
+      "status": "producing",
+      "info": "đang render"
     }
   ],
   "kind": "qa",
@@ -57,5 +135,65 @@
     "hash": "75030d6830eb15bc"
   },
   "retryAt": "2026-11-12T11:15:12.781Z",
-  "stage": "ready"
+  "inspect": {
+    "at": "2026-11-16T10:58:55.651Z",
+    "perMinute": 1.5,
+    "byKind": {
+      "head-cut": {
+        "count": 9,
+        "seconds": 18
+      },
+      "still": {
+        "count": 1,
+        "seconds": 5.3
+      }
+    }
+  },
+  "autoCheck": {
+    "at": "2026-11-16T13:13:39.620Z",
+    "mtimeMs": 1794826719835.9653,
+    "ok": true,
+    "problems": [],
+    "seconds": 406
+  },
+  "autoApproved": "2026-11-16T13:13:39.620Z",
+  "exported": {
+    "long": {
+      "dir": "/home/huynguyen/youtube/How Does an Airplane Stay Up in the Sky",
+      "publishAt": "2026-11-18T12:00:00.000Z",
+      "channel": "ask-huy",
+      "at": "2026-11-16T13:13:45.378Z"
+    },
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/How Does an Airplane Stay Up in the Sky",
+        "publishAt": "2026-11-20T02:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-16T13:13:45.379Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/How Does an Airplane Stay Up in the Sky",
+        "publishAt": "2026-11-20T08:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-16T13:13:45.380Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/How Does an Airplane Stay Up in the Sky",
+        "publishAt": "2026-11-21T02:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-16T13:13:45.384Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "How Does an Airplane Stay Up in the Sky",
+    "mtime": 1794834825388.1606,
+    "at": "2026-11-17T01:43:48.164Z"
+  },
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "stage": "rendering"
 }

@@ -1,0 +1,179 @@
+{
+  "narration": "Chử Đồng Tử đang bắt cá dưới sông thì nghe tiếng trống, tiếng sáo. Chàng nhìn thấy đoàn thuyền lớn đang tới gần. Chử Đồng Tử (hoảng hốt): \"Thuyền của công chúa! Mình không có gì để mặc, biết trốn đi đâu bây giờ?\" Chàng vội chạy lên bãi cát, tới một khóm lau, bới cát vùi mình xuống thật kín.",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo_form",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "run",
+        "thenFace": "worried"
+      },
+      {
+        "id": "tien_dung",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "pop"
+    ],
+    "objects": [
+      "stumps"
+    ],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 16.033333333333335,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "mountain",
+    "objects": [
+      {
+        "type": "stumps",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "dong_tu_ngheo_form",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": false,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": -582.4,
+      "scale": 1.4,
+      "facing": 1
+    },
+    {
+      "id": "tien_dung",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#efe4cc",
+          "skirt": "#efe4cc",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1210"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12",
+          "eyeScale": 1.1
+        },
+        "build": "slim",
+        "props": []
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 0,
+      "do": "worry",
+      "face": "surprised"
+    },
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 8.02,
+      "do": "run",
+      "face": "worried",
+      "move": {
+        "by": 979.9999999999999,
+        "ease": "in"
+      },
+      "dur": 8.013333333333335
+    },
+    {
+      "actor": "tien_dung",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "pop",
+      "on": "dong_tu_ngheo_form",
+      "at": 8.02,
+      "dur": 9.620000000000001
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "dong_tu_ngheo_form",
+        "tien_dung"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.77,
+      "type": "close",
+      "on": [
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 10.9,
+      "type": "close",
+      "on": [
+        "tien_dung"
+      ],
+      "push": 0.05
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "title": "Cá heo ngủ bằng nửa bộ não!",
+  "question": "Bạn có biết cá heo ngủ chỉ bằng một nửa bộ não, còn nửa kia vẫn thức để nổi lên thở?",
+  "answer": "Cá heo ngủ bằng một nửa bộ não còn nửa kia vẫn thức, nhờ vậy nó vẫn nổi lên mặt nước để thở khi nghỉ ngơi.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Một chú cá heo xanh dễ thương nổi giữa biển lúc hoàng hôn, đầu nó vẽ trong suốt, hiện hình bộ não chia đôi, nửa trái tối có chữ Z Z Z, nửa phải sáng lấp lánh. Bối và Beo ngạc nhiên nhìn."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "ngạc nhiên",
+          "text": "Các nhà khoa học thấy nhiều loài cá heo có thể nghỉ ngơi từng nửa bộ não một. Các bạn có biết không?"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "compare",
+        "what": "Hai hình cạnh nhau. Bên trái là con cá có mang, bơi dưới nước. Bên phải là cá heo nhô đầu lên mặt nước, phun hơi qua lỗ thở trên đầu, có biểu tượng lá phổi nhỏ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Cá heo không phải là cá đâu. Nó là động vật có vú, nên phải nổi lên mặt nước để thở bằng phổi."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "scene",
+        "what": "Beo gãi đầu nhìn cá heo đang ngủ dưới nước, trên đầu Beo hiện dấu hỏi lớn và một bong bóng khí nhỏ."
+      },
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "lo lắng",
+          "text": "Ủa, ngủ mà quên thở thì sao hả anh?"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "diagram",
+        "what": "Hình lớn bộ não cá heo chia hai nửa. Nửa trái màu xanh dịu có mặt trăng và chữ Z Z Z. Nửa phải màu vàng sáng có biểu tượng bóng đèn bật."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Cá heo ngủ rất khéo. Các nhà khoa học cho rằng cá heo có thể cho một nửa bộ não nghỉ ngơi, còn nửa kia vẫn thức."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "arrows",
+        "what": "Cá heo nhẹ nhàng bơi lên mặt nước, một mũi tên cong chỉ lên trên rồi phun bong bóng thở. Hai mũi tên tròn giữa hai nửa não thể hiện đổi phiên nhau, nửa sáng nửa tối đổi chỗ."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "mừng rỡ",
+          "text": "Các nhà khoa học nghĩ nửa thức giúp cá heo nhớ nổi lên để thở, và hai nửa bộ não có thể thay phiên nhau nghỉ."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 5,
+      "visual": {
+        "kind": "scene",
+        "what": "Bối chỉ vào hình cá heo và cười. Hùng ngồi trên ghế, nhắm một mắt, mở một mắt, ghế nghiêng chực đổ, Beo che miệng cười khúc khích."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "vui vẻ",
+          "text": "Giống hai bạn trực nhật đổi phiên nhau!"
+        },
+        {
+          "who": "Hùng",
+          "how": "mệt",
+          "text": "Anh Huy ơi, em thử ngủ nửa não mà ngã ghế rồi!"
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "host",
+        "what": "Huy mỉm cười vẫy tay giữa nền biển xanh, cá heo nhảy lên phía sau, góc dưới hiện logo trống đồng và chữ Huy Kể Chuyện cùng nút theo dõi."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "mừng rỡ",
+          "text": "Ngủ mà vẫn thức một nửa, cá heo giỏi ghê! Hãy theo dõi kênh Huy Kể Chuyện để biết thêm nhiều điều lạ nhé!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Cá heo là động vật có vú sống ở đại dương và sông nước, có quan hệ mật thiết với cá voi, nên không phải là cá.",
+      "source": "Cá heo (Wikipedia tiếng Việt)"
+    },
+    {
+      "claim": "Cá heo là động vật có vú sống dưới nước (aquatic mammal) thuộc nhóm cá voi có răng. Động vật có vú thở bằng phổi, đây là kiến thức phổ thông.",
+      "source": "Dolphin (Wikipedia)"
+    },
+    {
+      "claim": "Khi ngủ, hoạt động của cơ thể và phản ứng với môi trường giảm đi, và não dùng ít năng lượng hơn lúc thức.",
+      "source": "Sleep (Wikipedia)"
+    },
+    {
+      "claim": "Cá heo ngủ bằng một nửa bộ não trong khi nửa kia thức để nổi lên thở, hai nửa luân phiên nghỉ. Đây là hiểu biết khoa học được biết rộng rãi nhưng không nằm trong đoạn trích nguồn đã cho, cần kiểm tra thêm trước khi đăng.",
+      "source": "Kiến thức khoa học phổ biến (chưa có trong đoạn trích Cá heo, Dolphin, Sleep)"
+    }
+  ],
+  "description": "Cá heo thở bằng phổi nên không thể ngủ say hoàn toàn. Chúng cho một nửa bộ não nghỉ ngơi, nửa còn lại thức để nổi lên thở, rồi đổi phiên nhau.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host (25): curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
+      "villain": false
+    }
+  ],
+  "look": "",
+  "shorts": [],
+  "thumbnail": ""
+}

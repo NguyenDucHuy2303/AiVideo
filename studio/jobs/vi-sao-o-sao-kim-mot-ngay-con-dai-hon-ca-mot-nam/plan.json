@@ -1,0 +1,749 @@
+{
+  "title": "Vì sao ở sao Kim, một ngày còn dài hơn cả một năm? | Hỏi Huy",
+  "question": "Vì sao ở sao Kim, một ngày còn dài hơn cả một năm?",
+  "answer": "Sao Kim tự quay rất chậm. Nó mất khoảng 243 ngày Trái Đất để quay một vòng quanh mình, nhưng chỉ mất khoảng 225 ngày để chạy một vòng quanh Mặt Trời. Vì thế một vòng tự quay của nó dài hơn một năm. Nếu tính từ lúc Mặt Trời mọc đến lần mọc sau thì một ngày ở đó dài khoảng 117 ngày Trái Đất, tức là khoảng nửa năm sao Kim.",
+  "scenes": [
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "scene",
+        "what": "Lúc chạng vạng, Huy, Hùng, Bối và Beo đứng trên sân thượng nhìn một chấm sáng rất to gần chân trời. Bối chỉ tay lên trời."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "ngạc nhiên",
+          "text": "Anh Huy ơi, ngôi sao sáng nhất kia là sao gì vậy ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Đó không phải ngôi sao đâu em. Đó là sao Kim, một hành tinh hàng xóm của Trái Đất mình."
+        },
+        {
+          "who": "Beo",
+          "how": "ngạc nhiên",
+          "text": "Hành tinh mà sáng thế ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Nó còn có một bí mật rất lạ. Ở sao Kim, một ngày còn dài hơn cả một năm!"
+        }
+      ]
+    },
+    {
+      "beat": "hook",
+      "visual": {
+        "kind": "host",
+        "what": "Huy đứng cạnh hình sao Kim màu vàng nhạt có mây bao quanh, bên cạnh có một dấu hỏi thật to."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nghe có lạ không? Hôm nay mình sẽ cùng tìm hiểu một ngày là gì, một năm là gì, và vì sao sao Kim lại ngược đời như vậy."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Phòng khách. Bối giơ tay đoán, Beo nằm ôm gối giả vờ ngủ, Hùng ngồi bên cười."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "quyết tâm",
+          "text": "Em đoán là vì sao Kim ở xa Mặt Trời quá, nên trời tối lâu ạ."
+        },
+        {
+          "who": "Beo",
+          "how": "vui vẻ",
+          "text": "Em đoán là người sao Kim ngủ nướng lâu lắm ạ!"
+        },
+        {
+          "who": "Hùng",
+          "how": "cười",
+          "text": "Ngủ nướng cả năm thì anh cũng muốn thử đấy."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
+        "kind": "scene",
+        "what": "Huy ngồi xuống cạnh Bối và Beo, giơ ngón tay cái khen. Bên cạnh là hình Mặt Trời, sao Kim ở gần hơn Trái Đất."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Hai bạn đoán hay lắm. Các nhà khoa học cũng bắt đầu bằng đoán đấy. Nhưng thật ra sao Kim ở gần Mặt Trời hơn Trái Đất. Còn trên sao Kim thì không có ai sống để ngủ nướng cả."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bí mật nằm ở chỗ khác. Mình đi từng bước nhé."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "experiment",
+        "what": "Hùng ôm một quả địa cầu đặt lên bàn, tay xoay nó. Mũi tên cong cho thấy quả địa cầu tự quay."
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "tự hào",
+          "text": "Anh Huy ơi, em mang quả địa cầu tới rồi đây!"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Cảm ơn em. Các bạn xem, Trái Đất luôn tự quay quanh mình nó, giống như con quay của các bạn vậy."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "diagram",
+        "what": "Trái Đất một nửa sáng, một nửa tối, Mặt Trời ở bên trái. Một ngôi nhà nhỏ trên Trái Đất lần lượt đi qua phía sáng rồi phía tối, có nhãn ban ngày và ban đêm."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Khi Trái Đất quay, chỗ mình ở lúc thì quay về phía Mặt Trời, thành ban ngày. Lúc thì quay đi chỗ khác, thành ban đêm."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Quay đủ một vòng để Mặt Trời trở lại chỗ cũ trên trời mất khoảng 24 giờ. Đó là một ngày."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "arrows",
+        "what": "Trái Đất chạy theo một đường tròn lớn quanh Mặt Trời, mũi tên dọc đường tròn, có nhãn một năm."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Nhưng Trái Đất còn làm một việc nữa. Nó chạy vòng quanh Mặt Trời, như một bạn chạy quanh sân bóng."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Chạy hết một vòng mất khoảng 365 ngày. Đó là một năm."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "scene",
+        "what": "Trong sân, Beo vừa xoay người chầm chậm vừa đi vòng quanh Bối đang đứng giữa giả làm Mặt Trời."
+      },
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "cười",
+          "text": "Vậy em vừa xoay vừa đi vòng quanh chị Bối là em làm Trái Đất ạ?"
+        },
+        {
+          "who": "Bối",
+          "how": "cười",
+          "text": "Đúng rồi, nhưng xoay chậm thôi kẻo chóng mặt đấy Beo."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
+        "kind": "host",
+        "what": "Huy cầm hai tấm thẻ. Thẻ một vẽ hành tinh tự quay có chữ một ngày, thẻ hai vẽ hành tinh chạy quanh Mặt Trời có chữ một năm."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Nhớ nhé, một ngày là một vòng tự quay. Một năm là một vòng chạy quanh Mặt Trời."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "Mặt Trời ở giữa, ba vòng tròn quỹ đạo của sao Thủy, sao Kim, Trái Đất, có số thứ tự 1, 2, 3. Sao Kim và Trái Đất vẽ to gần bằng nhau."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bây giờ đến sao Kim. Nó là hành tinh thứ hai tính từ Mặt Trời, còn Trái Đất là thứ ba."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Sao Kim to gần bằng Trái Đất, nên người ta gọi nó là hành tinh chị em của Trái Đất."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "compare",
+        "what": "Sân vận động có hai làn chạy, làn trong nhỏ có sao Kim, làn ngoài lớn có Trái Đất. Sao Kim có vệt tốc độ phía sau."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "ngạc nhiên",
+          "text": "Vậy đường chạy của sao Kim ngắn hơn đường của Trái Đất ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Đúng thế. Giống như chạy làn trong của sân vận động, đường ngắn hơn. Mà sao Kim ở gần Mặt Trời nên còn chạy nhanh hơn nữa."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "count",
+        "what": "Hùng giơ hai tờ lịch. Tờ của sao Kim ghi khoảng 225 ngày, tờ của Trái Đất ghi khoảng 365 ngày, tờ sao Kim mỏng hơn."
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "tự hào",
+          "text": "Em mang lịch tới cho dễ đếm đây!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Sao Kim chạy hết một vòng quanh Mặt Trời chỉ mất khoảng 225 ngày Trái Đất. Tức là một năm sao Kim ngắn hơn năm của mình."
+        },
+        {
+          "who": "Beo",
+          "how": "ngạc nhiên",
+          "text": "Vậy ở đó được ăn Tết sớm hơn ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Nếu đếm theo năm sao Kim thì Tết đến nhanh hơn thật đấy!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "host",
+        "what": "Huy đứng cạnh hình sao Kim chạy trên vòng tròn nhỏ quanh Mặt Trời, có số 225 ngày."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ghi nhớ bước hai. Sao Kim ở gần Mặt Trời hơn, nên một năm của nó chỉ khoảng 225 ngày."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "experiment",
+        "what": "Hùng bên bàn với hai con quay. Con quay Trái Đất quay vù vù, con quay sao Kim nhích rất chậm rồi đổ nghiêng."
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "vui vẻ",
+          "text": "Em có hai con quay. Con này là Trái Đất, quay vù vù."
+        },
+        {
+          "who": "Hùng",
+          "how": "ngạc nhiên",
+          "text": "Còn con này là sao Kim, quay chậm quá. Ối, đổ mất rồi!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "count",
+        "what": "Bên trái Trái Đất với đồng hồ ghi khoảng 24 giờ cho một vòng quay. Bên phải sao Kim với chồng lịch cao ghi khoảng 243 ngày."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Sao Kim tự quay cực kỳ chậm. Để quay hết một vòng quanh mình, nó mất khoảng 243 ngày Trái Đất."
+        },
+        {
+          "who": "Bối",
+          "how": "ngạc nhiên",
+          "text": "Trời ơi, Trái Đất chỉ mất có một ngày thôi mà!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "compare",
+        "what": "Hai cột cao thấp đặt cạnh nhau. Cột tự quay một vòng ghi khoảng 243 ngày, cao hơn cột chạy quanh Mặt Trời ghi khoảng 225 ngày."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Giờ các bạn so hai con số nhé. Tự quay một vòng mất khoảng 243 ngày. Chạy một vòng quanh Mặt Trời mất khoảng 225 ngày."
+        },
+        {
+          "who": "Bối",
+          "how": "mừng rỡ",
+          "text": "A, 243 lớn hơn 225! Sao Kim chạy xong một vòng quanh Mặt Trời rồi mà vẫn chưa tự quay xong một vòng!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "scene",
+        "what": "Beo ngồi ở bàn ăn với bát phở còn đầy, chiếc đồng hồ trên tường chạy rất nhanh, Huy cười bên cạnh."
+      },
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "cười",
+          "text": "Giống em ăn bát phở lâu quá, hết giờ ra chơi mà chưa xong ạ!"
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Đúng kiểu đó luôn, Beo!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "diagram",
+        "what": "Sao Kim với lớp mây dày bao quanh. Một mũi tên từ Mặt Trời kéo hành tinh, một mũi tên khác ở lớp không khí nóng đẩy theo hướng ngược lại, như hai đội kéo co."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "ngạc nhiên",
+          "text": "Nhưng vì sao nó lại quay chậm thế ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các nhà khoa học nghĩ là có hai thứ kéo co với nhau. Lực hút của Mặt Trời làm sao Kim quay chậm lại. Còn lớp không khí rất dày, bị Mặt Trời đốt nóng, lại đẩy theo hướng khác."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hai bên kéo qua kéo lại, nên sao Kim quay rất chậm. Chuyện này các nhà khoa học vẫn đang tìm hiểu thêm."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "arrows",
+        "what": "Trái Đất và sao Kim đứng cạnh nhau, mũi tên quay của hai hành tinh chỉ hai chiều ngược nhau. Trên sao Kim có hình Mặt Trời nhô lên ở phía có chữ tây."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Còn một điều lạ nữa. Sao Kim tự quay ngược chiều với Trái Đất."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Vì thế, nếu đứng được trên sao Kim, các bạn sẽ thấy Mặt Trời mọc ở phía tây và lặn ở phía đông."
+        },
+        {
+          "who": "Beo",
+          "how": "ngạc nhiên",
+          "text": "Mặt Trời đi ngược ạ?"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "host",
+        "what": "Huy chỉ vào cột 243 ngày cao hơn cột 225 ngày."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ghi nhớ bước ba. Sao Kim tự quay chậm hơn cả lúc chạy quanh Mặt Trời, nên một vòng quay dài hơn một năm."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "scene",
+        "what": "Bối chống cằm suy nghĩ, trên đầu có bong bóng nghĩ vẽ Mặt Trời mọc và số 243. Huy giơ tay khen."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "lo lắng",
+          "text": "Ơ, vậy ở sao Kim, từ lúc Mặt Trời mọc đến lần mọc sau là 243 ngày ạ?"
+        },
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Câu hỏi giỏi quá! Thật ra không phải đâu. Đây là chỗ thú vị nhất đấy."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "experiment",
+        "what": "Hùng đứng giữa phòng cầm đèn pin chiếu ra làm Mặt Trời. Bối đi vòng quanh Hùng, vừa đi vừa xoay người chầm chậm theo chiều ngược lại, trên áo có hình ngôi nhà nhỏ."
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "quyết tâm",
+          "text": "Em làm Mặt Trời nhé, em cầm đèn pin đứng giữa."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bối đi vòng quanh Hùng, và tự xoay người thật chậm theo chiều ngược lại nhé."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "diagram",
+        "what": "Nhìn từ trên xuống. Sao Kim đi trên vòng tròn quanh Mặt Trời theo một chiều, mũi tên tự quay theo chiều ngược lại. Ngôi nhà nhỏ trên sao Kim được chiếu sáng lại khi mới đi khoảng nửa vòng."
+      },
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "ngạc nhiên",
+          "text": "Ơ, em mới đi được khoảng nửa vòng mà đã thấy lại đèn rồi!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Đúng vậy. Sao Kim vừa chạy quanh Mặt Trời, vừa quay ngược lại. Hai chuyển động cộng vào nhau, nên Mặt Trời quay lại sớm hơn."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "count",
+        "what": "Một dòng thời gian dài: Mặt Trời mọc ở đầu, Mặt Trời lặn ở giữa ghi khoảng 58 ngày, Mặt Trời mọc lại ở cuối ghi khoảng 117 ngày."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Từ lúc Mặt Trời mọc đến lần mọc tiếp theo trên sao Kim mất khoảng 117 ngày Trái Đất. Tức là khoảng nửa năm sao Kim."
+        },
+        {
+          "who": "Beo",
+          "how": "ngạc nhiên",
+          "text": "Hơn một trăm ngày mới có một buổi sáng ạ?"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "labels",
+        "what": "Hai tấm bảng. Bảng một ghi tự quay một vòng khoảng 243 ngày, dài hơn một năm. Bảng hai ghi từ Mặt Trời mọc đến mọc khoảng 117 ngày, bằng nửa năm."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Vậy có hai cách tính ngày. Tính theo một vòng tự quay thì ngày sao Kim dài hơn năm. Tính từ Mặt Trời mọc đến lần mọc sau thì ngày bằng khoảng nửa năm."
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Cách nào thì ngày sao Kim cũng dài hơn ngày Trái Đất rất rất nhiều."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 4,
+      "visual": {
+        "kind": "host",
+        "what": "Huy đứng giữa hai tấm bảng 243 ngày và 117 ngày, mỉm cười."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ghi nhớ bước bốn. Một vòng quay của sao Kim dài hơn một năm, nhưng từ bình minh đến bình minh thì khoảng nửa năm."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "scene",
+        "what": "Bong bóng tưởng tượng: cả nhóm mặc đồ phi hành gia hoạt hình đứng trên mặt đất đá khô, bầu trời vàng cam đầy mây dày. Hùng mặc thêm chiếc áo giấy ngộ nghĩnh."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Giờ mình thử tưởng tượng nhé. Chỉ tưởng tượng thôi, vì mặt sao Kim nóng khoảng 460 độ, là hành tinh nóng nhất, không ai đến đó được."
+        },
+        {
+          "who": "Hùng",
+          "how": "cười",
+          "text": "Em mang áo chống nóng rồi. À mà áo bằng giấy thôi."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "count",
+        "what": "Tờ lịch hai tháng nghỉ hè được tô vàng là ban ngày sao Kim. Bên cạnh Bối vui vẻ, Beo ôm gối hơi lo."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "vui vẻ",
+          "text": "Ban ngày ở sao Kim kéo dài khoảng 58 ngày Trái Đất, gần bằng hai tháng nghỉ hè của các bạn!"
+        },
+        {
+          "who": "Bối",
+          "how": "mừng rỡ",
+          "text": "Vậy một buổi chiều đi chơi kéo dài mấy tuần luôn ạ!"
+        },
+        {
+          "who": "Beo",
+          "how": "lo lắng",
+          "text": "Thế ban đêm cũng dài thế hả anh Huy? Em sợ tối lắm."
+        },
+        {
+          "who": "Huy",
+          "how": "cười",
+          "text": "Ở sao Kim thì đêm cũng dài vậy. Nhưng ở nhà mình, đêm chỉ kéo dài khoảng nửa ngày thôi, Beo yên tâm nhé."
+        }
+      ]
+    },
+    {
+      "beat": "imagine",
+      "visual": {
+        "kind": "experiment",
+        "what": "Trên bàn có một đèn pin nằm chiếu ngang. Hùng cầm quả cam có dán mẩu giấy hình ngôi nhà, đưa đi vòng quanh đèn và xoay ngược chiều. Một quả cam khác lăn xuống bàn."
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "tự hào",
+          "text": "Các bạn có thể thử ở nhà với một quả cam và một cái đèn pin. Dán một mẩu giấy nhỏ lên quả cam làm ngôi nhà."
+        },
+        {
+          "who": "Hùng",
+          "how": "vui vẻ",
+          "text": "Để đèn pin trên bàn, đưa quả cam đi vòng quanh, vừa đi vừa xoay thật chậm theo chiều ngược lại. Xem khi nào ngôi nhà được chiếu sáng lại nhé."
+        },
+        {
+          "who": "Hùng",
+          "how": "cười",
+          "text": "Ối, quả cam lăn mất rồi! Các bạn nhớ cầm chắc tay nhé."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "host",
+        "what": "Huy đứng cạnh hình sao Kim với hai con số 243 ngày và 225 ngày."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Tóm lại, sao Kim tự quay rất chậm, mất khoảng 243 ngày cho một vòng, còn chạy quanh Mặt Trời chỉ mất khoảng 225 ngày. Vì thế một vòng quay của nó dài hơn cả một năm."
+        }
+      ]
+    },
+    {
+      "beat": "recap",
+      "visual": {
+        "kind": "compare",
+        "what": "Hai bức tranh cạnh nhau. Bên trái bầu trời chiều tối có chấm sáng ghi sao Hôm, bên phải bầu trời sáng sớm có chấm sáng ghi sao Mai, một mũi tên nối hai chấm ghi cùng là sao Kim."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Còn đây là điều thú vị. Ông bà mình gọi sao Kim lúc chiều tối là sao Hôm, lúc sáng sớm là sao Mai. Thật ra đó là cùng một hành tinh!"
+        },
+        {
+          "who": "Bối",
+          "how": "ngạc nhiên",
+          "text": "Sao Hôm với sao Mai là một ạ?"
+        },
+        {
+          "who": "Beo",
+          "how": "mừng rỡ",
+          "text": "Một ngôi sao mà có hai tên, giống em ở nhà tên Beo luôn!"
+        }
+      ]
+    },
+    {
+      "beat": "next",
+      "visual": {
+        "kind": "host",
+        "what": "Huy vẫy tay, bên cạnh là sao Thủy và sao Kim với dấu hỏi và nhiệt kế, góc màn hình có nút đăng ký kênh Huy Kể Chuyện với logo trống đồng."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Sao Kim ở xa Mặt Trời hơn sao Thủy, vậy mà lại nóng hơn. Vì sao thế nhỉ? Lần sau mình sẽ tìm hiểu nhé. Các bạn nhớ đăng ký kênh Huy Kể Chuyện để không bỏ lỡ!"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Sao Kim tự quay một vòng quanh mình mất khoảng 243 ngày Trái Đất.",
+      "source": "Sao Kim"
+    },
+    {
+      "claim": "Một năm sao Kim (một vòng quanh Mặt Trời) dài khoảng 225 ngày Trái Đất.",
+      "source": "Venus"
+    },
+    {
+      "claim": "Từ Mặt Trời mọc đến lần mọc sau trên sao Kim mất khoảng 117 ngày Trái Đất, khoảng nửa năm sao Kim; ban ngày khoảng 58 ngày là một nửa của số đó.",
+      "source": "Venus"
+    },
+    {
+      "claim": "Sao Kim tự quay rất chậm và ngược chiều (retrograde), nên Mặt Trời mọc ở phía tây.",
+      "source": "Venus"
+    },
+    {
+      "claim": "Các nhà khoa học cho rằng sao Kim quay chậm là do lực hút của Mặt Trời và việc lớp khí quyển dày bị đốt nóng không đều tác động ngược nhau.",
+      "source": "Venus"
+    },
+    {
+      "claim": "Một ngày là thời gian Trái Đất quay đủ một vòng so với Mặt Trời, trung bình khoảng 24 giờ, có buổi sáng, chiều, tối và đêm.",
+      "source": "Day"
+    },
+    {
+      "claim": "Một năm Trái Đất có khoảng 365 ngày.",
+      "source": "Day"
+    },
+    {
+      "claim": "Sao Kim là hành tinh thứ hai tính từ Mặt Trời và ở gần Mặt Trời hơn Trái Đất.",
+      "source": "Venus"
+    },
+    {
+      "claim": "Sao Kim ở gần Mặt Trời nên chuyển động nhanh hơn Trái Đất.",
+      "source": "Venus"
+    },
+    {
+      "claim": "Sao Kim có kích thước gần bằng Trái Đất và được gọi là hành tinh chị em của Trái Đất.",
+      "source": "Sao Kim"
+    },
+    {
+      "claim": "Bề mặt sao Kim nóng khoảng 460 °C, là hành tinh nóng nhất trong Hệ Mặt Trời, có lớp mây dày bao quanh và mặt đất là hoang mạc đá khô.",
+      "source": "Sao Kim"
+    },
+    {
+      "claim": "Sao Kim là thiên thể tự nhiên sáng nhất trên bầu trời đêm sau Mặt Trăng; hiện lúc hoàng hôn gọi là sao Hôm, lúc bình minh gọi là sao Mai.",
+      "source": "Sao Kim"
+    },
+    {
+      "claim": "Sao Kim ở xa Mặt Trời hơn sao Thủy nhưng bề mặt lại nóng hơn sao Thủy.",
+      "source": "Sao Kim"
+    }
+  ],
+  "shorts": [
+    1,
+    16,
+    31
+  ],
+  "thumbnail": "Một ngày dài hơn một năm?!",
+  "description": "Vì sao ở sao Kim, một ngày lại dài hơn cả một năm? Cùng anh Huy, anh Hùng, Bối và Beo tìm hiểu một ngày, một năm là gì, vì sao sao Kim tự quay chậm và quay ngược chiều, kèm một thí nghiệm an toàn với quả cam và đèn pin. Video dành cho các bạn nhỏ 6–12 tuổi, lời giải thích đơn giản và đúng khoa học để ba mẹ cùng xem với con.",
+  "cast": [
+    {
+      "name": "Huy",
+      "gender": "male",
+      "age": "young",
+      "role": "the host (25): curious, warm, a little funny; explains",
+      "villain": false
+    },
+    {
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
+      "gender": "female",
+      "age": "child",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
+      "villain": false
+    }
+  ],
+  "look": ""
+}

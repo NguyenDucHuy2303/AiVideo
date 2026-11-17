@@ -1,0 +1,264 @@
+{
+  "narration": "Sáng hôm sau, dân quanh vùng kéo đến, mang theo hương hoa và quả ngọt. Dân làng (mừng rỡ): \"Xin cho chúng con được ở lại đây cùng hai vị!\" Từ đó, nơi ấy giàu đẹp, đông vui như một nước riêng.",
+  "plan": {
+    "set": "village",
+    "time": "dawn",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "tien_dung",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "march",
+      "then": "give"
+    },
+    "fx": [
+      "sparkle",
+      "rays"
+    ],
+    "objects": [
+      "rice"
+    ],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 11.1,
+  "time": "dawn",
+  "mood": "majestic",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "rice",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "tien_dung",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "dongson",
+          "color": "#efe4cc",
+          "skirt": "#efe4cc",
+          "trim": "#c9902a"
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1210"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12",
+          "eyeScale": 1.1
+        },
+        "build": "slim",
+        "props": []
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "dan_lang_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a",
+          "color": "#8a6a42"
+        },
+        "bareChest": false,
+        "tattoo": true,
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "average"
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a",
+          "color": "#8a6a42"
+        },
+        "bareChest": false,
+        "tattoo": true,
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "average"
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a",
+          "color": "#8a6a42"
+        },
+        "bareChest": false,
+        "tattoo": true,
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "average"
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "tien_dung",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "tien_dung",
+      "at": 5.55,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -500,
+        "ease": "linear"
+      },
+      "dur": 11.1
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 5.55,
+      "do": "give"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -500,
+        "ease": "linear"
+      },
+      "dur": 11.1
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 5.9,
+      "do": "give"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 0,
+      "do": "march",
+      "move": {
+        "by": -500,
+        "ease": "linear"
+      },
+      "dur": 11.1
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 6.25,
+      "do": "give"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "sparkle",
+      "on": "tien_dung",
+      "at": 3.3299999999999996,
+      "dur": 6.659999999999999
+    },
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 11.1,
+      "scale": 2.4
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "tien_dung"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.55,
+      "type": "full",
+      "on": [
+        "tien_dung"
+      ],
+      "push": 0.06
+    }
+  ]
+}

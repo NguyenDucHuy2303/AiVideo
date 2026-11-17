@@ -1,0 +1,323 @@
+{
+  "narration": "Thương nhớ hai vợ chồng, nhân dân lập đền thờ ở nhiều nơi. Ở Gia Lâm, Hà Nội có đình Chử Xá, quê hương của chàng. Ở Khoái Châu, Hưng Yên có đền Hóa Dạ Trạch và đền Đa Hòa. Mỗi năm vào giữa tháng hai âm lịch, nơi đây mở lễ hội thật đông vui. Chử Đồng Tử được tôn là một trong Tứ bất tử, bốn vị thánh bất tử của người Việt, cùng với Thánh Gióng, Sơn Tinh và Mẫu Liễu Hạnh.",
+  "plan": {
+    "set": "village",
+    "time": "dusk",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "dong_tu_ngheo_form",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 5,
+      "act": "cheer",
+      "then": "cheer"
+    },
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "banner",
+      "fire_pit"
+    ],
+    "shot": "wide"
+  },
+  "era": "van_lang",
+  "duration": 23.133333333333333,
+  "time": "dusk",
+  "mood": "majestic",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "banner",
+        "x": 1500,
+        "color": "#3a1a1a"
+      },
+      {
+        "type": "fire_pit",
+        "x": 520
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "dong_tu_ngheo_form",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": false,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": 582.4,
+      "scale": 1.4,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a",
+          "color": "#8a6a42"
+        },
+        "bareChest": false,
+        "tattoo": true,
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "average"
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a",
+          "color": "#8a6a42"
+        },
+        "bareChest": false,
+        "tattoo": true,
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "average"
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a",
+          "color": "#8a6a42"
+        },
+        "bareChest": false,
+        "tattoo": true,
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "average"
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_4",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a",
+          "color": "#8a6a42"
+        },
+        "bareChest": false,
+        "tattoo": true,
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "average"
+      },
+      "x": 1860,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_5",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a",
+          "color": "#8a6a42"
+        },
+        "bareChest": false,
+        "tattoo": true,
+        "hair": {
+          "style": "bun",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "average"
+      },
+      "x": 2180,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 11.57,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 11.92,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 12.27,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_4",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_4",
+      "at": 12.62,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_5",
+      "at": 0,
+      "do": "cheer"
+    },
+    {
+      "actor": "dan_lang_5",
+      "at": 12.97,
+      "do": "cheer"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "sparkle",
+      "on": "dong_tu_ngheo_form",
+      "at": 6.9399999999999995,
+      "dur": 13.879999999999999
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 11.57,
+      "type": "full",
+      "on": [
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.06
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "narration": "Khi thuyền quay lại đón, tiên ông tặng chàng một cây gậy và một chiếc nón. Tiên ông (dõng dạc): \"Đây là gậy thần và nón thần. Con hãy giữ gìn và chỉ làm điều tốt.\" Chử Đồng Tử (mừng rỡ): \"Con cảm ơn cụ! Con xin ghi nhớ lời cụ dạy.\"",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "tien_ong",
+        "place": "right",
+        "enter": "none",
+        "act": "give",
+        "face": "proud",
+        "then": "talk",
+        "thenFace": "proud"
+      },
+      {
+        "id": "dong_tu",
+        "place": "left",
+        "enter": "none",
+        "act": "raise",
+        "face": "joy",
+        "then": "bow",
+        "thenFace": "joy"
+      },
+      {
+        "id": "dong_tu_ngheo_form",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "glow",
+      "sparkle"
+    ],
+    "objects": [],
+    "shot": "medium",
+    "crowd": {
+      "id": "tien_dong",
+      "count": 4,
+      "act": "idle",
+      "then": "none"
+    }
+  },
+  "era": "van_lang",
+  "duration": 11.533333333333333,
+  "time": "day",
+  "mood": "majestic",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "tien_ong",
+      "type": "human",
+      "look": {
+        "body": "elder",
+        "skin": "#e0b080",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f2eee4",
+          "skirt": "#e8e2d4",
+          "trim": "#d8d0b8"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#f4f4f0"
+        },
+        "beard": "#f8f8f4",
+        "prop": {
+          "type": "stick"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "droopy",
+          "nose": "long",
+          "brows": "bushy",
+          "wrinkles": true
+        },
+        "build": "slim",
+        "cape": true,
+        "bracelets": false
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "dong_tu",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "dongson",
+          "skirt": "#5a4a32",
+          "trim": "#c9902a",
+          "color": "#7a5030"
+        },
+        "bareChest": false,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": true,
+        "props": [],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "dong_tu_ngheo_form",
+      "type": "human",
+      "look": {
+        "body": "strong",
+        "skin": "#c99663",
+        "outfit": {
+          "type": "loincloth",
+          "skirt": "#5a4a32",
+          "trim": "#a87a3a"
+        },
+        "bareChest": true,
+        "tattoo": false,
+        "hair": {
+          "style": "short",
+          "color": "#2a1a12"
+        },
+        "bracelets": false,
+        "props": [
+          {
+            "type": "basket"
+          }
+        ],
+        "build": "slim",
+        "face": {
+          "shape": "oval",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "iris": "#2a1a12"
+        }
+      },
+      "x": -582.4,
+      "scale": 1.4,
+      "facing": 1
+    },
+    {
+      "id": "tien_dong_1",
+      "type": "human",
+      "look": {
+        "body": "child",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f2e6b8",
+          "trim": "#d8a830",
+          "skirt": "#e3c890"
+        },
+        "hair": {
+          "style": "traidao"
+        },
+        "bracelets": true,
+        "props": [],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 900,
+      "scale": 0.8075,
+      "facing": -1
+    },
+    {
+      "id": "tien_dong_2",
+      "type": "human",
+      "look": {
+        "body": "child",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f2e6b8",
+          "trim": "#d8a830",
+          "skirt": "#e3c890"
+        },
+        "hair": {
+          "style": "traidao"
+        },
+        "bracelets": true,
+        "props": [],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1220,
+      "scale": 0.867,
+      "facing": -1
+    },
+    {
+      "id": "tien_dong_3",
+      "type": "human",
+      "look": {
+        "body": "child",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f2e6b8",
+          "trim": "#d8a830",
+          "skirt": "#e3c890"
+        },
+        "hair": {
+          "style": "traidao"
+        },
+        "bracelets": true,
+        "props": [],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1540,
+      "scale": 0.8075,
+      "facing": -1
+    },
+    {
+      "id": "tien_dong_4",
+      "type": "human",
+      "look": {
+        "body": "child",
+        "outfit": {
+          "type": "dongson",
+          "color": "#f2e6b8",
+          "trim": "#d8a830",
+          "skirt": "#e3c890"
+        },
+        "hair": {
+          "style": "traidao"
+        },
+        "bracelets": true,
+        "props": [],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin"
+        }
+      },
+      "x": 1860,
+      "scale": 0.867,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "tien_ong",
+      "at": 0,
+      "do": "give",
+      "face": "proud"
+    },
+    {
+      "actor": "tien_ong",
+      "at": 5.77,
+      "do": "talk",
+      "face": "proud",
+      "talk": 1
+    },
+    {
+      "actor": "dong_tu",
+      "at": 0,
+      "do": "raise",
+      "face": "joy"
+    },
+    {
+      "actor": "dong_tu",
+      "at": 5.77,
+      "do": "bow",
+      "face": "joy"
+    },
+    {
+      "actor": "dong_tu_ngheo_form",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "tien_dong_1",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "tien_dong_2",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "tien_dong_3",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "tien_dong_4",
+      "at": 0,
+      "do": "idle"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "glow",
+      "on": "tien_ong",
+      "at": 3.46,
+      "dur": 6.92
+    },
+    {
+      "fx": "sparkle",
+      "on": "tien_ong",
+      "at": 3.46,
+      "dur": 6.92
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "tien_ong",
+        "dong_tu",
+        "dong_tu_ngheo_form"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 5.77,
+      "type": "full",
+      "on": [
+        "tien_ong"
+      ],
+      "push": 0.06
+    }
+  ]
+}

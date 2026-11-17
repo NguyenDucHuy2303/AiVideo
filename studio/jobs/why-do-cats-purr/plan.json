@@ -1,24 +1,29 @@
 {
   "title": "Why Do Cats Purr? The Secret Inside the Rumble",
   "question": "Why do cats purr?",
-  "answer": "A purr is a fast buzz. Scientists think a cat makes it when its brain and its voice box work together, opening and closing a tiny gap in the throat about 20 to 30 times every second while it breathes in and out. Cats purr when they feel calm and safe, a habit that starts when kittens drink their mother's milk. They also purr when they are stressed, hurt or unwell, and scientists think this helps them calm themselves.",
+  "answer": "A purr is a very fast buzz, about 20 to 30 times a second. Scientists think a cat's brain and voice box work together to make it. Cats purr when they feel calm and safe, a habit that starts when kittens drink milk. They also purr when they are stressed or hurt, maybe to calm themselves down. Scientists are still not completely sure how purring works.",
   "scenes": [
     {
       "beat": "hook",
       "visual": {
         "kind": "scene",
-        "what": "Mai sits on a sofa with a fat orange cat called Miso curled on her lap. Little wavy rumble lines rise from the cat, and Mai holds a hand to her ear, amazed."
+        "what": "A cosy living room. Bối kneels by a sofa where her grey cat Miso lies curled up, with little wavy rumble lines around her. Beo peeks over the sofa, and Huy and Hùng walk in."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "Huy, listen! My cat Miso is making a tiny motor sound. Is there an engine inside her?"
         },
         {
+          "who": "Beo",
+          "how": "surprised",
+          "text": "Maybe she ate a toy car!"
+        },
+        {
           "who": "Huy",
           "how": "laughing",
-          "text": "No engine, Mai. That cosy rumble is called a purr."
+          "text": "No engine, Bối. And no toy car, Beo. That cosy rumble is called a purr."
         }
       ]
     },
@@ -26,13 +31,18 @@
       "beat": "hook",
       "visual": {
         "kind": "host",
-        "what": "Huy talks to camera. Three thought bubbles float beside him, a happy cat on a lap, a sleepy kitten, and a cat with a small bandage on its paw, all with purr lines."
+        "what": "Huy smiles at the camera next to a big question mark. Hùng stands behind him holding a box full of props."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
           "text": "Here is a surprise. Cats do not only purr when they are happy! Today we will find out what a purr is, how a cat makes it, and why cats do it."
+        },
+        {
+          "who": "Hùng",
+          "how": "happily",
+          "text": "And I brought a whole box of things to help!"
         }
       ]
     },
@@ -40,11 +50,11 @@
       "beat": "guess",
       "visual": {
         "kind": "scene",
-        "what": "Mai stands proudly with one finger raised, next to Miso, who is stretched out happily on a sunny windowsill with purr lines."
+        "what": "Bối points at a happy cat curled up on a warm lap with a little heart above it. Huy gives her a thumbs up."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "proudly",
           "text": "That is easy. Cats purr because they are happy!"
         },
@@ -58,17 +68,36 @@
     {
       "beat": "guess",
       "visual": {
+        "kind": "scene",
+        "what": "Beo lies on the rug pretending to snore with a Zzz bubble. Miso sits beside him with her eyes wide open."
+      },
+      "parts": [
+        {
+          "who": "Beo",
+          "how": "happily",
+          "text": "I think she is snoring!"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "Good listening, Beo! It does sound a bit like snoring. But look, Miso is wide awake, and she is still purring."
+        }
+      ]
+    },
+    {
+      "beat": "guess",
+      "visual": {
         "kind": "compare",
-        "what": "Two pictures side by side. Left, a relaxed cat on a lap with purr lines. Right, a cat curled up quietly in a basket looking a little poorly, also with purr lines."
+        "what": "Three small pictures side by side. A cat looking worried at the vet, a cat with a little bandage on its paw, and a cat resting sadly in a basket, each with purr lines around it."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "But cats also purr when they feel stressed, or hurt, or unwell. So happy is part of the answer, but not the whole story."
+          "text": "Cats also purr when they feel stressed, or hurt, or unwell. So happy is part of the answer, but not the whole story."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "Purring when they are hurt? That is strange!"
         },
@@ -83,8 +112,8 @@
       "beat": "step",
       "step": 1,
       "visual": {
-        "kind": "labels",
-        "what": "A side view of a cat with wavy lines coming from its throat and chest. Labels point to them saying soft buzz and vibration you can feel."
+        "kind": "scene",
+        "what": "Bối and Beo roll their tongues with a big letter R floating out of their mouths. Miso looks at them, curious."
       },
       "parts": [
         {
@@ -93,9 +122,14 @@
           "text": "Step one. What is a purr? A purr is a soft buzzing sound. It sounds a bit like rolling the letter r in your mouth. Rrrrrr."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "laughing",
           "text": "Rrrrrr! I sound just like Miso!"
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Rrrr! Me too!"
         }
       ]
     },
@@ -104,7 +138,7 @@
       "step": 1,
       "visual": {
         "kind": "count",
-        "what": "A big clock hand ticks one second. Under it, a row of about 25 tiny bumps in a line, labelled 20 to 30 buzzes in one second."
+        "what": "A clock with a one-second label. Next to it, a row of about 25 tiny zigzag buzzes squeezed very close together, blurring into one long wavy line."
       },
       "parts": [
         {
@@ -118,17 +152,42 @@
       "beat": "step",
       "step": 1,
       "visual": {
+        "kind": "experiment",
+        "what": "Hùng claps his hands as fast as he can, his hands a blur, sweat drops flying. A counter above him shows only 5."
+      },
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "Watch this. I will clap twenty times in one second. Clap, clap, clap, clap, clap!"
+        },
+        {
+          "who": "Hùng",
+          "how": "tired",
+          "text": "Phew. I only got five."
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "And a cat buzzes faster than that, without even trying!"
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 1,
+      "visual": {
         "kind": "arrows",
-        "what": "A cat breathing. One arrow goes into its nose labelled breathing in, another comes out labelled breathing out, and both arrows have purr wiggles on them."
+        "what": "A side view of a cat. One arrow shows air going in through the nose and one shows air coming out, with a purr wave that never stops along both arrows. A small fox in the corner has a purr wave only on its out arrow."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Here is a clever trick. A cat purrs while it breathes in and also while it breathes out. So the purr can keep going and going without a break."
+          "text": "Here is a clever trick. A cat purrs while it breathes in and also while it breathes out. So the purr can keep going without a break."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "Like a song with no gaps to breathe?"
         },
@@ -144,13 +203,18 @@
       "step": 1,
       "visual": {
         "kind": "scene",
-        "what": "Mai gently rests her hand on Miso's side. Little shake marks wiggle under her hand and her fingers tingle."
+        "what": "Bối gently rests her hand on Miso's side, with little shake lines between her hand and the fur. Beo touches Miso with one finger and giggles."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "I can feel it in my hand! Her whole body is tingling."
+        },
+        {
+          "who": "Beo",
+          "how": "laughing",
+          "text": "Miso is tickly!"
         },
         {
           "who": "Huy",
@@ -163,8 +227,8 @@
       "beat": "step",
       "step": 1,
       "visual": {
-        "kind": "host",
-        "what": "Huy holds up a card with a purring cat and the number 20 to 30 on it."
+        "kind": "labels",
+        "what": "A purring cat with three labels. Fast buzz, about 20 to 30 a second. Breathing in and out. You can feel it."
       },
       "parts": [
         {
@@ -178,14 +242,24 @@
       "beat": "step",
       "step": 2,
       "visual": {
-        "kind": "labels",
-        "what": "A simple cut-away of a cat's head and neck. A small box in the throat is labelled voice box, and a tube below it is labelled windpipe."
+        "kind": "scene",
+        "what": "Hùng proudly holds up a big cardboard model of a cat's neck with a box inside labelled voice box. Bối touches her own neck."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Step two. How does a cat make that buzz? Let us peek inside a cat's throat. Here is the voice box. Scientists call it the larynx. You have one too, in your neck."
+          "text": "Step two. How does a cat make that buzz? Let us peek inside a cat's throat."
+        },
+        {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "I made a giant cat throat out of cardboard!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Thanks, Hùng. Here is the voice box. Scientists call it the larynx. You have one too, in your neck."
         }
       ]
     },
@@ -194,7 +268,7 @@
       "step": 2,
       "visual": {
         "kind": "zoom",
-        "what": "A magnifying circle zooms into the voice box. Inside are two soft pink flaps labelled vocal folds, with a small gap between them."
+        "what": "A zoom into the voice box. Two soft pink flaps labelled vocal folds, with a small gap between them and arrows of air passing through the gap."
       },
       "parts": [
         {
@@ -208,8 +282,8 @@
       "beat": "step",
       "step": 2,
       "visual": {
-        "kind": "arrows",
-        "what": "The two vocal folds shown twice, first closed, then open, with arrows showing them snapping together and apart, and little puffs of wavy air coming out."
+        "kind": "diagram",
+        "what": "Two pictures of the gap. In one, little muscles squeeze it shut. In the other it is open with air shaking through, with arrows looping between the two pictures."
       },
       "parts": [
         {
@@ -218,7 +292,7 @@
           "text": "Scientists think tiny muscles squeeze this gap shut and let it open again, over and over, very fast. Each time, the moving air gets a little shake. All those shakes make the purr."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "happily",
           "text": "Like flapping a door open and shut, super fast?"
         },
@@ -233,14 +307,24 @@
       "beat": "step",
       "step": 2,
       "visual": {
-        "kind": "diagram",
-        "what": "A cartoon cat brain with a little drummer inside it. Dotted arrows run from the brain down to the voice box in the throat."
+        "kind": "scene",
+        "what": "Hùng taps a cooking pot like a drum with a wooden spoon. The lid has just fallen off with a clang mark, and Beo laughs. A small cartoon brain with drumsticks floats above."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "But what tells the muscles when to squeeze? Scientists think it is the brain. A cat's brain has a special rhythm part. It may work like a drummer, keeping a steady beat. Squeeze, open, squeeze, open."
+          "text": "But what tells the muscles when to squeeze? Scientists think it is the brain. A cat's brain has a special rhythm part. It may work like a drummer, keeping a steady beat."
+        },
+        {
+          "who": "Hùng",
+          "how": "happily",
+          "text": "Squeeze, open, squeeze, open. Oops, there goes the lid!"
+        },
+        {
+          "who": "Beo",
+          "how": "laughing",
+          "text": "Boom, boom, clang!"
         }
       ]
     },
@@ -248,17 +332,32 @@
       "beat": "step",
       "step": 2,
       "visual": {
-        "kind": "host",
-        "what": "Huy stands beside a big question mark. A small old-fashioned picture shows a scientist with a magnifying glass looking at a cat's chest."
+        "kind": "compare",
+        "what": "Left, an old-time scientist pointing at blood flowing through a cat's chest, with a question mark. Right, a modern scientist pointing at a cat's brain linked by a dotted line to its voice box, with a smaller question mark."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "firmly",
-          "text": "Now, to be honest, scientists are still not completely sure how purring works. Long ago, some people thought the sound came from blood rushing through the chest. Today, many scientists think the brain and voice box work together. Takeaway two. Scientists think the brain and the voice box team up, opening and shutting a tiny gap fast, to make the buzz."
+          "text": "Now, to be honest, scientists are still not completely sure how purring works. Long ago, some people thought the sound came from blood rushing through the chest. Today, many scientists think the brain and voice box work together."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 2,
+      "visual": {
+        "kind": "diagram",
+        "what": "A simple cat outline with a brain at the top and a voice box in the neck, joined by a line. Musical beat marks flow from brain to voice box."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Takeaway two. Scientists think the brain and the voice box team up, opening and shutting a tiny gap fast, to make the buzz."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "So even scientists are still guessing?"
         },
@@ -274,23 +373,23 @@
       "step": 3,
       "visual": {
         "kind": "scene",
-        "what": "A cosy basket with a mother cat lying on her side. Four tiny newborn kittens with closed eyes snuggle against her tummy."
+        "what": "A soft basket with a mother cat and four tiny kittens with closed eyes snuggled against her. Bối kneels beside it looking worried."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Step three. Why do cats purr when they feel good? To find out, let us visit some brand-new kittens. Kittens are born with their eyes closed. They cannot see yet."
+          "text": "Step three. Why do cats purr when they feel good? Let us visit some brand-new kittens. Kittens are born with their eyes closed. They cannot see yet."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "worried",
           "text": "They cannot see? How do they find their mum?"
         },
         {
           "who": "Huy",
           "how": "",
-          "text": "Mum stays right beside them, and they snuggle up to drink her milk. After about two weeks, their eyes open."
+          "text": "Mum stays close, and they snuggle up to drink her milk."
         }
       ]
     },
@@ -298,8 +397,33 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "scene",
-        "what": "Close-up of kittens drinking milk from their mother, purr lines rising. Their little front paws push forward, with small arrows showing left, right, left, right."
+        "kind": "count",
+        "what": "A simple timeline. Day one, a kitten with closed eyes. About two weeks, the same kitten with its blue eyes open. Beo stretches and yawns beside it."
+      },
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "After about two weeks, their eyes open."
+        },
+        {
+          "who": "Beo",
+          "how": "happily",
+          "text": "Like me when I wake up!"
+        },
+        {
+          "who": "Huy",
+          "how": "laughing",
+          "text": "Just like you, Beo, but much slower."
+        }
+      ]
+    },
+    {
+      "beat": "step",
+      "step": 3,
+      "visual": {
+        "kind": "arrows",
+        "what": "A kitten drinking milk, its two front paws pushing in turn, with arrows showing left, right, left, right. A small picture of hands kneading bread dough in the corner."
       },
       "parts": [
         {
@@ -314,11 +438,11 @@
       "step": 3,
       "visual": {
         "kind": "scene",
-        "what": "Grown-up Miso stands on a fluffy blanket on Mai's lap, pushing with her front paws, eyes half closed, purr lines around her."
+        "what": "Miso pushes her paws on a fluffy blanket with purr lines around her, eyes half closed. Bối watches, smiling."
       },
       "parts": [
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "laughing",
           "text": "Miso does that on my blanket! Push, push, push, and she purrs."
         },
@@ -334,13 +458,18 @@
       "step": 3,
       "visual": {
         "kind": "labels",
-        "what": "A happy cat with four labelled signs, purring, tail held high, slow blink, and rubbing its head against a leg."
+        "what": "Hùng holds up a big picture card of a cat. Labels point to its tail held high, saying friendly, and to its half-closed eyes, saying slow blink, a cat smile."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Grown cats also purr when they are resting, eating, or close to someone they like. Look for other happy signs too. A tail held high means friendly. And a slow blink is a bit like a cat smile."
+          "text": "Grown cats also purr when they are resting, eating, or close to someone they like. Look for other happy signs too."
+        },
+        {
+          "who": "Hùng",
+          "how": "proudly",
+          "text": "A tail held high means friendly. And a slow blink is a bit like a cat smile."
         }
       ]
     },
@@ -348,8 +477,8 @@
       "beat": "step",
       "step": 3,
       "visual": {
-        "kind": "host",
-        "what": "Huy holds up a card showing a kitten drinking milk next to a grown cat purring on a lap."
+        "kind": "compare",
+        "what": "Side by side, a kitten purring while drinking milk and a grown cat purring on a friend's lap, joined by a heart arrow."
       },
       "parts": [
         {
@@ -363,8 +492,8 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "scene",
-        "what": "Rain on a window at night. Inside, a cat is curled up under a chair looking a little uneasy, with soft purr lines around it."
+        "kind": "host",
+        "what": "Huy holds a big magnifying glass and wears a detective hat, with a question mark over a purring cat with a little bandage."
       },
       "parts": [
         {
@@ -379,7 +508,7 @@
       "step": 4,
       "visual": {
         "kind": "scene",
-        "what": "Mai in her bedroom on a rainy night, hugging a teddy bear and humming, with little music notes floating around her."
+        "what": "A window with rain and a lightning flash outside. Bối hums with music notes around her, and Beo hugs a big teddy bear."
       },
       "parts": [
         {
@@ -388,9 +517,14 @@
           "text": "Think about what you do when you feel nervous. Some people hum a little tune. Some people hug a teddy."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "happily",
           "text": "I hum when there is thunder! It makes me feel braver."
+        },
+        {
+          "who": "Beo",
+          "how": "proudly",
+          "text": "I hug my teddy!"
         }
       ]
     },
@@ -398,8 +532,8 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "compare",
-        "what": "Side by side, Mai humming with her teddy, and a cat curled up purring. Both have the same soft wavy lines around them."
+        "kind": "diagram",
+        "what": "A cat in a cosy basket wrapped in soft purr waves like a blanket, labelled self-soothing, calming yourself down."
       },
       "parts": [
         {
@@ -414,7 +548,7 @@
       "step": 4,
       "visual": {
         "kind": "scene",
-        "what": "Mai and her mum kneel a little way from a quiet cat in a basket. They are looking at it kindly and giving it space."
+        "what": "A purring cat hiding under a chair. Bối points to it and talks to a smiling grown-up who looks after the cat."
       },
       "parts": [
         {
@@ -423,8 +557,8 @@
           "text": "So a purr does not always mean everything is fine. If a cat is purring but also hiding, or seems unwell, tell the grown-up who looks after it. They will know what to do."
         },
         {
-          "who": "Mai",
-          "how": "",
+          "who": "Bối",
+          "how": "happily",
           "text": "So I should look at the whole cat, not just listen!"
         },
         {
@@ -438,8 +572,8 @@
       "beat": "step",
       "step": 4,
       "visual": {
-        "kind": "host",
-        "what": "Huy holds up a card with two purring cats, one smiling, one curled up and calming down."
+        "kind": "compare",
+        "what": "Two speech bubbles from the same purring cat. One says I feel good with a heart. The other says I am helping myself feel better with a little hug sign."
       },
       "parts": [
         {
@@ -453,7 +587,7 @@
       "beat": "imagine",
       "visual": {
         "kind": "scene",
-        "what": "Mai's daydream bubble shows her sitting in a classroom with rumble lines coming from her. Her classmates turn around and grin."
+        "what": "A classroom where Bối, Beo and other children all have little purr waves around them, smiling."
       },
       "parts": [
         {
@@ -462,9 +596,14 @@
           "text": "Imagine if you could purr like a cat. Every time you felt happy, or nervous before a test, your body would rumble. Rrrrrr."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "laughing",
           "text": "Everyone in class would know when I am happy!"
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Rrrr! I am happy now!"
         }
       ]
     },
@@ -472,16 +611,21 @@
       "beat": "imagine",
       "visual": {
         "kind": "experiment",
-        "what": "Mai rests two fingers gently on the front of her neck and hums, with a long mmmm in a speech bubble and tiny buzz marks under her fingers."
+        "what": "Hùng gently rests his fingertips on the front of his neck and hums, with little buzz lines under his fingers. Bối copies him."
       },
       "parts": [
         {
-          "who": "Huy",
-          "how": "",
-          "text": "Here is a safe thing to try at home. Put your fingers gently on the front of your neck. Now hum a long mmmm. Can you feel the buzz? That is your own voice box shaking, a little like a cat's when it purrs."
+          "who": "Hùng",
+          "how": "happily",
+          "text": "Here is a safe thing to try at home. Put your fingers gently on the front of your neck. Now hum a long mmmm."
         },
         {
-          "who": "Mai",
+          "who": "Huy",
+          "how": "",
+          "text": "Can you feel the buzz? That is your own voice box shaking, a little like a cat's when it purrs."
+        },
+        {
+          "who": "Bối",
           "how": "surprised",
           "text": "It tickles my fingers!"
         }
@@ -490,8 +634,8 @@
     {
       "beat": "imagine",
       "visual": {
-        "kind": "experiment",
-        "what": "Mai sits quietly on the floor a little way from Miso. Both have their eyes half closed in a slow blink, with small hearts between them."
+        "kind": "scene",
+        "what": "Bối sits quietly on the floor, blinking slowly at Miso, who blinks back. Behind her, Hùng blinks so hard his face scrunches up, and a second cat walks away from him."
       },
       "parts": [
         {
@@ -500,9 +644,14 @@
           "text": "One more try. If you know a friendly cat, ask a grown-up first. Then sit quietly, let the cat come to you, look at it, and blink very slowly. Some cats blink slowly back. That is a friendly sign, and it may mean they trust you."
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "joyfully",
           "text": "Miso blinked back at me!"
+        },
+        {
+          "who": "Hùng",
+          "how": "sadly",
+          "text": "Hmm. My blink was too big. That cat just left."
         }
       ]
     },
@@ -510,7 +659,7 @@
       "beat": "recap",
       "visual": {
         "kind": "diagram",
-        "what": "A summary picture with a purring cat in the middle and three small pictures around it, the brain drummer, the voice box flaps, and a kitten drinking milk."
+        "what": "A purring cat in the middle with four small pictures around it. A buzz wave, a brain joined to a voice box, a heart, and a calm cat in a basket."
       },
       "parts": [
         {
@@ -524,18 +673,23 @@
       "beat": "recap",
       "visual": {
         "kind": "compare",
-        "what": "Side by side, a lion roaring with a big ROAR bubble, and a cheetah sitting calmly with purr lines. Miso sits next to the cheetah."
+        "what": "A lion roaring with a crossed-out purr sign, next to a cheetah purring with a crossed-out roar sign. Little Miso sits beside the cheetah."
       },
       "parts": [
         {
           "who": "Huy",
-          "how": "",
-          "text": "Here is a fun fact. A lion can roar, but scientists say it cannot purr like a house cat. A cheetah can purr, but it cannot roar. In fact, scientists say no cat can both purr and roar!"
+          "how": "happily",
+          "text": "Here is a fun fact. A lion can roar, and a cheetah can purr. Scientists have long thought that no cat can do both, but they still argue about the details!"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "surprised",
           "text": "So Miso is more like a cheetah than a lion!"
+        },
+        {
+          "who": "Beo",
+          "how": "laughing",
+          "text": "Miso is a tiny cheetah!"
         }
       ]
     },
@@ -543,18 +697,23 @@
       "beat": "next",
       "visual": {
         "kind": "scene",
-        "what": "Miso hops off the sofa, twisting in mid-air above a soft cushion, with a big question mark beside her. Huy and Mai wave goodbye."
+        "what": "Everyone waves on the sofa with Miso. Above them, a cat in mid-air with a big question mark, and a subscribe button with the words Ask Huy."
       },
       "parts": [
         {
           "who": "Huy",
           "how": "",
-          "text": "Next time, another cat mystery. Do cats really always land on their feet? Subscribe so you do not miss it, and keep asking questions!"
+          "text": "Next time, another cat mystery. Do cats really always land on their feet? Subscribe to Ask Huy so you do not miss it, and keep asking questions!"
         },
         {
-          "who": "Mai",
+          "who": "Bối",
           "how": "happily",
           "text": "Bye bye! Rrrrrr!"
+        },
+        {
+          "who": "Beo",
+          "how": "joyfully",
+          "text": "Rrrr! Bye!"
         }
       ]
     }
@@ -565,95 +724,112 @@
       "source": "Purr"
     },
     {
+      "claim": "Purring is often linked to relaxation and contentment, for example when eating and resting.",
+      "source": "Cat behavior"
+    },
+    {
+      "claim": "Cats also purr during stress, pain, or illness.",
+      "source": "Cat"
+    },
+    {
       "claim": "Domestic cats purr at about 20 to 30 vibrations per second.",
       "source": "Purr"
     },
     {
-      "claim": "Cats purr while breathing in and while breathing out; foxes make purr-like sounds only when breathing out.",
+      "claim": "Cats purr while breathing in and while breathing out; foxes purr only when breathing out.",
       "source": "Purr"
     },
     {
-      "claim": "Purring causes vibrations that can be felt on the surface of the body.",
+      "claim": "A purr makes vibrations you can feel on the surface of the body.",
       "source": "Purr"
     },
     {
-      "claim": "One idea, backed by studies, is that muscles of the larynx (voice box) and the vocal folds rapidly open and close the gap between them, shaking the air as the cat breathes.",
+      "claim": "One idea, backed by studies of the muscles, is that the larynx (voice box) muscles or vocal folds open and close the gap (glottis) fast, shaking the air as the cat breathes.",
       "source": "Purr"
     },
     {
-      "claim": "A cat's brain has a special rhythm-making part (a neural oscillator), and scientists think the brain controls purring.",
+      "claim": "Scientists think purring may be controlled by the brain, which has a special neural oscillator (rhythm part).",
       "source": "Purr"
     },
     {
-      "claim": "Scientists have not yet fully explained how cats purr; an early idea was that the sound came from blood flowing through the chest.",
+      "claim": "How cats purr is not yet fully explained; an early idea was that the sound came from blood flowing through the chest.",
       "source": "Purr"
     },
     {
-      "claim": "Purring is mostly linked with relaxation, contentment and social contact, and cats purr while eating and resting.",
-      "source": "Cat behavior"
-    },
-    {
-      "claim": "Cats also purr when they feel stress, pain or illness.",
-      "source": "Cat behavior"
-    },
-    {
-      "claim": "Scientists think cats purr to soothe themselves and to manage pain.",
-      "source": "Purr"
-    },
-    {
-      "claim": "Kittens are born blind with their eyes closed, drink their mother's milk, and their eyes open after about two weeks.",
+      "claim": "Kittens are born with their eyes closed, drink their mother's milk, and open their eyes after about two weeks.",
       "source": "Cat"
     },
     {
-      "claim": "Kittens make sounds very early in life.",
+      "claim": "Kittens use their voices early in life.",
       "source": "Cat behavior"
     },
     {
-      "claim": "Kittens purr mostly when newborn and when feeding; they knead with their front paws while drinking milk, and many grown cats keep kneading and purring, often before sleep.",
+      "claim": "Kittens knead with alternating front paws while feeding, and cats purr mostly when newborn and when feeding.",
       "source": "Cat behavior"
     },
     {
-      "claim": "A tail held high is a sign of friendliness.",
+      "claim": "Many grown cats keep kneading, often purr while kneading, and kneading often comes before sleep.",
       "source": "Cat behavior"
     },
     {
-      "claim": "A cat's slow blink is like a human smile, and cats may slow-blink back at a person they trust.",
+      "claim": "Purring is linked to social contact.",
       "source": "Cat"
     },
     {
-      "claim": "Humans also have a larynx (voice box) in the neck that vibrates when we make sounds.",
+      "claim": "An upright tail usually signals friendliness, and a slow blink is like a human smile.",
+      "source": "Cat"
+    },
+    {
+      "claim": "Purring may have a self-soothing role, and cats purr to manage pain and soothe themselves.",
+      "source": "Purr"
+    },
+    {
+      "claim": "Cats may blink slowly back at a person who slow-blinks at them, as a sign of trust.",
+      "source": "Cat behavior"
+    },
+    {
+      "claim": "Humming makes your voice box vibrate, and you can feel it on your neck.",
       "source": "Basic school knowledge"
     },
     {
-      "claim": "Lions roar but do not purr, cheetahs purr but do not roar, and no cat can both purr and roar.",
+      "claim": "Lions roar but do not purr; cheetahs purr but do not roar; no cat can both purr and roar.",
       "source": "Purr"
-    },
-    {
-      "claim": "Cats try to land on their feet when they jump or fall, but they do not always manage it.",
-      "source": "Cat behavior"
     }
   ],
   "shorts": [
     1,
-    2,
-    28,
-    29
+    32,
+    33
   ],
-  "thumbnail": "WHY DO CATS PURR?",
-  "description": "Why do cats purr, and is it really just because they are happy? Join Huy and Mai as they look inside a cat's throat, visit newborn kittens and find out why cats also purr when they feel bad. This is a gentle, science-based explainer for children aged 6–12. It includes a safe hum-and-feel activity and tips for reading a cat's whole body, not just its purr.",
+  "thumbnail": "Why Do Cats Purr?",
+  "description": "Why do cats purr, and does it always mean they are happy? Huy, Hùng, Bối and little Beo find out what a purr is, how scientists think cats make it, and why cats purr when they feel good and also when they need comfort. A gentle science video for kids aged 6 to 12, checked against trusted sources, with a safe humming test to try at home.",
   "cast": [
     {
       "name": "Huy",
       "gender": "male",
       "age": "young",
-      "role": "the host: curious, warm, a little funny; explains",
+      "role": "the host (25): curious, warm, a little funny; explains",
       "villain": false
     },
     {
-      "name": "Mai",
+      "name": "Hùng",
+      "gender": "male",
+      "age": "young",
+      "role": "Huy's younger brother (21), his hands-on assistant: sets up and runs the experiments and demos, brings things, now and then a funny little mishap",
+      "villain": false
+    },
+    {
+      "name": "Bối",
       "gender": "female",
       "age": "child",
-      "role": "an 8-year-old who asks, guesses and tries things",
+      "role": "an 8-year-old girl who asks, guesses and tries things",
+      "villain": false
+    },
+    {
+      "name": "Beo",
+      "gender": "male",
+      "age": "child",
+      "role": "Bối's 5-year-old little brother: curious, makes funny innocent guesses",
       "villain": false
     }
   ],

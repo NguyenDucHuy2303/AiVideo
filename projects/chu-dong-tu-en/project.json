@@ -1,0 +1,67 @@
+{
+  "engine": "kokoro",
+  "voice": "bm_fable",
+  "speed": 1,
+  "imageGen": "off",
+  "onlineImages": false,
+  "era": "van_lang",
+  "profiles": [
+    "16x9"
+  ],
+  "voices": {
+    "Chu Dong Tu": "am_michael",
+    "Tien Dung": "af_heart",
+    "King Hung": "bm_lewis",
+    "Father": "bm_george",
+    "Immortal Elder": {
+      "voice": "am_michael",
+      "pitch": -2
+    },
+    "Maid": "af_bella",
+    "Boatman": "am_adam",
+    "Villagers": "am_puck",
+    "General Lac": {
+      "voice": "bm_lewis",
+      "pitch": -2
+    }
+  },
+  "speakers": {
+    "Chu Dong Tu": [
+      "dong_tu_ngheo",
+      "dong_tu"
+    ],
+    "Father": [
+      "cha"
+    ],
+    "Tien Dung": [
+      "tien_dung"
+    ],
+    "Maid": [
+      "thi_nu"
+    ],
+    "King Hung": [
+      "vua_hung"
+    ],
+    "General Lac": [
+      "lac_tuong"
+    ],
+    "Immortal Elder": [
+      "tien_ong"
+    ],
+    "Boatman": [
+      "bac_lai_thuyen"
+    ],
+    "Villagers": [
+      "dan_lang"
+    ]
+  },
+  "thumbnail": {
+    "title": "Chu Dong Tu and Princess Tien Dung",
+    "subtitle": "Vietnamese Folk Tales"
+  },
+  "style": "lua",
+  "brand": {
+    "intro": "den_long",
+    "outro": "den_long"
+  }
+}

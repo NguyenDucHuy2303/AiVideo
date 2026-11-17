@@ -1,7 +1,7 @@
 {
   "slug": "may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro",
   "topic": "Máy bay nặng như vậy mà vì sao vẫn bay lên được trên bầu trời?",
-  "status": "rewrite",
+  "status": "review",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.299Z",
@@ -97,6 +97,536 @@
       "at": "2026-11-13T09:19:56.685Z",
       "status": "rewrite",
       "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T10:46:27.532Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: today's 1005386 of 1000000 tokens are spent; gemma3:12b is not installed, so the work waits and retries"
+    },
+    {
+      "at": "2026-11-13T19:40:58.178Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T20:11:25.006Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T20:41:30.116Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T21:11:35.202Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T21:41:40.573Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T22:11:45.831Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T22:41:51.066Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T23:11:57.178Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-13T23:42:01.817Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T00:12:07.083Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T00:42:12.854Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T01:12:17.837Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T01:42:22.742Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T02:12:28.385Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T02:42:33.418Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T03:12:38.358Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T03:42:43.845Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T04:12:49.013Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T04:42:54.248Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T05:12:59.645Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T05:43:04.824Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T06:13:10.495Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T06:43:15.490Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T07:13:20.790Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T07:43:26.696Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T08:13:31.581Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T08:43:36.414Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T09:13:42.542Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T09:43:47.544Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T12:08:28.009Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T12:38:32.776Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T15:05:06.805Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T15:35:12.633Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T16:05:17.664Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T16:35:22.550Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T17:05:28.366Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T17:35:33.487Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T18:05:38.253Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T18:35:43.189Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T19:05:48.285Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T19:35:53.666Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T20:05:59.256Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T20:36:04.529Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T21:06:10.448Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T21:36:15.565Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T22:06:20.887Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T22:36:27.318Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T23:06:32.230Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-14T23:36:36.891Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T00:06:42.837Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T00:36:47.811Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T01:06:53.061Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T01:36:58.826Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T02:07:04.074Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T02:37:09.319Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T03:07:14.683Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T03:37:20.057Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T04:07:25.572Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T04:37:30.830Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T05:07:36.259Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T05:37:42.604Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T06:07:47.636Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T06:37:53.263Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T07:07:59.114Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T07:38:04.598Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T08:08:10.069Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T08:38:15.406Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T09:08:20.623Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T09:38:26.668Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T10:08:48.873Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T10:38:51.467Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T11:09:00.793Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T11:39:05.995Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T12:09:12.383Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T12:39:17.433Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T13:09:22.717Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T13:39:28.616Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T14:09:33.888Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T14:39:39.160Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T15:09:44.904Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T15:39:50.286Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T16:09:56.099Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T16:40:01.241Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T17:10:06.394Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T17:40:12.618Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T18:10:17.929Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T18:40:23.365Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T19:10:29.326Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T19:40:34.780Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T20:10:40.371Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T20:40:45.529Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T21:10:50.985Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T21:40:57.232Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T22:11:02.301Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T22:41:07.793Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T23:11:13.574Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-15T23:41:18.862Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-16T00:11:24.369Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-16T00:41:30.057Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-16T01:11:35.376Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-16T01:41:41.196Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-16T01:52:08.002Z",
+      "status": "review",
+      "info": "kẹt vì trần token cộng dồn (lỗi đã sửa 16/11)"
+    },
+    {
+      "at": "2026-11-16T01:52:08.003Z",
+      "status": "rewrite",
+      "info": "viết lại với Huy, Hùng, Bối, Beo: lượt mới, trần token tính từ đây"
+    },
+    {
+      "at": "2026-11-16T01:52:13.506Z",
+      "status": "rewrite",
+      "info": "chờ thử lại: job \"may-bay-nang-nhu-vay-ma-vi-sao-van-bay-len-duoc-tren-bau-tro\" has spent 105858 of its 80000 write tokens; gemma3:12b is not installed, so the work waits an"
+    },
+    {
+      "at": "2026-11-16T02:20:49.174Z",
+      "status": "review",
+      "info": "1 vấn đề còn lại: The Short (scenes 1, 12, 29, 30) has 207 words: it needs about 120–160."
     }
   ],
   "kind": "qa-vi",
@@ -106,6 +636,5 @@
     "value": 8.4,
     "why": "Điểm mạnh: mở đầu bằng câu hỏi gần gũi và so sánh \"hàng trăm xe máy\", chủ đề rất nhiều người tìm, giải thích đúng (có lưu ý lực nâng phức tạp, tránh lỗi \"đường đi dài hơn\"), có bốn bước ghi nhớ, thí nghiệm máy bay giấy và nhiều cảnh dễ dựng; điểm yếu: hơi dài và nặng khái niệm (áp suất, góc tấn, bốn lực, cánh tà, đuôi) nên dễ loãng với trẻ 6–12 tuổi, và có vài chỗ nhỏ chưa chặt (giải thích áp suất chưa liên kết rõ, lời \"nặng hàng nghìn xe máy\" hơi mơ hồ).",
     "hash": "3e419dace58485f4"
-  },
-  "retryAt": "2026-11-13T09:49:56.681Z"
+  }
 }

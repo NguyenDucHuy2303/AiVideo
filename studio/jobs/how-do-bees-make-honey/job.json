@@ -1,7 +1,7 @@
 {
   "slug": "how-do-bees-make-honey",
   "topic": "How do bees make honey?",
-  "status": "video",
+  "status": "done",
   "notes": [
     {
       "at": "2026-11-11T01:38:20.239Z",
@@ -234,6 +234,40 @@
     {
       "at": "2026-11-13T10:36:42.038Z",
       "status": "video"
+    },
+    {
+      "at": "2026-11-13T10:50:33.531Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-13T10:50:58.414Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 0 giờ, kiểm tra máy đạt (448 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-16T07:42:56.484Z",
+      "status": "producing",
+      "info": "render lại: sửa hình trên bảng (tra hình sai, thiếu hình)"
+    },
+    {
+      "at": "2026-11-16T07:42:56.503Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-16T08:33:18.487Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-16T09:37:15.244Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (448 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-16T11:22:36.429Z",
+      "status": "done",
+      "info": "3 shorts"
     }
   ],
   "kind": "qa",
@@ -243,15 +277,87 @@
     "why": "Điểm mạnh: câu mở \"ong thổi bong bóng\" rất hấp dẫn, cấu trúc 4 bước rõ ràng, nội dung đúng khoa học (mật hoa, dạ dày mật, enzyme, quạt cánh, nắp sáp), có thí nghiệm an toàn và chủ đề nhiều người tìm, dễ dựng hình; điểm yếu: hơi dài và dày thông tin (nhiều thuật ngữ như proboscis, enzyme, hexagon), đoạn mật ong \"thọ nghìn năm\" còn gây tranh cãi và phần bubble/số liệu (3 km, 29 kg) cần kiểm chứng nguồn, nên cần cắt gọn để giữ chân trẻ 6–12 tuổi.",
     "hash": "ab852b80f6087633"
   },
-  "retryAt": "2026-11-14T10:36:42.039Z",
   "inspect": {
-    "at": "2026-11-13T10:36:42.037Z",
+    "at": "2026-11-16T08:33:18.486Z",
     "perMinute": 0.5,
     "byKind": {
       "head-cut": {
         "count": 4,
         "seconds": 5.6
       }
+    }
+  },
+  "autoCheck": {
+    "at": "2026-11-16T09:37:15.209Z",
+    "mtimeMs": 1794817988242.6328,
+    "ok": true,
+    "problems": [],
+    "seconds": 448
+  },
+  "autoApproved": "2026-11-16T09:37:15.209Z",
+  "exported": {},
+  "drive": {
+    "folder": "How Do Bees Make Honey",
+    "mtime": 1794828156328.6013,
+    "at": "2026-11-17T01:42:40.411Z"
+  },
+  "published": {
+    "long": {
+      "videoId": "9mhjFOaBFyc",
+      "url": "https://youtu.be/9mhjFOaBFyc",
+      "publishAt": "2026-11-16T12:00:00.000Z",
+      "channel": "ask-huy",
+      "at": "2026-11-16T07:32:36.786Z",
+      "manual": true
+    },
+    "shorts": [
+      {
+        "videoId": "Ke7qsnBDWHg",
+        "url": "https://youtube.com/shorts/Ke7qsnBDWHg",
+        "publishAt": "2026-11-17T02:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-16T07:39:12.547Z",
+        "manual": true
+      },
+      {
+        "videoId": "PEK_NuaE3DQ",
+        "url": "https://youtube.com/shorts/PEK_NuaE3DQ",
+        "publishAt": "2026-11-17T08:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-16T07:40:35.441Z",
+        "manual": true
+      },
+      {
+        "videoId": "7YzX-GjDXt8",
+        "url": "https://youtube.com/shorts/7YzX-GjDXt8",
+        "publishAt": "2026-11-18T02:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-16T07:41:45.738Z",
+        "manual": true
+      }
+    ]
+  },
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "social": {
+    "facebook:short:0": "2026-11-17T02:00:27.362Z",
+    "facebook:short:1": "2026-11-17T08:00:10.298Z"
+  },
+  "facebook": {
+    "facebook:short:0": {
+      "videoId": "2183118138943728",
+      "postId": "122096475849556851",
+      "url": "https://www.facebook.com/reel/2183118138943728/",
+      "at": "2026-11-17T02:00:27.362Z"
+    },
+    "facebook:short:1": {
+      "videoId": "2595510554246695",
+      "postId": "122096633625556851",
+      "url": "https://www.facebook.com/reel/2595510554246695/",
+      "at": "2026-11-17T08:00:10.298Z"
     }
   }
 }

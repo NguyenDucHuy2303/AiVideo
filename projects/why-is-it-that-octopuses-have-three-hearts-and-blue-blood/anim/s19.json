@@ -1,0 +1,100 @@
+{
+  "castFile": "cast.json",
+  "duration": 15.37,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "give",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text data-in=\"0.5\" x=\"500\" y=\"80\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"44\" fill=\"#2a2a40\">Blue only with oxygen</text><g data-in=\"2\"><rect x=\"690\" y=\"160\" width=\"140\" height=\"320\" rx=\"50\" fill=\"#4aa3e0\" stroke=\"#3a2a20\" stroke-width=\"5\"/><circle class=\"float\" cx=\"735\" cy=\"340\" r=\"16\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"4\"/><circle class=\"float\" cx=\"785\" cy=\"400\" r=\"16\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"4\"/></g><text data-in=\"3\" x=\"760\" y=\"540\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"32\" fill=\"#2a2a40\">carrying oxygen</text><rect data-in=\"6\" x=\"170\" y=\"160\" width=\"140\" height=\"320\" rx=\"50\" fill=\"#eef8fc\" stroke=\"#3a2a20\" stroke-width=\"5\"/><text data-in=\"7\" x=\"240\" y=\"540\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"32\" fill=\"#2a2a40\">no oxygen</text><g data-in=\"8.5\"><path class=\"flow\" d=\"M350 270 L630 270\" stroke=\"#e53935\" stroke-width=\"8\" stroke-dasharray=\"20 12\" fill=\"none\"/><polygon points=\"660,270 625,245 625,295\" fill=\"#e53935\"/></g><g data-in=\"10\"><path class=\"flow\" d=\"M650 370 L370 370\" stroke=\"#fb8c00\" stroke-width=\"8\" stroke-dasharray=\"20 12\" fill=\"none\"/><polygon points=\"340,370 375,345 375,395\" fill=\"#fb8c00\"/></g></svg>",
+    "style": "sketch",
+    "icons": {},
+    "reveal": 9.22
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

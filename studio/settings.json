@@ -22,7 +22,7 @@
           "qa"
         ],
         "perDay": 1,
-        "ahead": 3,
+        "ahead": 5,
         "propose": "questions",
         "perWeek": 7
       },
@@ -33,7 +33,7 @@
           "qa-vi"
         ],
         "perDay": 1,
-        "ahead": 2,
+        "ahead": 3,
         "propose": "questions",
         "channel": "huy-ke-chuyen",
         "perWeek": 2
@@ -84,21 +84,23 @@
         "ahead": 2,
         "propose": "facts",
         "channel": "huy-ke-chuyen",
-        "perWeek": 3
+        "perWeek": 2
       },
       {
         "id": "huy-ke-chuyen",
         "name": "Huy Kể Chuyện (truyện, lịch sử)",
         "perDay": 1,
-        "ahead": 3,
+        "ahead": 5,
         "propose": "stories",
         "perWeek": 2
       }
-    ]
+    ],
+    "leadDays": 3
   },
   "publish": {
     "huy-ke-chuyen": {
       "name": "Huy Kể Chuyện",
+      "facebookPage": "1517448471441161",
       "lang": "vi",
       "long": [
         "19:30"
@@ -111,10 +113,16 @@
       "mode": "manual",
       "english": [
         "08:30"
+      ],
+      "offDays": [
+        0,
+        6
       ]
     },
     "ask-huy": {
       "name": "Ask Huy",
+      "youtube": "Huy Nguyen",
+      "facebookPage": "1454308931101593",
       "lang": "en",
       "long": [
         "19:00"
@@ -123,7 +131,11 @@
         "09:00",
         "15:00"
       ],
-      "mode": "manual"
+      "mode": "manual",
+      "offDays": [
+        0,
+        6
+      ]
     }
   },
   "review": {
