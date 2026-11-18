@@ -1,0 +1,98 @@
+[
+  {
+    "id": "chuot_cu",
+    "name": "Chuột Cụ",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#b9b9c2"
+    },
+    "scale": 0.95,
+    "group": false,
+    "designed": true
+  },
+  {
+    "id": "chuot_nhat",
+    "name": "Chuột Nhắt",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#cdb08a"
+    },
+    "scale": 0.7,
+    "group": false,
+    "designed": true
+  },
+  {
+    "id": "chuot_beo",
+    "name": "Chuột Béo",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#6a4630"
+    },
+    "scale": 1.15,
+    "group": false,
+    "designed": true
+  },
+  {
+    "id": "chuot_xam",
+    "name": "Chuột Xám",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#8c8c90"
+    },
+    "scale": 1,
+    "group": false,
+    "designed": true
+  },
+  {
+    "id": "chuot_me",
+    "name": "Chuột Mẹ",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#9b7452"
+    },
+    "scale": 0.9,
+    "group": false,
+    "designed": true
+  },
+  {
+    "id": "chuot_ut",
+    "name": "Chuột Út",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#d6b98f"
+    },
+    "scale": 0.6,
+    "group": false,
+    "designed": true
+  },
+  {
+    "id": "meo_muop",
+    "name": "Mèo Mướp",
+    "kind": "animal",
+    "look": {
+      "species": "cat",
+      "color": "#8b7a60"
+    },
+    "scale": 1.5,
+    "group": false,
+    "designed": true
+  },
+  {
+    "id": "ho_nha_chuot",
+    "name": "Họ nhà chuột",
+    "kind": "animal",
+    "look": {
+      "species": "mouse",
+      "color": "#9a8b7c"
+    },
+    "scale": 0.85,
+    "group": true,
+    "designed": true
+  }
+]

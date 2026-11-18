@@ -1,0 +1,112 @@
+{
+  "castFile": "cast.json",
+  "duration": 12.27,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "give",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "cheer",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "talk",
+      "face": "joy"
+    },
+    {
+      "actor": "beo",
+      "at": 1.4,
+      "do": "point",
+      "face": "joy"
+    },
+    {
+      "actor": "beo",
+      "at": 8.59,
+      "do": "talk",
+      "face": "joy"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"80\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0\">Folded paper fan</text><rect x=\"80\" y=\"380\" width=\"200\" height=\"160\" rx=\"12\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"0.5\"/><rect x=\"720\" y=\"380\" width=\"200\" height=\"160\" rx=\"12\" fill=\"#43a047\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"0.5\"/><path d=\"M240 370 L300 300 L360 370 L420 300 L480 370 L540 300 L600 370 L660 300 L720 370\" fill=\"none\" stroke=\"#3a2a20\" stroke-width=\"6\" stroke-linejoin=\"round\" data-in=\"2\" class=\"draw\"/><polygon points=\"300,300 330,335 270,335\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"4\" data-in=\"5\"/><polygon points=\"420,300 450,335 390,335\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"4\" data-in=\"5.5\"/><polygon points=\"540,300 570,335 510,335\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"4\" data-in=\"6\"/><circle cx=\"430\" cy=\"270\" r=\"26\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"7\"/><circle cx=\"490\" cy=\"270\" r=\"26\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"8\"/><circle cx=\"460\" cy=\"225\" r=\"26\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"9\"/></svg>",
+    "style": "grid",
+    "icons": {},
+    "reveal": 7.36
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

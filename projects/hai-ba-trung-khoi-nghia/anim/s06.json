@@ -1,0 +1,438 @@
+{
+  "narration": "Bấy giờ, nhà Hán sai một viên quan tên là Tô Định sang làm Thái thú quận Giao Chỉ. Hắn vừa tham lam, vừa độc ác. Tô Định (quát): \"Mỗi nhà phải nộp thêm thóc, thêm lụa cho ta!\" Ông lão (lo lắng): \"Thưa quan, năm nay mất mùa, dân chẳng còn gì để nộp nữa ạ.\" Tô Định (tức giận): \"Không nộp thì bắt hết đi làm phu!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "to_dinh",
+        "place": "left",
+        "enter": "from_left",
+        "act": "point",
+        "face": "angry",
+        "then": "call",
+        "thenFace": "angry"
+      },
+      {
+        "id": "ong_lao",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "bow",
+        "thenFace": "sad"
+      },
+      {
+        "id": "linh_han",
+        "place": "center",
+        "enter": "none",
+        "act": "idle",
+        "face": "angry",
+        "then": "idle",
+        "thenFace": "angry"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "worry",
+      "then": "worry"
+    },
+    "fx": [],
+    "objects": [
+      "rice"
+    ],
+    "shot": "wide"
+  },
+  "era": "bac_thuoc",
+  "duration": 15.9,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "rice",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "to_dinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#ecc8a0",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#6a1a22",
+            "trim": "#2b2b2b",
+            "length": "ankle",
+            "sleeves": "wide",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#1e1e2e",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#1a1a1a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "beard": "#1a1a1a",
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "thin",
+          "mustache": "droopy"
+        }
+      },
+      "x": -2420,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "ong_lao",
+      "type": "human",
+      "look": {
+        "body": "elder",
+        "build": "slim",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#7a6a58",
+            "trim": "#4a3a2a",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#4a3a2a"
+          },
+          "belt": {
+            "color": "#3a2a1a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#d8d8d8"
+        },
+        "beard": "#d8d8d8",
+        "prop": {
+          "type": "bronze_axe"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "droopy",
+          "nose": "round",
+          "brows": "bushy",
+          "wrinkles": true,
+          "mustache": "thin"
+        },
+        "headwear": "khan_chit"
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "linh_han",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#e8c098",
+        "outfit": {
+          "type": "enemy",
+          "color": "#2f2f3f"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "mustache": "thin"
+        }
+      },
+      "x": 0,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "dan_lang_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "bareChest": false,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#8b6b4a",
+            "trim": "#5a4030",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#6b4a2e",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#4a3020",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "headwear": "khan_chit"
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "bareChest": false,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#8b6b4a",
+            "trim": "#5a4030",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#6b4a2e",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#4a3020",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "headwear": "khan_chit"
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "bareChest": false,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#8b6b4a",
+            "trim": "#5a4030",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#6b4a2e",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#4a3020",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "headwear": "khan_chit"
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "to_dinh",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": -520,
+        "ease": "out"
+      },
+      "dur": 7.16,
+      "face": "angry"
+    },
+    {
+      "actor": "to_dinh",
+      "at": 7.16,
+      "do": "point",
+      "face": "angry"
+    },
+    {
+      "actor": "to_dinh",
+      "at": 7.95,
+      "do": "call",
+      "face": "angry",
+      "talk": 1,
+      "move": {
+        "by": 700,
+        "ease": "in"
+      },
+      "dur": 7.95
+    },
+    {
+      "actor": "ong_lao",
+      "at": 0,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "ong_lao",
+      "at": 7.95,
+      "do": "bow",
+      "face": "sad"
+    },
+    {
+      "actor": "linh_han",
+      "at": 0,
+      "do": "idle",
+      "face": "angry"
+    },
+    {
+      "actor": "linh_han",
+      "at": 7.95,
+      "do": "idle",
+      "face": "angry"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 0,
+      "do": "worry"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 7.95,
+      "do": "worry"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 0,
+      "do": "worry"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 8.3,
+      "do": "worry"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 0,
+      "do": "worry"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 8.65,
+      "do": "worry"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "to_dinh",
+        "ong_lao",
+        "linh_han"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 7.95,
+      "type": "full",
+      "on": [
+        "to_dinh"
+      ],
+      "push": 0.06
+    }
+  ]
+}

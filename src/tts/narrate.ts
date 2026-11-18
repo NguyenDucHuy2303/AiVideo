@@ -70,10 +70,10 @@ export interface CaptionCue {
 const MOODS: [RegExp, string][] = [
   // English versions first (their words contain Vietnamese ones: "slowly" has "lo").
   [/laugh|giggl/i, "laugh"], [/overjoyed|delighted|thrilled|joyful/i, "joy"], [/happ|glad|cheerful/i, "happy"], [/\bcr(y|ies|ying)\b|sob/i, "crying"],
-  [/\bsad|sigh/i, "sad"], [/worried|anxious/i, "worried"], [/scared|afraid|frightened|terrified/i, "scared"], [/angr|furious/i, "angry"],
+  [/\bsad|sigh/i, "sad"], [/worried|anxious/i, "worried"], [/horrified|shocked|aghast/i, "shock"], [/scared|afraid|frightened|terrified/i, "scared"], [/angr|furious/i, "angry"],
   [/surprised|amazed|astonished|shocked/i, "surprised"], [/shout|yell|roar/i, "shout"], [/determined|firm|resolute|bold/i, "determined"], [/proud/i, "proud"], [/tired|sleepy/i, "sleepy"],
   [/cười|khúc khích/i, "laugh"], [/mừng rỡ|hớn hở|sung sướng|rạng rỡ|reo/i, "joy"], [/mừng|vui|phấn khởi/i, "happy"], [/khóc|nức nở|mếu/i, "crying"], [/buồn|rầu|thở dài/i, "sad"],
-  [/lo|băn khoăn|sốt ruột/i, "worried"], [/sợ|hoảng|run/i, "scared"], [/giận|tức|quát/i, "angry"], [/ngạc nhiên|sửng sốt|kinh ngạc|bất ngờ/i, "surprised"],
+  [/hết hồn|hoảng hốt|thất kinh|kinh hãi|tá hỏa/i, "shock"], [/lo|băn khoăn|sốt ruột/i, "worried"], [/sợ|hoảng|run/i, "scared"], [/giận|tức|quát/i, "angry"], [/ngạc nhiên|sửng sốt|kinh ngạc|bất ngờ/i, "surprised"],
   [/hét|hô|thét|gầm/i, "shout"], [/quyết|dõng dạc|cương quyết|nghiêm/i, "determined"], [/tự hào|kiêu hãnh/i, "proud"], [/ngái ngủ|mệt/i, "sleepy"],
 ];
 export function moodOf(words: string): string | undefined {

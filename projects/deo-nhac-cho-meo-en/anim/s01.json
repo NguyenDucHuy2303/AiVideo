@@ -1,0 +1,62 @@
+{
+  "narration": "Các bạn nhỏ ơi, nếu ngày nào cũng có một con mèo to rình bắt mình, các bạn sẽ làm gì nào? Có cách nào biết mèo sắp đến để chạy trốn kịp không nhỉ? Hôm nay, Huy Kể Chuyện sẽ kể cho các bạn nghe truyện ngụ ngôn Đeo nhạc cho mèo.",
+  "plan": {
+    "set": "village",
+    "time": "dusk",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "meo_muop",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "none",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "wide"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 14.566666666666666,
+  "time": "dusk",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "meo_muop",
+      "type": "animal",
+      "look": {
+        "species": "cat",
+        "color": "#8b7a60"
+      },
+      "x": 624.0000000000001,
+      "scale": 1.5,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "meo_muop",
+      "at": 0,
+      "do": "idle",
+      "face": "happy"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "meo_muop"
+      ],
+      "push": 0.06
+    }
+  ]
+}

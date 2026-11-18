@@ -28,6 +28,8 @@
     sleepy: { lid: 0.65, lift: 0, tilt: -0.2, smile: 0.1, open: 0 },
     proud: { lid: 0.35, squint: 0.2, lift: 0.25, tilt: 0.25, smile: 0.6, open: 0, look: [0.4, -0.3] },
     crying: { closed: "tight", lift: 0.5, tilt: -0.9, smile: -0.9, open: 0.6, teeth: true, tears: 1, blush: 0.5 },
+    // Hết hồn (18/11/2026, the comedy's "take"): the eyes pop out big, pupils pinpricks, the jaw drops.
+    shock: { lid: 0, pupil: 0.38, lift: 1.5, tilt: -0.3, smile: -0.4, open: 1.15, mouth: "o", sweat: 1, pop: 1 },
   };
 
   /** Where the features sit, by head shape (fractions of the head radius R). */
@@ -218,9 +220,12 @@
         : `M ${f2(-rx * 2)} ${f2(-ry * 2)} H ${f2(rx * 2)} V ${f2(ry * 2)} H ${f2(-rx * 2)} Z`);
       const look = x.gaze || x.look || (F.front ? [0, 0.05] : [0.35, 0]);
       tr(eye.pupil, look[0] * rx * 0.35, look[1] * ry * 0.35, 0, x.pupil ?? 1);
+      // pop: the eyes bulge (a cartoon take), the brows go up over them
+      const pop = 1 + 0.4 * clamp(x.pop || 0);
+      eye.eg.setAttribute("transform", pop > 1.001 ? `translate(${f2(eye.x)},${f2(eye.y)}) scale(${pop.toFixed(3)})` : `translate(${f2(eye.x)},${f2(eye.y)})`);
       // Brows: lift up/down; tilt 1 = angry (inner end down), -1 = sad (inner end up).
       // Cartoon brows move a lot: that is most of the acting.
-      let by = eye.y - Math.max(ry, rx * 0.8) * 1.55 - (x.lift || 0) * ry * 1.15;
+      let by = eye.y - Math.max(ry, rx * 0.8) * 1.55 * (1 + 0.4 * clamp(x.pop || 0)) - (x.lift || 0) * ry * 1.15;
       // (from the front the two brows tilt as mirror images)
       // (from the front the brows are wider apart and both full size: a gentler slope reads the same)
       const a = (x.tilt || 0) * ry * 0.95 * (F.front ? (i ? -0.55 : 0.55) : 1);

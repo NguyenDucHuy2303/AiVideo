@@ -105,7 +105,7 @@ async function buildProject(job: Job, proj: string, opts: { scenes?: number; not
   await fs.writeFile(path.join(proj, "script.txt"), [plan.title, ...lines].join("\n") + "\n");
   await fs.writeFile(path.join(proj, "storyboard.json"), JSON.stringify({
     title: plan.title, kind: "story",
-    scenes: lines.map((narration) => ({ narration, chapter: plan.title, onScreen: {}, visual: { description: "ancient Vietnam", mood: "calm" }, camera: "ken_burns", transition: "cut" })),
+    scenes: lines.map((narration) => ({ narration, chapter: plan.title.slice(0, 80), onScreen: {}, visual: { description: "ancient Vietnam", mood: "calm" }, camera: "ken_burns", transition: "cut" })),
   }, null, 2));
   const speakers: Record<string, string[]> = {};
   for (const c of cast) for (const name of c.speaks) (speakers[name] ??= []).push(c.id);

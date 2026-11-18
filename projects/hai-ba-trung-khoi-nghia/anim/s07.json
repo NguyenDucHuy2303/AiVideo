@@ -1,0 +1,403 @@
+{
+  "narration": "Chưa hết, quân Hán còn bắt người Việt bỏ phong tục cưới hỏi, cách ăn mặc của ông bà để theo người Hán. Lính Hán (quát): \"Từ nay, tất cả phải làm theo phép tắc của người Hán!\" Bà cụ (buồn rầu): \"Phong tục tổ tiên để lại bao đời, sao nỡ bắt bỏ đi hả trời.\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "linh_han",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "shout",
+        "then": "point",
+        "thenFace": "angry"
+      },
+      {
+        "id": "ba_cu",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "sad",
+        "then": "worry",
+        "thenFace": "sad"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 4,
+      "act": "idle",
+      "then": "none"
+    },
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "bac_thuoc",
+  "duration": 12.7,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "linh_han",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#e8c098",
+        "outfit": {
+          "type": "enemy",
+          "color": "#2f2f3f"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "mustache": "thin"
+        }
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "ba_cu",
+      "type": "human",
+      "look": {
+        "body": "elder",
+        "build": "slim",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#6a5a48",
+            "trim": "#3a2a1a",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#2e2420",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#3a2a1a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#e0e0e0"
+        },
+        "bracelets": true,
+        "prop": {
+          "type": "bowl"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "droopy",
+          "nose": "round",
+          "brows": "thin",
+          "wrinkles": true
+        },
+        "headwear": "khan_van"
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "nghia_quan_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b5a2b",
+            "trim": "#5a3a1a",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a3a1a"
+          },
+          "belt": {
+            "color": "#3e2a1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "nghia_quan_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b5a2b",
+            "trim": "#5a3a1a",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a3a1a"
+          },
+          "belt": {
+            "color": "#3e2a1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "nghia_quan_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b5a2b",
+            "trim": "#5a3a1a",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a3a1a"
+          },
+          "belt": {
+            "color": "#3e2a1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "nghia_quan_4",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b5a2b",
+            "trim": "#5a3a1a",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a3a1a"
+          },
+          "belt": {
+            "color": "#3e2a1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 1860,
+      "scale": 1.02,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "linh_han",
+      "at": 0,
+      "do": "call",
+      "face": "shout",
+      "talk": 1,
+      "move": {
+        "by": 600,
+        "ease": "linear"
+      },
+      "dur": 12.7
+    },
+    {
+      "actor": "linh_han",
+      "at": 6.35,
+      "do": "point",
+      "face": "angry"
+    },
+    {
+      "actor": "ba_cu",
+      "at": 0,
+      "do": "worry",
+      "face": "sad"
+    },
+    {
+      "actor": "ba_cu",
+      "at": 6.35,
+      "do": "worry",
+      "face": "sad"
+    },
+    {
+      "actor": "nghia_quan_1",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "nghia_quan_2",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "nghia_quan_3",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "nghia_quan_4",
+      "at": 0,
+      "do": "idle"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "linh_han",
+        "ba_cu"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 6.35,
+      "type": "full",
+      "on": [
+        "linh_han"
+      ],
+      "push": 0.06
+    }
+  ]
+}

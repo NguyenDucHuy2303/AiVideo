@@ -1,0 +1,1107 @@
+[
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "point",
+        "thenFace": "happy"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "wave",
+        "thenFace": "joy"
+      }
+    ],
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "ong_lao",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "sad",
+        "then": "worry",
+        "thenFace": "sad"
+      },
+      {
+        "id": "linh_han",
+        "place": "right",
+        "enter": "from_right",
+        "act": "walk",
+        "face": "angry",
+        "then": "point",
+        "thenFace": "angry"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "worry",
+      "then": "worry"
+    },
+    "fx": [],
+    "objects": [
+      "rice"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "trung_nhi",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "joy",
+        "then": "point",
+        "thenFace": "joy"
+      },
+      {
+        "id": "trung_trac",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "nong",
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "man_thien",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "determined",
+        "then": "point",
+        "thenFace": "determined"
+      },
+      {
+        "id": "trung_trac",
+        "place": "right",
+        "enter": "none",
+        "act": "bow",
+        "face": "determined",
+        "then": "idle",
+        "thenFace": "determined"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "nong"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "dawn",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "trung_nhi",
+        "place": "left",
+        "enter": "none",
+        "act": "swing",
+        "face": "laugh",
+        "then": "swing",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "trung_trac",
+        "place": "right",
+        "enter": "none",
+        "act": "swing",
+        "face": "laugh",
+        "then": "swing",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stumps"
+    ],
+    "shot": "full"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "to_dinh",
+        "place": "left",
+        "enter": "from_left",
+        "act": "point",
+        "face": "angry",
+        "then": "call",
+        "thenFace": "angry"
+      },
+      {
+        "id": "ong_lao",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "bow",
+        "thenFace": "sad"
+      },
+      {
+        "id": "linh_han",
+        "place": "center",
+        "enter": "none",
+        "act": "idle",
+        "face": "angry",
+        "then": "idle",
+        "thenFace": "angry"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "worry",
+      "then": "worry"
+    },
+    "fx": [],
+    "objects": [
+      "rice"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "linh_han",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "shout",
+        "then": "point",
+        "thenFace": "angry"
+      },
+      {
+        "id": "ba_cu",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "sad",
+        "then": "worry",
+        "thenFace": "sad"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "worry",
+      "then": "worry"
+    },
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "dusk",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "left",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "angry",
+        "then": "talk",
+        "thenFace": "angry"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "right",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "determined",
+        "then": "talk",
+        "thenFace": "determined"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 2,
+      "act": "worry",
+      "then": "worry"
+    },
+    "fx": [],
+    "objects": [],
+    "shot": "track"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "thi_sach",
+        "place": "left",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "determined",
+        "then": "talk",
+        "thenFace": "determined"
+      },
+      {
+        "id": "trung_trac",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "determined",
+        "then": "bow",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "bamboo",
+    "time": "dusk",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "man_thien",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "determined",
+        "then": "raise",
+        "thenFace": "determined"
+      },
+      {
+        "id": "thi_sach",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "determined",
+        "then": "idle",
+        "thenFace": "determined"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 3,
+      "act": "idle",
+      "then": "cheer"
+    },
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "palace",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "to_dinh",
+        "place": "center",
+        "enter": "none",
+        "act": "point",
+        "face": "angry",
+        "then": "call",
+        "thenFace": "shout"
+      },
+      {
+        "id": "linh_han",
+        "place": "right",
+        "enter": "none",
+        "act": "charge",
+        "face": "angry",
+        "then": "run",
+        "thenFace": "angry"
+      },
+      {
+        "id": "thi_sach",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "determined",
+        "then": "fall",
+        "thenFace": "sad"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "dusk",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "center",
+        "enter": "none",
+        "act": "kneel",
+        "face": "sad",
+        "then": "heroic",
+        "thenFace": "determined"
+      }
+    ],
+    "fx": [
+      "glow"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "ong_lao",
+        "place": "left",
+        "enter": "none",
+        "act": "raise",
+        "face": "happy",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "wave",
+        "thenFace": "happy"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 5,
+      "act": "carry",
+      "then": "cheer"
+    },
+    "fx": [],
+    "objects": [
+      "fire_pit",
+      "bowls"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "le_chan",
+        "place": "left",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "determined",
+        "then": "raise",
+        "thenFace": "determined"
+      },
+      {
+        "id": "trung_trac",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "cheer",
+        "thenFace": "joy"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 4,
+      "act": "march",
+      "then": "march"
+    },
+    "fx": [],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "mountain",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "center",
+        "enter": "none",
+        "act": "raise",
+        "face": "determined",
+        "then": "heroic",
+        "thenFace": "shout"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "determined",
+        "then": "idle",
+        "thenFace": "determined"
+      },
+      {
+        "id": "le_chan",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "determined",
+        "then": "idle",
+        "thenFace": "determined"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 5,
+      "act": "still",
+      "then": "still"
+    },
+    "fx": [],
+    "objects": [
+      "stone",
+      "banner"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "mountain",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "determined",
+        "then": "raise",
+        "thenFace": "shout"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "right",
+        "enter": "none",
+        "act": "raise",
+        "face": "shout",
+        "then": "cheer",
+        "thenFace": "shout"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 5,
+      "act": "raise",
+      "then": "cheer"
+    },
+    "fx": [
+      "rays"
+    ],
+    "objects": [
+      "stone",
+      "banner"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "dawn",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "heroic",
+        "thenFace": "proud"
+      },
+      {
+        "id": "le_chan",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "surprised"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 4,
+      "act": "still",
+      "then": "still"
+    },
+    "fx": [
+      "rays"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "dawn",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "determined",
+        "then": "heroic",
+        "thenFace": "proud"
+      },
+      {
+        "id": "le_chan",
+        "place": "left",
+        "enter": "none",
+        "act": "bow",
+        "face": "proud",
+        "then": "cheer",
+        "thenFace": "proud"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 4,
+      "act": "cheer",
+      "then": "cheer"
+    },
+    "fx": [
+      "glow"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "trung_nhi",
+        "place": "center",
+        "enter": "none",
+        "act": "call",
+        "face": "shout",
+        "then": "charge",
+        "thenFace": "shout"
+      },
+      {
+        "id": "trung_trac",
+        "place": "right",
+        "enter": "none",
+        "act": "march",
+        "face": "determined",
+        "then": "march",
+        "thenFace": "determined"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 6,
+      "act": "march",
+      "then": "charge"
+    },
+    "fx": [],
+    "objects": [
+      "banner"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "linh_han",
+        "place": "right",
+        "enter": "none",
+        "act": "run",
+        "face": "surprised",
+        "then": "fall",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "trung_trac",
+        "place": "left",
+        "enter": "from_left",
+        "act": "charge",
+        "face": "determined",
+        "then": "swing",
+        "thenFace": "shout"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 5,
+      "act": "charge",
+      "then": "charge"
+    },
+    "fx": [
+      "shake",
+      "smoke"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "ba_cu",
+        "place": "left",
+        "enter": "none",
+        "act": "cheer",
+        "face": "joy",
+        "then": "wave",
+        "thenFace": "joy"
+      },
+      {
+        "id": "trung_trac",
+        "place": "right",
+        "enter": "from_right",
+        "act": "walk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "happy"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 5,
+      "act": "give",
+      "then": "cheer"
+    },
+    "fx": [],
+    "objects": [
+      "bowls",
+      "rice"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "trung_nhi",
+        "place": "left",
+        "enter": "none",
+        "act": "point",
+        "face": "shout",
+        "then": "call",
+        "thenFace": "shout"
+      },
+      {
+        "id": "trung_trac",
+        "place": "right",
+        "enter": "none",
+        "act": "ride",
+        "face": "determined",
+        "then": "charge",
+        "thenFace": "determined"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 5,
+      "act": "ride",
+      "then": "charge"
+    },
+    "fx": [],
+    "objects": [
+      "banner"
+    ],
+    "shot": "track"
+  },
+  {
+    "set": "palace",
+    "time": "day",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "to_dinh",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "worried"
+      },
+      {
+        "id": "linh_han",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "run",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [
+      "shake"
+    ],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "palace",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "to_dinh",
+        "place": "left",
+        "enter": "none",
+        "act": "undress",
+        "face": "worried",
+        "then": "none",
+        "thenFace": "worried"
+      },
+      {
+        "id": "to_dinh_tron",
+        "place": "center",
+        "enter": "none",
+        "act": "run",
+        "face": "surprised",
+        "then": "run",
+        "thenFace": "worried"
+      },
+      {
+        "id": "linh_han",
+        "place": "right",
+        "enter": "none",
+        "act": "run",
+        "face": "worried",
+        "then": "run",
+        "thenFace": "worried"
+      }
+    ],
+    "crowd": {
+      "id": "linh_han",
+      "count": 3,
+      "act": "run",
+      "then": "run"
+    },
+    "fx": [
+      "pop"
+    ],
+    "objects": [],
+    "shot": "track"
+  },
+  {
+    "set": "mountain",
+    "time": "dusk",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "to_dinh_tron",
+        "place": "center",
+        "enter": "from_right",
+        "act": "run",
+        "face": "worried",
+        "then": "walk",
+        "thenFace": "sad"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "track"
+  },
+  {
+    "set": "field",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "ong_lao",
+        "place": "center",
+        "enter": "none",
+        "act": "cheer",
+        "face": "joy",
+        "then": "cheer",
+        "thenFace": "joy"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 6,
+      "act": "cheer",
+      "then": "cheer"
+    },
+    "fx": [
+      "rays"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "palace",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "raise",
+        "thenFace": "proud"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "proud",
+        "then": "bow",
+        "thenFace": "proud"
+      },
+      {
+        "id": "le_chan",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "shout",
+        "then": "cheer",
+        "thenFace": "joy"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 4,
+      "act": "cheer",
+      "then": "cheer"
+    },
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "palace",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "proud",
+        "then": "raise",
+        "thenFace": "proud"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "determined",
+        "then": "idle",
+        "thenFace": "determined"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 5,
+      "act": "bow",
+      "then": "cheer"
+    },
+    "fx": [
+      "glow"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "field",
+    "time": "dusk",
+    "mood": "battle",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "left",
+        "enter": "none",
+        "act": "heroic",
+        "face": "determined",
+        "then": "fly",
+        "thenFace": "proud"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "right",
+        "enter": "none",
+        "act": "heroic",
+        "face": "determined",
+        "then": "fly",
+        "thenFace": "proud"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 5,
+      "act": "charge",
+      "then": "charge"
+    },
+    "fx": [
+      "smoke",
+      "embers"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "dawn",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "ba_cu",
+        "place": "left",
+        "enter": "none",
+        "act": "bow",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      },
+      {
+        "id": "ong_lao",
+        "place": "right",
+        "enter": "none",
+        "act": "bow",
+        "face": "happy",
+        "then": "idle",
+        "thenFace": "happy"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 4,
+      "act": "bow",
+      "then": "bow"
+    },
+    "fx": [
+      "glow",
+      "rays"
+    ],
+    "objects": [
+      "bowls"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "left",
+        "enter": "none",
+        "act": "wave",
+        "face": "happy",
+        "then": "bow",
+        "thenFace": "joy"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "right",
+        "enter": "none",
+        "act": "wave",
+        "face": "happy",
+        "then": "bow",
+        "thenFace": "joy"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 4,
+      "act": "cheer",
+      "then": "wave"
+    },
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "medium"
+  }
+]

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { blurbOf, hashtagsOf, hookOf, LINK_WAIT, platformsOf, postTitle, socialText } from "../src/studio/social.ts";
+import { blurbOf, hashtagsOf, hookOf, LINK_WAIT, linkToComment, parentLine, platformsOf, postTitle, socialText } from "../src/studio/social.ts";
 import { hostAllowed, isLoopback, lanAddress } from "../src/studio/phone.ts";
 import type { Meta } from "../src/studio/publish.ts";
 
@@ -51,7 +51,7 @@ test("a Short's post: its own line first, always a YouTube link (written out on 
   const factMeta = meta({ lang: "en", title: "Wombat poop is a cube? #Shorts", description: "Wombats make cube poop." });
   const own = socialText("facebook", factMeta, { what: "short", kind: "fact", channel: "Ask Huy", isFact: true, own: true, link: "https://youtube.com/shorts/abc" });
   assert.ok(own.includes("Watch on YouTube: https://youtube.com/shorts/abc"));
-  assert.ok(own.includes("Follow Ask Huy for more!"));
+  assert.ok(own.includes("Follow Ask Huy for more videos to watch with your kids!"));
   assert.ok(socialText("tiktok", factMeta, { what: "short", kind: "fact", channel: "Ask Huy", isFact: true, link: "https://youtu.be/x" }).includes("Watch the full explanation on YouTube: https://youtu.be/x\n👉 Tap the link in our bio (Ask Huy)"));
 });
 
@@ -120,4 +120,21 @@ test("thumbnail variants: -2 and -3 beside the main one, English too", () => {
   const files = ["thumbnail.jpg", "thumbnail-2.jpg", "thumbnail-3.jpg", "thumbnail.en.jpg", "thumbnail-2.en.jpg"];
   assert.deepEqual(thumbVariants("thumbnail.jpg", files), ["thumbnail-2.jpg", "thumbnail-3.jpg"]);
   assert.deepEqual(thumbVariants("thumbnail.en.jpg", files), ["thumbnail-2.en.jpg"]);
+});
+
+test("posts speak to the parents: one of three lines by kind, the same for the same title", () => {
+  assert.match(parentLine("vi", "truyền thuyết", "Sơn Tinh"), /bé/);
+  assert.equal(parentLine("vi", "lịch sử", "Ngô Quyền"), parentLine("vi", "lịch sử", "Ngô Quyền"));
+  assert.match(parentLine("vi", "lesson", "Màu sắc"), /tiếng Anh/);
+  assert.match(parentLine("en", "qa", "Why is the sky blue?"), /kid/);
+  assert.ok(socialText("facebook", meta(), { what: "short", kind: "truyền thuyết", channel: "Huy Kể Chuyện", link: "https://youtu.be/a" }).includes(parentLine("vi", "truyền thuyết", meta().title)));
+});
+
+test("linkToComment: the YouTube line leaves the caption for the first comment", () => {
+  const text = socialText("facebook", meta(), { what: "short", kind: "truyền thuyết", channel: "Huy Kể Chuyện", link: "https://youtu.be/abcdefghijk" });
+  const r = linkToComment(text, "vi")!;
+  assert.ok(!r.caption.includes("https://"));
+  assert.ok(r.caption.includes("👇 Link xem trên YouTube ở bình luận đầu tiên"));
+  assert.ok(r.comment.startsWith("Xem trọn phim trên YouTube: https://youtu.be/abcdefghijk"));
+  assert.equal(linkToComment("no link here", "vi"), undefined);
 });

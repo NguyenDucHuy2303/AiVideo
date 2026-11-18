@@ -1,7 +1,7 @@
 {
   "slug": "hai-ba-trung-khoi-nghia",
   "topic": "Hai Bà Trưng khởi nghĩa",
-  "status": "review",
+  "status": "done",
   "notes": [],
   "history": [
     {
@@ -11,6 +11,40 @@
     {
       "at": "2026-11-09T04:02:25.074Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-17T10:01:07.163Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (điểm 8.4/10)"
+    },
+    {
+      "at": "2026-11-17T10:14:43.234Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-17T10:52:16.555Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-17T11:31:52.668Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-17T12:55:21.758Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-17T15:59:33.838Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-17T21:47:18.500Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (414 giây, không đen màn, đứng hình hay im lặng)"
     }
   ],
   "kind": "lịch sử",
@@ -21,5 +55,83 @@
     "value": 8.4,
     "why": "Điểm mạnh: chủ đề kinh điển, nhiều người tìm, mạch truyện đủ ý, đúng tư liệu (Mê Linh, Thi Sách, lời thề, Tô Định cạo râu tóc, 65 thành, Hát Môn), nhiều cảnh vui mắt dễ dựng, thông điệp tốt; điểm yếu: mở đầu bằng câu hỏi hơi chung chung, đoạn giữa nhiều bối cảnh/nhân vật tên khó nhớ với trẻ 4–10 tuổi, cảnh Thi Sách bị hại và kết thúc hy sinh cần xử lý nhẹ nhàng, kịch bản khá dài và phải bỏ qua chi tiết gây tranh cãi (lời thề bốn điều có nguồn gốc dân gian, Trưng Trắc làm vua sau khi mặc đẹp).",
     "hash": "24539543ce6107d2"
-  }
+  },
+  "autoPicked": true,
+  "inspect": {
+    "at": "2026-11-17T12:55:21.756Z",
+    "perMinute": 4.3,
+    "byKind": {
+      "still": {
+        "count": 5,
+        "seconds": 36.1
+      },
+      "head-cut": {
+        "count": 7,
+        "seconds": 5.5
+      },
+      "faces-overlap": {
+        "count": 13,
+        "seconds": 21
+      },
+      "talk-covered": {
+        "count": 1,
+        "seconds": 0.5
+      },
+      "held": {
+        "count": 1,
+        "seconds": 2.5
+      },
+      "prop-face": {
+        "count": 2,
+        "seconds": 1
+      }
+    }
+  },
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "autoCheck": {
+    "at": "2026-11-17T21:47:18.499Z",
+    "mtimeMs": 1794920100870.7104,
+    "ok": true,
+    "problems": [],
+    "seconds": 414
+  },
+  "autoApproved": "2026-11-17T21:47:18.499Z",
+  "exported": {
+    "long": {
+      "dir": "/home/huynguyen/youtube/Hai Bà Trưng khởi nghĩa",
+      "publishAt": "2026-11-19T12:30:00.000Z",
+      "channel": "huy-ke-chuyen",
+      "at": "2026-11-17T21:48:43.297Z"
+    },
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/Hai Bà Trưng khởi nghĩa",
+        "publishAt": "2026-11-20T10:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-17T21:48:43.300Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Hai Bà Trưng khởi nghĩa",
+        "publishAt": "2026-11-21T00:30:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-17T21:48:43.302Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Hai Bà Trưng khởi nghĩa",
+        "publishAt": "2026-11-21T05:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-17T21:48:43.303Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "Hai Bà Trưng khởi nghĩa",
+    "mtime": 1794952123320.969,
+    "at": "2026-11-17T21:54:51.269Z"
+  },
+  "english": "failed: interrupted"
 }

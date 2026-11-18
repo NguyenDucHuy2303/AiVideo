@@ -1,0 +1,580 @@
+{
+  "narration": "Trưng Trắc (quyết tâm): \"Ba kêu oan ức lòng chồng. Bốn xin vẻn vẹn sở công lênh này!\" Tiếng thề vang dội cả mặt sông. Nghĩa quân (hô to): \"Thề đánh đuổi giặc Hán!\" Trưng Nhị (hô to): \"Thề giành lại quê hương!\"",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "determined",
+        "then": "raise",
+        "thenFace": "shout"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "right",
+        "enter": "none",
+        "act": "raise",
+        "face": "shout",
+        "then": "cheer",
+        "thenFace": "shout"
+      },
+      {
+        "id": "linh_han",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "crowd": {
+      "id": "nghia_quan",
+      "count": 5,
+      "act": "raise",
+      "then": "cheer"
+    },
+    "fx": [
+      "rays"
+    ],
+    "objects": [
+      "stone",
+      "banner"
+    ],
+    "shot": "wide"
+  },
+  "era": "bac_thuoc",
+  "duration": 9.133333333333333,
+  "time": "day",
+  "mood": "majestic",
+  "set": {
+    "name": "mountain",
+    "objects": [
+      {
+        "type": "stone",
+        "x": 300
+      },
+      {
+        "type": "banner",
+        "x": 2200,
+        "color": "#3a1a1a"
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "trung_trac",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#a8452a",
+            "trim": "#d4a017",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1f2f55",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#e8a020",
+            "ends": true
+          },
+          "inner": {
+            "color": "#e0b040"
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "khan_van",
+        "earrings": true,
+        "bracelets": true,
+        "cape": false,
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thick",
+          "eyeScale": 1.05
+        },
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "sword"
+          }
+        ]
+      },
+      "x": 0,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "trung_nhi",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "slim",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#3f7a3f",
+            "trim": "#7a5a30",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#6b4a2a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#8b5a2b",
+            "ends": true
+          },
+          "inner": {
+            "color": "#c8a060"
+          }
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a1a"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "eyeScale": 1.12
+        },
+        "prop": {
+          "type": "spear"
+        }
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "linh_han",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#e8c098",
+        "outfit": {
+          "type": "enemy",
+          "color": "#2f2f3f"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "mustache": "thin"
+        }
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "nghia_quan_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b5a2b",
+            "trim": "#5a3a1a",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a3a1a"
+          },
+          "belt": {
+            "color": "#3e2a1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "nghia_quan_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b5a2b",
+            "trim": "#5a3a1a",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a3a1a"
+          },
+          "belt": {
+            "color": "#3e2a1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "nghia_quan_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b5a2b",
+            "trim": "#5a3a1a",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a3a1a"
+          },
+          "belt": {
+            "color": "#3e2a1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "nghia_quan_4",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b5a2b",
+            "trim": "#5a3a1a",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a3a1a"
+          },
+          "belt": {
+            "color": "#3e2a1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 1860,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "nghia_quan_5",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "chui",
+            "color": "#8b5a2b",
+            "trim": "#5a3a1a",
+            "length": "waist",
+            "sleeves": "none",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "loincloth",
+            "color": "#5a3a1a"
+          },
+          "belt": {
+            "color": "#3e2a1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "headwear": "feather_band",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thick"
+        }
+      },
+      "x": 2180,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "trung_trac",
+      "at": 0,
+      "do": "heroic",
+      "face": "determined"
+    },
+    {
+      "actor": "trung_trac",
+      "at": 4.57,
+      "do": "raise",
+      "face": "shout"
+    },
+    {
+      "actor": "trung_nhi",
+      "at": 0,
+      "do": "raise",
+      "face": "shout"
+    },
+    {
+      "actor": "trung_nhi",
+      "at": 4.57,
+      "do": "cheer",
+      "face": "shout"
+    },
+    {
+      "actor": "linh_han",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "nghia_quan_1",
+      "at": 0,
+      "do": "raise"
+    },
+    {
+      "actor": "nghia_quan_1",
+      "at": 4.57,
+      "do": "cheer"
+    },
+    {
+      "actor": "nghia_quan_2",
+      "at": 0,
+      "do": "raise"
+    },
+    {
+      "actor": "nghia_quan_2",
+      "at": 4.92,
+      "do": "cheer"
+    },
+    {
+      "actor": "nghia_quan_3",
+      "at": 0,
+      "do": "raise"
+    },
+    {
+      "actor": "nghia_quan_3",
+      "at": 5.27,
+      "do": "cheer"
+    },
+    {
+      "actor": "nghia_quan_4",
+      "at": 0,
+      "do": "raise"
+    },
+    {
+      "actor": "nghia_quan_4",
+      "at": 5.62,
+      "do": "cheer"
+    },
+    {
+      "actor": "nghia_quan_5",
+      "at": 0,
+      "do": "raise"
+    },
+    {
+      "actor": "nghia_quan_5",
+      "at": 5.97,
+      "do": "cheer"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 9.133333333333333,
+      "scale": 2.4
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "trung_trac",
+        "trung_nhi",
+        "linh_han"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 4.57,
+      "type": "full",
+      "on": [
+        "trung_trac"
+      ],
+      "push": 0.06
+    }
+  ]
+}

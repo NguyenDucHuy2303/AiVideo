@@ -75,7 +75,7 @@ export async function prepareEnglish(slug: string, log: (s: string) => void = co
   const script = await fs.readFile(path.join(dir, "script.en.txt"), "utf8");
   await fs.writeFile(path.join(en, "script.txt"), script);
   const lines = script.trim().split("\n").slice(1, test ? test.scenes + 1 : undefined);
-  await fs.writeFile(path.join(en, "storyboard.json"), JSON.stringify({ title: plan.title, kind: "story", scenes: lines.map((narration) => ({ narration, chapter: plan.title, onScreen: {}, visual: { description: "ancient Vietnam", mood: "calm" }, camera: "ken_burns", transition: "cut" })) }, null, 2));
+  await fs.writeFile(path.join(en, "storyboard.json"), JSON.stringify({ title: plan.title, kind: "story", scenes: lines.map((narration) => ({ narration, chapter: plan.title.slice(0, 80), onScreen: {}, visual: { description: "ancient Vietnam", mood: "calm" }, camera: "ken_burns", transition: "cut" })) }, null, 2));
   // The same actors speak, under their English names.
   const cast: Designed[] = JSON.parse(await fs.readFile(path.join(dir, "cast.json"), "utf8"));
   const speakers: Record<string, string[]> = {};

@@ -25,7 +25,7 @@ export interface Thing {
 }
 export type Do = "enter" | "exit" | "walk_to" | "carry" | "put" | "give" | "crouch" | "stand" | "open" | "pop_out" | "shake" | "appear" | "vanish"
   | "fall" | "get_up" | "jump" | "cheer" | "wave" | "point" | "worry" | "laugh" | "talk" | "idle" | "run_around" | "look"
-  | "clap" | "dance" | "kick" | "hop" | "peek" | "knock" | "hug" | "pick_up" | "nod" | "search";
+  | "clap" | "dance" | "kick" | "hop" | "peek" | "knock" | "hug" | "pick_up" | "nod" | "search" | "startle" | "run_off";
 /** One thing that happens, as a line of the scene starts (line 0: the scene's start; `after`: as it ends). */
 export interface Beat { line: number; after?: boolean; do: Do; who?: string; what?: string; to?: string; from?: "left" | "right"; face?: string }
 export interface EpisodeScene { place: string; time?: string; say: string; beats: Beat[] }
@@ -37,16 +37,23 @@ export interface Mark { at: number; end: number; pause?: boolean; who?: string }
 export const SLOT: Record<string, number> = { beo: -420, boi: -260, hung: 300, huy: 500 };
 export const SPOT = { left: -90, center: 60, right: 190 };
 const OFF = 760; // just outside the frame: someone coming in is seen at once
-const WALK = 420; // rig units a second
+// Walking speed (rig units a second) by leg length (18/11/2026: the feet now stay planted, so the
+// pace sets the steps): the men stride, the children patter a little faster than their legs.
+const LEG: Record<string, number> = { huy: 124, hung: 124, boi: 90, beo: 71 };
+const walkSpeed = (who: string) => Math.max(260, 2.6 * (LEG[who] ?? 110));
+/** Seconds a one-off move takes: the same one's next beat waits for it (a laugh no longer cuts a pick-up off). */
+const TAKES: Partial<Record<Do, number>> = { pick_up: 0.9, hug: 0.6, put: 0.7, give: 0.7, kick: 0.7, jump: 0.9, get_up: 1.05, startle: 0.6 };
+/** Lines said like this make the others jump (a scream, a shout). */
+const LOUD = new Set(["shout", "shock"]);
 const FACE: Partial<Record<Do, string>> = { cheer: "joy", laugh: "laugh", worry: "worried", fall: "surprised", jump: "surprised", wave: "happy", point: "happy", talk: "happy" };
 
 /** The parts of a scene's lines in order (as narrate.ts reads them): who says it, the words. */
-export function partsOf(say: string): { who?: string; text: string; pause?: number }[] {
-  return splitSpeakers(say).flatMap((seg): { who?: string; text: string; pause?: number }[] => seg.who ? [{ who: seg.who, text: seg.text }]
+export function partsOf(say: string): { who?: string; text: string; pause?: number; mood?: string }[] {
+  return splitSpeakers(say).flatMap((seg): { who?: string; text: string; pause?: number; mood?: string }[] => seg.who ? [{ who: seg.who, text: seg.text, ...(seg.mood ? { mood: seg.mood } : {}) }]
     : splitPauses(seg.text).map((x) => (typeof x === "number" ? { text: "", pause: x } : { text: x })));
 }
 
-interface State { x: Record<string, number>; facing: Record<string, number>; gone: Set<string>; placeOf: string; carried: Record<string, string> }
+interface State { x: Record<string, number>; facing: Record<string, number>; gone: Set<string>; placeOf: string; carried: Record<string, string>; down?: Set<string> }
 
 /** One scene of the episode as the player's script (the backdrop is added by the caller). */
 export function stageScene(ep: Episode, i: number, marks: Mark[], duration: number, st: State): Record<string, unknown> {
@@ -54,8 +61,9 @@ export function stageScene(ep: Episode, i: number, marks: Mark[], duration: numb
   if (sc.place !== st.placeOf) {
     // a new place: everyone back at their spot, things where the story puts them
     for (const k of KIDS) { st.x[k] = SLOT[k]!; st.facing[k] = SLOT[k]! < 0 ? 1 : -1; }
-    st.placeOf = sc.place; st.carried = {};
+    st.placeOf = sc.place; st.carried = {}; st.down = new Set();
   }
+  const down = (st.down ??= new Set());
   const things = new Map(ep.things.map((t) => [t.id, t]));
   const tOf = (b: Beat) => b.line <= 0 ? 0.15 : (b.after ? marks[b.line - 1]?.end : marks[b.line - 1]?.at) ?? 0.15;
   const endOf = (b: Beat) => b.line <= 0 ? Math.min(duration, 1.5) : marks[b.line - 1]?.end ?? duration;
@@ -90,9 +98,9 @@ export function stageScene(ep: Episode, i: number, marks: Mark[], duration: numb
     return tx + ((st.x[who] ?? 0) < tx ? -125 : 125);
   };
   const walk = (who: string, to: number, at: number, carrying = false) => {
-    const from = st.x[who] ?? 0, dur = Math.max(0.5, Math.abs(to - from) / WALK), facing = to >= from ? 1 : -1;
+    const from = st.x[who] ?? 0, dur = Math.max(0.5, Math.abs(to - from) / walkSpeed(who)), facing = to >= from ? 1 : -1;
     actions.push({ actor: who, at, do: carrying ? "carry_front" : "walk", set: { facing }, move: { to }, dur });
-    st.x[who] = to; st.facing[who] = facing;
+    st.x[who] = to; st.facing[who] = facing; busy[who] = at + dur;
     return at + dur;
   };
   const settle = (who: string, at: number, face = "happy") => {
@@ -102,10 +110,27 @@ export function stageScene(ep: Episode, i: number, marks: Mark[], duration: numb
     st.facing[who] = facing;
   };
 
-  for (const k of KIDS) actions.push({ actor: k, at: 0, do: "idle", face: "happy" });
+  const fx: Record<string, unknown>[] = [];
+  // Until when each one is still walking: what they do next waits till they get there (they
+  // bent to pick a thing up while still sliding towards it, 18/11/2026).
+  const busy: Record<string, number> = {};
+  // The sounds of what happens (soundtrack.ts, synthesized): a boing, a thud, a slide whistle…
+  const sounds: { type: string; at: number; gain?: number; dur?: number }[] = [];
+  const sound = (type: string, at: number, gain?: number, dur?: number) => sounds.push({ type, at: Math.round(at * 100) / 100, ...(gain !== undefined ? { gain } : {}), ...(dur !== undefined ? { dur: Math.round(dur * 100) / 100 } : {}) });
   const beats = [...sc.beats].sort((a, b) => tOf(a) - tOf(b));
+  // Who fell in the scene before is still on the floor as this one starts (18/11/2026: they
+  // stood up for a few frames and dropped again): lying there, then up (as written, or at once).
+  for (const k of KIDS) {
+    if (!down.has(k)) { actions.push({ actor: k, at: 0, do: "idle", face: "happy" }); continue; }
+    actions.push({ actor: k, at: -10, do: "fall", face: "worried" });
+    if (!beats.some((b) => b.do === "get_up" && b.who && (ID_OF[b.who] ?? b.who) === k)) {
+      actions.push({ actor: k, at: 0.3, do: "get_up", face: "worried" }, { actor: k, at: 1.35, do: "idle", face: "worried" });
+      down.delete(k);
+    }
+  }
   for (const b of beats) {
-    const at = tOf(b), who = b.who ? ID_OF[b.who] ?? b.who : undefined, what = b.what;
+    const who = b.who ? ID_OF[b.who] ?? b.who : undefined, what = b.what;
+    const at = who && busy[who] && b.do !== "walk_to" && b.do !== "exit" ? Math.min(Math.max(tOf(b), busy[who]!), Math.max(tOf(b), duration - 0.4)) : tOf(b);
     switch (b.do) {
       case "enter": {
         if (!who) break;
@@ -118,6 +143,17 @@ export function stageScene(ep: Episode, i: number, marks: Mark[], duration: numb
         break;
       }
       case "exit": { if (who) walk(who, (st.x[who] ?? 0) < 0 ? -OFF - 200 : OFF + 200, at); break; }
+      case "run_off": {
+        // a cartoon dash: a dip to spring, then off at speed, stretched, kicking up dust
+        if (!who) break;
+        const from = st.x[who] ?? 0, to = from < 0 ? -OFF - 300 : OFF + 300, facing = to > from ? 1 : -1;
+        const dur = Math.max(0.45, Math.abs(to - from) / (walkSpeed(who) * 3.2));
+        actions.push({ actor: who, at, do: "crouch", set: { facing }, face: b.face ?? "scared" }, { actor: who, at: at + 0.18, do: "dash", move: { to, ease: "in" }, dur, face: b.face ?? "scared" });
+        fx.push({ fx: "dust", on: who, at: Math.round((at + 0.2) * 100) / 100, dur: Math.round(Math.min(dur, 1.2) * 100) / 100, rate: 14 });
+        sound("zip", at + 0.18, 0.8);
+        st.x[who] = to; st.facing[who] = facing; busy[who] = at + 0.18 + dur;
+        break;
+      }
       case "walk_to": { if (!who || !b.to) break; const carrying = Object.values(st.carried).includes(who); const end = walk(who, b.to === "home" ? SLOT[who]! : beside(who, ID_OF[b.to] ?? b.to), at, carrying); if (!carrying) settle(who, end); break; }
       case "carry": {
         if (!who || !what) break;
@@ -142,11 +178,13 @@ export function stageScene(ep: Episode, i: number, marks: Mark[], duration: numb
         if (!what) break;
         // it opens and stays (a box may give again); "vanish" takes it away
         ((item(what).pops ??= []) as number[]).push(at);
+        sound("pop", at);
         break;
       }
       case "pop_out": {
         // an animal (or a thing) jumps out of another at its place, lands in front of the group
         if (!what) break;
+        sound("boing", at, 0.7);
         const fromX = b.to && st.x[b.to] !== undefined ? st.x[b.to]! : thingX(what), land = fromX > 0 ? fromX - 260 : fromX + 260;
         if (things.get(what)?.kind === "animal") {
           const a = animal(what); a.x = fromX; a.opacity = 0;
@@ -161,11 +199,12 @@ export function stageScene(ep: Episode, i: number, marks: Mark[], duration: numb
         st.x[what] = land;
         break;
       }
-      case "shake": { if (what) ((item(what).shakes ??= []) as unknown[]).push({ at, dur: Math.max(0.6, endOf(b) - at), amp: 12, hop: 12 }); break; }
+      case "shake": { if (what) { const dur = Math.max(0.6, endOf(b) - at); ((item(what).shakes ??= []) as unknown[]).push({ at, dur, amp: 12, hop: 12 }); sound("rattle", at, 0.5, Math.min(2, dur)); } break; }
       case "appear": {
         if (!what) break;
         if (things.get(what)?.kind === "animal") { const a = animal(what); a.opacity = 0; actions.push({ actor: what, at, set: { opacity: 1 }, dur: 0.3 }, { actor: what, at, do: "stand" }); }
         else item(what).from = at;
+        sound("pop", at, 0.6);
         if (b.to) st.x[what] = SPOT[b.to as keyof typeof SPOT] ?? st.x[what];
         break;
       }
@@ -189,6 +228,7 @@ export function stageScene(ep: Episode, i: number, marks: Mark[], duration: numb
         // a kick sends the thing (a ball) flying off in front, bouncing to a stop
         if (!who) break;
         actions.push({ actor: who, at, do: "kick", face: b.face ?? "determined" }, { actor: who, at: at + 0.7, do: "idle", face: "happy" });
+        sound("thud", at + 0.25, 0.5);
         if (what) {
           const it = item(what), dir = st.facing[who] ?? 1, x0 = (st.x[who] ?? 0) + dir * 80, x1 = x0 + dir * 420;
           it.x = x0; it.moves = [...((it.moves as unknown[]) ?? []), { at: at + 0.25, dur: 0.7, to: [x0 + dir * 300, 0], arc: 260 }, { at: at + 0.95, dur: 0.45, to: [x1, 0], arc: 70 }];
@@ -196,16 +236,61 @@ export function stageScene(ep: Episode, i: number, marks: Mark[], duration: numb
         }
         break;
       }
-      case "fall": if (who) actions.push({ actor: who, at, do: "fall", face: "surprised" }); break;
-      case "get_up": if (who) actions.push({ actor: who, at, do: "sit_up", face: b.face ?? "laugh" }, { actor: who, at: at + 0.9, do: "idle", face: b.face ?? "laugh" }); break;
+      case "fall": {
+        // the floor is hit about 0.6 s in: a ring of dust and a jolt there
+        if (!who) break;
+        actions.push({ actor: who, at, do: "fall", face: b.face ?? "surprised" });
+        fx.push({ fx: "impact", on: who, at: Math.round((at + 0.6) * 100) / 100, power: 0.35 });
+        sound("slide_down", at + 0.05, 0.45); sound("thud", at + 0.6);
+        down.add(who);
+        break;
+      }
+      case "get_up": {
+        if (!who) break;
+        const t0 = b.line <= 0 && down.has(who) ? 0 : at;
+        actions.push({ actor: who, at: t0, do: "get_up", face: b.face ?? "worried" }, { actor: who, at: t0 + 1.05, do: "idle", face: b.face ?? "happy" });
+        down.delete(who);
+        break;
+      }
+      case "jump": {
+        // a real jump (dip, up, land) and back to standing, not a pose held in the air
+        if (!who) break;
+        actions.push({ actor: who, at, do: "jump", face: b.face ?? "surprised" }, { actor: who, at: at + 0.9, do: "idle", face: b.face ?? "surprised" });
+        sound("slide_up", at + 0.05, 0.4); sound("thud", at + 0.62, 0.35);
+        break;
+      }
+      case "startle": {
+        if (!who) break;
+        actions.push({ actor: who, at, do: "startle", face: b.face ?? "surprised" }, { actor: who, at: at + 0.6, do: "idle", face: b.face ?? "surprised" });
+        break;
+      }
       case "look": if (who && b.to) actions.push({ actor: who, at, do: "idle", lookAt: ID_OF[b.to] ?? b.to, face: b.face ?? "happy" }); break;
-      default: if (who) actions.push({ actor: who, at, do: b.do === "laugh" ? "cheer" : b.do === "jump" ? "leap" : b.do, face: b.face ?? FACE[b.do] ?? "happy", ...(b.do === "jump" ? { dur: 0.5 } : {}) });
+      default: {
+        if (!who) break;
+        actions.push({ actor: who, at, do: b.do === "laugh" ? "cheer" : b.do, face: b.face ?? FACE[b.do] ?? "happy" });
+        if (b.do === "knock") sound("knock", at); else if (b.do === "clap") sound("clap", at, 0.6); else if (b.do === "hop") sound("boing", at, 0.3);
+      }
     }
+    if (who && TAKES[b.do]) busy[who] = Math.max(busy[who] ?? 0, at + TAKES[b.do]!);
   }
+  // A scream or a shout makes the others jump (unless they are busy with something of their own
+  // just then, gone, or on the floor): the room reacts, it does not stand there.
+  partsOf(sc.say).forEach((p, k) => {
+    const m = marks[k];
+    if (!m || !p.who || !LOUD.has(p.mood ?? "")) return;
+    const speaker = ID_OF[p.who] ?? p.who, t0 = m.at + 0.12;
+    for (const id of KIDS) {
+      if (id === speaker || down.has(id) || Math.abs(st.x[id] ?? 0) >= OFF || (busy[id] ?? 0) > t0) continue;
+      if (actions.some((a) => a.actor === id && (a.at as number) > 0.01 && Math.abs((a.at as number) - t0) < 0.8)) continue;
+      actions.push({ actor: id, at: t0, do: "startle", face: "surprised" }, { actor: id, at: t0 + 0.6, do: "idle", face: "surprised" });
+    }
+  });
+  // In time order (the player plays the last one begun; reactions were added at the end).
+  actions.sort((a, b) => (a.at as number) - (b.at as number));
   // Things that stay from scenes before (not opened, not gone) are where they were left.
   for (const t of ep.things) {
     if (st.gone.has(t.id) && !items.has(t.id) && !animals.has(t.id)) continue;
-    if (items.has(t.id) || animals.has(t.id) || st.x[t.id] === undefined) continue;
+    if (items.has(t.id) || animals.has(t.id) || (st.x[t.id] === undefined && !st.carried[t.id])) continue;
     if (t.kind === "animal") animal(t.id); else item(t.id);
   }
   // The English words: a card over the thing as its word is first said in the scene.
@@ -230,10 +315,13 @@ export function stageScene(ep: Episode, i: number, marks: Mark[], duration: numb
   ];
   // where everyone ends up, for the next scene
   for (const a of animals.values()) if (st.x[a.id as string] === undefined) st.x[a.id as string] = a.x as number;
+  // things seen here stay for the next scene (one that appeared without a place was lost:
+  // the toy cockroach picked up in one scene was gone from the hands in the next)
+  for (const it of items.values()) if (!String(it.id).startsWith("word-") && st.x[it.id as string] === undefined && !st.gone.has(it.id as string)) st.x[it.id as string] = it.x as number;
   return {
     castFile: "cast.json", duration: Math.round(duration * 100) / 100, time: sc.time ?? "day", place: ep.places[sc.place] ?? sc.place,
     set: { name: "plain" }, mood: "playful", speakerShots: false, cast, actions, items: [...items.values()],
-    ...(countdowns.length ? { overlay: { countdowns } } : {}), shots,
+    ...(countdowns.length ? { overlay: { countdowns } } : {}), ...(fx.length ? { fx } : {}), ...(sounds.length ? { audio: { sfx: sounds.sort((a, b) => a.at - b.at) } } : {}), shots,
   };
 }
 

@@ -1,0 +1,227 @@
+{
+  "narration": "Ngày xưa, ở một xóm nhỏ ven đê, sau lũy tre xanh, có một nếp nhà tranh vách đất. Dưới gầm chạn bát, sau mấy chum gạo, có cả một họ nhà chuột sinh sống. Chuột Út (vui vẻ): \"Mẹ ơi, hôm nay mình ăn gì ạ?\" Chuột Mẹ (cười): \"Lát nữa mẹ con mình ra sân nhặt mấy hạt thóc rơi nhé.\"",
+  "plan": {
+    "set": "village",
+    "time": "dusk",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "chuot_ut",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "none",
+        "thenFace": "happy"
+      },
+      {
+        "id": "chuot_me",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "laugh",
+        "then": "none",
+        "thenFace": "happy"
+      },
+      {
+        "id": "chuot_cu",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "chuot_nhat",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "rice",
+      "bowls"
+    ],
+    "shot": "medium",
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 4,
+      "act": "idle",
+      "then": "none"
+    }
+  },
+  "era": "co_tich_lang_que",
+  "duration": 15.666666666666666,
+  "time": "dusk",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "rice",
+        "x": 300
+      },
+      {
+        "type": "bowls",
+        "x": 520
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "chuot_ut",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#d6b98f"
+      },
+      "x": -520,
+      "scale": 0.6,
+      "facing": 1
+    },
+    {
+      "id": "chuot_me",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#9b7452"
+      },
+      "x": 520,
+      "scale": 0.9,
+      "facing": -1
+    },
+    {
+      "id": "chuot_cu",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#b9b9c2"
+      },
+      "x": -520,
+      "scale": 0.95,
+      "facing": 1
+    },
+    {
+      "id": "chuot_nhat",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#cdb08a"
+      },
+      "x": 520,
+      "scale": 0.7,
+      "facing": -1
+    },
+    {
+      "id": "ho_nha_chuot_1",
+      "type": "human",
+      "look": {
+        "species": "mouse",
+        "color": "#9a8b7c"
+      },
+      "x": 900,
+      "scale": 0.8075,
+      "facing": -1
+    },
+    {
+      "id": "ho_nha_chuot_2",
+      "type": "human",
+      "look": {
+        "species": "mouse",
+        "color": "#9a8b7c"
+      },
+      "x": 1220,
+      "scale": 0.867,
+      "facing": -1
+    },
+    {
+      "id": "ho_nha_chuot_3",
+      "type": "human",
+      "look": {
+        "species": "mouse",
+        "color": "#9a8b7c"
+      },
+      "x": 1540,
+      "scale": 0.8075,
+      "facing": -1
+    },
+    {
+      "id": "ho_nha_chuot_4",
+      "type": "human",
+      "look": {
+        "species": "mouse",
+        "color": "#9a8b7c"
+      },
+      "x": 1860,
+      "scale": 0.867,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "chuot_ut",
+      "at": 0,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "chuot_me",
+      "at": 0,
+      "do": "talk",
+      "face": "laugh",
+      "talk": 1
+    },
+    {
+      "actor": "chuot_cu",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "chuot_nhat",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "ho_nha_chuot_1",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "ho_nha_chuot_2",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "ho_nha_chuot_3",
+      "at": 0,
+      "do": "idle"
+    },
+    {
+      "actor": "ho_nha_chuot_4",
+      "at": 0,
+      "do": "idle"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "chuot_ut",
+        "chuot_me",
+        "chuot_cu",
+        "chuot_nhat"
+      ],
+      "push": 0.06
+    }
+  ]
+}

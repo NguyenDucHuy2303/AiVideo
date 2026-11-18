@@ -1,0 +1,23 @@
+{
+  "engine": "kokoro",
+  "voice": "am_michael",
+  "speed": 0.92,
+  "imageGen": "off",
+  "onlineImages": false,
+  "profiles": [
+    "16x9"
+  ],
+  "channel": "Ask Huy",
+  "voices": {
+    "Huy": "bm_lewis",
+    "Hùng": "am_puck",
+    "Bối": {
+      "voice": "af_heart",
+      "pitch": 3
+    },
+    "Beo": {
+      "voice": "af_bella",
+      "pitch": 3
+    }
+  }
+}

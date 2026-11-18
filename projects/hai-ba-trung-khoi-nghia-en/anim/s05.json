@@ -1,0 +1,214 @@
+{
+  "narration": "Sáng nào trên bãi đất bên sông, hai chị em cũng chăm chỉ luyện võ. Tiếng giáo gỗ chạm nhau vang lên cộp cộp. Trưng Nhị (cười): \"Chị đỡ được đường giáo này của em không?\" Trưng Trắc (cười): \"Em nhanh lắm, nhưng chị còn nhanh hơn em đấy!\"",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "trung_nhi",
+        "place": "left",
+        "enter": "none",
+        "act": "swing",
+        "face": "laugh",
+        "then": "swing",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "trung_trac",
+        "place": "right",
+        "enter": "none",
+        "act": "swing",
+        "face": "laugh",
+        "then": "swing",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stumps"
+    ],
+    "shot": "full"
+  },
+  "era": "bac_thuoc",
+  "duration": 11.666666666666666,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "stumps",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "trung_nhi",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "slim",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#3f7a3f",
+            "trim": "#7a5a30",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#6b4a2a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#8b5a2b",
+            "ends": true
+          },
+          "inner": {
+            "color": "#c8a060"
+          }
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a1a"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "eyeScale": 1.12
+        },
+        "prop": {
+          "type": "spear"
+        }
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "trung_trac",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#a8452a",
+            "trim": "#d4a017",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1f2f55",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#e8a020",
+            "ends": true
+          },
+          "inner": {
+            "color": "#e0b040"
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "khan_van",
+        "earrings": true,
+        "bracelets": true,
+        "cape": false,
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thick",
+          "eyeScale": 1.05
+        },
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "sword"
+          }
+        ]
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "trung_nhi",
+      "at": 0,
+      "do": "swing",
+      "face": "laugh"
+    },
+    {
+      "actor": "trung_nhi",
+      "at": 5.83,
+      "do": "swing",
+      "face": "laugh"
+    },
+    {
+      "actor": "trung_trac",
+      "at": 0,
+      "do": "swing",
+      "face": "laugh"
+    },
+    {
+      "actor": "trung_trac",
+      "at": 5.83,
+      "do": "swing",
+      "face": "happy"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "trung_nhi",
+        "trung_trac"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 4.2,
+      "type": "close",
+      "on": [
+        "trung_nhi"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 7.93,
+      "type": "close",
+      "on": [
+        "trung_trac"
+      ],
+      "push": 0.05
+    }
+  ]
+}

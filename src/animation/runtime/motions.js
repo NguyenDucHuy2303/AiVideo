@@ -15,6 +15,18 @@
   const RUN_THIGH = [[0, 42], [0.42, -38], [0.6, -20], [0.85, 50], [1, 42]];
   const RUN_KNEE = [[0, -10], [0.3, -14], [0.55, -105], [0.8, -60], [1, -10]];
 
+  /**
+   * Where a walk or run is in its cycle (18/11/2026): from the ground covered, so the feet stay
+   * planted (when it went by the clock the feet skated while a move eased in and out); a cycle
+   * is `len` leg-lengths. Walking on the spot (no move) or after the move ends keeps the clock.
+   */
+  const phase = (τ, c, len, period) => {
+    const tr = c.travel;
+    return tr ? tr.d / (len * (c.B.thigh + c.B.shin)) + tr.after / period : (τ * (c.params.speed || 1)) / period;
+  };
+  /** Lying on the back after a fall, breathing: where fall ends and get_up starts. */
+  const fallen = (c, τ) => ({ rot: -90, dy: c.B.thigh + c.B.shin * 0.7, lean: 0, headTilt: -6, breath: 0.02 * sin(τ * 3), legF: [62, -34], legB: [48, -42], armF: [128, 30], armB: [108, 34] });
+
   const human = {
     idle: (τ, c) => ({
       breath: 0.015 * sin(τ * 4), lean: 1.5 * sin(τ * 1.3), headTilt: 0,
@@ -22,7 +34,7 @@
     }),
     still: (τ, c) => ({ breath: 0.012 * sin(τ * 4), legF: [3, -2], legB: [-3, -2], armF: [6, 12], armB: [-4, 10], face: c.face || "neutral" }),
     walk: (τ, c) => {
-      const u = (τ * (c.params.speed || 1)) / 0.9, ph = TAU * u;
+      const u = phase(τ, c, 1.7, 0.9), ph = TAU * u;
       return {
         lean: 4, headTilt: 1, dy: 2 + 2 * cos(2 * ph),
         legF: [cycle(WALK_THIGH, u), cycle(WALK_KNEE, u)], legB: [cycle(WALK_THIGH, u + 0.5), cycle(WALK_KNEE, u + 0.5)],
@@ -30,7 +42,7 @@
       };
     },
     run: (τ, c) => {
-      const u = (τ * (c.params.speed || 1)) / 0.55, ph = TAU * u;
+      const u = phase(τ, c, 3.4, 0.55), ph = TAU * u;
       return {
         lean: 14, headTilt: -4, dy: 6 + 6 * cos(2 * ph),
         legF: [cycle(RUN_THIGH, u), cycle(RUN_KNEE, u)], legB: [cycle(RUN_THIGH, u + 0.5), cycle(RUN_KNEE, u + 0.5)],
@@ -84,7 +96,44 @@
       const u = τ / (c.params.period || 0.6), k = cycle([[0, 0], [0.55, 1], [0.7, -0.15], [1, 0]], u), r = human.ride(τ, c);
       return { ...r, armF: [lerp(60, 200, k), lerp(10, 30, k)], lean: r.lean + 10 * (1 - k), face: "shout", talk: 0.3 };
     },
-    fall: (τ, c) => { const k = EASE.out(τ / 0.55); return { rot: -84 * k, dy: (c.B.thigh + c.B.shin) * 0.8 * k, legF: [30 * k, -20], legB: [10, -10], armF: [140 - 40 * k, 20], armB: [160 - 60 * k, 20], face: "surprised" }; },
+    /**
+     * Falling on the back (18/11/2026, smoother): a stagger with the arms flailing, the topple
+     * speeding up as things fall (ease in, not out), a small bounce off the floor, then lying
+     * there breathing in the pose get_up starts from.
+     */
+    fall: (τ, c) => {
+      const st = bump(τ, 0, 0.32), k = EASE.in(seg(τ, 0.14, 0.6)), b = bump(τ, 0.6, 0.8);
+      const start = { rot: 0, dy: 0, lean: -14 * st, headTilt: -10 * st, legF: [24 * st, -14 * st], legB: [-8, -6], armF: [120 + 30 * st + 18 * sin(τ * 22) * st, 26], armB: [100 + 40 * st - 18 * sin(τ * 19) * st, 34] };
+      const p = WA.core.blend(start, fallen(c, τ), k);
+      return { ...p, rot: p.rot + 7 * b, dy: p.dy - 12 * b, face: c.face || "surprised" };
+    },
+    /**
+     * Up from the floor after a fall: sit up, then push up onto the feet and stand (lying →
+     * sitting → standing, one move, no pose jumping between them).
+     */
+    get_up: (τ, c) => {
+      const k1 = EASE.inOut(seg(τ, 0, 0.5)), k2 = EASE.inOut(seg(τ, 0.42, 1.05)), push = bump(τ, 0.42, 1.05);
+      const sat = WA.core.blend(fallen(c, τ), { ...human.sit(1, c), rot: 0 }, k1);
+      const p = WA.core.blend(sat, human.idle(τ, c), k2);
+      return { ...p, lean: (p.lean || 0) + 24 * push, armF: [p.armF[0] + 40 * push, p.armF[1] + 20 * push], face: c.face || "worried" };
+    },
+    /**
+     * A startled jump on the spot: a quick dip for the spring, up on a gravity arc with the
+     * knees tucked and the arms thrown up, a squash on landing, back to standing (in ~0.9 s;
+     * it was a pose held in the air: the character hung there until the next action).
+     */
+    jump: (τ, c) => {
+      const L = c.B.thigh + c.B.shin, base = human.idle(τ, c);
+      const dip = bump(τ, 0, 0.16), air = seg(τ, 0.12, 0.62), up = air > 0 && air < 1 ? 4 * air * (1 - air) : 0;
+      const tuck = bump(τ, 0.12, 0.62), land = bump(τ, 0.6, 0.84), arms = bump(τ, 0.08, 0.9);
+      return {
+        ...base, dy: 16 * dip - L * 0.75 * up + 16 * land, sy: 1 - 0.05 * dip + 0.06 * tuck * (1 - up) - 0.08 * land, lean: base.lean - 6 * tuck + 6 * land,
+        legF: [base.legF[0] + 34 * dip + 64 * tuck + 30 * land, base.legF[1] - 60 * dip - 104 * tuck - 56 * land],
+        legB: [base.legB[0] + 20 * dip + 50 * tuck + 20 * land, base.legB[1] - 56 * dip - 96 * tuck - 50 * land],
+        armF: [base.armF[0] + 150 * arms, base.armF[1] + 10 * arms], armB: [base.armB[0] + 136 * arms, base.armB[1] + 20 * arms],
+        headTilt: -8 * tuck, face: c.face || "scared",
+      };
+    },
     /** Lying on the back, as the baby Gióng who would not speak. */
     lie: (τ, c) => ({ rot: -90, dy: c.B.thigh + c.B.shin * 0.7, legF: [70 + 14 * sin(τ * 3), -30 - 20 * sin(τ * 3)], legB: [60 - 10 * sin(τ * 3), -40], armF: [130 + 15 * sin(τ * 2.3), 30], armB: [110 - 10 * sin(τ * 2.3), 30], headTilt: -6, face: c.face || "neutral" }),
     fly: (τ, c) => ({ lean: -4, legF: [-6, -12], legB: [-14, -18], armF: [172 + 4 * sin(τ * 3), 0], armB: [164, 4], headTilt: -14, capeWave: 1.3, dy: 0, face: c.face || "proud" }),
@@ -105,6 +154,17 @@
     charge: (τ, c) => ({ ...human.run(τ, c), armF: [80, -10], face: c.face || "shout", talk: 0.5 }),
     /** Holding something up with both hands (the iron armour, a basket of rice). */
     carry: (τ, c) => ({ ...human.walk(τ, c), armF: [150, 30], armB: [150, 30], lean: -2, face: c.face || "happy" }),
+    /** Giật mình: a jolt up and back, the arms flung out, then settling (someone screamed). */
+    startle: (τ, c) => {
+      const base = human.idle(τ, c), k = bump(τ, 0, 0.32), hold = 1 - smooth(seg(τ, 0.3, 0.6));
+      return {
+        ...base, dy: -16 * k, sy: 1 + 0.08 * k, lean: base.lean - 10 * k * 1.5 - 4 * hold, headTilt: -12 * k,
+        armF: [base.armF[0] + 80 * Math.max(k, hold * 0.6), base.armF[1] + 40 * k], armB: [base.armB[0] + 70 * Math.max(k, hold * 0.6), base.armB[1] + 30 * k],
+        face: c.face || "surprised",
+      };
+    },
+    /** A cartoon dash: running flat out, leaning far, stretched along the way (a smear). */
+    dash: (τ, c) => ({ ...human.run(τ, c), lean: 26, headTilt: -8, sx: 1.22, sy: 0.93, face: c.face || "scared" }),
     // ── Everyday actions for the stories (English lessons, 16/11/2026) ──
     /** Clapping: both hands meet in front of the chest, quick. */
     clap: (τ, c) => { const k = Math.abs(sin(τ * 9)); return { ...human.idle(τ, c), armF: [70, 70 + 18 * k], armB: [62, 74 + 18 * k], dy: -2 * k, face: c.face || "joy" }; },

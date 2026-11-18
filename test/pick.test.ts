@@ -89,5 +89,16 @@ test("a line keeps its videos ready days ahead: it approves more while behind, t
   assert.equal(pending(j("done", { published: { long: out } }), now), false, "already out on YouTube");
   assert.equal(pending(j("done", { published: { long: { ...out, publishAt: "2026-11-19T12:00:00Z" } } }), now), true, "scheduled for later");
   assert.equal(pending(j("failed"), now), false);
+  assert.equal(pending(j("done", { publishHold: true }), now), false, "held back: not coming out, does not stop the line");
   assert.equal(needAhead({ id: "b", name: "B", perDay: 1, perWeek: 2 }, [], now, 3), 2, "two a week: two ready");
+});
+
+test("a video with its YouTube link is not made again", async () => {
+  const { onYouTube } = await import("../src/studio/jobs.ts");
+  const base = { slug: "x", topic: "x", status: "done", notes: [], history: [] } as unknown as Job;
+  const rec = { videoId: "v", url: "https://youtu.be/v", publishAt: "t", channel: "c", at: "t" };
+  assert.equal(onYouTube({ ...base, kind: "qa" }), false);
+  assert.equal(onYouTube({ ...base, kind: "qa", published: { long: rec } }), true);
+  assert.equal(onYouTube({ ...base, kind: "qa", published: { shorts: [rec] } }), false, "only its Shorts are up: the film is not");
+  assert.equal(onYouTube({ ...base, kind: "fact", published: { shorts: [rec] } }), true, "a Did-you-know Short is its own video");
 });

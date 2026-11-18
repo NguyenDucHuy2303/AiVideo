@@ -12,11 +12,51 @@
       "at": "2026-11-16T07:54:00.619Z",
       "status": "review",
       "info": "1 vấn đề còn lại: The Short (scenes 1, 13, 17, 23, 24, 32) has 285 words: it needs about 120–160."
+    },
+    {
+      "at": "2026-11-17T10:01:02.612Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (bản dài của Short đã làm)"
+    },
+    {
+      "at": "2026-11-18T00:36:16.767Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-18T00:36:17.082Z",
+      "status": "failed",
+      "info": "/home/huynguyen/.nvm/versions/node/v22.23.3/bin/node exited with 1"
+    },
+    {
+      "at": "2026-11-18T06:40:55.846Z",
+      "status": "approved",
+      "info": "làm tiếp: lỗi lúc làm giọng sáng 18/11 do code đang sửa dở, kịch bản giữ nguyên"
+    },
+    {
+      "at": "2026-11-18T06:40:59.315Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-18T06:40:59.524Z",
+      "status": "failed",
+      "info": "/home/huynguyen/.nvm/versions/node/v22.23.3/bin/node exited with 1"
+    },
+    {
+      "at": "2026-11-18T06:41:47.628Z",
+      "status": "writing",
+      "info": "bạn: retry"
+    },
+    {
+      "at": "2026-11-18T06:41:59.718Z",
+      "status": "review"
     }
   ],
   "kind": "qa-vi",
   "summary": "Bản dài của Short \"Bạn có biết mật ong không bao giờ bị hỏng, người ta còn tìm thấy hũ mật ong trong lăng mộ Ai Cập hơn 3.000 năm tuổi mà vẫn ăn được?\"",
   "wanted": true,
   "fromShort": "ban-co-biet-mat-ong-khong-bao-gio-bi-hong-nguoi-ta-con-tim-t",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "autoPicked": true
 }

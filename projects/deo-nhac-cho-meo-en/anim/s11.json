@@ -1,0 +1,170 @@
+{
+  "narration": "Chuột Béo (hớn hở): \"Hay ta đào hang thật sâu, trốn luôn dưới đất cho mèo khỏi tìm thấy?\" Chuột Mẹ (ngạc nhiên): \"Thế lấy gì mà ăn hả anh Béo? Thóc gạo đều ở trên này cả.\" Chuột Béo (thở dài): \"Ờ nhỉ, thế thì đói lắm.\"",
+  "plan": {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_beo",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "worry",
+        "thenFace": "sad"
+      },
+      {
+        "id": "chuot_me",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "surprised",
+        "then": "idle",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "sit",
+        "face": "neutral",
+        "then": "sit",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "chuot_nhat",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 9.2,
+  "time": "night",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "mat",
+        "x": 260
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "chuot_beo",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#6a4630"
+      },
+      "x": -520,
+      "scale": 1.15,
+      "facing": 1
+    },
+    {
+      "id": "chuot_me",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#9b7452"
+      },
+      "x": 520,
+      "scale": 0.9,
+      "facing": -1
+    },
+    {
+      "id": "chuot_cu",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#b9b9c2"
+      },
+      "x": 0,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "chuot_nhat",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#cdb08a"
+      },
+      "x": 520,
+      "scale": 0.7,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "chuot_beo",
+      "at": 0,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "chuot_beo",
+      "at": 4.6,
+      "do": "worry",
+      "face": "sad"
+    },
+    {
+      "actor": "chuot_me",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised",
+      "talk": 1
+    },
+    {
+      "actor": "chuot_me",
+      "at": 4.6,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "chuot_cu",
+      "at": 0,
+      "do": "sit",
+      "face": "neutral"
+    },
+    {
+      "actor": "chuot_cu",
+      "at": 4.6,
+      "do": "sit",
+      "face": "neutral"
+    },
+    {
+      "actor": "chuot_nhat",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "chuot_beo",
+        "chuot_me",
+        "chuot_cu",
+        "chuot_nhat"
+      ],
+      "push": 0.06
+    }
+  ]
+}

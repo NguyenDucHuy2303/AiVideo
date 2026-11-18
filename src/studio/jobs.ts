@@ -53,7 +53,11 @@ export interface Job {
   fromShort?: string;
   longJob?: string;
   /** Reels the studio posted to Facebook (facebook.ts), by socialKey; byHand: found posted already. */
-  facebook?: Record<string, { videoId: string; postId?: string; url: string; at: string; byHand?: boolean }>;
+  facebook?: Record<string, {
+    videoId: string; postId?: string; url: string; at: string; byHand?: boolean;
+    /** The YouTube line to write as the Page's first comment (fbside.ts), its id once written, the tries. */
+    linkComment?: string; comment?: string; commentTries?: number;
+  }>;
   fbError?: string;
   fbRetryAt?: string;
   /** The machine check of the video before that approval (autoreview.ts). */
@@ -97,6 +101,13 @@ export async function saveJob(job: Job): Promise<void> {
   await fs.writeFile(`${f}.tmp`, JSON.stringify(job, null, 2));
   await fs.rename(`${f}.tmp`, f);
 }
+
+/**
+ * Its video is on YouTube already (its link given): it is not made again, the posted one stays
+ * (the user's rule, 18/11/2026). A "Did you know?" Short is its own video.
+ */
+export const onYouTube = (job: Job): boolean =>
+  !!(job.kind === "fact" || job.kind === "fact-vi" ? job.published?.shorts?.[0]?.url : job.published?.long?.url);
 
 export async function setStatus(job: Job, status: JobStatus, info?: string): Promise<Job> {
   job.status = status;

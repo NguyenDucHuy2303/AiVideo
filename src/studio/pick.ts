@@ -121,7 +121,9 @@ export function needToday(line: Line, mine: Job[], now = new Date(), offDays: nu
 /** A job whose video is still to come out: being made, or made and not on YouTube yet (or scheduled later). */
 export function pending(j: Job, now = new Date()): boolean {
   if (["approved", "producing", "video", "fix"].includes(j.status)) return true;
-  if (j.status !== "done") return false;
+  // (a film held back from posting, publishHold, is not coming out: it must not stop its line,
+  // 18/11/2026, the held sample episode kept "Học tiếng Anh" from making any other)
+  if (j.status !== "done" || j.publishHold) return false;
   const out = j.kind === "fact" || j.kind === "fact-vi" ? j.published?.shorts?.[0] : j.published?.long;
   return !out || new Date(out.publishAt) > now;
 }
@@ -154,7 +156,9 @@ export async function dailyPick(jobs: Job[], s: PickSettings, log: (s: string) =
     const mine = jobs.filter((j) => lineOf(j, s.lines) === line);
     // the day's share, or more while the line is behind its days ahead
     let need = Math.max(needToday(line, mine, now, s.offDays), needAhead(line, mine, now, s.leadDays ?? 3));
-    const waiting = mine.filter((j) => j.status === "review" && !j.retryAt);
+    // (a script waiting out a retry is left for later; one whose wait is over is picked as any other:
+    // an old retryAt kept four "Did you know?" Shorts out of every pick for a week, 18/11/2026)
+    const waiting = mine.filter((j) => j.status === "review" && !(j.retryAt && new Date(j.retryAt) > now));
     const urgent = waiting.map((job) => ({ job, o: jobOccasion(job, now) }))
       .filter((x) => x.o && x.o.left >= 2 && x.o.left <= URGENT_DAYS).sort((a, b) => a.o!.left - b.o!.left)[0];
     if (need <= 0 && !urgent) continue;

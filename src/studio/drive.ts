@@ -89,6 +89,12 @@ async function sweep(job: Job, now: number, log: (s: string) => void): Promise<v
   await saveJob(fresh);
 }
 
+/** A text file at the top of the Drive folder (the Facebook report, fbside.ts); not connected: nothing. */
+export async function putDriveText(name: string, text: string): Promise<void> {
+  if (!(await driveReady())) return;
+  await rclone(["rcat", `${REMOTE}/${name}`], text);
+}
+
 let lastCalendar = "";
 /** The calendar file, written again when what it says changes (or the day does). */
 async function putCalendar(jobs: Job[]): Promise<void> {

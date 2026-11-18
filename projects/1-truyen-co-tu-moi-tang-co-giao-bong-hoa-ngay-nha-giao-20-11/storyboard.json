@@ -1,0 +1,171 @@
+{
+  "title": "Tặng cô giáo bông hoa",
+  "kind": "story",
+  "scenes": [
+    {
+      "narration": "Bối (lo lắng): \"Chết rồi! Hôm nay là Ngày Nhà giáo mà em chưa có quà!\" Beo (ngạc nhiên): \"Quà là gì ạ? Ăn được không?\" Huy (vui vẻ): \"Mình ra chợ hoa nhanh nào!\" Hùng (tinh nghịch): \"Anh chở cả nhà bằng xe đạp!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "living",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (vui vẻ): \"Chợ hoa đẹp quá!\" [2s] Hoa hồng (vui vẻ): \"Hi! I am a rose!\" Beo (ngạc nhiên): \"Hoa biết nói! *Rose!* Là hoa hồng!\" Huy (vui vẻ): \"Các bạn nói cùng Beo nào: *Rose!*\" [3s] Hùng (vui vẻ): \"Giỏi lắm!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "market",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Hùng (tinh nghịch): \"Nhìn nè! Anh tìm được hoa nhỏ xíu màu trắng!\" Bối (vui vẻ): \"*Daisy!* Là hoa cúc!\" Hùng (vui vẻ): \"Các bạn nói cùng anh nào: *Daisy!*\" [3s] Huy (vui vẻ): \"Hay quá! Các bạn giỏi lắm!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "market",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (vui vẻ): \"Mình gom hoa hồng với hoa cúc thành một bó nhé.\" [2s] Beo (ngạc nhiên): \"Ồ, nhiều hoa quá! *Bouquet!*\" Bối (vui vẻ): \"Các bạn nói cùng Bối nào: *Bouquet!*\" [3s] Huy (tự hào): \"Tuyệt vời!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "market",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Bối (vui vẻ): \"Mình cần thiệp để viết lời chúc!\" Hùng (tinh nghịch): \"Tèn ten! Thiệp đây!\" [2s] Beo (vui vẻ): \"Thiệp có hình trái tim! *Card!*\" Huy (vui vẻ): \"Các bạn nói cùng Beo nào: *Card!*\" [3s] Hùng (vui vẻ): \"Giỏi ghê!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "market",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (vui vẻ): \"Bối viết lời chúc lên thiệp nhé.\" [2s] Bối (tự hào): \"Happy Teachers' Day!\" Huy (vui vẻ): \"Là chúc mừng Ngày Nhà giáo đó.\" Beo (vui vẻ): \"Chữ Bối đẹp quá!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "market",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Hùng (tinh nghịch): \"Anh còn giấu một bí mật. Nghe nè!\" [2s] Hộp quà (vui vẻ): \"Hi! I am a gift!\" Beo (sợ hãi): \"Hộp biết nói! *Gift!* Là món quà!\" Hùng (vui vẻ): \"Các bạn nói cùng anh nào: *Gift!*\" [3s] Bối (vui vẻ): \"Các bạn giỏi quá!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "market",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Beo (tinh nghịch): \"Em mở quà ra xem một tí nhé?\" Hộp quà (lo lắng): \"Hey! Not yet!\" Beo (sợ hãi): \"Ối! Hộp mắng em!\" [2s] Huy (cười): \"Quà để dành tặng cô, Beo ơi.\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "market",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (lo lắng): \"Sắp tới giờ học rồi! Chạy thôi!\" Hùng (vui vẻ): \"Anh ôm bó hoa cho!\" Bối (vui vẻ): \"Em giữ thiệp với quà!\" [2s] Beo (cười): \"Chạy nhanh như con thỏ!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "market",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Bối (vui vẻ): \"Tới lớp rồi! Cô chưa vào.\" Huy (vui vẻ): \"Mình tập nói trước nhé. Anh làm cô giáo.\" Bối (tự hào): \"Thank you, teacher!\" Huy (vui vẻ): \"Các bạn nói cùng Bối nào: *Thank you, teacher!*\" [3s] Huy (tự hào): \"Hay lắm!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "classroom",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Hùng (tinh nghịch): \"Ta là cô giáo mới đây! Ahem!\" Beo (vui vẻ): \"*Thank you, teacher!* Em tặng cô hoa!\" [2s] Hùng (sợ hãi): \"Hắt xì! Hắt xì! Anh bị dị ứng phấn hoa!\" Bối (cười): \"Cô giáo gì mà hắt xì hoài!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "classroom",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (vui vẻ): \"Giờ mình đặt quà lên bàn cô nhé.\" [2s] Bối (vui vẻ): \"Em đặt hoa trước.\" Beo (tự hào): \"Em đặt thiệp. Em vẽ trái tim to lắm!\" Hùng (tự hào): \"Còn hộp quà là của anh!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "classroom",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (vui vẻ): \"Chuông reo rồi. Cô sắp vào lớp.\" [2s] Bối (tự hào): \"Happy Teachers' Day!\" Beo (vui vẻ): \"Happy Teachers' Day!\" Hùng (vui vẻ): \"Các bạn nói cùng bọn mình nào: *Happy Teachers' Day!*\" [3s] Huy (tự hào): \"Cảm ơn các bạn nhiều!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "classroom",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (vui vẻ): \"Nào, cùng nhớ lại các từ mới nhé!\" Hoa hồng (vui vẻ): \"I am a rose!\" Bối (vui vẻ): \"*Rose!* Hoa hồng!\" Hùng (vui vẻ): \"*Daisy!* Hoa cúc!\" Beo (vui vẻ): \"*Bouquet!* Bó hoa!\" Huy (vui vẻ): \"*Card!* Cái thiệp!\" Hộp quà (vui vẻ): \"I am a gift!\" Huy (vui vẻ): \"Cùng nói nào: *Rose, daisy, bouquet, card, gift!*\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "classroom",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    },
+    {
+      "narration": "Huy (vui vẻ): \"Các bạn nhớ bấm đăng ký kênh Huy Kể Chuyện để xem tập sau nhé!\" Hùng (tinh nghịch): \"Tập sau, Beo bị lạc trong siêu thị bánh kẹo!\" Beo (vui vẻ): \"Ồ, có kẹo hả? Em đi liền!\"",
+      "chapter": "Tặng cô giáo bông hoa",
+      "onScreen": {},
+      "visual": {
+        "description": "classroom",
+        "mood": "calm"
+      },
+      "camera": "ken_burns",
+      "transition": "cut"
+    }
+  ]
+}

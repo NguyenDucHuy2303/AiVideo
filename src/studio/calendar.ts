@@ -37,8 +37,12 @@ export function entriesOf(job: Job, settings: PublishSettings, now = new Date())
   const ex0 = job.exported?.long ?? job.exported?.en ?? job.exported?.shorts?.find(Boolean);
   const folder = ex0?.dir ? path.basename(ex0.dir) : job.drive?.folder ?? job.topic;
   const add = (what: What, index: number | undefined, pub?: Published, ex?: Exported) => {
-    // (a topic dropped or stopped by an error is off the calendar, but what is already on YouTube stays)
-    const rec = pub ?? (["failed", "rejected"].includes(job.status) ? undefined : ex);
+    // Only what is ready to post (the "Chờ đăng" list: done, not held; an English version once
+    // made) is on the calendar: a film being made again or waiting for its review is not, even
+    // with its old file still in the folder (the user's rule, 18/11/2026). What is already on
+    // YouTube always stays.
+    const ready = job.status === "done" && !job.publishHold && (what !== "en" || !job.english || job.english === "done");
+    const rec = pub ?? (ready ? ex : undefined);
     if (!rec) return;
     out.push({
       at: rec.publishAt, channel: rec.channel, channelName: settings[rec.channel]?.name ?? rec.channel,

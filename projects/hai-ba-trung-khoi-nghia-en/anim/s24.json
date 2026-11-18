@@ -1,0 +1,418 @@
+{
+  "narration": "Sợ bị nhận ra, Tô Định vội cạo trọc tóc, cạo sạch râu, vứt cả ấn quan đi. Tô Định (sợ hãi): \"Cạo hết râu tóc cho ta! Ấn này cũng bỏ đi, chạy thôi!\" Viên quan hống hách ngày nào giờ lẩn vào đám lính, cắm đầu chạy trốn trông thật buồn cười.",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "to_dinh",
+        "place": "left",
+        "enter": "none",
+        "act": "undress",
+        "face": "worried",
+        "then": "none",
+        "thenFace": "worried"
+      },
+      {
+        "id": "to_dinh_tron",
+        "place": "center",
+        "enter": "none",
+        "act": "run",
+        "face": "surprised",
+        "then": "run",
+        "thenFace": "worried"
+      },
+      {
+        "id": "linh_han",
+        "place": "right",
+        "enter": "none",
+        "act": "run",
+        "face": "worried",
+        "then": "run",
+        "thenFace": "worried"
+      }
+    ],
+    "crowd": {
+      "id": "linh_han",
+      "count": 3,
+      "act": "run",
+      "then": "run"
+    },
+    "fx": [
+      "pop"
+    ],
+    "objects": [],
+    "shot": "track"
+  },
+  "era": "bac_thuoc",
+  "duration": 13.766666666666667,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "to_dinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#ecc8a0",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#6a1a22",
+            "trim": "#2b2b2b",
+            "length": "ankle",
+            "sleeves": "wide",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#1e1e2e",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#1a1a1a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "beard": "#1a1a1a",
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "thin",
+          "mustache": "droopy"
+        }
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "to_dinh_tron",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#ecc8a0",
+        "outfit": {
+          "type": "parts",
+          "color": "#3a3a4a",
+          "top": {
+            "cut": "canh",
+            "color": "#4a4a3a",
+            "trim": "#3a3a2a",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#3a3a30",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#2a2a20",
+            "ends": false
+          }
+        },
+        "hair": {
+          "style": "bald",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "props": [],
+        "face": {
+          "shape": "jowl",
+          "eyes": "round",
+          "nose": "long",
+          "brows": "thin",
+          "mustache": "thin",
+          "eyeScale": 1.15
+        }
+      },
+      "x": 0,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "linh_han",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#e8c098",
+        "outfit": {
+          "type": "enemy",
+          "color": "#2f2f3f"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "mustache": "thin"
+        }
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "linh_han_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#e8c098",
+        "outfit": {
+          "type": "enemy",
+          "color": "#2f2f3f"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "mustache": "thin"
+        }
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "linh_han_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#e8c098",
+        "outfit": {
+          "type": "enemy",
+          "color": "#2f2f3f"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "mustache": "thin"
+        }
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "linh_han_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#e8c098",
+        "outfit": {
+          "type": "enemy",
+          "color": "#2f2f3f"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "mustache": "thin"
+        }
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "to_dinh",
+      "at": 0,
+      "do": "undress",
+      "face": "worried"
+    },
+    {
+      "actor": "to_dinh_tron",
+      "at": 0,
+      "do": "run",
+      "face": "surprised",
+      "move": {
+        "by": 600,
+        "ease": "linear"
+      },
+      "dur": 13.766666666666667
+    },
+    {
+      "actor": "to_dinh_tron",
+      "at": 6.88,
+      "do": "run",
+      "face": "worried",
+      "move": {
+        "by": 700,
+        "ease": "in"
+      },
+      "dur": 6.886666666666668
+    },
+    {
+      "actor": "linh_han",
+      "at": 0,
+      "do": "run",
+      "face": "worried",
+      "move": {
+        "by": -600,
+        "ease": "linear"
+      },
+      "dur": 13.766666666666667
+    },
+    {
+      "actor": "linh_han",
+      "at": 6.88,
+      "do": "run",
+      "face": "worried",
+      "move": {
+        "by": -700,
+        "ease": "in"
+      },
+      "dur": 6.886666666666668
+    },
+    {
+      "actor": "linh_han_1",
+      "at": 0,
+      "do": "run",
+      "move": {
+        "by": -500,
+        "ease": "linear"
+      },
+      "dur": 13.766666666666667
+    },
+    {
+      "actor": "linh_han_1",
+      "at": 6.88,
+      "do": "run"
+    },
+    {
+      "actor": "linh_han_2",
+      "at": 0,
+      "do": "run",
+      "move": {
+        "by": -500,
+        "ease": "linear"
+      },
+      "dur": 13.766666666666667
+    },
+    {
+      "actor": "linh_han_2",
+      "at": 7.23,
+      "do": "run"
+    },
+    {
+      "actor": "linh_han_3",
+      "at": 0,
+      "do": "run",
+      "move": {
+        "by": -500,
+        "ease": "linear"
+      },
+      "dur": 13.766666666666667
+    },
+    {
+      "actor": "linh_han_3",
+      "at": 7.58,
+      "do": "run"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "pop",
+      "on": "to_dinh",
+      "at": 6.88,
+      "dur": 8.26
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": [
+        "to_dinh",
+        "to_dinh_tron",
+        "linh_han"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 6.88,
+      "type": "full",
+      "on": [
+        "to_dinh"
+      ],
+      "push": 0.06
+    }
+  ]
+}

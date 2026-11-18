@@ -1,7 +1,7 @@
 {
   "slug": "hop-qua-bi-mat",
   "topic": "Hộp quà bí mật",
-  "status": "video",
+  "status": "done",
   "notes": [],
   "history": [
     {
@@ -61,6 +61,16 @@
     {
       "at": "2026-11-17T08:18:42.020Z",
       "status": "video"
+    },
+    {
+      "at": "2026-11-17T09:19:10.567Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (201 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-17T17:00:47.910Z",
+      "status": "done",
+      "info": "3 shorts"
     }
   ],
   "kind": "lesson",
@@ -79,5 +89,18 @@
         "seconds": 74
       }
     }
-  }
+  },
+  "autoCheck": {
+    "at": "2026-11-17T09:19:10.566Z",
+    "mtimeMs": 1794903514743.6545,
+    "ok": true,
+    "problems": [],
+    "seconds": 201
+  },
+  "autoApproved": "2026-11-17T09:19:10.566Z",
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ]
 }

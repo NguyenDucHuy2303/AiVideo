@@ -1,0 +1,627 @@
+{
+  "title": "Cáo và Quạ",
+  "scenes": [
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, nếu có ai khen bạn thật nhiều, bạn có vui không? Nhưng có phải lời khen nào cũng là thật lòng không nhỉ?"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Hôm nay, Huy Kể Chuyện sẽ kể cho các bạn nghe truyện ngụ ngôn Cáo và Quạ."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngày xưa, có một làng quê ven sông, lũy tre xanh bao quanh. Bên cổng làng có cây đa già tỏa bóng mát."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Sau làng là một khu rừng nhỏ. Ở đó các con vật sống vui vẻ bên nhau."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Trên cành cây đa có chị Quạ đen. Lông chị đen bóng, mỏ to và khỏe."
+        },
+        {
+          "who": "Quạ",
+          "how": "vui vẻ",
+          "text": "Quạ quạ! Sáng nay trời đẹp quá! Mình đi kiếm cái ăn thôi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Quạ bay qua ao làng. Bên bờ ao, bác nông dân vừa kéo vó, đổ cá vào giỏ tre. Một chú cá nhỏ nhảy tót ra, nằm trên bờ cỏ."
+        },
+        {
+          "who": "Quạ",
+          "how": "ngạc nhiên",
+          "text": "Ồ, một con cá kìa!"
+        },
+        {
+          "who": "Quạ",
+          "how": "hớn hở",
+          "text": "Hôm nay mình được bữa ngon rồi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Quạ sà xuống, ngậm chặt con cá trong mỏ rồi vỗ cánh bay vút lên trời xanh."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Chị bay về cây đa đầu rừng, đậu trên cành cao nhất."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Dưới gốc cây, bạn Thỏ, bạn Hươu và bạn Gà đang chơi đùa. Thấy Quạ, Thỏ khoanh tay chào."
+        },
+        {
+          "who": "Thỏ",
+          "how": "vui vẻ",
+          "text": "Chúng em chào chị Quạ ạ! Chị kiếm được cá to quá!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Quạ đang ngậm cá nên chỉ gật gật đầu, đôi mắt sáng lên vui sướng."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Lúc ấy, từ bụi rậm, một con Cáo bước ra. Cáo có bộ lông nâu vàng, mõm dài, tai nhọn, cái đuôi rậm có chóp trắng. Bụng Cáo kêu ục ục."
+        },
+        {
+          "who": "Cáo",
+          "how": "mệt",
+          "text": "Ôi, đói quá! Từ sáng tới giờ chưa có gì bỏ bụng."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Cáo ngẩng lên, thấy con cá trong mỏ Quạ. Mắt Cáo sáng rực."
+        },
+        {
+          "who": "Cáo",
+          "how": "mừng rỡ",
+          "text": "Ồ hô! Một con cá thơm lừng!"
+        },
+        {
+          "who": "Cáo",
+          "how": "lo lắng",
+          "text": "Nhưng cây cao thế này, mình không trèo lên được. Phải nghĩ cách mới được."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Gà ghé tai các bạn, nói thật nhỏ."
+        },
+        {
+          "who": "Gà",
+          "how": "lo lắng",
+          "text": "Các bạn ơi, Cáo kia mắt cứ đảo qua đảo lại. Chắc lại bày trò gì rồi."
+        },
+        {
+          "who": "Hươu",
+          "how": "lo lắng",
+          "text": "Mình phải để ý xem sao."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Cáo nghĩ ra một mẹo. Nó nở nụ cười thật ngọt, đi tới gốc cây đa."
+        },
+        {
+          "who": "Cáo",
+          "how": "vui vẻ",
+          "text": "Chào chị Quạ xinh đẹp! Chúc chị một buổi sáng thật vui!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Quạ liếc xuống, vẫn ngậm chặt con cá."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Cáo",
+          "how": "hớn hở",
+          "text": "Chà chà! Lông chị đen bóng như hạt nhãn, óng ánh như tơ!"
+        },
+        {
+          "who": "Cáo",
+          "how": "vui vẻ",
+          "text": "Cả khu rừng này chẳng ai đẹp bằng chị đâu!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Quạ nghe vậy, khẽ vươn cổ, xòe đôi cánh ra khoe."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Cáo",
+          "how": "hớn hở",
+          "text": "Còn đôi mắt chị nữa, sáng long lanh như sao trên trời!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Quạ sướng quá, lắc lư cái đầu, chân nhún nhún trên cành."
+        },
+        {
+          "who": "Gà",
+          "how": "lo lắng",
+          "text": "Trời ơi, Cáo lại khen nữa kìa!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thỏ đứng dưới gốc, gọi khẽ lên."
+        },
+        {
+          "who": "Thỏ",
+          "how": "lo lắng",
+          "text": "Chị Quạ ơi, chị cẩn thận đấy ạ!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Nhưng Quạ mải nghe khen, chẳng nghe thấy gì cả."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Cáo thấy Quạ đã mát lòng, liền nói tiếp."
+        },
+        {
+          "who": "Cáo",
+          "how": "hớn hở",
+          "text": "Em nghe đồn, giọng hát của chị là hay nhất khu rừng. Hay hơn cả chim họa mi, chim sơn ca!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Cáo chụm hai chân trước, mắt chớp chớp nài nỉ."
+        },
+        {
+          "who": "Cáo",
+          "how": "vui vẻ",
+          "text": "Chị ơi, chị hát cho em nghe một bài thôi, được không? Chỉ một bài thôi mà!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Quạ nghĩ thầm. Chưa ai khen mình hay như thế. Nếu mình hát, cả rừng sẽ biết mình hát hay nhất."
+        },
+        {
+          "who": "Hươu",
+          "how": "hoảng hốt",
+          "text": "Chị Quạ đừng hát! Chị đang ngậm cá mà!"
+        },
+        {
+          "who": "Gà",
+          "how": "hét",
+          "text": "Ò ó o! Coi chừng chị ơi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Nhưng Quạ đã ưỡn ngực, ngẩng cao đầu, rồi há thật to cái mỏ."
+        },
+        {
+          "who": "Quạ",
+          "how": "tự hào",
+          "text": "Quạ! Quạ! Quạ quạ quạ!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Mỏ vừa mở ra, con cá liền tuột xuống. Nó rơi bịch một cái xuống đám lá dưới gốc cây."
+        },
+        {
+          "who": "Thỏ",
+          "how": "sửng sốt",
+          "text": "Ôi! Con cá rơi rồi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Nhanh như chớp, Cáo nhảy tới đớp lấy con cá."
+        },
+        {
+          "who": "Cáo",
+          "how": "cười",
+          "text": "Ha ha ha! Cảm ơn chị Quạ nhé!"
+        },
+        {
+          "who": "Gà",
+          "how": "hoảng hốt",
+          "text": "Ối, Cáo lấy mất rồi!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Quạ",
+          "how": "hoảng hốt",
+          "text": "Ơ! Cá của tôi! Trả lại đây!"
+        },
+        {
+          "who": "Cáo",
+          "how": "cười",
+          "text": "Chị Quạ ơi, chị nhớ nhé. Ai thích nghe lời ngọt thì sẽ mất phần đấy!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Cáo ngoe nguẩy cái đuôi, chạy biến vào bụi rậm. Quạ ngồi ngẩn ngơ trên cành cây."
+        },
+        {
+          "who": "Quạ",
+          "how": "khóc",
+          "text": "Ôi, sao mình dại thế này!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thỏ, Hươu và Gà nhìn lên, thương chị Quạ lắm."
+        },
+        {
+          "who": "Thỏ",
+          "how": "buồn rầu",
+          "text": "Chị Quạ ơi, chị đừng buồn nữa ạ."
+        },
+        {
+          "who": "Hươu",
+          "how": "buồn rầu",
+          "text": "Cáo khen chị đâu phải vì thật lòng. Cáo chỉ muốn lấy con cá thôi."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Gà",
+          "how": "buồn rầu",
+          "text": "Lúc nãy chúng em gọi chị mãi, mà chị mải nghe khen nên không nghe thấy."
+        },
+        {
+          "who": "Quạ",
+          "how": "thở dài",
+          "text": "Các em nói đúng. Chị nghe lời ngọt nên quên mất con cá mình đang ngậm."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Quạ bay xuống, đậu bên cạnh các bạn nhỏ."
+        },
+        {
+          "who": "Quạ",
+          "how": "quyết tâm",
+          "text": "Từ nay, chị sẽ không để lời khen ngọt làm mình quên mất điều mình đang có nữa!"
+        },
+        {
+          "who": "Thỏ",
+          "how": "vui vẻ",
+          "text": "Hay quá! Chúng em tin chị!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Mấy hôm sau, Quạ dậy thật sớm, bay ra cánh đồng lúa. Bên bờ mương, chị tìm được một con cá rô nhỏ mắc trong đám cỏ."
+        },
+        {
+          "who": "Quạ",
+          "how": "quyết tâm",
+          "text": "Lần này mình sẽ giữ thật chặt!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Quạ ngậm cá bay về cây đa. Và ai lại lò dò tới gốc cây thế kia? Chính là Cáo!"
+        },
+        {
+          "who": "Hươu",
+          "how": "lo lắng",
+          "text": "Cáo lại đến kìa!"
+        },
+        {
+          "who": "Cáo",
+          "how": "vui vẻ",
+          "text": "Chào chị Quạ! Hôm nay trông chị còn xinh hơn hôm trước nhiều lắm!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "Cáo",
+          "how": "hớn hở",
+          "text": "Chị hát cho em nghe một bài nhé? Giọng chị là nhất rừng mà!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Lần này Quạ không vội. Chị đặt con cá xuống cành, lấy móng chân giữ thật chặt, rồi mới mở mỏ."
+        },
+        {
+          "who": "Quạ",
+          "how": "cười",
+          "text": "Cảm ơn anh Cáo nhé. Nhưng hôm nay tôi không hát đâu!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Cáo nhảy lên mấy lần mà không với tới cành cao."
+        },
+        {
+          "who": "Cáo",
+          "how": "tức giận",
+          "text": "Hừ! Lần này không lừa được rồi!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Cáo cụp đuôi, lủi thủi bỏ đi."
+        },
+        {
+          "who": "Quạ",
+          "how": "cười",
+          "text": "Tạm biệt anh Cáo nhé!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Thỏ, Hươu và Gà vỗ tay reo vui."
+        },
+        {
+          "who": "Gà",
+          "how": "hô to",
+          "text": "Ò ó o! Chị Quạ giỏi quá!"
+        },
+        {
+          "who": "Hươu",
+          "how": "vui vẻ",
+          "text": "Chị khôn ra nhiều rồi đấy!"
+        },
+        {
+          "who": "Quạ",
+          "how": "vui vẻ",
+          "text": "Cảm ơn các em hôm trước đã nhắc chị nhé!"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ biết không, truyện Cáo và Quạ là một truyện ngụ ngôn rất nổi tiếng. Người ta cho rằng truyện do ông Aesop, một nhà kể chuyện Hy Lạp thời xưa, sáng tác."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Truyện được kể đi kể lại qua nhiều thế kỷ, bằng nhiều thứ tiếng, rồi về tới cả làng quê mình."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Trong truyện của ông Aesop, các con vật biết nói và có tính nết như người, như truyện Rùa và Thỏ, truyện Kiến và Châu Chấu."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Ngoài đời, quạ là loài chim rất thông minh, biết nhớ chỗ cất thức ăn. Còn cáo thì hay rình mồi một mình, có cái mõm dài và cái đuôi rậm."
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "who": "",
+          "how": "",
+          "text": "Các bạn nhỏ ơi, lời khen ngọt chưa chắc đã là thật lòng. Được khen thì mình cảm ơn, nhưng đừng vì thế mà quên mất điều mình đang có nhé."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "Nếu thích truyện này, các bạn hãy đăng ký kênh Huy Kể Chuyện để nghe thêm thật nhiều truyện hay nhé. Hẹn gặp lại các bạn!"
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "name": "Quạ",
+      "gender": "female",
+      "age": "adult",
+      "role": "Chị quạ đen ham nghe khen, bị Cáo lừa mất con cá, sau đó rút kinh nghiệm",
+      "villain": false
+    },
+    {
+      "name": "Cáo",
+      "gender": "male",
+      "age": "adult",
+      "role": "Con cáo đói, xảo quyệt, dùng lời nịnh để lừa lấy con cá của Quạ",
+      "villain": true
+    },
+    {
+      "name": "Thỏ",
+      "gender": "female",
+      "age": "child",
+      "role": "Bạn nhỏ trong rừng, lễ phép, nhắc nhở và an ủi Quạ",
+      "villain": false
+    },
+    {
+      "name": "Hươu",
+      "gender": "male",
+      "age": "child",
+      "role": "Bạn nhỏ trong rừng, hiểu chuyện, giải thích cho Quạ vì sao Cáo khen",
+      "villain": false
+    },
+    {
+      "name": "Gà",
+      "gender": "male",
+      "age": "child",
+      "role": "Chú gà trống nhỏ tinh ý, sớm nhận ra mưu của Cáo",
+      "villain": false
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Quạ kiếm được một miếng mồi rồi đậu trên cành cây; trong bản này miếng phô mai được đổi thành con cá cho hợp với làng quê Việt",
+      "source": "Tóm tắt truyện (đề bài)"
+    },
+    {
+      "claim": "Cáo đói khen quạ lông đẹp, giọng hát hay nhất khu rừng và xin quạ hát một bài",
+      "source": "Tóm tắt truyện (đề bài)"
+    },
+    {
+      "claim": "Quạ mở miệng hát, miếng mồi rơi xuống, Cáo nhặt lấy rồi chạy đi, Quạ ngẩn ngơ",
+      "source": "Tóm tắt truyện (đề bài)"
+    },
+    {
+      "claim": "Lần sau gặp Cáo khen, Quạ chỉ cảm ơn rồi giữ chặt mồi",
+      "source": "Tóm tắt truyện (đề bài)"
+    },
+    {
+      "claim": "Ngụ ngôn Aesop được cho là do Aesop, nhà văn Hy Lạp cổ đại, sáng tác, được truyền miệng và sưu tập qua nhiều thế kỷ, bằng nhiều ngôn ngữ",
+      "source": "Ngụ ngôn Aesop"
+    },
+    {
+      "claim": "Trong truyện Aesop, động vật biết trò chuyện và có tính cách con người, như Thỏ và rùa, Kiến và châu chấu",
+      "source": "Ngụ ngôn Aesop"
+    },
+    {
+      "claim": "Quạ đen, quạ mỏ to (Corvus macrorhynchos) là một loài trong chi Quạ",
+      "source": "Quạ"
+    },
+    {
+      "claim": "Một số loài quạ rất thông minh, ghi nhớ chính xác nơi cất giấu thức ăn",
+      "source": "Quạ"
+    },
+    {
+      "claim": "Cáo có mõm dài, hẹp, đuôi rậm, mắt xếch, tai nhọn; cáo đỏ lông nâu vàng, đuôi thường có vệt trắng ở chóp",
+      "source": "Cáo"
+    },
+    {
+      "claim": "Cáo thường sống đơn lẻ, kiếm ăn cơ hội, ăn cả cá và chim",
+      "source": "Cáo"
+    },
+    {
+      "claim": "Trong truyện dân gian, cáo thường là nhân vật phản diện, hay bày trò cướp đoạt đồ của người khác",
+      "source": "Cáo"
+    }
+  ],
+  "look": "Bối cảnh: làng quê đồng bằng sông Hồng thế kỷ XVII–XIX. Cổng làng có lũy tre xanh bao quanh, cây đa già tán rộng (cây chính của truyện, đứng ở bìa rừng nhỏ sau làng), ao làng có vó tre, nhà tranh vách đất xa xa, cánh đồng lúa với bờ mương cỏ. Không có đồ hiện đại, không có ngô, ớt; không có phô mai (dùng con cá). Quạ: quạ đen mỏ to, lông đen bóng ánh xanh tím, mắt tròn sáng, dáng điệu đà; không mặc quần áo. Cáo: lông nâu vàng cam, mõm dài, tai nhọn, mắt xếch hơi gian nhưng không đáng sợ, đuôi rậm chóp trắng; không răng nanh dữ tợn. Thỏ: thỏ trắng nhỏ tai dài, má hồng, hay khoanh tay lễ phép. Hươu: hươu sao non lông nâu đốm trắng, mắt to hiền. Gà: gà trống nhỏ mào đỏ, lông vàng nâu, đuôi xanh óng. Các con vật để tự nhiên, không mặc trang phục. Bác nông dân bên ao (không lời thoại): áo cánh nâu ngắn, quần ống rộng xắn gối, khăn chít đầu, đi chân đất, kéo vó, giỏ tre đựng cá. Cảnh kể về Aesop gần cuối: trẻ em tóc để chỏm, mặc yếm hoặc áo cánh ngắn quần lửng, ngồi trên chiếu cói dưới gốc đa nghe một bà cụ áo tứ thân nâu ngoài yếm, váy đen dài, khăn vấn kể chuyện. Đồ vật: giỏ tre, vó tre, nón lá, quang gánh dựa gốc tre. Cá: cá nhỏ màu bạc, cá rô ở cảnh sau."
+}

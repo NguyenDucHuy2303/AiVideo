@@ -1,0 +1,101 @@
+{
+  "engine": "vieneu",
+  "voice": "Minh Đức",
+  "speed": 1,
+  "imageGen": "off",
+  "onlineImages": false,
+  "profiles": [
+    "16x9"
+  ],
+  "channel": "Huy Kể Chuyện",
+  "style": "hien_dai",
+  "title": "Tặng cô giáo bông hoa",
+  "brand": {
+    "intro": "none"
+  },
+  "thumbnail": {
+    "title": "Tặng cô bông hoa hồng",
+    "subtitle": "Học tiếng Anh cùng Huy"
+  },
+  "words": [
+    "rose",
+    "daisy",
+    "flower",
+    "card",
+    "gift"
+  ],
+  "voices": {
+    "Huy": "Thiện Minh",
+    "Hùng": "Thanh Bình",
+    "Bối": {
+      "voice": "Ngọc Linh",
+      "pitch": 4
+    },
+    "Beo": {
+      "voice": "Mai Anh",
+      "pitch": 4
+    },
+    "Huy@en": {
+      "voice": "bm_lewis",
+      "engine": "kokoro",
+      "speed": 0.88
+    },
+    "Hùng@en": {
+      "voice": "am_adam",
+      "engine": "kokoro",
+      "speed": 0.88
+    },
+    "Bối@en": {
+      "voice": "af_alloy",
+      "engine": "kokoro",
+      "pitch": 3,
+      "speed": 0.88
+    },
+    "Beo@en": {
+      "voice": "af_alloy",
+      "engine": "kokoro",
+      "pitch": 2,
+      "speed": 0.92
+    },
+    "Hoa hồng": {
+      "voice": "Thùy Dung",
+      "pitch": 3
+    },
+    "Hoa hồng@en": {
+      "voice": "af_bella",
+      "engine": "kokoro",
+      "pitch": 3,
+      "speed": 0.88
+    },
+    "Hộp quà": {
+      "voice": "Ngọc Huyền",
+      "pitch": 3
+    },
+    "Hộp quà@en": {
+      "voice": "af_alloy",
+      "engine": "kokoro",
+      "pitch": 3,
+      "speed": 0.88
+    }
+  },
+  "speakers": {
+    "Huy": [
+      "huy"
+    ],
+    "Hùng": [
+      "hung"
+    ],
+    "Bối": [
+      "boi"
+    ],
+    "Beo": [
+      "beo"
+    ],
+    "Hoa hồng": [
+      "rose"
+    ],
+    "Hộp quà": [
+      "gift"
+    ]
+  }
+}

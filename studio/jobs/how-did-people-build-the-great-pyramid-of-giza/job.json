@@ -1,7 +1,7 @@
 {
   "slug": "how-did-people-build-the-great-pyramid-of-giza",
   "topic": "How did people build the Great Pyramid of Giza?",
-  "status": "producing",
+  "status": "done",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.283Z",
@@ -109,6 +109,25 @@
       "at": "2026-11-17T02:38:32.947Z",
       "status": "producing",
       "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-17T13:50:35.197Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-17T14:48:00.367Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-17T16:31:29.495Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-17T21:48:17.351Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (497 giây, không đen màn, đứng hình hay im lặng)"
     }
   ],
   "kind": "qa",
@@ -120,27 +139,27 @@
     "hash": "effbac7651718673"
   },
   "inspect": {
-    "at": "2026-11-16T09:28:12.069Z",
-    "perMinute": 0.7,
+    "at": "2026-11-17T14:48:00.366Z",
+    "perMinute": 0.9,
     "byKind": {
       "still": {
-        "count": 2,
-        "seconds": 12.8
+        "count": 4,
+        "seconds": 24.9
       },
       "head-cut": {
         "count": 3,
-        "seconds": 3.5
+        "seconds": 3.7
       }
     }
   },
   "autoCheck": {
-    "at": "2026-11-16T10:53:08.110Z",
-    "mtimeMs": 1794821281687.36,
+    "at": "2026-11-17T21:48:17.349Z",
+    "mtimeMs": 1794926869876.119,
     "ok": true,
     "problems": [],
-    "seconds": 463
+    "seconds": 497
   },
-  "autoApproved": "2026-11-16T10:53:08.110Z",
+  "autoApproved": "2026-11-17T21:48:17.349Z",
   "exported": {
     "shorts": [
       null,
@@ -149,20 +168,15 @@
         "dir": "/home/huynguyen/youtube/How Did People Build the Great Pyramid of Giza",
         "publishAt": "2026-11-19T08:00:00.000Z",
         "channel": "ask-huy",
-        "at": "2026-11-17T02:20:59.830Z"
+        "at": "2026-11-17T21:48:43.383Z"
       }
     ]
   },
   "drive": {
     "folder": "How Did People Build the Great Pyramid of Giza",
-    "mtime": 1794882059856.5076,
-    "at": "2026-11-17T02:43:36.733Z"
+    "mtime": 1794952123385.969,
+    "at": "2026-11-17T21:55:54.332Z"
   },
-  "shorts": [
-    "shorts/1.mp4",
-    "shorts/2.mp4",
-    "shorts/3.mp4"
-  ],
   "published": {
     "long": {
       "videoId": "CqN7e_KhOYE",
@@ -191,5 +205,9 @@
       }
     ]
   },
-  "stage": "ready"
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ]
 }

@@ -25,6 +25,8 @@
 (function () {
   const { EASE, seg, lerp, clamp, blend, f2 } = WA.core;
   const BLEND = 0.25;
+  /** Seconds a face takes to change; half the time of a turn round (the squeeze each side of it). */
+  const FACE_BLEND = 0.18, TURN = 0.08;
   const RIDING = new Set(["ride", "ride_swing", "land"]);
 
   /**
@@ -193,6 +195,14 @@
       }
       return p;
     }
+    /** The time of a turn round within TURN seconds of t (a facing that really changes), or null. */
+    function turnNear(A, t) {
+      for (const a of A.acts) {
+        if (!a.set || a.set.facing === undefined || Math.abs(t - a.at) >= TURN || a.at <= 0) continue;
+        if (propsAt(A, a.at - 1e-4).facing !== a.set.facing) return a.at;
+      }
+      return null;
+    }
     function motionAt(A, t) {
       let cur = -1, prev = -1;
       A.acts.forEach((a, i) => { if (a.do && a.at <= t) { prev = cur; cur = i; } });
@@ -224,7 +234,14 @@
       const mount = A.horse ? null : mountAt(A, t);
       const mountEnd = mount ? mount.at + (mount.dur ?? 0.7) : Infinity;
       const riding = t >= mountEnd;
-      const ctx = (a) => ({ B: A.rig.B, dur: a.dur, params: a, face: a.face, stride: riding ? strideOf(mount.onto, t) : undefined });
+      // The ground a move has covered so far (rig units): walks and runs step by it (motions.js phase).
+      const travelOf = (a) => {
+        const m = a.move;
+        if (!m || (m.to === undefined && m.by === undefined && m.speed === undefined)) return undefined;
+        const end = m.speed !== undefined ? Infinity : a.at + (a.dur ?? 1);
+        return { d: Math.abs(xAt(A, Math.min(t, end)) - xAt(A, a.at)) / (props.scale || 1), after: Math.max(0, t - end) };
+      };
+      const ctx = (a) => ({ B: A.rig.B, dur: a.dur, params: a, face: a.face, stride: riding ? strideOf(mount.onto, t) : undefined, travel: travelOf(a) });
       // In the saddle, only riding motions apply; anything else means "keep riding".
       const run = (a) => {
         // Four-legged actors understand the people's words: run is a gallop, the rest a stand.
@@ -236,8 +253,22 @@
       let pose = run(cur);
       if (prev && t - cur.at < (cur.blend ?? BLEND)) pose = blend(run(prev), pose, EASE.smooth((t - cur.at) / (cur.blend ?? BLEND)));
       if (cur.face) pose.face = cur.face;
+      // A new face comes over in a moment, not from one frame to the next (18/11/2026).
+      if (prev && prev.face && cur.face && prev.face !== cur.face && t - cur.at < FACE_BLEND && WA.face) {
+        const E = WA.face.EXPRESSIONS, N = E.neutral;
+        if (E[prev.face] && E[cur.face]) pose.face = blend({ ...N, ...E[prev.face] }, { ...N, ...E[cur.face] }, EASE.smooth((t - cur.at) / FACE_BLEND));
+      }
       if (cur.talk !== undefined) pose.talk = cur.talk;
       let x = xAt(A, t), y = yAt(A, t);
+      if (A.kind === "human" && !mount && Math.abs(pose.rot || 0) < 30) {
+        // The body follows through: it leans back as a move speeds up and on past the feet as
+        // it stops (from the move's acceleration along where the character faces).
+        const h = 1 / 30, acc = (xAt(A, t + h) - 2 * x + xAt(A, t - h)) / (h * h);
+        pose.lean = (pose.lean || 0) + clamp((-acc * props.facing * 0.0035) / (props.scale || 1), -9, 9);
+        // Turning round: a quick squeeze across, as if the body turned, not a mirror flip.
+        const ft = turnNear(A, t);
+        if (ft !== null) pose.sx = (pose.sx || 1) * (0.2 + 0.8 * Math.min(1, Math.abs(t - ft) / TURN));
+      }
       if (mount) {
         const dur = mount.dur ?? 0.7, k = seg(t, mount.at, mount.at + dur);
         const seat = pointsAt(mount.onto, Math.min(t, mount.at + dur));

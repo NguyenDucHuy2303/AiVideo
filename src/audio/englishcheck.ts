@@ -34,6 +34,8 @@ export function englishWords(text: string): string[] {
   return text.normalize("NFC").toLowerCase().replace(NAMES, " ").replace(/[’‘]/g, "'")
     .replace(/\b(i|you|we|they|he|she|it|that|what|let)'(m|re|s|ve|ll|d)\b/g, (_, a, b) => `${a} ${({ m: "am", re: "are", s: "is", ve: "have", ll: "will", d: "would" } as Record<string, string>)[b]}`)
     .replace(/\blet is\b/g, "let us").replace(/\d+/g, (n) => NUM[Number(n)] ?? n)
+    // (a possessive sounds as its plural: "Teachers' Day" = "Teacher's Day" = "Teachers Day")
+    .replace(/\b([a-z]+)'s\b/g, "$1s").replace(/\b([a-z]+s)'(?![a-z])/g, "$1")
     .replace(/[^a-z0-9' ]+/g, " ").split(/\s+/).filter(Boolean)
     // (a plural "s" Whisper adds or drops on a word said alone is not a word read wrong)
     .map((w) => (w.length > 3 && w.endsWith("s") && !w.endsWith("ss") ? w.slice(0, -1) : w))
@@ -50,9 +52,13 @@ export const BAD = 0.15;
 
 const IPA = path.join(ROOT, "src", "tts", "ipa.py"), KPY = path.join(ROOT, "vendor", "kokoro", "venv", "bin", "python");
 /** English texts as IPA phonemes (espeak-ng); undefined when the phonemizer is missing. */
+// Vietnamese syllables the phonemizer takes for Roman numerals ("Ba Vi" read "ba Roman six"):
+// said as they sound (18/11/2026)
+const ROMAN_SYLLABLES: Record<string, string> = { vi: "vee", xi: "see", li: "lee", di: "dee", mi: "mee" };
+const spoken = (text: string) => text.replace(/\b(vi|xi|li|di|mi)\b/gi, (w) => ROMAN_SYLLABLES[w.toLowerCase()]!);
 export async function phonemes(texts: string[]): Promise<string[] | undefined> {
   try {
-    const r = await run(KPY, [IPA], { input: JSON.stringify(texts), timeoutMs: 5 * 60_000 });
+    const r = await run(KPY, [IPA], { input: JSON.stringify(texts.map(spoken)), timeoutMs: 5 * 60_000 });
     return JSON.parse(r.stdout.trim().split("\n").at(-1)!);
   } catch { return undefined; }
 }

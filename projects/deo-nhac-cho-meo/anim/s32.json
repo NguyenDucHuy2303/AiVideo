@@ -1,0 +1,262 @@
+{
+  "narration": "Từ đó, câu chuyện của họ nhà chuột được ông bà kể cho con cháu nghe. Ngày nay, khi ai bày ra một kế nghe thì hay mà chẳng ai làm nổi, người ta vẫn bảo đó là chuyện đeo nhạc cho mèo. Cũng giống như Thầy bói xem voi hay Đẽo cày giữa đường, bài học của truyện đã thành một câu nói quen thuộc.",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "proud"
+      },
+      {
+        "id": "chuot_nhat",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "chuot_beo",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "chuot_xam",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 5,
+      "act": "sit",
+      "then": "sit"
+    },
+    "fx": [],
+    "objects": [],
+    "shot": "wide"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 18.166666666666668,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "chuot_cu",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#b9b9c2"
+      },
+      "x": 0,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "chuot_nhat",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#cdb08a"
+      },
+      "x": 520,
+      "scale": 0.7,
+      "facing": -1
+    },
+    {
+      "id": "chuot_beo",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#6a4630"
+      },
+      "x": -520,
+      "scale": 1.15,
+      "facing": 1
+    },
+    {
+      "id": "chuot_xam",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#8c8c90"
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "ho_nha_chuot_1",
+      "type": "human",
+      "look": {
+        "species": "mouse",
+        "color": "#9a8b7c"
+      },
+      "x": 900,
+      "scale": 0.8075,
+      "facing": -1
+    },
+    {
+      "id": "ho_nha_chuot_2",
+      "type": "human",
+      "look": {
+        "species": "mouse",
+        "color": "#9a8b7c"
+      },
+      "x": 1220,
+      "scale": 0.867,
+      "facing": -1
+    },
+    {
+      "id": "ho_nha_chuot_3",
+      "type": "human",
+      "look": {
+        "species": "mouse",
+        "color": "#9a8b7c"
+      },
+      "x": 1540,
+      "scale": 0.8075,
+      "facing": -1
+    },
+    {
+      "id": "ho_nha_chuot_4",
+      "type": "human",
+      "look": {
+        "species": "mouse",
+        "color": "#9a8b7c"
+      },
+      "x": 1860,
+      "scale": 0.867,
+      "facing": -1
+    },
+    {
+      "id": "ho_nha_chuot_5",
+      "type": "human",
+      "look": {
+        "species": "mouse",
+        "color": "#9a8b7c"
+      },
+      "x": 2180,
+      "scale": 0.8075,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "chuot_cu",
+      "at": 0,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "chuot_cu",
+      "at": 9.08,
+      "do": "talk",
+      "face": "proud",
+      "talk": 1
+    },
+    {
+      "actor": "chuot_nhat",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "chuot_beo",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "chuot_xam",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "ho_nha_chuot_1",
+      "at": 0,
+      "do": "sit"
+    },
+    {
+      "actor": "ho_nha_chuot_1",
+      "at": 9.08,
+      "do": "sit"
+    },
+    {
+      "actor": "ho_nha_chuot_2",
+      "at": 0,
+      "do": "sit"
+    },
+    {
+      "actor": "ho_nha_chuot_2",
+      "at": 9.43,
+      "do": "sit"
+    },
+    {
+      "actor": "ho_nha_chuot_3",
+      "at": 0,
+      "do": "sit"
+    },
+    {
+      "actor": "ho_nha_chuot_3",
+      "at": 9.78,
+      "do": "sit"
+    },
+    {
+      "actor": "ho_nha_chuot_4",
+      "at": 0,
+      "do": "sit"
+    },
+    {
+      "actor": "ho_nha_chuot_4",
+      "at": 10.13,
+      "do": "sit"
+    },
+    {
+      "actor": "ho_nha_chuot_5",
+      "at": 0,
+      "do": "sit"
+    },
+    {
+      "actor": "ho_nha_chuot_5",
+      "at": 10.48,
+      "do": "sit"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "chuot_cu",
+        "chuot_nhat",
+        "chuot_beo",
+        "chuot_xam"
+      ],
+      "push": 0.06
+    }
+  ]
+}

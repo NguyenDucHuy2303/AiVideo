@@ -65,3 +65,67 @@ test("the English check: wrong words stopped, names and noises not judged", { sk
   right.forEach((c, i) => assert.ok(r[i]! <= BAD, `right: ${c.join(" → ")} (${r[i]})`));
   wrong.forEach((c, i) => assert.ok(r[right.length + i]! > BAD, `wrong: ${c.join(" → ")} (${r[right.length + i]})`));
 });
+
+test("a fall stays down into the next scene, a jump lands, a thing held is still held (18/11/2026)", () => {
+  const ep: Episode = {
+    title: "Con gián", words: [], places: { living: "a living room" },
+    things: [{ id: "roach", kind: "item", icon: "cockroach" }],
+    scenes: [
+      { place: "living", say: `Huy (sợ hãi): "Á! Gián!"`, beats: [{ line: 0, do: "appear", what: "roach" }, { line: 1, do: "jump", who: "Huy" }, { line: 1, after: true, do: "fall", who: "Huy" }, { line: 1, do: "pick_up", who: "Beo", what: "roach" }] },
+      { place: "living", say: `Hùng (cười): "Học võ hả anh?"`, beats: [{ line: 1, do: "laugh", who: "Hùng" }] },
+    ],
+  };
+  const tl = { fps: 30, scenes: [{ durationFrames: 120, marks: [{ at: 0.2, end: 2.0, who: "Huy" }] }, { durationFrames: 90, marks: [{ at: 0.2, end: 2.0, who: "Hùng" }] }] };
+  const [a, b] = stageEpisode(ep, tl) as [Record<string, any>, Record<string, any>];
+  const huyA = a.actions.filter((x: any) => x.actor === "huy");
+  // a real jump, then standing again before the fall (no "leap" pose held in the air)
+  assert.ok(huyA.some((x: any) => x.do === "jump") && !huyA.some((x: any) => x.do === "leap"));
+  assert.ok(huyA.some((x: any) => x.do === "idle" && x.at > 0.2 && x.at < 2.0));
+  assert.ok(a.fx.some((f: any) => f.fx === "impact" && f.on === "huy"));
+  // the next scene starts with him on the floor, and he gets up (not standing at frame one)
+  const huyB = b.actions.filter((x: any) => x.actor === "huy");
+  assert.equal(huyB[0].do, "fall"); assert.ok(huyB[0].at < 0);
+  assert.ok(huyB.some((x: any) => x.do === "get_up"));
+  assert.ok(!huyB.some((x: any) => x.do === "idle" && x.at === 0));
+  // the cockroach Beo picked up is still in his hands
+  const roach = b.items.find((i: any) => i.id === "roach");
+  assert.equal(roach?.carry?.by, "beo");
+});
+
+test("the comedy: sounds go with what happens, a scream startles the others, a dash runs off (18/11/2026)", () => {
+  const ep: Episode = {
+    title: "Con gián", words: [], places: { living: "a living room" },
+    things: [{ id: "roach", kind: "item", icon: "cockroach" }],
+    scenes: [{ place: "living", say: `Huy (hoảng hốt): "Á! Gián!" Hùng: "Học võ hả anh?"`, beats: [{ line: 0, do: "appear", what: "roach" }, { line: 1, do: "jump", who: "Huy" }, { line: 1, after: true, do: "fall", who: "Huy" }, { line: 2, do: "run_off", who: "Bối" }] }],
+  };
+  const tl = { fps: 30, scenes: [{ durationFrames: 180, marks: [{ at: 0.2, end: 2.0, who: "Huy" }, { at: 2.3, end: 4.0, who: "Hùng" }] }] };
+  const [a] = stageEpisode(ep, tl) as [Record<string, any>];
+  const types = a.audio.sfx.map((e: any) => e.type);
+  for (const t of ["pop", "slide_up", "slide_down", "thud", "zip"]) assert.ok(types.includes(t), t);
+  // "(hoảng hốt)" is a shock; the others (not the one screaming) jump
+  assert.equal(partsOf(ep.scenes[0]!.say)[0]!.mood, "shock");
+  const startled = a.actions.filter((x: any) => x.do === "startle").map((x: any) => x.actor);
+  assert.ok(startled.includes("beo") && startled.includes("hung") && !startled.includes("huy"));
+  // the dash: a dip, then off the screen fast, with dust
+  const dash = a.actions.find((x: any) => x.actor === "boi" && x.do === "dash");
+  assert.ok(dash && Math.abs(dash.move.to) > 760 && dash.dur < 1.5);
+  assert.ok(a.fx.some((f: any) => f.fx === "dust" && f.on === "boi"));
+  // in time order: the player plays the last action begun
+  const ats = a.actions.map((x: any) => x.at as number);
+  assert.deepEqual(ats, [...ats].sort((p, q) => p - q));
+});
+
+test("a possessive is heard as its plural: Teachers' = Teacher's", async () => {
+  const { englishWords, judge } = await import("../src/audio/englishcheck.ts");
+  assert.deepEqual(englishWords("Happy Teachers' Day!"), englishWords("Happy Teacher's Day."));
+  assert.deepEqual(englishWords("It's the cat's toy"), ["it", "is", "the", "cat", "toy"]);
+  const [ok, bad] = await judge([{ meant: "Happy Teachers' Day!", heard: "Happy Teacher's Day!" }, { meant: "Daisy!", heard: "That is he." }]);
+  assert.ok(ok! < 0.15, `ok ${ok}`);
+  assert.ok(bad! >= 0.15, `bad ${bad}`);
+});
+
+test("a Vietnamese syllable that looks like a Roman numeral is judged as it sounds: Ba Vi", async () => {
+  const { judge } = await import("../src/audio/englishcheck.ts");
+  const [r] = await judge([{ meant: "With you, my sisters, my heart is as steady as Ba Vi Mountain.", heard: "With you, my sisters, my heart is as steady as Bavi Mountain." }]);
+  assert.ok(r! < 0.15, `rate ${r}`);
+});

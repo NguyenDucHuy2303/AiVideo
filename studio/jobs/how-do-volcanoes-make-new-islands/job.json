@@ -1,0 +1,20 @@
+{
+  "slug": "how-do-volcanoes-make-new-islands",
+  "topic": "How do volcanoes make new islands?",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-18T01:56:52.007Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-18T01:59:08.446Z",
+      "status": "review",
+      "info": "1 vấn đề còn lại: The Short (scenes 1, 11, 13, 17, 19, 32) has 195 words: it needs about 120–160."
+    }
+  ],
+  "kind": "qa",
+  "summary": "Kids love watching an island pop up from the sea in a simple animated diagram, and the Hawaii and Surtsey examples make it feel like real-life magic.",
+  "by": "claude-opus"
+}

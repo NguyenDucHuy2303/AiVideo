@@ -1,0 +1,576 @@
+{
+  "narration": "Ngày nay, bên dòng sông Hát vẫn còn đền Hát Môn thờ Hai Bà. Gần đó có làng Hạ Lôi quê nội, và miếu Mèn thờ bà Man Thiện, mẹ của Hai Bà. Sử sách gọi Trưng Trắc là Trưng Nữ Vương, dân gian tôn kính Hai Bà là Mê Linh Nhị Thánh. Mọi người vẫn đến thắp hương, tưởng nhớ công ơn hai vị anh hùng.",
+  "plan": {
+    "set": "village",
+    "time": "dawn",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "trung_trac",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "man_thien",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "thi_sach",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 4,
+      "act": "bow",
+      "then": "bow"
+    },
+    "fx": [
+      "glow",
+      "rays"
+    ],
+    "objects": [
+      "bowls"
+    ],
+    "shot": "wide"
+  },
+  "era": "bac_thuoc",
+  "duration": 18.566666666666666,
+  "time": "dawn",
+  "mood": "calm",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "bowls",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "trung_trac",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#a8452a",
+            "trim": "#d4a017",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1f2f55",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#e8a020",
+            "ends": true
+          },
+          "inner": {
+            "color": "#e0b040"
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "khan_van",
+        "earrings": true,
+        "bracelets": true,
+        "cape": false,
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thick",
+          "eyeScale": 1.05
+        },
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "sword"
+          }
+        ]
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "trung_nhi",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "slim",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#3f7a3f",
+            "trim": "#7a5a30",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#6b4a2a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#8b5a2b",
+            "ends": true
+          },
+          "inner": {
+            "color": "#c8a060"
+          }
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a1a"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "eyeScale": 1.12
+        },
+        "prop": {
+          "type": "spear"
+        }
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "man_thien",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#4a3020",
+            "trim": "#6b4a2e",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#161616",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b4a2e",
+            "ends": true
+          },
+          "inner": {
+            "color": "#8b6b4a"
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#8a8a8a"
+        },
+        "earrings": false,
+        "bracelets": true,
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thin",
+          "wrinkles": true
+        },
+        "headwear": "khan_van"
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "thi_sach",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "bareChest": false,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#7a5030",
+            "trim": "#5a3a1a",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#5a4030",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#3e2a1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "bronze_axe"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "bracelets": true
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "bareChest": false,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#8b6b4a",
+            "trim": "#5a4030",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#6b4a2e",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#4a3020",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "headwear": "khan_chit"
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "bareChest": false,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#8b6b4a",
+            "trim": "#5a4030",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#6b4a2e",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#4a3020",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "headwear": "khan_chit"
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "bareChest": false,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#8b6b4a",
+            "trim": "#5a4030",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#6b4a2e",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#4a3020",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "headwear": "khan_chit"
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_4",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "bareChest": false,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#8b6b4a",
+            "trim": "#5a4030",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#6b4a2e",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#4a3020",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "headwear": "khan_chit"
+      },
+      "x": 1860,
+      "scale": 1.02,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "trung_trac",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "trung_nhi",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "man_thien",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "thi_sach",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 0,
+      "do": "bow"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 9.28,
+      "do": "bow"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 0,
+      "do": "bow"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 9.63,
+      "do": "bow"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 0,
+      "do": "bow"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 9.98,
+      "do": "bow"
+    },
+    {
+      "actor": "dan_lang_4",
+      "at": 0,
+      "do": "bow"
+    },
+    {
+      "actor": "dan_lang_4",
+      "at": 10.33,
+      "do": "bow"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "glow",
+      "on": "trung_trac",
+      "at": 5.569999999999999,
+      "dur": 11.139999999999999
+    },
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 18.566666666666666,
+      "scale": 2.4
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "trung_trac",
+        "trung_nhi",
+        "man_thien",
+        "thi_sach"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 9.28,
+      "type": "full",
+      "on": [
+        "trung_trac"
+      ],
+      "push": 0.06
+    }
+  ]
+}

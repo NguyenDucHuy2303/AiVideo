@@ -1,0 +1,163 @@
+{
+  "narration": "Cả gầm chạn bỗng im phăng phắc. Chỉ còn nghe tiếng dế kêu ngoài sân. Con này nhìn con kia, chẳng ai nói câu nào. Chuột Út (lo lắng): \"Mẹ ơi, sao mọi người im thế ạ?\"",
+  "plan": {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_ut",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "talk",
+        "thenFace": "worried"
+      },
+      {
+        "id": "chuot_me",
+        "place": "right",
+        "enter": "none",
+        "act": "still",
+        "face": "worried",
+        "then": "still",
+        "thenFace": "worried"
+      },
+      {
+        "id": "chuot_cu",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "chuot_nhat",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "wide"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 9.766666666666667,
+  "time": "night",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "mat",
+        "x": 260
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "chuot_ut",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#d6b98f"
+      },
+      "x": -520,
+      "scale": 0.6,
+      "facing": 1
+    },
+    {
+      "id": "chuot_me",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#9b7452"
+      },
+      "x": 520,
+      "scale": 0.9,
+      "facing": -1
+    },
+    {
+      "id": "chuot_cu",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#b9b9c2"
+      },
+      "x": -520,
+      "scale": 0.95,
+      "facing": 1
+    },
+    {
+      "id": "chuot_nhat",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#cdb08a"
+      },
+      "x": 520,
+      "scale": 0.7,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "chuot_ut",
+      "at": 0,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "chuot_ut",
+      "at": 4.88,
+      "do": "talk",
+      "face": "worried",
+      "talk": 1
+    },
+    {
+      "actor": "chuot_me",
+      "at": 0,
+      "do": "still",
+      "face": "worried"
+    },
+    {
+      "actor": "chuot_me",
+      "at": 4.88,
+      "do": "still",
+      "face": "worried"
+    },
+    {
+      "actor": "chuot_cu",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "chuot_nhat",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "chuot_ut",
+        "chuot_me",
+        "chuot_cu",
+        "chuot_nhat"
+      ],
+      "push": 0.06
+    }
+  ]
+}

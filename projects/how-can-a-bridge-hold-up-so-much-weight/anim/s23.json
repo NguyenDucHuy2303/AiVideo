@@ -1,0 +1,100 @@
+{
+  "castFile": "cast.json",
+  "duration": 10.7,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "give",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "idle",
+      "face": "determined"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><rect x=\"120\" y=\"200\" width=\"260\" height=\"260\" fill=\"none\" stroke=\"#fb8c00\" stroke-width=\"24\" data-in=\"1\"/><polygon points=\"620,460 880,460 750,200\" fill=\"none\" stroke=\"#43a047\" stroke-width=\"24\" stroke-linejoin=\"round\" data-in=\"3\"/><circle cx=\"120\" cy=\"200\" r=\"16\" fill=\"#e53935\" data-in=\"4\"/><circle cx=\"380\" cy=\"200\" r=\"16\" fill=\"#e53935\" data-in=\"4\"/><circle cx=\"120\" cy=\"460\" r=\"16\" fill=\"#e53935\" data-in=\"4\"/><circle cx=\"380\" cy=\"460\" r=\"16\" fill=\"#e53935\" data-in=\"4\"/><circle cx=\"620\" cy=\"460\" r=\"16\" fill=\"#e53935\" data-in=\"5\"/><circle cx=\"880\" cy=\"460\" r=\"16\" fill=\"#e53935\" data-in=\"5\"/><circle cx=\"750\" cy=\"200\" r=\"16\" fill=\"#e53935\" data-in=\"5\"/><text x=\"250\" y=\"530\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"2\">square</text><text x=\"750\" y=\"530\" font-family=\"sans-serif\" font-size=\"36\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"3.5\">triangle</text></svg>",
+    "style": "grid",
+    "icons": {},
+    "reveal": 6.42
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

@@ -84,12 +84,17 @@
   const OUT = { stroke: INK, "stroke-width": 4.5, "stroke-linejoin": "round", "stroke-linecap": "round" };
 
   /** Interpolate every number (and [a, b] pair) of two flat objects; others come from b. */
+  const REST1 = new Set(["sx", "sy", "scale", "opacity"]);
   function blend(a, b, k) {
     if (k >= 1 || !a) return b;
     if (k <= 0) return a;
     const out = {};
     for (const key of new Set([...Object.keys(a), ...Object.keys(b)])) {
-      const x = a[key], y = b[key];
+      let x = a[key], y = b[key];
+      // A number one pose leaves out is at rest (0; squash and scale 1): it slides there instead
+      // of jumping half way through (a hop's dy, a fall's rot snapped in the middle of the blend).
+      if (typeof x === "number" && y === undefined) y = REST1.has(key) ? 1 : 0;
+      else if (typeof y === "number" && x === undefined) x = REST1.has(key) ? 1 : 0;
       if (typeof x === "number" && typeof y === "number") out[key] = lerp(x, y, k);
       else if (Array.isArray(x) && Array.isArray(y)) out[key] = x.map((v, i) => lerp(v, y[i], k));
       else if (x && y && typeof x === "object" && typeof y === "object") out[key] = blend(x, y, k);

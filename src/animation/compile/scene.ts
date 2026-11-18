@@ -114,7 +114,7 @@ export function compileScene(plan: ScenePlan, ctx: CompileContext): Record<strin
       const then = horseMotion(c, a.then);
       const extra = a.then === "fly" ? { move: { toY: -2400, ease: "in" }, dur: D - mid } : MOVING.has(a.then) ? { move: { by: facing * 700 * s, ease: "in" }, dur: D - mid } : {};
       actions.push({ actor: a.id, at: mid, do: then, face: a.thenFace, ...(a.then === "talk" || a.then === "call" ? { talk: 1 } : {}), ...extra });
-      if (a.then === "fall") fx.push({ fx: "impact", on: a.id, at: mid + 0.35, power: 0.3 });
+      if (a.then === "fall") fx.push({ fx: "impact", on: a.id, at: mid + 0.6, power: 0.3 });
     }
   }
   // A galloping horse keeps going; its rider follows.
@@ -137,7 +137,7 @@ export function compileScene(plan: ScenePlan, ctx: CompileContext): Record<strin
         const at = Math.round((mid + i * 0.35) * 100) / 100;
         if (at < D - 0.3) {
           actions.push({ actor: id, at, do: plan.crowd.then });
-          if (plan.crowd.then === "fall") fx.push({ fx: "impact", on: id, at: at + 0.35, power: 0.3 });
+          if (plan.crowd.then === "fall") fx.push({ fx: "impact", on: id, at: at + 0.6, power: 0.3 });
         }
       }
     }

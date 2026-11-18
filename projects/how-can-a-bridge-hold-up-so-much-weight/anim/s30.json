@@ -1,0 +1,100 @@
+{
+  "castFile": "cast.json",
+  "duration": 11.43,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "give",
+      "face": "happy"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "talk",
+      "face": "surprised"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "worry",
+      "face": "surprised"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"90\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.3\">Paper bridge test</text><path d=\"M60 530H940\" stroke=\"#3a2a20\" stroke-width=\"6\" data-in=\"0.5\"/><g fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"1\"><rect x=\"130\" y=\"430\" width=\"170\" height=\"50\"/><rect x=\"130\" y=\"480\" width=\"170\" height=\"50\" fill=\"#4aa3e0\"/><rect x=\"130\" y=\"380\" width=\"170\" height=\"50\" fill=\"#43a047\"/><rect x=\"700\" y=\"430\" width=\"170\" height=\"50\"/><rect x=\"700\" y=\"480\" width=\"170\" height=\"50\" fill=\"#4aa3e0\"/><rect x=\"700\" y=\"380\" width=\"170\" height=\"50\" fill=\"#43a047\"/></g><path d=\"M130 380L300 380Q500 640 700 380L870 380\" fill=\"#fff\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"3\"/><ellipse cx=\"500\" cy=\"490\" rx=\"32\" ry\"=\"12\" fill=\"#ffd23f\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"5\"/><text x=\"500\" y=\"250\" font-family=\"sans-serif\" font-size=\"38\" text-anchor=\"middle\" fill=\"#e53935\" data-in=\"7\">It sags!</text></svg>",
+    "style": "grid",
+    "icons": {},
+    "reveal": 6.86
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

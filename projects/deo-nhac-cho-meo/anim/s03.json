@@ -1,0 +1,87 @@
+{
+  "narration": "Nhưng trong nhà ấy còn có cô Mèo Mướp. Cô có bộ lông vằn, đôi mắt sáng, và cái đuôi dài ve vẩy. Mèo Mướp (cười): \"Meo meo, tối nay ta lại đi dạo một vòng quanh bếp xem sao.\"",
+  "plan": {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "meo_muop",
+        "place": "center",
+        "enter": "from_right",
+        "act": "walk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "laugh"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "fire_pit"
+    ],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 10.833333333333334,
+  "time": "night",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "fire_pit",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "meo_muop",
+      "type": "animal",
+      "look": {
+        "species": "cat",
+        "color": "#8b7a60"
+      },
+      "x": 1994.9999999999998,
+      "scale": 1.5,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "meo_muop",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": 0,
+        "ease": "out"
+      },
+      "dur": 4.88,
+      "face": "happy"
+    },
+    {
+      "actor": "meo_muop",
+      "at": 4.88,
+      "do": "still",
+      "face": "happy"
+    },
+    {
+      "actor": "meo_muop",
+      "at": 5.42,
+      "do": "talk",
+      "face": "laugh",
+      "talk": 1
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "meo_muop"
+      ],
+      "push": 0.06
+    }
+  ]
+}

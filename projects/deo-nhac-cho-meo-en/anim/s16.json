@@ -1,0 +1,172 @@
+{
+  "narration": "Cả gầm chạn rộn lên tiếng vỗ tay. Mấy chú chuột con nhảy cẫng lên vui sướng. Chuột Út (hô to): \"Hay quá! Hay quá!\" Chuột Béo (cười): \"Từ nay ta tha hồ ăn no ngủ kỹ rồi!\"",
+  "plan": {
+    "set": "village",
+    "time": "night",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "chuot_ut",
+        "place": "left",
+        "enter": "none",
+        "act": "cheer",
+        "face": "joy",
+        "then": "hop",
+        "thenFace": "joy"
+      },
+      {
+        "id": "chuot_beo",
+        "place": "right",
+        "enter": "none",
+        "act": "cheer",
+        "face": "laugh",
+        "then": "talk",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "chuot_cu",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "chuot_nhat",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "mat"
+    ],
+    "shot": "wide"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 8.9,
+  "time": "night",
+  "mood": "majestic",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "mat",
+        "x": 260
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "chuot_ut",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#d6b98f"
+      },
+      "x": -520,
+      "scale": 0.6,
+      "facing": 1
+    },
+    {
+      "id": "chuot_beo",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#6a4630"
+      },
+      "x": 520,
+      "scale": 1.15,
+      "facing": -1
+    },
+    {
+      "id": "chuot_cu",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#b9b9c2"
+      },
+      "x": -520,
+      "scale": 0.95,
+      "facing": 1
+    },
+    {
+      "id": "chuot_nhat",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#cdb08a"
+      },
+      "x": 520,
+      "scale": 0.7,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "chuot_ut",
+      "at": 0,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "chuot_ut",
+      "at": 4.45,
+      "do": "hop",
+      "face": "joy"
+    },
+    {
+      "actor": "chuot_beo",
+      "at": 0,
+      "do": "cheer",
+      "face": "laugh"
+    },
+    {
+      "actor": "chuot_beo",
+      "at": 4.45,
+      "do": "talk",
+      "face": "laugh",
+      "talk": 1
+    },
+    {
+      "actor": "chuot_cu",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "chuot_nhat",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "sparkle",
+      "on": "chuot_ut",
+      "at": 2.67,
+      "dur": 5.34
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "chuot_ut",
+        "chuot_beo",
+        "chuot_cu",
+        "chuot_nhat"
+      ],
+      "push": 0.06
+    }
+  ]
+}

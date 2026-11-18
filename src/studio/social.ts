@@ -51,6 +51,40 @@ export function blurbOf(description: string, max = 220): string {
   return out.length > max ? `${out.slice(0, max - 1).trimEnd()}…` : out;
 }
 
+/**
+ * A line for the parents: on Facebook and TikTok the viewers are the grown-ups (no child under
+ * 13 is there), so the post tells them why to show it to their child (16/11/2026). Three of each,
+ * one chosen by the title (the same post always says the same, the Page not one line every day).
+ */
+const PARENT: Record<string, string[]> = {
+  story: ["Truyện hay để bố mẹ kể cho bé nghe hôm nay 📖", "Cả nhà cùng xem với bé nhé: truyện ngắn, có bài học hay 💛", "Bố mẹ lưu lại để cho bé xem lúc rảnh nhé 📌"],
+  ask: ["Câu hỏi bé hay hỏi bố mẹ, giải thích dễ hiểu trong vài phút 🔍", "Bố mẹ xem cùng bé để trả lời những câu hỏi “vì sao” nhé 💡", "Kiến thức khoa học vui, bố mẹ cho bé xem cùng nhé 🌱"],
+  lesson: ["Cho bé học tiếng Anh qua phim hoạt hình vui 🎈", "Bố mẹ cho bé xem rồi cùng nói theo các từ tiếng Anh nhé 🗣️", "Thêm vài từ tiếng Anh mới cho bé mỗi ngày 📚"],
+  askEn: ["A fun science question to watch with your kids 🔍", "Parents: an easy answer to a big kid question 💡", "Watch together and learn something new today 🌱"],
+  storyEn: ["A Vietnamese folk tale to share with your kids 📖", "Story time: watch it together with your little ones 💛", "Save it for your kids' next story time 📌"],
+};
+export function parentLine(lang: string, kind: string | undefined, title: string): string {
+  const group = lang === "en" ? (kind === "qa" || kind === "fact" ? "askEn" : "storyEn")
+    : kind === "lesson" || kind === "episode" ? "lesson" : kind === "qa-vi" || kind === "fact-vi" ? "ask" : "story";
+  let h = 0;
+  for (const c of title) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return PARENT[group]![h % 3]!;
+}
+
+/**
+ * The Facebook caption when the Page writes the link in its first comment (facebook.ts): the
+ * YouTube line leaves the caption (a post leading off Facebook is shown to fewer people, and a
+ * link in a Reel's caption is not one to tap), a pointer to the comment stands in its place.
+ * No YouTube line: undefined (the caption stays as it is).
+ */
+export function linkToComment(text: string, lang: string): { caption: string; comment: string } | undefined {
+  const lines = text.split("\n"), i = lines.findIndex((l) => /https:\/\/(youtu\.be|youtube\.com)\//.test(l));
+  if (i < 0) return undefined;
+  const comment = lines[i]!.trim();
+  lines[i] = lang === "vi" ? "👇 Link xem trên YouTube ở bình luận đầu tiên" : "👇 YouTube link in the first comment";
+  return { caption: lines.join("\n"), comment: `${comment} 🎬` };
+}
+
 /** Where a post's YouTube link goes until the user pastes it (the studio fills it in then;
  *  Facebook is never posted with it: facebook.ts waits for the link). */
 export const LINK_WAIT = "[link YouTube: studio tự điền khi anh dán link video vào trang duyệt]";
@@ -68,8 +102,8 @@ export function socialText(platform: Platform, meta: Meta, o: { what: What; kind
     : `${o.isFact ? (vi ? "Xem giải thích đầy đủ" : "Watch the full explanation") : vi ? "Xem trọn phim" : "Watch the whole video"}${vi ? " trên YouTube" : " on YouTube"}`;
   const bio = vi ? `👉 Link bấm được ở trang cá nhân (bio) của kênh ${o.youtube ?? o.channel}` : `👉 Tap the link in our bio (${o.youtube ?? o.channel})`;
   const full = o.what !== "short" ? "" : `${label}: ${o.link ?? LINK_WAIT}${platform === "tiktok" ? `\n${bio}` : ""}`;
-  const follow = vi ? `Theo dõi ${o.channel} để xem thêm nhé!` : `Follow ${o.channel} for more!`;
-  return [title, blurb, full, follow, hashtagsOf(meta.lang, o.kind, platform).join(" ")].filter(Boolean).join("\n\n").slice(0, 2200);
+  const follow = vi ? `Theo dõi ${o.channel} để cùng bé xem video mới mỗi ngày nhé!` : `Follow ${o.channel} for more videos to watch with your kids!`;
+  return [title, blurb, parentLine(meta.lang, o.kind, meta.title), full, follow, hashtagsOf(meta.lang, o.kind, platform).join(" ")].filter(Boolean).join("\n\n").slice(0, 2200);
 }
 
 /** What to set when posting, the same for every video of the platform. */

@@ -1,0 +1,118 @@
+{
+  "narration": "Hai nhà âm thầm liên kết với các Lạc tướng khắp nơi. Bà Man Thiện cũng đi gặp các vị thủ lĩnh quanh vùng. Bà Man Thiện (dõng dạc): \"Chúng ta là con cháu vua Hùng, đâu thể cúi đầu mãi được!\" Nhiều thủ lĩnh gật đầu, hẹn sẽ cùng nhau đứng lên.",
+  "plan": {
+    "set": "village",
+    "time": "dusk",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "man_thien",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "determined",
+        "then": "raise",
+        "thenFace": "determined"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "bac_thuoc",
+  "duration": 13.333333333333334,
+  "time": "dusk",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "man_thien",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#d9a06c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#4a3020",
+            "trim": "#6b4a2e",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#161616",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#6b4a2e",
+            "ends": true
+          },
+          "inner": {
+            "color": "#8b6b4a"
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#8a8a8a"
+        },
+        "earrings": false,
+        "bracelets": true,
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "round",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thin",
+          "wrinkles": true
+        },
+        "headwear": "khan_van"
+      },
+      "x": 0,
+      "scale": 1,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "man_thien",
+      "at": 0,
+      "do": "talk",
+      "face": "determined",
+      "talk": 1
+    },
+    {
+      "actor": "man_thien",
+      "at": 6.67,
+      "do": "raise",
+      "face": "determined"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "man_thien"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 6.67,
+      "type": "close",
+      "on": [
+        "man_thien"
+      ],
+      "push": 0.06
+    }
+  ]
+}

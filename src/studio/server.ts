@@ -16,7 +16,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { ROOT } from "../config.ts";
 import { brainSettings, ledger, saveBrainSettings, spent, weigh } from "../brain/claude.ts";
-import { jobDir, listJobs, loadJob, saveJob, setStatus, type JobStatus } from "./jobs.ts";
+import { jobDir, listJobs, loadJob, onYouTube, saveJob, setStatus, type JobStatus } from "./jobs.ts";
 import { saveLineWeek, schedulerState, settings as scheduleSettings } from "./schedule.ts";
 import { lineOf, weekly } from "./pick.ts";
 import { artOf, validStyle, validTheme } from "./art.ts";
@@ -187,6 +187,7 @@ async function handle(req: http.IncomingMessage, res: http.ServerResponse): Prom
       // The finished film again with the new look: no brain, only the render (tonight).
       const job = await loadJob(parts[2]!);
       if (job.status !== "video" && job.status !== "done") return json(res, { error: "chỉ render lại được video đã xong" }, 400);
+      if (onYouTube(job)) return json(res, { error: "video đã có link YouTube: không làm lại" }, 400);
       job.stage = "ready";
       await saveJob(job);
       return json(res, { job: await setStatus(job, "producing", "bạn: render lại với phong cách / intro / outro mới") });

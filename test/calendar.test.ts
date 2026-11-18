@@ -55,3 +55,20 @@ test("a topic was last posted at its latest YouTube or TikTok / Facebook mark", 
   assert.equal(lastPosted(j), new Date(at(13, 8)).getTime());
   assert.equal(lastPosted(job()), 0);
 });
+
+test("only videos ready to post are on the calendar: not one being made again, waiting for review or held", () => {
+  for (const status of ["producing", "video", "approved", "fix", "failed", "rejected"] as const) assert.deepEqual(entriesOf(job({ status }), SETTINGS, NOW), [], status);
+  assert.deepEqual(entriesOf(job({ publishHold: true } as Partial<Job>), SETTINGS, NOW), []);
+  // an English version being made again is off; the film and Shorts stay
+  const en = job({ english: "rendering", exported: { long: ex(at(12, 19, 30)), en: ex(at(13, 8, 30)) } });
+  assert.deepEqual(entriesOf(en, SETTINGS, NOW).map((e) => e.what), ["long"]);
+  assert.deepEqual(entriesOf({ ...en, english: "done" }, SETTINGS, NOW).map((e) => e.what), ["long", "en"]);
+  // what is already on YouTube stays, whatever the job does now
+  const posted = job({ status: "producing", published: { long: { videoId: "a", url: "https://youtu.be/a", publishAt: at(12, 19, 30), channel: "huy-ke-chuyen", at: at(12, 12) } } });
+  assert.deepEqual(entriesOf(posted, SETTINGS, NOW).map((e) => e.what), ["long"]);
+});
+
+test("a scene clip that does not open is not taken as rendered", async () => {
+  const { clipOk } = await import("../src/animation/story.ts");
+  assert.equal(await clipOk("/nonexistent/clip.mp4", 5), false);
+});

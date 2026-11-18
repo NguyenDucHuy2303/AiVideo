@@ -625,5 +625,10 @@
   ],
   "kind": "qa",
   "summary": "Every child has had hiccups and found them funny and puzzling, and the video shows the diaphragm and the 'hic' sound with a simple animated body diagram and ends with fun, safe tricks people try.",
-  "by": "claude-opus"
+  "by": "claude-opus",
+  "score": {
+    "value": 8.3,
+    "why": "Mở đầu hấp dẫn (em bé nấc trong bụng mẹ, động vật cũng nấc), nội dung chính xác và trung thực về điều khoa học chưa biết, có thí nghiệm an toàn, chủ đề nhiều người tìm và dễ dựng hình (cơ hoành, quả bóng, cái bát); điểm yếu là hơi dài và dày kiến thức (cơ hoành, dây thanh, phản xạ, giả thuyết), phần đầu giải thích hơi lê thê và chi tiết như 35 phần nghìn giây hay kỷ lục 68 năm cần kiểm chứng và đơn giản hóa cho trẻ 6–12.",
+    "hash": "92980b1a2939665d"
+  }
 }

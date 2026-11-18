@@ -1,0 +1,674 @@
+{
+  "title": "Đi chợ mua hoa quả",
+  "youtubeTitle": "Đi chợ mua hoa quả: apple, banana, orange, watermelon, mouse",
+  "words": [
+    {
+      "en": "apple",
+      "vi": "quả táo",
+      "thing": "apple"
+    },
+    {
+      "en": "banana",
+      "vi": "quả chuối",
+      "thing": "banana"
+    },
+    {
+      "en": "orange",
+      "vi": "quả cam",
+      "thing": "orange"
+    },
+    {
+      "en": "watermelon",
+      "vi": "quả dưa hấu",
+      "thing": "watermelon"
+    },
+    {
+      "en": "mouse",
+      "vi": "con chuột",
+      "thing": "mouse"
+    }
+  ],
+  "things": [
+    {
+      "id": "apple",
+      "kind": "item",
+      "icon": "red apple",
+      "speaker": "Táo"
+    },
+    {
+      "id": "banana",
+      "kind": "item",
+      "icon": "banana"
+    },
+    {
+      "id": "orange",
+      "kind": "item",
+      "icon": "tangerine"
+    },
+    {
+      "id": "watermelon",
+      "kind": "item",
+      "icon": "watermelon"
+    },
+    {
+      "id": "mouse",
+      "kind": "animal",
+      "species": "mouse",
+      "speaker": "Chuột"
+    },
+    {
+      "id": "basket",
+      "kind": "item",
+      "icon": "basket"
+    }
+  ],
+  "places": {
+    "market": "a bright modern Vietnamese fruit market stall with a wooden counter, colorful awnings and crates, no people",
+    "home": "a bright cozy modern Vietnamese kitchen: a wooden table, a sink, a big window, no people"
+  },
+  "scenes": [
+    {
+      "place": "market",
+      "say": "Bối (lo lắng): \"Ôi không! Tờ giấy ghi hoa quả bay mất rồi!\" Beo (ngạc nhiên): \"Giấy có cánh hả chị? Bay đi đâu rồi?\" Hùng (tinh nghịch): \"Chắc nó đi chợ trước mình rồi!\" Huy (vui vẻ): \"Không sao. Mình cứ đi xem hoa quả nhé.\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "worry",
+          "who": "Bối",
+          "face": "worried"
+        },
+        {
+          "line": 2,
+          "do": "look",
+          "who": "Beo",
+          "to": "Bối",
+          "face": "surprised"
+        },
+        {
+          "line": 3,
+          "do": "laugh",
+          "who": "Hùng",
+          "face": "laugh"
+        },
+        {
+          "line": 4,
+          "do": "nod",
+          "who": "Huy",
+          "face": "happy"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Hùng (tinh nghịch): \"Xin mời quý khách! Hoa quả tươi đây!\" [2s] Táo (vui vẻ): \"Hi! I am an apple!\" Beo (vui vẻ): \"*Apple!* Quả táo!\" Bối (vui vẻ): \"Các bạn nói cùng Beo nào: *Apple!*\" [3s] Huy (tự hào): \"Giỏi lắm! Các bạn nói hay quá!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "wave",
+          "who": "Hùng",
+          "face": "happy"
+        },
+        {
+          "line": 2,
+          "do": "appear",
+          "what": "apple"
+        },
+        {
+          "line": 4,
+          "do": "jump",
+          "who": "Beo",
+          "face": "joy"
+        },
+        {
+          "line": 5,
+          "do": "point",
+          "who": "Bối",
+          "to": "apple",
+          "face": "happy"
+        },
+        {
+          "line": 7,
+          "do": "clap",
+          "who": "Huy",
+          "face": "proud"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Bối (vui vẻ): \"Cô bán hàng ơi, cho cháu một quả táo ạ!\" Hùng (cười): \"Được chứ! Mời khách nhỏ cầm về!\" Táo (vui vẻ): \"Hello! Take me home!\" Beo (ngạc nhiên): \"Táo biết nói! Con muốn ăn thử!\" Huy (lo lắng): \"Đợi đã Beo. Mình còn phải trả tiền nữa.\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "apple"
+        },
+        {
+          "line": 2,
+          "do": "give",
+          "who": "Hùng",
+          "what": "apple",
+          "to": "Bối",
+          "face": "happy"
+        },
+        {
+          "line": 4,
+          "do": "hop",
+          "who": "Beo",
+          "face": "surprised"
+        },
+        {
+          "line": 5,
+          "do": "nod",
+          "who": "Huy",
+          "face": "worried"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Hùng (tinh nghịch): \"Tiếp theo là món bí mật đây!\" [2s] Beo (vui vẻ): \"A lô! A lô! Mẹ ơi, con đây!\" Bối (cười): \"Beo ơi, đó đâu phải điện thoại!\" Huy (vui vẻ): \"Đó là *Banana!*, quả chuối đấy.\" Beo (vui vẻ): \"*Banana!* Quả chuối!\" Hùng (tinh nghịch): \"Các bạn nói cùng Beo nào: *Banana!*\" [3s] Bối (tự hào): \"Các bạn giỏi quá!\"",
+      "beats": [
+        {
+          "line": 2,
+          "do": "enter",
+          "who": "Hùng",
+          "from": "right",
+          "what": "banana"
+        },
+        {
+          "line": 3,
+          "do": "give",
+          "who": "Hùng",
+          "what": "banana",
+          "to": "Beo",
+          "face": "happy"
+        },
+        {
+          "line": 4,
+          "do": "laugh",
+          "who": "Bối",
+          "face": "laugh"
+        },
+        {
+          "line": 6,
+          "do": "hop",
+          "who": "Beo",
+          "face": "joy"
+        },
+        {
+          "line": 7,
+          "do": "point",
+          "who": "Hùng",
+          "to": "banana",
+          "face": "happy"
+        },
+        {
+          "line": 9,
+          "do": "clap",
+          "who": "Bối",
+          "face": "proud"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Bối (vui vẻ): \"Nhìn kìa, quả tròn tròn màu cam!\" [2s] Beo (ngạc nhiên): \"Quả bóng! Để con đá nhé!\" Huy (cười): \"Khoan đã! Đó là *Orange!*, quả cam!\" Beo (vui vẻ): \"*Orange!* Quả cam!\" Huy (vui vẻ): \"Các bạn nói cùng Beo nào: *Orange!*\" [3s] Hùng (tinh nghịch): \"Giỏi quá! Cam không phải bóng đâu nhé!\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "point",
+          "who": "Bối",
+          "to": "orange",
+          "face": "happy"
+        },
+        {
+          "line": 2,
+          "do": "appear",
+          "what": "orange"
+        },
+        {
+          "line": 3,
+          "do": "hop",
+          "who": "Beo",
+          "face": "surprised"
+        },
+        {
+          "line": 4,
+          "do": "point",
+          "who": "Huy",
+          "to": "orange",
+          "face": "laugh"
+        },
+        {
+          "line": 6,
+          "do": "cheer",
+          "who": "Hùng",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Hùng (lo lắng): \"Ái chà! Quả này nặng quá!\" [2s] Beo (ngạc nhiên): \"Bóng xanh khổng lồ! Bên trong có gì thế?\" Huy (vui vẻ): \"Đó là *Watermelon!*, quả dưa hấu.\" Bối (vui vẻ): \"*Watermelon!* Quả dưa hấu!\" Beo (vui vẻ): \"Các bạn nói cùng Bối nào: *Watermelon!*\" [3s] Huy (tự hào): \"Tuyệt vời! Các bạn nhớ nhanh quá!\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "enter",
+          "who": "Hùng",
+          "from": "right",
+          "what": "watermelon"
+        },
+        {
+          "line": 1,
+          "do": "worry",
+          "who": "Hùng",
+          "face": "worried"
+        },
+        {
+          "line": 2,
+          "do": "put",
+          "who": "Hùng",
+          "what": "watermelon"
+        },
+        {
+          "line": 3,
+          "do": "look",
+          "who": "Beo",
+          "to": "watermelon",
+          "face": "surprised"
+        },
+        {
+          "line": 5,
+          "do": "cheer",
+          "who": "Bối",
+          "face": "joy"
+        },
+        {
+          "line": 8,
+          "do": "clap",
+          "who": "Huy",
+          "face": "proud"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Huy (ngạc nhiên): \"Ơ, cái giỏ trái cây đang rung kìa!\" [2s] Beo (sợ hãi): \"Ối! Giỏ có ma hả anh?\" Bối (lo lắng): \"Beo đừng sợ. Chị xem thử nhé.\" [2s] Chuột (vui vẻ): \"Squeak! I am a mouse!\" Beo (ngạc nhiên): \"*Mouse!* Con chuột!\" Hùng (tinh nghịch): \"Các bạn nói cùng Beo nào: *Mouse!*\" [3s] Huy (tự hào): \"Giỏi lắm các bạn!\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "basket"
+        },
+        {
+          "line": 2,
+          "do": "shake",
+          "what": "basket"
+        },
+        {
+          "line": 3,
+          "do": "hop",
+          "who": "Beo",
+          "face": "scared"
+        },
+        {
+          "line": 4,
+          "do": "crouch",
+          "who": "Bối",
+          "face": "worried"
+        },
+        {
+          "line": 5,
+          "do": "pop_out",
+          "what": "mouse",
+          "to": "basket"
+        },
+        {
+          "line": 7,
+          "do": "jump",
+          "who": "Beo",
+          "face": "surprised"
+        },
+        {
+          "line": 8,
+          "do": "point",
+          "who": "Hùng",
+          "to": "mouse",
+          "face": "happy"
+        },
+        {
+          "line": 10,
+          "do": "clap",
+          "who": "Huy",
+          "face": "proud"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Bối (ngạc nhiên): \"Nhìn kìa! Chuột cầm tờ giấy của mình!\" Chuột (lo lắng): \"Sorry! I am hungry!\" Huy (vui vẻ): \"Bạn chuột đói bụng nên lấy giấy đấy.\" Hùng (cười): \"Giấy đâu có ngon bằng hoa quả!\" Beo (vui vẻ): \"Chuột ơi, ăn táo đi!\" Táo (sợ hãi): \"Oh no! Not me!\" [2s] Bối (cười): \"Hahaha! Táo sợ chuột kìa!\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "mouse"
+        },
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "apple"
+        },
+        {
+          "line": 1,
+          "do": "point",
+          "who": "Bối",
+          "to": "mouse",
+          "face": "surprised"
+        },
+        {
+          "line": 3,
+          "do": "nod",
+          "who": "Huy",
+          "face": "happy"
+        },
+        {
+          "line": 5,
+          "do": "point",
+          "who": "Beo",
+          "to": "apple",
+          "face": "happy"
+        },
+        {
+          "line": 6,
+          "do": "shake",
+          "what": "apple"
+        },
+        {
+          "line": 7,
+          "do": "run_around",
+          "what": "mouse"
+        },
+        {
+          "line": 8,
+          "do": "laugh",
+          "who": "Bối",
+          "face": "laugh"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Chuột (vui vẻ): \"I want an apple, please!\" Beo (ngạc nhiên): \"Chuột biết xin ạ! Còn lịch sự hơn con!\" Hùng (tinh nghịch): \"Khách hàng nhỏ nhất chợ! Xin chào!\" [2s] Bối (ngạc nhiên): \"Ôi, bạn ấy có cả tiền xu nữa!\" Huy (vui vẻ): \"Vậy mình mua giúp bạn nhé.\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "mouse"
+        },
+        {
+          "line": 2,
+          "do": "look",
+          "who": "Beo",
+          "to": "mouse",
+          "face": "surprised"
+        },
+        {
+          "line": 3,
+          "do": "wave",
+          "who": "Hùng",
+          "face": "laugh"
+        },
+        {
+          "line": 4,
+          "do": "crouch",
+          "who": "Bối",
+          "face": "surprised"
+        },
+        {
+          "line": 5,
+          "do": "nod",
+          "who": "Huy",
+          "face": "happy"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Hùng (tinh nghịch): \"Của quý khách hết mười ngàn đồng ạ!\" Beo (vui vẻ): \"Con trả bằng chuối nhé!\" Hùng (cười): \"Chuối này là của anh mà!\" [2s] Huy (cười): \"Để anh trả tiền cho nhé.\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "banana"
+        },
+        {
+          "line": 2,
+          "do": "give",
+          "who": "Beo",
+          "what": "banana",
+          "to": "Hùng",
+          "face": "proud"
+        },
+        {
+          "line": 3,
+          "do": "laugh",
+          "who": "Hùng",
+          "face": "laugh"
+        },
+        {
+          "line": 4,
+          "do": "laugh",
+          "who": "Bối",
+          "face": "laugh"
+        },
+        {
+          "line": 5,
+          "do": "nod",
+          "who": "Huy",
+          "face": "happy"
+        }
+      ]
+    },
+    {
+      "place": "market",
+      "say": "Bối (vui vẻ): \"Giỏ đầy hoa quả rồi! Mình về nhà thôi!\" Chuột (vui vẻ): \"Hooray! Let us go!\" Beo (vui vẻ): \"Chuột ngồi giỏ, con đi bộ nhé!\" [2s] Hùng (tinh nghịch): \"Ai về trước được ăn trước nha!\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "basket"
+        },
+        {
+          "line": 1,
+          "do": "carry",
+          "who": "Huy",
+          "what": "basket",
+          "face": "happy"
+        },
+        {
+          "line": 2,
+          "do": "cheer",
+          "who": "Beo",
+          "face": "joy"
+        },
+        {
+          "line": 4,
+          "do": "run_around",
+          "what": "mouse"
+        },
+        {
+          "line": 5,
+          "do": "walk_to",
+          "who": "Hùng",
+          "to": "home",
+          "face": "happy"
+        }
+      ]
+    },
+    {
+      "place": "home",
+      "say": "Huy (vui vẻ): \"Về nhà rồi! Mình làm trái cây trộn nhé.\" Bối (vui vẻ): \"Chị rửa táo, anh Hùng cắt chuối!\" Hùng (tinh nghịch): \"Anh cắt, còn Beo lo ăn thử thôi!\" Beo (tự hào): \"Con nhận nhiệm vụ khó nhất!\" [2s] Chuột (vui vẻ): \"Yummy! Thank you!\"",
+      "beats": [
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "apple"
+        },
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "banana"
+        },
+        {
+          "line": 0,
+          "do": "appear",
+          "what": "mouse"
+        },
+        {
+          "line": 2,
+          "do": "pick_up",
+          "who": "Bối",
+          "what": "apple",
+          "face": "happy"
+        },
+        {
+          "line": 3,
+          "do": "pick_up",
+          "who": "Hùng",
+          "what": "banana",
+          "face": "laugh"
+        },
+        {
+          "line": 4,
+          "do": "hop",
+          "who": "Beo",
+          "face": "proud"
+        },
+        {
+          "line": 6,
+          "do": "cheer",
+          "who": "Huy",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "home",
+      "say": "Huy (vui vẻ): \"Hôm nay mình có thêm một người bạn mới.\" Bối (vui vẻ): \"Đi chợ vui thật! Còn được chia nhau ăn nữa.\" Beo (tự hào): \"Giấy mất rồi mà con nhớ hết nè!\" Huy (ngạc nhiên): \"Thật hả? Nói thử xem nào.\" Beo (vui vẻ): \"Ăn! Ăn! Ăn!\" [2s]",
+      "beats": [
+        {
+          "line": 1,
+          "do": "hug",
+          "who": "Huy",
+          "what": "mouse",
+          "face": "happy"
+        },
+        {
+          "line": 3,
+          "do": "nod",
+          "who": "Bối",
+          "face": "happy"
+        },
+        {
+          "line": 5,
+          "do": "laugh",
+          "who": "Hùng",
+          "face": "laugh"
+        },
+        {
+          "line": 6,
+          "do": "dance",
+          "who": "Beo",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "home",
+      "say": "Huy (vui vẻ): \"Nào, cùng nhớ lại nhé! Theo nhịp nào!\" Táo (vui vẻ): \"Apple!\" Bối (vui vẻ): \"*Apple!*\" Hùng (vui vẻ): \"*Banana!*\" Beo (vui vẻ): \"*Banana!*\" Huy (vui vẻ): \"*Orange!*\" Bối (vui vẻ): \"*Orange!*\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "clap",
+          "who": "Huy",
+          "face": "happy"
+        },
+        {
+          "line": 2,
+          "do": "appear",
+          "what": "apple"
+        },
+        {
+          "line": 4,
+          "do": "appear",
+          "what": "banana"
+        },
+        {
+          "line": 6,
+          "do": "appear",
+          "what": "orange"
+        },
+        {
+          "line": 3,
+          "do": "dance",
+          "who": "Bối",
+          "face": "joy"
+        },
+        {
+          "line": 5,
+          "do": "hop",
+          "who": "Beo",
+          "face": "joy"
+        }
+      ]
+    },
+    {
+      "place": "home",
+      "say": "Hùng (vui vẻ): \"*Watermelon!*\" Beo (vui vẻ): \"*Watermelon!*\" Chuột (vui vẻ): \"Mouse!\" Bối (vui vẻ): \"*Mouse!*\" Huy (vui vẻ): \"Các bạn nhớ bấm đăng ký kênh Huy Kể Chuyện để xem tập sau nhé!\" Hùng (tinh nghịch): \"Tập sau mình đi sở thú, có bạn voi đang đợi đó!\" Beo (sợ hãi): \"Voi hả? Voi có ăn chuối của con không?\"",
+      "beats": [
+        {
+          "line": 1,
+          "do": "appear",
+          "what": "watermelon"
+        },
+        {
+          "line": 3,
+          "do": "appear",
+          "what": "mouse"
+        },
+        {
+          "line": 2,
+          "do": "hop",
+          "who": "Beo",
+          "face": "joy"
+        },
+        {
+          "line": 5,
+          "do": "wave",
+          "who": "Huy",
+          "face": "happy"
+        },
+        {
+          "line": 6,
+          "do": "cheer",
+          "who": "Hùng",
+          "face": "joy"
+        },
+        {
+          "line": 7,
+          "do": "worry",
+          "who": "Beo",
+          "face": "scared"
+        }
+      ]
+    }
+  ],
+  "thumbnail": "Chuột trốn trong giỏ trái cây",
+  "description": "Tờ giấy đi chợ bị bay mất, bốn anh em vẫn đi mua hoa quả và gặp một chú chuột đói bụng trốn trong giỏ. Bé học 5 từ tiếng Anh: apple, banana, orange, watermelon và mouse qua một câu chuyện vui, ấm áp.",
+  "englishReviewed": [
+    "cảnh 4: \"banana\" → \"Banana!\" (Taught word line is missing a capital letter and end punctuation, unlike the other lines.)",
+    "cảnh 5: \"orange\" → \"Orange!\" (Missing capital letter and end punctuation.)",
+    "cảnh 6: \"watermelon\" → \"Watermelon!\" (Missing capital letter and end punctuation.)"
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "narration": "Tin ấy đến tai Tô Định. Hắn sợ người Việt nổi dậy, liền ra tay độc ác. Tô Định (quát): \"Thi Sách dám chống lại ta. Bắt hắn ngay cho ta!\" Thế rồi, Thi Sách bị Tô Định hãm hại.",
+  "plan": {
+    "set": "village",
+    "time": "dusk",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "to_dinh",
+        "place": "center",
+        "enter": "none",
+        "act": "point",
+        "face": "angry",
+        "then": "call",
+        "thenFace": "shout"
+      },
+      {
+        "id": "thi_sach",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "determined",
+        "then": "fall",
+        "thenFace": "sad"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  "era": "bac_thuoc",
+  "duration": 10.933333333333334,
+  "time": "dusk",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "to_dinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#ecc8a0",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#6a1a22",
+            "trim": "#2b2b2b",
+            "length": "ankle",
+            "sleeves": "wide",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#1e1e2e",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#1a1a1a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "beard": "#1a1a1a",
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "thin",
+          "mustache": "droopy"
+        }
+      },
+      "x": 0,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "thi_sach",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#d0a070",
+        "bareChest": false,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#7a5030",
+            "trim": "#5a3a1a",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#5a4030",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#3e2a1e",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "bronze_axe"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "almond",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "bracelets": true
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "to_dinh",
+      "at": 0,
+      "do": "point",
+      "face": "angry"
+    },
+    {
+      "actor": "to_dinh",
+      "at": 5.47,
+      "do": "call",
+      "face": "shout",
+      "talk": 1,
+      "move": {
+        "by": 700,
+        "ease": "in"
+      },
+      "dur": 5.463333333333334
+    },
+    {
+      "actor": "thi_sach",
+      "at": 0,
+      "do": "idle",
+      "face": "determined"
+    },
+    {
+      "actor": "thi_sach",
+      "at": 5.47,
+      "do": "fall",
+      "face": "sad"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "impact",
+      "on": "thi_sach",
+      "at": 5.819999999999999,
+      "power": 0.3
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "to_dinh",
+        "thi_sach"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 3.94,
+      "type": "close",
+      "on": [
+        "to_dinh"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 7.43,
+      "type": "close",
+      "on": [
+        "thi_sach"
+      ],
+      "push": 0.05
+    }
+  ]
+}

@@ -268,7 +268,7 @@ export async function prepareQA(slug: string, log: (s: string) => void = console
     for (const f of await fs.readdir(anim)) if (/^s\d+\.json$/.test(f)) await fs.rm(path.join(anim, f));
   }
   await fs.writeFile(path.join(proj, "script.txt"), text);
-  await fs.writeFile(path.join(proj, "storyboard.json"), JSON.stringify({ title: plan.title, kind: "story", scenes: lines.map((narration) => ({ narration, chapter: plan.title, onScreen: {}, visual: { description: "studio", mood: "calm" }, camera: "ken_burns", transition: "cut" })) }, null, 2));
+  await fs.writeFile(path.join(proj, "storyboard.json"), JSON.stringify({ title: plan.title, kind: "story", scenes: lines.map((narration) => ({ narration, chapter: plan.title.slice(0, 80), onScreen: {}, visual: { description: "studio", mood: "calm" }, camera: "ken_burns", transition: "cut" })) }, null, 2));
   const project = JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8"));
   await fs.writeFile(path.join(proj, "project.json"), JSON.stringify({ ...project, speakers: { [P.host.name]: ["huy"], [P.helper.name]: ["hung"], [P.kid.name]: ["boi"], [P.little.name]: ["beo"], [OLD_KID]: ["boi", "mai"] }, brandId: P.brandId, style: STYLE, thumbnail: { title: plan.thumbnail, subtitle: P.channel } }, null, 2));
   await fs.writeFile(path.join(anim, "cast.json"), JSON.stringify(LOOKS, null, 2));

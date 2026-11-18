@@ -601,8 +601,8 @@
   "summary": "Kids feel summer and winter every year, and a tilted-Earth orbit diagram with a flashlight demo makes the surprising answer (it's the tilt, not distance) click.",
   "by": "claude-opus",
   "score": {
-    "value": 8.7,
-    "why": "Mạnh ở mở đầu bằng nghịch lý \"Trái Đất gần Mặt Trời nhất vào tháng 1 mà vẫn là mùa đông\", sửa đúng hiểu lầm phổ biến, số liệu chính xác (940 triệu km, 23 độ, 98 độ của Sao Thiên Vương, 30 km/s), có thí nghiệm đèn pin và quả bóng quanh đèn dễ dựng hình, chủ đề nhiều người tìm; yếu ở chỗ dồn quá nhiều khái niệm (bán cầu, chí tuyến, phân điểm, đêm cực, mặt trời nửa đêm, Sao Thiên Vương) nên hơi dài và nặng với trẻ 6–7 tuổi, phần cuối hơi lan man.",
-    "hash": "9f55080716ad4f11"
+    "value": 8.3,
+    "why": "Điểm mạnh: chủ đề nhiều người tìm, mở bài có cú twist (Trái Đất gần Mặt Trời nhất vào tháng 1 mà vẫn là mùa đông ở Bắc bán cầu), phá được quan niệm sai về khoảng cách, số liệu đúng (23°, 940 triệu km, 30 km/s, Uranus 98°), có thí nghiệm đèn pin làm tại nhà và dễ dựng bằng sơ đồ quỹ đạo; điểm yếu: hơi dài và dày đặc (nhiều bước, nhiều thuật ngữ như solstice, equinox, hemisphere, midnight sun, polar night) khiến trẻ 6–12 dễ rối, một số câu đùa của Hùng và Beo hơi gượng, và câu mở đầu về quần áo còn chung chung.",
+    "hash": "7bb80e6440989910"
   }
 }

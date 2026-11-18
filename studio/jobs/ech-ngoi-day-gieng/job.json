@@ -80,6 +80,11 @@
       "at": "2026-11-17T04:10:13.772Z",
       "status": "done",
       "info": "bản tiếng Anh: giọng xong"
+    },
+    {
+      "at": "2026-11-17T19:48:45.833Z",
+      "status": "done",
+      "info": "bản tiếng Anh: xong"
     }
   ],
   "kind": "ngụ ngôn",
@@ -122,44 +127,55 @@
     "seconds": 374
   },
   "autoApproved": "2026-11-12T20:18:07.295Z",
-  "exported": {
+  "exported": {},
+  "drive": {
+    "folder": "Ếch Ngồi Đáy Giếng",
+    "mtime": 1794983344796.0444,
+    "at": "2026-11-18T06:34:52.769Z"
+  },
+  "english": "done",
+  "published": {
     "long": {
-      "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
+      "videoId": "mehEQhqSqv4",
+      "url": "https://youtu.be/mehEQhqSqv4",
       "publishAt": "2026-11-18T12:30:00.000Z",
       "channel": "huy-ke-chuyen",
-      "at": "2026-11-16T08:54:16.027Z"
+      "at": "2026-11-18T06:22:34.300Z",
+      "manual": true
     },
     "shorts": [
       {
-        "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
+        "videoId": "B4gZKn7Wj0o",
+        "url": "https://youtube.com/shorts/B4gZKn7Wj0o",
         "publishAt": "2026-11-19T10:00:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-16T08:54:16.046Z"
+        "at": "2026-11-18T06:25:23.295Z",
+        "manual": true
       },
       {
-        "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
+        "videoId": "TPwBrJpHB-8",
+        "url": "https://youtube.com/shorts/TPwBrJpHB-8",
         "publishAt": "2026-11-20T00:30:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-16T08:54:16.076Z"
+        "at": "2026-11-18T06:26:26.545Z",
+        "manual": true
       },
       {
-        "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
+        "videoId": "162lFj-mZSw",
+        "url": "https://youtube.com/shorts/162lFj-mZSw",
         "publishAt": "2026-11-20T05:00:00.000Z",
         "channel": "huy-ke-chuyen",
-        "at": "2026-11-16T08:54:16.095Z"
+        "at": "2026-11-18T06:27:42.756Z",
+        "manual": true
       }
     ],
     "en": {
-      "dir": "/home/huynguyen/youtube/Ếch Ngồi Đáy Giếng",
+      "videoId": "M5JMGVmriAg",
+      "url": "https://youtu.be/M5JMGVmriAg",
       "publishAt": "2026-11-19T01:30:00.000Z",
       "channel": "huy-ke-chuyen",
-      "at": "2026-11-16T08:54:16.120Z"
+      "at": "2026-11-18T06:29:04.755Z",
+      "manual": true
     }
-  },
-  "drive": {
-    "folder": "Ếch Ngồi Đáy Giếng",
-    "mtime": 1794819256212.458,
-    "at": "2026-11-16T08:54:48.965Z"
-  },
-  "english": "ready"
+  }
 }

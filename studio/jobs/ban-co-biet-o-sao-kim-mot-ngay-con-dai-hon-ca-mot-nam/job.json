@@ -1,7 +1,7 @@
 {
   "slug": "ban-co-biet-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam",
   "topic": "Bạn có biết ở sao Kim, một ngày còn dài hơn cả một năm?",
-  "status": "video",
+  "status": "producing",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.306Z",
@@ -79,6 +79,11 @@
     {
       "at": "2026-11-16T11:10:02.946Z",
       "status": "video"
+    },
+    {
+      "at": "2026-11-18T06:39:51.014Z",
+      "status": "producing",
+      "info": "bạn: render lại với phong cách / intro / outro mới"
     }
   ],
   "kind": "fact-vi",
@@ -121,5 +126,6 @@
     "at": "2026-11-17T01:43:52.871Z"
   },
   "longJob": "vi-sao-o-sao-kim-mot-ngay-con-dai-hon-ca-mot-nam",
-  "shorts": []
+  "shorts": [],
+  "stage": "ready"
 }

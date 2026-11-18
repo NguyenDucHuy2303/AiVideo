@@ -1,7 +1,7 @@
 {
   "slug": "deo-nhac-cho-meo",
   "topic": "Đeo nhạc cho mèo",
-  "status": "review",
+  "status": "done",
   "notes": [],
   "history": [
     {
@@ -11,6 +11,45 @@
     {
       "at": "2026-11-13T01:54:47.800Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-17T10:01:07.126Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (điểm 7.4/10)"
+    },
+    {
+      "at": "2026-11-17T21:48:43.492Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-17T21:57:08.905Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-17T21:57:08.927Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-18T00:00:38.120Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-18T00:36:05.490Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-18T01:40:48.641Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (342 giây, không đen màn, đứng hình hay im lặng)"
+    },
+    {
+      "at": "2026-11-18T01:56:48.324Z",
+      "status": "done",
+      "info": "bản tiếng Anh: giọng xong"
     }
   ],
   "kind": "ngụ ngôn",
@@ -28,5 +67,72 @@
       "why": "Đây là truyện ngụ ngôn nhẹ nhàng toàn thú vật nhân hóa dành cho bé nhỏ nên hợp nét màu nước dịu, và cuốn sách mở ra mở đầu hợp lối kể ngụ ngôn.",
       "by": "brain"
     }
-  }
+  },
+  "score": {
+    "value": 7.4,
+    "why": "Điểm mạnh: truyện ngụ ngôn quen thuộc, nhiều người tìm, mở đầu bằng câu hỏi gợi tò mò, nhân vật chuột/mèo dễ dựng, bài học \"nói thì dễ, làm mới khó\" rõ ràng và phù hợp trẻ; điểm yếu: đoạn giữa hơi dài, lặp lại cảnh chuột viện cớ, phần mở rộng về mèo và đoạn kết hơi giảng giải, lại là truyện ngụ ngôn nước ngoài (Aesop) được Việt hóa nên ít nét đặc trưng Việt Nam hơn truyền thuyết lịch sử.",
+    "hash": "22f8057f73945a81"
+  },
+  "autoPicked": true,
+  "inspect": {
+    "at": "2026-11-18T00:00:38.117Z",
+    "perMinute": 8.5,
+    "byKind": {
+      "speaker-off": {
+        "count": 46,
+        "seconds": 130.6
+      },
+      "still": {
+        "count": 1,
+        "seconds": 12.5
+      }
+    }
+  },
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "autoCheck": {
+    "at": "2026-11-18T01:40:48.640Z",
+    "mtimeMs": 1794960021429.7998,
+    "ok": true,
+    "problems": [],
+    "seconds": 342
+  },
+  "autoApproved": "2026-11-18T01:40:48.640Z",
+  "exported": {
+    "long": {
+      "dir": "/home/huynguyen/youtube/Đeo nhạc cho mèo",
+      "publishAt": "2026-11-21T12:30:00.000Z",
+      "channel": "huy-ke-chuyen",
+      "at": "2026-11-18T01:40:48.667Z"
+    },
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/Đeo nhạc cho mèo",
+        "publishAt": "2026-11-23T00:30:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-18T01:40:48.668Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Đeo nhạc cho mèo",
+        "publishAt": "2026-11-23T05:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-18T01:40:48.669Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/Đeo nhạc cho mèo",
+        "publishAt": "2026-11-23T10:00:00.000Z",
+        "channel": "huy-ke-chuyen",
+        "at": "2026-11-18T01:40:48.670Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "Đeo nhạc cho mèo",
+    "mtime": 1794966048677.6606,
+    "at": "2026-11-18T01:43:44.738Z"
+  },
+  "english": "ready"
 }

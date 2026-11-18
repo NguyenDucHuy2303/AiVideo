@@ -11,9 +11,34 @@
     {
       "at": "2026-11-17T04:32:22.383Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-17T10:01:07.127Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (cho dịp Ngày Nhà giáo, còn 3 ngày)"
+    },
+    {
+      "at": "2026-11-17T10:01:07.214Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-17T10:14:43.196Z",
+      "status": "failed",
+      "info": "tiếng Anh đọc sai sau 3 lượt đổi giọng: \"Happy Teachers' Day!\" (Bối) nghe ra \"Happy Teacher's Day!\"; \"Happy Teachers' Day!\" (Beo) nghe ra \"Happy Teacher's Day.\"; \"Daisy!\" (Bối) nghe ra \"That is he.\"; \"Happy Teachers' Day!\" (Hùng) nghe ra \"Happy Teacher's Day!\""
+    },
+    {
+      "at": "2026-11-18T06:41:46.316Z",
+      "status": "writing",
+      "info": "bạn: retry"
+    },
+    {
+      "at": "2026-11-18T06:41:59.680Z",
+      "status": "review"
     }
   ],
   "kind": "lesson",
   "format": "story",
-  "summary": "Đúng dịp 20/11 chỉ còn 3 ngày: bé học ngay những câu cảm ơn cô bằng tiếng Anh để nói thật ở lớp, và từ vựng đơn giản, dễ vẽ."
+  "summary": "Đúng dịp 20/11 chỉ còn 3 ngày: bé học ngay những câu cảm ơn cô bằng tiếng Anh để nói thật ở lớp, và từ vựng đơn giản, dễ vẽ.",
+  "autoPicked": true
 }

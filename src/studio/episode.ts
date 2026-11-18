@@ -12,10 +12,10 @@ import { think } from "../brain/claude.ts";
 import { langRuns, unmark } from "../tts/narrate.ts";
 import { partsOf, NAME_OF, type Beat, type Do, type Episode } from "./staging.ts";
 
-const DOES: Do[] = ["enter", "exit", "walk_to", "carry", "put", "give", "crouch", "stand", "open", "pop_out", "shake", "appear", "vanish", "fall", "get_up", "jump", "cheer", "wave", "point", "worry", "laugh", "talk", "idle", "run_around", "look", "clap", "dance", "kick", "hop", "peek", "knock", "hug", "pick_up", "nod", "search"];
+const DOES: Do[] = ["enter", "exit", "walk_to", "carry", "put", "give", "crouch", "stand", "open", "pop_out", "shake", "appear", "vanish", "fall", "get_up", "jump", "cheer", "wave", "point", "worry", "laugh", "talk", "idle", "run_around", "look", "clap", "dance", "kick", "hop", "peek", "knock", "hug", "pick_up", "nod", "search", "startle", "run_off"];
 /** Animals with a rig of their own (animals.js, critters.js); anything else is an emoji item. */
 export const ANIMALS = ["buffalo", "tiger", "elephant", "dog", "cat", "rabbit", "fox", "turtle", "deer", "goat", "mouse", "crow", "chicken", "fish", "frog", "ant"];
-const FACES = ["happy", "joy", "laugh", "surprised", "worried", "scared", "sad", "proud", "determined", "neutral"];
+const FACES = ["happy", "joy", "laugh", "surprised", "shock", "worried", "scared", "sad", "proud", "determined", "neutral"];
 
 const SCHEMA = {
   type: "object",
@@ -55,7 +55,7 @@ function brief(topic: string, words: string): string {
     "BEATS (what happens, staged by the program): each {line, do, who?, what?, to?, from?, after?, face?}. line = the part of the scene's say it starts with, counting from 1 (every spoken line and every [Ns] pause is one part); line 0 = the scene's very start; after = true: as that part ends. do:",
     "  enter (who, from left|right, what = a thing they carry in, to = a thing to stop by) · exit (who) · walk_to (who, to = a thing, one of the four, or \"home\") · carry (who, what) · put (who, what: sets it down in front) · give (who, what, to) · crouch (who) · stand (who)",
     "  open (what = an item: it bursts open) · pop_out (what = what jumps out, to = the item it comes out of) · shake (what: an item wobbles during that part) · appear (what) · vanish (what) · run_around (what = an animal)",
-    "  fall · get_up · jump · cheer · wave · point · worry · laugh · talk · idle · clap · dance · hop (small happy jumps) · peek (lean to look round) · knock (at a door) · nod · search (look about for something) (who), look (who, to)",
+    "  startle (who: jumps with fright; the others do it by themselves at a scream) · run_off (who: dashes off the screen, cartoon fast) · fall · get_up · jump · cheer · wave · point · worry · laugh · talk · idle · clap · dance · hop (small happy jumps) · peek (lean to look round) · knock (at a door) · nod · search (look about for something) (who), look (who, to)",
     "  pick_up (who, what: picks it up, holds it) · hug (who, what) · kick (who, what: kicks a ball away). face: " + FACES.join(", ") + ".",
     "  who for the four: Huy, Hùng, Bối, Beo. Give each scene 2–6 beats: the four must DO things, not only talk. Things start hidden unless they appear, enter carried, or pop out.",
     "Also: youtubeTitle (Vietnamese, with the words in English, under 90 characters), thumbnail (3–5 Vietnamese words for the picture), description (2–3 Vietnamese sentences for parents: the story in a line and the English words taught).",
@@ -248,7 +248,7 @@ export async function buildEpisode(dir: string, ep: Written, log: (s: string) =>
     voices: { ...VOICES, ...tv.voices }, speakers: { Huy: ["huy"], "Hùng": ["hung"], "Bối": ["boi"], Beo: ["beo"], ...tv.speakers },
   };
   await fs.writeFile(path.join(dir, "project.json"), JSON.stringify(project, null, 2));
-  await fs.writeFile(path.join(dir, "storyboard.json"), JSON.stringify({ title: ep.title, kind: "story", scenes: ep.scenes.map((s) => ({ narration: s.say, chapter: ep.title, onScreen: {}, visual: { description: s.place, mood: "calm" }, camera: "ken_burns", transition: "cut" })) }, null, 2));
+  await fs.writeFile(path.join(dir, "storyboard.json"), JSON.stringify({ title: ep.title, kind: "story", scenes: ep.scenes.map((s) => ({ narration: s.say, chapter: ep.title.slice(0, 80), onScreen: {}, visual: { description: s.place, mood: "calm" }, camera: "ken_burns", transition: "cut" })) }, null, 2));
   // The voices, their English heard back and set right (voicefix.ts); still wrong: it stops here.
   const { voicesChecked } = await import("../audio/voicefix.ts");
   const bad = await voicesChecked(dir, log);

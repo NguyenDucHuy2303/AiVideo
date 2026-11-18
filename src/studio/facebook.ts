@@ -16,16 +16,29 @@ import { exists } from "../utils/fs.ts";
 import { jobDir, loadJob, saveJob, type Job } from "./jobs.ts";
 import { allItems, channelOf, linkOfShort, socialKey, socialPosts, type ChannelCfg, type PublishSettings } from "./publish.ts";
 import type { Line } from "./pick.ts";
-import { LINK_WAIT } from "./social.ts";
+import { LINK_WAIT, linkToComment } from "./social.ts";
 
 const SECRETS = path.join(ROOT, "studio", "secrets", "facebook.json");
-const GRAPH = "https://graph.facebook.com/v21.0";
+export const GRAPH = "https://graph.facebook.com/v21.0";
 const RETRY_MS = 30 * 60_000;
 
-interface Secrets { appId: string; appSecret: string; pages?: Record<string, { name: string; token: string }> }
-async function secrets(): Promise<Secrets | undefined> {
+export interface Secrets { appId: string; appSecret: string; pages?: Record<string, { name: string; token: string }> }
+export async function secrets(): Promise<Secrets | undefined> {
   return (await exists(SECRETS)) ? JSON.parse(await fs.readFile(SECRETS, "utf8")) : undefined;
 }
+
+/** What a Page's token may do (Meta's debug_token), asked at most once an hour. */
+const scopeCache = new Map<string, { at: number; scopes: string[] }>();
+export async function pageScopes(sec: Secrets, token: string): Promise<string[]> {
+  const hit = scopeCache.get(token);
+  if (hit && Date.now() - hit.at < 3600_000) return hit.scopes;
+  const r = await fetch(`${GRAPH}/debug_token?input_token=${token}&access_token=${encodeURIComponent(`${sec.appId}|${sec.appSecret}`)}`).then((x) => x.json()).catch(() => ({})) as { data?: { scopes?: string[] } };
+  const scopes = r.data?.scopes ?? hit?.scopes ?? [];
+  scopeCache.set(token, { at: Date.now(), scopes });
+  return scopes;
+}
+/** The Page may comment as itself (the YouTube link in the first comment, fbside.ts). */
+export const COMMENT_SCOPE = "pages_manage_engagement";
 
 /** Does the studio post this channel's Shorts to Facebook (its Page known). */
 export const autoFacebook = (cfg?: ChannelCfg) => !!cfg?.facebookPage;
@@ -100,13 +113,16 @@ export async function postDue(slug: string, settings: PublishSettings, lines: Li
     const text = post?.text.facebook;
     if (!text) throw new Error("không có lời đăng Facebook");
     if (text.includes(LINK_WAIT) || !/https:\/\/(youtu\.be|youtube\.com)\//.test(text)) throw new Error("lời đăng Facebook chưa có link YouTube");
+    // The link in the Page's first comment when it may comment (fbside.ts writes it), the
+    // caption pointing there; else in the caption, as before.
+    const split = (await pageScopes(sec!, page.token)).includes(COMMENT_SCOPE) ? linkToComment(text, cfg.lang) : undefined;
     const before = await alreadyOnPage(cfg.facebookPage!, page.token, text);
     if (before) log(`  Facebook: ${post!.name} đã có trên Trang ${page.name} (đăng tay): chỉ đánh dấu`);
     else log(`  Facebook: đăng Reel ${post!.name} lên Trang ${page.name}`);
-    const r = before ? { videoId: before, postId: undefined, url: `https://www.facebook.com/reel/${before}/` } : await postReel(cfg.facebookPage!, page.token, path.join(jobDir(slug), due.file), text);
+    const r = before ? { videoId: before, postId: undefined, url: `https://www.facebook.com/reel/${before}/` } : await postReel(cfg.facebookPage!, page.token, path.join(jobDir(slug), due.file), split?.caption ?? text);
     job = await loadJob(slug);
     (job.social ??= {})[key] = new Date().toISOString();
-    (job.facebook ??= {})[key] = { videoId: r.videoId, postId: r.postId, url: r.url, at: new Date().toISOString(), ...(before ? { byHand: true } : {}) };
+    (job.facebook ??= {})[key] = { videoId: r.videoId, postId: r.postId, url: r.url, at: new Date().toISOString(), ...(before ? { byHand: true } : {}), ...(split && !before ? { linkComment: split.comment } : {}) };
     delete job.fbError; delete job.fbRetryAt;
     await saveJob(job);
     log(`  Facebook: ✔ ${r.url}`);

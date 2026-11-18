@@ -1,0 +1,32 @@
+{
+  "slug": "cao-va-qua",
+  "topic": "Cáo và Quạ",
+  "status": "review",
+  "notes": [],
+  "history": [
+    {
+      "at": "2026-11-18T01:59:21.303Z",
+      "status": "writing"
+    },
+    {
+      "at": "2026-11-18T02:01:42.367Z",
+      "status": "review"
+    }
+  ],
+  "kind": "ngụ ngôn",
+  "era": "co_tich_lang_que",
+  "summary": "Quạ đen kiếm được một miếng phô mai (có thể đổi thành miếng thịt hoặc con cá) rồi đậu trên cành cây. Cáo đói đi qua, thèm thuồng nên khen quạ có bộ lông đẹp, giọng hát hay nhất khu rừng và xin quạ hát một bài. Quạ nghe khen thì sướng quá, mở miệng hát, miếng mồi rơi xuống đất. Cáo nhặt lấy, cười rồi chạy đi, để lại quạ ngẩn ngơ. Quạ hiểu ra rằng không nên vì lời khen ngọt mà quên đi điều mình đang có. Truyện có hai nhân vật chính biết nói, thêm vài bạn nhỏ trong rừng (thỏ, hươu, gà) làm người xem và nhắc nhở quạ ở đoạn cuối. Quạ rút kinh nghiệm, lần sau gặp cáo khen thì chỉ cảm ơn rồi giữ chặt mồi.",
+  "by": "claude-opus",
+  "art": {
+    "style": "mau_nuoc",
+    "intro": "sach_truyen",
+    "outro": "dong_que",
+    "suggest": {
+      "style": "mau_nuoc",
+      "intro": "sach_truyen",
+      "outro": "dong_que",
+      "why": "Truyện ngụ ngôn nhẹ nhàng với nhiều con vật và thiên nhiên làng quê hợp nét màu nước dịu, mở đầu bằng trang sách truyện và khép lại bằng cánh diều đồng quê.",
+      "by": "brain"
+    }
+  }
+}

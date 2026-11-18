@@ -1,7 +1,7 @@
 {
   "slug": "how-can-a-bridge-hold-up-so-much-weight",
   "topic": "How can a bridge hold up so much weight?",
-  "status": "review",
+  "status": "done",
   "notes": [
     {
       "at": "2026-11-12T09:59:06.236Z",
@@ -631,13 +631,108 @@
     {
       "at": "2026-11-16T02:03:46.620Z",
       "status": "review"
+    },
+    {
+      "at": "2026-11-17T10:01:02.610Z",
+      "status": "approved",
+      "info": "tự chọn lúc 17:00 (điểm 8.4/10)"
+    },
+    {
+      "at": "2026-11-17T10:52:16.591Z",
+      "status": "producing",
+      "info": "chuẩn bị"
+    },
+    {
+      "at": "2026-11-17T11:31:52.584Z",
+      "status": "producing",
+      "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-17T12:55:21.815Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-17T13:50:35.182Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-17T16:14:20.441Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-17T21:47:47.651Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (461 giây, không đen màn, đứng hình hay im lặng)"
     }
   ],
   "kind": "qa",
   "by": "claude-opus",
   "score": {
-    "value": 8.3,
-    "why": "Điểm mạnh: mở đầu bằng xe tải nặng hơn con voi và cây cầu đá Hy Lạp 3.300 năm tuổi, kiến thức chính xác (nén/kéo, vòm, giàn tam giác, cầu Triệu Châu), có thí nghiệm tờ giấy và ruler dễ dựng hình, chủ đề nhiều người tìm; điểm yếu: quá dày đặc (4 ý chính cùng hàng loạt thuật ngữ như compression, tension, keystone, abutment, cantilever, truss) nên dễ làm trẻ 6–8 tuổi quá tải, và phần liệt kê 5 loại cầu hơi lướt, nên nên cắt gọn trước khi dựng.",
-    "hash": "ad4c71fbc26fa1dd"
+    "value": 8.4,
+    "why": "Mạch lạc, đúng khoa học (nén/kéo, vòm, giàn tam giác), có 4 ý chốt và thí nghiệm giấy gập làm tại nhà rất dễ dựng, mở bài có sự kiện bất ngờ (cầu đá 3.300 năm) và chủ đề cầu được nhiều người tìm; điểm yếu là hơi dài, nhiều thuật ngữ (compression, tension, keystone, abutment, cantilever, cable stayed) dễ làm trẻ 6 tuổi quá tải, đoạn cuối về cầu treo/dây văng nói lướt, mở bài hơi chậm vì chưa đưa ra cảnh xe tải thật mạnh mẽ và có vài chi tiết cần kiểm chứng (cầu Hy Lạp ~3.300 năm, cầu Triệu Châu ~1.400 năm).",
+    "hash": "cdc3e940480a3d0c"
+  },
+  "autoPicked": true,
+  "inspect": {
+    "at": "2026-11-17T13:50:35.179Z",
+    "perMinute": 0.4,
+    "byKind": {
+      "still": {
+        "count": 2,
+        "seconds": 13.5
+      },
+      "head-cut": {
+        "count": 1,
+        "seconds": 7.3
+      }
+    }
+  },
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ],
+  "autoCheck": {
+    "at": "2026-11-17T21:47:47.649Z",
+    "mtimeMs": 1794923423723.7795,
+    "ok": true,
+    "problems": [],
+    "seconds": 461
+  },
+  "autoApproved": "2026-11-17T21:47:47.649Z",
+  "exported": {
+    "long": {
+      "dir": "/home/huynguyen/youtube/How Can a Bridge Hold Up So Much Weight",
+      "publishAt": "2026-11-20T12:00:00.000Z",
+      "channel": "ask-huy",
+      "at": "2026-11-17T21:48:43.347Z"
+    },
+    "shorts": [
+      {
+        "dir": "/home/huynguyen/youtube/How Can a Bridge Hold Up So Much Weight",
+        "publishAt": "2026-11-23T02:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-17T21:48:43.348Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/How Can a Bridge Hold Up So Much Weight",
+        "publishAt": "2026-11-23T08:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-17T21:48:43.349Z"
+      },
+      {
+        "dir": "/home/huynguyen/youtube/How Can a Bridge Hold Up So Much Weight",
+        "publishAt": "2026-11-24T02:00:00.000Z",
+        "channel": "ask-huy",
+        "at": "2026-11-17T21:48:43.351Z"
+      }
+    ]
+  },
+  "drive": {
+    "folder": "How Can a Bridge Hold Up So Much Weight",
+    "mtime": 1794952123354.969,
+    "at": "2026-11-17T21:55:49.027Z"
   }
 }

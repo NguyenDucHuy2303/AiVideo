@@ -1,0 +1,1049 @@
+[
+  {
+    "set": "village",
+    "time": "dusk",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "meo_muop",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "happy",
+        "then": "none",
+        "thenFace": "happy"
+      },
+      {
+        "id": "chuot_ut",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "talk",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "dusk",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "chuot_ut",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "none",
+        "thenFace": "happy"
+      },
+      {
+        "id": "chuot_me",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "laugh",
+        "then": "none",
+        "thenFace": "happy"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "rice",
+      "bowls"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "meo_muop",
+        "place": "center",
+        "enter": "from_right",
+        "act": "walk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "laugh"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "fire_pit"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "meo_muop",
+        "place": "center",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "determined",
+        "then": "walk",
+        "thenFace": "determined"
+      },
+      {
+        "id": "chuot_nhat",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "footprint"
+    ],
+    "shot": "track"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_beo",
+        "place": "left",
+        "enter": "from_left",
+        "act": "eat",
+        "face": "happy",
+        "then": "run",
+        "thenFace": "shout"
+      },
+      {
+        "id": "meo_muop",
+        "place": "right",
+        "enter": "from_right",
+        "act": "charge",
+        "face": "angry",
+        "then": "charge",
+        "thenFace": "angry"
+      }
+    ],
+    "fx": [
+      "shake"
+    ],
+    "objects": [
+      "bowls"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_ut",
+        "place": "left",
+        "enter": "none",
+        "act": "run",
+        "face": "surprised",
+        "then": "worry",
+        "thenFace": "sad"
+      },
+      {
+        "id": "chuot_me",
+        "place": "center",
+        "enter": "from_right",
+        "act": "run",
+        "face": "worried",
+        "then": "talk",
+        "thenFace": "worried"
+      },
+      {
+        "id": "meo_muop",
+        "place": "right",
+        "enter": "none",
+        "act": "charge",
+        "face": "angry",
+        "then": "idle",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "sad"
+      },
+      {
+        "id": "chuot_xam",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "worried",
+        "then": "worry",
+        "thenFace": "worried"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 3,
+      "act": "worry",
+      "then": "worry"
+    },
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "call",
+        "face": "determined",
+        "then": "point",
+        "thenFace": "determined"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 3,
+      "act": "walk",
+      "then": "walk"
+    },
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "sit",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "laugh"
+      },
+      {
+        "id": "chuot_nhat",
+        "place": "left",
+        "enter": "from_left",
+        "act": "bow",
+        "face": "happy",
+        "then": "sit",
+        "thenFace": "happy"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 5,
+      "act": "sit",
+      "then": "sit"
+    },
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "determined",
+        "then": "point",
+        "thenFace": "determined"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 5,
+      "act": "talk",
+      "then": "talk"
+    },
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_beo",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "worry",
+        "thenFace": "sad"
+      },
+      {
+        "id": "chuot_me",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "surprised",
+        "then": "idle",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "sit",
+        "face": "neutral",
+        "then": "sit",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_xam",
+        "place": "left",
+        "enter": "none",
+        "act": "raise",
+        "face": "shout",
+        "then": "worry",
+        "thenFace": "worried"
+      },
+      {
+        "id": "chuot_cu",
+        "place": "right",
+        "enter": "none",
+        "act": "sit",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "sad"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 3,
+      "act": "sit",
+      "then": "worry"
+    },
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "chuot_nhat",
+        "place": "left",
+        "enter": "none",
+        "act": "raise",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "joy"
+      },
+      {
+        "id": "chuot_cu",
+        "place": "right",
+        "enter": "none",
+        "act": "sit",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "surprised"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 4,
+      "act": "sit",
+      "then": "sit"
+    },
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "chuot_nhat",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "point",
+        "thenFace": "happy"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 5,
+      "act": "sit",
+      "then": "sit"
+    },
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "chuot_nhat",
+        "place": "center",
+        "enter": "none",
+        "act": "heroic",
+        "face": "proud",
+        "then": "talk",
+        "thenFace": "proud"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 5,
+      "act": "sit",
+      "then": "cheer"
+    },
+    "fx": [
+      "glow"
+    ],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "chuot_ut",
+        "place": "left",
+        "enter": "none",
+        "act": "cheer",
+        "face": "joy",
+        "then": "hop",
+        "thenFace": "joy"
+      },
+      {
+        "id": "chuot_beo",
+        "place": "right",
+        "enter": "none",
+        "act": "cheer",
+        "face": "laugh",
+        "then": "talk",
+        "thenFace": "laugh"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 5,
+      "act": "cheer",
+      "then": "hop"
+    },
+    "fx": [
+      "sparkle"
+    ],
+    "objects": [
+      "mat"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "chuot_me",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "chuot_xam",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "proud",
+        "then": "cheer",
+        "thenFace": "proud"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 3,
+      "act": "cheer",
+      "then": "cheer"
+    },
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "chuot_ut",
+        "place": "left",
+        "enter": "none",
+        "act": "point",
+        "face": "happy",
+        "then": "run",
+        "thenFace": "happy"
+      },
+      {
+        "id": "chuot_nhat",
+        "place": "right",
+        "enter": "from_right",
+        "act": "carry",
+        "face": "happy",
+        "then": "carry",
+        "thenFace": "determined"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 2,
+      "act": "carry",
+      "then": "carry"
+    },
+    "fx": [],
+    "objects": [
+      "stumps"
+    ],
+    "shot": "track"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "raise",
+        "face": "determined",
+        "then": "talk",
+        "thenFace": "determined"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 5,
+      "act": "sit",
+      "then": "still"
+    },
+    "fx": [],
+    "objects": [
+      "mat",
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_ut",
+        "place": "left",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "talk",
+        "thenFace": "worried"
+      },
+      {
+        "id": "chuot_me",
+        "place": "right",
+        "enter": "none",
+        "act": "still",
+        "face": "worried",
+        "then": "still",
+        "thenFace": "worried"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 5,
+      "act": "still",
+      "then": "still"
+    },
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "point",
+        "thenFace": "happy"
+      },
+      {
+        "id": "chuot_beo",
+        "place": "right",
+        "enter": "none",
+        "act": "worry",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_beo",
+        "place": "center",
+        "enter": "none",
+        "act": "worry",
+        "face": "sad",
+        "then": "run",
+        "thenFace": "worried"
+      }
+    ],
+    "fx": [
+      "pop"
+    ],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "sad"
+      },
+      {
+        "id": "chuot_me",
+        "place": "center",
+        "enter": "none",
+        "act": "worry",
+        "face": "worried",
+        "then": "walk",
+        "thenFace": "worried"
+      },
+      {
+        "id": "chuot_ut",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "worried",
+        "then": "walk",
+        "thenFace": "sad"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "left",
+        "enter": "none",
+        "act": "point",
+        "face": "surprised",
+        "then": "talk",
+        "thenFace": "sad"
+      },
+      {
+        "id": "chuot_xam",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "worried",
+        "then": "run",
+        "thenFace": "surprised"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 3,
+      "act": "idle",
+      "then": "run"
+    },
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "left",
+        "enter": "none",
+        "act": "talk",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "sad"
+      },
+      {
+        "id": "chuot_nhat",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "worried",
+        "then": "walk",
+        "thenFace": "sad"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "sit",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "sad"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "mat",
+      "stone"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "meo_muop",
+        "place": "right",
+        "enter": "none",
+        "act": "stretch",
+        "face": "surprised",
+        "then": "idle",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "chuot_cu",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "shout",
+        "then": "run",
+        "thenFace": "surprised"
+      }
+    ],
+    "fx": [
+      "pop"
+    ],
+    "objects": [
+      "stone"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "night",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "meo_muop",
+        "place": "center",
+        "enter": "from_right",
+        "act": "walk",
+        "face": "neutral",
+        "then": "talk",
+        "thenFace": "laugh"
+      }
+    ],
+    "fx": [],
+    "objects": [
+      "stone"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "dawn",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "call",
+        "face": "neutral",
+        "then": "talk",
+        "thenFace": "sad"
+      },
+      {
+        "id": "chuot_ut",
+        "place": "left",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "sad"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 4,
+      "act": "walk",
+      "then": "sit"
+    },
+    "fx": [
+      "rays"
+    ],
+    "objects": [
+      "mat"
+    ],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "dawn",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "determined"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 4,
+      "act": "sit",
+      "then": "sit"
+    },
+    "fx": [
+      "rays"
+    ],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "dawn",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "chuot_nhat",
+        "place": "left",
+        "enter": "none",
+        "act": "bow",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "sad"
+      },
+      {
+        "id": "chuot_beo",
+        "place": "right",
+        "enter": "none",
+        "act": "bow",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "sad"
+      },
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "sit",
+        "face": "happy",
+        "then": "sit",
+        "thenFace": "proud"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "medium"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "talk",
+        "thenFace": "proud"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 5,
+      "act": "sit",
+      "then": "sit"
+    },
+    "fx": [],
+    "objects": [],
+    "shot": "wide"
+  },
+  {
+    "set": "village",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "chuot_cu",
+        "place": "center",
+        "enter": "none",
+        "act": "wave",
+        "face": "happy",
+        "then": "bow",
+        "thenFace": "joy"
+      },
+      {
+        "id": "chuot_nhat",
+        "place": "left",
+        "enter": "none",
+        "act": "wave",
+        "face": "happy",
+        "then": "wave",
+        "thenFace": "joy"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 4,
+      "act": "cheer",
+      "then": "wave"
+    },
+    "fx": [
+      "sparkle",
+      "rays"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "wide"
+  }
+]

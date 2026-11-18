@@ -1,0 +1,238 @@
+[
+  {
+    "id": "qua",
+    "name": "Quạ",
+    "kind": "animal",
+    "look": {
+      "species": "crow",
+      "color": "#1c1b2e"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Quạ"
+    ],
+    "role": "Chị quạ đen mỏ to, lông đen bóng ánh xanh tím, mắt tròn sáng, dáng điệu đà; không mặc quần áo.",
+    "designed": true
+  },
+  {
+    "id": "cao",
+    "name": "Cáo",
+    "kind": "animal",
+    "look": {
+      "species": "fox",
+      "color": "#d9822b"
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [
+      "Cáo"
+    ],
+    "role": "Cáo đực lông nâu vàng cam, mõm dài, tai nhọn, mắt xếch hơi gian, đuôi rậm chóp trắng; không răng nanh dữ tợn.",
+    "designed": true
+  },
+  {
+    "id": "tho",
+    "name": "Thỏ",
+    "kind": "animal",
+    "look": {
+      "species": "rabbit",
+      "color": "#fafafa"
+    },
+    "scale": 0.8,
+    "group": false,
+    "speaks": [
+      "Thỏ"
+    ],
+    "role": "Bé thỏ trắng nhỏ tai dài, má hồng, hay khoanh tay lễ phép.",
+    "designed": true
+  },
+  {
+    "id": "huou",
+    "name": "Hươu",
+    "kind": "animal",
+    "look": {
+      "species": "deer",
+      "color": "#a8744a"
+    },
+    "scale": 0.85,
+    "group": false,
+    "speaks": [
+      "Hươu"
+    ],
+    "role": "Hươu sao non lông nâu đốm trắng, mắt to hiền, hiểu chuyện.",
+    "designed": true
+  },
+  {
+    "id": "ga",
+    "name": "Gà",
+    "kind": "animal",
+    "look": {
+      "species": "chicken",
+      "color": "#b8863b"
+    },
+    "scale": 0.7,
+    "group": false,
+    "speaks": [
+      "Gà"
+    ],
+    "role": "Chú gà trống nhỏ mào đỏ, lông vàng nâu, đuôi xanh óng, tinh ý.",
+    "designed": true
+  },
+  {
+    "id": "ca",
+    "name": "Cá",
+    "kind": "animal",
+    "look": {
+      "species": "fish",
+      "color": "#c0c8d0"
+    },
+    "scale": 0.4,
+    "group": false,
+    "speaks": [],
+    "role": "Cá nhỏ màu bạc ở ao làng; cảnh sau là cá rô nhỏ mắc trong cỏ bờ mương.",
+    "designed": true
+  },
+  {
+    "id": "nong_dan",
+    "name": "Bác nông dân",
+    "kind": "human",
+    "look": {
+      "body": "man",
+      "build": "average",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#7a5230",
+          "trim": "#5a3a20",
+          "length": "hip",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#5a3a20",
+          "length": "knee"
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#1a1a1a"
+      },
+      "headwear": "khan_chit",
+      "props": [
+        {
+          "type": "basket"
+        }
+      ],
+      "face": {
+        "shape": "square",
+        "eyes": "round",
+        "nose": "round",
+        "brows": "thick"
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [],
+    "role": "Bác nông dân bên ao, áo cánh nâu ngắn, quần ống rộng xắn gối, khăn chít đầu, đi chân đất, kéo vó, giỏ tre đựng cá; không lời thoại.",
+    "designed": true
+  },
+  {
+    "id": "ba_cu",
+    "name": "Bà cụ kể chuyện",
+    "kind": "human",
+    "look": {
+      "body": "elder",
+      "build": "slim",
+      "skin": "#d0a070",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "tu_than",
+          "color": "#6d4c32",
+          "trim": "#3e2723",
+          "length": "knee",
+          "sleeves": "long",
+          "pattern": "none"
+        },
+        "inner": {
+          "color": "#a1887f"
+        },
+        "lower": {
+          "type": "skirt",
+          "color": "#1a1a1a",
+          "length": "ankle"
+        },
+        "belt": {
+          "color": "#5d4037",
+          "ends": true
+        }
+      },
+      "hair": {
+        "style": "bun",
+        "color": "#cfcfcf"
+      },
+      "headwear": "khan_van",
+      "prop": {
+        "type": "stick"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "droopy",
+        "nose": "round",
+        "brows": "thin",
+        "wrinkles": true
+      }
+    },
+    "scale": 1,
+    "group": false,
+    "speaks": [],
+    "role": "Bà cụ dưới gốc đa kể chuyện Aesop, áo tứ thân nâu ngoài yếm, váy đen dài, khăn vấn, tóc bạc.",
+    "designed": true
+  },
+  {
+    "id": "tre_nho",
+    "name": "Các bạn nhỏ nghe kể",
+    "kind": "human",
+    "look": {
+      "body": "child",
+      "build": "slim",
+      "skin": "#d9a06c",
+      "outfit": {
+        "type": "parts",
+        "top": {
+          "cut": "canh",
+          "color": "#8d6e63",
+          "trim": "#5d4037",
+          "length": "waist",
+          "sleeves": "short",
+          "pattern": "none"
+        },
+        "lower": {
+          "type": "pants",
+          "color": "#5d4037",
+          "length": "knee"
+        }
+      },
+      "hair": {
+        "style": "traidao",
+        "color": "#1a1a1a"
+      },
+      "face": {
+        "shape": "round",
+        "eyes": "round",
+        "nose": "button",
+        "brows": "thin",
+        "eyeScale": 1.15
+      }
+    },
+    "scale": 0.8,
+    "group": true,
+    "speaks": [],
+    "role": "Đám trẻ tóc để chỏm, áo cánh ngắn quần lửng, ngồi chiếu cói dưới gốc đa nghe kể chuyện.",
+    "designed": true
+  }
+]

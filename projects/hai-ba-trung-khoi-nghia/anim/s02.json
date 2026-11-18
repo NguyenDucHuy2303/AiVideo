@@ -1,0 +1,296 @@
+{
+  "narration": "Ngày xửa ngày xưa, cách đây gần hai nghìn năm, đất nước ta bị nhà Hán ở phương Bắc sang cai trị. Quan lại nhà Hán bắt dân ta nộp thật nhiều thóc lúa, lụa là. Người Việt phải sống rất cực khổ.",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "linh_han",
+        "place": "right",
+        "enter": "from_right",
+        "act": "walk",
+        "face": "angry",
+        "then": "point",
+        "thenFace": "angry"
+      }
+    ],
+    "crowd": {
+      "id": "dan_lang",
+      "count": 3,
+      "act": "worry",
+      "then": "worry"
+    },
+    "fx": [],
+    "objects": [
+      "rice"
+    ],
+    "shot": "wide"
+  },
+  "era": "bac_thuoc",
+  "duration": 12.466666666666667,
+  "time": "day",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "rice",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "linh_han",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#e8c098",
+        "outfit": {
+          "type": "enemy",
+          "color": "#2f2f3f"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "mustache": "thin"
+        }
+      },
+      "x": 2420,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_1",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "bareChest": false,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#8b6b4a",
+            "trim": "#5a4030",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#6b4a2e",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#4a3020",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "headwear": "khan_chit"
+      },
+      "x": 900,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_2",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "bareChest": false,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#8b6b4a",
+            "trim": "#5a4030",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#6b4a2e",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#4a3020",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "headwear": "khan_chit"
+      },
+      "x": 1220,
+      "scale": 1.02,
+      "facing": -1
+    },
+    {
+      "id": "dan_lang_3",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "slim",
+        "skin": "#d0a070",
+        "bareChest": false,
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#8b6b4a",
+            "trim": "#5a4030",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#6b4a2e",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#4a3020",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "short",
+          "color": "#1a1a1a"
+        },
+        "prop": {
+          "type": "basket"
+        },
+        "face": {
+          "shape": "square",
+          "eyes": "round",
+          "nose": "round",
+          "brows": "thick"
+        },
+        "headwear": "khan_chit"
+      },
+      "x": 1540,
+      "scale": 0.95,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "linh_han",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": 520,
+        "ease": "out"
+      },
+      "dur": 5.61,
+      "face": "angry"
+    },
+    {
+      "actor": "linh_han",
+      "at": 5.61,
+      "do": "still",
+      "face": "angry"
+    },
+    {
+      "actor": "linh_han",
+      "at": 6.23,
+      "do": "point",
+      "face": "angry"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 0,
+      "do": "worry"
+    },
+    {
+      "actor": "dan_lang_1",
+      "at": 6.23,
+      "do": "worry"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 0,
+      "do": "worry"
+    },
+    {
+      "actor": "dan_lang_2",
+      "at": 6.58,
+      "do": "worry"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 0,
+      "do": "worry"
+    },
+    {
+      "actor": "dan_lang_3",
+      "at": 6.93,
+      "do": "worry"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "linh_han"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 6.23,
+      "type": "full",
+      "on": [
+        "linh_han"
+      ],
+      "push": 0.06
+    }
+  ]
+}

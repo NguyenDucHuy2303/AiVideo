@@ -1,0 +1,288 @@
+{
+  "narration": "Điều đặc biệt là có rất nhiều phụ nữ tìm về theo Hai Bà, như Lê Chân, Thánh Thiên, Bát Nàn. Ai cũng giỏi võ, gan dạ. Lê Chân (dõng dạc): \"Phụ nữ chúng em cũng biết cầm giáo giữ nước!\" Trưng Trắc (mừng rỡ): \"Có các chị em, lòng ta vững như núi Ba Vì.\"",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "le_chan",
+        "place": "left",
+        "enter": "from_left",
+        "act": "walk",
+        "face": "determined",
+        "then": "raise",
+        "thenFace": "determined"
+      },
+      {
+        "id": "trung_trac",
+        "place": "right",
+        "enter": "none",
+        "act": "talk",
+        "face": "happy",
+        "then": "cheer",
+        "thenFace": "joy"
+      },
+      {
+        "id": "trung_nhi",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "wide"
+  },
+  "era": "bac_thuoc",
+  "duration": 13.833333333333334,
+  "time": "day",
+  "mood": "majestic",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "le_chan",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "slim",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#2a6f7a",
+            "trim": "#c9a227",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#3a2a1a",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#c9a227",
+            "ends": true
+          },
+          "inner": {
+            "color": "#d9c080"
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "khan_van",
+        "bracelets": true,
+        "props": [
+          {
+            "type": "spear"
+          }
+        ],
+        "face": {
+          "shape": "oval",
+          "eyes": "narrow",
+          "nose": "button",
+          "brows": "thick",
+          "eyeScale": 1
+        }
+      },
+      "x": -2420,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "trung_trac",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "average",
+        "skin": "#e8b27c",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#a8452a",
+            "trim": "#d4a017",
+            "length": "hip",
+            "sleeves": "long",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#1f2f55",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#e8a020",
+            "ends": true
+          },
+          "inner": {
+            "color": "#e0b040"
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "khan_van",
+        "earrings": true,
+        "bracelets": true,
+        "cape": false,
+        "prop": {
+          "type": "spear"
+        },
+        "face": {
+          "shape": "oval",
+          "eyes": "almond",
+          "nose": "button",
+          "brows": "thick",
+          "eyeScale": 1.05
+        },
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "sword"
+          }
+        ]
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "trung_nhi",
+      "type": "human",
+      "look": {
+        "body": "woman",
+        "build": "slim",
+        "skin": "#e0aa74",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "canh",
+            "color": "#3f7a3f",
+            "trim": "#7a5a30",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "skirt",
+            "color": "#6b4a2a",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#8b5a2b",
+            "ends": true
+          },
+          "inner": {
+            "color": "#c8a060"
+          }
+        },
+        "hair": {
+          "style": "long",
+          "color": "#1a1a1a"
+        },
+        "earrings": true,
+        "bracelets": true,
+        "face": {
+          "shape": "round",
+          "eyes": "round",
+          "nose": "button",
+          "brows": "thin",
+          "eyeScale": 1.12
+        },
+        "prop": {
+          "type": "spear"
+        }
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "le_chan",
+      "at": 0,
+      "do": "walk",
+      "move": {
+        "to": -520,
+        "ease": "out"
+      },
+      "dur": 6.23,
+      "face": "determined"
+    },
+    {
+      "actor": "le_chan",
+      "at": 6.23,
+      "do": "still",
+      "face": "determined"
+    },
+    {
+      "actor": "le_chan",
+      "at": 6.92,
+      "do": "raise",
+      "face": "determined"
+    },
+    {
+      "actor": "trung_trac",
+      "at": 0,
+      "do": "talk",
+      "face": "happy",
+      "talk": 1
+    },
+    {
+      "actor": "trung_trac",
+      "at": 6.92,
+      "do": "cheer",
+      "face": "joy"
+    },
+    {
+      "actor": "trung_nhi",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "le_chan",
+        "trung_trac",
+        "trung_nhi"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 4.98,
+      "type": "close",
+      "on": [
+        "le_chan"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 9.41,
+      "type": "close",
+      "on": [
+        "trung_trac"
+      ],
+      "push": 0.05
+    }
+  ]
+}

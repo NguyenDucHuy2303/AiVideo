@@ -1,0 +1,87 @@
+{
+  "narration": "Các bạn nhỏ ơi, có ý hay là rất tốt. Nhưng điều quan trọng hơn là mình dám làm, và chỉ hứa những gì mình làm được nhé. Nếu thích truyện hôm nay, các bạn hãy nhờ bố mẹ đăng ký kênh Huy Kể Chuyện để nghe thêm thật nhiều truyện hay nhé. Hẹn gặp lại các bạn!",
+  "plan": {
+    "set": "village",
+    "time": "day",
+    "mood": "majestic",
+    "actors": [
+      {
+        "id": "chuot_me",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "sparkle",
+      "rays"
+    ],
+    "objects": [
+      "banner"
+    ],
+    "shot": "wide"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 15.766666666666667,
+  "time": "day",
+  "mood": "majestic",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "banner",
+        "x": 1500,
+        "color": "#3a1a1a"
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "chuot_me",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#9b7452"
+      },
+      "x": -520,
+      "scale": 0.9,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "chuot_me",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "sparkle",
+      "on": "chuot_me",
+      "at": 4.73,
+      "dur": 9.46
+    },
+    {
+      "fx": "rays",
+      "x": 0,
+      "at": 0,
+      "dur": 15.766666666666667,
+      "scale": 2.4
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "chuot_me"
+      ],
+      "push": 0.06
+    }
+  ]
+}

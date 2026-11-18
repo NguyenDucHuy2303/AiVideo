@@ -1,0 +1,232 @@
+{
+  "narration": "Chuột Xám (hô to): \"Hay cả nhà cùng xông ra đánh mèo!\" Nói xong, chân Chuột Xám run lẩy bẩy. Cả nhà nhìn nhau lắc đầu. Chuột Cụ (thở dài): \"Mèo to gấp mấy chục lần chúng ta, đánh sao lại được hả cháu.\"",
+  "plan": {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "chuot_xam",
+        "place": "left",
+        "enter": "none",
+        "act": "raise",
+        "face": "shout",
+        "then": "worry",
+        "thenFace": "worried"
+      },
+      {
+        "id": "chuot_cu",
+        "place": "right",
+        "enter": "none",
+        "act": "sit",
+        "face": "sad",
+        "then": "talk",
+        "thenFace": "sad"
+      },
+      {
+        "id": "chuot_nhat",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "chuot_beo",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "crowd": {
+      "id": "ho_nha_chuot",
+      "count": 3,
+      "act": "sit",
+      "then": "worry"
+    },
+    "fx": [],
+    "objects": [
+      "mat"
+    ],
+    "shot": "medium"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 10.233333333333333,
+  "time": "night",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "mat",
+        "x": 260
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "chuot_xam",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#8c8c90"
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    },
+    {
+      "id": "chuot_cu",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#b9b9c2"
+      },
+      "x": 520,
+      "scale": 0.95,
+      "facing": -1
+    },
+    {
+      "id": "chuot_nhat",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#cdb08a"
+      },
+      "x": -520,
+      "scale": 0.7,
+      "facing": 1
+    },
+    {
+      "id": "chuot_beo",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#6a4630"
+      },
+      "x": 520,
+      "scale": 1.15,
+      "facing": -1
+    },
+    {
+      "id": "ho_nha_chuot_1",
+      "type": "human",
+      "look": {
+        "species": "mouse",
+        "color": "#9a8b7c"
+      },
+      "x": 900,
+      "scale": 0.8075,
+      "facing": -1
+    },
+    {
+      "id": "ho_nha_chuot_2",
+      "type": "human",
+      "look": {
+        "species": "mouse",
+        "color": "#9a8b7c"
+      },
+      "x": 1220,
+      "scale": 0.867,
+      "facing": -1
+    },
+    {
+      "id": "ho_nha_chuot_3",
+      "type": "human",
+      "look": {
+        "species": "mouse",
+        "color": "#9a8b7c"
+      },
+      "x": 1540,
+      "scale": 0.8075,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "chuot_xam",
+      "at": 0,
+      "do": "raise",
+      "face": "shout"
+    },
+    {
+      "actor": "chuot_xam",
+      "at": 5.12,
+      "do": "worry",
+      "face": "worried"
+    },
+    {
+      "actor": "chuot_cu",
+      "at": 0,
+      "do": "sit",
+      "face": "sad"
+    },
+    {
+      "actor": "chuot_cu",
+      "at": 5.12,
+      "do": "talk",
+      "face": "sad",
+      "talk": 1
+    },
+    {
+      "actor": "chuot_nhat",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "chuot_beo",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "ho_nha_chuot_1",
+      "at": 0,
+      "do": "sit"
+    },
+    {
+      "actor": "ho_nha_chuot_1",
+      "at": 5.12,
+      "do": "worry"
+    },
+    {
+      "actor": "ho_nha_chuot_2",
+      "at": 0,
+      "do": "sit"
+    },
+    {
+      "actor": "ho_nha_chuot_2",
+      "at": 5.47,
+      "do": "worry"
+    },
+    {
+      "actor": "ho_nha_chuot_3",
+      "at": 0,
+      "do": "sit"
+    },
+    {
+      "actor": "ho_nha_chuot_3",
+      "at": 5.82,
+      "do": "worry"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "chuot_xam",
+        "chuot_cu",
+        "chuot_nhat",
+        "chuot_beo"
+      ],
+      "push": 0.06
+    }
+  ]
+}

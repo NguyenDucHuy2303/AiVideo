@@ -1,0 +1,176 @@
+{
+  "narration": "Trên đống rơm góc bếp, Mèo Mướp vươn vai, vểnh tai lên nghe ngóng. Mèo Mướp (ngạc nhiên): \"Meo, dưới gầm chạn có tiếng gì thế nhỉ?\" Chuột Cụ (hoảng hốt): \"Mèo đến! Mèo đến!\" Chuột Cụ vội chui tọt vào hang. Chiếc nhạc nằm lăn lóc giữa nền đất.",
+  "plan": {
+    "set": "village",
+    "time": "night",
+    "mood": "tense",
+    "actors": [
+      {
+        "id": "meo_muop",
+        "place": "right",
+        "enter": "none",
+        "act": "lie",
+        "face": "surprised",
+        "then": "none",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "chuot_cu",
+        "place": "left",
+        "enter": "none",
+        "act": "call",
+        "face": "shout",
+        "then": "run",
+        "thenFace": "surprised"
+      },
+      {
+        "id": "chuot_nhat",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "chuot_beo",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [
+      "pop"
+    ],
+    "objects": [
+      "stone"
+    ],
+    "shot": "wide"
+  },
+  "era": "co_tich_lang_que",
+  "duration": 13.3,
+  "time": "night",
+  "mood": "tense",
+  "set": {
+    "name": "village",
+    "objects": [
+      {
+        "type": "stone",
+        "x": 300
+      }
+    ]
+  },
+  "cast": [
+    {
+      "id": "meo_muop",
+      "type": "animal",
+      "look": {
+        "species": "cat",
+        "color": "#8b7a60"
+      },
+      "x": 624.0000000000001,
+      "scale": 1.5,
+      "facing": -1
+    },
+    {
+      "id": "chuot_cu",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#b9b9c2"
+      },
+      "x": -520,
+      "scale": 0.95,
+      "facing": 1
+    },
+    {
+      "id": "chuot_nhat",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#cdb08a"
+      },
+      "x": -520,
+      "scale": 0.7,
+      "facing": 1
+    },
+    {
+      "id": "chuot_beo",
+      "type": "animal",
+      "look": {
+        "species": "mouse",
+        "color": "#6a4630"
+      },
+      "x": 520,
+      "scale": 1.15,
+      "facing": -1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "meo_muop",
+      "at": 0,
+      "do": "lie",
+      "face": "surprised"
+    },
+    {
+      "actor": "chuot_cu",
+      "at": 0,
+      "do": "call",
+      "face": "shout",
+      "talk": 1,
+      "move": {
+        "by": 570,
+        "ease": "linear"
+      },
+      "dur": 13.3
+    },
+    {
+      "actor": "chuot_cu",
+      "at": 6.65,
+      "do": "run",
+      "face": "surprised",
+      "move": {
+        "by": 665,
+        "ease": "in"
+      },
+      "dur": 6.65
+    },
+    {
+      "actor": "chuot_nhat",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "chuot_beo",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [
+    {
+      "fx": "pop",
+      "on": "meo_muop",
+      "at": 6.65,
+      "dur": 7.98
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "wide",
+      "on": [
+        "meo_muop",
+        "chuot_cu",
+        "chuot_nhat",
+        "chuot_beo"
+      ],
+      "push": 0.06
+    }
+  ]
+}

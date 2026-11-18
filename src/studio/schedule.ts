@@ -26,6 +26,7 @@ import { listJobs, newJob, jobDir, type Job } from "./jobs.ts";
 import { prepare, render, shorts, writeJob } from "./produce.ts";
 import { prepareEnglish, renderEnglish } from "./english.ts";
 import { startDrive } from "./drive.ts";
+import { startFacebookSide } from "./fbside.ts";
 import { loadJob, saveJob, setStatus } from "./jobs.ts";
 import { autoApprove, dueAutoApprove, needsCheck } from "./autoreview.ts";
 import { proposeTopics, eras } from "./topics.ts";
@@ -278,6 +279,8 @@ export async function runScheduler(): Promise<never> {
   }
   // Google Drive beside the tasks (drive.ts): uploads never hold up a render.
   startDrive((l) => void log(l));
+  // Facebook beside them too (fbside.ts): the YouTube link in each Reel's first comment, the daily numbers.
+  startFacebookSide(settings, (l) => void log(l));
   for (;;) {
     // Stopping (SIGTERM: the children are killed, the process exits in 3 s): start nothing more,
     // or every task fails at once and the loop spins through the job list until the exit.

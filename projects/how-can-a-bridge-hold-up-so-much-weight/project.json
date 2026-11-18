@@ -1,0 +1,48 @@
+{
+  "engine": "kokoro",
+  "voice": "am_michael",
+  "speed": 0.92,
+  "imageGen": "off",
+  "onlineImages": false,
+  "profiles": [
+    "16x9"
+  ],
+  "channel": "Ask Huy",
+  "voices": {
+    "Huy": "bm_lewis",
+    "Hùng": "am_puck",
+    "Bối": {
+      "voice": "af_heart",
+      "pitch": 3
+    },
+    "Beo": {
+      "voice": "af_bella",
+      "pitch": 3
+    }
+  },
+  "speakers": {
+    "Huy": [
+      "huy"
+    ],
+    "Hùng": [
+      "hung"
+    ],
+    "Bối": [
+      "boi"
+    ],
+    "Beo": [
+      "beo"
+    ],
+    "Mai": [
+      "boi",
+      "mai"
+    ]
+  },
+  "brandId": "ask-huy",
+  "style": "hien_dai",
+  "thumbnail": {
+    "title": "Why Don't Bridges Snap?",
+    "subtitle": "Ask Huy",
+    "at": 11.98
+  }
+}

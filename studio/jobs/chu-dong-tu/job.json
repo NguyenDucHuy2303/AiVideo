@@ -60,6 +60,11 @@
       "at": "2026-11-17T04:30:12.672Z",
       "status": "done",
       "info": "bản tiếng Anh: giọng xong"
+    },
+    {
+      "at": "2026-11-17T21:46:34.366Z",
+      "status": "done",
+      "info": "bản tiếng Anh: xong"
     }
   ],
   "kind": "truyền thuyết",
@@ -114,10 +119,10 @@
   "exported": {},
   "drive": {
     "folder": "Chử Đồng Tử và công chúa Tiên Dung",
-    "mtime": 1794898924724.4966,
-    "at": "2026-11-17T07:03:38.438Z"
+    "mtime": 1794951994359.3794,
+    "at": "2026-11-17T21:48:39.835Z"
   },
-  "english": "ready",
+  "english": "done",
   "published": {
     "long": {
       "videoId": "0AILuFCqbHY",
@@ -160,6 +165,17 @@
       "channel": "huy-ke-chuyen",
       "at": "2026-11-17T07:02:04.680Z",
       "manual": true
+    }
+  },
+  "social": {
+    "facebook:short:0": "2026-11-18T05:00:18.343Z"
+  },
+  "facebook": {
+    "facebook:short:0": {
+      "videoId": "1430368825494404",
+      "postId": "122103471909549373",
+      "url": "https://www.facebook.com/reel/1430368825494404/",
+      "at": "2026-11-18T05:00:18.343Z"
     }
   }
 }

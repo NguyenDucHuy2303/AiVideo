@@ -1,0 +1,248 @@
+{
+  "narration": "Tô Định chạy một mạch về tận quận Nam Hải bên đất Hán. Về sau, chính vua Hán cũng chê hắn tham tiền mà nhát gan, rồi bắt hắn vào ngục.",
+  "plan": {
+    "set": "mountain",
+    "time": "day",
+    "mood": "calm",
+    "actors": [
+      {
+        "id": "to_dinh_tron",
+        "place": "center",
+        "enter": "from_right",
+        "act": "run",
+        "face": "worried",
+        "then": "walk",
+        "thenFace": "sad"
+      },
+      {
+        "id": "to_dinh",
+        "place": "right",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      },
+      {
+        "id": "linh_han",
+        "place": "left",
+        "enter": "none",
+        "act": "idle",
+        "face": "neutral",
+        "then": "none",
+        "thenFace": "neutral"
+      }
+    ],
+    "fx": [],
+    "objects": [],
+    "shot": "track"
+  },
+  "era": "bac_thuoc",
+  "duration": 8.966666666666667,
+  "time": "day",
+  "mood": "calm",
+  "set": {
+    "name": "mountain",
+    "objects": []
+  },
+  "cast": [
+    {
+      "id": "to_dinh_tron",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "average",
+        "skin": "#ecc8a0",
+        "outfit": {
+          "type": "parts",
+          "color": "#3a3a4a",
+          "top": {
+            "cut": "canh",
+            "color": "#4a4a3a",
+            "trim": "#3a3a2a",
+            "length": "hip",
+            "sleeves": "short",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#3a3a30",
+            "length": "shin"
+          },
+          "belt": {
+            "color": "#2a2a20",
+            "ends": false
+          }
+        },
+        "hair": {
+          "style": "bald",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "props": [],
+        "face": {
+          "shape": "jowl",
+          "eyes": "round",
+          "nose": "long",
+          "brows": "thin",
+          "mustache": "thin",
+          "eyeScale": 1.15
+        }
+      },
+      "x": 1900,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "to_dinh",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#ecc8a0",
+        "outfit": {
+          "type": "parts",
+          "top": {
+            "cut": "giao_linh",
+            "color": "#6a1a22",
+            "trim": "#2b2b2b",
+            "length": "ankle",
+            "sleeves": "wide",
+            "pattern": "none"
+          },
+          "lower": {
+            "type": "pants",
+            "color": "#1e1e2e",
+            "length": "ankle"
+          },
+          "belt": {
+            "color": "#1a1a1a",
+            "ends": true
+          }
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "beard": "#1a1a1a",
+        "face": {
+          "shape": "jowl",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "thin",
+          "mustache": "droopy"
+        }
+      },
+      "x": 520,
+      "scale": 1,
+      "facing": -1
+    },
+    {
+      "id": "linh_han",
+      "type": "human",
+      "look": {
+        "body": "man",
+        "build": "heavy",
+        "skin": "#e8c098",
+        "outfit": {
+          "type": "enemy",
+          "color": "#2f2f3f"
+        },
+        "hair": {
+          "style": "bun",
+          "color": "#1a1a1a"
+        },
+        "headwear": "enemy_helmet",
+        "props": [
+          {
+            "type": "spear"
+          },
+          {
+            "type": "shield"
+          }
+        ],
+        "face": {
+          "shape": "square",
+          "eyes": "narrow",
+          "nose": "long",
+          "brows": "bushy",
+          "mustache": "thin"
+        }
+      },
+      "x": -520,
+      "scale": 1,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "to_dinh_tron",
+      "at": 0,
+      "do": "run",
+      "move": {
+        "to": 0,
+        "ease": "out"
+      },
+      "dur": 4.04,
+      "face": "worried"
+    },
+    {
+      "actor": "to_dinh_tron",
+      "at": 4.04,
+      "do": "still",
+      "face": "worried"
+    },
+    {
+      "actor": "to_dinh_tron",
+      "at": 4.48,
+      "do": "walk",
+      "face": "sad",
+      "move": {
+        "by": -700,
+        "ease": "in"
+      },
+      "dur": 4.486666666666666
+    },
+    {
+      "actor": "to_dinh",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    },
+    {
+      "actor": "linh_han",
+      "at": 0,
+      "do": "idle",
+      "face": "neutral"
+    }
+  ],
+  "fx": [],
+  "shots": [
+    {
+      "at": 0,
+      "type": "track",
+      "on": [
+        "to_dinh_tron",
+        "to_dinh",
+        "linh_han"
+      ],
+      "push": 0.06
+    },
+    {
+      "at": 3.23,
+      "type": "close",
+      "on": [
+        "to_dinh_tron"
+      ],
+      "push": 0.05
+    },
+    {
+      "at": 6.1,
+      "type": "close",
+      "on": [
+        "to_dinh"
+      ],
+      "push": 0.05
+    }
+  ]
+}

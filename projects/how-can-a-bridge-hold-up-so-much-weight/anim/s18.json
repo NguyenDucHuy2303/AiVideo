@@ -1,0 +1,100 @@
+{
+  "castFile": "cast.json",
+  "duration": 12.3,
+  "time": "day",
+  "style": "hien_dai",
+  "styleLook": {},
+  "set": {
+    "name": "plain"
+  },
+  "place": "a bright, cheerful children's TV studio: pastel walls with simple shapes of stars, planets and question marks, a wooden floor, soft lights",
+  "cast": [
+    {
+      "id": "huy",
+      "type": "human",
+      "look": "huy",
+      "x": 0
+    },
+    {
+      "id": "hung",
+      "type": "human",
+      "look": "hung",
+      "x": -135,
+      "facing": 1
+    },
+    {
+      "id": "boi",
+      "type": "human",
+      "look": "boi",
+      "x": -265,
+      "facing": 1
+    },
+    {
+      "id": "beo",
+      "type": "human",
+      "look": "beo",
+      "x": -390,
+      "facing": 1
+    }
+  ],
+  "actions": [
+    {
+      "actor": "huy",
+      "at": 0,
+      "do": "talk",
+      "face": "happy"
+    },
+    {
+      "actor": "hung",
+      "at": 0,
+      "do": "worry",
+      "face": "surprised"
+    },
+    {
+      "actor": "boi",
+      "at": 0,
+      "do": "cheer",
+      "face": "laugh"
+    },
+    {
+      "actor": "beo",
+      "at": 0,
+      "do": "idle",
+      "face": "laugh"
+    }
+  ],
+  "shots": [
+    {
+      "at": 0,
+      "type": "full",
+      "on": [
+        "huy",
+        "hung",
+        "boi",
+        "beo"
+      ],
+      "region": [
+        0.02,
+        0.36
+      ],
+      "share": 0.5,
+      "gy": 0.9,
+      "push": 0.05
+    }
+  ],
+  "mood": "playful",
+  "board": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><text x=\"500\" y=\"75\" font-family=\"sans-serif\" font-size=\"44\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"0.2\">The keystone</text><rect x=\"30\" y=\"500\" width=\"940\" height=\"60\" rx=\"12\" fill=\"#fb8c00\" stroke=\"#3a2a20\" stroke-width=\"5\"/><polygon points=\"430,130 570,130 545,240 455,240\" fill=\"#e53935\" stroke=\"#3a2a20\" stroke-width=\"5\" class=\"float\" data-in=\"1\"/><text x=\"700\" y=\"200\" font-family=\"sans-serif\" font-size=\"38\" text-anchor=\"middle\" fill=\"#2a2a40\" data-in=\"2\">keystone</text><path d=\"M610 190 L580 190\" stroke=\"#3a2a20\" stroke-width=\"6\" data-in=\"2\"/><polygon points=\"100,500 210,500 195,440 120,440\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"5\"/><polygon points=\"260,500 380,500 360,430 290,450\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"5.5\"/><polygon points=\"430,500 560,500 540,450 450,430\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"6\"/><polygon points=\"620,500 740,500 720,440 650,430\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"6.5\"/><polygon points=\"790,500 900,500 880,450 820,430\" fill=\"#fff3b0\" stroke=\"#3a2a20\" stroke-width=\"5\" data-in=\"7\"/></svg>",
+    "style": "grid",
+    "icons": {},
+    "reveal": 7.38
+  },
+  "speakerShots": false,
+  "backdrop": {
+    "src": "file:///home/huynguyen/WataCreateVideo/assets/library/generated/backdrops/7e60aa45de35.png",
+    "size": [
+      768,
+      448
+    ]
+  }
+}

@@ -7,9 +7,12 @@ import { run } from "../utils/process.ts";
  * đàn tranh) over a soft drone, with drums for battle; effects are short synthesized hits.
  */
 
-export const MUSIC_MOODS = ["calm", "tense", "battle", "majestic", "playful"] as const;
+// comic: a bouncy oom-pah for the family comedies; hush: no music (a gag lands in silence).
+export const MUSIC_MOODS = ["calm", "tense", "battle", "majestic", "playful", "comic", "hush"] as const;
 export type MusicMood = (typeof MUSIC_MOODS)[number];
-export const SFX_TYPES = ["boom", "whoosh", "drums", "wind", "shimmer", "chime", "pop"] as const;
+// The cartoon sounds (18/11/2026, the family comedy): boing, thud, slide whistle up and down,
+// zip (a dash away), rattle (a thing shaking, a cockroach scuttling), sting (dun-dun), knock, clap.
+export const SFX_TYPES = ["boom", "whoosh", "drums", "wind", "shimmer", "chime", "pop", "boing", "thud", "slide_up", "slide_down", "zip", "rattle", "sting", "knock", "clap"] as const;
 export type SfxType = (typeof SFX_TYPES)[number];
 
 export interface MusicSection {
@@ -20,13 +23,17 @@ export interface MusicSection {
 export interface SfxEvent {
   type: SfxType;
   at: number;
+  /** Loudness, 1 = as made. */
+  gain?: number;
+  /** Seconds, for the sounds that last as long as the thing (rattle). */
+  dur?: number;
 }
 
 /** Root G3, the "Bắc" pentatonic mode: do re fa sol la. */
 const ROOT = 196;
 const SCALE = [0, 2, 5, 7, 9];
 
-const MOOD: Record<MusicMood, { beat: number; rest: number; octave: number; drumEvery: number; drum: number; pluck: number; drone: number }> = {
+const MOOD: Record<Exclude<MusicMood, "comic" | "hush">, { beat: number; rest: number; octave: number; drumEvery: number; drum: number; pluck: number; drone: number }> = {
   calm: { beat: 0.8, rest: 0.35, octave: 0.15, drumEvery: 0, drum: 0, pluck: 0.3, drone: 0.16 },
   tense: { beat: 1.0, rest: 0.45, octave: 0.05, drumEvery: 2, drum: 0.35, pluck: 0.22, drone: 0.22 },
   battle: { beat: 0.36, rest: 0.25, octave: 0.25, drumEvery: 1, drum: 0.55, pluck: 0.26, drone: 0.18 },
@@ -40,6 +47,8 @@ const hash = (x: string, salt: number) => `(abs(sin((${x})*12.9898+${salt})*4375
 
 /** aevalsrc expression for one music section. `seed` varies the melody between sections. */
 export function musicExpr(mood: MusicMood, seed: number): string {
+  if (mood === "hush") return "0";
+  if (mood === "comic") return comicExpr(seed);
   const m = MOOD[mood];
   const degree = `floor(${hash("ld(0)", seed)}*5)`;
   const semis = SCALE.reduceRight((acc, s, i) => (i === SCALE.length - 1 ? String(s) : `if(eq(ld(3),${i}),${s},${acc})`), "");
@@ -60,10 +69,64 @@ export function musicExpr(mood: MusicMood, seed: number): string {
   ].join(";");
 }
 
+/**
+ * The comedy's music: an oom-pah (a low plucked bass on the beat, a short major chord off it)
+ * under a staccato tune in the major pentatonic that skips about and rests a lot.
+ */
+function comicExpr(seed: number): string {
+  const B = 0.3, R = 392, BASS = [65.41, 98.0], MAJOR = [0, 2, 4, 7, 9];
+  const degree = `floor(${hash("ld(0)", seed)}*5)`;
+  const semis = MAJOR.reduceRight((acc, s, i) => (i === MAJOR.length - 1 ? String(s) : `if(eq(ld(3),${i}),${s},${acc})`), "");
+  return [
+    `st(0,floor(t/${B}))`, `st(1,t-ld(0)*${B})`, `st(3,${degree})`, `st(4,${semis})`,
+    `st(5,${R}*pow(2,(ld(4)+12*gt(${hash("ld(0)", seed + 7)},0.8))/12))`,
+    `st(6,gt(${hash("ld(0)", seed + 3)},0.45))`,
+    // the tune: plucked, short (staccato)
+    `st(7,ld(6)*(1-exp(-300*ld(1)))*exp(-9*ld(1))*(sin(2*PI*ld(5)*ld(1))+0.3*sin(4*PI*ld(5)*ld(1))))`,
+    // oom: the bass every other beat, root and fifth by the bar
+    `st(8,t-floor(t/${2 * B})*${2 * B})`, `st(9,if(eq(floor(t/${4 * B})-2*floor(t/${8 * B}),0),${BASS[0]},${BASS[1]}))`,
+    `st(10,(1-exp(-200*ld(8)))*exp(-8*ld(8))*(sin(2*PI*ld(9)*ld(8))+0.5*sin(4*PI*ld(9)*ld(8))))`,
+    // pah: a short chord on the off beat
+    `st(11,t-${B}-floor((t-${B})/${2 * B})*${2 * B})`,
+    `st(12,gte(t,${B})*(1-exp(-300*ld(11)))*exp(-14*ld(11))*(sin(2*PI*${R / 2}*ld(11))+sin(2*PI*${(R / 2) * 1.26}*ld(11))+sin(2*PI*${(R / 2) * 1.5}*ld(11))))`,
+    `0.24*ld(7)+0.34*ld(10)+0.08*ld(12)`,
+  ].join(";");
+}
+
 /** One synthesized effect: lavfi source + filter chain, and its length in seconds. */
-export function sfxSource(type: SfxType): { src: string; chain: string; duration: number } {
+export function sfxSource(type: SfxType, dur?: number): { src: string; chain: string; duration: number } {
   const sr = AUDIO_SAMPLE_RATE;
   switch (type) {
+    case "boing":
+      // a spring: the pitch wobbles and settles as the sound dies
+      return { src: `aevalsrc='0.6*exp(-3*t)*(sin(2*PI*170*t-8*exp(-4*t)*cos(2*PI*11*t))+0.25*sin(4*PI*170*t-16*exp(-4*t)*cos(2*PI*11*t)))':s=${sr}:d=0.9`, chain: "lowpass=f=3000,afade=t=out:st=0.7:d=0.2", duration: 0.9 };
+    case "thud":
+      // a body on the floor: a short low knock and a puff
+      return { src: `aevalsrc='0.95*exp(-16*t)*sin(2*PI*(42+90*exp(-30*t))*t)+0.3*exp(-35*t)*(random(0)*2-1)':s=${sr}:d=0.5`, chain: "lowpass=f=700", duration: 0.5 };
+    case "slide_up":
+      return { src: `aevalsrc='0.4*(1-exp(-60*t))*sin(2*PI*(350*t+1050*t*t)+2.5*sin(2*PI*7*t))':s=${sr}:d=0.5`, chain: "lowpass=f=4000,afade=t=out:st=0.36:d=0.14", duration: 0.5 };
+    case "slide_down":
+      return { src: `aevalsrc='0.4*(1-exp(-60*t))*sin(2*PI*(1300*t-1000*t*t)+2.5*sin(2*PI*7*t))':s=${sr}:d=0.55`, chain: "lowpass=f=4000,afade=t=out:st=0.4:d=0.15", duration: 0.55 };
+    case "zip":
+      return { src: `anoisesrc=color=pink:r=${sr}:d=0.4:a=0.6`, chain: "highpass=f=900,lowpass=f=7000,afade=t=in:d=0.08,afade=t=out:st=0.12:d=0.28:curve=exp", duration: 0.4 };
+    case "rattle": {
+      // quick dry clicks, a little uneven (a box shaking, little legs scuttling)
+      const d = Math.min(3, Math.max(0.3, dur ?? 0.8));
+      return { src: `aevalsrc='0.55*(random(0)*2-1)*exp(-70*(t-floor(t*23)/23))*(0.6+0.4*sin(2*PI*3.1*t))':s=${sr}:d=${d.toFixed(2)}`, chain: `highpass=f=1800,lowpass=f=8000,afade=t=out:st=${(d - 0.15).toFixed(2)}:d=0.15`, duration: d };
+    }
+    case "sting": {
+      // dun-dun: two low brassy stabs a semitone apart
+      const stab = (t0: number, f: number) => `gte(t,${t0})*exp(-5*(t-${t0}))*(sin(2*PI*${f}*(t-${t0}))+0.5*sin(4*PI*${f}*(t-${t0}))+0.33*sin(6*PI*${f}*(t-${t0}))+0.25*sin(8*PI*${f}*(t-${t0})))`;
+      return { src: `aevalsrc='0.35*(${stab(0, 110)}+${stab(0.32, 103.83)})':s=${sr}:d=1.3`, chain: "lowpass=f=1800,afade=t=out:st=1.05:d=0.25", duration: 1.3 };
+    }
+    case "knock": {
+      const hit = (t0: number) => `gte(t,${t0})*(exp(-40*(t-${t0}))*sin(2*PI*190*(t-${t0}))+0.3*exp(-90*(t-${t0}))*(random(0)*2-1))`;
+      return { src: `aevalsrc='0.8*(${[0, 0.17, 0.34].map(hit).join("+")})':s=${sr}:d=0.7`, chain: "lowpass=f=2500", duration: 0.7 };
+    }
+    case "clap": {
+      const hit = (t0: number) => `gte(t,${t0})*exp(-45*(t-${t0}))*(random(0)*2-1)`;
+      return { src: `aevalsrc='0.7*(${[0, 0.33, 0.66, 1.0].map(hit).join("+")})':s=${sr}:d=1.3`, chain: "highpass=f=700,lowpass=f=4500", duration: 1.3 };
+    }
     case "boom":
       return { src: `aevalsrc='0.9*exp(-3*t)*sin(2*PI*(38+55*exp(-6*t))*t)+0.25*exp(-14*t)*(random(0)*2-1)':s=${sr}:d=2.2`, chain: "lowpass=f=900", duration: 2.2 };
     case "whoosh":
@@ -94,16 +157,19 @@ export function soundtrackArgs(sections: MusicSection[], sfx: SfxEvent[], totalS
   const chains: string[] = [];
   const fade = 1.5;
   sections.forEach((s, i) => {
-    // Sections overlap by the fade, so they crossfade instead of stopping and starting.
-    const d = s.duration + fade;
+    // Sections overlap by the fade, so they crossfade instead of stopping and starting; into a
+    // hush the music stops dead (the gag), and comes back quickly after it.
+    const cut = sections[i + 1]?.mood === "hush", back = sections[i - 1]?.mood === "hush";
+    const fin = back ? 0.3 : fade, fout = cut ? 0.06 : fade;
+    const d = s.duration + (cut ? 0 : fade);
     inputs.push("-f", "lavfi", "-i", `aevalsrc='${musicExpr(s.mood, 17 * (i + 1))}':s=${AUDIO_SAMPLE_RATE}:d=${d.toFixed(3)}`);
-    chains.push(`[${i}:a]aecho=0.8:0.7:140|260:0.22|0.12,lowpass=f=5500,afade=t=in:d=${fade}:curve=qsin,afade=t=out:st=${(d - fade).toFixed(3)}:d=${fade}:curve=qsin,adelay=${Math.round(Math.max(0, s.start - (i ? fade / 2 : 0)) * 1000)}:all=1[a${i}]`);
+    chains.push(`[${i}:a]aecho=0.8:0.7:140|260:0.22|0.12,lowpass=f=5500,afade=t=in:d=${fin}:curve=qsin,afade=t=out:st=${(d - fout).toFixed(3)}:d=${fout}:curve=qsin,adelay=${Math.round(Math.max(0, s.start - (i && !back ? fade / 2 : 0)) * 1000)}:all=1[a${i}]`);
   });
   sfx.forEach((e, j) => {
     const i = sections.length + j;
-    const { src, chain } = sfxSource(e.type);
+    const { src, chain } = sfxSource(e.type, e.dur);
     inputs.push("-f", "lavfi", "-i", src);
-    chains.push(`[${i}:a]${chain},adelay=${Math.round(Math.max(0, e.at) * 1000)}:all=1[a${i}]`);
+    chains.push(`[${i}:a]${chain}${e.gain !== undefined ? `,volume=${e.gain}` : ""},adelay=${Math.round(Math.max(0, e.at) * 1000)}:all=1[a${i}]`);
   });
   const n = sections.length + sfx.length;
   const total = Math.round(totalSeconds * AUDIO_SAMPLE_RATE);

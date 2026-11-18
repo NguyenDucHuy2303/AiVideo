@@ -20,6 +20,7 @@ import { ambienceOf, mergeSections, renderAmbience } from "../audio/ambience.ts"
 import { AUDIO_SAMPLE_RATE, FFMPEG, FONTS_DIR, ROOT } from "../config.ts";
 import { exists, slugify } from "../utils/fs.ts";
 import { run } from "../utils/process.ts";
+import { probe } from "../utils/probe.ts";
 import { capture } from "./capture.ts";
 import { brandClip, brandStills, loadBrand, thumbnail, type Brand } from "./brand/brand.ts";
 import { withBackdrop } from "./backdrops.ts";
@@ -27,7 +28,10 @@ import { loadScene } from "./render.ts";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PLAYER = path.join(HERE, "player.html");
-const FPS = 30;
+/** Loudness samples a second for lip-sync (the player reads them at 30 a second, whatever the video's rate). */
+const ENV_RATE = 30;
+/** Frames a second of the film: 30, or project.json "fps" / --fps 60 (smoother, twice the render time). */
+const FPS_DEFAULT = 30;
 const CHAPTER_FADE = 0.4;
 
 interface Script {
@@ -77,10 +81,11 @@ function sfxOf(s: Script): SfxEvent[] {
   for (const a of s.scene.actions ?? []) {
     if (a.do === "gallop" && !galloping.has(a.actor)) { out.push({ type: "drums", at: Math.max(0, a.at * k) }); galloping.add(a.actor); }
     if (a.do === "leap" && (a.dur ?? 0.7) > 0.1) out.push({ type: "whoosh", at: a.at * k });
-    if (a.do === "fall") out.push({ type: "boom", at: a.at * k + 0.3 });
+    if (a.do === "fall") out.push({ type: "boom", at: a.at * k + 0.6 }); // the floor is hit ~0.6 s in (motions.js)
     if (a.do === "fly") out.push({ type: "wind", at: a.at * k });
   }
-  return out.filter((e) => e.at >= 0 && e.at < s.scene.duration);
+  // (a sound may run on into the next scene: a fall at a scene's end lands just after the cut)
+  return out.filter((e) => e.at >= 0 && e.at < s.scene.duration + 1.5);
 }
 
 const stamp = (s: number) => {
@@ -165,7 +170,7 @@ export function visemesOf(text: string): string[] {
 async function envelope(wav: string, work: string): Promise<number[]> {
   const raw = path.join(work, "voice.s16");
   await run(FFMPEG, ["-hide_banner", "-nostdin", "-y", "-v", "error", "-i", wav, "-ac", "1", "-ar", "8000", "-f", "s16le", raw], { timeoutMs: 60_000 });
-  const buf = await fs.readFile(raw), pcm = new Int16Array(buf.buffer, buf.byteOffset, buf.byteLength / 2), per = 8000 / FPS;
+  const buf = await fs.readFile(raw), pcm = new Int16Array(buf.buffer, buf.byteOffset, buf.byteLength / 2), per = 8000 / ENV_RATE;
   const rms: number[] = [];
   for (let i = 0; i * per < pcm.length; i++) {
     let sum = 0, n = 0;
@@ -178,6 +183,8 @@ async function envelope(wav: string, work: string): Promise<number[]> {
 
 export interface StoryOptions {
   vertical?: boolean;
+  /** Frames a second (default project.json "fps", else 30). */
+  fps?: number;
   anim?: string;
   /** Mark the chapters (title cards, fades through black, a chime). Off: one seamless film. */
   chapters?: boolean;
@@ -269,6 +276,7 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
 
   // Who says what, when (film seconds), from the timed cues of the voice build.
   const project = (await exists(path.join(dir, "project.json"))) ? JSON.parse(await fs.readFile(path.join(dir, "project.json"), "utf8")) : {};
+  const FPS: number = opts.fps ?? project.fps ?? FPS_DEFAULT;
   const speakers: Record<string, string[]> = Object.fromEntries(Object.entries(project.speakers ?? {}).map(([k, v]) => [k, ([] as string[]).concat(v as string)]));
   const cues: Cue[] = [];
   let at0 = 0;
@@ -290,7 +298,7 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
         if (to - from < 0.2) continue;
         const actor = (speakers[c.who!] ?? []).find((id) => ids.has(id));
         if (!actor) { if (!speakers[c.who!]) log(`⚠ no actor for "${c.who}" (project.json "speakers")`); continue; }
-        const f0 = Math.round((clipStart + from) * FPS), f1 = Math.round((clipStart + to) * FPS);
+        const f0 = Math.round((clipStart + from) * ENV_RATE), f1 = Math.round((clipStart + to) * ENV_RATE);
         speech.push({ actor, from, to, env: env.slice(f0, f1).map((v) => Math.round(v * 100) / 100), visemes: visemesOf(c.text), ...(c.mood ? { face: c.mood } : {}) });
       }
       if (speech.length) {
@@ -324,11 +332,18 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
   const rt = await runtimeHash();
   const clips: string[] = [];
   for (const s of scripts) {
-    const key = createHash("sha256").update(rt).update(JSON.stringify(s.scene)).update(shape).digest("hex").slice(0, 12);
+    const key = createHash("sha256").update(rt).update(JSON.stringify(s.scene)).update(shape).update(FPS === 30 ? "" : `fps${FPS}`).digest("hex").slice(0, 12);
     const clip = path.join(cache, `${s.name}-${key}.mp4`);
+    // (a clip cut off by a stop can look finished: a broken one dropped the end of a Short, 16/11;
+    // so a cached clip is opened and its length checked, and a new one too before it is kept)
+    if (await exists(clip) && !(await clipOk(clip, s.scene.duration))) {
+      log(`  ${s.name}: cached clip broken, rendering again`);
+      await fs.rm(clip, { force: true });
+    }
     if (!(await exists(clip))) {
       const t0 = Date.now();
       await capture({ page: PLAYER, width: W, height: H, fps: FPS, seconds: s.scene.duration, output: `${clip}.part.mp4`, params: { scene: s.scene, width: W, height: H } });
+      if (!(await clipOk(`${clip}.part.mp4`, s.scene.duration))) throw new Error(`${s.name}: the rendered clip is broken or too short`);
       await fs.rename(`${clip}.part.mp4`, clip);
       log(`  ${s.name}: ${s.scene.duration.toFixed(1)} s rendered in ${((Date.now() - t0) / 1000).toFixed(0)} s`);
     } else log(`  ${s.name}: cached`);
@@ -349,7 +364,8 @@ export async function renderStory(projectDir: string, opts: StoryOptions = {}): 
     const parts: { at: number; mood: MusicMood }[] = s.scene.moods ?? [{ at: 0, mood: (s.scene.mood as MusicMood) || "calm" }];
     parts.forEach((m, i) => {
       const a = t + m.at * k, b = t + (parts[i + 1] ? parts[i + 1]!.at * k : s.scene.duration), last = sections.at(-1);
-      if (last && (last.mood === m.mood || b - a < 3)) last.duration = b - last.start;
+      // (a short hush is kept: the music stopping for a gag is the point)
+      if (last && (last.mood === m.mood || (b - a < 3 && m.mood !== "hush" && last.mood !== "hush"))) last.duration = b - last.start;
       else sections.push({ start: a, duration: b - a, mood: m.mood });
     });
     for (const e of sfxOf(s)) sfx.push({ ...e, at: t + e.at });
@@ -469,10 +485,16 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
   const args = process.argv.slice(2);
   const project = args.find((a) => !a.startsWith("--"));
   if (!project) {
-    console.error("usage: node src/animation/story.ts <projects/name> [--vertical]");
+    console.error("usage: node src/animation/story.ts <projects/name> [--vertical] [--fps 60]");
     process.exit(2);
   }
   const t0 = Date.now();
-  const out = await renderStory(project, { vertical: args.includes("--vertical"), chapters: args.includes("--chapters"), brand: !args.includes("--no-brand"), anim: args.includes("--anim") ? args[args.indexOf("--anim") + 1] : undefined });
+  const out = await renderStory(project, { vertical: args.includes("--vertical"), chapters: args.includes("--chapters"), brand: !args.includes("--no-brand"), anim: args.includes("--anim") ? args[args.indexOf("--anim") + 1] : undefined, fps: args.includes("--fps") ? Number(args[args.indexOf("--fps") + 1]) : undefined });
   console.log(`✔ ${path.relative(ROOT, out)} (${((Date.now() - t0) / 60000).toFixed(1)} min)`);
+}
+
+/** A scene clip that opens and is as long as its scene (within two frames). */
+export async function clipOk(file: string, seconds: number): Promise<boolean> {
+  const p = await probe(file).catch(() => undefined);
+  return !!p && p.streams.some((x) => x.codec_type === "video") && p.durationSec >= seconds - 0.07;
 }

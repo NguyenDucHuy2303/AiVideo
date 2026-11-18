@@ -344,7 +344,8 @@
   ],
   "social": {
     "facebook:short:0": "2026-11-17T02:00:27.362Z",
-    "facebook:short:1": "2026-11-17T08:00:10.298Z"
+    "facebook:short:1": "2026-11-17T08:00:10.298Z",
+    "facebook:short:2": "2026-11-18T02:01:54.508Z"
   },
   "facebook": {
     "facebook:short:0": {
@@ -358,6 +359,12 @@
       "postId": "122096633625556851",
       "url": "https://www.facebook.com/reel/2595510554246695/",
       "at": "2026-11-17T08:00:10.298Z"
+    },
+    "facebook:short:2": {
+      "videoId": "2228709191405733",
+      "postId": "122097135489556851",
+      "url": "https://www.facebook.com/reel/2228709191405733/",
+      "at": "2026-11-18T02:01:54.508Z"
     }
   }
 }

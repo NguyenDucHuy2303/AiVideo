@@ -1,7 +1,7 @@
 {
   "slug": "why-is-it-that-octopuses-have-three-hearts-and-blue-blood",
   "topic": "Why is it that octopuses have three hearts and blue blood?",
-  "status": "producing",
+  "status": "done",
   "notes": [],
   "history": [
     {
@@ -165,6 +165,25 @@
       "at": "2026-11-17T07:05:10.884Z",
       "status": "producing",
       "info": "sẵn sàng render"
+    },
+    {
+      "at": "2026-11-17T14:48:00.399Z",
+      "status": "producing",
+      "info": "đang render"
+    },
+    {
+      "at": "2026-11-17T15:36:43.777Z",
+      "status": "video"
+    },
+    {
+      "at": "2026-11-17T16:46:27.453Z",
+      "status": "video",
+      "info": "3 shorts"
+    },
+    {
+      "at": "2026-11-17T21:48:43.190Z",
+      "status": "done",
+      "info": "studio tự duyệt: anh chưa duyệt sau 1 giờ, kiểm tra máy đạt (421 giây, không đen màn, đứng hình hay im lặng)"
     }
   ],
   "kind": "qa",
@@ -175,64 +194,63 @@
   "autoPicked": true,
   "retryAt": "2026-11-16T17:15:02.715Z",
   "inspect": {
-    "at": "2026-11-16T19:18:32.381Z",
-    "perMinute": 0.7,
+    "at": "2026-11-17T15:36:43.776Z",
+    "perMinute": 0.9,
     "byKind": {
       "head-cut": {
-        "count": 3,
-        "seconds": 2.5
+        "count": 4,
+        "seconds": 5.4
       },
       "still": {
-        "count": 1,
-        "seconds": 5.8
+        "count": 2,
+        "seconds": 11.5
       }
     }
   },
-  "shorts": [
-    "shorts/1.mp4",
-    "shorts/2.mp4",
-    "shorts/3.mp4"
-  ],
   "autoCheck": {
-    "at": "2026-11-16T20:32:17.542Z",
-    "mtimeMs": 1794856702526.049,
+    "at": "2026-11-17T21:48:43.188Z",
+    "mtimeMs": 1794929792044.7283,
     "ok": true,
     "problems": [],
-    "seconds": 370
+    "seconds": 421
   },
-  "autoApproved": "2026-11-16T20:32:17.542Z",
+  "autoApproved": "2026-11-17T21:48:43.188Z",
   "exported": {
     "long": {
       "dir": "/home/huynguyen/youtube/Why Do Octopuses Have Three Hearts and Blue Blood",
       "publishAt": "2026-11-19T12:00:00.000Z",
       "channel": "ask-huy",
-      "at": "2026-11-16T20:32:17.568Z"
+      "at": "2026-11-17T21:48:43.462Z"
     },
     "shorts": [
       {
         "dir": "/home/huynguyen/youtube/Why Do Octopuses Have Three Hearts and Blue Blood",
         "publishAt": "2026-11-21T08:00:00.000Z",
         "channel": "ask-huy",
-        "at": "2026-11-16T20:32:17.569Z"
+        "at": "2026-11-17T21:48:43.464Z"
       },
       {
         "dir": "/home/huynguyen/youtube/Why Do Octopuses Have Three Hearts and Blue Blood",
         "publishAt": "2026-11-22T02:00:00.000Z",
         "channel": "ask-huy",
-        "at": "2026-11-16T20:32:17.569Z"
+        "at": "2026-11-17T21:48:43.464Z"
       },
       {
         "dir": "/home/huynguyen/youtube/Why Do Octopuses Have Three Hearts and Blue Blood",
         "publishAt": "2026-11-22T08:00:00.000Z",
         "channel": "ask-huy",
-        "at": "2026-11-16T20:32:17.570Z"
+        "at": "2026-11-17T21:48:43.465Z"
       }
     ]
   },
   "drive": {
     "folder": "Why Do Octopuses Have Three Hearts and Blue Blood",
-    "mtime": 1794861137573.865,
-    "at": "2026-11-17T01:45:38.985Z"
+    "mtime": 1794952123468.969,
+    "at": "2026-11-17T21:56:48.874Z"
   },
-  "stage": "ready"
+  "shorts": [
+    "shorts/1.mp4",
+    "shorts/2.mp4",
+    "shorts/3.mp4"
+  ]
 }

@@ -79,12 +79,20 @@
       x = nx; lift = nl;
     }
     const c = it.carry;
+    let hold = 1;
     if (c && t >= (c.from ?? 0) && t < (c.until ?? Infinity)) {
-      const p = ctx.pointsAt(c.by, t), b = p.box;
+      const p = ctx.pointsAt(c.by, t), b = p.box, h = b[3] - b[1];
       x = (b[0] + b[2]) / 2 + (p.facing || 1) * (b[2] - b[0]) * 0.18;
-      lift = -(b[1] + (b[3] - b[1]) * (c.dy ?? 0.5)) - I.size * 0.5;
+      // Held in front of the chest, below the chin (18/11/2026: a big thing in a small child's
+      // hands covered the face): no taller than a third of the one holding it.
+      const x0 = x, lift0 = lift;
+      hold = Math.min(1, (h * 0.32) / I.size);
+      const chin = p.head ? p.head[1] + (p.headR || 0) * 1.05 : -Infinity;
+      lift = -Math.max(b[1] + h * (c.dy ?? 0.5) + I.size * 0.5, chin + I.size * hold);
+      // picked up: it rises into the hands and shrinks to fit them, no jump
+      if (c.from > 0 && t < c.from + 0.3) { const k = smooth(seg(t, c.from, c.from + 0.3)); x = lerp(x0, x, k); lift = lerp(lift0, lift, k); hold = lerp(1, hold, k); }
     }
-    return { x, lift };
+    return { x, lift, hold };
   }
 
   function render(list, t, ctx) {
@@ -116,7 +124,8 @@
         if (k > 0.55) { const q = Math.sin(((k - 0.55) / 0.45) * Math.PI); sx = 1 + 0.18 * q; sy = 1 - 0.18 * q; }
         rot += Math.sin(k * 18) * 8 * (1 - k);
       }
-      const { x, lift } = placeAt(I, t, ctx);
+      const { x, lift, hold } = placeAt(I, t, ctx);
+      scale *= hold;
       I.node.setAttribute("transform", `translate(${f2(x)} 0)`);
       I.pic.setAttribute("transform", `translate(0 ${f2(-lift + dy)}) rotate(${f2(rot)} 0 ${f2(-I.size * 0.1)}) scale(${f2(Math.max(0, scale) * sx)} ${f2(Math.max(0, scale) * sy)})`);
       I.shadow.setAttribute("opacity", f2(0.18 * clamp(scale) * clamp(1 - lift / 400)));

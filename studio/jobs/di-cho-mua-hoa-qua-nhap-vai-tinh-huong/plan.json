@@ -1,0 +1,638 @@
+{
+  "title": "Đi chợ mua hoa quả: apple, banana, orange, watermelon, mouse",
+  "answer": "apple = quả táo, banana = quả chuối, orange = quả cam, watermelon = quả dưa hấu, mouse = con chuột",
+  "description": "Tờ giấy đi chợ bị bay mất, bốn anh em vẫn đi mua hoa quả và gặp một chú chuột đói bụng trốn trong giỏ. Bé học 5 từ tiếng Anh: apple, banana, orange, watermelon và mouse qua một câu chuyện vui, ấm áp.",
+  "thumbnail": "Chuột trốn trong giỏ trái cây",
+  "words": [
+    {
+      "en": "apple",
+      "vi": "quả táo"
+    },
+    {
+      "en": "banana",
+      "vi": "quả chuối"
+    },
+    {
+      "en": "orange",
+      "vi": "quả cam"
+    },
+    {
+      "en": "watermelon",
+      "vi": "quả dưa hấu"
+    },
+    {
+      "en": "mouse",
+      "vi": "con chuột"
+    }
+  ],
+  "story": true,
+  "scenes": [
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Ôi không! Tờ giấy ghi hoa quả bay mất rồi!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Giấy có cánh hả chị? Bay đi đâu rồi?"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Chắc nó đi chợ trước mình rồi!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Không sao. Mình cứ đi xem hoa quả nhé."
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Xin mời quý khách! Hoa quả tươi đây!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Táo",
+          "how": "",
+          "text": "Hi! I am an apple!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Apple! Quả táo!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Các bạn nói cùng Beo nào: Apple!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Giỏi lắm! Các bạn nói hay quá!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Cô bán hàng ơi, cho cháu một quả táo ạ!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Được chứ! Mời khách nhỏ cầm về!"
+        },
+        {
+          "who": "Táo",
+          "how": "",
+          "text": "Hello! Take me home!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Táo biết nói! Con muốn ăn thử!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Đợi đã Beo. Mình còn phải trả tiền nữa."
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Tiếp theo là món bí mật đây!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "A lô! A lô! Mẹ ơi, con đây!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Beo ơi, đó đâu phải điện thoại!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Đó là Banana!, quả chuối đấy."
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Banana! Quả chuối!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Các bạn nói cùng Beo nào: Banana!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Các bạn giỏi quá!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Nhìn kìa, quả tròn tròn màu cam!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Quả bóng! Để con đá nhé!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Khoan đã! Đó là Orange!, quả cam!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Orange! Quả cam!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nói cùng Beo nào: Orange!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Giỏi quá! Cam không phải bóng đâu nhé!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Ái chà! Quả này nặng quá!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Bóng xanh khổng lồ! Bên trong có gì thế?"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Đó là Watermelon!, quả dưa hấu."
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Watermelon! Quả dưa hấu!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Các bạn nói cùng Bối nào: Watermelon!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Tuyệt vời! Các bạn nhớ nhanh quá!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Ơ, cái giỏ trái cây đang rung kìa!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Ối! Giỏ có ma hả anh?"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Beo đừng sợ. Chị xem thử nhé."
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Chuột",
+          "how": "",
+          "text": "Squeak! I am a mouse!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Mouse! Con chuột!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Các bạn nói cùng Beo nào: Mouse!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[3s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Giỏi lắm các bạn!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Nhìn kìa! Chuột cầm tờ giấy của mình!"
+        },
+        {
+          "who": "Chuột",
+          "how": "",
+          "text": "Sorry! I am hungry!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Bạn chuột đói bụng nên lấy giấy đấy."
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Giấy đâu có ngon bằng hoa quả!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Chuột ơi, ăn táo đi!"
+        },
+        {
+          "who": "Táo",
+          "how": "",
+          "text": "Oh no! Not me!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Hahaha! Táo sợ chuột kìa!"
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Chuột",
+          "how": "",
+          "text": "I want an apple, please!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Chuột biết xin ạ! Còn lịch sự hơn con!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Khách hàng nhỏ nhất chợ! Xin chào!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Ôi, bạn ấy có cả tiền xu nữa!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Vậy mình mua giúp bạn nhé."
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Của quý khách hết mười ngàn đồng ạ!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Con trả bằng chuối nhé!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Chuối này là của anh mà!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Để anh trả tiền cho nhé."
+        }
+      ]
+    },
+    {
+      "beat": "market",
+      "parts": [
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Giỏ đầy hoa quả rồi! Mình về nhà thôi!"
+        },
+        {
+          "who": "Chuột",
+          "how": "",
+          "text": "Hooray! Let us go!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Chuột ngồi giỏ, con đi bộ nhé!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Ai về trước được ăn trước nha!"
+        }
+      ]
+    },
+    {
+      "beat": "home",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Về nhà rồi! Mình làm trái cây trộn nhé."
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Chị rửa táo, anh Hùng cắt chuối!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Anh cắt, còn Beo lo ăn thử thôi!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Con nhận nhiệm vụ khó nhất!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        },
+        {
+          "who": "Chuột",
+          "how": "",
+          "text": "Yummy! Thank you!"
+        }
+      ]
+    },
+    {
+      "beat": "home",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Hôm nay mình có thêm một người bạn mới."
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Đi chợ vui thật! Còn được chia nhau ăn nữa."
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Giấy mất rồi mà con nhớ hết nè!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Thật hả? Nói thử xem nào."
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Ăn! Ăn! Ăn!"
+        },
+        {
+          "who": "",
+          "how": "",
+          "text": "[2s]"
+        }
+      ]
+    },
+    {
+      "beat": "home",
+      "parts": [
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Nào, cùng nhớ lại nhé! Theo nhịp nào!"
+        },
+        {
+          "who": "Táo",
+          "how": "",
+          "text": "Apple!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Apple!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Banana!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Banana!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Orange!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Orange!"
+        }
+      ]
+    },
+    {
+      "beat": "home",
+      "parts": [
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Watermelon!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Watermelon!"
+        },
+        {
+          "who": "Chuột",
+          "how": "",
+          "text": "Mouse!"
+        },
+        {
+          "who": "Bối",
+          "how": "",
+          "text": "Mouse!"
+        },
+        {
+          "who": "Huy",
+          "how": "",
+          "text": "Các bạn nhớ bấm đăng ký kênh Huy Kể Chuyện để xem tập sau nhé!"
+        },
+        {
+          "who": "Hùng",
+          "how": "",
+          "text": "Tập sau mình đi sở thú, có bạn voi đang đợi đó!"
+        },
+        {
+          "who": "Beo",
+          "how": "",
+          "text": "Voi hả? Voi có ăn chuối của con không?"
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "name": "Huy",
+      "role": "anh cả"
+    },
+    {
+      "name": "Hùng",
+      "role": "em trai"
+    },
+    {
+      "name": "Bối",
+      "role": "bé gái 8 tuổi"
+    },
+    {
+      "name": "Beo",
+      "role": "bé trai 5 tuổi"
+    },
+    {
+      "name": "Táo",
+      "role": "red apple"
+    },
+    {
+      "name": "Chuột",
+      "role": "mouse"
+    }
+  ],
+  "facts": []
+}
